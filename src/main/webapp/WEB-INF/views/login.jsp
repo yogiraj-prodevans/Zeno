@@ -64,12 +64,15 @@
 				</h1>
 			</div>
 			<div class="col-sm-6">
+			<c:if test="${not empty error}"><div>${error}</div></c:if>
+			<c:if test="${not empty message}"><div>${message}</div></c:if>
+			
 				<div class="col-sm-12">
-					<div style="background-color: white; padding: 10px">
+					<form action="<c:url value='/loginPage' />" method="post" style="background-color: white; padding: 10px">
 
 						<div class="control" style="padding: 20px">
 							<input type="text" class="form-control border22 logind"
-								placeholder="My Stoic ID" />
+								placeholder="My Stoic ID" name="username" />
 							<div align="right" style="padding: 10px">
 								<a class="h22" href="#">I forgot my Stoic ID</a>
 							</div>
@@ -77,7 +80,7 @@
 
 						<div class="control" style="padding: 20px">
 							<input type="password" class="form-control border22 logind "
-								placeholder="My Stoic Password" />
+								placeholder="My Stoic Password" name="password" />
 							<div align="right" style="padding: 10px">
 								<a class="h22" href="#">I forgot my Stoic Password</a>
 							</div>
@@ -85,7 +88,7 @@
 
 						<div class="control" style="padding: 10px">
 							<div class="col-md-6 col-xs-6 ">
-								<button class="button">Login</button>
+								<button type="submit" class="button">Login</button>
 							</div>
 						</div>
 						<div class="control" style="padding: 5px; align: right">
@@ -100,7 +103,7 @@
 							</div>
 						</div>
 						<br>
-					</div>
+					</form>
 
 				</div>
 			</div>
