@@ -2,9 +2,10 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ page session="false"%>
 
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html >
 <html>
 <head>
 <title>Stoic Zeno</title>
@@ -21,38 +22,39 @@
 
 
 <!-- Custom style sheet and css -->
-
+<!--  
 <spring:url value="/resources/css/style.css" var="coreCss" />
 <spring:url value="/resources/js/index.js" var="coreJs" />
-<spring:url value="/resources/img" var="coreImg" />
-<script src="${coreJs}"></script>
-<link rel="stylesheet" href="${coreCss}">
+<spring:url value="/resources/img" var="coreImg" />-->
+
+<script src="js/index.js"></script>
+<link rel="stylesheet" href="css/style.css">
 
 
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar"
 	data-offset="60">
 	<nav class="navbar navbar-default navbar-fixed-top">
-	<div class="container">
-		<div class="navbar-header">
-			<a class="navbar-brand" href="#myPage"><img height="65px"
-				width="50px" src="${coreImg }/stoic_zeno.png"></a>
-			<button type="button" class="navbar-toggle" data-toggle="collapse"
-				data-target="#myNavbar">
-				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-					class="icon-bar"></span>
-			</button>
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#myPage"><img height="65px"
+					width="50px" src="img/stoic_zeno.png"></a>
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#myNavbar">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
 
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav navbar-right">
+					<br />
+					<br />
+					<li><a href="#">Pay bill | Support</a></li>
+					<hr>
+				</ul>
+			</div>
 		</div>
-		<div class="collapse navbar-collapse" id="myNavbar">
-			<ul class="nav navbar-nav navbar-right">
-				<br />
-				<br />
-				<li><a href="#">Pay bill | Support</a></li>
-				<hr>
-			</ul>
-		</div>
-	</div>
 	</nav>
 
 	<div class="jumbotron ">
@@ -64,22 +66,29 @@
 				</h1>
 			</div>
 			<div class="col-sm-6">
-			<c:if test="${not empty error}"><div>${error}</div></c:if>
-			<c:if test="${not empty message}"><div>${message}</div></c:if>
-			
+				<c:if test="${not empty error}">
+					<div>${error}</div>
+				</c:if>
+				<c:if test="${not empty message}">
+					<div>${message}</div>
+				</c:if>
+
 				<div class="col-sm-12">
-					<form action="<c:url value='/loginPage' />" method="post" style="background-color: white; padding: 10px">
+					<form:form action="login" method="post" modelAttribute="user"
+						style="background-color: white; padding: 10px">
 
 						<div class="control" style="padding: 20px">
-							<input type="text" class="form-control border22 logind"
-								placeholder="My Stoic ID" name="username" />
+							<form:input path="customer_id" type="text"
+								class="form-control border22 logind" placeholder="My Stoic ID"
+								name="username" />
 							<div align="right" style="padding: 10px">
 								<a class="h22" href="#">I forgot my Stoic ID</a>
 							</div>
 						</div>
 
 						<div class="control" style="padding: 20px">
-							<input type="password" class="form-control border22 logind "
+							<form:input path="password" type="password"
+								class="form-control border22 logind "
 								placeholder="My Stoic Password" name="password" />
 							<div align="right" style="padding: 10px">
 								<a class="h22" href="#">I forgot my Stoic Password</a>
@@ -93,7 +102,7 @@
 						</div>
 						<div class="control" style="padding: 5px; align: right">
 							<div class="col-md-6 col-xs-6 vs ">
-								&nbsp <input type="checkbox"> Remember me
+								&nbsp; <input type="checkbox"> Remember me
 							</div>
 						</div>
 						<div class="control" style="padding: 10px"></div>
@@ -103,17 +112,18 @@
 							</div>
 						</div>
 						<br>
-					</form>
+					</form:form>
 
 				</div>
 			</div>
 
 		</div>
-		<section id="v07" class="demo"> <a href="#questions"><span></span><span></span><span></span></a>
+		<section id="v07" class="demo">
+			<a href="#questions"><span></span><span></span><span></span></a>
 		</section>
 
 	</div>
-	</div>
+
 
 	<!-- Questions Section -->
 	<div id="questions" name="questions" class="container-fluid">
@@ -126,6 +136,8 @@
 							href="#">Know your bill</a><br> <a class="h22" href="#">Get
 							the best out of your data plan</a><br> <a class="h22" href="#">More
 							solutions..</a><br> <br>
+
+					</h4>
 				</div>
 				<div class="col-sm-2">
 					<span class="glyphicon glyphicon-signal logo"></span>
@@ -133,7 +145,7 @@
 			</div>
 		</div>
 		<a class="h22" href="#">Stoic Community | Service plans | Moving ?</a>
-		</h4>
+
 		<br>
 	</div>
 
@@ -176,25 +188,24 @@
 
 	<!-- Container (Trending Section) -->
 	<div id="trending" class="container-fluid text-center">
-		<p class="h22 h222 text-left">Trending
-		</h2>
+		<p class="h22 h222 text-left">Trending</p>
 		<br>
 		<div class="col-sm-12 bg-gray">
 			<div class="row slideanim">
 				<div class="col-sm-12">
 					<div class="col-sm-9">
 						<div class="col-sm-4">
-							<img src="${coreImg }/vvv.jpg" class="img-responsive" alt="#">
+							<img src="img/vvv.jpg" class="img-responsive" alt="#">
 							<h4>1</h4>
 							<p>stoic Zeno...</p>
 						</div>
 						<div class="col-sm-4">
-							<img src="${coreImg }/vvv.jpg" class="img-responsive" alt="#">
+							<img src="img/vvv.jpg" class="img-responsive" alt="#">
 							<h4>2</h4>
 							<p>stoic Zeno...</p>
 						</div>
 						<div class="col-sm-4">
-							<img src="${coreImg }/vvv.jpg" class="img-responsive" alt="#">
+							<img src="img/vvv.jpg" class="img-responsive" alt="#">
 							<h4>3</h4>
 							<p>stoic Zeno...</p>
 						</div>
@@ -212,23 +223,22 @@
 
 					</div>
 				</div>
-				<br>
-				<br>
+				<br> <br>
 				<div class="row slideanim">
 					<div class="col-sm-12">
 						<div class="col-sm-9">
 							<div class="col-sm-4">
-								<img src="${coreImg }/vvv.jpg" class="img-responsive" alt="#">
+								<img src="img/vvv.jpg" class="img-responsive" alt="#">
 								<h4>4</h4>
 								<p>stoic Zeno...</p>
 							</div>
 							<div class="col-sm-4">
-								<img src="${coreImg }/vvv.jpg" class="img-responsive" alt="#">
+								<img src="img/vvv.jpg" class="img-responsive" alt="#">
 								<h4>5</h4>
 								<p>stoic Zeno...</p>
 							</div>
 							<div class="col-sm-4">
-								<img src="${coreImg }/vvv.jpg" class="img-responsive" alt="#">
+								<img src="img/vvv.jpg" class="img-responsive" alt="#">
 								<h4>6</h4>
 								<p>stoic Zeno...</p>
 							</div>
@@ -238,15 +248,16 @@
 			</div>
 		</div>
 	</div>
-	<footer class="container-fluid text-center bg-grey"> <a
-		href="#myPage" title="To Top"> <span
-		class="glyphicon glyphicon-chevron-up text-center"></span>
-	</a>
-	<p>
-		<a href="#" class="h22">&copy Stoic Zeno Inc. All rights reserved.
-			<br>Privacy | Terms of use | Feedback | Help | Contact Us
+	<footer class="container-fluid text-center bg-grey">
+		<a href="#myPage" title="To Top"> <span
+			class="glyphicon glyphicon-chevron-up text-center"></span>
 		</a>
-	</p>
+		<p>
+			<a href="#" class="h22">&copy; Stoic Zeno Inc. All rights
+				reserved. <br>Privacy | Terms of use | Feedback | Help |
+				Contact Us
+			</a>
+		</p>
 	</footer>
 </body>
 </html>
