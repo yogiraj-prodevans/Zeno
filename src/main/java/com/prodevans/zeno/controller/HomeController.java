@@ -12,6 +12,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.prodevans.zeno.dao.impl.UserInfoDAOImpl;
@@ -55,7 +56,7 @@ public class HomeController {
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String login(@ModelAttribute("user") UserInfo user, ModelMap model) {
-		model.addAttribute("userInfo", user);
+
 		boolean result = false;
 		try {
 			result = getImpl().loginCheck(user);
@@ -69,15 +70,27 @@ public class HomeController {
 		}
 
 		if (result) {
-			return "/home";
+			model.addAttribute("userInfo", user.getCustomer_id());
+			return "redirect:home";
 		} else {
-			return "/login";
+			model.addAttribute("error", "Login fails");
+			return "redirect:login";
 		}
 
 	}
 
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public ModelAndView login(@RequestParam(value = "error", required = false) String error, ModelMap model) {
+		if (error != null) {
+			model.addAttribute("error", "true");
+		}
+		return new ModelAndView("login", "user", new UserInfo());
+
+	}
+
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
-	public String dashboard(ModelMap model) {
+	public String dashboard(@RequestParam(value = "userInfo", required = false) String cust_id, ModelMap model) {
+		model.addAttribute("userInfo", cust_id);
 		return "home";
 
 	}

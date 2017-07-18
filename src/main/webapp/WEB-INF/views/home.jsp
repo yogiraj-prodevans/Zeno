@@ -10,6 +10,6 @@
 	Hello world!  
 </h1>
 
-<P>  The time on the server is ${userInfo.getCustomer_id()}. </P>
+<P>  The time on the server is ${userInfo}. </P>
 </body>
 </html>

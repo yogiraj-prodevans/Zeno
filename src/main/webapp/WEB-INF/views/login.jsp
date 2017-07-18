@@ -15,19 +15,8 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link href="https://fonts.googleapis.com/css?family=Open Sans"
 	rel="stylesheet" type="text/css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-
-<!-- Custom style sheet and css -->
-
-<spring:url value="/resources/css/style.css" var="coreCss" />
-<spring:url value="/resources/js/index.js" var="coreJs" />
-<spring:url value="/resources/img" var="coreImg" />
-<script src="${coreJs}"></script>
-<link rel="stylesheet" href="${coreCss}">
+<link rel="stylesheet" href="css/style.css">
 
 
 </head>
@@ -37,7 +26,7 @@
 		<div class="container">
 			<div class="navbar-header">
 				<a class="navbar-brand" href="#myPage"><img height="65px"
-					width="50px" src="${coreImg }/stoic_zeno.png"></a>
+					width="50px" src="img/stoic_zeno.png"></a>
 				<button type="button" class="navbar-toggle" data-toggle="collapse"
 					data-target="#myNavbar">
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
@@ -65,13 +54,6 @@
 				</h1>
 			</div>
 			<div class="col-sm-6">
-				<c:if test="${not empty error}">
-					<div>${error}</div>
-				</c:if>
-				<c:if test="${not empty message}">
-					<div>${message}</div>
-				</c:if>
-
 				<div class="col-sm-12">
 					<form:form action="login" method="post" modelAttribute="user"
 						style="background-color: white; padding: 10px">
@@ -113,6 +95,19 @@
 						<br>
 					</form:form>
 
+				</div>
+				<div class="col-sm-12" style="margin-top: 20px">
+					<c:if test="${not empty error}">
+						<div class="alert alert-danger alert-dismissible fade in"
+							role="alert">
+							<button type="button" class="close" data-dismiss="alert"
+								aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							<strong>Alert!</strong> Check Customer ID and password and try
+							again...
+						</div>
+					</c:if>
 				</div>
 			</div>
 
@@ -194,17 +189,17 @@
 				<div class="col-sm-12">
 					<div class="col-sm-9">
 						<div class="col-sm-4">
-							<img src="${coreImg }/vvv.jpg" class="img-responsive" alt="#">
+							<img src="img/vvv.jpg" class="img-responsive" alt="#">
 							<h4>1</h4>
 							<p>stoic Zeno...</p>
 						</div>
 						<div class="col-sm-4">
-							<img src="${coreImg }/vvv.jpg" class="img-responsive" alt="#">
+							<img src="img/vvv.jpg" class="img-responsive" alt="#">
 							<h4>2</h4>
 							<p>stoic Zeno...</p>
 						</div>
 						<div class="col-sm-4">
-							<img src="${coreImg }/vvv.jpg" class="img-responsive" alt="#">
+							<img src="img/vvv.jpg" class="img-responsive" alt="#">
 							<h4>3</h4>
 							<p>stoic Zeno...</p>
 						</div>
@@ -227,17 +222,17 @@
 					<div class="col-sm-12">
 						<div class="col-sm-9">
 							<div class="col-sm-4">
-								<img src="${coreImg }/vvv.jpg" class="img-responsive" alt="#">
+								<img src="img/vvv.jpg" class="img-responsive" alt="#">
 								<h4>4</h4>
 								<p>stoic Zeno...</p>
 							</div>
 							<div class="col-sm-4">
-								<img src="${coreImg }/vvv.jpg" class="img-responsive" alt="#">
+								<img src="img/vvv.jpg" class="img-responsive" alt="#">
 								<h4>5</h4>
 								<p>stoic Zeno...</p>
 							</div>
 							<div class="col-sm-4">
-								<img src="${coreImg }/vvv.jpg" class="img-responsive" alt="#">
+								<img src="img/vvv.jpg" class="img-responsive" alt="#">
 								<h4>6</h4>
 								<p>stoic Zeno...</p>
 							</div>
@@ -258,5 +253,12 @@
 			</a>
 		</p>
 	</footer>
+
+	<!-- Scripts files   -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="js/index.js"></script>
 </body>
 </html>

@@ -22,12 +22,13 @@
 
 
 <!-- Custom style sheet and css -->
-
+<!--  
 <spring:url value="/resources/css/style.css" var="coreCss" />
 <spring:url value="/resources/js/index.js" var="coreJs" />
-<spring:url value="/resources/img" var="coreImg" />
-<script src="${coreJs}"></script>
-<link rel="stylesheet" href="${coreCss}">
+<spring:url value="/resources/img" var="coreImg" />-->
+
+<script src="js/index.js"></script>
+<link rel="stylesheet" href="css/style.css">
 
 
 </head>
@@ -37,7 +38,7 @@
 		<div class="container">
 			<div class="navbar-header">
 				<a class="navbar-brand" href="#myPage"><img height="65px"
-					width="50px" src="${coreImg }/stoic_zeno.png"></a>
+					width="50px" src="img/stoic_zeno.png"></a>
 				<button type="button" class="navbar-toggle" data-toggle="collapse"
 					data-target="#myNavbar">
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
@@ -194,17 +195,17 @@
 				<div class="col-sm-12">
 					<div class="col-sm-9">
 						<div class="col-sm-4">
-							<img src="${coreImg }/vvv.jpg" class="img-responsive" alt="#">
+							<img src="img/vvv.jpg" class="img-responsive" alt="#">
 							<h4>1</h4>
 							<p>stoic Zeno...</p>
 						</div>
 						<div class="col-sm-4">
-							<img src="${coreImg }/vvv.jpg" class="img-responsive" alt="#">
+							<img src="img/vvv.jpg" class="img-responsive" alt="#">
 							<h4>2</h4>
 							<p>stoic Zeno...</p>
 						</div>
 						<div class="col-sm-4">
-							<img src="${coreImg }/vvv.jpg" class="img-responsive" alt="#">
+							<img src="img/vvv.jpg" class="img-responsive" alt="#">
 							<h4>3</h4>
 							<p>stoic Zeno...</p>
 						</div>
@@ -227,17 +228,17 @@
 					<div class="col-sm-12">
 						<div class="col-sm-9">
 							<div class="col-sm-4">
-								<img src="${coreImg }/vvv.jpg" class="img-responsive" alt="#">
+								<img src="img/vvv.jpg" class="img-responsive" alt="#">
 								<h4>4</h4>
 								<p>stoic Zeno...</p>
 							</div>
 							<div class="col-sm-4">
-								<img src="${coreImg }/vvv.jpg" class="img-responsive" alt="#">
+								<img src="img/vvv.jpg" class="img-responsive" alt="#">
 								<h4>5</h4>
 								<p>stoic Zeno...</p>
 							</div>
 							<div class="col-sm-4">
-								<img src="${coreImg }/vvv.jpg" class="img-responsive" alt="#">
+								<img src="img/vvv.jpg" class="img-responsive" alt="#">
 								<h4>6</h4>
 								<p>stoic Zeno...</p>
 							</div>
