@@ -1,13 +1,2 @@
 
-target/classes/com/prodevans/zeno/controller/HomeController.class
-target/classes/com/prodevans/zeno/.DS_Store
-target/classes/com/prodevans/zeno/controller/HomeController.class
-target/classes/com/prodevans/zeno/controller/HomeController.class
-target/classes/com/prodevans/zeno/controller/HomeController.class
-target/classes/com/prodevans/zeno/dao/impl/UserInfoDAOImpl.class
-*.class
-target/m2e-wtp/web-resources/META-INF/maven/com.prodevans/zeno/pom.properties
-target/zeno.war
-target/maven-archiver/pom.properties
-target/zeno/WEB-INF/views/home.jsp
-target/zeno/WEB-INF/views/login.jsp
+target/*
