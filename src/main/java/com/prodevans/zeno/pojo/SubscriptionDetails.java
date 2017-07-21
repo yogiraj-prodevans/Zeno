@@ -143,4 +143,4 @@ public class SubscriptionDetails {
 				+ ", expirydt=" + expirydt + ", svctype=" + svctype + ", subsno=" + subsno + "]";
 	}
 
-}>>>>>>>Accounts-Page
+}
