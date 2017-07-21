@@ -9,5 +9,12 @@
 </head>
 <body>
 <h3>This is dashboard</h3>
+
+
+${user_details.toString()}<br>
+${SubscriptionDetails.toString()}<br>
+${SubscriptionStatus.toString()}<br>
+
+
 </body>
 </html>

@@ -5,6 +5,7 @@
 
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	
+	
 	<bean id="customerDAO" class="com.prodevans.zeno.dao.impl.UserInfoDAOImpl">
 		<property name="dataSource" ref="mySqlDataSource" />
 	</bean>
@@ -15,6 +16,11 @@
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<property name="url" value="jdbc:mysql://localhost:3306/stoiczeno" />
 		<property name="username" value="root" />
-		<property name="password" value="" />
+		<property name="password" value="root" />
 	</bean>
+	
+	<!-- Configuration of XML-RPC -->
+	<import resource="rpc-cong.xml"/>
+	
+	
 </beans>
