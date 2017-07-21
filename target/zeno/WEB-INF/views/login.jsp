@@ -4,7 +4,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ page session="false"%>
-
+<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 
 <!DOCTYPE html>
 <html>
@@ -24,19 +24,19 @@
   <link href="https://fonts.googleapis.com/css?family=Lato|Roboto:100" rel="stylesheet">
   <!-- Fonts END -->
   <!-- Global styles START -->          
-  <link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Global styles END --> 
    
  
 
   <!-- Theme styles START -->
-  <link href="assets/pages/css/components.css" rel="stylesheet">
+  <link href="pages/css/components.css" rel="stylesheet">
 
-  <link href="assets/corporate/css/styleblue.css" rel="stylesheet">
-  <link href="assets/corporate/css/style-responsive.css" rel="stylesheet">
-  <link href="assets/corporate/css/themes/blue.css" rel="stylesheet" id="style-color">
-  <link href="assets/corporate/css/custom.css" rel="stylesheet">
+  <link href="corporate/css/styleblue.css" rel="stylesheet">
+  <link href="corporate/css/style-responsive.css" rel="stylesheet">
+  <link href="corporate/css/themes/blue.css" rel="stylesheet" id="style-color">
+  <link href="corporate/css/custom.css" rel="stylesheet">
   <!-- Theme styles END -->
   <style>
     .v_text {
@@ -66,17 +66,17 @@
   <div class="header">
     <div class="container">
       <a class="site-logo" href="#">
-        <img src="assets/corporate/img/logos/logo.png" alt="Stoic Zeno"> </a>
+        <img src="corporate/img/logos/logo.png" alt="Stoic Zeno"> </a>
       <a href="javascript:void(0);" class="mobi-toggler"><i class="fa fa-bars"></i></a>
       <!-- BEGIN NAVIGATION -->
       <div class="header-navigation pull-right font-transform-inherit"  style="font-size:11px">
         <ul>
           <li class="dropdown active"> </li>
           <li class="active" >
-            <a href="login.html" >Login</a>
+            <a href="${contextPath}/login" >Login</a>
           </li>
 		  <li>
-            <a href="register.html">Register</a>
+            <a href="${contextPath}/register">Register</a>
           </li>
         </ul>
       </div>
@@ -104,7 +104,7 @@
               <div class="form-info">
 			  <p style="font-family:Roboto; font-color:#gray; font-size:15px; padding-bottom:5px"> Login </P>
 			    <div class="content-form-page">
-                  <form:form class="form-horizontal form-without-legend" role="form" method="post" modelAttribute="user">
+                  <form:form class="form-horizontal form-without-legend" role="form" action="login" method="post" modelAttribute="user">
                     <div class="form-group"> <label for="email" class="col-lg-12 control-label"> <span class="require"></span></label>
                       <div class="col-lg-12">
                         <form:input path="customer_id" type="text" class="form-control" style=" font-size:11px; font-style:italic" id="email" placeholder="My Stoic ID " /> 
@@ -113,7 +113,7 @@
                     </div>
                     <div class="form-group"> <label for="password" class="col-lg-12 control-label"><span class="require"></span></label>
                       <div class="col-lg-12">
-                        <form:input path="password" type="text" class="form-control" id="password"style=" font-size:11px; font-style:italic" placeholder="My Stoic Password " />
+                        <form:input path="password" type="text" class="form-control" id="password" style=" font-size:11px; font-style:italic" placeholder="My Stoic Password " />
 						<label for="email" class="col-lg-12 control-label"><a style="color:#F2F2F2F2; font-size:11px" href="#">I forgot my Stoic Password</a></label>
 					  </div>
                     </div>
@@ -174,19 +174,19 @@
   <!-- Load javascripts at bottom, this will reduce page load time -->
   <!-- BEGIN CORE PLUGINS (REQUIRED FOR ALL PAGES) -->
   <!--[if lt IE 9]>
-    <script src="assets/plugins/respond.min.js"></script>
+    <script src="plugins/respond.min.js"></script>
     <![endif]-->
-  <script src="assets/plugins/jquery.min.js" type="text/javascript"></script>
-  <script src="assets/plugins/jquery-migrate.min.js" type="text/javascript"></script>
-  <script src="assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-  <script src="assets/corporate/scripts/back-to-top.js" type="text/javascript"></script>
+  <script src="plugins/jquery.min.js" type="text/javascript"></script>
+  <script src="plugins/jquery-migrate.min.js" type="text/javascript"></script>
+  <script src="plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="corporate/scripts/back-to-top.js" type="text/javascript"></script>
   <!-- END CORE PLUGINS -->
   <!-- BEGIN PAGE LEVEL JAVASCRIPTS (REQUIRED ONLY FOR CURRENT PAGE) -->
-  <script src="assets/plugins/fancybox/source/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <script src="plugins/fancybox/source/jquery.fancybox.pack.js" type="text/javascript"></script>
   <!-- pop up -->
-  <script src="assets/plugins/owl.carousel/owl.carousel.min.js" type="text/javascript"></script>
+  <script src="plugins/owl.carousel/owl.carousel.min.js" type="text/javascript"></script>
   <!-- slider for products -->
-  <script src="assets/corporate/scripts/layout.js" type="text/javascript"></script>
+  <script src="corporate/scripts/layout.js" type="text/javascript"></script>
  
   <script type="text/javascript">
     jQuery(document).ready(function() {

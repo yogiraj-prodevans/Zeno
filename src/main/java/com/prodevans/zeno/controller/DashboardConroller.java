@@ -3,12 +3,14 @@ package com.prodevans.zeno.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.prodevans.zeno.dao.impl.DashboardDAOImpl;
 import com.prodevans.zeno.pojo.SubscriptionDetails;
 import com.prodevans.zeno.pojo.UserDetails;
+import com.prodevans.zeno.pojo.UserInfo;
 
 @Controller
 public class DashboardConroller {
@@ -24,14 +26,14 @@ public class DashboardConroller {
 	}
 
 	@RequestMapping(value = "/dashboard", method = RequestMethod.GET)
-	public String getDashboard(ModelMap model) {
+	public String getDashboard(@ModelAttribute("user") UserInfo user, ModelMap model) {
 
 		try {
-			UserDetails userdetails = DashboardImpl.getUserDetails("ROL000006");
+			UserDetails userdetails = DashboardImpl.getUserDetails(user.getCustomer_id());
 
 			model.addAttribute("user_details", userdetails);
 
-			SubscriptionDetails details = DashboardImpl.getSubscriptionDetails("ROL000006");
+			SubscriptionDetails details = DashboardImpl.getSubscriptionDetails(user.getCustomer_id());
 
 			model.addAttribute("SubscriptionDetails", details);
 
