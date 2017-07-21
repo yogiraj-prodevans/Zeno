@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
@@ -113,7 +114,7 @@
                     </div>
                     <div class="form-group"> <label for="password" class="col-lg-12 control-label"><span class="require"></span></label>
                       <div class="col-lg-12">
-                        <form:input path="password" type="text" class="form-control" id="password" style=" font-size:11px; font-style:italic" placeholder="My Stoic Password " />
+                        <form:input path="password" type="password" class="form-control" id="password" style=" font-size:11px; font-style:italic" placeholder="My Stoic Password " />
 						<label for="email" class="col-lg-12 control-label"><a style="color:#F2F2F2F2; font-size:11px" href="#">I forgot my Stoic Password</a></label>
 					  </div>
                     </div>
@@ -199,4 +200,5 @@
   <!-- END PAGE LEVEL JAVASCRIPTS -->
   <!-- END BODY -->
 </body>
+>>>>>>> Accounts-Page
 </html>

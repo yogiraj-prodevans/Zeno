@@ -1,3 +1,4 @@
+
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri = "http://www.springframework.org/tags/form" prefix = "form"%>
 <%@ page session="false" %>
@@ -106,7 +107,7 @@
 								<div class="col-lg-12 col-md-12 col-sm-12 margin-top-5 ">
 									<div class="col-lg-12 col-md-12 col-sm-12 margin-top-5 ">
 									  <h2 style="font-family:Roboto; font-size:45px"><strong>Experience  transparency</strong></h2>
-									  <h2 style="font-family:Roboto; font-size:30px">Welcome, <strong style="color:#E17C80">ArcherS</strong> to your stoic zeno page</h2>
+									  <h2 style="font-family:Roboto; font-size:30px">Welcome, <strong style="color:#E17C80">${user_details.getFirst_name() }</strong> to your stoic zeno page</h2>
 									</div>
 								</div>
 							  </div>
@@ -121,8 +122,8 @@
 							<div class="col-lg-12 col-md-12 col-sm-12 " style=" padding-bottom:16">
 								<div class="col-lg-3 div2">
 									<p style=" font-size:10px; color:gray; line-height:.5">Zeno</p>
-									<p style=" font-size:10px; color:gray; line-height:.5">Account No : 1234567890 </p>
-									<p style=" font-size:10px; color:gray; line-height:.5">Current Plan Name : Premium</p>
+									<p style=" font-size:10px; color:gray; line-height:.5">Account No : ${user_details.getCustomer_id() } </p>
+									<p style=" font-size:10px; color:gray; line-height:.5">Current Plan Name : ${SubscriptionDetails.getRatePlan() }</p>
 									<!-- BEGIN PROGRESS BAR -->
 										
 										 <div class="front-skills " style=" padding-top:20%">
@@ -135,19 +136,19 @@
 								</div>
 								<div class="col-lg-3 div2" >
 									  <p style="font-size:10px; color:gray; line-height:.5">Payment</p>
-									  <p style="font-size:10px; color:gray; line-height:.5">Account No : 1234567890</p>
+									  <p style="font-size:10px; color:gray; line-height:.5">Account No : ${user_details.getCustomer_id() }</p>
 									  <p style="font-size:15px; color:gray; line-height:1">Rs 1,000.00 is due in <strong style="color:#E17C80">5 </strong>days</p>
 									  
 									  <div class="front-skills" style=" padding-top:30%">
 									
 									  
-										<p style="font-size:10px; color:gray; line-height:1">Due Date : 02/06/2017</p>
+										<p style="font-size:10px; color:gray; line-height:1">Due Date : ${SubscriptionDetails.getExpirydt() }</p>
 									  
 									</div>   
 								</div>
 								<div class="col-lg-3 div2" >
 									<p style=" font-size:10px; color:gray; line-height:.5">Service Requests</p>
-									<p style="font-size:10px; color:gray; line-height:.5">Account No : 1234567890</p>
+									<p style="font-size:10px; color:gray; line-height:.5">Account No : ${user_details.getCustomer_id() }</p>
 									<!-- BEGIN PROGRESS BAR -->
 									<div class="front-skills" style=" padding-top:25%">
 									<p style=" font-size:10px; color:gray; line-height:1"><strong style="color:#E17C80"> 5 </strong>Active of<strong style="color:#E17C80"> 10</strong> Total</p>	
@@ -208,4 +209,5 @@
   <!-- END PAGE LEVEL JAVASCRIPTS -->
   <!-- END BODY -->
 </body>
+
 </html>
