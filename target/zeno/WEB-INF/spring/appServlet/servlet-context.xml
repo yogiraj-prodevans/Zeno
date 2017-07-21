@@ -19,6 +19,10 @@
 	<resources mapping="/js/**" location="/resources/js/" />
 	<resources mapping="/css/**" location="/resources/css/" />
 	<resources mapping="/img/**" location="/resources/img/" />
+	<resources mapping="/corporate/**" location="/resources/corporate/" />
+	<resources mapping="/pages/**" location="/resources/pages/" />
+	<resources mapping="/plugins/**" location="/resources/plugins/" />
+	
 	
 	
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 
@@ -31,10 +35,4 @@
 
 	<context:component-scan base-package="com.prodevans.zeno" />
 	
-	
-	
-
-	
-
-
 </beans:beans>
