@@ -78,7 +78,7 @@ public class HomeController {
 
 		if (result) {
 			model.addAttribute("userInfo", user.getCustomer_id());
-			return "redirect:home";
+			return "redirect:dashboard";
 		} else {
 			model.addAttribute("error", "Login fails");
 			return "redirect:login";
