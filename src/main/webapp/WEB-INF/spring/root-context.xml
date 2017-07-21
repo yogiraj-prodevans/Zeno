@@ -5,6 +5,7 @@
 
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	
+	
 	<bean id="customerDAO" class="com.prodevans.zeno.dao.impl.UserInfoDAOImpl">
 		<property name="dataSource" ref="mySqlDataSource" />
 	</bean>
@@ -17,4 +18,9 @@
 		<property name="username" value="zeno" />
 		<property name="password" value="zeno@123" />
 	</bean>
+	
+	<!-- Configuration of XML-RPC -->
+	<import resource="rpc-cong.xml"/>
+	
+	
 </beans>
