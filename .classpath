@@ -33,6 +33,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="D:/Prodevans/Zeno/JSP_Kit/CUSTOM_CHECKOUT_FORM_KIT/ccavutil.jar"/>
+	<classpathentry kind="lib" path="D:/Prodevans/Zeno/ccav/JSP_Kit/IFRAME_KIT/ccavutil.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

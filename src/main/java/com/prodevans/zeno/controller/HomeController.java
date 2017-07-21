@@ -3,6 +3,9 @@ package com.prodevans.zeno.controller;
 import java.sql.SQLException;
 import java.util.Locale;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,8 +58,12 @@ public class HomeController {
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String login(@ModelAttribute("user") UserInfo user, ModelMap model) {
-
+	public String login(@ModelAttribute("user") UserInfo user, ModelMap model,HttpServletRequest request,@RequestParam String customer_id) 
+	{
+		HttpSession session=request.getSession();
+		model.addAttribute("user",customer_id);
+		return "home";
+		/*
 		boolean result = false;
 		try {
 			result = getImpl().loginCheck(user);
@@ -76,7 +83,7 @@ public class HomeController {
 			model.addAttribute("error", "Login fails");
 			return "redirect:login";
 		}
-
+		*/
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
@@ -87,7 +94,9 @@ public class HomeController {
 		return new ModelAndView("login", "user", new UserInfo());
 
 	}
-
+	
+	
+	
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	public String dashboard(@RequestParam(value = "userInfo", required = false) String cust_id, ModelMap model) {
 		model.addAttribute("userInfo", cust_id);

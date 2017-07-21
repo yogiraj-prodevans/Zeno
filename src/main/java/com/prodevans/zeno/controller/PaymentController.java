@@ -11,7 +11,7 @@ public class PaymentController
 	@RequestMapping(value = "/payment", method = RequestMethod.GET)
 	public String doPayment()
 	{
-		return "payment/paymentRequest";
+		return "payment/sendData";
 	}
 
 	@RequestMapping(value = "/ccavRequestHandler", method=RequestMethod.POST)

@@ -12,32 +12,24 @@
 </head>
 <body>
 	<%
-	 String accessCode= "";		//Put in the Access Code in quotes provided by CCAVENUES.
-	 String workingKey = "";    //Put in the 32 Bit Working Key provided by CCAVENUES.  
+	 String accessCode= "AVRC72EG07BS00CRSB";		//Put in the Access Code in quotes provided by CCAVENUES.
+	 String workingKey = "F9F7E30646BF9F9163D6912C338D61FC";    //Put in the 32 Bit Working Key provided by CCAVENUES.  
 	 Enumeration enumeration=request.getParameterNames();
 	 String ccaRequest="", pname="", pvalue="";
 	 while(enumeration.hasMoreElements()) {
 	      pname = ""+enumeration.nextElement();
 	      pvalue = request.getParameter(pname);
 	      ccaRequest = ccaRequest + pname + "=" + URLEncoder.encode(pvalue,"UTF-8") + "&";
-
-	     
 	 }
-	 String dd[]= ccaRequest.split("&");
-	 for(String d : dd )
-	 	out.println("\n"+d);
-	 //AesCryptUtil aesUtil=new AesCryptUtil(workingKey);
-	 //String encRequest = aesUtil.encrypt(ccaRequest);
+	 AesCryptUtil aesUtil=new AesCryptUtil(workingKey);
+	 String encRequest = aesUtil.encrypt(ccaRequest);
 	%>
-
-	 
+	
 	<form id="nonseamless" method="post" name="redirect" action="https://secure.ccavenue.com/transaction/transaction.do?command=initiateTransaction"/> 
-		<input type="hidden" id="encRequest" name="encRequest" value="00">
-		<input type="hidden" name="access_code" id="access_code" value="00">
+		<input type="hidden" id="encRequest" name="encRequest" value="<%= encRequest %>">
+		<input type="hidden" name="access_code" id="access_code" value="<%= accessCode %>">
 		<script language='javascript'>document.redirect.submit();</script>
 	</form>
-	
-	
 	
  </body> 
 </html>
