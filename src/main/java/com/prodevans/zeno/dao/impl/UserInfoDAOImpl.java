@@ -1,40 +1,44 @@
 package com.prodevans.zeno.dao.impl;
 
 import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Vector;
 
-import javax.sql.DataSource;
-
-import org.springframework.jdbc.core.JdbcTemplate;
+import org.apache.xmlrpc.client.XmlRpcClient;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.prodevans.zeno.dao.UserLoginDAO;
-import com.prodevans.zeno.dao.mapper.UserInfoMapper;
 import com.prodevans.zeno.pojo.UserInfo;
 
 public class UserInfoDAOImpl implements UserLoginDAO {
-	private DataSource dataSource;
-	private JdbcTemplate templete;
+	@Autowired
+	private String unifyHandler;
 
-	/**
-	 * @param dataSource
-	 *            the dataSource to set
-	 */
-	public void setDataSource(DataSource dataSource) {
-		this.dataSource = dataSource;
-		this.templete = new JdbcTemplate(dataSource);
+	@Autowired
+	private XmlRpcClient rpcClient;
+
+	public void setUnifyHandler(String unifyHandler) {
+		this.unifyHandler = unifyHandler;
+	}
+
+	public void setRpcClient(XmlRpcClient rpcClient) {
+		this.rpcClient = rpcClient;
 	}
 
 	@Override
 	public boolean loginCheck(UserInfo userInfo) throws SQLException, Exception {
-		String sql = "SELECT * FROM USER WHERE customer_id = ? and password = ?";
-		UserInfo i = null;
 
-		i = templete.queryForObject(sql, new Object[] { userInfo.getCustomer_id(), userInfo.getPassword() },
-				new UserInfoMapper());
+		Vector params = new Vector();
+		params.add(userInfo.getCustomer_id());
 
-		if (i != null)
+		HashMap<String, Object> result = (HashMap<String, Object>) rpcClient
+				.execute(unifyHandler + ".getAccountDetails", params);
+
+		if (result.get("password").toString().equals(userInfo.getPassword())) {
 			return true;
-		else
+		} else {
 			return false;
+		}
 	}
 
 }

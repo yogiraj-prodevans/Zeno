@@ -1,5 +1,9 @@
 package com.prodevans.zeno.pojo;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class SubscriptionDetails {
 	private String ratePlan;
 	private String startDate;
@@ -74,6 +78,7 @@ public class SubscriptionDetails {
 	 *            the status to set
 	 */
 	public void setStatus(int status) {
+
 		this.status = status;
 	}
 
@@ -81,15 +86,19 @@ public class SubscriptionDetails {
 	 * @return the expirydt
 	 */
 	public String getExpirydt() {
+
 		return expirydt;
 	}
 
 	/**
 	 * @param expirydt
 	 *            the expirydt to set
+	 * @throws ParseException
 	 */
-	public void setExpirydt(String expirydt) {
-		this.expirydt = expirydt;
+	public void setExpirydt(String expirydt) throws ParseException {
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+		Date date = formatter.parse(expirydt);
+		this.expirydt = formatter.format(date);
 	}
 
 	/**

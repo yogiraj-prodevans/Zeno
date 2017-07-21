@@ -1,5 +1,6 @@
 package com.prodevans.zeno.dao.impl;
 
+import java.text.ParseException;
 import java.util.HashMap;
 import java.util.Vector;
 
@@ -57,7 +58,7 @@ public class DashboardDAOImpl implements DashboardDAO {
 	}
 
 	@Override
-	public SubscriptionDetails getSubscriptionDetails(String customer_id) throws XmlRpcException {
+	public SubscriptionDetails getSubscriptionDetails(String customer_id) throws XmlRpcException, ParseException {
 		SubscriptionDetails details = new SubscriptionDetails();
 		Vector<Object> params = new Vector<>();
 		params.add(customer_id);
