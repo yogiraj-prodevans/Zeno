@@ -1,4 +1,7 @@
+
 package com.prodevans.zeno.dao;
+
+import java.text.ParseException;
 
 import org.apache.xmlrpc.XmlRpcException;
 
@@ -9,7 +12,7 @@ import com.prodevans.zeno.pojo.UserDetails;
 public interface DashboardDAO {
 	public UserDetails getUserDetails(String customer_id) throws XmlRpcException;
 
-	public SubscriptionDetails getSubscriptionDetails(String customer_id) throws XmlRpcException;
+	public SubscriptionDetails getSubscriptionDetails(String customer_id) throws XmlRpcException, ParseException;
 
 	public SubscriptionStatus getSubscriptionStatus(int subno) throws XmlRpcException;
 }

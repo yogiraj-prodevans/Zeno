@@ -56,13 +56,6 @@ public class UserDetails {
 	}
 
 	/**
-	 * @return the first_name
-	 */
-	public String getFirst_name() {
-		return first_name;
-	}
-
-	/**
 	 * @param first_name
 	 *            the first_name to set
 	 */
@@ -124,6 +117,13 @@ public class UserDetails {
 	public String toString() {
 		return "UserDetails [customer_id=" + customer_id + ", first_name=" + first_name + ", last_name=" + last_name
 				+ ", email=" + email + ", mobile=" + mobile + "]";
+	}
+
+	/**
+	 * @return the first_name
+	 */
+	public String getFirst_name() {
+		return first_name;
 	}
 
 }
