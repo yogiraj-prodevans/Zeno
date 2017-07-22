@@ -45,6 +45,28 @@
 			 	</tr>
 			 	<tr>
 					<td>Language	:</td><td><input type="text" name="language" value="EN"/></td>
+                    <td><input readonly="readonly" type="hidden" name="tid" id="tid" value=""/></td>
+                </tr>
+				<tr>
+					<td>Merchant Id	:</td><td><input type="hidden" name="merchant_id" value="127191"/></td>
+				</tr>
+				<tr>
+					<td>Order Id	:</td><td><input type="hidden" name="order_id" value="123654789"/></td>
+				</tr>
+				<tr>
+					<td>Amount	:</td><td><input type="hidden" name="amount" value="1.00"/></td>
+				</tr>
+				<tr>
+					<td>Currency	:</td><td><input type="hidden" name="currency" value="INR"/></td>
+				</tr>
+				<tr>
+					<td>Redirect URL	:</td><td><input type="hidden" name="redirect_url" value="http://52.172.215.71:8080/zeno/ccavResponseHandler"/></td>
+				</tr>
+			 	<tr>
+			 		<td>Cancel URL	:</td><td><input type="hidden" name="cancel_url" value="http://52.172.215.71:8080/zeno/ccavResponseHandler"/></td>
+			 	</tr>
+			 	<tr>
+					<td>Language	:</td><td><input type="hidden" name="language" value="EN"/></td>
 				</tr>
 		     	<tr>
 		     		<td colspan="2">Billing information(optional):</td>
@@ -72,6 +94,28 @@
 		        </tr>
 		        <tr>
 		        	<td>Billing Email	:</td><td><input type="text" name="billing_email" value="test@gmail.com"/></td>
+		        	<td>Billing Name	:</td><td><input type="hidden" name="billing_name" value="Charli"/></td>
+		        </tr>
+		        <tr>
+		        	<td>Billing Address	:</td><td><input type="hidden" name="billing_address" value="Room no 1101, near Railway station Ambad"/></td>
+		        </tr>
+		        <tr>
+		        	<td>Billing City	:</td><td><input type="hidden" name="billing_city" value="Indore"/></td>
+		        </tr>
+		        <tr>
+		        	<td>Billing State	:</td><td><input type="hidden" name="billing_state" value="MH"/></td>
+		        </tr>
+		        <tr>
+		        	<td>Billing Zip	:</td><td><input type="hidden" name="billing_zip" value="425001"/></td>
+		        </tr>
+		        <tr>
+		        	<td>Billing Country	:</td><td><input type="hidden" name="billing_country" value="India"/></td>
+		        </tr>
+		        <tr>
+		        	<td>Billing Tel	:</td><td><input type="hidden" name="billing_tel" value="9896226054"/></td>
+		        </tr>
+		        <tr>
+		        	<td>Billing Email	:</td><td><input type="hidden" name="billing_email" value="test@gmail.com"/></td>
 		        </tr>
 		        <tr>
 		        	<td colspan="2">Shipping information(optional)</td>
@@ -111,6 +155,40 @@
 				</tr>
 				<tr>
 					<td>Merchant Param5	:</td><td><input type="text" name="merchant_param5" value="additional Info."/></td>
+		        	<td>Shipping Name	:</td><td><input type="hidden" name="delivery_name" value="Chaplin"/></td>
+		        </tr>
+		        <tr>
+		        	<td>Shipping Address	:</td><td><input type="hidden" name="delivery_address" value="room no.701 near bus stand"/></td>
+		        </tr>
+		        <tr>
+		        	<td>shipping City	:</td><td><input type="hidden" name="delivery_city" value="Hyderabad"/></td>
+		        </tr>
+		        <tr>
+		        	<td>shipping State	:</td><td><input type="hidden" name="delivery_state" value="Andhra"/></td>
+		        </tr>
+		        <tr>
+		        	<td>shipping Zip	:</td><td><input type="hidden" name="delivery_zip" value="425001"/></td>
+		        </tr>
+		        <tr>
+		        	<td>shipping Country	:</td><td><input type="hidden" name="delivery_country" value="India"/></td>
+		        </tr>
+		        <tr>
+		        	<td>Shipping Tel	:</td><td><input type="hidden" name="delivery_tel" value="9896226054"/></td>
+		        </tr>
+		        <tr>
+		        	<td>Merchant Param1	:</td><td><input type="hidden" name="merchant_param1" value="additional Info."/></td>
+		        </tr>
+		        <tr>
+		        	<td>Merchant Param2	:</td><td><input type="hidden" name="merchant_param2" value="additional Info."/></td>
+		        </tr>
+				<tr>
+					<td>Merchant Param3	:</td><td><input type="hidden" name="merchant_param3" value="additional Info."/></td>
+				</tr>
+				<tr>
+					<td>Merchant Param4	:</td><td><input type="hidden" name="merchant_param4" value="additional Info."/></td>
+				</tr>
+				<tr>
+					<td>Merchant Param5	:</td><td><input type="hidden" name="merchant_param5" value="additional Info."/></td>
 				</tr>
 				 
 				 <tr>
@@ -140,6 +218,10 @@
 			         </tr>
 			         <tr> <td> Emi tenure id: </td>
 			            <td><input readonly="readonly" type="text" id="emi_tenure_id" name="emi_tenure_id" value=""/>  </td>
+			            <td><input readonly="readonly" type="hidden" id="emi_plan_id"  name="emi_plan_id" value=""/> </td>
+			         </tr>
+			         <tr> <td> Emi tenure id: </td>
+			            <td><input readonly="readonly" type="hidden" id="emi_tenure_id" name="emi_tenure_id" value=""/>  </td>
 			         </tr>
 			         <tr><td>Pay Through</td>
 				         <td>
@@ -168,6 +250,7 @@
 		         
 		         <tr> <td> Card Type: </td>
 		             <td><input type="text" id="card_type" name="card_type" value="" readonly="readonly"/></td>
+		             <td><input type="hidden" id="card_type" name="card_type" value="" readonly="readonly"/></td>
 		         </tr>
 		        
 		        <tr> <td> Card Name: </td>
@@ -204,6 +287,35 @@
 			<tr> 
 				<td> OTP:</td>
 		            	<td><input type="text" name="otp" value=""/>e.g. 123456</td>
+		             <td><input type="hidden" id="data_accept" name="data_accept" readonly="readonly"/></td>
+		        </tr>
+		         
+		         <tr> <td> Card Number: </td>
+		            <td> <input type="hidden" id="card_number" name="card_number" value=""/>e.g. 4111111111111111 </td>
+		         </tr>
+		          <tr> <td> Expiry Month: </td>
+		               <td> <input type="hidden" name="expiry_month" value=""/>e.g. 07 </td>
+		         </tr>
+		          <tr> <td> Expiry Year: </td>
+		          	   <td> <input type="hidden" name="expiry_year" value=""/>e.g. 2027</td>
+		         </tr>
+		          <tr> <td> CVV Number:</td>
+		               <td> <input type="hidden" name="cvv_number" value=""/>e.g. 328</td>
+		         </tr>
+		         <tr> <td> Issuing Bank:</td>
+		            <td><input type="hidden" name="issuing_bank" value=""/>e.g. State Bank Of India</td>
+		         </tr>
+			<tr> 
+				<td> Mobile Number:</td>
+		            	<td><input type="hidden" name="mobile_number" value=""/>e.g. 9770707070</td>
+		         </tr>
+			<tr> 
+				<td> MMID:</td>
+		            	<td><input type="hidden" name="mm_id" value=""/>e.g. 1234567</td>
+		         </tr>
+			<tr> 
+				<td> OTP:</td>
+		            	<td><input type="hidden" name="otp" value=""/>e.g. 123456</td>
 		         </tr>
 		         <tr> 
 				    <td> Promotions:</td>
