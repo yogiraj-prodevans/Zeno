@@ -25,6 +25,7 @@ public class SubscriptionDetails {
 	 * @param expirydt
 	 * @param svctype
 	 * @param subsno
+	 * @param planno
 	 */
 	public SubscriptionDetails(String ratePlan, String startDate, int status, String expirydt, String svctype,
 			int subsno) {
@@ -34,6 +35,7 @@ public class SubscriptionDetails {
 		this.expirydt = expirydt;
 		this.svctype = svctype;
 		this.subsno = subsno;
+
 	}
 
 	/**
