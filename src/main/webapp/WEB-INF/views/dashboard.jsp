@@ -83,7 +83,7 @@
         <ul>
         <li class="dropdown active"> </li>
         <li class="active"><a href="dashboard">Home</a></li>
-		<li><a href="#">Current plan</a></li>  
+		<li><a href="${pageContext.request.contextPath }/currentplan">Current plan</a></li>  
 		<li><a href="${pageContext.request.contextPath }/payment">Make Payment</a></li>  
 		<li><a href="#">Top up</a></li> 
 		<li><a href="#">Service Request</a></li> 
