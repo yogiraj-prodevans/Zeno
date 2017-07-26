@@ -135,15 +135,15 @@
       <!-- BEGIN NAVIGATION -->
       <div class="header-navigation pull-right font-transform-inherit" style="font-size:10px">
         <ul>
-        <li class="dropdown active"> </li>
-        <li class="active"><a href="accounts.html">Home</a></li>
-		<li><a href="#">Current plan</a></li>  
-		<li><a href="#">Make Payment</a></li>  
-		<li><a href="#">Top up</a></li> 
-		<li><a href="#">Service Request</a></li> 
-		<li><a href="#">Help</a></li> 
-		<li><a href="#">Parental Control</a></li>
-		<li><a href="#">Logout</a></li>
+          <li class="dropdown active"> </li>
+          <li class="active"><a href="dashboard">Home</a></li>
+      		<li><a href="${pageContext.request.contextPath }/currentplan">Current plan</a></li>  
+      		<li><a href="${pageContext.request.contextPath }/billingPayment">Make Payment</a></li>  
+      		<li><a href="${pageContext.request.contextPath }/topup">Top up</a></li> 
+      		<li><a href="#">Service Request</a></li> 
+      		<li><a href="#">Help</a></li> 
+      		<li><a href="#">Parental Control</a></li>
+      		<li><a href="#">Logout</a></li>
         </ul>
       </div>
       <!-- END NAVIGATION -->
