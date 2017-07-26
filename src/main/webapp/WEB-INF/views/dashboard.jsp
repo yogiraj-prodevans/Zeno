@@ -84,8 +84,8 @@
         <li class="dropdown active"> </li>
         <li class="active"><a href="dashboard">Home</a></li>
 		<li><a href="${pageContext.request.contextPath }/currentplan">Current plan</a></li>  
-		<li><a href="${pageContext.request.contextPath }/payment">Make Payment</a></li>  
-		<li><a href="#">Top up</a></li> 
+		<li><a href="${pageContext.request.contextPath }/billingPayment">Make Payment</a></li>  
+		<li><a href="${pageContext.request.contextPath }/topup">Top up</a></li> 
 		<li><a href="#">Service Request</a></li> 
 		<li><a href="#">Help</a></li> 
 		<li><a href="#">Parental Control</a></li>
@@ -169,7 +169,7 @@
     <div class="container">
       <div class="row">
         <!-- BEGIN COPYRIGHT -->
-          <div class="col-md-10 col-sm-10 padding-bottom-10 " > 2017 © Stoic Zeno. ALL Rights Reserved.&nbsp 
+          <div class="col-md-10 col-sm-10 padding-bottom-10 " > 2017 Â© Stoic Zeno. ALL Rights Reserved.&nbsp 
 		  <a href="#">Privacy Policy</a> |
           <a href="javascript:;">Terms of Service</a> |
 		  <a href="javascript:;">Refund and Cancellation</a> |
