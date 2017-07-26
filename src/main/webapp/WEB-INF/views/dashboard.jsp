@@ -88,6 +88,7 @@
 		<li><a href="#">Service Request</a></li> 
 		<li><a href="#">Help</a></li> 
 		<li><a href="#">Parental Control</a></li>
+		<li><a href="${pageContext.request.contextPath }/profile">Profile</a></li>
         </ul>
       </div>
       <!-- END NAVIGATION -->
@@ -106,7 +107,7 @@
 								<div class="col-lg-12 col-md-12 col-sm-12 margin-top-5 ">
 									<div class="col-lg-12 col-md-12 col-sm-12 margin-top-5 ">
 									  <h2 style="font-family:Roboto; font-size:45px"><strong>Experience  transparency</strong></h2>
-									  <h2 style="font-family:Roboto; font-size:30px">Welcome, <strong style="color:#E17C80">${user_details.getFirst_name() }</strong> to your stoic zeno page</h2>
+									  <h2 style="font-family:Roboto; font-size:30px">Welcome, <strong style="color:#E17C80">${user_details.getFirst_name() } ${user_details.getLast_name() }</strong> to your stoic zeno page</h2>
 									</div>
 								</div>
 							  </div>

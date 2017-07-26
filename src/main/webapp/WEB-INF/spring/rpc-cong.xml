@@ -31,4 +31,10 @@
 	<property name="unifyHandler" ref="unifyHandler"></property>
 	<property name="rpcClient" ref="rpcClient"></property>
 	</bean>
+	
+	<bean id="profileImpl" class="com.prodevans.zeno.dao.impl.ProfileDAOImpl">
+	<property name="unifyHandler" ref="unifyHandler"></property>
+	<property name="rpcClient" ref="rpcClient"></property>
+	</bean>
+	
 </beans>
