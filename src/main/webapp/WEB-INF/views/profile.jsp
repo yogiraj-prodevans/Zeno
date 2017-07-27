@@ -65,7 +65,7 @@
         <ul>
 			<li class="dropdown active"> </li>
 			<li><a href="${pageContext.request.contextPath }/dashboard">Home</a></li>
-			<li class="active"><a href="${pageContext.request.contextPath }/currentplan">Current plan</a></li>  
+			<li ><a href="${pageContext.request.contextPath }/currentplan">Current plan</a></li>  
 			<li><a href="${pageContext.request.contextPath }/billingPayment">Make Payment</a></li>  
 			<li><a href="${pageContext.request.contextPath }/topup">Top up</a></li> 
 			<li><a href="#">Service Request</a></li> 
@@ -77,7 +77,7 @@
               </a>
                 
               <ul class="dropdown-menu">
-                <li><a href="${pageContext.request.contextPath }/profile">Profile</a></li>
+                <li class="active"><a href="${pageContext.request.contextPath }/profile">Profile</a></li>
                 <li><a href="#">Account</a></li>
                 <li><a href="#">Logout</a></li>
               </ul>
