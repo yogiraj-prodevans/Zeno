@@ -74,7 +74,17 @@
 			<li><a href="#">Service Request</a></li> 
 			<li><a href="#">Help</a></li> 
 			<li><a href="#">Parental Control</a></li>
-			<li><a href="#">Logout</a></li>
+			<li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
+          		Settings      
+              </a>
+                
+              <ul class="dropdown-menu">
+                <li><a href="${pageContext.request.contextPath }/profile">Profile</a></li>
+                <li><a href="#">Account</a></li>
+                <li><a href="#">Logout</a></li>
+              </ul>
+            </li>
         </ul>
       </div>
       <!-- END NAVIGATION -->

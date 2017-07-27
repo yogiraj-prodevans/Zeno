@@ -112,7 +112,7 @@
                         <input type="email" class="form-control" id="registeredemail"style=" font-size:11px; font-style:italic" placeholder="Registered Email ">
 						<label for="registeredemail" class="col-lg-12 control-label"><!--<a style="color:#F2F2F2F2; font-size:11px" href="#">I forgot my Stoic Password</a>--></label>
 					  </div>
-                    </div>
+          																	          </div>
                     <div class="row">
                       <div class="col-lg-12 col-md-offset-1 padding-left-0 padding-top-10">
                         <button type="submit" style=" color:#F2F2F2F2; font-size:14px; font-family:Roboto" class="btn btn-primary ">Register</button>

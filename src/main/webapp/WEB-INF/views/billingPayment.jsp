@@ -143,7 +143,17 @@
       		<li><a href="#">Service Request</a></li> 
       		<li><a href="#">Help</a></li> 
       		<li><a href="#">Parental Control</a></li>
-      		<li><a href="#">Logout</a></li>
+      		<li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
+          		Settings      
+              </a>
+                
+              <ul class="dropdown-menu">
+                <li><a href="${pageContext.request.contextPath }/profile">Profile</a></li>
+                <li><a href="#">Account</a></li>
+                <li><a href="#">Logout</a></li>
+              </ul>
+            </li>
         </ul>
       </div>
       <!-- END NAVIGATION -->
@@ -164,7 +174,7 @@
 								<div class="col-lg-3 div2">
 									<p style=" font-size:14px; line-height:.5">Your Current Plan</p><br>
 									<p style=" font-size:10px; color:gray; line-height:.5">Plan Name : Name of Plan </p>
-									<p style=" font-size:10px; color:gray; line-height:.5">Basic -  ₹849 
+									<p style=" font-size:10px; color:gray; line-height:.5">Basic -  INR 849 
                   <span style=" font-size:8px; color:gray; line-height:.5">Per Month</span>
                   </p>
 
@@ -195,7 +205,7 @@
 
                   <div class="front-skills" style=" padding-top:15%"></div>
 
-									<p style="font-size:16px; color:gray; line-height:1">₹ 1,000.00 is due in <strong style="color:#E17C80">5 </strong>days</p>
+									<p style="font-size:16px; color:gray; line-height:1">INR 1,000.00 is due in <strong style="color:#E17C80">5 </strong>days</p>
 
                   <div class="front-skills" style=" padding-top:15%"></div>
                   <p style="font-size:10px; color:gray; line-height:1">Due Date : 02/06/2017</p>
@@ -217,7 +227,7 @@
               </div>
               <div class="col-md-4">  
                 <div class="divRuppe">
-                  <p style=" font-size:16px; line-height:.5; align:center; ">₹ 1000</p>
+                  <p style=" font-size:16px; line-height:.5; align:center; ">INR 1000</p>
                 </div>
               </div>
             </div>
@@ -228,7 +238,7 @@
               </div>
               <div class="col-md-5">  
                 <div class="divRuppe">
-                  <p style=" font-size:16px; line-height:.5; align:center; ">₹ 0</p>
+                  <p style=" font-size:16px; line-height:.5; align:center; ">INR 0</p>
                 </div>
               </div>
             </div>
@@ -239,7 +249,7 @@
               </div>
               <div class="col-md-4">  
                 <div class="divRuppe" style="margin-top:1px;">
-                  <p style=" font-size:16px; line-height:.5; align:center; ">₹ 1000</p>
+                  <p style=" font-size:16px; line-height:.5; align:center; ">INR 1000</p>
                 </div>
               </div>
             </div>
