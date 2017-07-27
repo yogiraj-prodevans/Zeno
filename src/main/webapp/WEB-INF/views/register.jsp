@@ -8,7 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta content="Metronic Shop UI description" name="description">
   <meta content="Metronic Shop UI keywords" name="keywords">
-  <meta content="keenthemes" name="author">
+  <meta content="vikram" name="author">
   
   <!-- link to image for socio -->
   <meta property="og:url" content="-CUSTOMER VALUE-">
