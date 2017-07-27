@@ -68,9 +68,9 @@
         <ul>
 			<li class="dropdown active"> </li>
 			<li><a href="${pageContext.request.contextPath }/dashboard">Home</a></li>
-			<li class="active"><a href="#">Current plan</a></li>  
-			<li><a href="#">Make Payment</a></li>  
-			<li><a href="#">Top up</a></li> 
+			<li class="active"><a href="${pageContext.request.contextPath }/currentplan">Current plan</a></li>  
+			<li><a href="${pageContext.request.contextPath }/billingPayment">Make Payment</a></li>  
+			<li><a href="${pageContext.request.contextPath }/topup">Top up</a></li> 
 			<li><a href="#">Service Request</a></li> 
 			<li><a href="#">Help</a></li> 
 			<li><a href="#">Parental Control</a></li>
@@ -103,7 +103,7 @@
                       <div class="col-lg-12">
                        <p style="font-size:15px; color:gray; line-height:2">Your Current Plan</p>
 						<p style="font-size:10px; color:gray; line-height:1.5">Plan Name</p>
-						<p style="font-size:10px; color:gray; line-height:1.5">Basic - ₹849 Per Month </p>
+						<p style="font-size:10px; color:gray; line-height:1.5">Basic - INR 849 Per Month </p>
 						<div style=" padding-top:10%">
 							<p style="font-size:15px; color:gray; line-height:2">Plan Content</p>
 							<p style="font-size:10px; color:gray; line-height:1.5">1. 40GB Data <br/>2. 512Kbps Post FUP Speed</p>  
