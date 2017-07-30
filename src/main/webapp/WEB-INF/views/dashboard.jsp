@@ -6,11 +6,12 @@
 <head>
   <meta charset="utf-8">
   <title>STOIC ZENO</title>
+ 
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta content="Metronic Shop UI description" name="description">
   <meta content="Metronic Shop UI keywords" name="keywords">
-  <meta content="keenthemes" name="author">
+  <meta content="vikram" name="author">
   
   <!-- link to image for socio -->
   <meta property="og:url" content="-CUSTOMER VALUE-">
@@ -84,11 +85,22 @@
         <li class="dropdown active"> </li>
         <li class="active"><a href="dashboard">Home</a></li>
 		<li><a href="${pageContext.request.contextPath }/currentplan">Current plan</a></li>  
-		<li><a href="${pageContext.request.contextPath }/payment">Make Payment</a></li>  
-		<li><a href="#">Top up</a></li> 
+		<li><a href="${pageContext.request.contextPath }/billingPayment">Make Payment</a></li>  
+		<li><a href="${pageContext.request.contextPath }/topup">Top up</a></li> 
 		<li><a href="#">Service Request</a></li> 
 		<li><a href="#">Help</a></li> 
 		<li><a href="#">Parental Control</a></li>
+		<li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
+          		Settings      
+              </a>
+                
+              <ul class="dropdown-menu">
+                <li><a href="${pageContext.request.contextPath }/profile">Profile</a></li>
+                <li><a href="#">Account</a></li>
+                <li><a href="#">Logout</a></li>
+              </ul>
+            </li>
         </ul>
       </div>
       <!-- END NAVIGATION -->
@@ -169,7 +181,7 @@
     <div class="container">
       <div class="row">
         <!-- BEGIN COPYRIGHT -->
-          <div class="col-md-10 col-sm-10 padding-bottom-10 " > 2017 © Stoic Zeno. ALL Rights Reserved.&nbsp 
+          <div class="col-md-10 col-sm-10 padding-bottom-10 " > 2017 Â© Stoic Zeno. ALL Rights Reserved.&nbsp 
 		  <a href="#">Privacy Policy</a> |
           <a href="javascript:;">Terms of Service</a> |
 		  <a href="javascript:;">Refund and Cancellation</a> |
