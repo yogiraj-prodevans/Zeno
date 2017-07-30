@@ -64,4 +64,23 @@ public class DashboardConroller {
 
 		return "currentplan";
 	}
+
+	@RequestMapping(value = "/billingPayment", method = RequestMethod.GET)
+	public String billingPayment(Locale locale, Model model) {
+
+		return "billingPayment";
+	}
+
+	@RequestMapping(value = "/topup", method = RequestMethod.GET)
+	public String topup(Locale locale, Model model) {
+
+		return "topup";
+	}
+
+	@RequestMapping(value = "/service", method = RequestMethod.GET)
+	public String service(Locale locale, Model model) {
+
+		return "serviceRequest";
+	}
+
 }
