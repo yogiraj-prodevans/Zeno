@@ -43,12 +43,19 @@ public class PaymentController
 	@RequestMapping(value = "/billingPayment", method = RequestMethod.GET)
 	public String billingPayment(ModelMap model, HttpSession session) throws XmlRpcException 
 	{
-		SessionDetails user = (SessionDetails) session.getAttribute("user");
-		double pendingAmount=paymentDAOImpl.getPendingAmount(user.getActno());
-		model.addAttribute("user_details", user);
-		session.setAttribute("pendingAmount", pendingAmount);
-		model.addAttribute("pendingAmount",pendingAmount);
-		return "billingPayment";
+		if (session.getAttribute("user") == null) 
+		{
+			return "redirect:/logout";
+		}
+		else
+		{
+			SessionDetails user = (SessionDetails) session.getAttribute("user");
+			double pendingAmount=paymentDAOImpl.getPendingAmount(user.getActno());
+			model.addAttribute("user_details", user);
+			session.setAttribute("pendingAmount", pendingAmount);
+			model.addAttribute("pendingAmount",pendingAmount);
+			return "billingPayment";
+		}
 	}
 
 	@RequestMapping(value = "/payment", method = RequestMethod.GET)
