@@ -1,4 +1,3 @@
-
 package com.prodevans.zeno.controller;
 
 import java.util.Locale;
@@ -30,20 +29,7 @@ public class HomeController {
 
 		return new ModelAndView("login", "user", new UserInfo());
 	}
-	
-	@RequestMapping(value = "/topup", method = RequestMethod.GET)
-	public String topup(Locale locale, Model model) {
 
-		return "topup";
-	}
-	
-	@RequestMapping(value = "/currentplan", method = RequestMethod.GET)
-	public String currentplan(Locale locale, Model model) {
-
-		return "currentplan";
-	}
-	
-	
 	/*
 	 * @RequestMapping(value = "/login", method = RequestMethod.POST) public String
 	 * login(@ModelAttribute("user") UserInfo user, ModelMap model, HttpSession

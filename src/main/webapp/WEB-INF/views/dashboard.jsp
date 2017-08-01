@@ -16,45 +16,9 @@
   <!-- link to image for socio -->
   <meta property="og:url" content="-CUSTOMER VALUE-">
   <link rel="shortcut icon" href="favicon.ico">
-  <!-- Fonts START -->
-  <link href="https://fonts.googleapis.com/css?family=Lato|Roboto:100" rel="stylesheet">
-  <!-- Fonts END -->
-  <!-- Global styles START -->          
-  <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Global styles END --> 
-   
-  <!-- Page level plugin styles START -->
-  <link href="pages/css/animate.css" rel="stylesheet">
-  <link href="plugins/fancybox/source/jquery.fancybox.css" rel="stylesheet">
-  <link href="plugins/owl.carousel/owl.carousel.css" rel="stylesheet">
-  <!-- Page level plugin styles END -->
-
-  <!-- Theme styles START -->
-  <link href="pages/css/components.css" rel="stylesheet">
-  <link href="pages/css/slider.css" rel="stylesheet">
-  <link href="corporate/css/styleblue.css" rel="stylesheet">
-  <link href="corporate/css/style-responsive.css" rel="stylesheet">
-  <link href="corporate/css/themes/blue.css" rel="stylesheet" id="style-color">
-  <link href="corporate/css/custom.css" rel="stylesheet">
-  <!-- Theme styles END -->
-  <style>
-    .v_text {
-      font-family: 'Lato', sans-serif;
-      font-size: 20px;
-    }
-	.div2 {
-    width: 280px;
-    height: 180px;    
-    padding: 20px;
-	margin: 40px;
-    border: .5px solid;
-	border-color: #D9D9D9;
-    outline: 2px solid white;
-    outline-offset: 15px;
-	
-}
-  </style>
+  
+  <!--  include the all css components -->
+  <jsp:include page="component/css.jsp"></jsp:include>
 </head>
 
 <body class="corporate">
@@ -83,13 +47,11 @@
       <div class="header-navigation pull-right font-transform-inherit" style="font-size:10px">
         <ul>
         <li class="dropdown active"> </li>
-        <li class="active"><a href="dashboard">Home</a></li>
-		<li><a href="${pageContext.request.contextPath }/currentplan">Current plan</a></li>  
+        <li class="active"><a href="${pageContext.request.contextPath }/dashboard">Home</a></li>
 		<li><a href="${pageContext.request.contextPath }/billingPayment">Make Payment</a></li>  
-		<li><a href="${pageContext.request.contextPath }/topup">Top up</a></li> 
-		<li><a href="#">Service Request</a></li> 
-		<li><a href="#">Help</a></li> 
-		<li><a href="#">Parental Control</a></li>
+		<li><a href="${pageContext.request.contextPath }/service">Service Request</a></li> 
+		<li><a href="${pageContext.request.contextPath }/help">Help</a></li> 
+		<li><a href="${pageContext.request.contextPath }/parental-control">Parental Control</a></li>
 		<li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
           		Settings      
@@ -97,13 +59,15 @@
                 
               <ul class="dropdown-menu">
                 <li><a href="${pageContext.request.contextPath }/profile">Profile</a></li>
-                <li><a href="#">Account</a></li>
                 <li><a href="#">Logout</a></li>
               </ul>
             </li>
         </ul>
       </div>
+      
+      
       <!-- END NAVIGATION -->
+      
     </div>
   </div>
   <!-- Header END -->
@@ -134,7 +98,7 @@
 							<div class="col-lg-12 col-md-12 col-sm-12 " style=" padding-bottom:16">
 								<div class="col-lg-3 div2">
 									<p style=" font-size:10px; color:gray; line-height:.5">Zeno</p>
-									<p style=" font-size:10px; color:gray; line-height:.5">Account No : ${user_details.getActid() } </p>
+									<p style=" font-size:10px; color:gray; line-height:.5">Account No : ${user_details.getCustomer_id() } </p>
 									<p style=" font-size:10px; color:gray; line-height:.5">Current Plan Name : ${SubscriptionDetails.getRatePlan() }</p>
 									<!-- BEGIN PROGRESS BAR -->
 										
@@ -148,7 +112,7 @@
 								</div>
 								<div class="col-lg-3 div2" >
 									  <p style="font-size:10px; color:gray; line-height:.5">Payment</p>
-									  <p style="font-size:10px; color:gray; line-height:.5">Account No : ${user_details.getActid() }</p>
+									  <p style="font-size:10px; color:gray; line-height:.5">Account No : ${user_details.getCustomer_id() }</p>
 									  <p style="font-size:15px; color:gray; line-height:1">Rs 1,000.00 is due in <strong style="color:#E17C80">5 </strong>days</p>
 									  
 									  <div class="front-skills" style=" padding-top:30%">
@@ -160,7 +124,7 @@
 								</div>
 								<div class="col-lg-3 div2" >
 									<p style=" font-size:10px; color:gray; line-height:.5">Service Requests</p>
-									<p style="font-size:10px; color:gray; line-height:.5">Account No : ${user_details.getActid() }</p>
+									<p style="font-size:10px; color:gray; line-height:.5">Account No : ${user_details.getCustomer_id() }</p>
 									<!-- BEGIN PROGRESS BAR -->
 									<div class="front-skills" style=" padding-top:25%">
 									<p style=" font-size:10px; color:gray; line-height:1"><strong style="color:#E17C80"> 5 </strong>Active of<strong style="color:#E17C80"> 10</strong> Total</p>	
@@ -176,12 +140,16 @@
 				</div>
 		</div>
 	</div>
+	
+<!-- included pop up -->
+<jsp:include page="component/pop-up.jsp"></jsp:include>
+	
  <!-- BEGIN FOOTER -->
   <div class="footer" style="font-size:10px; line-height:1"><!--style="font-family:Roboto; position: fixed; right: 0; bottom: 0; left: 0;"-->
     <div class="container">
       <div class="row">
         <!-- BEGIN COPYRIGHT -->
-          <div class="col-md-10 col-sm-10 padding-bottom-10 " > 2017 © Stoic Zeno. ALL Rights Reserved.&nbsp 
+          <div class="col-md-10 col-sm-10 padding-bottom-10 " > 2017 Â© Stoic Zeno. ALL Rights Reserved.&nbsp 
 		  <a href="#">Privacy Policy</a> |
           <a href="javascript:;">Terms of Service</a> |
 		  <a href="javascript:;">Refund and Cancellation</a> |
@@ -194,32 +162,9 @@
   </div>
   <!-- END FOOTER -->
   <!-- Load javascripts at bottom, this will reduce page load time -->
-  <!-- BEGIN CORE PLUGINS (REQUIRED FOR ALL PAGES) -->
-  <!--[if lt IE 9]>
-    <script src="plugins/respond.min.js"></script>
-    <![endif]-->
-  <script src="plugins/jquery.min.js" type="text/javascript"></script>
-  <script src="plugins/jquery-migrate.min.js" type="text/javascript"></script>
-  <script src="plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-  <script src="corporate/scripts/back-to-top.js" type="text/javascript"></script>
-  <!-- END CORE PLUGINS -->
-  <!-- BEGIN PAGE LEVEL JAVASCRIPTS (REQUIRED ONLY FOR CURRENT PAGE) -->
-  <script src="plugins/fancybox/source/jquery.fancybox.pack.js" type="text/javascript"></script>
-  <!-- pop up -->
-  <script src="plugins/owl.carousel/owl.carousel.min.js" type="text/javascript"></script>
-  <!-- slider for products -->
-  <script src="corporate/scripts/layout.js" type="text/javascript"></script>
-  <script src="pages/scripts/bs-carousel.js" type="text/javascript"></script>
-  <script type="text/javascript">
-    jQuery(document).ready(function() {
-            Layout.init();    
-            Layout.initOWL();
-            Layout.initFixHeaderWithPreHeader(); /* Switch On Header Fixing (only if you have pre-header) */
-            Layout.initNavScrolling();
-        });
-  </script>
-  <!-- END PAGE LEVEL JAVASCRIPTS -->
+ <jsp:include page="component/js.jsp"></jsp:include>
   <!-- END BODY -->
 </body>
 
 </html>
+
