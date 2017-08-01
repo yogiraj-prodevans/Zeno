@@ -83,4 +83,21 @@ public class DashboardConroller {
 		return "serviceRequest";
 	}
 
+	@RequestMapping(value = "/parental-control", method = RequestMethod.GET)
+	public String parentControl(Locale locale, Model model) {
+
+		return "parental-control";
+	}
+
+	@RequestMapping(value = "/help", method = RequestMethod.GET)
+	public String help(Locale locale, Model model) {
+
+		return "help";
+	}
+
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public String logout(Locale locale, Model model) {
+
+		return "help";
+	}
 }
