@@ -84,7 +84,7 @@
                 </div>
                 
                 <div class="row" style="margin-left:4%;margin-top:4%">
-                  <p style="font-size:14px;">How can we help you today?</p><hr>
+                  <p style="font-size:16px;">How can we help you today?</p><hr>
                 </div>
 
 
