@@ -72,9 +72,10 @@ public class DashboardConroller {
 		} else {
 			return "billingPayment";
 		}
+<<<<<<< HEAD
 	}
 	*/
-	
+
 	@RequestMapping(value = "/service", method = RequestMethod.GET)
 	public String service(Locale locale, Model model, HttpSession session) {
 		if (session.getAttribute("user") == null) {
