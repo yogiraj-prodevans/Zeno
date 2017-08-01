@@ -79,38 +79,91 @@
       <div class="row margin-bottom-30 front-steps-wrapper">
       
           <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-6 margin-top-10 ">
+            <div class="col-lg-12 col-md-12 col-sm-12 margin-top-10 ">
 				<div class="content-form-page" >
                   <form class="form-horizontal form-without-legend" role="form">
                     <div class="form-group"> <label for="email" class="col-lg-12 control-label"> <span class="require"></span></label>
                       <div class="col-lg-12">
+                      
+                      
+                      <table style="width:100%">
+						  <tr>
+						    <th style="font-size:18px; color:gray; line-height:2" colspan="4">Login Contact and Details</th>
+						    
+						  </tr>
+						  <tr style="font-size:12px; color:gray; line-height:2">
+						    <td>Account Number</td>
+						    <td>ROL000007</td>
+						    <td style="font-size:10px; align:left; color:gray; line-height:2"><i class=" fa fa-lock "></i></td>
+						    <td>Address</td>
+						    <td>BTM mico layout </i></td>
+						    <td><i class=" fa fa-pencil"></i></td>
+						  </tr>
+						  <tr style="font-size:12px; color:gray; line-height:2">
+						    <td>Password</td>
+						    <td>******* </td>
+						    <td style="font-size:10px; color:gray; line-height:2"><i class=" fa fa-pencil"></i> </td>
+						  </tr>
+						  <tr style="font-size:12px; color:gray; line-height:2">
+						    <td>Moble Number</td>
+						    <td>7411082345 </td>
+						     <td style="font-size:10px; color:gray; line-height:2"><i class=" fa fa-pencil"></i> </td>
+						  </tr>
+						  <tr style="font-size:12px; color:gray; line-height:2">
+						    <td>Email ID</td>
+						    <td>vamsi@oneeight.co.in </td>
+						  	 <td style="font-size:10px; color:gray; line-height:2"><i class=" fa fa-pencil"></i> </td>
+						  </tr>
+						  
+						  <tr style="font-size:12px; color:gray; line-height:2">
+						    <td></td>
+						    <td></td>
+						    <td></td>
+						  </tr>
+						  <br>
+						  <tr style="font-size:12px; color:gray; line-height:2">
+						    <td></td>
+						    <td></td>
+						    <td><a style="color:#F2F2F2F2; font-size:11px" href="#">
+							    <button type="submit" style=" color:#F2F2F2F2; font-size:14px; font-family:Roboto" class="btn btn-primary ">
+							   		update
+							    </button>
+							    </a>
+							</td>
+						  </tr>
+						</table>
+                      
+                      
+                      
+                      <!--  
+                      
                        <p style="font-size:18px; color:gray; line-height:2">Login Contact and Details</p>
-						<p style="font-size:10px; color:gray; line-height:2">Account Number</p>
-						<p style="font-size:10px; color:gray; line-height:2">Password</p>
-						<p style="font-size:10px; color:gray; line-height:2">Moble Number</p>
-						<p style="font-size:10px; color:gray; line-height:2">Email ID</p>
+						<p style="font-size:10px; color:gray; line-height:2">Account Number : ROL000007 </p>
+						<p style="font-size:10px; color:gray; line-height:2">Password : *******</p>
+						<p style="font-size:10px; color:gray; line-height:2">Moble Number :7411082345</p>
+						<p style="font-size:10px; color:gray; line-height:2">Email ID : vamsi@oneeight.com</p>
 						<!--  <div style=" padding-top:10%">
 							<p style="font-size:15px; color:gray; line-height:2">Plan Content</p>
 							<p style="font-size:10px; color:gray; line-height:1.5">1. 40GB Data <br/>2. 512Kbps Post FUP Speed</p>  
-						</div> -->
-						<label for="update" class="col-lg-12 control-label" style="padding-top:10%"><a style="color:#F2F2F2F2; font-size:11px" href="#"><button type="submit" style=" color:#F2F2F2F2; font-size:14px; font-family:Roboto" class="btn btn-primary ">update</button></a></label>
+						</div> 
+						<label for="update" class="col-lg-12 control-label" style="padding-top:10%"><a style="color:#F2F2F2F2; font-size:11px" href="#"><button type="submit" style=" color:#F2F2F2F2; font-size:14px; font-family:Roboto" class="btn btn-primary ">update</button></a></label>-->
 					  </div>
                     </div>
                   </form>
                 </div>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 margin-top-20 ">
+           <!--<div class="col-lg-6 col-md-6 col-sm-6 margin-top-20 ">
 				<div class="content-form-page" >
                   <form class="form-horizontal form-without-legend" role="form">
                     <div class="form-group"> <label for="email" class="col-lg-12 control-label"> <span class="require"></span></label>
                       <div class="col-lg-12 margin-top-10 ">
-                       	<p style="font-size:10px; color:gray; line-height:2">Address </p>
+                       	<p style="font-size:10px; color:gray; line-height:2">Address : BTM mico layout </p>
 									
 					  </div>
                     </div>
                   </form>
                 </div>
-            </div>
+            </div>-->
           </div>
 		  <div class="col-lg-12 col-md-12 col-sm-12  ">
 		  </div>
@@ -147,5 +200,5 @@
   <jsp:include page="component/js.jsp"></jsp:include>
   <!-- END BODY -->
 </body>
->>>>>>> origin/master
+
 </html>
