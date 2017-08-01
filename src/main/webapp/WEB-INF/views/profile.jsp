@@ -125,7 +125,7 @@
 						    <td></td>
 						    <td></td>
 						    <td><a style="color:#F2F2F2F2; font-size:11px" href="#">
-							    <button type="submit" style=" color:#F2F2F2F2; font-size:14px; font-family:Roboto" class="btn btn-primary ">
+							    <button type="submit" style=" color:#F2F2F2F2; font-size:14px; font-family:Roboto; border-radius: 0px; " class="btn btn-primary ">
 							   		update
 							    </button>
 							    </a>
