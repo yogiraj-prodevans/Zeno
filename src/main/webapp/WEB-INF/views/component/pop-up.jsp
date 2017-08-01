@@ -76,7 +76,7 @@
               <div class="col-md-3">
                  <div class="circle1">
                     <p class="forTopUpText" style="font-size:16px;">5GB</p><br>
-                    <p class="forTopUpText" style="font-size:12px;">₹ 120/</p>
+                    <p class="forTopUpText" style="font-size:12px;">INR 120/</p>
                     <p class="forTopUpText" style="font-size:10px;">512 Kbps</p>
                     <p class="forTopUpText" style="font-size:10px;">post FUP</p>
                  </div>   
@@ -84,7 +84,7 @@
               <div class="col-md-3">
                  <div class="circle2">
                     <p class="forTopUpText" style="font-size:16px;">10GB</p><br>
-                    <p class="forTopUpText" style="font-size:12px;">₹ 220/</p>
+                    <p class="forTopUpText" style="font-size:12px;">INR 220/</p>
                     <p class="forTopUpText" style="font-size:10px;">512 Kbps</p>
                     <p class="forTopUpText" style="font-size:10px;">post FUP</p>
                  </div>   

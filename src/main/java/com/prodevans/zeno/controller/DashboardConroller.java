@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.prodevans.zeno.dao.impl.DashboardDAOImpl;
+import com.prodevans.zeno.pojo.SessionDetails;
 import com.prodevans.zeno.pojo.SubscriptionDetails;
 import com.prodevans.zeno.pojo.UserDetails;
 import com.prodevans.zeno.pojo.UserInfo;
@@ -37,13 +38,13 @@ public class DashboardConroller {
 			return "redirect:/logout";
 		} else {
 			try {
-				UserInfo user = (UserInfo) session.getAttribute("user");
+				SessionDetails user = (SessionDetails) session.getAttribute("user");
 				System.out.println(user.toString());
-				UserDetails userdetails = DashboardImpl.getUserDetails(user.getCustomer_id());
+				UserDetails userdetails = DashboardImpl.getUserDetails(user.getActid());
 
 				model.addAttribute("user_details", userdetails);
 
-				SubscriptionDetails details = DashboardImpl.getSubscriptionDetails(user.getCustomer_id());
+				SubscriptionDetails details = DashboardImpl.getSubscriptionDetails(user.getActid());
 
 				model.addAttribute("SubscriptionDetails", details);
 
@@ -63,6 +64,7 @@ public class DashboardConroller {
 		}
 	}
 
+	/*
 	@RequestMapping(value = "/billingPayment", method = RequestMethod.GET)
 	public String billingPayment(Locale locale, Model model, HttpSession session) {
 		if (session.getAttribute("user") == null) {
@@ -71,7 +73,8 @@ public class DashboardConroller {
 			return "billingPayment";
 		}
 	}
-
+	*/
+	
 	@RequestMapping(value = "/service", method = RequestMethod.GET)
 	public String service(Locale locale, Model model, HttpSession session) {
 		if (session.getAttribute("user") == null) {
