@@ -31,13 +31,6 @@ public class HomeController {
 		return new ModelAndView("login", "user", new UserInfo());
 	}
 	
-	
-	@RequestMapping(value = "/billingPayment", method = RequestMethod.GET)
-	public String billingPayment(Locale locale, Model model) {
-
-		return "billingPayment";
-	}
-	
 	@RequestMapping(value = "/topup", method = RequestMethod.GET)
 	public String topup(Locale locale, Model model) {
 

@@ -7,6 +7,7 @@ public class UserDetails {
 	private String last_name;
 	private String email;
 	private String mobile;
+	private int actno;
 
 	/**
 	 * @param customer_id
@@ -22,6 +23,15 @@ public class UserDetails {
 		this.last_name = "";
 		this.email = "";
 		this.mobile = "";
+		this.actno=0;
+	}
+
+	public int getActno() {
+		return actno;
+	}
+
+	public void setActno(int actno) {
+		this.actno = actno;
 	}
 
 	/**
@@ -31,13 +41,14 @@ public class UserDetails {
 	 * @param email
 	 * @param mobile
 	 */
-	public UserDetails(String customer_id, String first_name, String last_name, String email, String mobile) {
+	public UserDetails(int actno,String customer_id, String first_name, String last_name, String email, String mobile) {
 
 		this.customer_id = customer_id;
 		this.first_name = first_name;
 		this.last_name = last_name;
 		this.email = email;
 		this.mobile = mobile;
+		this.actno=0;
 	}
 
 	/**
@@ -116,7 +127,7 @@ public class UserDetails {
 	@Override
 	public String toString() {
 		return "UserDetails [customer_id=" + customer_id + ", first_name=" + first_name + ", last_name=" + last_name
-				+ ", email=" + email + ", mobile=" + mobile + "]";
+				+ ", email=" + email + ", mobile=" + mobile + ", actno="+actno+"]";
 	}
 
 	/**

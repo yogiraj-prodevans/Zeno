@@ -189,7 +189,7 @@
 
 								<div class="col-lg-3 div2" >
 									  <p style="font-size:14px; line-height:.5">Marcus</p>
-									  <p style="font-size:10px; line-height:.5">Account No : 1234567890</p>
+									  <p style="font-size:10px; line-height:.5">Account No : ${user_details.getActid() }</p>
                     <p style="font-size:10px; line-height:.5">Bill Period-</p>
 									  
 									  <div class="front-skills" style=" padding-top:20%">
@@ -203,7 +203,7 @@
 
 								<div class="col-lg-3 div2" >
 									<p style=" font-size:10px; color:gray; line-height:.5">Payment</p>
-									<p style="font-size:10px; color:gray; line-height:.5">Account No : 1234567890</p>
+									<p style="font-size:10px; color:gray; line-height:.5">Account No : ${user_details.getActid() }</p>
 
                   <div class="front-skills" style=" padding-top:15%"></div>
 
@@ -240,7 +240,7 @@
               </div>
               <div class="col-md-5">  
                 <div class="divRuppe">
-                  <p style=" font-size:16px; line-height:.5; align:center; ">INR 0</p>
+                  <p style=" font-size:16px; line-height:.5; align:center; ">INR ${pendingAmount } </p>
                 </div>
               </div>
             </div>
@@ -260,7 +260,7 @@
               <div class="col-md-1">
               </div>
               <div class="col-md-4">
-                <a href="#">
+                <a href="payment">
                   <div style="width:150px; height:40px; margin:1px; line-height:.5; background-color:#010745; text-align:center">
                     <p style=" font-size:16px; line-height:.5; color:#ecf0f1; align:center; padding-top:15px;">Pay Now</p>
                   </div>

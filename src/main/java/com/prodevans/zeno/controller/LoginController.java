@@ -8,11 +8,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.prodevans.zeno.dao.impl.UserInfoDAOImpl;
+import com.prodevans.zeno.pojo.SessionDetails;
 import com.prodevans.zeno.pojo.UserInfo;
 
 @Controller
@@ -29,15 +34,21 @@ public class LoginController {
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String getDashboard(@ModelAttribute("user") UserInfo user, HttpSession session) {
-
-		System.out.println(user.toString());
-		try {
-			boolean res = LoginImpl.loginCheck(user);
-			if (res) {
-				session.setAttribute("user", user);
+	public String getDashboard(HttpSession session, SessionStatus status,@RequestParam("customer_id") String customer_id,@RequestParam("password") String password) 
+	{
+		//status.setComplete();
+		try
+		{
+			SessionDetails userSessionDetails = LoginImpl.loginCheck(customer_id,password);
+			System.out.println(userSessionDetails.getFirst_name());
+			if(userSessionDetails.getResult()) 
+			{
+				session.setAttribute("user", userSessionDetails);
+				System.out.println("displaying actno : "+userSessionDetails.getActno());
 				return "redirect:dashboard";
-			} else {
+			}
+			else 
+			{
 				return "login";
 			}
 

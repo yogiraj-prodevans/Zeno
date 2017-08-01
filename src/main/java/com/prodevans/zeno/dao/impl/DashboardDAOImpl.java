@@ -52,6 +52,7 @@ public class DashboardDAOImpl implements DashboardDAO {
 			details.setFirst_name(result.get("fname").toString());
 			details.setLast_name(result.get("lname").toString());
 			details.setMobile(result.get("mobileno").toString());
+			details.setActno(Integer.parseInt(result.get("actno").toString()));
 			return details;
 		} else {
 			return null;
