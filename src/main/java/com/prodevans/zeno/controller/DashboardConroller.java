@@ -33,71 +33,77 @@ public class DashboardConroller {
 	@RequestMapping(value = "/dashboard", method = RequestMethod.GET)
 	public String getDashboard(ModelMap model, HttpSession session) {
 
-		try {
-			UserInfo user = (UserInfo) session.getAttribute("user");
-			System.out.println(user.toString());
-			UserDetails userdetails = DashboardImpl.getUserDetails(user.getCustomer_id());
+		if (session.getAttribute("user") == null) {
+			return "redirect:/logout";
+		} else {
+			try {
+				UserInfo user = (UserInfo) session.getAttribute("user");
+				System.out.println(user.toString());
+				UserDetails userdetails = DashboardImpl.getUserDetails(user.getCustomer_id());
 
-			model.addAttribute("user_details", userdetails);
+				model.addAttribute("user_details", userdetails);
 
-			SubscriptionDetails details = DashboardImpl.getSubscriptionDetails(user.getCustomer_id());
+				SubscriptionDetails details = DashboardImpl.getSubscriptionDetails(user.getCustomer_id());
 
-			model.addAttribute("SubscriptionDetails", details);
+				model.addAttribute("SubscriptionDetails", details);
 
-			// SubscriptionStatus status =
-			// DashboardImpl.getSubscriptionStatus(details.getSubsno());
-
-			// model.addAttribute("SubscriptionStatus", status);
-
-			// PlanDetails planDetails = impl.getPlanDetails("E-0001");
-
-			// model.addAttribute("plan_details", planDetails);
-
-		} catch (Exception ee) {
-			ee.printStackTrace();
+			} catch (Exception ee) {
+				ee.printStackTrace();
+			}
+			return "dashboard";
 		}
-		return "dashboard";
 	}
 
 	@RequestMapping(value = "/currentplan", method = RequestMethod.GET)
-	public String currentPlan(Locale locale, Model model) {
-
-		return "currentplan";
+	public String currentPlan(Locale locale, Model model, HttpSession session) {
+		if (session.getAttribute("user") == null) {
+			return "redirect:/logout";
+		} else {
+			return "currentplan";
+		}
 	}
 
 	@RequestMapping(value = "/billingPayment", method = RequestMethod.GET)
-	public String billingPayment(Locale locale, Model model) {
-
-		return "billingPayment";
-	}
-
-	@RequestMapping(value = "/topup", method = RequestMethod.GET)
-	public String topup(Locale locale, Model model) {
-
-		return "topup";
+	public String billingPayment(Locale locale, Model model, HttpSession session) {
+		if (session.getAttribute("user") == null) {
+			return "redirect:/logout";
+		} else {
+			return "billingPayment";
+		}
 	}
 
 	@RequestMapping(value = "/service", method = RequestMethod.GET)
-	public String service(Locale locale, Model model) {
-
-		return "serviceRequest";
+	public String service(Locale locale, Model model, HttpSession session) {
+		if (session.getAttribute("user") == null) {
+			return "redirect:/logout";
+		} else {
+			return "serviceRequest";
+		}
 	}
 
 	@RequestMapping(value = "/parental-control", method = RequestMethod.GET)
-	public String parentControl(Locale locale, Model model) {
-
-		return "parental-control";
+	public String parentControl(Locale locale, Model model, HttpSession session) {
+		if (session.getAttribute("user") == null) {
+			return "redirect:/logout";
+		} else {
+			return "parental-control";
+		}
 	}
 
 	@RequestMapping(value = "/help", method = RequestMethod.GET)
-	public String help(Locale locale, Model model) {
-
-		return "help";
+	public String help(Locale locale, Model model, HttpSession session) {
+		if (session.getAttribute("user") == null) {
+			return "redirect:/logout";
+		} else {
+			return "help";
+		}
 	}
 
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
-	public String logout(Locale locale, Model model) {
-
-		return "help";
+	public String logout(Locale locale, Model model, HttpSession session) {
+		if (session.getAttribute("user") != null) {
+			session.invalidate();
+		}
+		return "redirect:/login";
 	}
 }

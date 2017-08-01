@@ -59,7 +59,7 @@
                 
               <ul class="dropdown-menu">
                 <li><a href="${pageContext.request.contextPath }/profile">Profile</a></li>
-                <li><a href="#">Logout</a></li>
+                <li><a href="${pageContext.request.contextPath }/logout">Logout</a></li>
               </ul>
             </li>
         </ul>
@@ -219,18 +219,8 @@
         </form>
       </div>
     </div>
-
-
-
-
   </div>
 </div>
-
-
-
-
-
-
 
 
 <!-- included pop up -->
