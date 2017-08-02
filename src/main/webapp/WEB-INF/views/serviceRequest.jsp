@@ -232,7 +232,7 @@
     <div class="container">
       <div class="row">
         <!-- BEGIN COPYRIGHT -->
-          <div class="col-md-10 col-sm-10 padding-bottom-10 " > 2017 Â&copy Stoic Zeno. ALL Rights Reserved.&nbsp 
+          <div class="col-md-10 col-sm-10 padding-bottom-10 " > 2017 &copy Stoic Zeno. ALL Rights Reserved.&nbsp 
       <a href="#">Privacy Policy</a> |
           <a href="javascript:;">Terms of Service</a> |
       <a href="javascript:;">Refund and Cancellation</a> |
