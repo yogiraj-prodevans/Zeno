@@ -50,6 +50,7 @@
 </div>
 
 
+
 <div id="topUp" class="modal fade" style="margin-top:10%;">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -58,34 +59,36 @@
                 <h4 class="modal-title">Top Up</h4>
             </div>
             
-            <div class="modal-body" style="margin-top:5%">
+            <div class="modal-body" >
   
-              <div class="col-md-1">
-              </div>
-              <div class="col-md-3">
-                <a href="#">
-                  <div class="circle1">
-                    <br><p style="font-size:16px;">5GB</p><br>
-                    <p style="font-size:12px;">INR 120/</p>
-                    <p style="font-size:10px;">512 Kbps</p>
-                    <p style="font-size:10px;">post FUP</p>
-                  </div>   
-                </a>
-              </div>  
-              <div class="col-md-2">
-              </div>  
-              <div class="col-md-3">
-                <a href="#">
-                  <div class="circle2">
-                    <br><p style="font-size:16px;">10GB</p><br>
-                    <p style="font-size:12px;">INR 220/</p>
-                    <p style="font-size:10px;">512 Kbps</p>
-                    <p style="font-size:10px;">post FUP</p>
-                  </div>
-                </a>   
-              </div>
-              <div class="col-md-1">
-              </div>
+              <table class="row col-md-12">
+                <tr>
+                  <td>
+                    <div class="circleBlock1">
+                      <a href="#">
+                        <div class="circle1">
+                          <br><p style="font-size:16px;">5GB</p><br>
+                          <p style="font-size:12px;">INR 120/</p>
+                          <p style="font-size:10px;">512 Kbps</p>
+                          <p style="font-size:10px;">post FUP</p>
+                        </div>   
+                      </a>
+                    </div>  
+                  </td>
+                  <td>
+                    <div class="circleBlock2">
+                      <a href="#">
+                        <div class="circle2">
+                          <br><p style="font-size:16px;">10GB</p><br>
+                          <p style="font-size:12px;">INR 220/</p>
+                          <p style="font-size:10px;">512 Kbps</p>
+                          <p style="font-size:10px;">post FUP</p>
+                        </div>
+                      </a>   
+                    </div>
+                  </td>
+                </tr>
+              </table>
 
             </div> <!-- Modal body close-->
             
