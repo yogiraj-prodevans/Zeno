@@ -211,18 +211,18 @@ a:hover{
   }
   .modal-dialog 
   {
-    width: 70%;
+    width: 90%;
     height:100%;
   }
   .circle1
   {
-    width: 70%;
-    height:60%; 
+    width: 50%;
+    height:50%; 
   }
   .circle2
   {
-    width: 70%;
-    height:60%; 
+    width: 50%;
+    height:50%; 
   }
 }
 
@@ -234,19 +234,21 @@ a:hover{
   }
   .modal-dialog 
   {
-    width: 70%;
+    width: 90%;
     height:100%;
   }
   .circle1
   {
-    width: 70%;
-    height:60%; 
+    width: 50%;
+    height:50%; 
   }
   .circle2
   {
-    width: 70%;
-    height:60%; 
+    width: 50%;
+    height:50%; 
   }
 }
+
+
 
   </style>
