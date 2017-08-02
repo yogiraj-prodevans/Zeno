@@ -143,7 +143,7 @@
     <div class="container">
       <div class="row">
         <!-- BEGIN COPYRIGHT -->
-          <div class="col-md-10 col-sm-10 padding-top-0 padding-bottom-10 "> 2017 Â© Stoic Zeno. ALL Rights Reserved.&nbsp 
+          <div class="col-md-10 col-sm-10 padding-top-0 padding-bottom-10 "> 2017 Â&copy Stoic Zeno. ALL Rights Reserved.&nbsp 
 		  <a href="javascript:;">Privacy Policy</a> |
           <a href="javascript:;">Terms of Service</a> |
 		  <a href="javascript:;">Refund and Cancellation</a> |

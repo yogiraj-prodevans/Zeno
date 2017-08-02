@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   <title>STOIC ZENO</title>
-
+<link rel="shortcut icon" href="favicon.ico">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta content="Metronic Shop UI description" name="description">
@@ -14,7 +14,7 @@
   
   <!-- link to image for socio -->
   <meta property="og:url" content="-CUSTOMER VALUE-">
-  <link rel="shortcut icon" href="favicon.ico">
+  
   
   <!--  include the all css components -->
   <jsp:include page="component/css.jsp"></jsp:include>
@@ -184,7 +184,7 @@
     <div class="container">
       <div class="row">
         <!-- BEGIN COPYRIGHT -->
-          <div class="col-md-10 col-sm-10 padding-top-0 padding-bottom-10 "> 2017 © Stoic Zeno. ALL Rights Reserved.&nbsp 
+          <div class="col-md-10 col-sm-10 padding-top-0 padding-bottom-10 "> 2017 &copy Stoic Zeno. ALL Rights Reserved.&nbsp 
 		  <a href="javascript:;">Privacy Policy</a> |
           <a href="javascript:;">Terms of Service</a> |
 		  <a href="javascript:;">Refund and Cancellation</a> |
