@@ -68,7 +68,7 @@
 .modal-dialog 
 {
   width: 35%;
-  height:90% !important;
+  height:90%;
 }
 .modal-content 
 {
@@ -93,8 +93,8 @@
     border-radius: 50%;
     border: 1px solid #010745;
     padding: 20px; 
-    width: 120px;
-    height: 120px; 
+    width: 140%;
+    height: 80%; 
     margin: 40px;
     text-align: center;
     text-decoration: none!important;   
@@ -123,8 +123,8 @@ a:hover{
     border-radius: 50%;
     border: 2px solid #010745;
     padding: 20px; 
-    width: 120px;
-    height: 120px; 
+    width: 140%;
+    height: 80%; 
     margin: 40px;
     text-align: center;
     text-decoration: none!important;   
@@ -138,8 +138,7 @@ a:hover{
   border: 1px solid #FFF;
   text-decoration: none!important;
 }
-     
-     
+
 /* Floating css starts from here */
 /* Floating Icons */
 .fixedBlock {
@@ -210,6 +209,21 @@ a:hover{
     margin: 10%;
     margin-bottom: 1%;
   }
+  .modal-dialog 
+  {
+    width: 70%;
+    height:100%;
+  }
+  .circle1
+  {
+    width: 70%;
+    height:60%; 
+  }
+  .circle2
+  {
+    width: 70%;
+    height:60%; 
+  }
 }
 
 /* iphone 6*/
@@ -217,6 +231,21 @@ a:hover{
   .divBill {
     width:82%;
     height: 65%;
+  }
+  .modal-dialog 
+  {
+    width: 70%;
+    height:100%;
+  }
+  .circle1
+  {
+    width: 70%;
+    height:60%; 
+  }
+  .circle2
+  {
+    width: 70%;
+    height:60%; 
   }
 }
 
