@@ -216,13 +216,13 @@ a:hover{
   }
   .circle1
   {
-    width: 35%;
-    height:30%; 
+    width: 30%;
+    height:35%; 
   }
   .circle2
   {
-    width: 35%;
-    height:30%; 
+    width: 30%;
+    height:35%; 
   }
 }
 
@@ -239,13 +239,13 @@ a:hover{
   }
   .circle1
   {
-    width: 43%;
-    height:35%; 
+    width: 35%;
+    height:40%; 
   }
   .circle2
   {
-    width: 43%;
-    height:35%; 
+    width: 35%;
+    height:40%; 
   }
 }
 
