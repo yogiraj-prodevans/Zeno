@@ -232,7 +232,7 @@ a:hover{
   }
   .modal-content 
   {
-    height: 80%;
+    height: 60%;
   }    
   .circleBlock1
   {
@@ -269,11 +269,11 @@ a:hover{
   .modal-dialog 
   {
     width: 90%;
-    height:120%;
+    height:100%;
   }
   .modal-content 
   {
-    height: 80%;
+    height: 60%;
   }        
   .circleBlock1
   {
