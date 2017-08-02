@@ -93,10 +93,10 @@
 						  </tr>
 						  <tr style="font-size:12px; color:gray; line-height:2">
 						    <td>Account Number</td>
-						    <td>ROL000007</td>
+						    <td>${profile.getActid() }</td>
 						    <td style="font-size:10px; align:left; color:gray; line-height:2"><i class=" fa fa-lock "></i></td>
 						    <td>Address</td>
-						    <td>BTM mico layout </i></td>
+						    <td>${profile.getAddress() } </i></td>
 						    <td><i class=" fa fa-pencil"></i></td>
 						  </tr>
 						  <tr style="font-size:12px; color:gray; line-height:2">
@@ -106,12 +106,12 @@
 						  </tr>
 						  <tr style="font-size:12px; color:gray; line-height:2">
 						    <td>Moble Number</td>
-						    <td>7411082345 </td>
+						    <td>${profile.getMobileno() } </td>
 						     <td style="font-size:10px; color:gray; line-height:2"><i class=" fa fa-pencil"></i> </td>
 						  </tr>
 						  <tr style="font-size:12px; color:gray; line-height:2">
 						    <td>Email ID</td>
-						    <td>vamsi@oneeight.co.in </td>
+						    <td>${profile.getEmail() }</td>
 						  	 <td style="font-size:10px; color:gray; line-height:2"><i class=" fa fa-pencil"></i> </td>
 						  </tr>
 						  

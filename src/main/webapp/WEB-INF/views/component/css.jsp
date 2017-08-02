@@ -64,41 +64,79 @@
   line-height:.5;
 }
 
-/*For Current Plan Modal*/
-.v_b {
-  border-style: dashed;
+ /* For TopUp modal*/ 
+.modal-dialog 
+{
+  width: 35%;
+  height:90%;
+}
+.modal-content 
+{
+    height: 60%;
+}       
+.modal-header 
+{
+    background-color: #010745;
+    padding:16px 16px;
+    color:#FFF;
+}
+.v_b 
+{
+    border-style: dashed;
     border-width: 1px;
     border-color: #D9D9D9;
-  }
+}
 
- /* For TopUp modal*/ 
-
-.circle1  {
+.circle1
+{
+    color: #010745;
     border-radius: 50%;
     border: 1px solid #010745;
     padding: 20px; 
-    width: 120px;
-    height: 120px; 
+    width: 140%;
+    height: 80%; 
     margin: 40px;
     text-align: center;
-    
+    text-decoration: none!important;   
+    margin:10%; 
+    line-height:.5; 
+}
+.circle1:hover
+{
+  color: #FFF;
+  background-color: #010745;
+  border: 1px solid #FFF;
+  text-decoration: none!important;
 }
 
-  .circle2  {
+a
+{
+ text-decoration: none;
+}
+a:hover{
+ text-decoration: none;
+}
+
+.circle2  
+{
+    color: #010745;
     border-radius: 50%;
     border: 2px solid #010745;
     padding: 20px; 
-    width: 120px;
-    height: 120px; 
+    width: 140%;
+    height: 80%; 
     margin: 40px;
     text-align: center;
-    
+    text-decoration: none!important;   
+    margin:10%; 
+    line-height:.5; 
 }
-
-.forTopUpText{
-  margin:10%; 
-  line-height:.5;
-  color: #010745;
+.circle2:hover
+{
+  color: #FFF;
+  background-color: #010745;
+  border: 1px solid #FFF;
+  text-decoration: none!important;
 }
 
 /* Floating css starts from here */
@@ -171,6 +209,21 @@
     margin: 10%;
     margin-bottom: 1%;
   }
+  .modal-dialog 
+  {
+    width: 90%;
+    height:100%;
+  }
+  .circle1
+  {
+    width: 30%;
+    height:35%; 
+  }
+  .circle2
+  {
+    width: 30%;
+    height:35%; 
+  }
 }
 
 /* iphone 6*/
@@ -179,6 +232,23 @@
     width:82%;
     height: 65%;
   }
+  .modal-dialog 
+  {
+    width: 90%;
+    height:100%;
+  }
+  .circle1
+  {
+    width: 35%;
+    height:40%; 
+  }
+  .circle2
+  {
+    width: 35%;
+    height:40%; 
+  }
 }
+
+
 
   </style>
