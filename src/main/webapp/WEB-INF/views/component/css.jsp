@@ -230,6 +230,10 @@ a:hover{
     width: 90%;
     height:100%;
   }
+  .modal-content 
+  {
+    height: 80%;
+  }    
   .circleBlock1
   {
     min-width: 100%;
@@ -265,8 +269,12 @@ a:hover{
   .modal-dialog 
   {
     width: 90%;
-    height:90%;
+    height:120%;
   }
+  .modal-content 
+  {
+    height: 80%;
+  }        
   .circleBlock1
   {
     min-width: 100%;
