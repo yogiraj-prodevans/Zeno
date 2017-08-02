@@ -64,7 +64,7 @@
   line-height:.5;
 }
 
- /* For TopUp modal*/ 
+  /* For TopUp modal*/ 
 .modal-dialog 
 {
   width: 35%;
@@ -87,14 +87,28 @@
     border-color: #D9D9D9;
 }
 
+.circleBlock1
+{
+  min-width: 50%; 
+  min-height: 50%;
+  margin: 10%;
+  margin-right: 10%;
+}
+.circleBlock2
+{
+  min-width: 50%; 
+  min-height: 50%;
+  margin: 10%;
+  margin-right: 10%;
+}
 .circle1
 {
     color: #010745;
     border-radius: 50%;
     border: 1px solid #010745;
     padding: 20px; 
-    width: 140%;
-    height: 80%; 
+    width: 80%;
+    height: 70%; 
     margin: 40px;
     text-align: center;
     text-decoration: none!important;   
@@ -123,8 +137,8 @@ a:hover{
     border-radius: 50%;
     border: 2px solid #010745;
     padding: 20px; 
-    width: 140%;
-    height: 80%; 
+    width: 80%;
+    height: 70%; 
     margin: 40px;
     text-align: center;
     text-decoration: none!important;   
@@ -191,6 +205,8 @@ a:hover{
   color: #ecf0f1;
   text-decoration: none !important;
 }
+
+
 /* Floating css ends from here */
 
 
@@ -212,17 +228,31 @@ a:hover{
   .modal-dialog 
   {
     width: 90%;
-    height:100%;
+    height:90%;
+  }
+  .circleBlock1
+  {
+    min-width: 100%;
+    min-height: 50%;
+    margin: 5%;
+    margin-right: 30%;
+  }
+  .circleBlock2
+  {
+    min-width: 100%;
+    min-height: 50%;
+    margin: 5%;
+    margin-left: 30%
   }
   .circle1
   {
-    width: 30%;
-    height:35%; 
+    width: 130%;
+    height:90%; 
   }
   .circle2
   {
-    width: 30%;
-    height:35%; 
+    width: 130%;
+    height:90%; 
   }
 }
 
@@ -235,20 +265,33 @@ a:hover{
   .modal-dialog 
   {
     width: 90%;
-    height:100%;
+    height:90%;
+  }
+  .circleBlock1
+  {
+    min-width: 100%;
+    min-height: 50%;
+    margin: 5%;
+    margin-right: 30%;
+  }
+  .circleBlock2
+  {
+    min-width: 100%;
+    min-height: 50%;
+    margin: 5%;
+    margin-left: 30%
   }
   .circle1
   {
-    width: 35%;
-    height:40%; 
+    width: 130%;
+    height:90%; 
   }
   .circle2
   {
-    width: 35%;
-    height:40%; 
+    width: 130%;
+    height:90%; 
   }
 }
-
 
 
   </style>
