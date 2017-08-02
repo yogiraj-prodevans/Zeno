@@ -78,9 +78,9 @@
     <div class="container">
       <div class="row">
         <!-- BEGIN TOP BAR MENU -->
-        <div class="col-md-12 col-sm-12 additional-nav" style=" font-size:11px; font-color:000000">
+        <div class="col-md-12 col-sm-12 additional-nav" style=" font-size:12px; font-color:000000">
           <ul class="list-unstyled list-inline pull-right ">
-            <li style="font-size:10px"><i class=" fa fa-phone"></i><span>Lets Talk: +91 9019602602</span></li>
+            <li ><i class=" fa fa-phone"></i><span>Lets Talk: +91 9019602602</span></li>
           </ul>
         </div>
         <!-- END TOP BAR MENU -->
@@ -95,7 +95,7 @@
         <img src="corporate/img/logos/logo.png" alt="Stoic Zeno"> </a>
       <a href="javascript:void(0);" class="mobi-toggler"><i class="fa fa-bars"></i></a>
       <!-- BEGIN NAVIGATION -->
-      <div class="header-navigation pull-right font-transform-inherit" style="font-size:10px">
+      <div class="header-navigation pull-right font-transform-inherit" style="font-size:12px">
         <ul>
         <li class="dropdown active"> </li>
           <li ><a href="dashboard">Home</a></li>

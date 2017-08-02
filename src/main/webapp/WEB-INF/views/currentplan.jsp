@@ -5,7 +5,7 @@
     <head>
         <meta charset="utf-8">
         <title>STOIC ZENO</title>
-
+        <link rel="shortcut icon" href="favicon.ico">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta content="Metronic Shop UI description" name="description">
@@ -14,7 +14,7 @@
 
         <!-- link to image for socio -->
         <meta property="og:url" content="-CUSTOMER VALUE-">
-        <link rel="shortcut icon" href="favicon.ico">
+
         <!-- Fonts START -->
         <link href="https://fonts.googleapis.com/css?family=Lato|Roboto:100" rel="stylesheet">
         <!-- Fonts END -->
@@ -22,12 +22,8 @@
         <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
         <link href="plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <!-- Global styles END --> 
-
-
-
         <!-- Theme styles START -->
         <link href="pages/css/components.css" rel="stylesheet">
-
         <link href="corporate/css/styleblue.css" rel="stylesheet">
         <link href="corporate/css/style-responsive.css" rel="stylesheet">
         <link href="corporate/css/themes/blue.css" rel="stylesheet" id="style-color">
@@ -48,9 +44,9 @@
             <div class="container">
                 <div class="row">
                     <!-- BEGIN TOP BAR MENU -->
-                    <div class="col-md-12 col-sm-12 additional-nav" style=" font-size:11px; font-color:000000">
+                    <div class="col-md-12 col-sm-12 additional-nav" style=" font-size:12px; font-color:000000">
                         <ul class="list-unstyled list-inline pull-right ">
-                            <li style="font-size:10px"><i class=" fa fa-phone"></i><span>Lets Talk: +91 9019602602</span></li>
+                            <li><i class=" fa fa-phone"></i><span>Lets Talk: +91 9019602602</span></li>
                         </ul>
                     </div>
                     <!-- END TOP BAR MENU -->
@@ -65,7 +61,7 @@
                     <img src="corporate/img/logos/logo.png" alt="Stoic Zeno"> </a>
                 <a href="javascript:void(0);" class="mobi-toggler"><i class="fa fa-bars"></i></a>
                 <!-- BEGIN NAVIGATION -->
-                <div class="header-navigation pull-right font-transform-inherit"  style="font-size:11px">
+                <div class="header-navigation pull-right font-transform-inherit"  style="font-size:12px">
                     <ul>
                         <li class="dropdown active"> </li>
                         <li><a href="${pageContext.request.contextPath }/dashboard">Home</a></li>
@@ -79,7 +75,6 @@
                             <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
                                 Settings      
                             </a>
-
                             <ul class="dropdown-menu">
                                 <li><a href="${pageContext.request.contextPath }/profile">Profile</a></li>
                                 <li><a href="#">Account</a></li>
@@ -101,13 +96,10 @@
                 <!-- END CONTENT -->
                 <!-- BEGIN STEPS -->
                 <div class="row margin-bottom-30 front-steps-wrapper">
-
                     <div class="row">
                         <div class="col-lg-4 col-md-4 col-sm-4 margin-top-10 ">
-
                         </div>
                         <div class="col-md-4 col-sm-4 v_b ">
-
                             <div class="content-form-page" >
                                 <form class="form-horizontal form-without-legend" role="form">
                                     <div class="form-group"> <label for="email" class="col-lg-12 control-label"> <span class="require"></span></label>
@@ -124,15 +116,12 @@
                                     </div>
                                 </form>
                             </div>
-
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4  ">
-
                         </div>
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12  ">
                     </div>
-
                 </div>
                 <!-- END STEPS -->
             </div>
