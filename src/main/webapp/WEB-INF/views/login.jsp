@@ -53,9 +53,9 @@
     <div class="container">
       <div class="row">
         <!-- BEGIN TOP BAR MENU -->
-        <div class="col-md-12 col-sm-12 additional-nav" style=" font-size:11px; font-color:000000">
+        <div class="col-md-12 col-sm-12 additional-nav" style="font-size:12px;  font-color:000000">
           <ul class="list-unstyled list-inline pull-right ">
-            <li style="font-size:10px"><i class=" fa fa-phone"></i><span>Lets Talk: +91 9019602602</span></li>
+            <li ><i class=" fa fa-phone"></i><span>Lets Talk: +91 9019602602</span></li>
           </ul>
         </div>
         <!-- END TOP BAR MENU -->
@@ -70,7 +70,7 @@
         <img src="corporate/img/logos/logo.png" alt="Stoic Zeno"> </a>
       <a href="javascript:void(0);" class="mobi-toggler"><i class="fa fa-bars"></i></a>
       <!-- BEGIN NAVIGATION -->
-      <div class="header-navigation pull-right font-transform-inherit"  style="font-size:11px">
+      <div class="header-navigation pull-right font-transform-inherit"  style="font-size:12px">
         <ul>
           <li class="dropdown active"> </li>
           <li class="active" >
@@ -93,42 +93,41 @@
       </div>
       <!-- END CONTENT -->
       <!-- BEGIN STEPS -->
-      <div class="row margin-bottom-30 front-steps-wrapper">
-        <div class="front-step front-stepv margin-top-20">
+      <div class="row margin-bottom-10 front-steps-wrapper">
+        <div class="front-step front-stepv margin-top-30">
           <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-6 margin-top-10 ">
-				<div class="col-lg-12 col-md-12 col-sm-12 margin-top-10 ">
-				  <h2 style="font-family:Roboto; font-size:70px">Sign into the<br>thinking<br>network</h2>
-				</div>
+            <div class="col-lg-12 col-md-12 col-sm-12 margin-top-10 ">
+              <h2 style="font-family:Roboto; font-size:70px">Sign into the thinking network</h2>
+            </div>
             </div>
             <div class="col-md-4 col-sm-4 pull-right  " style="font-family:Lato; font-wait:100">
               <div class="form-info">
-			  <p style="font-family:Roboto; font-color:#gray; font-size:15px; padding-bottom:5px"> Login </P>
+			  <p style="font-family:Roboto; font-color:#gray; font-size:16px; padding-bottom:5px"> Login </P>
 			    <div class="content-form-page">
                   <form:form class="form-horizontal form-without-legend" role="form" action="login" method="post" modelAttribute="user">
                     <div class="form-group"> <label for="email" class="col-lg-12 control-label"> <span class="require"></span></label>
                       <div class="col-lg-12">
-                        <form:input path="customer_id" type="text" class="form-control" style=" font-size:11px; font-style:italic" id="email" placeholder="My Stoic ID " /> 
-						<label for="email" class="col-lg-12 control-label"><a style="color:#F2F2F2F2; font-size:11px" href="#">I forgot my Stoic ID</a></label>
+                        <form:input path="customer_id" type="text" class="form-control" id="mystoicid" style=" font-size:12px; font-style:italic;  box-shadow: none; border: none; border-bottom: .1px solid;" placeholder="My Stoic ID " /> 
+						<label for="customer_id" class="col-lg-12 control-label"><a style="color:#F2F2F2F2; font-size:11px" href="#">I forgot my Stoic ID</a></label>
 					  </div>
                     </div>
                     <div class="form-group"> <label for="password" class="col-lg-12 control-label"><span class="require"></span></label>
                       <div class="col-lg-12">
-                        <form:input path="password" type="password" class="form-control" id="password" style=" font-size:11px; font-style:italic" placeholder="My Stoic Password " />
-						<label for="email" class="col-lg-12 control-label"><a style="color:#F2F2F2F2; font-size:11px" href="#">I forgot my Stoic Password</a></label>
+                        <form:input path="password" type="password" class="form-control" id="password" style=" font-size:12px; font-style:italic;  box-shadow: none; border: none; border-bottom: .1px solid;" placeholder="My Stoic Password " />
+						<label for="password" class="col-lg-12 control-label"><a style="color:#F2F2F2F2; font-size:11px" href="#">I forgot my Stoic Password</a></label>
 					  </div>
                     </div>
                     <div class="row">
-                      <div class="col-lg-12 col-md-offset-1 padding-left-0 padding-top-10">
+                      <div class="col-lg-05 col-md-offset-1 padding-left-1 padding-top-10">
                         <button type="submit" style=" color:#F2F2F2F2; font-size:14px; font-family:Roboto" class="btn btn-primary ">Login</button>
-					  </div>
-					  <div class="col-lg-12 col-md-offset-1 padding-left-0 padding-top-10">
-                        <input type="checkbox" class= "padding-5">&nbsp <label style="font-family:Roboto; color:#F2F2F2F2; font-size:10px" > Remember me </label>
-					  </div>
+                    
+                        <input type="checkbox" class= "padding-5 padding-left-7">&nbsp <label style="font-family:Roboto; color:#F2F2F2F2; font-size:10px" > Remember me </label>
+                    </div>
                     </div>
 					<div class="row">
                       <div class="col-lg-10 col-md-offset-1 padding-left-0 padding-right-0 padding-top-10" >
-                       <p style="color:gray; font-size:11px; line-height:1">If you are already a stoic customer and don’t have my stoic account, you can<a style="color:#7E548A; font-size:12px; line-height: 1;" href="register.html"> register now</a>. It is prety quick.</p>
+                          <p style="color:gray; font-size:11px; line-height:1">If you are already a stoic customer and don’t have my stoic account, you can<a style="color:#010745; font-size:12px; line-height: 1;" href="${contextPath}/register"><strong> register now</strong></a>. It is prety quick.</p>
                       </div>
                     </div>
 					  <div class="row">
@@ -146,8 +145,8 @@
               </div>
             </div>
           </div>
-		  <div class="col-lg-12 col-md-12 col-sm-12 margin-top-20 padding-top-70">
-			<p style="font-family:Roboto; font-size:12px; " style="font-color:#ffffff"> <a style="color:#ffffff;" href="#">Know your CPE &nbsp</a> | <a style="color:#ffffff;" href="#">&nbsp Know your bill</a></p>
+		  <div class="col-lg-12 col-md-12 col-sm-12 margin-top-0 padding-top-0">
+			<p style="font-family:Roboto; font-size:14px; " style="font-color:#ffffff"> <a style="color:#ffffff;" href="#">Know your CPE &nbsp</a> | <a style="color:#ffffff;" href="#">&nbsp Know your bill</a></p>
 		  </div>
         </div>
       </div>
