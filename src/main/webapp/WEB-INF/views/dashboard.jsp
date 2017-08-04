@@ -63,16 +63,15 @@
             </div>
         </div>
         <!-- Header END -->
-        <div class="main">
-            <div class="container">  
+        
                 <!-- BEGIN STEPS -->
                 <!-- BEGIN STEPS -->
-                <div class="row front-steps-wrapper" >
+                <div class="row front-steps-wrapper"  style="margin-left: 0.001%;width: 100%;">
                     <div class="col-lg-12 col-md-12 col-sm-12 front-step-col">
                         <div class="front-step front-stepv">
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 margin-top-5 ">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 margin-top-5 ">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 margin-top-5"  style="padding-left: 10%;">
                                         <h2 style="font-family:Roboto; font-size:45px"><strong>Experience  transparency</strong></h2>
                                         <h2 style="font-family:Roboto; font-size:30px">Welcome, <strong style="color:#E17C80">${user_details.getFirst_name() }</strong> to your stoic zeno page</h2>
                                     </div>
@@ -82,6 +81,9 @@
                     </div>
                 </div>
                 <!-- END STEPS -->
+                
+        <div class="main">
+            <div class="container">  
                 <div class="col-lg-12 col-md-12 col-sm-12"style="padding-top:1%;  ">
                     <form class="form-horizontal form-without-legend ">
                         <div class="form-group"> 

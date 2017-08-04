@@ -182,7 +182,7 @@ a:hover{
 /* Floating Icons */
 .fixedBlock {
   position: fixed;
-  top: 40%;
+  top: 55%;
   right: -2%;
   padding: 0;
   list-style: none;
@@ -253,7 +253,7 @@ a:hover{
   .modal-dialog 
   {
     width: 90%;
-    height:100%;
+    height:80%;
   }
   .modal-content 
   {
@@ -294,7 +294,7 @@ a:hover{
   .modal-dialog 
   {
     width: 90%;
-    height:100%;
+    height:80%;
   }
   .modal-content 
   {
