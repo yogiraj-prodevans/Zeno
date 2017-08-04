@@ -1,6 +1,5 @@
 
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
@@ -15,8 +14,8 @@
   <title>STOIC ZENO</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta content="Metronic Shop UI description" name="description">
-  <meta content="Metronic Shop UI keywords" name="keywords">
+  <meta content="Stoic Zeno User Portal" name="description">
+  <meta content="Stoic Zeno User Portal Keywords" name="keywords">
   <meta content="vikram" name="author">
   
   <!-- link to image for socio -->
