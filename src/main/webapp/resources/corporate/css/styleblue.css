@@ -170,7 +170,7 @@ Misc tools
 /*.btn {
 	padding: 7px 14px;  
 	font-size: 14px;
-	text-transform: uppercase;
+	
 	border-radius: 0;
 }
 .btn-primary {
@@ -495,7 +495,7 @@ body.page-header-fixed {
 	margin: 0 10px 0 0;
 	padding: 0;
 	float: left;
-	text-transform: uppercase;
+	
 }
 .header-navigation ul {
 	margin: 0;
@@ -1078,7 +1078,7 @@ steps block and steps block elements
 }
 .steps-block em {
 	font: normal 400 13px 'Opan Sans', sans-serif;
-	text-transform: uppercase;
+	
 }
 .steps-block-simple em {
 	text-transform: inherit;
@@ -2504,7 +2504,7 @@ Demo Utils
   color: #555;
   font-size: 16px;
   margin-bottom: 14px;
-  text-transform: uppercase;
+  
 }
 .front-lists-v2 li i {
   margin-right: 5px;
@@ -3076,7 +3076,7 @@ Styler Panel
   display: block;
 }
 .color-mode label span {  
-  text-transform: uppercase;
+  
 }
 .color-mode label > span {
   display: inline-block;

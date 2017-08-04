@@ -96,11 +96,12 @@ public class DashboardConroller {
 
 	@RequestMapping(value = "/help", method = RequestMethod.GET)
 	public String help(Locale locale, Model model, HttpSession session) {
-		if (session.getAttribute("user") == null) {
+		/*if (session.getAttribute("user") == null) {
 			return "redirect:/logout";
 		} else {
 			return "help";
-		}
+		}*/
+                return "help";
 	}
 
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)

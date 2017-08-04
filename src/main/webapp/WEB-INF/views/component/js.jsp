@@ -7,6 +7,7 @@
   <script src="plugins/jquery-migrate.min.js" type="text/javascript"></script>
   <script src="plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
   <script src="corporate/scripts/back-to-top.js" type="text/javascript"></script>
+  <script src="plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
   <!-- END CORE PLUGINS -->
   <!-- BEGIN PAGE LEVEL JAVASCRIPTS (REQUIRED ONLY FOR CURRENT PAGE) -->
   <script src="plugins/fancybox/source/jquery.fancybox.pack.js" type="text/javascript"></script>
@@ -22,3 +23,10 @@
         });
   </script>
   <!-- END PAGE LEVEL JAVASCRIPTS -->
+  
+  
+
+   
+
+ 
+    
