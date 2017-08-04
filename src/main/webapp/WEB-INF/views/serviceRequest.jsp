@@ -19,6 +19,67 @@
 
 <!--  include the all css components -->
   <jsp:include page="component/css.jsp"></jsp:include>
+  
+ <style type="text/css">
+ 
+ /*START*/
+ .boxes {
+  margin: auto;
+  padding: 50px;
+  background: #484848;
+}
+
+/*Checkboxes styles*/
+input[type="checkbox"] { display: none; }
+
+input[type="checkbox"] + label {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 15px;
+  font: 12px/14px 'Open Sans', Arial, sans-serif;
+  color: #010745;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+input[type="checkbox"] + label:last-child { margin-bottom: 0; }
+
+input[type="checkbox"] + label:before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 1.2px solid #010745;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: .6;
+  -webkit-transition: all .12s, border-color .08s;
+  transition: all .12s, border-color .08s;
+}
+
+input[type="checkbox"]:checked + label:before {
+  width: 10px;
+  top: -5px;
+  left: 5px;
+  border-radius: 0;
+  opacity: 1;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+ 
+ /*end*/
+ 
+ 
+
+ 
+ </style>
+
 </head>
 
 <body class="corporate">
@@ -69,24 +130,40 @@
   </div>
  
 
-  <!-- Header END -->
-<div class="main">
-  <div class="container">  
-  
 
-      <!-- BEGIN STEPS -->
+ <!-- BEGIN STEPS -->
+    <div class="row front-steps-wrapper"  style="margin-left: 0.001%;width: 100%;">
+        <div class="col-lg-12 col-md-12 col-sm-12 front-step-col">
+            <div class="front-step front-stepv">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 margin-top-5 ">
+                        <div class="col-lg-12 col-md-12 col-sm-12 margin-top-5"  style="padding-left: 10%;">
+                            
+                            <div class="col-md-6">
+                     			<h2 style="font-family:Roboto; font-size:30px">Let us get it done.</h2>
+                     		</div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- END STEPS -->
+ 
     
 
-                <div class="row">
-                  <p style="font-family:Segoe UI Light; font-size:48px; margin-left:5%;">
-                    Let us get it done.
-                  </p>
-                </div>
-                
-                <div class="row" style="margin-left:4%;margin-top:4%">
-                  <p style="font-size:16px;">How can we help you today?</p><hr>
-                </div>
+ 
+               
 
+
+<div class="main">
+  <div class="container">  
+	
+	 
+     <div class="row" style="margin-left:4%;margin-top:4%">
+       <p style="font-size:16px;">How can we help you today?</p><hr>
+     </div> 
 
     <div class="row">
       <div class="col-md-12">
@@ -141,62 +218,94 @@
             <div class="row" style="margin-left:8%">
               <p style="font-size:14px;">Request For</p><hr>
             </div>
-            <div class="row" style="margin-left:10%">
-              <div class="checkbox">
-                <label><input type="checkbox" value="">New Connection</label>
-              </div>
-              <div class="checkbox">
-                <label><input type="checkbox" value="">Activation / Deactivation of Services</label>
-              </div>
-              <div class="checkbox">
-                <label><input type="checkbox" value="">Duplicate Bill</label>
-              </div>
-              <div class="checkbox">
-                <label><input type="checkbox" value="">Change of Location</label>
-              </div>
-              <div class="checkbox">
-                <label><input type="checkbox" value="">Restoration of Service</label>
-              </div>
-              <div class="checkbox">
-                <label><input type="checkbox" value="">Any Other</label>
-              </div>
-            </div>
-          </div>
+            <div class="row" style="margin-left:15%;">
+            
+            	<div class="row">
+				  <input type="checkbox" id="box-1">
+				  <label for="box-1">New Connection</label>
+				</div><br>
+				
+				<div class="row">
+				  <input type="checkbox" id="box-2">
+				  <label for="box-2">Activation / Deactivation of Services</label>
+				</div><br>
+				
+				<div class="row">
+				  <input type="checkbox" id="box-3">
+				  <label for="box-3">Duplicate Bill</label>
+				</div><br>
+				
+				<div class="row">
+				  <input type="checkbox" id="box-4">
+				  <label for="box-4">Change of Location</label>
+				</div><br>
+				
+				<div class="row">
+				  <input type="checkbox" id="box-5">
+				  <label for="box-5">Restoration of Service</label>
+				</div><br>
+				
+				<div class="row">
+				  <input type="checkbox" id="box-6">
+				  <label for="box-6">Any Other</label>
+				</div><br>
+				
+			</div>
+        		
+          </div>		
           <!-- End Request For-->
 
-          <!-- Start Complaint About-->
+	<!-- Start COmplaint For-->
           <div class="col-md-6">
             <div class="row" style="margin-left:8%">
               <p style="font-size:14px;">Complaint About</p><hr>
             </div>
-            <div class="row" style="margin-left:10%">
-              <div class="checkbox">
-                <label><input type="checkbox" value="">Not able to pay online</label>
-              </div>
-              <div class="checkbox">
-                <label><input type="checkbox" value="">Activation / Deactivation of Services</label>
-              </div>
-              <div class="checkbox">
-                <label><input type="checkbox" value="">Billing Related</label>
-              </div>
-              <div class="checkbox">
-                <label><input type="checkbox" value="">Marcus Website</label>
-              </div>
-              <div class="checkbox">
-                <label><input type="checkbox" value="">Marcus Customer Care</label>
-              </div>
-              <div class="checkbox">
-                <label><input type="checkbox" value="">FUP/Speed</label>
-              </div>
-              <div class="checkbox">
-                <label><input type="checkbox" value="">CPE</label>
-              </div>
-              <div class="checkbox">
-                <label><input type="checkbox" value="">Zeno Portal</label>
-              </div>
-            </div>
-          </div>
-          <!-- End Complaint About-->
+            <div class="row" style="margin-left:15%;">
+            
+            	<div class="row">
+				  <input type="checkbox" id="box-7">
+				  <label for="box-7">Not able to pay online</label>
+				</div><br>
+				
+				<div class="row">
+				  <input type="checkbox" id="box-8">
+				  <label for="box-8">Activation / Deactivation of Services</label>
+				</div><br>
+				
+				<div class="row">
+				  <input type="checkbox" id="box-9">
+				  <label for="box-9">Billing Related</label>
+				</div><br>
+				
+				<div class="row">
+				  <input type="checkbox" id="box-10">
+				  <label for="box-10">Marcus Website</label>
+				</div><br>
+				
+				<div class="row">
+				  <input type="checkbox" id="box-11">
+				  <label for="box-11">Marcus Customer Care</label>
+				</div><br>
+				
+				<div class="row">
+				  <input type="checkbox" id="box-12">
+				  <label for="box-12">FUP/Speed</label>
+				</div><br>
+				
+				<div class="row">
+				  <input type="checkbox" id="box-13">
+				  <label for="box-13">CPE</label>
+				</div><br>
+				
+				<div class="row">
+				  <input type="checkbox" id="box-14">
+				  <label for="box-14">Zeno Portal</label>
+				</div><br>
+				
+			</div>
+        		
+          </div>		
+          <!-- End Complaint For-->
 
           <!-- Start Tell More-->
           <div class="row" style="margin-left:6%">
