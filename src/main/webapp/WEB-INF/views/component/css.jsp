@@ -11,15 +11,40 @@
   <!-- Page level plugin styles START -->
   <link href="pages/css/animate.css" rel="stylesheet">
   <link href="plugins/fancybox/source/jquery.fancybox.css" rel="stylesheet">
+  <link href="plugins/owl.carousel/assets/owl.carousel.css" rel="stylesheet">
   <!-- Page level plugin styles END -->
 
   <!-- Theme styles START -->
+  <link href="pages/css/components.css" rel="stylesheet">
+  <link href="corporate/css/style.css" rel="stylesheet">
+  <link href="pages/css/style-shop.css" rel="stylesheet" type="text/css">
   <link href="corporate/css/styleblue.css" rel="stylesheet">
   <link href="corporate/css/style-responsive.css" rel="stylesheet">
   <link href="corporate/css/themes/blue.css" rel="stylesheet" id="style-color">
   <link href="corporate/css/custom.css" rel="stylesheet">
   <!-- Theme styles END -->
+  
+  
+   
+  
+
  <style type="text/css">
+     
+     /*text rotate*/
+
+.rotate {
+    display:inline-block;
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    -webkit-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    transform: rotate(270deg); 
+	text-align:center;
+        font-size: 70px;
+}
+  
+     
+     
+     
     .v_text {
       font-family: 'Lato', sans-serif;
       font-size: 20px;

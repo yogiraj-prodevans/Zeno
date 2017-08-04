@@ -255,7 +255,7 @@ input[type="checkbox"]:checked + label:before {
           </div>		
           <!-- End Request For-->
 
-	<!-- Start COmplaint For-->
+		<!-- Start COmplaint For-->
           <div class="col-md-6">
             <div class="row" style="margin-left:8%">
               <p style="font-size:14px;">Complaint About</p><hr>
@@ -315,46 +315,35 @@ input[type="checkbox"]:checked + label:before {
             <div class="col-md-6">
               <textarea class="form-control" style="height:20%"></textarea>
             </div>
-          </div><br>
-          <div class="row" style="margin-left:6%">
-            <a href="#">
-                  <div style="width:150px; height:40px; margin:1px; line-height:.5; background-color:#010745; text-align:center">
-                    <p style=" font-size:16px; line-height:.5; color:#ecf0f1; align:center; padding-top:15px;">Submit</p>
-                  </div>
-            </a>
-          </div>
-          <!-- End Tell More-->
-
-        </form>
-      </div>
-    </div>
-  </div>
+ 	      </div>
+		
+		</form>
+	</div>
+	</div>
+</div>
 </div>
 
-
-<!-- included pop up -->
-<jsp:include page="component/pop-up.jsp"></jsp:include>
-
-
- <!-- BEGIN FOOTER -->
-  <div class="footer" style="font-size:10px; line-height:1"><!--style="font-family:Roboto; position: fixed; right: 0; bottom: 0; left: 0;"-->
-    <div class="container">
-      <div class="row">
-        <!-- BEGIN COPYRIGHT -->
-          <div class="col-md-10 col-sm-10 padding-bottom-10 " > 2017 &copy Stoic Zeno. ALL Rights Reserved.&nbsp 
-      <a href="#">Privacy Policy</a> |
-          <a href="javascript:;">Terms of Service</a> |
-      <a href="javascript:;">Refund and Cancellation</a> |
-      <a href="javascript:;">Feedback</a> |
-      <a href="javascript:;">Contact Us</a>
-        </div>
-        <!-- END COPYRIGHT -->
-      </div>
-    </div>
-  </div>
-  <!-- END FOOTER -->
-  <!-- Load javascripts at bottom, this will reduce page load time -->
- <jsp:include page="component/js.jsp"></jsp:include>
-  <!-- END BODY -->
-</body>
+        <!-- included pop up -->
+        <jsp:include page="component/pop-up.jsp"></jsp:include>
+            <!-- BEGIN FOOTER -->
+            <div class="footer" style="font-size:10px; line-height:1"><!--style="font-family:Roboto; position: fixed; right: 0; bottom: 0; left: 0;"-->
+                <div class="container">
+                    <div class="row">
+                        <!-- BEGIN COPYRIGHT -->
+                        <div class="col-md-10 col-sm-10 padding-bottom-10 " > 2017 &copy Stoic Zeno. ALL Rights Reserved.&nbsp 
+                            <a href="#">Privacy Policy</a> |
+                            <a href="javascript:;">Terms of Service</a> |
+                            <a href="javascript:;">Refund and Cancellation</a> |
+                            <a href="javascript:;">Feedback</a> |
+                            <a href="javascript:;">Contact Us</a>
+                        </div>
+                        <!-- END COPYRIGHT -->
+                    </div>
+                </div>
+            </div>
+            <!-- END FOOTER -->
+            <!-- Load javascripts at bottom, this will reduce page load time -->
+        <jsp:include page="component/js.jsp"></jsp:include>
+        <!-- END BODY -->
+    </body>
 </html>
