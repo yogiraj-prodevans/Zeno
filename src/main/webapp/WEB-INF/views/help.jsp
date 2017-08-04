@@ -7,70 +7,65 @@
 
     <!-- Head BEGIN -->
     <head>
+      <head>
         <meta charset="utf-8">
-        <title>Frequently Asked Questions | Metronic Shop UI</title>
-
+        <title>STOIC ZENO</title>
+        <link rel="shortcut icon" href="favicon.ico">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
         <meta content="Metronic Shop UI description" name="description">
         <meta content="Metronic Shop UI keywords" name="keywords">
         <meta content="vikram" name="author">
-
-
-        <link rel="shortcut icon" href="favicon.ico">
-
+        <!-- link to image for socio -->
+        <meta property="og:url" content="-CUSTOMER VALUE-">
+        <!--  include the all css components -->
         <jsp:include page="component/css.jsp"></jsp:include>
-            <!-- Theme styles END -->
-        </head>
-        <!-- Head END -->
-
-        <!-- Body BEGIN -->
-        <body class="ecommerce">
-            <!-- BEGIN TOP BAR -->
-            <div class="pre-header">
-                <div class="container">
-                    <div class="row">
-                        <!-- BEGIN TOP BAR MENU -->
-                        <div class="col-md-12 col-sm-12 additional-nav" style=" font-size:12px; font-color:000000">
-                            <ul class="list-unstyled list-inline pull-right ">
-                                <li ><i class=" fa fa-phone"></i><span>Lets Talk: +91 9019602602</span></li>
-                            </ul>
-                        </div>
-                        <!-- END TOP BAR MENU -->
-                    </div>
-                </div>
-            </div>
-            <!-- END TOP BAR -->
-            <!-- BEGIN HEADER -->
-            <div class="header">
-                <div class="container">
-                    <a class="site-logo" href="#">
-                        <img src="corporate/img/logos/logo.png" alt="Stoic Zeno"> </a>
-                    <a href="javascript:void(0);" class="mobi-toggler"><i class="fa fa-bars"></i></a>
-                    <!-- BEGIN NAVIGATION -->
-                    <div class="header-navigation pull-right font-transform-inherit" style="font-size:12px">
-                        <ul>
-                            <li class="dropdown active"> </li>
-                            <li ><a href="${pageContext.request.contextPath }/dashboard">Home</a></li>
-                            <li><a href="${pageContext.request.contextPath }/billingPayment">Make Payment</a></li>  
-                            <li  ><a href="${pageContext.request.contextPath }/service">Service Request</a></li> 
-                            <li class="active"><a href="${pageContext.request.contextPath }/help">Help</a></li> 
-                            <li><a href="${pageContext.request.contextPath }/parental-control">Parental Control</a></li>
-                            <li class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
-                                 Settings      
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="${pageContext.request.contextPath }/profile">Profile</a></li>
-                                    <li><a href="${pageContext.request.contextPath }/logout">Logout</a></li>
-                                </ul>
-                            </li>
+    </head>
+    <body class="corporate">
+        <!-- BEGIN TOP BAR -->
+        <div class="pre-header">
+            <div class="container">
+                <div class="row">
+                    <!-- BEGIN TOP BAR MENU -->
+                    <div class="col-md-12 col-sm-12 additional-nav" style=" font-size:12px; font-color:000000">
+                        <ul class="list-unstyled list-inline pull-right ">
+                            <li ><i class=" fa fa-phone"></i><span>Lets Talk: +91 9019602602</span></li>
                         </ul>
                     </div>
-                    <!-- END NAVIGATION -->
+                    <!-- END TOP BAR MENU -->
                 </div>
             </div>
+        </div>
+        <!-- END TOP BAR -->
+        <!-- BEGIN HEADER -->
+        <div class="header">
+            <div class="container">
+                <a class="site-logo" href="#">
+                    <img src="corporate/img/logos/logo.png" alt="Stoic Zeno"> </a>
+                <a href="javascript:void(0);" class="mobi-toggler"><i class="fa fa-bars"></i></a>
+                <!-- BEGIN NAVIGATION -->
+                <div class="header-navigation pull-right font-transform-inherit" style="font-size:12px">
+                    <ul>
+                        <li class="dropdown active"> </li>
+                        <li ><a href="${pageContext.request.contextPath }/dashboard">Home</a></li>
+                        <li><a href="${pageContext.request.contextPath }/billingPayment">Make Payment</a></li>  
+                        <li><a href="${pageContext.request.contextPath }/service">Service Request</a></li> 
+                        <li class="active"><a href="${pageContext.request.contextPath }/help">Help</a></li> 
+                        <li><a href="${pageContext.request.contextPath }/parental-control">Parental Control</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
+                                Settings      
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="${pageContext.request.contextPath }/profile">Profile</a></li>
+                                <li><a href="${pageContext.request.contextPath }/logout">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- END NAVIGATION -->
+            </div>
+        </div>
         <!-- Header END -->
         
 
@@ -156,10 +151,10 @@
                                 </div>
                                 <div id="accordion1_3" class="panel-collapse collapse">
                                     <div class="panel-body">
-                                        &nbsp; <i class=" fa  fa-dot-circle-o "></i> The entire network has been configured to understand the usage of the end customer </br>
-                                        &nbsp; <i class=" fa  fa-dot-circle-o "></i> Central intelligence in The Cloud holds algorithms that are triggered when user logs in and starts an application, say YouTube. </br>
-                                        &nbsp; <i class=" fa  fa-dot-circle-o "></i> The network releases bandwidth required for the application to perform at 100% </br>
-                                        &nbsp; <i class=" fa  fa-dot-circle-o "></i> If another user in the same house starts using YouTube, the network increases the bandwidth being sent to the Customer Premises Equipment (CPE) placed in your residence</br> 
+                                       <i class=" fa  fa-dot-circle-o "></i> The entire network has been configured to understand the usage of the end customer </br>
+                                       <i class=" fa  fa-dot-circle-o "></i> Central intelligence in The Cloud holds algorithms that are triggered when user logs in and starts an application, say YouTube. </br>
+                                       <i class=" fa  fa-dot-circle-o "></i> The network releases bandwidth required for the application to perform at 100% </br>
+                                       <i class=" fa  fa-dot-circle-o "></i> If another user in the same house starts using YouTube, the network increases the bandwidth being sent to the Customer Premises Equipment (CPE) placed in your residence</br> 
                                     </div>
                                 </div>
                             </div>
@@ -173,11 +168,11 @@
                                 </div>
                                 <div id="accordion1_4" class="panel-collapse collapse">
                                     <div class="panel-body">
-                                        &nbsp; <i class=" fa  fa-dot-circle-o "></i>  The CPE is substitute for a WIFI router which also works as an interface for a Television. </br>
-                                        &nbsp; <i class=" fa  fa-dot-circle-o "></i> The CPE comes loaded with apps like Music Player, Video Player, YouTube, Internet Brower which allows you to use all these features on the television screen like any smart TV </br>
-                                        &nbsp; <i class=" fa  fa-dot-circle-o "></i> The CPE can handle allocation of bandwidth to 8 devices simultaneously and does it based on the application each device is using (Smart WIFI) </br>
-                                        &nbsp; <i class=" fa  fa-dot-circle-o "></i> CPE has 2 USB ports which allows you to connect an external hard disk, wireless mouse, keyboard </br>
-                                        &nbsp; <i class=" fa  fa-dot-circle-o "></i> CPE also comes with Bluetooth connectivity to link more devices to it </br>
+                                        <i class=" fa  fa-dot-circle-o "></i>  The CPE is substitute for a WIFI router which also works as an interface for a Television. </br>
+                                        <i class=" fa  fa-dot-circle-o "></i> The CPE comes loaded with apps like Music Player, Video Player, YouTube, Internet Brower which allows you to use all these features on the television screen like any smart TV </br>
+                                        <i class=" fa  fa-dot-circle-o "></i> The CPE can handle allocation of bandwidth to 8 devices simultaneously and does it based on the application each device is using (Smart WIFI) </br>
+                                        <i class=" fa  fa-dot-circle-o "></i> CPE has 2 USB ports which allows you to connect an external hard disk, wireless mouse, keyboard </br>
+                                        <i class=" fa  fa-dot-circle-o "></i> CPE also comes with Bluetooth connectivity to link more devices to it </br>
                                     </div>
                                 </div>
                             </div>
