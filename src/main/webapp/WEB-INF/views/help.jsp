@@ -145,27 +145,7 @@
                       </div>
                    </div>
                 </div>
-                <div class="panel panel-default">
-                   <div class="panel-heading">
-                      <h4 class="panel-title">
-                         <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#accordion1_2">
-                         2. How is this different from current plans?
-                         </a>
-                      </h4>
-                   </div>
-                   <div id="accordion1_2" class="panel-collapse collapse">
-                      <div class="panel-body">
-                        <i class=" fa fa-hand-o-right  "></i> Earlier plan</br>
-                        &nbsp; <i class=" fa  fa-dot-circle-o "></i> Speed is capped based on the monthly rental</br>
-                        &nbsp; <i class=" fa  fa-dot-circle-o "></i> So applications like video streaming, video conferencing do not give you best performance </br>
-                        &nbsp; <i class=" fa  fa-dot-circle-o "></i> When more than one user is active, bandwidth is shared, so both users get less bandwidth </br>
-                        <i class=" fa fa-hand-o-right  "></i> New Plan </br>
-                        &nbsp; <i class=" fa  fa-dot-circle-o "></i> Plans based on data usage o Speeds given based on application being used</br>
-                        &nbsp; <i class=" fa  fa-dot-circle-o "></i> Smart Android Router/CPE to be placed in the residence to allow for up to 8 users simultaneously </br>
-
-                      </div>
-                   </div>
-                </div>
+               
                 <div class="panel panel-default">
                    <div class="panel-heading">
                       <h4 class="panel-title">
