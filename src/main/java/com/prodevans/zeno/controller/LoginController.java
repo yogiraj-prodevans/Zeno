@@ -7,12 +7,10 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestAttribute;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -34,34 +32,35 @@ public class LoginController {
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String getDashboard(HttpSession session, SessionStatus status,@RequestParam("customer_id") String customer_id,@RequestParam("password") String password) 
-	{
-		//status.setComplete();
-		try
-		{
-			SessionDetails userSessionDetails = LoginImpl.loginCheck(customer_id,password);
+	public String getDashboard(HttpSession session, SessionStatus status,
+			@RequestParam("customer_id") String customer_id, @RequestParam("password") String password,
+			ModelMap model) {
+		// status.setComplete();
+		try {
+			SessionDetails userSessionDetails = LoginImpl.loginCheck(customer_id, password);
 			System.out.println(userSessionDetails.getFirst_name());
-			if(userSessionDetails.getResult()) 
-			{
+			if (userSessionDetails.getResult()) {
 				session.setAttribute("user", userSessionDetails);
-				System.out.println("displaying actno : "+userSessionDetails.getActno());
+				System.out.println("displaying actno : " + userSessionDetails.getActno());
 				return "redirect:dashboard";
 			}
-			else 
-			{
-				return "login";
-			}
-
 		} catch (Exception ee) {
 			ee.printStackTrace();
 		}
-		return "login";
+
+		model.addAttribute("error", "login fail");
+		return "redirect:/login";
 
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public ModelAndView loginhome(Locale locale, Model model) {
-		return new ModelAndView("login", "user", new UserInfo());
+	public ModelAndView loginhome(@RequestParam(name = "error", required = false) String error, Locale locale,
+			Model model) {
+		ModelAndView mo = new ModelAndView();
+		mo.setViewName("login");
+		mo.addObject("user", new UserInfo());
+		mo.addObject("error", error);
+		return mo;
 	}
 
 }

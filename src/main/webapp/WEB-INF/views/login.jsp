@@ -106,6 +106,10 @@
               <div class="form-info">
 			  <p style="font-family:Roboto; font-color:#gray; font-size:16px; padding-bottom:5px"> Login </P>
 			    <div class="content-form-page">
+			    <c:if test="${ not empty error}">
+			    ${error}
+			    </c:if>
+			    
                   <form:form class="form-horizontal form-without-legend" role="form" action="login" method="post" modelAttribute="user">
                     <div class="form-group"> <label for="email" class="col-lg-12 control-label"> <span class="require"></span></label>
                       <div class="col-lg-12">
