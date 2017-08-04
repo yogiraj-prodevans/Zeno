@@ -37,10 +37,10 @@
 					<input type="hidden" name="currency" value="INR"/><!-- Currency	: -->
 				</tr>
 				<tr>
-					<input type="hidden" name="redirect_url" value="http://52.172.215.71:8080/zeno/"/><!-- Redirect URL	: -->
+					<input type="hidden" name="redirect_url" value="http://52.172.215.71:8080/zeno/ccavResponseHandler"/><!-- Redirect URL	: -->
 				</tr>
 			 	<tr>
-			 		<input type="hidden" name="cancel_url" value="http://52.172.215.71:8080/zeno/"/><!-- Cancel URL	: -->
+			 		<input type="hidden" name="cancel_url" value="http://52.172.215.71:8080/zeno/ccavResponseHandler"/><!-- Cancel URL	: -->
 			 	</tr>
 			 	<tr>
 					<input type="hidden" name="language" value="EN"/><!-- Language	: -->
