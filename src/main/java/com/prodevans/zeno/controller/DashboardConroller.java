@@ -16,7 +16,6 @@ import com.prodevans.zeno.dao.impl.DashboardDAOImpl;
 import com.prodevans.zeno.pojo.SessionDetails;
 import com.prodevans.zeno.pojo.SubscriptionDetails;
 import com.prodevans.zeno.pojo.UserDetails;
-import com.prodevans.zeno.pojo.UserInfo;
 
 @Controller
 public class DashboardConroller {
@@ -65,16 +64,11 @@ public class DashboardConroller {
 	}
 
 	/*
-	@RequestMapping(value = "/billingPayment", method = RequestMethod.GET)
-	public String billingPayment(Locale locale, Model model, HttpSession session) {
-		if (session.getAttribute("user") == null) {
-			return "redirect:/logout";
-		} else {
-			return "billingPayment";
-		}
-<<<<<<< HEAD
-	}
-	*/
+	 * @RequestMapping(value = "/billingPayment", method = RequestMethod.GET) public
+	 * String billingPayment(Locale locale, Model model, HttpSession session) { if
+	 * (session.getAttribute("user") == null) { return "redirect:/logout"; } else {
+	 * return "billingPayment"; } <<<<<<< HEAD }
+	 */
 
 	@RequestMapping(value = "/service", method = RequestMethod.GET)
 	public String service(Locale locale, Model model, HttpSession session) {
@@ -101,7 +95,7 @@ public class DashboardConroller {
 		} else {
 			return "help";
 		}
-                
+
 	}
 
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
@@ -112,4 +106,3 @@ public class DashboardConroller {
 		return "redirect:/login";
 	}
 }
-
