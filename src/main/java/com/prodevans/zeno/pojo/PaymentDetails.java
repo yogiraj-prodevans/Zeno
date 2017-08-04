@@ -12,7 +12,7 @@ public class PaymentDetails
 	private int instrumentid;
 	private String instrument_detail;
 	private String trans_descr;
-	
+	private int Transaction_id;
 	
 	
 	public PaymentDetails() {
@@ -78,6 +78,12 @@ public class PaymentDetails
 	}
 	public void setTrans_descr(String trans_descr) {
 		this.trans_descr = trans_descr;
+	}
+	public int getTransaction_id() {
+		return Transaction_id;
+	}
+	public void setTransaction_id(int transaction_id) {
+		Transaction_id = transaction_id;
 	}
 	
 	
