@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="img/favicon.ico">
   <meta charset="utf-8">
   <title>STOIC ZENO</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
