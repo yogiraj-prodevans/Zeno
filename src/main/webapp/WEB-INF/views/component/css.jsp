@@ -16,7 +16,7 @@
   <!-- Page level plugin styles END -->
 
   <!-- Theme styles START -->
-  <link href="pages/css/components.css" rel="stylesheet">
+  <!-- <link href="pages/css/components.css" rel="stylesheet">  -->
   <link href="corporate/css/style.css" rel="stylesheet">
   <link href="pages/css/style-shop.css" rel="stylesheet" type="text/css">
   <link href="corporate/css/styleblue.css" rel="stylesheet">
