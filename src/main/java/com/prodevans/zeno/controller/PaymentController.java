@@ -50,10 +50,12 @@ public class PaymentController
 		else
 		{
 			SessionDetails user = (SessionDetails) session.getAttribute("user");
-			double pendingAmount=paymentDAOImpl.getPendingAmount(user.getActno());
 			model.addAttribute("user_details", user);
+			
+			double pendingAmount=paymentDAOImpl.getPendingAmount(user.getActno());
 			session.setAttribute("pendingAmount", pendingAmount);
 			model.addAttribute("pendingAmount",pendingAmount);
+			
 			return "billingPayment";
 		}
 	}

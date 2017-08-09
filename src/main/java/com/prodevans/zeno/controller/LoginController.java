@@ -14,12 +14,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.prodevans.zeno.dao.impl.PaymentDAOImpl;
 import com.prodevans.zeno.dao.impl.UserInfoDAOImpl;
 import com.prodevans.zeno.pojo.SessionDetails;
 import com.prodevans.zeno.pojo.UserInfo;
 
 @Controller
-public class LoginController {
+public class LoginController 
+{
+	
+	
 	@Autowired
 	private UserInfoDAOImpl LoginImpl;
 
@@ -41,6 +45,7 @@ public class LoginController {
 			System.out.println(userSessionDetails.getFirst_name());
 			if (userSessionDetails.getResult()) {
 				session.setAttribute("user", userSessionDetails);
+				
 				System.out.println("displaying actno : " + userSessionDetails.getActno());
 				return "redirect:dashboard";
 			}
