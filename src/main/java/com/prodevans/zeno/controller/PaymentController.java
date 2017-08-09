@@ -39,7 +39,7 @@ public class PaymentController
 	}*/
 	
 	private PaymentDetails paymentDetails=new PaymentDetails();
-
+	
 	@RequestMapping(value = "/billingPayment", method = RequestMethod.GET)
 	public String billingPayment(ModelMap model, HttpSession session) throws XmlRpcException 
 	{

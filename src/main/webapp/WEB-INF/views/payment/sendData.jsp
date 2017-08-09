@@ -1,8 +1,108 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri = "http://www.springframework.org/tags/form" prefix = "form"%>
+<%@ page session="false" %>
 <html>
-<head>
+    <head>
+        <meta charset="utf-8">
+        <title>STOIC ZENO</title>
+
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta content="Stoic Zeno User Portal" name="description">
+        <meta content="Stoic Zeno User Portal Keywords" name="keywords">
+        <meta content="vikram" name="author">
+
+        <!-- link to image for socio -->
+        <meta property="og:url" content="-CUSTOMER VALUE-">
+        <link rel="shortcut icon" href="favicon.ico">
+
+
+        <!--  include the all css components -->
+        <jsp:include page="../component/css.jsp"></jsp:include>
+
+<style type="text/css">
+
+.payNowButton2
+{
+	width:90%;
+	height:25%;
+	margin:1%;
+	line-height:.5;
+	background-color:#010745;
+	text-align:center;
+	font-size:16px;
+	line-height:.5;
+	color:#ecf0f1;
+	align:center;
+	padding-top:12%;
+}
+.payNowButton2:hover
+{
+	background-color: #1F3A93;
+	color: #ecf0f1;
+}
+.payNowButton1
+{
+	width:90%;
+	height:20%;
+	margin:1%;
+	line-height:.5;
+	background-color:#010745;
+	text-align:center;
+	font-size:16px;
+	line-height:.5;
+	color:#FFF;
+	align:center;
+	border: none;
+}
+.payNowButton1:hover
+{
+	background-color: #FFF;
+	color: #010745;
+	border: 1px solid #010745; !important;
+}
+textarea:focus, input:focus{
+    outline: none;
+}
+.summaryBlock
+{
+ 	width: 90%;
+    height: 40%;    
+    padding: 5%;
+    margin: 40px;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    border: .5px solid;
+    border-color: #D9D9D9;
+    outline: 2px solid white;
+    outline-offset: 15px;
+}
+
+
+/* iphone 6 plus*/
+@media (max-width: 480px)
+{
+	.payNowButton1
+	{
+		width: 40%;
+		height: 5%;	
+		padding-top: 5%;
+	}
+	.payNowButton2
+	{
+		width: 80%;
+		height: 15%;
+	}
+	
+
+}
+
+/* iphone 6*/
+@media (max-width: 380px)
+{
+}
+</style>
+   
 <script>
 
     window.onload = function () {
@@ -10,270 +110,266 @@
         document.getElementById("tid").value = d;
     };
 </script>
+
+
 </head>
-<body>
-<h1>
+<body class="corporate">
 
-</h1>
-	<form method="post" name="customerData" action="ccavRequestHandler">
-		
-	
-		<table width="40%" height="100" border='1' align="center"><caption><font size="4" color="blue"><b>Integration Kit</b></font></caption></table>
-			<table width="50%" height="100" border='1' align="center">
+      <!-- BEGIN TOP BAR -->
+      <div class="pre-header">
+          <div class="container">
+              <div class="row">
+                  <!-- BEGIN TOP BAR MENU -->
+                  <div class="col-md-12 col-sm-12 additional-nav" style=" font-size:12px; font-color:000000">
+                      <ul class="list-unstyled list-inline pull-right ">
+                          <li ><i class=" fa fa-phone"></i><span>Lets Talk: +91 9019602602</span></li>
+                      </ul>
+                  </div>
+                  <!-- END TOP BAR MENU -->
+              </div>
+          </div>
+      </div>
+      <!-- END TOP BAR -->
+            
+         <!-- BEGIN HEADER -->
+         <div class="header">
+             <div class="container">
+                 <a class="site-logo" href="#">
+                     <img src="corporate/img/logos/logo.png" alt="Stoic Zeno"> </a>
+                 <a href="javascript:void(0);" class="mobi-toggler"><i class="fa fa-bars"></i></a>
+                 <!-- BEGIN NAVIGATION -->
+                 <div class="header-navigation pull-right font-transform-inherit" style="font-size:12px">
+                     <ul>
+                         <li class="dropdown active"> </li>
+                         <li ><a href="${pageContext.request.contextPath }/dashboard">Home</a></li>
+                     <li class="active" ><a href="${pageContext.request.contextPath }/billingPayment">Make Payment</a></li>  
+                     <li><a href="${pageContext.request.contextPath }/service">Service Request</a></li> 
+                     <li><a href="${pageContext.request.contextPath }/help">Help</a></li> 
+                     <li><a href="${pageContext.request.contextPath }/parental-control">Parental Control</a></li>
+                     <li class="dropdown">
+                         <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
+                             Settings      
+                         </a>
+
+                         <ul class="dropdown-menu">
+                             <li><a href="${pageContext.request.contextPath }/profile">Profile</a></li>
+                             <li><a href="${pageContext.request.contextPath }/logout">Logout</a></li>
+                         </ul>
+                     </li>
+                 </ul>
+             </div>
+             <!-- END NAVIGATION -->
+         </div>
+     </div>
+     <!-- Header END -->
+        
+<!-- BEGIN STEPS -->
+
+ <div class="row front-steps-wrapper"  style="margin-left: 0.001%;width: 100%;">
+     <div class="col-lg-12 col-md-12 col-sm-12 front-step-col">
+         <div class="front-step front-stepv">
+             <div class="row">
+                 <div class="col-lg-12 col-md-12 col-sm-12 margin-top-5 " style="padding-left: 10%;">
+                     
+                     	<div class="col-md-6">
+                     		<h2 style="font-family:Roboto; font-size:30px">Billing Summary</h2>
+                     	</div>  
+                     	
+                    
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div>
+ <!-- END STEPS -->
+
+
+<div class="main">
+	<div class="container">  
+		<div class="col-lg-12 col-md-12 col-sm-12" >
+
+			<form method="post" name="customerData" action="ccavRequestHandler" class="form-horizontal form-without-legend ">
 			
-				<tr>                    
-                    <input readonly="readonly" type="hidden" name="tid" id="tid" value=""/><!-- Transaction ID -->
-                </tr>
-				<tr>
-					<input type="hidden" name="merchant_id" value="127191"/><!-- Merchant Id	: -->
-				</tr>
-				<tr>
-					<input type="hidden" name="order_id" value="1236556561"/><!-- Order Id	: -->
-				</tr>
-				<tr>
-					<td>Amount	:  </td><td><input type="text" name="amount" value="1.00"   /></td>
-				</tr>
-				<tr>
-					<input type="hidden" name="currency" value="INR"/><!-- Currency	: -->
-				</tr>
-				<tr>
-					<input type="hidden" name="redirect_url" value="http://52.172.215.71:8080/zeno/ccavResponseHandler"/><!-- Redirect URL	: -->
-				</tr>
-			 	<tr>
-			 		<input type="hidden" name="cancel_url" value="http://52.172.215.71:8080/zeno/ccavResponseHandler"/><!-- Cancel URL	: -->
-			 	</tr>
-			 	<tr>
-					<input type="hidden" name="language" value="EN"/><!-- Language	: -->
-                    <input readonly="readonly" type="hidden" name="tid" id="tid" value=""/><!-- Transction ID -->
-                </tr>
-                
-                 
-				<tr>
-					<input type="hidden" name="merchant_id" value="127191"/><!-- Merchant ID -->
-				</tr>
-				<tr>
-					<input type="hidden" name="order_id" value="123654789"/><!-- order id -->
-				</tr>
-				<tr>
-					<input type="hidden" name="amount" value="1.00"/><!--Amount  -->
-				</tr>
-				<tr>
-					<input type="hidden" name="currency" value="INR"/><!-- currency -->
-				</tr>
-				 
-				<tr>
-					<input type="hidden" name="redirect_url" value="http://52.172.215.71:8080/zeno/ccavResponseHandler"/><!-- Redirect URL -->
-				</tr>
-			 	<tr>
-			 		<input type="hidden" name="cancel_url" value="http://52.172.215.71:8080/zeno/ccavResponseHandler"/><!-- cancel url -->
-			 	</tr>
-			 	<tr>
-					<input type="hidden" name="language" value="EN"/><!-- Language -->
-				</tr>
-		        <tr>
-		        	<input type="hidden" name="billing_name" value="Charli"/><!-- billing name -->
-		        </tr>
-		        <tr>
-		        	<input type="hidden" name="billing_address" value="Room no 1101, near Railway station Ambad"/><!-- billing address -->
-		        </tr>
-		        <tr>
-		        	<input type="hidden" name="billing_city" value="Indore"/><!-- billing city -->
-		        </tr>
-		        <tr>
-		        	<input type="hidden" name="billing_state" value="MH"/><!-- billing state -->
-		        </tr>
-		        <tr>
-		        	<input type="hidden" name="billing_zip" value="425001"/><!-- billing zip -->
-		        </tr>
-		        <tr>
-		        	<input type="hidden" name="billing_country" value="India"/><!-- billing country -->
-		        </tr>
-		        <tr>
-		        	<input type="hidden" name="billing_tel" value="9896226054"/><!-- billing tel -->
-		        </tr>
-		        <tr>
-		        	<input type="hidden" name="billing_email" value="test@gmail.com"/><!-- billing email -->
-		        	<input type="hidden" name="billing_name" value="Charli"/><!--billing name  -->
-		        </tr>
-		        <tr>
-		        	<input type="hidden" name="billing_address" value="Room no 1101, near Railway station Ambad"/><!-- billing address -->
-		        </tr>
-		        <tr>
-		        	<input type="hidden" name="billing_city" value="Indore"/><!-- billing city -->
-		        </tr>
-		        <tr>
-		        	<input type="hidden" name="billing_state" value="MH"/><!-- billing state -->
-		        </tr>
-		        <tr>
-		        	<input type="hidden" name="billing_zip" value="425001"/><!-- billing zip -->
-		        </tr>
-		        <tr>
-		        	<input type="hidden" name="billing_country" value="India"/><!-- billing country -->
-		        </tr>
-		        <tr>
-		        	<input type="hidden" name="billing_tel" value="9896226054"/><!-- billing tel -->
-		        </tr>
-		        <tr>
-		        	<input type="hidden" name="billing_email" value="test@gmail.com"/><!-- billing email -->
-		        </tr>
-		        <tr>
-		        </tr>
-		        <tr>
-		        	<input type="hidden" name="delivery_name" value="Chaplin"/><!--shiping name  -->
-		        </tr>
-		        <tr>
-		        	<input type="hidden" name="delivery_address" value="room no.701 near bus stand"/><!-- shiping address -->
-		        </tr>
-		        <tr>
-		        	<input type="hidden" name="delivery_city" value="Hyderabad"/><!-- shiping city -->
-		        </tr>
-		        <tr>
-		        	<input type="hidden" name="delivery_state" value="Andhra"/><!-- shiping state -->
-		        </tr>
-		        <tr>
-		        	<input type="hidden" name="delivery_zip" value="425001"/><!-- shiping zip -->
-		        </tr>
-		        <tr>
-		        	<input type="hidden" name="delivery_country" value="India"/><!-- shiping country -->
-		        </tr>
-		        <tr>
-		        	<input type="hidden" name="delivery_tel" value="9896226054"/><!-- shiping tel -->
-		        </tr>
-		        <tr>
-		        	<input type="hidden" name="merchant_param1" value="additional Info."/><!-- merchant param1 -->
-		        </tr>
-		        <tr>
-		        	<input type="hidden" name="merchant_param2" value="additional Info."/><!-- merchant param2 -->
-		        </tr>
-				<tr>
-					<input type="hidden" name="merchant_param3" value="additional Info."/><!-- merchant param3 -->
-				</tr>
-				<tr>
-					<input type="hidden" name="merchant_param4" value="additional Info."/><!-- merchant param4 -->
-				</tr>
-				<tr>
-					<input type="hidden" name="merchant_param5" value="additional Info."/><!-- merchant param5 -->
-		        	<input type="hidden" name="delivery_name" value="Chaplin"/><!-- shiping name -->
-		        </tr>
-		        <tr>
-		        	<input type="hidden" name="delivery_address" value="room no.701 near bus stand"/><!-- shiping address -->
-		        </tr>
-		        <tr>
-		        	<input type="hidden" name="delivery_city" value="Hyderabad"/><!-- shiping city -->
-		        </tr>
-		        <tr>
-		        	<input type="hidden" name="delivery_state" value="Andhra"/><!-- shiping state -->
-		        </tr>
-		        <tr>
-		        	<input type="hidden" name="delivery_zip" value="425001"/><!-- shiping zip -->
-		        </tr>
-		        <tr>
-		        	<input type="hidden" name="delivery_country" value="India"/><!-- shiping country -->
-		        </tr>
-		        <tr>
-		        	<input type="hidden" name="delivery_tel" value="9896226054"/><!-- shiping tel -->
-		        </tr>
-		        <tr>
-		        	<input type="hidden" name="merchant_param1" value="additional Info."/><!-- merchant param1 -->
-		        </tr>
-		        <tr>
-		        	<input type="hidden" name="merchant_param2" value="additional Info."/><!-- merchant param2 -->
-		        </tr>
-				<tr>
-					<input type="hidden" name="merchant_param3" value="additional Info."/><!-- merchant param3 -->
-				</tr>
-				<tr>
-					<input type="hidden" name="merchant_param4" value="additional Info."/><!-- merchant param4 -->
-				</tr>
-				<tr>
-					<input type="hidden" name="merchant_param5" value="additional Info."/><!-- merchant param5 -->
-				</tr>
-				
-		         	  <td> 
-		         	  		<input class="payOption" type="radio" name="payment_option" value="OPTCRDC">Credit Card
-		         	  		<input class="payOption" type="radio" name="payment_option" value="OPTDBCRD">Debit Card  <br/>
-		         	  		<input class="payOption" type="radio" name="payment_option" value="OPTNBK">Net Banking 
-		         	  		<input class="payOption" type="radio" name="payment_option" value="OPTCASHC">Cash Card <br/>
-		         	  		<input class="payOption" type="radio" name="payment_option" value="OPTMOBP">Mobile Payments
-		         	  		<input class="payOption" type="radio" name="payment_option" value="OPTEMI">EMI
-		         	  		<input class="payOption" type="radio" name="payment_option" value="OPTWLT">Wallet
-		         	   </td>
-		         
-		         <!-- EMI section start -->
-		         
-		         <tr >
-		         <td  colspan="2">
-		          <div id="emi_div" style="display: none">
-			         <table border="1" width="100%">
-			         <tr> <td colspan="2">EMI Section </td></tr>
-			         <tr> <td> Emi plan id: </td>
-			            <td><input readonly="readonly" type="text" id="emi_plan_id"  name="emi_plan_id" value=""/> </td>
-			         </tr>
-			         <tr> <td> Emi tenure id: </td>
-			            <td><input readonly="readonly" type="text" id="emi_tenure_id" name="emi_tenure_id" value=""/>  </td>
-			            <td><input readonly="readonly" type="hidden" id="emi_plan_id"  name="emi_plan_id" value=""/> </td>
-			         </tr>
-			         <tr> <td> Emi tenure id: </td>
-			            <td><input readonly="readonly" type="hidden" id="emi_tenure_id" name="emi_tenure_id" value=""/>  </td>
-			         </tr>
-			         <tr><td>Pay Through</td>
-				         <td>
-					         <select name="emi_banks"  id="emi_banks">
-					         </select>
-				         </td>
-			        </tr>
-			        <tr><td colspan="2">
-				         <div id="emi_duration" class="span12">
-		                	<span class="span12 content-text emiDetails">EMI Duration</span>
-		                    <table id="emi_tbl" cellpadding="0" cellspacing="0" border="1" >
-							</table> 
-		                </div>
-				        </td>
-			        </tr>
-			        <tr>
-			        	 <td id="processing_fee" colspan="2">
-			        	</td>
-			        </tr>
-			        </table>
-		        </div>
-		        </td>
-		        </tr>
-		        <!-- EMI section end -->
-		         
-		         
-		       
-		             <input type="text" id="card_type" name="card_type" value="" readonly="readonly"/><!-- card type -->
-		             <select name="card_name" id="card_name"> <option value="">Select Card Name</option> </select> </td>
-		       
-		             <input type="text" id="data_accept" name="data_accept" readonly="readonly"/><!-- Data accept -->
+				<div class="form-group">
+					<div class="col-md-2">
+					</div> 
+                	<div class="col-lg-8 col-md-8 col-sm-8 " style=" padding-bottom:16">
+                	
+	                	<div class="summaryBlock">
+	                		<div class="row">
+		                		<div class="col-md-6">
+			                		<p style=" font-size:14px; line-height:.5">Account No : ${user_details.getActid() }  </p><br>
+			                		<p style=" font-size:14px; line-height:.5">Name : ${user_details.getFirst_name() }  </p><br>
+			                        <p style=" font-size:14px; line-height:.5">Amount : ${pendingAmount }/-  </p><br>
+			                    </div>
+			                    <div class="col-md-6">
+			                    	
+			                    	<input class="payOption" type="radio" name="payment_option" value="OPTCRDC">Credit Card<br>
+				         	  		<input class="payOption" type="radio" name="payment_option" value="OPTDBCRD">Debit Card<br>
+				         	  		<input class="payOption" type="radio" name="payment_option" value="OPTNBK">Net Banking <br>
+				         	  		<input class="payOption" type="radio" name="payment_option" value="OPTCASHC">Cash Card<br>
+				         	  		<input class="payOption" type="radio" name="payment_option" value="OPTMOBP">Mobile Payments<br>
+				         	  		<input class="payOption" type="radio" name="payment_option" value="OPTEMI">EMI<br>
+				         	  		<input class="payOption" type="radio" name="payment_option" value="OPTWLT">Wallet<br>
+			                    </div>   
+			           		</div>	 
+			                <div class="col-md-4">
+			                </div>
+	                        <div class="row col-md-4" style="margin-top: 5%;">
+	                        	
+		                        	<button class="payNowButton1" type="submit" >
+	                     				Confirm Payment
+	                     			</button>
+	                     		
+                     		</div>
+                     		<div class="col-md-4">
+			                </div> 
+	                    </div>
+	        
+	                    
+		               	<input readonly="readonly" type="hidden" name="tid" id="tid" value=""/><!-- Transaction ID -->
+		               	<input type="hidden" name="merchant_id" value="127191"/><!-- Merchant Id	: -->
+					   	<input type="hidden" name="order_id" value="1236556561"/><!-- Order Id	: -->
+					   	<input type="hidden" name="amount" value="1.00"   /></td>
+						<input type="hidden" name="currency" value="INR"/><!-- Currency	: -->
+						<input type="hidden" name="redirect_url" value="http://52.172.215.71:8080/zeno/ccavResponseHandler"/><!-- Redirect URL	: -->
+						<input type="hidden" name="cancel_url" value="http://52.172.215.71:8080/zeno/ccavResponseHandler"/><!-- Cancel URL	: -->
+					 	<input type="hidden" name="language" value="EN"/><!-- Language	: -->
+		                <input readonly="readonly" type="hidden" name="tid" id="tid" value=""/><!-- Transction ID -->
+		                <input type="hidden" name="merchant_id" value="127191"/><!-- Merchant ID -->
+						<input type="hidden" name="order_id" value="123654789"/><!-- order id -->
+						<input type="hidden" name="amount" value="1.00"/><!--Amount  -->
+						<input type="hidden" name="currency" value="INR"/><!-- currency -->
+						<input type="hidden" name="redirect_url" value="http://52.172.215.71:8080/zeno/ccavResponseHandler"/><!-- Redirect URL -->
+						<input type="hidden" name="cancel_url" value="http://52.172.215.71:8080/zeno/ccavResponseHandler"/><!-- cancel url -->
+					 	<input type="hidden" name="language" value="EN"/><!-- Language -->
+						<input type="hidden" name="billing_name" value="Charli"/><!-- billing name -->
+				        <input type="hidden" name="billing_address" value="Room no 1101, near Railway station Ambad"/><!-- billing address -->
+				        <input type="hidden" name="billing_city" value="Indore"/><!-- billing city -->
+				        <input type="hidden" name="billing_state" value="MH"/><!-- billing state -->
+				        <input type="hidden" name="billing_zip" value="425001"/><!-- billing zip -->
+				        <input type="hidden" name="billing_country" value="India"/><!-- billing country -->
+				        <input type="hidden" name="billing_tel" value="9896226054"/><!-- billing tel -->
+				        <input type="hidden" name="billing_email" value="test@gmail.com"/><!-- billing email -->
+				        <input type="hidden" name="billing_name" value="Charli"/><!--billing name  -->
+				        <input type="hidden" name="billing_address" value="Room no 1101, near Railway station Ambad"/><!-- billing address -->
+				        <input type="hidden" name="billing_city" value="Indore"/><!-- billing city -->
+				        <input type="hidden" name="billing_state" value="MH"/><!-- billing state -->
+				        <input type="hidden" name="billing_zip" value="425001"/><!-- billing zip -->
+				        <input type="hidden" name="billing_country" value="India"/><!-- billing country -->
+				        <input type="hidden" name="billing_tel" value="9896226054"/><!-- billing tel -->
+				        <input type="hidden" name="billing_email" value="test@gmail.com"/><!-- billing email -->
+				        <input type="hidden" name="delivery_name" value="Chaplin"/><!--shiping name  -->
+				        <input type="hidden" name="delivery_address" value="room no.701 near bus stand"/><!-- shiping address -->
+				        <input type="hidden" name="delivery_city" value="Hyderabad"/><!-- shiping city -->
+				        <input type="hidden" name="delivery_state" value="Andhra"/><!-- shiping state -->
+				        <input type="hidden" name="delivery_zip" value="425001"/><!-- shiping zip -->
+				        <input type="hidden" name="delivery_country" value="India"/><!-- shiping country -->
+				        <input type="hidden" name="delivery_tel" value="9896226054"/><!-- shiping tel -->
+				        <input type="hidden" name="merchant_param1" value="additional Info."/><!-- merchant param1 -->
+				        <input type="hidden" name="merchant_param2" value="additional Info."/><!-- merchant param2 -->
+				        <input type="hidden" name="merchant_param3" value="additional Info."/><!-- merchant param3 -->
+						<input type="hidden" name="merchant_param4" value="additional Info."/><!-- merchant param4 -->
+						<input type="hidden" name="merchant_param5" value="additional Info."/><!-- merchant param5 -->
+				        <input type="hidden" name="delivery_name" value="Chaplin"/><!-- shiping name -->
+				        <input type="hidden" name="delivery_address" value="room no.701 near bus stand"/><!-- shiping address -->
+				        <input type="hidden" name="delivery_city" value="Hyderabad"/><!-- shiping city -->
+				        <input type="hidden" name="delivery_state" value="Andhra"/><!-- shiping state -->
+				        <input type="hidden" name="delivery_zip" value="425001"/><!-- shiping zip -->
+				        <input type="hidden" name="delivery_country" value="India"/><!-- shiping country -->
+				        <input type="hidden" name="delivery_tel" value="9896226054"/><!-- shiping tel -->
+				        <input type="hidden" name="merchant_param1" value="additional Info."/><!-- merchant param1 -->
+				        <input type="hidden" name="merchant_param2" value="additional Info."/><!-- merchant param2 -->
+				        <input type="hidden" name="merchant_param3" value="additional Info."/><!-- merchant param3 -->
+						<input type="hidden" name="merchant_param4" value="additional Info."/><!-- merchant param4 -->
+						<input type="hidden" name="merchant_param5" value="additional Info."/><!-- merchant param5 -->
+						
+						
+				       
+				         <!-- EMI section start -->
+				         
+				         
+			          	<div id="emi_div" style="display: none">
+				      	<input readonly="readonly" type="hidden" id="emi_plan_id"  name="emi_plan_id" value=""/>
+				      	<input readonly="readonly" type="hidden" id="emi_tenure_id" name="emi_tenure_id" value=""/>
+				      	<input readonly="readonly" type="hidden" id="emi_plan_id"  name="emi_plan_id" value=""/>
+				      	<input readonly="readonly" type="hidden" id="emi_tenure_id" name="emi_tenure_id" value=""/>
+						<select name="emi_banks"  id="emi_banks">
+						</select>
+						
+						<div id="emi_duration" class="span12">
+				        <td id="processing_fee" colspan="2">
+					        	
+				       
+				             <input type="text" id="card_type" name="card_type" value="" readonly="readonly"/><!-- card type -->
+				             <select name="card_name" id="card_name"> <option value="">Select Card Name</option> </select> </td>
+				       
+				             <input type="text" id="data_accept" name="data_accept" readonly="readonly"/><!-- Data accept -->
+		
+				             <input type="text" id="card_number" name="card_number" value=""/><!-- card number -->
+				         
+				             <input type="text" name="expiry_month" value=""/><!-- expiry month -->
+		
+				          	 <input type="text" name="expiry_year" value=""/><!--  -->
+				             <input type="text" name="cvv_number" value=""/><!-- cvv number -->
+				         
+				       <input type="text" name="issuing_bank" value=""/><!-- issueing bank -->
+				       <input type="text" name="mobile_number" value=""/><!-- mobile number -->
+				       <input type="text" name="mm_id" value=""/><!-- mm_id -->
+				       <input type="text" name="otp" value=""/><!-- otp -->
+				       <input type="hidden" id="data_accept" name="data_accept" readonly="readonly"/><!-- data accept -->
+				       <input type="hidden" id="card_number" name="card_number" value=""/><!-- card number -->
+				       <input type="hidden" name="expiry_month" value=""/><!-- expry month -->
+				       <input type="hidden" name="expiry_year" value=""/><!-- expiry year -->
+				       <input type="hidden" name="cvv_number" value=""/><!-- cvv number -->
+				       <input type="hidden" name="issuing_bank" value=""/><!-- issuing bank -->
+				       <input type="hidden" name="mobile_number" value=""/><!--mobile no  -->
+				       <input type="hidden" name="mm_id" value=""/><!-- mmid -->
+				       <input type="hidden" name="otp" value=""/><!-- otp -->
+				       <input name="promo_code" id="promo_code" type="hidden" /> 
+				        
+				        </div>
+				        </div>
+				        
+			
+					</div><!-- col-md-8 -->
+					<div class="col-md-2">
+					</div>
+				</div><!-- Form group -->      
+			</form>
+	      
 
-		             <input type="text" id="card_number" name="card_number" value=""/><!-- card number -->
-		         
-		             <input type="text" name="expiry_month" value=""/><!-- expiry month -->
+		</div>
+	</div>
+</div>
 
-		          	 <input type="text" name="expiry_year" value=""/><!--  -->
-		             <input type="text" name="cvv_number" value=""/><!-- cvv number -->
-		         
-		       <input type="text" name="issuing_bank" value=""/><!-- issueing bank -->
-		       <input type="text" name="mobile_number" value=""/><!-- mobile number -->
-		       <input type="text" name="mm_id" value=""/><!-- mm_id -->
-		       <input type="text" name="otp" value=""/><!-- otp -->
-		       <input type="hidden" id="data_accept" name="data_accept" readonly="readonly"/><!-- data accept -->
-		       <input type="hidden" id="card_number" name="card_number" value=""/><!-- card number -->
-		       <input type="hidden" name="expiry_month" value=""/><!-- expry month -->
-		       <input type="hidden" name="expiry_year" value=""/><!-- expiry year -->
-		       <input type="hidden" name="cvv_number" value=""/><!-- cvv number -->
-		       <input type="hidden" name="issuing_bank" value=""/><!-- issuing bank -->
-		       <input type="hidden" name="mobile_number" value=""/><!--mobile no  -->
-		       <input type="hidden" name="mm_id" value=""/><!-- mmid -->
-		       <input type="hidden" name="otp" value=""/><!-- otp -->
-		       <input name="promo_code" id="promo_code" type="hidden" /> 
-		        
-		        <tr>
-		        	<td></td><td><INPUT TYPE="submit" value="CheckOut"></td>
-		        </tr>
-	      	</table>
-	      </form>
+<!-- included pop up -->
+            <jsp:include page="../component/pop-up.jsp"></jsp:include>
+
+                <!-- BEGIN FOOTER -->
+                <div class="footer" style="font-size:10px; line-height:1"><!--style="font-family:Roboto; position: fixed; right: 0; bottom: 0; left: 0;"-->
+                    <div class="container">
+                        <div class="row">
+                            <!-- BEGIN COPYRIGHT -->
+                            <div class="col-md-10 col-sm-10 padding-bottom-10 " > 2017 &copy Stoic Zeno. ALL Rights Reserved.&nbsp 
+                                <a href="#">Privacy Policy</a> |
+                                <a href="javascript:;">Terms of Service</a> |
+                                <a href="javascript:;">Refund and Cancellation</a> |
+                                <a href="javascript:;">Feedback</a> |
+                                <a href="javascript:;">Contact Us</a>
+                            </div>
+                            <!-- END COPYRIGHT -->
+                        </div>
+                    </div>
+                </div>
+                <!-- END FOOTER -->
+                <!-- Load javascripts at bottom, this will reduce page load time -->
+            <jsp:include page="../component/js.jsp"></jsp:include>
+            <!-- END BODY -->	     
+	     
+	      
+	      
+	      
 </body>
 <!-- <script language="javascript" type="text/javascript" src="json.js"></script>-->
 <!-- <script src="jquery-1.7.2.min.js"></script>-->
