@@ -75,7 +75,16 @@ input[type="checkbox"]:checked + label:before {
  
  /*end*/
  
- 
+ .submitButton
+ {
+ 	margin-top:10%;
+ 	margin-bottom:10%;
+ 	width:70%;
+ 	height: 5%;
+ 	background-color: #010745;
+ 	color: #FFF;
+ 	border-color: #010745;
+ }
 
  
  </style>
@@ -315,6 +324,10 @@ input[type="checkbox"]:checked + label:before {
             <div class="col-md-6">
               <textarea class="form-control" style="height:20%"></textarea>
             </div>
+ 	      </div>
+ 	      
+ 	      <div class="row col-md-2" style="margin-left:6%;">
+ 	      	<button class="submitButton" type="submit">Submit</button>
  	      </div>
 		
 		</form>
