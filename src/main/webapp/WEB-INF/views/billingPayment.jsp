@@ -160,7 +160,7 @@
                      		
                      			<div class="row" style="margin-left: 0.2%; ">
 		                     		<h2 style="font-family:Roboto; font-size:20px">Current Bill</h2>
-		                     		<h2 style="color:#E17C80;font-family:Roboto; font-size:26px">INR 5652.26/-</h2><br>
+		                     		<h2 style="color:#E17C80;font-family:Roboto; font-size:26px">INR ${pendingAmount }/-</h2><br>
 		                     	</div>
 			                    <div class="row">
 			                    	<div class="col-md-6">
@@ -238,7 +238,7 @@
 
                                     <div class="front-skills" style=" padding-top:15%"></div>
 
-                                    <p style="font-size:16px; color:gray; line-height:1">INR 1,000.00 is due in <strong style="color:#E17C80">5 </strong>days</p>
+                                    <p style="font-size:16px; color:gray; line-height:1">INR <strong style="color:#E17C80">${pendingAmount }/- </strong> is due in <strong style="color:#E17C80">5 </strong>days</p>
 
                                     <div class="front-skills" style=" padding-top:15%"></div>
                                     <p style="font-size:10px; color:gray; line-height:1">Due Date : 02/06/2017</p>
