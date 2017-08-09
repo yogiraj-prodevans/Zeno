@@ -58,4 +58,16 @@ public class ProfileDAOImpl implements ProfileDAO {
 		}
 	}
 
+	@Override
+	public boolean updatePassword(String actid, String password) throws Exception {
+		Vector<Object> params = new Vector<>();
+		params.add(actid);
+		params.add(password);
+		int result = (int) rpcClient.execute(unifyHandler + ".changeAccountPassword", params);
+		if (result == 1)
+			return true;
+		else
+			return false;
+	}
+
 }

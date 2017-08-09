@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.prodevans.zeno.dao.impl.DashboardDAOImpl;
-import com.prodevans.zeno.dao.impl.PaymentDAOImpl;
 import com.prodevans.zeno.pojo.SessionDetails;
 import com.prodevans.zeno.pojo.SubscriptionDetails;
 import com.prodevans.zeno.pojo.UserDetails;
@@ -22,6 +21,7 @@ import com.prodevans.zeno.pojo.UserDetails;
 public class DashboardConroller {
 	@Autowired
 	private DashboardDAOImpl DashboardImpl;
+
 	public void setDashboardImpl(DashboardDAOImpl dashboardImpl) {
 		DashboardImpl = dashboardImpl;
 	}
@@ -42,8 +42,7 @@ public class DashboardConroller {
 				SubscriptionDetails details = DashboardImpl.getSubscriptionDetails(user.getActid());
 
 				model.addAttribute("SubscriptionDetails", details);
-				
-				
+
 			} catch (Exception ee) {
 				ee.printStackTrace();
 			}
