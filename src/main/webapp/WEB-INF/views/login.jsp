@@ -76,9 +76,9 @@
           <li class="active" >
             <a href="${contextPath}/login" >Login</a>
           </li>
-		  <li>
+		<!--  <li>
             <a href="${contextPath}/register">Register</a>
-          </li>
+          </li>-->
         </ul>
       </div>
       <!-- END NAVIGATION -->
@@ -113,7 +113,7 @@
                     <div class="form-group"> <label for="email" class="col-lg-12 control-label"> <span class="require"></span></label>
                       <div class="col-lg-12">
                         <form:input path="customer_id" type="text" class="form-control" id="mystoicid" style=" font-size:12px; font-style:italic;  box-shadow: none; border: none; border-bottom: .1px solid;" placeholder="My Stoic ID " /> 
-						<label for="customer_id" class="col-lg-12 control-label"><a style="color:#F2F2F2F2; font-size:11px" href="#">I forgot my Stoic ID</a></label>
+						<!--<label for="customer_id" class="col-lg-12 control-label"><a style="color:#F2F2F2F2; font-size:11px" href="#">I forgot my Stoic ID</a></label>-->
 					  </div>
                     </div>
                     <div class="form-group"> <label for="password" class="col-lg-12 control-label"><span class="require"></span></label>
@@ -130,9 +130,9 @@
                     </div>
                     </div>
 					<div class="row">
-                      <div class="col-lg-10 col-md-offset-1 padding-left-0 padding-right-0 padding-top-10" >
+                      <!--<div class="col-lg-10 col-md-offset-1 padding-left-0 padding-right-0 padding-top-10" >
                           <p style="color:gray; font-size:11px; line-height:1">If you are already a stoic customer and don’t have my stoic account, you can<a style="color:#010745; font-size:12px; line-height: 1;" href="${contextPath}/register"><strong> register now</strong></a>. It is prety quick.</p>
-                      </div>
+                      </div>-->
                     </div>
 					  <div class="row">
                       <div class="col-lg-12 col-md-offset-1 padding-left-0 padding-top-0">
