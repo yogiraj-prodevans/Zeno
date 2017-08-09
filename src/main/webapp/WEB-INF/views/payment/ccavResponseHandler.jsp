@@ -1,3 +1,6 @@
+<%@page import="com.prodevans.zeno.dao.impl.PaymentResponseDAOImpl"%>
+<%@page import="com.prodevans.zeno.dao.impl.PaymentDAOImpl"%>
+<%@page import="com.prodevans.zeno.pojo.PaymentDetails"%>
 <%@page import="java.net.URLDecoder"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -34,19 +37,18 @@
 		<font size="4" color="blue"><b>Response Page</b></font>
 		<table border="1">
 			<%
-			
-				Enumeration enumeration = hs.keys();
-				while(enumeration.hasMoreElements()) {
+				PaymentResponseDAOImpl prdi=new PaymentResponseDAOImpl();
+			    HashMap<String, String> responseFromCCAvenue= new HashMap<>();
+				
+			    Enumeration enumeration = hs.keys();
+				while(enumeration.hasMoreElements())
+				{
 					pname=""+enumeration.nextElement();
 					pvalue=""+ hs.get(pname);
-			%>
-				<tr>
-					<td><%= pname %> </td>
-					<td> <%= pvalue %> </td>
-				</tr>
-			<%
+					responseFromCCAvenue.put(pname, pvalue);
 				}
-		%>
+				prdi.setAllPaymentTransactionDetails(responseFromCCAvenue);
+			%>
 		</table>
 	</center>
 </body>
