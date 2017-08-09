@@ -4,4 +4,6 @@ import com.prodevans.zeno.pojo.ProfileDetails;
 
 public interface ProfileDAO {
 	ProfileDetails getProfile(String actid) throws Exception;
+
+	boolean updatePassword(String actid, String password) throws Exception;
 }
