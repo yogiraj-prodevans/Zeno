@@ -350,13 +350,14 @@ label.css-label
 				        <!--<input type="hidden" name="billing_country" value="India"/><!-- billing country -->
 				        <!--<input type="hidden" name="billing_tel" value="9896226054"/><!-- billing tel -->
 				        <!--<input type="hidden" name="billing_email" value="test@gmail.com"/><!-- billing email -->
-				        <!--<input type="hidden" name="delivery_name" value="Chaplin"/><!--shiping name  -->
-				        <!--<input type="hidden" name="delivery_address" value="room no.701 near bus stand"/><!-- shiping address -->
-				        <!--<input type="hidden" name="delivery_city" value="Hyderabad"/><!-- shiping city -->
-				        <!--<input type="hidden" name="delivery_state" value="Andhra"/><!-- shiping state -->
-				        <!--<input type="hidden" name="delivery_zip" value="425001"/><!-- shiping zip -->
-				        <!--<input type="hidden" name="delivery_country" value="India"/><!-- shiping country -->
-				        <!--<input type="hidden" name="delivery_tel" value="9896226054"/><!-- shiping tel -->
+				        
+				        <input type="hidden" name="delivery_name" value="Chaplin"/><!--shiping name  -->
+				        <input type="hidden" name="delivery_address" value="room no.701 near bus stand"/><!-- shiping address -->
+				        <input type="hidden" name="delivery_city" value="Hyderabad"/><!-- shiping city -->
+				        <input type="hidden" name="delivery_state" value="Andhra"/><!-- shiping state -->
+				        <input type="hidden" name="delivery_zip" value="425001"/><!-- shiping zip -->
+				        <input type="hidden" name="delivery_country" value="India"/><!-- shiping country -->
+				        <input type="hidden" name="delivery_tel" value="9896226054"/><!-- shiping tel -->
 				        <input type="hidden" name="merchant_param1" value="additional Info."/><!-- merchant param1 -->
 				        <input type="hidden" name="merchant_param2" value="additional Info."/><!-- merchant param2 -->
 				        <input type="hidden" name="merchant_param3" value="additional Info."/><!-- merchant param3 -->
