@@ -343,17 +343,10 @@ label.css-label
 				        <input type="hidden" name="billing_country" value="India"/><!-- billing country -->
 				        <input type="hidden" name="billing_tel" value="9896226054"/><!-- billing tel -->
 				        <input type="hidden" name="billing_email" value="test@gmail.com"/><!-- billing email -->
-				        <input type="hidden" name="billing_name" value="Charli"/><!--billing name  -->
-				        <input type="hidden" name="billing_address" value="Room no 1101, near Railway station Ambad"/><!-- billing address -->
-				        <input type="hidden" name="billing_city" value="Indore"/><!-- billing city -->
-				        <input type="hidden" name="billing_state" value="MH"/><!-- billing state -->
-				        <input type="hidden" name="billing_zip" value="425001"/><!-- billing zip -->
-				        <input type="hidden" name="billing_country" value="India"/><!-- billing country -->
-				        <input type="hidden" name="billing_tel" value="9896226054"/><!-- billing tel -->
-				        <input type="hidden" name="billing_email" value="test@gmail.com"/><!-- billing email -->
+				       
 				        
-				        <input type="hidden" name="delivery_name" value="Chaplin"/><!--shiping name  -->
-				        <input type="hidden" name="delivery_address" value="room no.701 near bus stand"/><!-- shiping address -->
+				        <input type="hidden" name="delivery_name" value="${user_details.getFirst_name() }"/><!--shiping name  -->
+				        <input type="hidden" name="delivery_address" value="${user_details.getAddress() }"/><!-- shiping address -->
 				        <input type="hidden" name="delivery_city" value="Hyderabad"/><!-- shiping city -->
 				        <input type="hidden" name="delivery_state" value="Andhra"/><!-- shiping state -->
 				        <input type="hidden" name="delivery_zip" value="425001"/><!-- shiping zip -->
