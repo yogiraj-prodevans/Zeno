@@ -48,6 +48,13 @@ public class UserInfoDAOImpl implements UserLoginDAO {
 			userSessionDetails.setMobileno(result.get("mobileno").toString());
 			userSessionDetails.setPassword(result.get("password").toString());
 			userSessionDetails.setFirst_name(result.get("fname").toString());
+			
+			userSessionDetails.setLast_name(result.get("lname").toString());
+			userSessionDetails.setAddress(result.get("address").toString());
+			userSessionDetails.setPin(result.get("pin").toString());
+			userSessionDetails.setCityname(result.get("cityname").toString());
+			userSessionDetails.setCountryname(result.get("countryname").toString());
+			
 			userSessionDetails.setResult(true);
 			return userSessionDetails;
 		} 

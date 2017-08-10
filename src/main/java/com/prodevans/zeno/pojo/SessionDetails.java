@@ -14,6 +14,11 @@ public class SessionDetails
 	private boolean result;
 	private String first_name;
 	
+	private String last_name;
+	private String address;
+	private String pin;
+	private String cityname;
+	private String countryname;
 	
 	
 	public String getFirst_name() {
@@ -77,6 +82,38 @@ public class SessionDetails
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	public String getLast_name() {
+		return last_name;
+	}
+	public void setLast_name(String last_name) {
+		this.last_name = last_name;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getPin() {
+		return pin;
+	}
+	public void setPin(String pin) {
+		this.pin = pin;
+	}
+	public String getCityname() {
+		return cityname;
+	}
+	public void setCityname(String cityname) {
+		this.cityname = cityname;
+	}
+	public String getCountryname() {
+		return countryname;
+	}
+	public void setCountryname(String countryname) {
+		this.countryname = countryname;
+	}
+	
+	
 	
 	
 	
