@@ -309,25 +309,15 @@ label.css-label
 	                    </div>
 	        
 	                    
-		               	<input readonly="readonly" type="hidden" name="tid" id="tid" value=""/><!-- Transaction ID -->
+						<input readonly="readonly" type="hidden" name="tid" id="tid" value=""/><!-- Transaction ID -->
 		               	<input type="hidden" name="merchant_id" value="127191"/><!-- Merchant Id	: -->
 					   	<input type="hidden" name="order_id" value="1236556561"/><!-- Order Id	: -->
-					   	<input type="hidden" name="amount" value="1.0"   />
-						<input type="hidden" name="billing_name" value="name"/><!-- billing name -->
-						<input type="hidden" name="billing_address" value="address"/><!-- billing address -->
-						<input type="hidden" name="billing_city" value="city"/><!-- billing city -->
-						<input type="hidden" name="billing_zip" value="413002"/><!-- billing zip -->
-				        <input type="hidden" name="billing_country" value="india"/><!-- billing country -->
-						<input type="hidden" name="billing_tel" value="1"/><!-- billing tel -->
-						<input type="hidden" name="billing_email" value="1@gmail.com"/><!-- billing email -->
-					   	
-					   	
+					   	<input type="hidden" name="amount" value="1.00"   /></td>
 						<input type="hidden" name="currency" value="INR"/><!-- Currency	: -->
 						<input type="hidden" name="redirect_url" value="http://52.172.215.71:8080/zeno/ccavResponseHandler"/><!-- Redirect URL	: -->
 						<input type="hidden" name="cancel_url" value="http://52.172.215.71:8080/zeno/ccavResponseHandler"/><!-- Cancel URL	: -->
 					 	<input type="hidden" name="language" value="EN"/><!-- Language	: -->
 		                <input readonly="readonly" type="hidden" name="tid" id="tid" value=""/><!-- Transction ID -->
-		                
 		                <input type="hidden" name="merchant_id" value="127191"/><!-- Merchant ID -->
 						<input type="hidden" name="order_id" value="123654789"/><!-- order id -->
 						<input type="hidden" name="amount" value="1.00"/><!--Amount  -->
@@ -335,47 +325,54 @@ label.css-label
 						<input type="hidden" name="redirect_url" value="http://52.172.215.71:8080/zeno/ccavResponseHandler"/><!-- Redirect URL -->
 						<input type="hidden" name="cancel_url" value="http://52.172.215.71:8080/zeno/ccavResponseHandler"/><!-- cancel url -->
 					 	<input type="hidden" name="language" value="EN"/><!-- Language -->
-						<input type="hidden" name="billing_name" value="Charli"/><!-- billing name -->
-				        <input type="hidden" name="billing_address" value="Room no 1101, near Railway station Ambad"/><!-- billing address -->
-				        <input type="hidden" name="billing_city" value="Indore"/><!-- billing city -->
+					 	
+						<input type="hidden" name="billing_name" value="${user_details.getFirst_name() }"/><!-- billing name -->
+				        <input type="hidden" name="billing_address" value="${user_details.getAddress() }"/><!-- billing address -->
+				        <input type="hidden" name="billing_city" value="${user_details.getCityname() }"/><!-- billing city -->
 				        <input type="hidden" name="billing_state" value="MH"/><!-- billing state -->
-				        <input type="hidden" name="billing_zip" value="425001"/><!-- billing zip -->
-				        <input type="hidden" name="billing_country" value="India"/><!-- billing country -->
-				        <input type="hidden" name="billing_tel" value="9896226054"/><!-- billing tel -->
-				        <input type="hidden" name="billing_email" value="test@gmail.com"/><!-- billing email -->
-				        <input type="hidden" name="billing_name" value="Charli"/><!--billing name  -->
-				        <input type="hidden" name="billing_address" value="Room no 1101, near Railway station Ambad"/><!-- billing address -->
-				        <input type="hidden" name="billing_city" value="Indore"/><!-- billing city -->
+				        <input type="hidden" name="billing_zip" value="${user_details.getPin() }"/><!-- billing zip -->
+				        <input type="hidden" name="billing_country" value="${user_details.getCountryname() }"/><!-- billing country -->
+				        <input type="hidden" name="billing_tel" value="${user_details.getMobileno() }"/><!-- billing tel -->
+				        
+				        <input type="hidden" name="billing_email" value="${user_details.getEmail() }"/><!-- billing email -->
+				        <input type="hidden" name="billing_name" value="${user_details.getFirst_name() }"/><!--billing name  -->
+				        <input type="hidden" name="billing_address" value="${user_details.getAddress() }"/><!-- billing address -->
+				        <input type="hidden" name="billing_city" value="${user_details.getCityname() }"/><!-- billing city -->
 				        <input type="hidden" name="billing_state" value="MH"/><!-- billing state -->
-				        <input type="hidden" name="billing_zip" value="425001"/><!-- billing zip -->
-				        <input type="hidden" name="billing_country" value="India"/><!-- billing country -->
-				        <input type="hidden" name="billing_tel" value="9896226054"/><!-- billing tel -->
-				        <input type="hidden" name="billing_email" value="test@gmail.com"/><!-- billing email -->
-				        <input type="hidden" name="delivery_name" value="Chaplin"/><!--shiping name  -->
-				        <input type="hidden" name="delivery_address" value="room no.701 near bus stand"/><!-- shiping address -->
-				        <input type="hidden" name="delivery_city" value="Hyderabad"/><!-- shiping city -->
+				        <input type="hidden" name="billing_zip" value="${user_details.getPin() }"/><!-- billing zip -->
+				        <input type="hidden" name="billing_country" value="${user_details.getCountryname() }"/><!-- billing country -->
+				        <input type="hidden" name="billing_tel" value="${user_details.getMobileno() }"/><!-- billing tel -->
+				        
+				        <input type="hidden" name="billing_email" value="${user_details.getEmail() }"/><!-- billing email -->
+				        <input type="hidden" name="delivery_name" value="${user_details.getFirst_name() }"/><!--shiping name  -->
+				        <input type="hidden" name="delivery_address" value="${user_details.getAddress() }"/><!-- shiping address -->
+				        <input type="hidden" name="delivery_city" value="${user_details.getCityname() }"/><!-- shiping city -->
 				        <input type="hidden" name="delivery_state" value="Andhra"/><!-- shiping state -->
-				        <input type="hidden" name="delivery_zip" value="425001"/><!-- shiping zip -->
-				        <input type="hidden" name="delivery_country" value="India"/><!-- shiping country -->
-				        <input type="hidden" name="delivery_tel" value="9896226054"/><!-- shiping tel -->
-				        <input type="hidden" name="merchant_param1" value="additional Info."/><!-- merchant param1 -->
-				        <input type="hidden" name="merchant_param2" value="additional Info."/><!-- merchant param2 -->
-				        <input type="hidden" name="merchant_param3" value="additional Info."/><!-- merchant param3 -->
-						<input type="hidden" name="merchant_param4" value="additional Info."/><!-- merchant param4 -->
-						<input type="hidden" name="merchant_param5" value="additional Info."/><!-- merchant param5 -->
-				        <input type="hidden" name="delivery_name" value="Chaplin"/><!-- shiping name -->
-				        <input type="hidden" name="delivery_address" value="room no.701 near bus stand"/><!-- shiping address -->
-				        <input type="hidden" name="delivery_city" value="Hyderabad"/><!-- shiping city -->
-				        <input type="hidden" name="delivery_state" value="Andhra"/><!-- shiping state -->
-				        <input type="hidden" name="delivery_zip" value="425001"/><!-- shiping zip -->
-				        <input type="hidden" name="delivery_country" value="India"/><!-- shiping country -->
-				        <input type="hidden" name="delivery_tel" value="9896226054"/><!-- shiping tel -->
+				        <input type="hidden" name="delivery_zip" value="${user_details.getPin() }"/><!-- shiping zip -->
+				        <input type="hidden" name="delivery_country" value="${user_details.getCountryname() }"/><!-- shiping country -->
+				        <input type="hidden" name="delivery_tel" value="${user_details.getMobileno() }"/><!-- shiping tel -->
+				        
 				        <input type="hidden" name="merchant_param1" value="additional Info."/><!-- merchant param1 -->
 				        <input type="hidden" name="merchant_param2" value="additional Info."/><!-- merchant param2 -->
 				        <input type="hidden" name="merchant_param3" value="additional Info."/><!-- merchant param3 -->
 						<input type="hidden" name="merchant_param4" value="additional Info."/><!-- merchant param4 -->
 						<input type="hidden" name="merchant_param5" value="additional Info."/><!-- merchant param5 -->
 						
+				        <input type="hidden" name="delivery_name" value="${user_details.getFirst_name() }"/><!-- shiping name -->
+				        <input type="hidden" name="delivery_address" value="${user_details.getAddress() }"/><!-- shiping address -->
+				        <input type="hidden" name="delivery_city" value="${user_details.getCityname() }"/><!-- shiping city -->
+				        <input type="hidden" name="delivery_state" value="Andhra"/><!-- shiping state -->
+				        <input type="hidden" name="delivery_zip" value="${user_details.getPin() }"/><!-- shiping zip -->
+				        <input type="hidden" name="delivery_country" value="${user_details.getCountryname() }"/><!-- shiping country -->
+				        <input type="hidden" name="delivery_tel" value="${user_details.getMobileno() }"/><!-- shiping tel -->
+				        
+				        <input type="hidden" name="merchant_param1" value="additional Info."/><!-- merchant param1 -->
+				        <input type="hidden" name="merchant_param2" value="additional Info."/><!-- merchant param2 -->
+				        <input type="hidden" name="merchant_param3" value="additional Info."/><!-- merchant param3 -->
+						<input type="hidden" name="merchant_param4" value="additional Info."/><!-- merchant param4 -->
+						<input type="hidden" name="merchant_param5" value="additional Info."/><!-- merchant param5 -->
+						
+												
 						
 				       
 				         <!-- EMI section start -->
