@@ -7,7 +7,7 @@
 
     <!-- Head BEGIN -->
     <head>
-      <head>
+    <head>
         <meta charset="utf-8">
         <title>STOIC ZENO</title>
         <link rel="shortcut icon" href="favicon.ico">
@@ -20,34 +20,34 @@
         <meta property="og:url" content="-CUSTOMER VALUE-">
         <!--  include the all css components -->
         <jsp:include page="component/css.jsp"></jsp:include>
-    </head>
-    <body class="corporate">
-        <!-- BEGIN TOP BAR -->
-        <div class="pre-header">
-            <div class="container">
-                <div class="row">
-                    <!-- BEGIN TOP BAR MENU -->
-                    <div class="col-md-12 col-sm-12 additional-nav" style=" font-size:12px; font-color:000000">
-                        <ul class="list-unstyled list-inline pull-right ">
-                            <li ><i class=" fa fa-phone"></i><span>Lets Talk: +91 9019602602</span></li>
-                        </ul>
+        </head>
+        <body class="corporate">
+            <!-- BEGIN TOP BAR -->
+            <div class="pre-header">
+                <div class="container">
+                    <div class="row">
+                        <!-- BEGIN TOP BAR MENU -->
+                        <div class="col-md-12 col-sm-12 additional-nav" style=" font-size:12px; font-color:000000">
+                            <ul class="list-unstyled list-inline pull-right ">
+                                <li ><i class=" fa fa-phone"></i><span>Lets Talk: +91 9019602602</span></li>
+                            </ul>
+                        </div>
+                        <!-- END TOP BAR MENU -->
                     </div>
-                    <!-- END TOP BAR MENU -->
                 </div>
             </div>
-        </div>
-        <!-- END TOP BAR -->
-        <!-- BEGIN HEADER -->
-        <div class="header">
-            <div class="container">
-                <a class="site-logo" href="#">
-                    <img src="corporate/img/logos/logo.png" alt="Stoic Zeno"> </a>
-                <a href="javascript:void(0);" class="mobi-toggler"><i class="fa fa-bars"></i></a>
-                <!-- BEGIN NAVIGATION -->
-                <div class="header-navigation pull-right font-transform-inherit" style="font-size:12px">
-                    <ul>
-                        <li class="dropdown active"> </li>
-                        <li ><a href="${pageContext.request.contextPath }/dashboard">Home</a></li>
+            <!-- END TOP BAR -->
+            <!-- BEGIN HEADER -->
+            <div class="header">
+                <div class="container">
+                    <a class="site-logo" href="#">
+                        <img src="corporate/img/logos/logo.png" alt="Stoic Zeno"> </a>
+                    <a href="javascript:void(0);" class="mobi-toggler"><i class="fa fa-bars"></i></a>
+                    <!-- BEGIN NAVIGATION -->
+                    <div class="header-navigation pull-right font-transform-inherit" style="font-size:12px">
+                        <ul>
+                            <li class="dropdown active"> </li>
+                            <li ><a href="${pageContext.request.contextPath }/dashboard">Home</a></li>
                         <li><a href="${pageContext.request.contextPath }/billingPayment">Make Payment</a></li>  
                         <li><a href="${pageContext.request.contextPath }/service">Service Request</a></li> 
                         <li><a href="${pageContext.request.contextPath }/help">Help</a></li> 
@@ -67,7 +67,7 @@
             </div>
         </div>
         <!-- Header END -->
-        
+
 
         <div class="main" >
             <div class="container">
@@ -79,7 +79,7 @@
                         <table class="tblborder">
                             <tr>
                                 <th align="center">
-                                    <div align="center" style="font-size: 50px; font-family: Roboto" >Privacy <br/> Policy </div>
+                                    <div align="center" style="font-size: 50px; font-family: Roboto" >Privacy<br/>Policy</div>
                                 </th>
                             </tr>
                         </table>
@@ -94,7 +94,7 @@
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
                                         <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#accordion1_1">
-                                           1. What this privacy policy covers?
+                                            1. What this privacy policy covers?
                                         </a>
                                     </h4>
                                 </div>
@@ -116,8 +116,8 @@
                                     <div class="panel-body">
                                         <i class=" fa fa-hand-o-right  "></i> General </br>
                                         &nbsp; <i class=" fa  fa-dot-circle-o "></i> The company has the right to combine information about you that it has, with information from partner business and has the right to pass on the same to business associates, franchisees without referring the same to the user.  </br>
-                                        &nbsp; <i class=" fa  fa-dot-circle-o "></i>We store personal information that you give us, for a specific purpose. This includes details such as your name, address, telephone, VC number, account number and/ or e-mail address. This Privacy Policy is applicable all the personal information that you give us ("User Information") via this website. <br/>
-                                        <i class=" fa fa-hand-o-right  "></i> We make use of User Information for the following: <br/>
+                                        &nbsp; <i class=" fa  fa-dot-circle-o "></i> We store personal information that you give us, for a specific purpose. This includes details such as your name, address, telephone, VC number, account number and/ or e-mail address. This Privacy Policy is applicable all the personal information that you give us ("User Information") via this website. <br/>
+                                        <br/><i class=" fa fa-hand-o-right  "></i> We make use of User Information for the following: <br/>
                                         &nbsp; <i class=" fa  fa-dot-circle-o "></i> Market research, including statistical analysis of user behaviour which we may disclose to third parties in aggregated form. <br/>
                                         &nbsp; <i class=" fa  fa-dot-circle-o "></i> In compliance with any requirement of law.<br/> 
                                         &nbsp; <i class=" fa  fa-dot-circle-o"></i> Send you periodic communications about our features, products, services, events and special offers.
@@ -151,11 +151,11 @@
                                 </div>
                                 <div id="accordion1_4" class="panel-collapse collapse">
                                     <div class="panel-body">
-                                        <i class=" fa  fa-dot-circle-o "></i>  The Company may update this policy and display the same in their website without notice to you and such posting will be deemed to have been read by you. </br>
+                                        <i class=" fa  fa-dot-circle-o "></i> The Company may update this policy and display the same in their website without notice to you and such posting will be deemed to have been read by you. </br>
                                     </div>
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
                     <!-- END CONTENT -->
@@ -168,8 +168,8 @@
 
 
         <jsp:include page="component/pop-up.jsp"></jsp:include>
-             <jsp:include page="component/footer.jsp"></jsp:include>
-             
+        <jsp:include page="component/footer.jsp"></jsp:include>
+
             <!-- Load javascripts at bottom, this will reduce page load time -->
         <jsp:include page="component/js.jsp"></jsp:include>
 
