@@ -312,7 +312,7 @@ label.css-label
 		               	<input readonly="readonly" type="hidden" name="tid" id="tid" value=""/><!-- Transaction ID -->
 		               	<input type="hidden" name="merchant_id" value="127191"/><!-- Merchant Id	: -->
 					   	<input type="hidden" name="order_id" value="1236556561"/><!-- Order Id	: -->
-					   	<input type="hidden" name="amount" value="${pendingAmount }"   />
+					   	<!--<input type="hidden" name="amount" value="${pendingAmount }"   />
 						<input type="hidden" name="billing_name" value="${user_details.getFirst_name() } ${user_details.getLast_name() }"/><!-- billing name -->
 						<!--<input type="hidden" name="billing_address" value="${user_details.getAddress() }"/><!-- billing address -->
 						<!--<input type="hidden" name="billing_city" value="${user_details.getCityname() }"/><!-- billing city -->
