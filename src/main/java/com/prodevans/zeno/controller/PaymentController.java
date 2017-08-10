@@ -66,20 +66,17 @@ public class PaymentController
 	public String doPayment(ModelMap model, HttpSession session)
 	{
 		SessionDetails user = (SessionDetails) session.getAttribute("user");
-		double pendingAmount=(Double) session.getAttribute("pendingAmount");
 	
-		
 		paymentDetails.setActno(user.getActno());
 		paymentDetails.setCurrency("INR");
 		paymentDetails.setInstrument_detail("instrument Details");
-		paymentDetails.setInstrumentid(1);
-		paymentDetails.setTrans_amount(pendingAmount);
+		paymentDetails.setInstrumentid(3);
+		paymentDetails.setTrans_amount(user.getPendingAmount());
 		paymentDetails.setTrans_date("Date ");
 		paymentDetails.setTrans_descr("Transaction Description");
-		paymentDetails.setTrans_type("Transaction Type");
+		paymentDetails.setTrans_type("Credit Card");
 		
 		model.addAttribute("user_details", user);
-		model.addAttribute("pendingAmount",pendingAmount);
 		return "payment/sendData";
 	}
 
