@@ -95,10 +95,18 @@ public class DashboardConroller {
 	}
 
          @RequestMapping(value = "/terms", method = RequestMethod.GET)
-	public String dashboard(ModelMap model) {
-
+	public String terms(ModelMap model) {
 		return "terms";
-
+	}
+        
+         @RequestMapping(value = "/refund", method = RequestMethod.GET)
+	public String refund(ModelMap model) {
+		return "refund";
+	}
+        
+        @RequestMapping(value = "/privacy", method = RequestMethod.GET)
+	public String privacy(ModelMap model) {
+		return "privacy";
 	}
         
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
