@@ -251,7 +251,7 @@ label.css-label
 		                		<div class="col-md-4">
 			                		<p style=" font-size:14px; line-height:.5">Account No : ${user_details.getActid() }  </p><br>
 			                		<p style=" font-size:14px; line-height:.5">Name : ${user_details.getFirst_name() } ${user_details.getLast_name() } </p><br>
-			                        <p style=" font-size:14px; line-height:.5">Amount : ${pendingAmount }/-  </p><br>
+			                        <p style=" font-size:14px; line-height:.5">Amount : ${user_details.getPendingAmount() }/-  </p><br>
 			                        <p style=" font-size:14px; line-height:.5">Email  : ${user_details.getEmail() }</p><br>
 			                        <p style=" font-size:14px; line-height:.5">Mobile No.  : ${user_details.getMobileno() } </p><br>
 			                    </div>
