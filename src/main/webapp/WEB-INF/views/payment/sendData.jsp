@@ -312,14 +312,14 @@ label.css-label
 		               	<input readonly="readonly" type="hidden" name="tid" id="tid" value=""/><!-- Transaction ID -->
 		               	<input type="hidden" name="merchant_id" value="127191"/><!-- Merchant Id	: -->
 					   	<input type="hidden" name="order_id" value="1236556561"/><!-- Order Id	: -->
-					   	<input type="hidden" name="amount" value=""   />
-						<input type="hidden" name="billing_name" value=""/><!-- billing name -->
-						<input type="hidden" name="billing_address" value=""/><!-- billing address -->
-						<input type="hidden" name="billing_city" value=""/><!-- billing city -->
-						<input type="hidden" name="billing_zip" value=""/><!-- billing zip -->
-				        <input type="hidden" name="billing_country" value=""/><!-- billing country -->
-						<input type="hidden" name="billing_tel" value=""/><!-- billing tel -->
-						<input type="hidden" name="billing_email" value=""/><!-- billing email -->
+					   	<input type="hidden" name="amount" value="1.0"   />
+						<input type="hidden" name="billing_name" value="1"/><!-- billing name -->
+						<input type="hidden" name="billing_address" value="1"/><!-- billing address -->
+						<input type="hidden" name="billing_city" value="1"/><!-- billing city -->
+						<input type="hidden" name="billing_zip" value="1"/><!-- billing zip -->
+				        <input type="hidden" name="billing_country" value="1"/><!-- billing country -->
+						<input type="hidden" name="billing_tel" value="1"/><!-- billing tel -->
+						<input type="hidden" name="billing_email" value="1@gmail.com"/><!-- billing email -->
 					   	
 					   	
 						<input type="hidden" name="currency" value="INR"/><!-- Currency	: -->
