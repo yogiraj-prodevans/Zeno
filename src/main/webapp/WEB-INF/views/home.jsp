@@ -11,5 +11,6 @@
 </h1>
 
 <P>  hellooo. ...cgnvhn${userInfo}. </P>
+ <jsp:include page="component/footer.jsp"></jsp:include>
 </body>
 </html>

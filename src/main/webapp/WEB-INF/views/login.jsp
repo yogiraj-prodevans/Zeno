@@ -157,11 +157,11 @@
             </div>
         </div>
         <!-- END PRE-FOOTER -->
-        <!-- BEGIN FOOTER -->
+        <!-- BEGIN FOOTER --
         <div class="footer" style="font-family:Roboto; position: fixed; right: 0; bottom: 0; left: 0;font-size:10px">
             <div class="container">
                 <div class="row">
-                    <!-- BEGIN COPYRIGHT -->
+                    <!-- BEGIN COPYRIGHT --
                     <div class="col-md-10 col-sm-10 padding-top-0 padding-bottom-10 "> 2017 &copy Stoic Zeno. ALL Rights Reserved.&nbsp 
                         <a href="javascript:;">Privacy Policy</a> |
                         <a href="${pageContext.request.contextPath }/terms">Terms of Service</a> |
@@ -169,11 +169,12 @@
                         <a href="javascript:;">Feedback</a> |
                         <a href="javascript:;">Contact Us</a>
                     </div>
-                    <!-- END COPYRIGHT -->
+                    <!-- END COPYRIGHT --
                 </div>
             </div>
         </div>
         <!-- END FOOTER -->
+         <jsp:include page="component/footer.jsp"></jsp:include>
         <!-- Load javascripts at bottom, this will reduce page load time -->
         <!-- BEGIN CORE PLUGINS (REQUIRED FOR ALL PAGES) -->
         <!--[if lt IE 9]>
