@@ -325,7 +325,7 @@ label.css-label
 						<input type="hidden" name="redirect_url" value="http://52.172.215.71:8080/zeno/ccavResponseHandler"/><!-- Redirect URL -->
 						<input type="hidden" name="cancel_url" value="http://52.172.215.71:8080/zeno/ccavResponseHandler"/><!-- cancel url -->
 					 	<input type="hidden" name="language" value="EN"/><!-- Language -->
-						<input type="hidden" name="billing_name" value="Charli"/><!-- billing name -->
+						<input type="hidden" name="billing_name" value="${user_details.getFirst_name() }"/><!-- billing name -->
 				        <input type="hidden" name="billing_address" value="Room no 1101, near Railway station Ambad"/><!-- billing address -->
 				        <input type="hidden" name="billing_city" value="Indore"/><!-- billing city -->
 				        <input type="hidden" name="billing_state" value="MH"/><!-- billing state -->
@@ -333,7 +333,7 @@ label.css-label
 				        <input type="hidden" name="billing_country" value="India"/><!-- billing country -->
 				        <input type="hidden" name="billing_tel" value="9896226054"/><!-- billing tel -->
 				        <input type="hidden" name="billing_email" value="${user_details.getEmail() }"/><!-- billing email -->
-				        <input type="hidden" name="billing_name" value="Charli"/><!--billing name  -->
+				        <input type="hidden" name="billing_name" value="${user_details.getFirst_name() }"/><!--billing name  -->
 				        <input type="hidden" name="billing_address" value="Room no 1101, near Railway station Ambad"/><!-- billing address -->
 				        <input type="hidden" name="billing_city" value="Indore"/><!-- billing city -->
 				        <input type="hidden" name="billing_state" value="MH"/><!-- billing state -->
@@ -341,7 +341,7 @@ label.css-label
 				        <input type="hidden" name="billing_country" value="India"/><!-- billing country -->
 				        <input type="hidden" name="billing_tel" value="9896226054"/><!-- billing tel -->
 				        <input type="hidden" name="billing_email" value="${user_details.getEmail() }"/><!-- billing email -->
-				        <input type="hidden" name="delivery_name" value="Chaplin"/><!--shiping name  -->
+				        <input type="hidden" name="delivery_name" value="${user_details.getFirst_name() }"/><!--shiping name  -->
 				        <input type="hidden" name="delivery_address" value="room no.701 near bus stand"/><!-- shiping address -->
 				        <input type="hidden" name="delivery_city" value="Hyderabad"/><!-- shiping city -->
 				        <input type="hidden" name="delivery_state" value="Andhra"/><!-- shiping state -->
