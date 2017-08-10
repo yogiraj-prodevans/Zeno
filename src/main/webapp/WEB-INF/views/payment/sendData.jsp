@@ -127,22 +127,31 @@ label.css-label
 {
 	.payNowButton1
 	{
-		width: 40%;
-		height: 5%;	
-		padding-top: 5%;
+		width: 70%;
+		height: 10%;	
+		padding-top: 2%;
 	}
 	.payNowButton2
 	{
 		width: 80%;
 		height: 15%;
 	}
-	
+	.summaryBlock
+	{
+		height: 70%;
+	}
 
 }
 
 /* iphone 6*/
 @media (max-width: 380px)
 {
+	.payNowButton1
+	{
+		width: 65%;
+		height: 10%;	
+		padding-top: 2%;
+	}
 }
 </style>
    
@@ -234,43 +243,66 @@ label.css-label
 			<form method="post" name="customerData" action="ccavRequestHandler" class="form-horizontal form-without-legend ">
 			
 				<div class="form-group">
-					<div class="col-md-2">
+					<div class="col-md-1">
 					</div> 
-                	<div class="col-lg-8 col-md-8 col-sm-8 " style=" padding-bottom:16">
+                	<div class="col-lg-10 col-md-10 col-sm-10 " style=" padding-bottom:16">
                 	
 	                	<div class="summaryBlock">
 	                		<div class="row">
-		                		<div class="col-md-6">
+		                		<div class="col-md-4">
 			                		<p style=" font-size:14px; line-height:.5">Account No : ${user_details.getActid() }  </p><br>
 			                		<p style=" font-size:14px; line-height:.5">Name : ${user_details.getFirst_name() } ${user_details.getLast_name() } </p><br>
 			                        <p style=" font-size:14px; line-height:.5">Amount : ${pendingAmount }/-  </p><br>
 			                        <p style=" font-size:14px; line-height:.5">Email  : ${user_details.getEmail() }</p><br>
 			                        <p style=" font-size:14px; line-height:.5">Mobile No.  : ${user_details.getMobileno() } </p><br>
 			                    </div>
-			                    <div class="col-md-6">
+			                    <div class="col-md-8">
 			                    
-				                    <input type="radio" name="radio-1-set" id="radio1" class="css-checkbox" />
-	                    			<label for="radio1" class="css-label radGroup1">Option 1</label><br>
-								
-									<input type="radio" name="radio-1-set" id="radio2" class="css-checkbox" />
-	                    			<label for="radio2" class="css-label radGroup1">Option 1</label>
-			                    	
-			                    	<input class="payOption" type="radio" name="payment_option" value="OPTCRDC">Credit Card<br>
-				         	  		<input class="payOption" type="radio" name="payment_option" value="OPTDBCRD">Debit Card<br>
-				         	  		<input class="payOption" type="radio" name="payment_option" value="OPTNBK">Net Banking <br>
-				         	  		<input class="payOption" type="radio" name="payment_option" value="OPTCASHC">Cash Card<br>
-				         	  		<input class="payOption" type="radio" name="payment_option" value="OPTMOBP">Mobile Payments<br>
-				         	  		<input class="payOption" type="radio" name="payment_option" value="OPTEMI">EMI<br>
-				         	  		<input class="payOption" type="radio" name="payment_option" value="OPTWLT">Wallet<br>
-			                    </div>   
+			                    	<div class="row">
+				                    	<div class="col-md-2">
+				                    	</div>
+				                    	<div class="col-md-5">
+						                    <input type="radio" name="payment_option" value="OPTCRDC" id="radio1" class="css-checkbox" />
+			                    			<label for="radio1" class="css-label radGroup1">Credit Card</label><br>
+										
+											<input type="radio" name="payment_option" value="OPTDBCRD" id="radio2" class="css-checkbox" />
+			                    			<label for="radio2" class="css-label radGroup1">Debit Card</label><br>
+			                    			
+			                    			<input type="radio" name="payment_option" value="OPTNBK" id="radio3" class="css-checkbox" />
+			                    			<label for="radio3" class="css-label radGroup1">Net Banking</label><br>
+											
+											<input type="radio" name="payment_option" value="OPTCASHC" id="radio4" class="css-checkbox" />
+			                    			<label for="radio4" class="css-label radGroup1">Cash Card</label><br>
+		                    			</div>
+		                    			
+		                    			<div class="col-md-5">
+			                    			<input type="radio" name="payment_option" value="OPTMOBP" id="radio5" class="css-checkbox" />
+			                    			<label for="radio5" class="css-label radGroup1">Mobile Payments</label><br>
+			                    			
+			                    			<input type="radio" name="payment_option" value="OPTEMI" id="radio6" class="css-checkbox" />
+			                    			<label for="radio6" class="css-label radGroup1">EMI</label><br>
+			                    			
+			                    			<input type="radio" name="payment_option" value="OPTWLT" id="radio7" class="css-checkbox" />
+			                    			<label for="radio7" class="css-label radGroup1">Wallet</label><br>
+										</div>	
+				                	</div><!-- end row -->
+				                	<div class="row">
+				                		<div class="col-md-7">
+				                		</div>
+				                		<div class="col-md-5">
+				                			<button class="payNowButton1" type="submit" >
+			                     				Confirm Payment
+			                     			</button>
+				                		</div>
+				                	
+				                	</div>    	
+				                </div>   
 			           		</div>	 
-			                <div class="col-md-4">
+			                <div class="col-md-9">
 			                </div>
-	                        <div class="row col-md-4" style="margin-top: 5%;">
+	                        <div class="row col-md-3" style="margin-top: 5%;">
 	                        	
-		                        	<button class="payNowButton1" type="submit" >
-	                     				Confirm Payment
-	                     			</button>
+		                        	
 	                     		
                      		</div>
                      		<div class="col-md-4">
@@ -281,11 +313,23 @@ label.css-label
 		               	<input readonly="readonly" type="hidden" name="tid" id="tid" value=""/><!-- Transaction ID -->
 		               	<input type="hidden" name="merchant_id" value="127191"/><!-- Merchant Id	: -->
 					   	<input type="hidden" name="order_id" value="1236556561"/><!-- Order Id	: -->
-					   	<input type="hidden" name="amount" value="1.00"   /></td>
+					   	<input type="hidden" name="amount" value="${pendingAmount }"   /></td>
+						<input type="hidden" name="billing_name" value="${user_details.getFirst_name() } ${user_details.getLast_name() }"/><!-- billing name -->
+						<input type="hidden" name="billing_address" value="${user_details.getAddress() }"/><!-- billing address -->
+						<input type="hidden" name="billing_city" value="${user_details.getCityname() }"/><!-- billing city -->
+						<input type="hidden" name="billing_zip" value="${user_details.getPin() }"/><!-- billing zip -->
+				        <input type="hidden" name="billing_country" value="${user_details.getCountryname() }"/><!-- billing country -->
+						<input type="hidden" name="billing_tel" value="${user_details.getMobileno() }"/><!-- billing tel -->
+						<input type="hidden" name="billing_email" value="${user_details.getEmail() }"/><!-- billing email -->
+						
+						
+						
 						<input type="hidden" name="currency" value="INR"/><!-- Currency	: -->
 						<input type="hidden" name="redirect_url" value="http://52.172.215.71:8080/zeno/ccavResponseHandler"/><!-- Redirect URL	: -->
 						<input type="hidden" name="cancel_url" value="http://52.172.215.71:8080/zeno/ccavResponseHandler"/><!-- Cancel URL	: -->
 					 	<input type="hidden" name="language" value="EN"/><!-- Language	: -->
+					 	
+					 	
 		                <input readonly="readonly" type="hidden" name="tid" id="tid" value=""/><!-- Transction ID -->
 		                <input type="hidden" name="merchant_id" value="127191"/><!-- Merchant ID -->
 						<input type="hidden" name="order_id" value="123654789"/><!-- order id -->
@@ -294,12 +338,11 @@ label.css-label
 						<input type="hidden" name="redirect_url" value="http://52.172.215.71:8080/zeno/ccavResponseHandler"/><!-- Redirect URL -->
 						<input type="hidden" name="cancel_url" value="http://52.172.215.71:8080/zeno/ccavResponseHandler"/><!-- cancel url -->
 					 	<input type="hidden" name="language" value="EN"/><!-- Language -->
-						<input type="hidden" name="billing_name" value="Charli"/><!-- billing name -->
-				        <input type="hidden" name="billing_address" value="Room no 1101, near Railway station Ambad"/><!-- billing address -->
+						
+				        
 				        <input type="hidden" name="billing_city" value="Indore"/><!-- billing city -->
 				        <input type="hidden" name="billing_state" value="MH"/><!-- billing state -->
-				        <input type="hidden" name="billing_zip" value="425001"/><!-- billing zip -->
-				        <input type="hidden" name="billing_country" value="India"/><!-- billing country -->
+				       
 				        <input type="hidden" name="billing_tel" value="9896226054"/><!-- billing tel -->
 				        <input type="hidden" name="billing_email" value="test@gmail.com"/><!-- billing email -->
 				        <input type="hidden" name="billing_name" value="Charli"/><!--billing name  -->
@@ -383,8 +426,8 @@ label.css-label
 				        </div>
 				        
 			
-					</div><!-- col-md-8 -->
-					<div class="col-md-2">
+					</div><!-- col-md-10 -->
+					<div class="col-md-1">
 					</div>
 				</div><!-- Form group -->      
 			</form>
