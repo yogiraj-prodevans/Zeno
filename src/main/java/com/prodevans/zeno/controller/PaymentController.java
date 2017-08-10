@@ -135,6 +135,5 @@ public class PaymentController
 		model.addAttribute("paymentDetailsGet", paymentDetailsGet);
 		
 		return "payment/ccavResponseHandler";
-	}
-	
+	}		
 }
