@@ -312,22 +312,12 @@ label.css-label
 		               	<input readonly="readonly" type="hidden" name="tid" id="tid" value=""/><!-- Transaction ID -->
 		               	<input type="hidden" name="merchant_id" value="127191"/><!-- Merchant Id	: -->
 					   	<input type="hidden" name="order_id" value="1236556561"/><!-- Order Id	: -->
-					   	<input type="hidden" name="amount" value="${pendingAmount }"   />
-						<input type="hidden" name="billing_name" value="${user_details.getFirst_name() } ${user_details.getLast_name() }"/><!-- billing name -->
-						<input type="hidden" name="billing_address" value="${user_details.getAddress() }"/><!-- billing address -->
-						<input type="hidden" name="billing_city" value="${user_details.getCityname() }"/><!-- billing city -->
-						<input type="hidden" name="billing_zip" value="${user_details.getPin() }"/><!-- billing zip -->
-				        <input type="hidden" name="billing_country" value="${user_details.getCountryname() }"/><!-- billing country -->
-						<input type="hidden" name="billing_tel" value="${user_details.getMobileno() }"/><!-- billing tel -->
-						<input type="hidden" name="billing_email" value="${user_details.getEmail() }"/><!-- billing email -->
-					   	
-					   	
+					   	<input type="hidden" name="amount" value="1.00"   /></td>
 						<input type="hidden" name="currency" value="INR"/><!-- Currency	: -->
 						<input type="hidden" name="redirect_url" value="http://52.172.215.71:8080/zeno/ccavResponseHandler"/><!-- Redirect URL	: -->
 						<input type="hidden" name="cancel_url" value="http://52.172.215.71:8080/zeno/ccavResponseHandler"/><!-- Cancel URL	: -->
 					 	<input type="hidden" name="language" value="EN"/><!-- Language	: -->
 		                <input readonly="readonly" type="hidden" name="tid" id="tid" value=""/><!-- Transction ID -->
-		                
 		                <input type="hidden" name="merchant_id" value="127191"/><!-- Merchant ID -->
 						<input type="hidden" name="order_id" value="123654789"/><!-- order id -->
 						<input type="hidden" name="amount" value="1.00"/><!--Amount  -->
