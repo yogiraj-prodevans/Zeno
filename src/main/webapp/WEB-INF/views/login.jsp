@@ -156,6 +156,7 @@
                 <!-- END STEPS -->
             </div>
         </div>
+        
         <!-- END PRE-FOOTER -->
         <!-- BEGIN FOOTER -->
         <div class="footer" style="font-family:Roboto; position: fixed; right: 0; bottom: 0; left: 0;font-size:10px">
