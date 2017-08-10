@@ -50,7 +50,7 @@
                         <li ><a href="${pageContext.request.contextPath }/dashboard">Home</a></li>
                         <li><a href="${pageContext.request.contextPath }/billingPayment">Make Payment</a></li>  
                         <li><a href="${pageContext.request.contextPath }/service">Service Request</a></li> 
-                        <li class="active"><a href="${pageContext.request.contextPath }/help">Help</a></li> 
+                        <li><a href="${pageContext.request.contextPath }/help">Help</a></li> 
                         <li><a href="${pageContext.request.contextPath }/parental-control">Parental Control</a></li>
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
@@ -78,8 +78,8 @@
                     <div class="col-md-3 col-sm-3">
                         <table class="tblborder">
                             <tr>
-                                <th>
-                                    <div style="font-size: 50px; font-family: Roboto" >Privacy Policy </div>
+                                <th align="center">
+                                    <div align="center" style="font-size: 50px; font-family: Roboto" >Privacy <br/> Policy </div>
                                 </th>
                             </tr>
                         </table>
