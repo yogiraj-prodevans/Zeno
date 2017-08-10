@@ -8,7 +8,7 @@ public class PaymentDetails
 	private int actno;
 	private double trans_amount;
 	private String trans_type;
-	private String trans_date;
+	private Date trans_date;
 	private String currency;
 	private int instrumentid;
 	private String instrument_detail;
@@ -20,7 +20,7 @@ public class PaymentDetails
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public PaymentDetails(int actno, double trans_amount, String trans_type, String trans_date, String currency,
+	public PaymentDetails(int actno, double trans_amount, String trans_type, Date trans_date, String currency,
 			int instrumentid, String instrument_detail, String trans_descr) {
 		super();
 		this.actno = actno;
@@ -50,10 +50,10 @@ public class PaymentDetails
 	public void setTrans_type(String trans_type) {
 		this.trans_type = trans_type;
 	}
-	public String getTrans_date() {
+	public Date getTrans_date() {
 		return trans_date;
 	}
-	public void setTrans_date(String trans_date) {
+	public void setTrans_date(Date trans_date) {
 		this.trans_date = trans_date;
 	}
 	public String getCurrency() {

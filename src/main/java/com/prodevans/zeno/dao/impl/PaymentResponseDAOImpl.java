@@ -1,5 +1,6 @@
 package com.prodevans.zeno.dao.impl;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Vector;
 
@@ -45,17 +46,19 @@ public class PaymentResponseDAOImpl implements PaymentResponseDAO
 	}
 	
 	@Override
-	public void setAllPaymentTransactionDetails(HashMap<String, String> responseFromCCAvenue) 
+	public PaymentDetails setAllPaymentTransactionDetails(HashMap<String, String> responseFromCCAvenue) 
 	{
 		PaymentDetails paymentDetails=new PaymentDetails();
 		paymentDetails.setActno(22);
-		paymentDetails.setCurrency(responseFromCCAvenue.get("currency"));
 		paymentDetails.setTrans_amount(Double.parseDouble(responseFromCCAvenue.get("amount")));
-		paymentDetails.setTrans_date(responseFromCCAvenue.get("trans_date"));
-		paymentDetails.setTrans_descr(responseFromCCAvenue.get("status_message"));
-		paymentDetails.setTrans_type(responseFromCCAvenue.get("payment_mode"));
+		paymentDetails.setTrans_type("C");
+		paymentDetails.setTrans_date(new Date());
+		paymentDetails.setCurrency(responseFromCCAvenue.get("currency"));
+		paymentDetails.setInstrumentid(3);
+		paymentDetails.setInstrument_detail("Credit Card");
+		paymentDetails.setTrans_descr("Transaction Successfull..");
 		
-		
+		return paymentDetails;
 	}
 
 }
