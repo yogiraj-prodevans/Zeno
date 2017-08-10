@@ -322,8 +322,8 @@ label.css-label
 						<input type="hidden" name="order_id" value="123654789"/><!-- order id -->
 						<input type="hidden" name="amount" value="1.00"/><!--Amount  -->
 						<input type="hidden" name="currency" value="INR"/><!-- currency -->
-						<input type="hidden" name="redirect_url" value="http://52.172.215.71:8080/zeno/ccavResponseHandler"/><!-- Redirect URL -->
-						<input type="hidden" name="cancel_url" value="http://52.172.215.71:8080/zeno/ccavResponseHandler"/><!-- cancel url -->
+						<input type="hidden" name="redirect_url" value="http://52.172.215.71/zeno/ccavResponseHandler"/><!-- Redirect URL -->
+						<input type="hidden" name="cancel_url" value="http://52.172.215.71/zeno/ccavResponseHandler"/><!-- cancel url -->
 					 	<input type="hidden" name="language" value="EN"/><!-- Language -->
 					 	
 						<input type="hidden" name="billing_name" value="${user_details.getFirst_name() }"/><!-- billing name -->
