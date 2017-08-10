@@ -46,8 +46,15 @@
 					pname=""+enumeration.nextElement();
 					pvalue=""+ hs.get(pname);
 					responseFromCCAvenue.put(pname, pvalue);
+			%>
+				<tr>
+					<td><%=pname %></td>
+					<td><%=pvalue %></td>				
+				</tr>
+				
+			<%
 				}
-				prdi.setAllPaymentTransactionDetails(responseFromCCAvenue);
+				
 			%>
 		</table>
 	</center>

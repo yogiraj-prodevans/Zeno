@@ -9,5 +9,5 @@ import com.prodevans.zeno.pojo.PaymentDetails;
 public interface PaymentResponseDAO 
 {
 	public PaymentDetails getAllPaymentTransactionDetails(PaymentDetails paymentDetails) throws XmlRpcException;
-	public void setAllPaymentTransactionDetails(HashMap<String, String> responseFromCCAvenue);
+	public PaymentDetails setAllPaymentTransactionDetails(HashMap<String, String> responseFromCCAvenue);
 }
