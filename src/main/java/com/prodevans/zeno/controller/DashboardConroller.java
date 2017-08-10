@@ -37,7 +37,7 @@ public class DashboardConroller {
 				System.out.println(user.toString());
 				UserDetails userdetails = DashboardImpl.getUserDetails(user.getActid());
 
-				model.addAttribute("user_details", userdetails);
+				model.addAttribute("user_details", user);
 
 				SubscriptionDetails details = DashboardImpl.getSubscriptionDetails(user.getActid());
 

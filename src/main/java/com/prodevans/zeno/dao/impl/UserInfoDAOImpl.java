@@ -39,6 +39,11 @@ public class UserInfoDAOImpl implements UserLoginDAO {
 
 		if (result.get("password").toString().equals(password) && result.get("actid").toString().equals(customer_id)) 
 		{
+			Vector params1 = new Vector();
+			params1.add(Integer.parseInt(result.get("actno").toString()));
+			Object o=(Object) rpcClient.execute(unifyHandler+".getTotalPendingInvoiceValue",params1);
+			double pendingAmount=(Double)o;
+			
 			userSessionDetails.setActid(result.get("actid").toString());
 			userSessionDetails.setActno(Integer.parseInt(result.get("actno").toString()));
 			userSessionDetails.setActname(result.get("fname").toString());
@@ -54,6 +59,8 @@ public class UserInfoDAOImpl implements UserLoginDAO {
 			userSessionDetails.setPin(result.get("pin").toString());
 			userSessionDetails.setCityname(result.get("cityname").toString());
 			userSessionDetails.setCountryname(result.get("countryname").toString());
+			
+			userSessionDetails.setPendingAmount(pendingAmount);
 			
 			userSessionDetails.setResult(true);
 			return userSessionDetails;

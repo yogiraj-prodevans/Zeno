@@ -46,7 +46,7 @@ public class LoginController
 			if (userSessionDetails.getResult()) {
 				session.setAttribute("user", userSessionDetails);
 				
-				System.out.println("displaying actno : " + userSessionDetails.getActno());
+				System.out.println("displaying pending amount : " + userSessionDetails.getPendingAmount());
 				return "redirect:dashboard";
 			}
 		} catch (Exception ee) {

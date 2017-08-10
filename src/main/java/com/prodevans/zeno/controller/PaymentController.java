@@ -52,9 +52,11 @@ public class PaymentController
 			SessionDetails user = (SessionDetails) session.getAttribute("user");
 			model.addAttribute("user_details", user);
 			
+			/*
 			double pendingAmount=paymentDAOImpl.getPendingAmount(user.getActno());
 			session.setAttribute("pendingAmount", pendingAmount);
 			model.addAttribute("pendingAmount",pendingAmount);
+			*/
 			
 			return "billingPayment";
 		}

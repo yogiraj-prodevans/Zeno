@@ -19,7 +19,7 @@ public class SessionDetails
 	private String pin;
 	private String cityname;
 	private String countryname;
-	
+	private double pendingAmount;
 	
 	public String getFirst_name() {
 		return first_name;
@@ -111,6 +111,12 @@ public class SessionDetails
 	}
 	public void setCountryname(String countryname) {
 		this.countryname = countryname;
+	}
+	public double getPendingAmount() {
+		return pendingAmount;
+	}
+	public void setPendingAmount(double pendingAmount) {
+		this.pendingAmount = pendingAmount;
 	}
 	
 	
