@@ -94,6 +94,13 @@ public class DashboardConroller {
 
 	}
 
+         @RequestMapping(value = "/terms", method = RequestMethod.GET)
+	public String dashboard(ModelMap model) {
+
+		return "terms";
+
+	}
+        
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout(Locale locale, Model model, HttpSession session) {
 		if (session.getAttribute("user") != null) {
