@@ -127,31 +127,22 @@ label.css-label
 {
 	.payNowButton1
 	{
-		width: 70%;
-		height: 10%;	
-		padding-top: 2%;
+		width: 40%;
+		height: 5%;	
+		padding-top: 5%;
 	}
 	.payNowButton2
 	{
 		width: 80%;
 		height: 15%;
 	}
-	.summaryBlock
-	{
-		height: 70%;
-	}
+	
 
 }
 
 /* iphone 6*/
 @media (max-width: 380px)
 {
-	.payNowButton1
-	{
-		width: 65%;
-		height: 10%;	
-		padding-top: 2%;
-	}
 }
 </style>
    
@@ -313,23 +304,11 @@ label.css-label
 		               	<input readonly="readonly" type="hidden" name="tid" id="tid" value=""/><!-- Transaction ID -->
 		               	<input type="hidden" name="merchant_id" value="127191"/><!-- Merchant Id	: -->
 					   	<input type="hidden" name="order_id" value="1236556561"/><!-- Order Id	: -->
-					   	<input type="hidden" name="amount" value="${pendingAmount }"   /></td>
-						<input type="hidden" name="billing_name" value="${user_details.getFirst_name() } ${user_details.getLast_name() }"/><!-- billing name -->
-						<input type="hidden" name="billing_address" value="${user_details.getAddress() }"/><!-- billing address -->
-						<input type="hidden" name="billing_city" value="${user_details.getCityname() }"/><!-- billing city -->
-						<input type="hidden" name="billing_zip" value="${user_details.getPin() }"/><!-- billing zip -->
-				        <input type="hidden" name="billing_country" value="${user_details.getCountryname() }"/><!-- billing country -->
-						<input type="hidden" name="billing_tel" value="${user_details.getMobileno() }"/><!-- billing tel -->
-						<input type="hidden" name="billing_email" value="${user_details.getEmail() }"/><!-- billing email -->
-						
-						
-						
+					   	<input type="hidden" name="amount" value="1.00"   /></td>
 						<input type="hidden" name="currency" value="INR"/><!-- Currency	: -->
 						<input type="hidden" name="redirect_url" value="http://52.172.215.71:8080/zeno/ccavResponseHandler"/><!-- Redirect URL	: -->
 						<input type="hidden" name="cancel_url" value="http://52.172.215.71:8080/zeno/ccavResponseHandler"/><!-- Cancel URL	: -->
 					 	<input type="hidden" name="language" value="EN"/><!-- Language	: -->
-					 	
-					 	
 		                <input readonly="readonly" type="hidden" name="tid" id="tid" value=""/><!-- Transction ID -->
 		                <input type="hidden" name="merchant_id" value="127191"/><!-- Merchant ID -->
 						<input type="hidden" name="order_id" value="123654789"/><!-- order id -->
@@ -338,11 +317,12 @@ label.css-label
 						<input type="hidden" name="redirect_url" value="http://52.172.215.71:8080/zeno/ccavResponseHandler"/><!-- Redirect URL -->
 						<input type="hidden" name="cancel_url" value="http://52.172.215.71:8080/zeno/ccavResponseHandler"/><!-- cancel url -->
 					 	<input type="hidden" name="language" value="EN"/><!-- Language -->
-						
-				        
+						<input type="hidden" name="billing_name" value="Charli"/><!-- billing name -->
+				        <input type="hidden" name="billing_address" value="Room no 1101, near Railway station Ambad"/><!-- billing address -->
 				        <input type="hidden" name="billing_city" value="Indore"/><!-- billing city -->
 				        <input type="hidden" name="billing_state" value="MH"/><!-- billing state -->
-				       
+				        <input type="hidden" name="billing_zip" value="425001"/><!-- billing zip -->
+				        <input type="hidden" name="billing_country" value="India"/><!-- billing country -->
 				        <input type="hidden" name="billing_tel" value="9896226054"/><!-- billing tel -->
 				        <input type="hidden" name="billing_email" value="test@gmail.com"/><!-- billing email -->
 				        <input type="hidden" name="billing_name" value="Charli"/><!--billing name  -->
