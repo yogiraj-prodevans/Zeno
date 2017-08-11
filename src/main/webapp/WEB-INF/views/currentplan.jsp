@@ -13,8 +13,7 @@
         <meta content="vikram" name="author">
 
         <!-- link to image for socio -->
-        <meta property="og:url" content="-CUSTOMER VALUE-">
-
+       
         <!-- Fonts START -->
         <link href="https://fonts.googleapis.com/css?family=Lato|Roboto:100" rel="stylesheet">
         <!-- Fonts END -->
@@ -132,7 +131,7 @@
             <div class="container">
                 <div class="row">
                     <!-- BEGIN COPYRIGHT -->
-                    <div class="col-md-10 col-sm-10 padding-top-0 padding-bottom-10 "> 2017 &copy Stoic Zeno. ALL Rights Reserved.&nbsp 
+                    <div class="col-md-10 col-sm-10 padding-top-0 padding-bottom-10 "> 2017 &copy; Stoic Zeno. ALL Rights Reserved.&nbsp; 
                         <a href="javascript:;">Privacy Policy</a> |
                         <a href="javascript:;">Terms of Service</a> |
                         <a href="javascript:;">Refund and Cancellation</a> |

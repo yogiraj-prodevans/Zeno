@@ -13,7 +13,7 @@
         <meta content="Stoic Zeno User Portal Keywords" name="keywords">
         <meta content="vikram" name="author">
         <!-- link to image for socio -->
-        <meta property="og:url" content="-CUSTOMER VALUE-">
+       
         <!--  include the all css components -->
         <jsp:include page="component/css.jsp"></jsp:include>
     </head>
@@ -136,7 +136,7 @@
                 <div class="container">
                     <div class="row">
                         <!-- BEGIN COPYRIGHT -->
-                        <div class="col-md-10 col-sm-10 padding-bottom-10 " > 2017 &copy Stoic Zeno. ALL Rights Reserved.&nbsp 
+                        <div class="col-md-10 col-sm-10 padding-bottom-10 " > 2017 &copy; Stoic Zeno. ALL Rights Reserved.&nbsp; 
                             <a href="#">Privacy Policy</a> |
                             <a href="javascript:;">Terms of Service</a> |
                             <a href="javascript:;">Refund and Cancellation</a> |
