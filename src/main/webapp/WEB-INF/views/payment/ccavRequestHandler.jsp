@@ -26,6 +26,7 @@
 	pd.setCurrency(request.getParameter("currency"));
 	pd.setInstrumentid(Integer.parseInt(d[0]));
 	pd.setInstrument_detail(d[1]);
+	pd.setTrans_descr(request.getParameter("trans_descr"));
 	
 	session.setAttribute("data",pd);
 	

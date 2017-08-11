@@ -122,23 +122,23 @@
 				
 				Vector<Object> params = new Vector<>();
 				
-				/*params.add(pd.getActno());
+				params.add(pd.getActno());
 				params.add(pd.getTrans_amount());
 				params.add(pd.getTrans_type());
 				params.add(new Date());
 				params.add(pd.getCurrency());
 				params.add(pd.getTransaction_id());
 				params.add(pd.getInstrument_detail());
-				params.add(pd.getTrans_descr());*/
+				params.add(pd.getTrans_descr());
 				
-				params.add(22);
+				/*params.add(22);
 				params.add(0.00);
 				params.add("C");
 				params.add(new Date());
 				params.add("INR");
 				params.add(3);
 				params.add("Credit Card");
-				params.add("trans_descr");
+				params.add("trans_descr");*/
 
 				String server_url = "http://52.172.205.76/unifyv3/xmlRPC.do";
 				URL serverUrl = new URL(server_url);
@@ -163,6 +163,7 @@
 			<%=pd.getCurrency() %><br><br>
 			<%= pd.getInstrumentid() %><br><br>
 			<%= pd.getInstrument_detail() %><br><br>
+			<%= pd.getTrans_descr() %><br><br>
 			
 		</table>
 	</center>
