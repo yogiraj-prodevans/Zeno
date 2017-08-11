@@ -242,7 +242,7 @@
 
         <jsp:include page="component/pop-up.jsp"></jsp:include>
             <!-- BEGIN FOOTER -->
-            <div class="footer" style="font-size:10px; width:100%; position:fixed; bottom:0;line-height:1"> <!--style="font-family:Roboto; position: fixed; right: 0; bottom: 0; left: 0;"-->
+            <div class="footer" style="font-size:10px; line-height:1"> <!--style="font-family:Roboto; position: fixed; right: 0; bottom: 0; left: 0;"-->
                 <div class="container">
                     <div class="row">
                         <!-- BEGIN COPYRIGHT -->
