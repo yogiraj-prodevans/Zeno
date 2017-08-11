@@ -125,16 +125,16 @@
 				params.add(pd.getActno());
 				params.add(pd.getTrans_amount());
 				params.add(pd.getTrans_type());
-				params.add(new Date());
-				/*params.add(pd.getCurrency());
+				/*params.add(new Date());
+				params.add(pd.getCurrency());
 				params.add(pd.getTransaction_id());
 				params.add(pd.getInstrument_detail());
 				params.add(pd.getTrans_descr());*/
 				
 				/*params.add(22);
 				params.add(0.00);
-				params.add("C");
-				params.add(new Date());*/
+				params.add("C");*/
+				params.add(new Date());
 				params.add("INR");
 				params.add(3);
 				params.add("Credit Card");
