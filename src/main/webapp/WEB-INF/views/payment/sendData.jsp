@@ -1,3 +1,4 @@
+<%@page import="java.util.Date"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri = "http://www.springframework.org/tags/form" prefix = "form"%>
 <%@ page session="false" %>
@@ -219,10 +220,16 @@ label.css-label
 
 			<form method="post" name="customerData" action="ccavRequestHandler" class="form-horizontal form-without-legend ">
 			
+				<input type="hidden" name="actno" value="${user_details.getActno() }">
+				<input type="hidden" name="trans_amount" value="${user_details.getPendingAmount() }">
+				<input type="hidden" name="trans_type" value="C">
+				<input type="hidden" name="currency" value="INR">
+				<input type="hidden" name="trans_descr" value="Description">
+				
 				<div class="form-group">
 					<div class="col-md-1">
 					</div> 
-                	<div class="col-lg-10 col-md-10 col-sm-10 " style=" padding-bottom:16">
+                	<div class="col-lg-10 col-md-10 col-sm-10 " style=" padding-bottom:16;">
                 	
 	                	<div class="summaryBlock">
 	                		<div class="row">
@@ -232,6 +239,17 @@ label.css-label
 			                        <p style=" font-size:14px; line-height:.5">Amount : ${user_details.getPendingAmount() }/-  </p><br>
 			                        <p style=" font-size:14px; line-height:.5">Email  : ${user_details.getEmail() }</p><br>
 			                        <p style=" font-size:14px; line-height:.5">Mobile No.  : ${user_details.getMobileno() } </p><br>
+			                        <select class="form-control" name="instrument_detail">
+			                        	<option value="0Cash" class="form-control">Cash</option>
+			                        	<option value="1Demand Draft" class="form-control">Demand Draft</option>
+			                        	<option value="2Cheque" class="form-control">Cheque</option>
+			                        	<option value="3Credit Card" class="form-control">Credit Card</option>
+			                        	<option value="4Debit Card" class="form-control">Debit Card</option>
+			                        	<option value="5Cash Warrant" class="form-control">Cash Warrant</option>
+			                        	<option value="6NA" class="form-control">NA</option>
+			                        	<option value="7TDS" class="form-control">TDS</option>
+			                        	<option value="8Adjustment" class="form-control">Adjustment</option>
+			                        </select>
 			                    </div>
 			                    <div class="col-md-8">
 			                    

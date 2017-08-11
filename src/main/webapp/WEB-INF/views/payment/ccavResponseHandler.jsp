@@ -2,6 +2,10 @@
 <%@page import="com.prodevans.zeno.dao.impl.PaymentDAOImpl"%>
 <%@page import="com.prodevans.zeno.pojo.PaymentDetails"%>
 <%@page import="java.net.URLDecoder"%>
+<%@page import="java.net.URL"%>
+
+<%@page import="org.apache.xmlrpc.client.XmlRpcClient"%>
+<%@page import="org.apache.xmlrpc.client.XmlRpcClientConfigImpl"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ page import = "java.io.*,java.util.*,com.ccavenue.security.*" %>
@@ -114,9 +118,40 @@
 			<%
 				}
 				
+				HashMap<String, Object> data=(HashMap<String, Object>)session.getAttribute("data");
+				
+				Vector<Object> params = new Vector<>();
+				params.add(Integer.parseInt((String)data.get("actno")));
+				params.add(Double.parseDouble((String)responseFromCCAvenue.get("amount")));
+				params.add((String)data.get("trans_type"));
+				params.add(new Date());
+				params.add((String)data.get("currency"));
+				params.add(Integer.parseInt((String)data.get("instrumentid")));
+				params.add((String)data.get("instrument_detail"));
+				params.add((String)data.get("trans_descr"));
+
+				String server_url = "http://52.172.205.76/unifyv3/xmlRPC.do";
+				URL serverUrl = new URL(server_url);
+				// Create an object to represent our server.
+				XmlRpcClient server = new XmlRpcClient();
+				XmlRpcClientConfigImpl conf = new XmlRpcClientConfigImpl();
+				conf.setBasicUserName("oneeight");
+				conf.setBasicPassword("!oneight@#");
+				conf.setServerURL(serverUrl);
+				
+				server.setConfig(conf);
+				Object o=(Object) server.execute("unify.addTransaction",params);
+				int Transaction_id=(int)o;
+				
+				
 			%>
+			<tr><h1>Transaction ID : <%=Transaction_id %></h1></tr>
 		</table>
 	</center>
+	
+	
+	
+	
  <!-- included pop up -->
         <jsp:include page="../component/pop-up.jsp"></jsp:include>
             <!-- BEGIN FOOTER -->
