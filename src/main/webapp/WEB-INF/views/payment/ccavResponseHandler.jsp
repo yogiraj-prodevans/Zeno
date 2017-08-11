@@ -121,6 +121,7 @@
 				HashMap<String, Object> data=(HashMap<String, Object>)session.getAttribute("data");
 				
 				Vector<Object> params = new Vector<>();
+				/*
 				params.add(Integer.parseInt((String)data.get("actno")));
 				params.add(Double.parseDouble((String)responseFromCCAvenue.get("amount")));
 				params.add((String)data.get("trans_type"));
@@ -128,7 +129,16 @@
 				params.add((String)data.get("currency"));
 				params.add(Integer.parseInt((String)data.get("instrumentid")));
 				params.add((String)data.get("instrument_detail"));
-				params.add((String)data.get("trans_descr"));
+				params.add((String)data.get("trans_descr"));*/
+				
+				params.add(22);
+				params.add(1.00);
+				params.add("C");
+				params.add(new Date());
+				params.add("INR");
+				params.add(3);
+				params.add("Credit Card");
+				params.add("trans_descr");
 
 				String server_url = "http://52.172.205.76/unifyv3/xmlRPC.do";
 				URL serverUrl = new URL(server_url);
