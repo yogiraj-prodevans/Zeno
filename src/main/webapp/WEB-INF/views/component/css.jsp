@@ -50,6 +50,7 @@
       font-family: 'Lato', sans-serif;
       font-size: 20px;
     }
+    
   .div2 {
     width: 280px;
     height: 180px;    
@@ -237,7 +238,14 @@ a:hover{
 
 
 /* iphone 6 plus*/
-@media (max-width: 480px){
+@media (max-width: 480px)
+{
+  .div2
+  {
+  	width: 90%;
+  	height: 30%;
+  	margin: 5%;
+  }
   .divBill {
     width:75%;
     height: 60%;
@@ -284,6 +292,11 @@ a:hover{
     width: 130%;
     height:90%; 
   }
+  .fixedBlock
+  {	
+  	width: 13%;
+  }
+  
 }
 
 /* iphone 6*/
