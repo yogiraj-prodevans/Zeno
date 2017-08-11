@@ -293,7 +293,7 @@ label.css-label
 					   	<input type="hidden" name="amount" value="1.00"   /></td>
 						<input type="hidden" name="currency" value="INR"/><!-- Currency	: -->
 						<input type="hidden" name="redirect_url" value="http://52.172.215.71/zeno/ccavResponseHandler"/><!-- Redirect URL	: -->
-						<input type="hidden" name="cancel_url" value="http://52.172.215.71/zeno/ccavResponseHandler"/><!-- Cancel URL	: -->
+						<input type="hidden" name="cancel_url" value="http://52.172.215.71/zeno/ccvCancelResponse"/><!-- Cancel URL	: -->
 					 	<input type="hidden" name="language" value="EN"/><!-- Language	: -->
 		                <input readonly="readonly" type="hidden" name="tid" id="tid" value=""/><!-- Transction ID -->
 		                <input type="hidden" name="merchant_id" value="127191"/><!-- Merchant ID -->
@@ -301,7 +301,7 @@ label.css-label
 						<input type="hidden" name="amount" value="1.00"/><!--Amount  -->
 						<input type="hidden" name="currency" value="INR"/><!-- currency -->
 						<input type="hidden" name="redirect_url" value="http://52.172.215.71/zeno/ccavResponseHandler"/><!-- Redirect URL -->
-						<input type="hidden" name="cancel_url" value="http://52.172.215.71/zeno/ccavResponseHandler"/><!-- cancel url -->
+						<input type="hidden" name="cancel_url" value="http://52.172.215.71/zeno/ccvCancelResponse"/><!-- cancel url -->
 					 	<input type="hidden" name="language" value="EN"/><!-- Language -->
 					 	
 						<input type="hidden" name="billing_name" value="${user_details.getFirst_name() }"/><!-- billing name -->

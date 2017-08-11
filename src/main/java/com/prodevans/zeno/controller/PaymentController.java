@@ -94,6 +94,14 @@ public class PaymentController
 		return "payment/ccavRequestHandler";
 	}
 	
+	@RequestMapping(value = "/ccvCancelResponse", method=RequestMethod.POST)
+	public String ccvCancelResponse()
+	{
+		return "payment/ccvCancelResponse";
+	}
+	
+	
+	
 	@RequestMapping(value = "/ccavResponseHandler", method= RequestMethod.POST)
 	public String ccavResponseHandler(ModelMap model,HttpSession session, HttpServletRequest request) throws XmlRpcException
 	{
