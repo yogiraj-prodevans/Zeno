@@ -95,7 +95,11 @@
 				}
 			}
 		}
-
+	%>
+	<center>
+		<font size="4" color="blue"><b>Response Page</b></font>
+		<table border="1">
+			<%
 				PaymentResponseDAOImpl prdi=new PaymentResponseDAOImpl();
 			    HashMap<String, String> responseFromCCAvenue= new HashMap<>();
 				
@@ -105,7 +109,13 @@
 					pname=""+enumeration.nextElement();
 					pvalue=""+ hs.get(pname);
 					responseFromCCAvenue.put(pname, pvalue);
-			
+			%>
+				<tr>
+					<td><%=pname %></td>
+					<td><%=pvalue %></td>				
+				</tr>
+				
+			<%
 				}
 				
 				PaymentDetails pd=(PaymentDetails)session.getAttribute("data");
@@ -145,34 +155,19 @@
 				
 				
 			%>
-			
- <!-- BEGIN STEPS -->
-        <div class="row front-steps-wrapper"  style="margin-left: 0.001%;width: 100%;">
-            <div class="col-lg-12 col-md-12 col-sm-12 front-step-col">
-                <div class="front-step front-stepv">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 margin-top-5 ">
-                            <div class="col-lg-12 col-md-12 col-sm-12 margin-top-5"  style="padding-left: 10%;">
-
-                                <div class="col-md-6">
-                                    <h2 style="font-family:Roboto; font-size:30px">Transaction Completed</h2>
-                                </div>
-                                
-                                <div class="col-md-6">
-                                	<h2 style="font-family:Roboto; font-size:14px">Transaction ID : <%=Transaction_id %></h2><br>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-<!-- END STEPS -->
-
-			
 			<tr><h1>Transaction ID : <%=Transaction_id %></h1></tr>
-		
+			<tr><h1>Transaction ID : <%=pd.getActno() %></h1></tr>
+			<tr><h1>Transaction ID : <%=pd.getCurrency() %> </h1></tr>
+			<tr><h1>Transaction ID : <%=pd.getInstrument_detail()%></h1></tr>
+			<tr><h1>Transaction ID : <%=pd.getInstrumentid() %></h1></tr>
+			<tr><h1>Transaction ID : <%=pd.getTrans_amount() %></h1></tr>
+			<tr><h1>Transaction ID : <%=pd.getTrans_descr() %></h1></tr>
+			<tr><h1>Transaction ID : <%=pd.getTrans_type() %></h1></tr>
+			<tr><h1>Transaction ID : <%=pd.getTransaction_id() %></h1></tr>
+			<tr><h1>Transaction ID : <%=pd.getTrans_date() %></h1></tr>
+			
+		</table>
+	</center>
 	
 	
 	
