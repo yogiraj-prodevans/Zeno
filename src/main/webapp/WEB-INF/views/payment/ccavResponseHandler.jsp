@@ -156,9 +156,13 @@
 				
 			%>
 			<tr><h1>Transaction ID : <%=Transaction_id %></h1></tr>
-			<tr><h1>Transaction ID : <%=pd.getActno() %></h1></tr>
+			<%=pd.getActno() %><br><br>
+			<%=pd.getTrans_amount() %><br><br>
+			<%=pd.getTrans_type() %><br><br>
+			<%=pd.getTrans_date() %><br><br>
+			<%=pd.getCurrency() %><br><br>
 			<%= pd.getInstrumentid() %><br><br>
-			<%= pd.getInstrument_detail() %>
+			<%= pd.getInstrument_detail() %><br><br>
 			
 		</table>
 	</center>
