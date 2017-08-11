@@ -122,23 +122,23 @@
 				
 				Vector<Object> params = new Vector<>();
 				
-				params.add(pd.getActno());
+				/*params.add(pd.getActno());
 				params.add(pd.getTrans_amount());
 				params.add(pd.getTrans_type());
 				params.add(new Date());
 				params.add(pd.getCurrency());
 				params.add(pd.getTransaction_id());
 				params.add(pd.getInstrument_detail());
-				params.add(pd.getTrans_descr());
+				params.add(pd.getTrans_descr());*/
 				
-				/*params.add(22);
+				params.add(22);
 				params.add(1.00);
 				params.add("C");
 				params.add(new Date());
 				params.add("INR");
 				params.add(3);
 				params.add("Credit Card");
-				params.add("trans_descr");*/
+				params.add("trans_descr");
 
 				String server_url = "http://52.172.205.76/unifyv3/xmlRPC.do";
 				URL serverUrl = new URL(server_url);
@@ -157,14 +157,8 @@
 			%>
 			<tr><h1>Transaction ID : <%=Transaction_id %></h1></tr>
 			<tr><h1>Transaction ID : <%=pd.getActno() %></h1></tr>
-			<tr><h1>Transaction ID : <%=pd.getCurrency() %> </h1></tr>
-			<tr><h1>Transaction ID : <%=pd.getInstrument_detail()%></h1></tr>
-			<tr><h1>Transaction ID : <%=pd.getInstrumentid() %></h1></tr>
-			<tr><h1>Transaction ID : <%=pd.getTrans_amount() %></h1></tr>
-			<tr><h1>Transaction ID : <%=pd.getTrans_descr() %></h1></tr>
-			<tr><h1>Transaction ID : <%=pd.getTrans_type() %></h1></tr>
-			<tr><h1>Transaction ID : <%=pd.getTransaction_id() %></h1></tr>
-			<tr><h1>Transaction ID : <%=pd.getTrans_date() %></h1></tr>
+			<%= pd.getInstrumentid() %><br><br>
+			<%= pd.getInstrument_detail() %>
 			
 		</table>
 	</center>
