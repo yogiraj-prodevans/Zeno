@@ -50,6 +50,7 @@
       font-family: 'Lato', sans-serif;
       font-size: 20px;
     }
+    
   .div2 {
     width: 280px;
     height: 180px;    
@@ -237,7 +238,17 @@ a:hover{
 
 
 /* iphone 6 plus*/
-@media (max-width: 480px){
+@media (max-width: 480px)
+{
+  .div2
+  {
+  	width: 90%;
+  	height: 32%;
+  	margin: 5%;
+  	margin-bottom: 10%;
+    border-bottom: .2px solid grey;
+    
+  }
   .divBill {
     width:75%;
     height: 60%;
@@ -253,8 +264,8 @@ a:hover{
   }
   .modal-dialog 
   {
-    width: 90%;
-    height:80%;
+    width: 95%;
+    height:inherit;
   }
   .modal-content 
   {
@@ -277,13 +288,20 @@ a:hover{
   .circle1
   {
     width: 130%;
-    height:90%; 
+    height:90%;
+    margin-left: 40%; 
   }
   .circle2
   {
     width: 130%;
     height:90%; 
+    margin-left: 80%;
   }
+  .fixedBlock
+  {	
+  	width: 13%;
+  }
+  
 }
 
 /* iphone 6*/

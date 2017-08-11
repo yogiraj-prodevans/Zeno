@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.ccavenue.security.AesCryptUtil;
+//import com.ccavenue.security.AesCryptUtil;
 import com.prodevans.zeno.dao.impl.PaymentDAOImpl;
 import com.prodevans.zeno.dao.impl.PaymentResponseDAOImpl;
 import com.prodevans.zeno.pojo.PaymentDetails;
@@ -93,6 +93,14 @@ public class PaymentController
 	{
 		return "payment/ccavRequestHandler";
 	}
+	
+	@RequestMapping(value = "/ccvCancelResponse", method=RequestMethod.POST)
+	public String ccvCancelResponse()
+	{
+		return "payment/ccvCancelResponse";
+	}
+	
+	
 	
 	@RequestMapping(value = "/ccavResponseHandler", method= RequestMethod.POST)
 	public String ccavResponseHandler(ModelMap model,HttpSession session, HttpServletRequest request) throws XmlRpcException

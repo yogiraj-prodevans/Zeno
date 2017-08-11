@@ -1,3 +1,4 @@
+<%@page import="java.util.Date"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri = "http://www.springframework.org/tags/form" prefix = "form"%>
 <%@ page session="false" %>
@@ -21,27 +22,7 @@
         <jsp:include page="../component/css.jsp"></jsp:include>
 
 <style type="text/css">
-
-.payNowButton2
-{
-	width:90%;
-	height:25%;
-	margin:1%;
-	line-height:.5;
-	background-color:#010745;
-	text-align:center;
-	font-size:16px;
-	line-height:.5;
-	color:#ecf0f1;
-	align:center;
-	padding-top:12%;
-}
-.payNowButton2:hover
-{
-	background-color: #1F3A93;
-	color: #ecf0f1;
-}
-.payNowButton1
+.confirmPayment
 {
 	width:90%;
 	height:20%;
@@ -55,7 +36,7 @@
 	align:center;
 	border: none;
 }
-.payNowButton1:hover
+.confirmPayment:hover
 {
 	background-color: #FFF;
 	color: #010745;
@@ -125,24 +106,22 @@ label.css-label
 /* iphone 6 plus*/
 @media (max-width: 480px)
 {
-	payNowButton1
+	.confirmPayment
  	{
-		width: 40%;
-		height: 5%;	
-		padding-top: 5%;
-		width: 70%;
+		width: 60%;
 		height: 10%;	
 		padding-top: 2%;
+		margin-top: 5%;
+		margin-bottom: 8%;
  	}
- 	.payNowButton2
- 	{
- 		width: 80%;
- 		height: 15%;
- 	}
-	
 	.summaryBlock
 	{
-		height: 70%;
+		height: 90%;
+		height: 80%;
+	  	margin: 5%;
+	  	margin-bottom: 5%;
+	  	padding:5%;
+	    border-bottom: .2px solid grey;
 	}
 	
 
@@ -241,10 +220,16 @@ label.css-label
 
 			<form method="post" name="customerData" action="ccavRequestHandler" class="form-horizontal form-without-legend ">
 			
+				<input type="hidden" name="actno" value="${user_details.getActno() }">
+				<input type="hidden" name="trans_amount" value="${user_details.getPendingAmount() }">
+				<input type="hidden" name="trans_type" value="C">
+				<input type="hidden" name="currency" value="INR">
+				<input type="hidden" name="trans_descr" value="Description">
+				
 				<div class="form-group">
 					<div class="col-md-1">
 					</div> 
-                	<div class="col-lg-10 col-md-10 col-sm-10 " style=" padding-bottom:16">
+                	<div class="col-lg-10 col-md-10 col-sm-10 " style=" padding-bottom:16;">
                 	
 	                	<div class="summaryBlock">
 	                		<div class="row">
@@ -254,6 +239,17 @@ label.css-label
 			                        <p style=" font-size:14px; line-height:.5">Amount : ${user_details.getPendingAmount() }/-  </p><br>
 			                        <p style=" font-size:14px; line-height:.5">Email  : ${user_details.getEmail() }</p><br>
 			                        <p style=" font-size:14px; line-height:.5">Mobile No.  : ${user_details.getMobileno() } </p><br>
+			                        <select class="form-control" name="instrument_detail">
+			                        	<option value="0Cash" class="form-control">Cash</option>
+			                        	<option value="1Demand Draft" class="form-control">Demand Draft</option>
+			                        	<option value="2Cheque" class="form-control">Cheque</option>
+			                        	<option value="3Credit Card" class="form-control">Credit Card</option>
+			                        	<option value="4Debit Card" class="form-control">Debit Card</option>
+			                        	<option value="5Cash Warrant" class="form-control">Cash Warrant</option>
+			                        	<option value="6NA" class="form-control">NA</option>
+			                        	<option value="7TDS" class="form-control">TDS</option>
+			                        	<option value="8Adjustment" class="form-control">Adjustment</option>
+			                        </select>
 			                    </div>
 			                    <div class="col-md-8">
 			                    
@@ -289,9 +285,9 @@ label.css-label
 				                		<div class="col-md-7">
 				                		</div>
 				                		<div class="col-md-5">
-				                			<button class="payNowButton1" type="submit" >
+				                			<button class="confirmPayment" type="submit" >
 		                     				Confirm Payment
-		                     			</button>
+		                     				</button>
 				                		</div>
 				                	
 				                	</div>    	
@@ -315,7 +311,7 @@ label.css-label
 					   	<input type="hidden" name="amount" value="1.00"   /></td>
 						<input type="hidden" name="currency" value="INR"/><!-- Currency	: -->
 						<input type="hidden" name="redirect_url" value="http://52.172.215.71/zeno/ccavResponseHandler"/><!-- Redirect URL	: -->
-						<input type="hidden" name="cancel_url" value="http://52.172.215.71/zeno/ccavResponseHandler"/><!-- Cancel URL	: -->
+						<input type="hidden" name="cancel_url" value="http://52.172.215.71/zeno/ccvCancelResponse"/><!-- Cancel URL	: -->
 					 	<input type="hidden" name="language" value="EN"/><!-- Language	: -->
 		                <input readonly="readonly" type="hidden" name="tid" id="tid" value=""/><!-- Transction ID -->
 		                <input type="hidden" name="merchant_id" value="127191"/><!-- Merchant ID -->
@@ -323,7 +319,7 @@ label.css-label
 						<input type="hidden" name="amount" value="1.00"/><!--Amount  -->
 						<input type="hidden" name="currency" value="INR"/><!-- currency -->
 						<input type="hidden" name="redirect_url" value="http://52.172.215.71/zeno/ccavResponseHandler"/><!-- Redirect URL -->
-						<input type="hidden" name="cancel_url" value="http://52.172.215.71/zeno/ccavResponseHandler"/><!-- cancel url -->
+						<input type="hidden" name="cancel_url" value="http://52.172.215.71/zeno/ccvCancelResponse"/><!-- cancel url -->
 					 	<input type="hidden" name="language" value="EN"/><!-- Language -->
 					 	
 						<input type="hidden" name="billing_name" value="${user_details.getFirst_name() }"/><!-- billing name -->

@@ -13,6 +13,23 @@
 </head>
 <body>
 	<%
+	
+	HashMap<String, Object> data=new HashMap<String, Object>();
+
+	String instrument_detail=request.getParameter("instrument_detail");
+	
+	data.put("actno", request.getParameter("actno"));
+	data.put("trans_amount", request.getParameter("trans_amount"));
+	data.put("trans_type", request.getParameter("trans_type"));
+	data.put("trans_date", new Date());
+	data.put("currency", request.getParameter("currency"));
+	data.put("instrumentid", instrument_detail.charAt(0));
+	data.put("instrument_detail", instrument_detail.subSequence(1, instrument_detail.length()-1));
+	data.put("trans_descr", request.getParameter("trans_descr"));
+
+	session.setAttribute("data", data);
+	
+	
 	 String accessCode= "AVRC72EG07BS00CRSB";		//Put in the Access Code in quotes provided by CCAVENUES.
 	 String workingKey = "F9F7E30646BF9F9163D6912C338D61FC";    //Put in the 32 Bit Working Key provided by CCAVENUES.  
 	 Enumeration enumeration=request.getParameterNames();
