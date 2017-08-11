@@ -21,27 +21,7 @@
         <jsp:include page="../component/css.jsp"></jsp:include>
 
 <style type="text/css">
-
-.payNowButton2
-{
-	width:90%;
-	height:25%;
-	margin:1%;
-	line-height:.5;
-	background-color:#010745;
-	text-align:center;
-	font-size:16px;
-	line-height:.5;
-	color:#ecf0f1;
-	align:center;
-	padding-top:12%;
-}
-.payNowButton2:hover
-{
-	background-color: #1F3A93;
-	color: #ecf0f1;
-}
-.payNowButton1
+.confirmPayment
 {
 	width:90%;
 	height:20%;
@@ -55,7 +35,7 @@
 	align:center;
 	border: none;
 }
-.payNowButton1:hover
+.confirmPayment:hover
 {
 	background-color: #FFF;
 	color: #010745;
@@ -125,24 +105,22 @@ label.css-label
 /* iphone 6 plus*/
 @media (max-width: 480px)
 {
-	payNowButton1
+	.confirmPayment
  	{
-		width: 40%;
-		height: 5%;	
-		padding-top: 5%;
-		width: 70%;
+		width: 60%;
 		height: 10%;	
 		padding-top: 2%;
+		margin-top: 5%;
+		margin-bottom: 8%;
  	}
- 	.payNowButton2
- 	{
- 		width: 80%;
- 		height: 15%;
- 	}
-	
 	.summaryBlock
 	{
-		height: 70%;
+		height: 90%;
+		height: 80%;
+	  	margin: 5%;
+	  	margin-bottom: 5%;
+	  	padding:5%;
+	    border-bottom: .2px solid grey;
 	}
 	
 
@@ -289,9 +267,9 @@ label.css-label
 				                		<div class="col-md-7">
 				                		</div>
 				                		<div class="col-md-5">
-				                			<button class="payNowButton1" type="submit" >
+				                			<button class="confirmPayment" type="submit" >
 		                     				Confirm Payment
-		                     			</button>
+		                     				</button>
 				                		</div>
 				                	
 				                	</div>    	

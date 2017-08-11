@@ -243,8 +243,11 @@ a:hover{
   .div2
   {
   	width: 90%;
-  	height: 30%;
+  	height: 32%;
   	margin: 5%;
+  	margin-bottom: 10%;
+    border-bottom: .2px solid grey;
+    
   }
   .divBill {
     width:75%;
@@ -261,8 +264,8 @@ a:hover{
   }
   .modal-dialog 
   {
-    width: 90%;
-    height:80%;
+    width: 95%;
+    height:inherit;
   }
   .modal-content 
   {
@@ -285,12 +288,14 @@ a:hover{
   .circle1
   {
     width: 130%;
-    height:90%; 
+    height:90%;
+    margin-left: 40%; 
   }
   .circle2
   {
     width: 130%;
     height:90%; 
+    margin-left: 80%;
   }
   .fixedBlock
   {	
