@@ -95,11 +95,7 @@
 				}
 			}
 		}
-	%>
-	<center>
-		<font size="4" color="blue"><b>Response Page</b></font>
-		<table border="1">
-			<%
+
 				PaymentResponseDAOImpl prdi=new PaymentResponseDAOImpl();
 			    HashMap<String, String> responseFromCCAvenue= new HashMap<>();
 				
@@ -109,36 +105,30 @@
 					pname=""+enumeration.nextElement();
 					pvalue=""+ hs.get(pname);
 					responseFromCCAvenue.put(pname, pvalue);
-			%>
-				<tr>
-					<td><%=pname %></td>
-					<td><%=pvalue %></td>				
-				</tr>
-				
-			<%
+			
 				}
 				
-				HashMap<String, Object> data=(HashMap<String, Object>)session.getAttribute("data");
+				PaymentDetails pd=(PaymentDetails)session.getAttribute("data");
 				
 				Vector<Object> params = new Vector<>();
-				/*
-				params.add(Integer.parseInt((String)data.get("actno")));
-				params.add(Double.parseDouble((String)responseFromCCAvenue.get("amount")));
-				params.add((String)data.get("trans_type"));
-				params.add(new Date());
-				params.add((String)data.get("currency"));
-				params.add(Integer.parseInt((String)data.get("instrumentid")));
-				params.add((String)data.get("instrument_detail"));
-				params.add((String)data.get("trans_descr"));*/
 				
-				params.add(22);
+				params.add(pd.getActno());
+				params.add(pd.getTrans_amount());
+				params.add(pd.getTrans_type());
+				params.add(new Date());
+				params.add(pd.getCurrency());
+				params.add(pd.getTransaction_id());
+				params.add(pd.getInstrument_detail());
+				params.add(pd.getTrans_descr());
+				
+				/*params.add(22);
 				params.add(1.00);
 				params.add("C");
 				params.add(new Date());
 				params.add("INR");
 				params.add(3);
 				params.add("Credit Card");
-				params.add("trans_descr");
+				params.add("trans_descr");*/
 
 				String server_url = "http://52.172.205.76/unifyv3/xmlRPC.do";
 				URL serverUrl = new URL(server_url);
@@ -155,9 +145,34 @@
 				
 				
 			%>
+			
+ <!-- BEGIN STEPS -->
+        <div class="row front-steps-wrapper"  style="margin-left: 0.001%;width: 100%;">
+            <div class="col-lg-12 col-md-12 col-sm-12 front-step-col">
+                <div class="front-step front-stepv">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 margin-top-5 ">
+                            <div class="col-lg-12 col-md-12 col-sm-12 margin-top-5"  style="padding-left: 10%;">
+
+                                <div class="col-md-6">
+                                    <h2 style="font-family:Roboto; font-size:30px">Transaction Completed</h2>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                	<h2 style="font-family:Roboto; font-size:14px">Transaction ID : <%=Transaction_id %></h2><br>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!-- END STEPS -->
+
+			
 			<tr><h1>Transaction ID : <%=Transaction_id %></h1></tr>
-		</table>
-	</center>
+		
 	
 	
 	

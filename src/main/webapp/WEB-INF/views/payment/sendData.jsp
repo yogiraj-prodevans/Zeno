@@ -220,7 +220,7 @@ label.css-label
 
 			<form method="post" name="customerData" action="ccavRequestHandler" class="form-horizontal form-without-legend ">
 			
-				<input type="hidden" name="actno" value="${user_details.getActno() }">
+				<input type="hidden" name="actno" value="${user_details.getActno() }">				
 				<input type="hidden" name="trans_amount" value="${user_details.getPendingAmount() }">
 				<input type="hidden" name="trans_type" value="C">
 				<input type="hidden" name="currency" value="INR">
@@ -240,15 +240,15 @@ label.css-label
 			                        <p style=" font-size:14px; line-height:.5">Email  : ${user_details.getEmail() }</p><br>
 			                        <p style=" font-size:14px; line-height:.5">Mobile No.  : ${user_details.getMobileno() } </p><br>
 			                        <select class="form-control" name="instrument_detail">
-			                        	<option value="0Cash" class="form-control">Cash</option>
-			                        	<option value="1Demand Draft" class="form-control">Demand Draft</option>
-			                        	<option value="2Cheque" class="form-control">Cheque</option>
-			                        	<option value="3Credit Card" class="form-control">Credit Card</option>
-			                        	<option value="4Debit Card" class="form-control">Debit Card</option>
-			                        	<option value="5Cash Warrant" class="form-control">Cash Warrant</option>
-			                        	<option value="6NA" class="form-control">NA</option>
-			                        	<option value="7TDS" class="form-control">TDS</option>
-			                        	<option value="8Adjustment" class="form-control">Adjustment</option>
+			                        	<option value="0,Cash" class="form-control">Cash</option>
+			                        	<option value="1,Demand Draft" class="form-control">Demand Draft</option>
+			                        	<option value="2,Cheque" class="form-control">Cheque</option>
+			                        	<option value="3,Credit Card" class="form-control">Credit Card</option>
+			                        	<option value="4,Debit Card" class="form-control">Debit Card</option>
+			                        	<option value="5,Cash Warrant" class="form-control">Cash Warrant</option>
+			                        	<option value="6,NA" class="form-control">NA</option>
+			                        	<option value="7,TDS" class="form-control">TDS</option>
+			                        	<option value="8,Adjustment" class="form-control">Adjustment</option>
 			                        </select>
 			                    </div>
 			                    <div class="col-md-8">

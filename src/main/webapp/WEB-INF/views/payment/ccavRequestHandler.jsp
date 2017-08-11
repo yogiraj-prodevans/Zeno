@@ -1,3 +1,4 @@
+<%@page import="com.prodevans.zeno.pojo.PaymentDetails"%>
 <%@page import="java.net.URLEncoder"%>
 <%
 /*
@@ -14,20 +15,19 @@
 <body>
 	<%
 	
-	HashMap<String, Object> data=new HashMap<String, Object>();
-
 	String instrument_detail=request.getParameter("instrument_detail");
-	
-	data.put("actno", request.getParameter("actno"));
-	data.put("trans_amount", request.getParameter("trans_amount"));
-	data.put("trans_type", request.getParameter("trans_type"));
-	data.put("trans_date", new Date());
-	data.put("currency", request.getParameter("currency"));
-	data.put("instrumentid", instrument_detail.charAt(0));
-	data.put("instrument_detail", instrument_detail.subSequence(1, instrument_detail.length()-1));
-	data.put("trans_descr", request.getParameter("trans_descr"));
+	String d[]=instrument_detail.split(",");
 
-	session.setAttribute("data", data);
+	PaymentDetails pd=new PaymentDetails();
+	pd.setActno(Integer.parseInt(request.getParameter("actno")));
+	pd.setTrans_amount(Double.parseDouble(request.getParameter("trans_amount")));
+	pd.setTrans_type(request.getParameter("trans_type"));
+	pd.setTrans_date(new Date());
+	pd.setCurrency(request.getParameter("currency"));
+	pd.setInstrumentid(Integer.parseInt(d[0]));
+	pd.setInstrument_detail(d[1]);
+	
+	session.setAttribute("data",pd);
 	
 	
 	 String accessCode= "AVRC72EG07BS00CRSB";		//Put in the Access Code in quotes provided by CCAVENUES.
