@@ -132,7 +132,7 @@
 				params.add(pd.getTrans_descr());*/
 				
 				params.add(22);
-				params.add(1.00);
+				params.add(0.00);
 				params.add("C");
 				params.add(new Date());
 				params.add("INR");
