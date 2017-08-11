@@ -54,8 +54,8 @@
                         <ul>
                             <li class="dropdown active"> </li>
                             <li ><a href="${pageContext.request.contextPath }/dashboard">Home</a></li>
-                        <li><a href="${pageContext.request.contextPath }/billingPayment">Make Payment</a></li>  
-                        <li class="active" ><a href="${pageContext.request.contextPath }/service">Service Request</a></li> 
+                        <li class="active"><a href="${pageContext.request.contextPath }/billingPayment">Make Payment</a></li>  
+                        <li><a href="${pageContext.request.contextPath }/service">Service Request</a></li> 
                         <li><a href="${pageContext.request.contextPath }/help">Help</a></li> 
                         <li><a href="${pageContext.request.contextPath }/parental-control">Parental Control</a></li>
                         <li class="dropdown">
@@ -74,7 +74,7 @@
             </div>
         </div>
         
-	<%
+<%
 		String workingKey = "F9F7E30646BF9F9163D6912C338D61FC";		//32 Bit Alphanumeric Working Key should be entered here so that data can be decrypted.
 		String encResp= request.getParameter("encResp");
 		AesCryptUtil aesUtil=new AesCryptUtil(workingKey);
@@ -95,85 +95,71 @@
 				}
 			}
 		}
-	%>
-	<center>
-		<font size="4" color="blue"><b>Response Page</b></font>
-		<table border="1">
-			<%
-				PaymentResponseDAOImpl prdi=new PaymentResponseDAOImpl();
-			    HashMap<String, String> responseFromCCAvenue= new HashMap<>();
-				
-			    Enumeration enumeration = hs.keys();
-				while(enumeration.hasMoreElements())
-				{
-					pname=""+enumeration.nextElement();
-					pvalue=""+ hs.get(pname);
-					responseFromCCAvenue.put(pname, pvalue);
-			%>
-				<tr>
-					<td><%=pname %></td>
-					<td><%=pvalue %></td>				
-				</tr>
-				
-			<%
-				}
-				
-				PaymentDetails pd=(PaymentDetails)session.getAttribute("data");
-				
-				Vector<Object> params = new Vector<>();
-				
-				params.add(pd.getActno());
-				params.add(pd.getTrans_amount());
-				params.add(pd.getTrans_type());
-				params.add(new Date());
-				params.add(pd.getCurrency());
-				params.add(pd.getInstrumentid());
-				params.add(pd.getInstrument_detail());
-				params.add(pd.getTrans_descr());
-				
-				/*params.add(22);
-				params.add(0.00);
-				params.add("C");
-				params.add(new Date());
-				params.add(pd.getCurrency());
-				params.add(pd.getInstrumentid());
-				params.add(pd.getInstrument_detail());
-				params.add(pd.getTrans_descr());*/
-				
-				/*params.add("INR");
-				params.add(3);
-				params.add("Credit Card");
-				params.add("trans_descr");*/
+		PaymentResponseDAOImpl prdi=new PaymentResponseDAOImpl();
+	    HashMap<String, String> responseFromCCAvenue= new HashMap<>();
+		
+	    Enumeration enumeration = hs.keys();
+		while(enumeration.hasMoreElements())
+		{
+			pname=""+enumeration.nextElement();
+			pvalue=""+ hs.get(pname);
+			responseFromCCAvenue.put(pname, pvalue);
+		}
+		
+		PaymentDetails pd=(PaymentDetails)session.getAttribute("data");
+		
+		Vector<Object> params = new Vector<>();
+		
+		params.add(pd.getActno());
+		params.add(pd.getTrans_amount());
+		params.add(pd.getTrans_type());
+		params.add(new Date());
+		params.add(pd.getCurrency());
+		params.add(pd.getInstrumentid());
+		params.add(pd.getInstrument_detail());
+		params.add(pd.getTrans_descr());
 
-				String server_url = "http://52.172.205.76/unifyv3/xmlRPC.do";
-				URL serverUrl = new URL(server_url);
-				// Create an object to represent our server.
-				XmlRpcClient server = new XmlRpcClient();
-				XmlRpcClientConfigImpl conf = new XmlRpcClientConfigImpl();
-				conf.setBasicUserName("oneeight");
-				conf.setBasicPassword("!oneight@#");
-				conf.setServerURL(serverUrl);
+		String server_url = "http://52.172.205.76/unifyv3/xmlRPC.do";
+		URL serverUrl = new URL(server_url);
+		// Create an object to represent our server.
+		XmlRpcClient server = new XmlRpcClient();
+		XmlRpcClientConfigImpl conf = new XmlRpcClientConfigImpl();
+		conf.setBasicUserName("oneeight");
+		conf.setBasicPassword("!oneight@#");
+		conf.setServerURL(serverUrl);
+		
+		server.setConfig(conf);
+		Object o=(Object) server.execute("unify.addTransaction",params);
+		int Transaction_id=(int)o;
 				
-				server.setConfig(conf);
-				Object o=(Object) server.execute("unify.addTransaction",params);
-				int Transaction_id=(int)o;
 				
-				
-			%>
-			<tr><h1>Transaction ID : <%=Transaction_id %></h1></tr>
-			<%=pd.getActno() %><br><br>
-			<%=pd.getTrans_amount() %><br><br>
-			<%=pd.getTrans_type() %><br><br>
-			<%=pd.getTrans_date() %><br><br>
-			<%=pd.getCurrency() %><br><br>
-			<%= pd.getInstrumentid() %><br><br>
-			<%= pd.getInstrument_detail() %><br><br>
-			<%= pd.getTrans_descr() %><br><br>
-			
-		</table>
-	</center>
+%>
 	
-	
+ <div class="container">
+ 	<div class="col-md-6">
+ 		<h2 style="font-family:Roboto; font-size:48px; color: #2ecc71;">Thank You!</h2><br>
+ 		<h2 style="font-family:Roboto; font-size:32px; color: #2c3e50;">Payment was</h2><br>
+ 		<h2 style="font-family:Roboto; font-size:32px; color: #2c3e50;">successful.</h2>
+ 	</div>
+ 	<div class="col-md-6" style="background-color:#010745;  ">
+ 		<div class="row">
+ 			<h2 style="font-family:Roboto; font-size:24px; color: #FFF;">Payment summary</h2><br>
+ 		</div>
+ 		<div class="row">
+ 			<h2 style="font-family:Roboto; font-size:16px; color: #FFF;">Your payment of INR <%=pd.getTrans_amount() %>/- on <%=pd.getTrans_date() %></h2><br>
+ 			<h2 style="font-family:Roboto; font-size:12px; color: #FFF;">Transaction No.:</h2>
+ 			<h2 style="font-family:Roboto; font-size:24px; color: #FFF;"><%=pd.getTransaction_id() %></h2>
+ 			<h2 style="font-family:Roboto; font-size:12px; color: #FFF;">Email ID:</h2>
+ 			<h2 style="font-family:Roboto; font-size:24px; color: #FFF;"><%=responseFromCCAvenue.get("billing_email") %></h2>
+ 			<br>
+ 		</div>
+ 	</div>
+ </div>
+
+
+
+
+
 	
 	
  <!-- included pop up -->
