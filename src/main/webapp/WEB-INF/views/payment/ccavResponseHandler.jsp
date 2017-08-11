@@ -136,11 +136,14 @@
 				params.add("C");*/
 				params.add(new Date());
 				params.add(pd.getCurrency());
+				params.add(pd.getTransaction_id());
+				params.add(pd.getInstrument_detail());
+				params.add(pd.getTrans_descr());
 				
-				/*params.add("INR");*/
+				/*params.add("INR");
 				params.add(3);
 				params.add("Credit Card");
-				params.add("trans_descr");
+				params.add("trans_descr");*/
 
 				String server_url = "http://52.172.205.76/unifyv3/xmlRPC.do";
 				URL serverUrl = new URL(server_url);
