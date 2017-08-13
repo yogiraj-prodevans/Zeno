@@ -103,6 +103,10 @@
 		{
 			pname=""+enumeration.nextElement();
 			pvalue=""+ hs.get(pname);
+			
+			%>
+				<h4><%=pname %>  :  <%=pvalue %></h4><br>
+			<%
 			responseFromCCAvenue.put(pname, pvalue);
 		}
 		
@@ -131,6 +135,7 @@
 		server.setConfig(conf);
 		Object o=(Object) server.execute("unify.addTransaction",params);
 		int Transaction_id=(int)o;
+		pd.setTransaction_id(Transaction_id);
 				
 				
 %>
