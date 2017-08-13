@@ -103,43 +103,46 @@
 		{
 			pname=""+enumeration.nextElement();
 			pvalue=""+ hs.get(pname);
-			
-			%>
-				<h4><%=pname %>  :  <%=pvalue %></h4><br>
-			<%
 			responseFromCCAvenue.put(pname, pvalue);
 		}
 		
 		PaymentDetails pd=(PaymentDetails)session.getAttribute("data");
-		
-		Vector<Object> params = new Vector<>();
-		
-		params.add(pd.getActno());
-		params.add(pd.getTrans_amount());
-		params.add(pd.getTrans_type());
-		params.add(new Date());
-		params.add(pd.getCurrency());
-		params.add(pd.getInstrumentid());
-		params.add(pd.getInstrument_detail());
-		params.add(pd.getTrans_descr());
+		boolean success=false;
+		if(responseFromCCAvenue.get("order_status").equals("Success"))
+		{
+			
+			Vector<Object> params = new Vector<>();
+			
+			params.add(pd.getActno());
+			params.add(pd.getTrans_amount());
+			params.add(pd.getTrans_type());
+			params.add(new Date());
+			params.add(pd.getCurrency());
+			params.add(pd.getInstrumentid());
+			params.add(pd.getInstrument_detail());
+			params.add(pd.getTrans_descr());
 
-		String server_url = "http://52.172.205.76/unifyv3/xmlRPC.do";
-		URL serverUrl = new URL(server_url);
-		// Create an object to represent our server.
-		XmlRpcClient server = new XmlRpcClient();
-		XmlRpcClientConfigImpl conf = new XmlRpcClientConfigImpl();
-		conf.setBasicUserName("oneeight");
-		conf.setBasicPassword("!oneight@#");
-		conf.setServerURL(serverUrl);
-		
-		server.setConfig(conf);
-		Object o=(Object) server.execute("unify.addTransaction",params);
-		int Transaction_id=(int)o;
-		pd.setTransaction_id(Transaction_id);
-				
-				
+			String server_url = "http://52.172.205.76/unifyv3/xmlRPC.do";
+			URL serverUrl = new URL(server_url);
+			// Create an object to represent our server.
+			XmlRpcClient server = new XmlRpcClient();
+			XmlRpcClientConfigImpl conf = new XmlRpcClientConfigImpl();
+			conf.setBasicUserName("oneeight");
+			conf.setBasicPassword("!oneight@#");
+			conf.setServerURL(serverUrl);
+			
+			server.setConfig(conf);
+			Object o=(Object) server.execute("unify.addTransaction",params);
+			int Transaction_id=(int)o;
+			pd.setTransaction_id(Transaction_id);
+			success=true;
+		}
+
+
+if(success)
+{
 %>
-	
+		
  <div class="container">
  	<div class="col-md-6">
  		<h2 style="font-family:Roboto; font-size:48px; color: #2ecc71;">Thank You!</h2><br>
@@ -160,11 +163,31 @@
  		</div>
  	</div>
  </div>
-
-
-
-
-
+<%
+}
+else
+{
+%>
+<div class="container">
+ 	<div class="col-md-6">
+ 		<h2 style="font-family:Roboto; font-size:48px; color: #c0392b;">Transaction Aborted!</h2><br>
+ 		<h2 style="font-family:Roboto; font-size:32px; color: #2c3e50;">Payment was</h2><br>
+ 		<h2 style="font-family:Roboto; font-size:32px; color: #2c3e50;">unsuccessful.</h2>
+ 	</div>
+ 	<div class="col-md-6" style="background-color:#010745;  ">
+ 		<div class="row">
+ 			<h2 style="font-family:Roboto; font-size:24px; color: #FFF;">Payment summary</h2><br>
+ 		</div>
+ 		<div class="row">
+ 			<h2 style="font-family:Roboto; font-size:12px; color: #FFF;">Reason :</h2>
+ 			<h2 style="font-family:Roboto; font-size:24px; color: #FFF;"><%=responseFromCCAvenue.get("status_message") %></h2>
+ 			<br>
+ 		</div>
+ 	</div>
+ </div>
+<%
+}
+%>
 	
 	
  <!-- included pop up -->
