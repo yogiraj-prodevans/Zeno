@@ -1,3 +1,4 @@
+
 package com.prodevans.zeno.pojo;
 
 import java.text.ParseException;

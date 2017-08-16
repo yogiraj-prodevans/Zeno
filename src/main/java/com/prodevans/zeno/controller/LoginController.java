@@ -7,16 +7,23 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.prodevans.zeno.dao.impl.PaymentDAOImpl;
 import com.prodevans.zeno.dao.impl.UserInfoDAOImpl;
+import com.prodevans.zeno.pojo.SessionDetails;
 import com.prodevans.zeno.pojo.UserInfo;
 
 @Controller
-public class LoginController {
+public class LoginController 
+{
+	
+	
 	@Autowired
 	private UserInfoDAOImpl LoginImpl;
 
@@ -29,28 +36,36 @@ public class LoginController {
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String getDashboard(@ModelAttribute("user") UserInfo user, HttpSession session) {
-
-		System.out.println(user.toString());
+	public String getDashboard(HttpSession session, SessionStatus status,
+			@RequestParam("customer_id") String customer_id, @RequestParam("password") String password,
+			ModelMap model) {
+		// status.setComplete();
 		try {
-			boolean res = LoginImpl.loginCheck(user);
-			if (res) {
-				session.setAttribute("user", user);
+			SessionDetails userSessionDetails = LoginImpl.loginCheck(customer_id, password);
+			System.out.println(userSessionDetails.getFirst_name());
+			if (userSessionDetails.getResult()) {
+				session.setAttribute("user", userSessionDetails);
+				
+				System.out.println("displaying pending amount : " + userSessionDetails.getPendingAmount());
 				return "redirect:dashboard";
-			} else {
-				return "login";
 			}
-
 		} catch (Exception ee) {
 			ee.printStackTrace();
 		}
-		return "login";
+
+		model.addAttribute("error", "login fail");
+		return "redirect:/login";
 
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public ModelAndView loginhome(Locale locale, Model model) {
-		return new ModelAndView("login", "user", new UserInfo());
+	public ModelAndView loginhome(@RequestParam(name = "error", required = false) String error, Locale locale,
+			Model model) {
+		ModelAndView mo = new ModelAndView();
+		mo.setViewName("login");
+		mo.addObject("user", new UserInfo());
+		mo.addObject("error", error);
+		return mo;
 	}
 
 }

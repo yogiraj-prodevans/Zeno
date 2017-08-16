@@ -185,6 +185,8 @@ public class ProfileDetails {
 	public String toString() {
 		return "ProfileDetails [actid=" + actid + ", actcat=" + actcat + ", fname=" + fname + ", lname=" + lname
 				+ ", email=" + email + ", mobileno=" + mobileno + ", address=" + address + ", cityname=" + cityname
-				+ ", password=" + password + "]";
+
+				+ "]";
 	}
+
 }

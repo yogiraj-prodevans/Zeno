@@ -1,3 +1,4 @@
+
 package com.prodevans.zeno.pojo;
 
 public class UserDetails {
@@ -7,7 +8,7 @@ public class UserDetails {
 	private String last_name;
 	private String email;
 	private String mobile;
-	private String planno;
+	private int actno;
 
 	/**
 	 * @param customer_id
@@ -23,7 +24,15 @@ public class UserDetails {
 		this.last_name = "";
 		this.email = "";
 		this.mobile = "";
-		this.planno = "";
+		this.actno = 0;
+	}
+
+	public int getActno() {
+		return actno;
+	}
+
+	public void setActno(int actno) {
+		this.actno = actno;
 	}
 
 	/**
@@ -33,15 +42,15 @@ public class UserDetails {
 	 * @param email
 	 * @param mobile
 	 */
-	public UserDetails(String customer_id, String first_name, String last_name, String email, String mobile,
-			String planno) {
+	public UserDetails(int actno, String customer_id, String first_name, String last_name, String email,
+			String mobile) {
 
 		this.customer_id = customer_id;
 		this.first_name = first_name;
 		this.last_name = last_name;
 		this.email = email;
 		this.mobile = mobile;
-		this.planno = planno;
+		this.actno = 0;
 	}
 
 	/**
@@ -120,7 +129,7 @@ public class UserDetails {
 	@Override
 	public String toString() {
 		return "UserDetails [customer_id=" + customer_id + ", first_name=" + first_name + ", last_name=" + last_name
-				+ ", email=" + email + ", mobile=" + mobile + ", planno=" + planno + "]";
+				+ ", email=" + email + ", mobile=" + mobile + ", actno=" + actno + "]";
 	}
 
 	/**
@@ -128,21 +137,6 @@ public class UserDetails {
 	 */
 	public String getFirst_name() {
 		return first_name;
-	}
-
-	/**
-	 * @return the planno
-	 */
-	public String getPlanno() {
-		return planno;
-	}
-
-	/**
-	 * @param planno
-	 *            the planno to set
-	 */
-	public void setPlanno(String planno) {
-		this.planno = planno;
 	}
 
 }

@@ -1,3 +1,4 @@
+
 package com.prodevans.zeno.dao.impl;
 
 import java.text.ParseException;
@@ -51,8 +52,7 @@ public class DashboardDAOImpl implements DashboardDAO {
 			details.setFirst_name(result.get("fname").toString());
 			details.setLast_name(result.get("lname").toString());
 			details.setMobile(result.get("mobileno").toString());
-			details.setPlanno(result.get("planno").toString());
-			System.out.println(details.toString());
+			details.setActno(Integer.parseInt(result.get("actno").toString()));
 			return details;
 		} else {
 			return null;
@@ -75,7 +75,6 @@ public class DashboardDAOImpl implements DashboardDAO {
 			details.setSvctype(result.get("svctype").toString());
 			details.setSubsno(Integer.parseInt(result.get("subsno").toString()));
 
-			System.out.println(details.toString());
 			return details;
 		} else {
 			return null;

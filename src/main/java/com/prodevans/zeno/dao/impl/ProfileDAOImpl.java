@@ -59,38 +59,16 @@ public class ProfileDAOImpl implements ProfileDAO {
 	}
 
 	@Override
-	public boolean updateProfile(ProfileDetails details) throws Exception {
-
+	public boolean updatePassword(String actid, String password) throws Exception {
 		Vector<Object> params = new Vector<>();
-		params.add(details.getActid());
-		params.add(details.getFname());
-		params.add(details.getLname());
-		params.add(details.getMobileno());
-		params.add(details.getEmail());
-		params.add(details.getPassword());
-
-		int result = (Integer) rpcClient.execute(unifyHandler + ".changeAccountDetails", params);
-
-		if (result == 0) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
-	@Override
-	public int updateProfilePassword(String Actid, String password) throws Exception {
-		Vector<Object> params = new Vector<>();
-		params.add(Actid);
+		params.add(actid);
 		params.add(password);
+		int result = (int) rpcClient.execute(unifyHandler + ".changeAccountPassword", params);
+		if (result == 1)
+			return true;
+		else
+			return false;
 
-		int result = (Integer) rpcClient.execute(unifyHandler + ".changeAccountPassword", params);
-
-		if (result == 0) {
-			return 0;
-		} else {
-			return result;
-		}
 	}
 
 }

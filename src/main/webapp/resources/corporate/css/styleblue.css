@@ -170,7 +170,7 @@ Misc tools
 /*.btn {
 	padding: 7px 14px;  
 	font-size: 14px;
-	text-transform: uppercase;
+	
 	border-radius: 0;
 }
 .btn-primary {
@@ -223,11 +223,19 @@ select.form-control:focus {
 
 input.form-control,
 textarea.form-control {
+    
+    font-size:11px; 
+    font-style:italic; 
+    border: none; 
+    border-bottom: .1px solid;
+    
+    
+    /*
 	border-color: #dbdbdb;
 	color: #777;
-	font: 14px Arial, sans-serif;
+	font: 14px Roboto, sans-serif;
 	border-radius: 0;
-	box-shadow: none;
+	box-shadow: none;*/
 }
 input.form-control:focus,
 textarea.form-control:focus {
@@ -487,7 +495,7 @@ body.page-header-fixed {
 	margin: 0 10px 0 0;
 	padding: 0;
 	float: left;
-	text-transform: uppercase;
+	
 }
 .header-navigation ul {
 	margin: 0;
@@ -1070,7 +1078,7 @@ steps block and steps block elements
 }
 .steps-block em {
 	font: normal 400 13px 'Opan Sans', sans-serif;
-	text-transform: uppercase;
+	
 }
 .steps-block-simple em {
 	text-transform: inherit;
@@ -1329,10 +1337,17 @@ div.content-form-page {
 	color: #010745;
 }
 .content-form-page input.form-control {
-	border-color: #dbdbdb;
+	 font-size:11px; 
+    font-style:italic; 
+    border: none; 
+    border-bottom: .1px solid;
+    
+    
+    /*
+        border-color: #dbdbdb;
 	color: #aaa;
-	font: 14px Arial, sans-serif;
-	border-radius: 0;
+	font: 14px Roboto, sans-serif;
+	border-radius: 0;*/
 }
 .content-form-page .form-control:focus {
 	box-shadow: none;
@@ -1418,7 +1433,7 @@ div.content-form-page .checkbox-list {
 	border-radius: 0;
 	border-color: #dbdbdb;
 	color: #b0b4b7;
-	font: 14px Arial, sans-serif;
+	font: 14px Roboto, sans-serif;
 	height: 35px;
 }
 .content-search input:focus {
@@ -2489,7 +2504,7 @@ Demo Utils
   color: #555;
   font-size: 16px;
   margin-bottom: 14px;
-  text-transform: uppercase;
+  
 }
 .front-lists-v2 li i {
   margin-right: 5px;
@@ -2649,7 +2664,7 @@ Demo Utils
   color: #010745;
 }
 .sidebar-categories li a:before {
-    content: "ï”";
+    content: "ï?”";
     font-family: FontAwesome !important;
     font-size: 8px;
     padding-right: 10px;
@@ -3061,7 +3076,7 @@ Styler Panel
   display: block;
 }
 .color-mode label span {  
-  text-transform: uppercase;
+  
 }
 .color-mode label > span {
   display: inline-block;

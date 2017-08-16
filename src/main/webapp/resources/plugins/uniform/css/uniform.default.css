@@ -320,7 +320,7 @@ div.button span {
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
   font-size: 12px;
   letter-spacing: 1px;
-  text-transform: uppercase; }
+   }
 div.button.hover span, div.button.focus span {
   color: #555; }
 div.button.disabled span, div.button.disabled.active span {
