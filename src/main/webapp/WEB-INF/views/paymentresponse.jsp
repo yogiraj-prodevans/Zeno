@@ -106,7 +106,7 @@
         </div>
         
 <%
-boolean success=true;
+boolean success=false;
 if(success)
 {
 %>
@@ -173,21 +173,43 @@ if(success)
 else
 {
 %>
-<div class="container">
+ <div class="container">
  	<div class="col-md-6">
- 		<h2 style="font-family:Roboto; font-size:48px; color: #c0392b;">Transaction Aborted!</h2><br>
- 		<h2 style="font-family:Roboto; font-size:32px; color: #2c3e50;">Payment was</h2><br>
- 		<h2 style="font-family:Roboto; font-size:32px; color: #2c3e50;">unsuccessful.</h2>
+ 		<div style="margin-left: 10%;margin-top: 10%;margin-bottom: 10%;">
+ 			
+ 			<img alt="thick" src="corporate/img/logos/cross.png" style="height: 10%;width: 10%;">
+	 		
+	 		<h2 style="font-family:Roboto; font-size:56px; color: #e74c3c;">
+	 		Transaction Aborted!
+	 		</h2><br>
+	 		<h2 style="font-size:44px; color: #2c3e50;margin-left: 2%;margin-bottom: 0px;">Payment was</h2><br>
+	 		<h2 style="font-size:44px; color: #2c3e50;margin-left: 2%;">unsuccessful.</h2>
+	 	</div>
  	</div>
- 	<div class="col-md-6" style="background-color:#010745;  ">
- 		<div class="row">
- 			<h2 style="font-family:Roboto; font-size:24px; color: #FFF;">Payment summary</h2><br>
- 		</div>
- 		<div class="row">
- 			<h2 style="font-family:Roboto; font-size:12px; color: #FFF;">Reason :</h2>
- 			<h2 style="font-family:Roboto; font-size:24px; color: #FFF;"></h2>
- 			<br>
- 		</div>
+ 	<div class="col-md-6">
+ 		<div style="background-color:#010745; margin-top: 1%;padding-bottom: 2%;">
+	 		<div class="row" style="margin-left: 5%; padding-top: 5%;">
+	 			<h2 style="font-family:Roboto; font-size:24px; color: #FFF;">Payment Summary</h2><br>
+	 		</div>
+	 		<div class="row" style="margin-left: 5%;">
+	 			<div class="row">
+	 				<h2 style="font-family:Roboto; font-size:12px; color: #FFF;margin-left: 3%;">Your payment of INR 988.00/- on 10-Aug-2017 was aborted.</h2><br>
+	 			</div>
+	 			<div class="row" style="margin-left: 1%;">
+	 				<div class="col-md-4">
+	 					<div class="row">
+		 					<h2 style="font-family:Roboto; font-size:10px; color: #FFF;">REASON</h2>
+		 				</div>
+		 				<div class="row">
+		 					<h2 style="font-family:Roboto; font-size:16px; color: #e74c3c;">Reason of aborted transaction</h2>
+		 				</div>
+		 			</div>
+		 		</div>
+	 		</div>
+
+	 	</div>
+	 	
+	 	
  	</div>
  </div>
 <%
