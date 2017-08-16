@@ -8,14 +8,18 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.prodevans.zeno.dao.impl.ProfileDAOImpl;
+import com.prodevans.zeno.pojo.ChangePassword;
 import com.prodevans.zeno.pojo.ProfileDetails;
 import com.prodevans.zeno.pojo.SessionDetails;
 
 @Controller
+@RequestMapping(value = "/profile")
 public class ProfileController {
 	@Autowired
 	private ProfileDAOImpl profileImpl;
@@ -28,22 +32,53 @@ public class ProfileController {
 		this.profileImpl = profileImpl;
 	}
 
-	@RequestMapping(value = "/profile", method = RequestMethod.GET)
-	public String billingPayment(Locale locale, ModelMap model, HttpSession session) {
+	@RequestMapping(value = { "/", "" }, method = RequestMethod.GET)
+	public String billingPayment(@RequestParam(name = "result", required = false) String result, Locale locale,
+			ModelMap model, HttpSession session) {
 		if (session.getAttribute("user") == null) {
 			return "redirect:/logout";
 		} else {
 			SessionDetails user = (SessionDetails) session.getAttribute("user");
 			ProfileDetails userdetails = new ProfileDetails();
+			model.addAttribute("result", result);
 			try {
 				userdetails = profileImpl.getProfile(user.getActid());
 				model.addAttribute("profile", userdetails);
+				ChangePassword changePassword = new ChangePassword();
+				changePassword.setActid(user.getActid());
+				model.addAttribute("change_pass", changePassword);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			return "profile";
 		}
+	}
+
+	@RequestMapping(value = "/change-pass", method = RequestMethod.POST)
+	public String ChangePass(@ModelAttribute("change_pass") ChangePassword pass, ModelMap model) {
+		boolean result = false;
+		try {
+
+			if (!pass.getPassword().isEmpty()) {
+				if (pass.getPassword().equals(pass.getConfirm_password())) {
+					result = profileImpl.updatePassword(pass.getActid(), pass.getPassword());
+					if (result)
+						model.addAttribute("result", "successful");
+					else
+						model.addAttribute("result", "fail");
+				} else {
+					model.addAttribute("result", "fail");
+				}
+			} else {
+				model.addAttribute("result", "Password field must not be empty");
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return "redirect:/profile";
 	}
 
 }

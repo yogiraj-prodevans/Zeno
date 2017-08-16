@@ -64,7 +64,7 @@ public class ProfileDAOImpl implements ProfileDAO {
 		params.add(actid);
 		params.add(password);
 		int result = (int) rpcClient.execute(unifyHandler + ".changeAccountPassword", params);
-		if (result == 1)
+		if (result == 0)
 			return true;
 		else
 			return false;
