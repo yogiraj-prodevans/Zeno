@@ -106,7 +106,7 @@
         </div>
         
 <%
-boolean success=false;
+boolean success=true;
 if(success)
 {
 %>
