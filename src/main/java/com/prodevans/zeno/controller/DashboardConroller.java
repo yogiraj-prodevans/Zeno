@@ -59,13 +59,6 @@ public class DashboardConroller {
 		}
 	}
 
-	/*
-	 * @RequestMapping(value = "/billingPayment", method = RequestMethod.GET) public
-	 * String billingPayment(Locale locale, Model model, HttpSession session) { if
-	 * (session.getAttribute("user") == null) { return "redirect:/logout"; } else {
-	 * return "billingPayment"; } <<<<<<< HEAD }
-	 */
-
 	@RequestMapping(value = "/service", method = RequestMethod.GET)
 	public String service(Locale locale, Model model, HttpSession session) {
 		if (session.getAttribute("user") == null) {
@@ -94,21 +87,21 @@ public class DashboardConroller {
 
 	}
 
-         @RequestMapping(value = "/terms", method = RequestMethod.GET)
+	@RequestMapping(value = "/terms", method = RequestMethod.GET)
 	public String terms(ModelMap model) {
 		return "terms";
 	}
-        
-         @RequestMapping(value = "/refund", method = RequestMethod.GET)
+
+	@RequestMapping(value = "/refund", method = RequestMethod.GET)
 	public String refund(ModelMap model) {
 		return "refund";
 	}
-        
-        @RequestMapping(value = "/privacy", method = RequestMethod.GET)
+
+	@RequestMapping(value = "/privacy", method = RequestMethod.GET)
 	public String privacy(ModelMap model) {
 		return "privacy";
 	}
-        
+
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout(Locale locale, Model model, HttpSession session) {
 		if (session.getAttribute("user") != null) {
