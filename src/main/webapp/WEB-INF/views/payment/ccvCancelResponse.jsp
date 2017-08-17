@@ -135,7 +135,7 @@
 		 					<h2 style="font-family:Roboto; font-size:10px; color: #FFF;">REASON</h2>
 		 				</div>
 		 				<div class="row">
-		 					<h2 style="font-family:Roboto; font-size:16px; color: #e74c3c;"><%=responseFromCCAvenue.get("status_message").replaceFirst("I", "You ")%></h2>
+		 					<h2 style="font-family:Roboto; font-size:16px; color: #e74c3c;"><%=responseFromCCAvenue.get("status_message")%></h2>
 		 				</div>
 		 			</div>
 		 		</div>
