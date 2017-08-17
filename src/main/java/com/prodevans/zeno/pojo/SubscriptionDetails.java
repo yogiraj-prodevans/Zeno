@@ -1,6 +1,7 @@
 
 package com.prodevans.zeno.pojo;
 
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -9,7 +10,7 @@ public class SubscriptionDetails {
 	private String ratePlan;
 	private String startDate;
 	private int status;
-	private String expirydt;
+	private Date expirydt;
 	private String svctype;
 	private int subsno;
 
@@ -28,7 +29,7 @@ public class SubscriptionDetails {
 	 * @param subsno
 	 * @param planno
 	 */
-	public SubscriptionDetails(String ratePlan, String startDate, int status, String expirydt, String svctype,
+	public SubscriptionDetails(String ratePlan, String startDate, int status, Date expirydt, String svctype,
 			int subsno) {
 		this.ratePlan = ratePlan;
 		this.startDate = startDate;
@@ -90,7 +91,12 @@ public class SubscriptionDetails {
 	 */
 	public String getExpirydt() {
 
-		return expirydt;
+		return DateFormat.getDateInstance(DateFormat.LONG).format(expirydt);
+	}
+
+	public String getRemainingDays() {
+		long diff = (expirydt.getTime() - new Date().getTime()) / (24 * 60 * 60 * 1000);
+		return diff + "";
 	}
 
 	/**
@@ -101,7 +107,11 @@ public class SubscriptionDetails {
 	public void setExpirydt(String expirydt) throws ParseException {
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 		Date date = formatter.parse(expirydt);
-		this.expirydt = formatter.format(date);
+		// this.expirydt = formatter.format(date);
+		// this.expirydt = DateFormat.getDateInstance(DateFormat.LONG).format(date);
+
+		this.expirydt = date;
+		// System.out.println("expiry Date : " + expirydt);
 	}
 
 	/**

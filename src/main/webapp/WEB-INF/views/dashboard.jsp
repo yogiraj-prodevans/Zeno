@@ -105,7 +105,7 @@
                                 <div class="col-lg-3 div2" >
                                     <p style="font-size:10px; color:gray; line-height:.5">Payment</p>
                                     <p style="font-size:10px; color:gray; line-height:.5">Account No : ${user_details.getActid() }</p>
-                                    <p style="font-size:15px; color:gray; line-height:1">Rs ${user_details.getPendingAmount() } is due in <strong style="color:#E17C80">5 </strong>days</p>
+                                    <p style="font-size:15px; color:gray; line-height:1">Rs ${user_details.getPendingAmount() } is due in <strong style="color:#E17C80">${SubscriptionDetails.getRemainingDays() } </strong>days</p>
                                     <div class="front-skills" style=" padding-top:30%">
                                         <p style="font-size:10px; color:gray; line-height:1">Due Date : ${SubscriptionDetails.getExpirydt() }</p>
                                     </div>   
