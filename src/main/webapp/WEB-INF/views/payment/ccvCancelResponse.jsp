@@ -51,8 +51,8 @@
                         <ul>
                             <li class="dropdown active"> </li>
                             <li ><a href="${pageContext.request.contextPath }/dashboard">Home</a></li>
-                        <li><a href="${pageContext.request.contextPath }/billingPayment">Make Payment</a></li>  
-                        <li class="active" ><a href="${pageContext.request.contextPath }/service">Service Request</a></li> 
+                        <li class="active"><a href="${pageContext.request.contextPath }/billingPayment">Make Payment</a></li>  
+                        <li><a href="${pageContext.request.contextPath }/service">Service Request</a></li> 
                         <li><a href="${pageContext.request.contextPath }/help">Help</a></li> 
                         <li><a href="${pageContext.request.contextPath }/parental-control">Parental Control</a></li>
                         <li class="dropdown">
@@ -130,12 +130,12 @@
 	 				<h2 style="font-family:Roboto; font-size:12px; color: #FFF;margin-left: 3%;">Your payment of INR <%=responseFromCCAvenue.get("amount") %>/- was cancelled.</h2><br>
 	 			</div>
 	 			<div class="row" style="margin-left: 1%;">
-	 				<div class="col-md-4">
+	 				<div class="col-md-12">
 	 					<div class="row">
 		 					<h2 style="font-family:Roboto; font-size:10px; color: #FFF;">REASON</h2>
 		 				</div>
 		 				<div class="row">
-		 					<h2 style="font-family:Roboto; font-size:16px; color: #e74c3c;"><%=responseFromCCAvenue.get("status_message")%></h2>
+		 					<h2 style="font-family:Roboto; font-size:16px; color: #e74c3c;"><%=responseFromCCAvenue.get("status_message").replaceFirst("I", "You ")%></h2>
 		 				</div>
 		 			</div>
 		 		</div>
