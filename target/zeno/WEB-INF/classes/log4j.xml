@@ -12,7 +12,7 @@
 
 	<appender name="FILE" class="org.apache.log4j.FileAppender">
 
-		<param name="file" value="logs/log.out" />
+		<param name="file" value="logs/zeno_log.out" />
 		<param name="immediateFlush" value="true" />
 		<param name="threshold" value="debug" />
 		<param name="append" value="false" />
