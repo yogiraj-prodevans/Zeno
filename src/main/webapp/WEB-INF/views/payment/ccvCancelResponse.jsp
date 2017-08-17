@@ -103,34 +103,53 @@
 		pname=""+enumeration.nextElement();
 		pvalue=""+ hs.get(pname);
 		responseFromCCAvenue.put(pname, pvalue);
+		
+		%>
+		<h4><%=pname %> = <%=pvalue %></h4>
+		<%
 	}
 		
 %>
 
- <!-- BEGIN STEPS -->
-        <div class="row front-steps-wrapper"  style="margin-left: 0.001%;width: 100%;">
-            <div class="col-lg-12 col-md-12 col-sm-12 front-step-col">
-                <div class="front-step front-stepv">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 margin-top-5 ">
-                            <div class="col-lg-12 col-md-12 col-sm-12 margin-top-5"  style="padding-left: 10%;">
+ <div class="container">
+ 	<div class="col-md-6">
+ 		<div style="margin-left: 10%;margin-top: 10%;margin-bottom: 10%;">
+ 			
+ 			<img alt="thick" src="corporate/img/logos/cross.png" style="height: 10%;width: 10%;">
+	 		
+	 		<h2 style="font-family:Roboto; font-size:56px; color: #e74c3c;">
+	 		Transaction Aborted!
+	 		</h2><br>
+	 		<h2 style="font-size:44px; color: #2c3e50;margin-left: 2%;margin-bottom: 0px;">Payment was</h2><br>
+	 		<h2 style="font-size:44px; color: #2c3e50;margin-left: 2%;">unsuccessful.</h2>
+	 	</div>
+ 	</div>
+ 	<div class="col-md-6">
+ 		<div style="background-color:#010745; margin-top: 1%;padding-bottom: 2%;">
+	 		<div class="row" style="margin-left: 5%; padding-top: 5%;">
+	 			<h2 style="font-family:Roboto; font-size:24px; color: #FFF;">Payment Summary</h2><br>
+	 		</div>
+	 		<div class="row" style="margin-left: 5%;">
+	 			<div class="row">
+	 				<h2 style="font-family:Roboto; font-size:12px; color: #FFF;margin-left: 3%;">Your payment of INR 988.00/- on 10-Aug-2017 was aborted.</h2><br>
+	 			</div>
+	 			<div class="row" style="margin-left: 1%;">
+	 				<div class="col-md-4">
+	 					<div class="row">
+		 					<h2 style="font-family:Roboto; font-size:10px; color: #FFF;">REASON</h2>
+		 				</div>
+		 				<div class="row">
+		 					<h2 style="font-family:Roboto; font-size:16px; color: #e74c3c;">Reason of aborted transaction</h2>
+		 				</div>
+		 			</div>
+		 		</div>
+	 		</div>
 
-                                <div class="col-md-6">
-                                    <h2 style="font-family:Roboto; font-size:30px">Transaction Has Been Failed</h2>
-                                </div>
-                                
-                                <div class="col-md-6">
-                                	<h2 style="font-family:Roboto; font-size:14px">Status Message</h2><br>
-                                	<h2 style="font-family:Roboto; font-size:30px"><%=responseFromCCAvenue.get("status_message") %></h2>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-<!-- END STEPS -->
+	 	</div>
+	 	
+	 	
+ 	</div>
+ </div>
 
 
  <!-- included pop up -->
