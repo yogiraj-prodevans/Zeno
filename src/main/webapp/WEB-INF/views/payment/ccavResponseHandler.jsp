@@ -155,7 +155,7 @@ if(success)
 	 		</div>
 	 		<div class="row" style="margin-left: 5%;">
 	 			<div class="row">
-	 				<h2 style="font-family:Roboto; font-size:12px; color: #FFF;margin-left: 3%;">Your payment of INR <%=pd.getTrans_amount() %>/- on <%=pd.getTrans_date() %>.</h2><br>
+	 				<h2 style="font-family:Roboto; font-size:12px; color: #FFF;margin-left: 3%;">Your payment of INR <%=responseFromCCAvenue.get("amount") %>/- on <%=pd.getTrans_date() %>.</h2><br>
 	 			</div>
 	 			<div class="row" style="margin-left: 1%;">
 	 				<div class="col-md-4">
