@@ -121,7 +121,7 @@
 	 		Transaction Aborted!
 	 		</h2><br>
 	 		<h2 style="font-size:44px; color: #2c3e50;margin-left: 2%;margin-bottom: 0px;">Payment was</h2><br>
-	 		<h2 style="font-size:44px; color: #2c3e50;margin-left: 2%;">unsuccessful.</h2>
+	 		<h2 style="font-size:44px; color: #2c3e50;margin-left: 2%;">unsuccessful....</h2>
 	 	</div>
  	</div>
  	<div class="col-md-6">
