@@ -22,7 +22,7 @@
 	<resources mapping="/corporate/**" location="/resources/corporate/" />
 	<resources mapping="/pages/**" location="/resources/pages/" />
 	<resources mapping="/plugins/**" location="/resources/plugins/" />
-	
+	<resources mapping="/chart/**" location="/resources/chart/" />
 	
 	
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 

@@ -18,6 +18,12 @@ public class SubscriptionDetails {
 	 * 
 	 */
 	public SubscriptionDetails() {
+		this.ratePlan = "N.A.";
+		this.startDate = "N.A.";
+		this.status = 0;
+		this.expirydt = new Date();
+		this.svctype = "N.A.";
+		this.subsno = 0;
 	}
 
 	/**

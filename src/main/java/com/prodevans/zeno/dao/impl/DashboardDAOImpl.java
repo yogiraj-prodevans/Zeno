@@ -67,18 +67,24 @@ public class DashboardDAOImpl implements DashboardDAO {
 		Object[] res = (Object[]) rpcClient.execute(unifyHandler + ".getSubscriptions", params);
 
 		if (res.length > 0) {
-			HashMap<String, Object> result = (HashMap<String, Object>) res[0];
-			details.setRatePlan(result.get("ratePlan").toString());
-			details.setStartDate(result.get("startDate").toString());
-			details.setStatus(Integer.parseInt(result.get("status").toString()));
-			details.setExpirydt(result.get("expirydt").toString());
-			details.setSvctype(result.get("svctype").toString());
-			details.setSubsno(Integer.parseInt(result.get("subsno").toString()));
+			for (Object o : res) {
 
-			return details;
+				HashMap<String, Object> result = (HashMap<String, Object>) o;
+				if (Integer.parseInt(result.get("status").toString()) == 0) {
+					details.setRatePlan(result.get("svcdescr").toString());
+					details.setStartDate(result.get("startDate").toString());
+					details.setStatus(Integer.parseInt(result.get("status").toString()));
+					details.setExpirydt(result.get("expirydt").toString());
+					details.setSvctype(result.get("svctype").toString());
+					details.setSubsno(Integer.parseInt(result.get("subsno").toString()));
+
+					return details;
+				}
+			}
 		} else {
 			return null;
 		}
+		return null;
 	}
 
 	@Override
