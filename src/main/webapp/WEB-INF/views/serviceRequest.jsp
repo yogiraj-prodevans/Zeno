@@ -122,16 +122,8 @@
                         <li class="active" ><a href="${pageContext.request.contextPath }/service">Service Request</a></li> 
                         <li><a href="${pageContext.request.contextPath }/help">Help</a></li> 
                         <li><a href="${pageContext.request.contextPath }/parental-control">Parental Control</a></li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
-                                Settings      
-                            </a>
-
-                            <ul class="dropdown-menu">
-                                <li><a href="${pageContext.request.contextPath }/profile">Profile</a></li>
-                                <li><a href="${pageContext.request.contextPath }/logout">Logout</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="${pageContext.request.contextPath }/profile">Profile</a></li>
+                        <li><a href="${pageContext.request.contextPath }/logout">Logout</a></li>
                     </ul>
                 </div>
                 <!-- END NAVIGATION -->
