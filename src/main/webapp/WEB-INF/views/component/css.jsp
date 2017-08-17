@@ -52,8 +52,8 @@
     }
     
   .div2 {
-    width: 280px;
-    height: 180px;    
+    min-width: 280px;
+    min-height: 180px;    
     padding: 20px;
     margin: 40px;
     margin-bottom: 5px;

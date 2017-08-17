@@ -16,6 +16,9 @@
        
         <!--  include the all css components -->
         <jsp:include page="component/css.jsp"></jsp:include>
+        
+        
+       
     </head>
     <body class="corporate">
         <!-- BEGIN TOP BAR -->
@@ -88,7 +91,7 @@
                     <form class="form-horizontal form-without-legend ">
                         <div class="form-group"> 
                             <div class="col-lg-12 col-md-12 col-sm-12 " style=" padding-bottom:16">
-                                <div class="col-lg-3 div2">
+                                <div class="col-lg-5 div2">
                                     <p style=" font-size:10px; color:gray; line-height:.5">Zeno</p>
                                     <p style=" font-size:10px; color:gray; line-height:.5">Account No : ${user_details.getActid() } </p>
                                     <p style=" font-size:10px; color:gray; line-height:.5">Current Plan Name : ${SubscriptionDetails.getRatePlan() }</p>
@@ -102,7 +105,7 @@
                                     </div>                       
                                     <!-- END PROGRESS BAR -->
                                 </div>
-                                <div class="col-lg-3 div2" >
+                                <div class="col-lg-5 div2" >
                                     <p style="font-size:10px; color:gray; line-height:.5">Payment</p>
                                     <p style="font-size:10px; color:gray; line-height:.5">Account No : ${user_details.getActid() }</p>
                                     <p style="font-size:15px; color:gray; line-height:1">Rs ${user_details.getPendingAmount() } is due in <strong style="color:#E17C80">${SubscriptionDetails.getRemainingDays() } </strong>days</p>
@@ -110,18 +113,18 @@
                                         <p style="font-size:10px; color:gray; line-height:1">Due Date : ${SubscriptionDetails.getExpirydt() }</p>
                                     </div>   
                                 </div>
-                                <div class="col-lg-3 div2" >
+                               <!--  <div class="col-lg-3 div2" >
                                     <p style=" font-size:10px; color:gray; line-height:.5">Service Requests</p>
                                     <p style="font-size:10px; color:gray; line-height:.5">Account No : ${user_details.getActid() }</p>
-                                    <!-- BEGIN PROGRESS BAR -->
+                                   BEGIN PROGRESS BAR 
                                     <div class="front-skills" style=" padding-top:25%">
                                         <p style=" font-size:10px; color:gray; line-height:1"><strong style="color:#E17C80"> 5 </strong>Active of<strong style="color:#E17C80"> 10</strong> Total</p>	
                                         <div class=" progress">
                                             <div role="progressbar" class="progress-bar" style="width: 50%;"></div>
                                         </div>
                                     </div>                       
-                                    <!-- END PROGRESS BAR -->
-                                </div>
+                                  END PROGRESS BAR 
+                                </div>--> 
                             </div>
                         </div>
                     </form>
