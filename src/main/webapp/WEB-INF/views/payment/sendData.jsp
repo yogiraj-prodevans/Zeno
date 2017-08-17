@@ -21,6 +21,20 @@
         <!--  include the all css components -->
         <jsp:include page="../component/css.jsp"></jsp:include>
 
+<script type="text/javascript">
+
+
+
+
+/*$("input:radio").click(function() {
+
+	  var k = $(this).val();
+
+	  $('#dropdownid').val("dropdownvalue");
+	});
+*/
+</script>
+
 <style type="text/css">
 .confirmPayment
 {
@@ -231,8 +245,8 @@ label.css-label
 			                        <p style=" font-size:14px; line-height:.5">Amount : ${user_details.getPendingAmount() }/-  </p><br>
 			                        <p style=" font-size:14px; line-height:.5">Email  : ${user_details.getEmail() }</p><br>
 			                        <p style=" font-size:14px; line-height:.5">Mobile No.  : ${user_details.getMobileno() } </p><br>
-			                        <select class="form-control" name="instrument_detail">
-			                        	<option value="0,Cash" class="form-control">Cash</option>
+			                        <select class="form-control" name="instrument_detail" id="instrument_detail" style="visibility: hidden;">
+			                        	<!-- <option value="0,Cash" class="form-control">Cash</option>
 			                        	<option value="1,Demand Draft" class="form-control">Demand Draft</option>
 			                        	<option value="2,Cheque" class="form-control">Cheque</option>
 			                        	<option value="3,Credit Card" class="form-control">Credit Card</option>
@@ -240,7 +254,7 @@ label.css-label
 			                        	<option value="5,Cash Warrant" class="form-control">Cash Warrant</option>
 			                        	<option value="6,NA" class="form-control">NA</option>
 			                        	<option value="7,TDS" class="form-control">TDS</option>
-			                        	<option value="8,Adjustment" class="form-control">Adjustment</option>
+			                        	<option value="8,Adjustment" class="form-control">Adjustment</option> -->
 			                        </select>
 			                    </div>
 			                    <div class="col-md-8">
@@ -652,8 +666,36 @@ label.css-label
 			
 			
 	// Emi section end 		
-   
-   
+	
+	//dropdown value will be set depend on radio button START
+	
+   $("input[type='radio'][name='payment_option']").change(function(){
+    
+	var selected = $("input[type='radio'][name='payment_option']:checked").val();
+    
+	if(selected == "OPTCASHC") var opts = [
+        {name:"Cash", val:"5,Cash"}
+    ];
+	
+    if(selected == "OPTCRDC") var opts = [
+        {name:"Credit Card", val:"8,Credit Card"}
+    ];
+    
+    if(selected == "OPTDBCRD") var opts = [
+        {name:"Debit Card", val:"9,Debit Card"}
+    ];
+    
+    $("#instrument_detail").empty();
+    
+    $.each(opts, function(k,v){
+        
+    	$("#instrument_detail").append("<option value='"+v.val+"'>"+v.name+"</option>");
+        
+    });
+});
+ //dropdown value will be set depend on radio button START
+	
+	
    // below code for reference 
  
    function processData(data){
