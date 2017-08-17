@@ -103,10 +103,6 @@
 		pname=""+enumeration.nextElement();
 		pvalue=""+ hs.get(pname);
 		responseFromCCAvenue.put(pname, pvalue);
-		
-		%>
-		<h4><%=pname %> = <%=pvalue %></h4>
-		<%
 	}
 		
 %>
@@ -118,7 +114,7 @@
  			<img alt="thick" src="corporate/img/logos/cross.png" style="height: 10%;width: 10%;">
 	 		
 	 		<h2 style="font-family:Roboto; font-size:56px; color: #e74c3c;">
-	 		Transaction Aborted!
+	 		Transaction Cancelled!
 	 		</h2><br>
 	 		<h2 style="font-size:44px; color: #2c3e50;margin-left: 2%;margin-bottom: 0px;">Payment was</h2><br>
 	 		<h2 style="font-size:44px; color: #2c3e50;margin-left: 2%;">unsuccessful....</h2>
@@ -131,7 +127,7 @@
 	 		</div>
 	 		<div class="row" style="margin-left: 5%;">
 	 			<div class="row">
-	 				<h2 style="font-family:Roboto; font-size:12px; color: #FFF;margin-left: 3%;">Your payment of INR 988.00/- on 10-Aug-2017 was aborted.</h2><br>
+	 				<h2 style="font-family:Roboto; font-size:12px; color: #FFF;margin-left: 3%;">Your payment of INR <%=responseFromCCAvenue.get("amount") %>/- was cancelled.</h2><br>
 	 			</div>
 	 			<div class="row" style="margin-left: 1%;">
 	 				<div class="col-md-4">
@@ -139,7 +135,7 @@
 		 					<h2 style="font-family:Roboto; font-size:10px; color: #FFF;">REASON</h2>
 		 				</div>
 		 				<div class="row">
-		 					<h2 style="font-family:Roboto; font-size:16px; color: #e74c3c;">Reason of aborted transaction</h2>
+		 					<h2 style="font-family:Roboto; font-size:16px; color: #e74c3c;"><%=responseFromCCAvenue.get("status_message")%></h2>
 		 				</div>
 		 			</div>
 		 		</div>
