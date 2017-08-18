@@ -313,7 +313,7 @@
                                 </div>
                             </div>
 
-                            <div class="row col-md-2" style="margin-left:6%;">
+                            <div class="row col-md-2" style="margin-left:6%; margin-bottom: 8%;">
                                 <button class="submitButton" type="submit">Submit</button>
                             </div>
 

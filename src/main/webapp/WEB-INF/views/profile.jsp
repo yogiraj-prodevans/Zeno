@@ -71,6 +71,30 @@
 		</div>
 	</div>
 	<!-- Header END -->
+	
+
+<!-- BEGIN STEPS -->
+        <div class="row front-steps-wrapper"  style="margin-left: 0.001%;width: 100%;">
+            <div class="col-lg-12 col-md-12 col-sm-12 front-step-col">
+                <div class="front-step front-stepv">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 margin-top-5 ">
+                            <div class="col-lg-12 col-md-12 col-sm-12 margin-top-5"  style="padding-left: 10%;">
+
+                                <div class="col-md-6">
+                                    <h2 style="font-family:Roboto; font-size:30px">Login Contact and Details</h2>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END STEPS -->	
+	
+	
+	
 	<div class="main">
 		<div class="container">
 			<!-- BEGIN CONTENT -->
@@ -88,38 +112,51 @@
 									<label for="email" class="col-lg-12 control-label"> <span
 										class="require"></span></label>
 									<div class="col-lg-12">
-										<table style="width: 100%">
-											<tr>
-												<th style="font-size: 18px; color: gray; line-height: 2"
-													colspan="4">Login Contact and Details</th>
-											</tr>
+									
+									<div class="col-md-3">
+									</div>
+									<div class="col-md-6">
+										
+										<c:if test="${not empty result}">
+											<h5 style="color: #2ecc71;margin: 1%;text-align: center;">
+												*Message : 	${result}
+											</h5>
+										</c:if>
+										
+									
+										<table style="width: 100%; margin-left: 5%;">
+											
 											<tr style="font-size: 12px; color: gray; line-height: 2">
 												<td>Account Number</td>
 												<td>${profile.getActid() }</td>
 												<td
 													style="font-size: 10px; align: left; color: gray; line-height: 2"><i
 													class=" fa fa-lock "></i></td>
-												<td>Address</td>
-												<td>${profile.getAddress() }</i></td>
-												<td><i class=" fa fa-pencil"></i></td>
+												
+												
 											</tr>
+											
 											<tr style="font-size: 12px; color: gray; line-height: 2">
 												<td>Password</td>
-												<td>*******</td>
-												<td style="font-size: 10px; color: gray; line-height: 2"><i
-													class=" fa fa-pencil"></i></td>
+												<td><a href="#changePassword" data-toggle="modal">*******</a></td>
+												<td style="font-size: 10px; color: gray; line-height: 2">
+													<a href="#changePassword" data-toggle="modal"><i class=" fa fa-pencil"></i></a>
+												</td>
 											</tr>
 											<tr style="font-size: 12px; color: gray; line-height: 2">
 												<td>Moble Number</td>
 												<td>${profile.getMobileno() }</td>
-												<td style="font-size: 10px; color: gray; line-height: 2"><i
-													class=" fa fa-pencil"></i></td>
+												
 											</tr>
 											<tr style="font-size: 12px; color: gray; line-height: 2">
 												<td>Email ID</td>
 												<td>${profile.getEmail() }</td>
-												<td style="font-size: 10px; color: gray; line-height: 2"><i
-													class=" fa fa-pencil"></i></td>
+												
+											</tr>
+											<tr style="font-size: 12px; color: gray; line-height: 2">
+												<td>Address</td>
+												<td>${profile.getAddress() }</td>
+												
 											</tr>
 											<tr style="font-size: 12px; color: gray; line-height: 2">
 												<td></td>
@@ -127,32 +164,12 @@
 												<td></td>
 											</tr>
 											<br>
-											<tr style="font-size: 12px; color: gray; line-height: 2">
-												<td></td>
-												<td></td>
-												<td><a style="color: #F2F2F2F2; font-size: 11px"
-													href="#">
-														<button type="submit"
-															style="color: #F2F2F2F2; font-size: 14px; font-family: Roboto; border-radius: 0px;"
-															class="btn btn-primary ">update</button>
-												</a></td>
-											</tr>
+											
 										</table>
+									</div>
+									<div class="col-md-3">
+									</div>
 
-
-										<form:form role="form" action="profile/change-pass"
-											method="post" modelAttribute="change_pass">
-											Act id : <form:input path="actid" readonly="true" />
-											<br>
-											Password : <form:input path="password" type="password" />
-											<br>
-											confirm password : <form:input path="confirm_password" type="password" />
-											<br>
-											<button type="submit">change</button>
-										</form:form>
-										<c:if test="${not empty result}">
-											${result}
-										</c:if>
 
 
 										<!--  
@@ -190,6 +207,39 @@
 			<!-- END STEPS -->
 		</div>
 	</div>
+
+
+<!-- Modal Code for Change Password -->
+<div id="changePassword" class="modal fade" style="margin-top:10%;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color:#FFF">&times;</button>
+                <h4 class="modal-title">Change Password</h4>
+            </div>
+
+            <div class="modal-body" style="margin-bottom:20%">
+              <div class="col-md-12 col-sm-12" style="margin-top:3%">
+
+					<form:form role="form" action="profile/change-pass" method="post" modelAttribute="change_pass">
+						<form:input type="hidden" path="actid" readonly="true" />
+						<strong>Password :</strong> 
+						<form:input path="password" type="password" class="form-control" placeholder="Enter Password" required="true"/>
+						<br>
+						<strong>Confirm Password :</strong> 
+						<form:input path="confirm_password" type="password" class="form-control" placeholder="Confirm Password" required="true"/>
+						<br>
+						<button type="submit" class="btn btn-primary">Update Password</button>
+					</form:form>
+					
+                 
+              </div><!-- Col-md-12 -->
+            </div><!-- Modal Body -->
+        </div>
+    </div>
+</div>
+
+
 
 	<!-- included pop up -->
 	<jsp:include page="component/pop-up.jsp"></jsp:include>

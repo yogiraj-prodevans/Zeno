@@ -64,11 +64,11 @@ public class ProfileController {
 				if (pass.getPassword().equals(pass.getConfirm_password())) {
 					result = profileImpl.updatePassword(pass.getActid(), pass.getPassword());
 					if (result)
-						model.addAttribute("result", "successful");
+						model.addAttribute("result", "Password has been changed successfuly");
 					else
-						model.addAttribute("result", "fail");
+						model.addAttribute("result", "Something went wrong");
 				} else {
-					model.addAttribute("result", "fail");
+					model.addAttribute("result", "Entered password is not matched with confirm password");
 				}
 			} else {
 				model.addAttribute("result", "Password field must not be empty");
