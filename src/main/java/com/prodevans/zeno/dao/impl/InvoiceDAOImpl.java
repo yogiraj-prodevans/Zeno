@@ -1,5 +1,7 @@
 package com.prodevans.zeno.dao.impl;
 
+import java.util.Date;
+import java.util.HashMap;
 import java.util.Vector;
 
 import org.apache.xmlrpc.XmlRpcException;
@@ -31,11 +33,24 @@ public class InvoiceDAOImpl implements InvoiceDAO
 		Vector<Object> params = new Vector<>();
 		params.add(actno);
 		System.out.println("Actno : "+actno);
-		Object o[]=(Object[]) rpcClient.execute(unifyHandler+".getInvoices",params);
+		Object token[]=(Object[]) rpcClient.execute(unifyHandler+".getInvoices",params);
 		
-		/*
-		 setter code  
-		 */
+		for (Object ob : token) 
+		{
+			HashMap<String, Object> hs = (HashMap<String, Object>) ob;
+			
+			invoiceDetails.setAmount(Float.parseFloat(hs.get("amount").toString()));
+			invoiceDetails.setContent(hs.get("content").toString());
+			invoiceDetails.setInvoiceno(Integer.parseInt(hs.get("invoiceno").toString()));
+			invoiceDetails.setOpeningBalance(Float.parseFloat(hs.get("openingBalance").toString()));
+			invoiceDetails.setPendingamount(Float.parseFloat(hs.get("pendingamount").toString()));
+			
+			//invoiceDetails.setDuedt((Date) hs.get("duedt"));
+			invoiceDetails.setEnddt((Date)hs.get("enddt"));
+			invoiceDetails.setInvoicedt((Date)hs.get("invoicedt"));
+			invoiceDetails.setStartdt((Date)hs.get("startdt"));
+			
+		}
 		
 		return invoiceDetails;
 
