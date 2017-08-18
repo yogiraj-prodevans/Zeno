@@ -15,19 +15,29 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.prodevans.zeno.dao.impl.DashboardDAOImpl;
+import com.prodevans.zeno.dao.impl.InvoiceDAOImpl;
+import com.prodevans.zeno.pojo.InvoiceDetails;
 import com.prodevans.zeno.pojo.SessionDetails;
 import com.prodevans.zeno.pojo.SubscriptionDetails;
 import com.prodevans.zeno.pojo.UserDetails;
 
 @Controller
-public class DashboardConroller {
+public class DashboardConroller 
+{
+	
 	@Autowired
 	private DashboardDAOImpl DashboardImpl;
-
 	public void setDashboardImpl(DashboardDAOImpl dashboardImpl) {
 		DashboardImpl = dashboardImpl;
 	}
 
+	@Autowired
+	private InvoiceDAOImpl invoiceDAOImpl;
+	public void setInvoiceDAOImpl(InvoiceDAOImpl invoiceDAOImpl) 
+	{
+		this.invoiceDAOImpl = invoiceDAOImpl;
+	}
+	
 	@RequestMapping(value = "/dashboard", method = RequestMethod.GET)
 	public String getDashboard(ModelMap model, HttpSession session) {
 
@@ -44,6 +54,10 @@ public class DashboardConroller {
 				SubscriptionDetails details = DashboardImpl.getSubscriptionDetails(user.getActid());
 
 				model.addAttribute("SubscriptionDetails", details);
+				
+				//for getting invoice details
+				InvoiceDetails invoiceDetails=invoiceDAOImpl.getInvoice(user.getActno());
+				model.addAttribute("invoiceDetails", invoiceDetails);
 
 			} catch (Exception ee) {
 				ee.printStackTrace();

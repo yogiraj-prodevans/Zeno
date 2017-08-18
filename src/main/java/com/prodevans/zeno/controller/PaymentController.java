@@ -23,9 +23,11 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.prodevans.zeno.dao.impl.InvoiceDAOImpl;
 //import com.ccavenue.security.AesCryptUtil;
 import com.prodevans.zeno.dao.impl.PaymentDAOImpl;
 import com.prodevans.zeno.dao.impl.PaymentResponseDAOImpl;
+import com.prodevans.zeno.pojo.InvoiceDetails;
 import com.prodevans.zeno.pojo.PaymentDetails;
 import com.prodevans.zeno.pojo.SessionDetails;
 import com.prodevans.zeno.pojo.UserDetails;
@@ -38,6 +40,13 @@ public class PaymentController
 	private PaymentDAOImpl paymentDAOImpl;
 	public void setPaymentDAOImpl(PaymentDAOImpl paymentDAOImpl) {
 		this.paymentDAOImpl = paymentDAOImpl;
+	}
+	
+	@Autowired
+	private InvoiceDAOImpl invoiceDAOImpl;
+	public void setInvoiceDAOImpl(InvoiceDAOImpl invoiceDAOImpl) 
+	{
+		this.invoiceDAOImpl = invoiceDAOImpl;
 	}
 	
 	/*@Autowired
@@ -60,6 +69,10 @@ public class PaymentController
 			SessionDetails user = (SessionDetails) session.getAttribute("user");
 			model.addAttribute("user_details", user);
 			
+			//for getting invoice details
+			InvoiceDetails invoiceDetails=invoiceDAOImpl.getInvoice(user.getActno());
+			model.addAttribute("invoiceDetails", invoiceDetails);
+			
 			/*
 			double pendingAmount=paymentDAOImpl.getPendingAmount(user.getActno());
 			session.setAttribute("pendingAmount", pendingAmount);
@@ -71,7 +84,7 @@ public class PaymentController
 	}
 
 	@RequestMapping(value = "/payment", method = RequestMethod.GET)
-	public String doPayment(ModelMap model, HttpSession session)
+	public String doPayment(ModelMap model, HttpSession session) throws XmlRpcException
 	{
 		SessionDetails user = (SessionDetails) session.getAttribute("user");
 	
@@ -85,6 +98,11 @@ public class PaymentController
 		paymentDetails.setTrans_type("Credit Card");*/
 		
 		model.addAttribute("user_details", user);
+		
+		//for getting invoice details
+		InvoiceDetails invoiceDetails=invoiceDAOImpl.getInvoice(user.getActno());
+		model.addAttribute("invoiceDetails", invoiceDetails);
+		
 		return "payment/sendData";
 	}
 
@@ -105,44 +123,6 @@ public class PaymentController
 	@RequestMapping(value = "/ccavResponseHandler", method= RequestMethod.POST)
 	public String ccavResponseHandler(ModelMap model,HttpSession session, HttpServletRequest request) throws XmlRpcException
 	{
-		/*
-		String workingKey = "F9F7E30646BF9F9163D6912C338D61FC";		//32 Bit Alphanumeric Working Key should be entered here so that data can be decrypted.
-		String encResp= request.getParameter("encResp");
-		AesCryptUtil aesUtil=new AesCryptUtil(workingKey);
-		String decResp = aesUtil.decrypt(encResp);
-		StringTokenizer tokenizer = new StringTokenizer(decResp, "&");
-		Hashtable hs=new Hashtable();
-		String pair=null, pname=null, pvalue=null;
-		while (tokenizer.hasMoreTokens())
-		{
-			pair = (String)tokenizer.nextToken();
-			if(pair!=null) {
-				StringTokenizer strTok=new StringTokenizer(pair, "=");
-				pname=""; pvalue="";
-				if(strTok.hasMoreTokens()) {
-					pname=(String)strTok.nextToken();
-					if(strTok.hasMoreTokens())
-						pvalue=(String)strTok.nextToken();
-					hs.put(pname, URLDecoder.decode(pvalue));
-				}
-			}
-		}
-		
-		PaymentResponseDAOImpl prdi=new PaymentResponseDAOImpl();
-	    HashMap<String, String> responseFromCCAvenue= new HashMap<>();
-		Enumeration enumeration = hs.keys();
-		while(enumeration.hasMoreElements())
-		{
-			pname=""+enumeration.nextElement();
-			pvalue=""+ hs.get(pname);
-			responseFromCCAvenue.put(pname, pvalue);
-		}
-		PaymentDetails paymentDetailsSet=prdi.setAllPaymentTransactionDetails(responseFromCCAvenue);
-		PaymentDetails paymentDetailsGet=prdi.getAllPaymentTransactionDetails(paymentDetailsSet);
-		
-		session.setAttribute("paymentDetailsGet", paymentDetailsGet);
-		model.addAttribute("paymentDetailsGet", paymentDetailsGet);
-		*/
 		return "payment/ccavResponseHandler";
 	}		
 }
