@@ -33,6 +33,10 @@ public class InvoiceDAOImpl implements InvoiceDAO
 		System.out.println("Actno : "+actno);
 		Object o[]=(Object[]) rpcClient.execute(unifyHandler+".getInvoices",params);
 		
+		/*
+		 setter code  
+		 */
+		
 		return invoiceDetails;
 
 	}

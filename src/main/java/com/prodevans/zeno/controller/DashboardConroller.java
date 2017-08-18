@@ -118,6 +118,11 @@ public class DashboardConroller
 	public String refund(ModelMap model) {
 		return "refund";
 	}
+	
+	@RequestMapping(value = "/feedback", method = RequestMethod.GET)
+	public String feedback(ModelMap model) {
+		return "feedback";
+	}
 
 	@RequestMapping(value = "/privacy", method = RequestMethod.GET)
 	public String privacy(ModelMap model) {

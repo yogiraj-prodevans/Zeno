@@ -10,7 +10,7 @@
                         <a href="${pageContext.request.contextPath }/privacy">Privacy Policy</a> |
                         <a href="${pageContext.request.contextPath }/terms">Terms of Service</a> |
                         <a href="${pageContext.request.contextPath }/refund">Refund and Cancellation</a> |
-                        <a href="javascript:;">Feedback</a> |
+                        <a href="${pageContext.request.contextPath }/feedback">Feedback</a> |
                         <a href="javascript:;">Contact Us</a>
                     </div>
                     <!-- END COPYRIGHT -->
