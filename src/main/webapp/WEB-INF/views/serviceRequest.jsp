@@ -182,12 +182,7 @@
                                     Name:
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="text"  style=" width: 100%;
-                                           padding: 12px 20px;
-                                           margin: 8px 0;
-                                           box-sizing: border-box;
-                                           border: none;
-                                           border-bottom: 2px solid red;" class="form-control">
+                                    <input type="text" class="form-control">
                                 </div>          
                             </div><br>
 
