@@ -124,7 +124,7 @@
                                                 <div class="col-lg-05 col-md-offset-1 padding-left-1 padding-top-10">
                                                     <button type="submit" style=" color:#F2F2F2F2; font-size:14px; font-family:Roboto" class="btn btn-primary ">Login</button>
 
-                                                    <input type="checkbox" class= "padding-5 padding-left-7">&nbsp; <label style="font-family:Roboto; color:#F2F2F2F2; font-size:10px" > Remember me </label>
+                                                    <input type="checkbox" class= "padding-5 padding-left-7" name="remember" value="remember" />&nbsp; <label style="font-family:Roboto; color:#F2F2F2F2; font-size:10px" > Remember me </label>
                                                 </div>
                                             </div>
                                             <div class="row">
