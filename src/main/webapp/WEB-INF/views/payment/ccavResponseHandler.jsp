@@ -58,16 +58,8 @@
                         <li><a href="${pageContext.request.contextPath }/service">Service Request</a></li> 
                         <li><a href="${pageContext.request.contextPath }/help">Help</a></li> 
                         <li><a href="${pageContext.request.contextPath }/parental-control">Parental Control</a></li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
-                                Settings      
-                            </a>
-
-                            <ul class="dropdown-menu">
-                                <li><a href="${pageContext.request.contextPath }/profile">Profile</a></li>
-                                <li><a href="${pageContext.request.contextPath }/logout">Logout</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="${pageContext.request.contextPath }/profile">Profile</a></li>
+                        <li><a href="${pageContext.request.contextPath }/logout">Logout</a></li>
                     </ul>
                 </div>
                 <!-- END NAVIGATION -->
@@ -145,22 +137,59 @@ if(success)
 		
  <div class="container">
  	<div class="col-md-6">
- 		<h2 style="font-family:Roboto; font-size:48px; color: #2ecc71;">Thank You!</h2><br>
- 		<h2 style="font-family:Roboto; font-size:32px; color: #2c3e50;">Payment was</h2><br>
- 		<h2 style="font-family:Roboto; font-size:32px; color: #2c3e50;">successful.</h2>
+ 		<div style="margin-left: 10%;margin-top: 10%;margin-bottom: 10%;">
+ 			
+ 			<img alt="thick" src="corporate/img/logos/yes.png" style="height: 10%;width: 10%;">
+	 		
+	 		<h2 style="font-family:Roboto; font-size:56px; color: #2ecc71;">
+	 		Thank You!
+	 		</h2><br>
+	 		<h2 style="font-size:44px; color: #2c3e50;margin-left: 2%;margin-bottom: 0px;">Payment was</h2><br>
+	 		<h2 style="font-size:44px; color: #2c3e50;margin-left: 2%;">successful.</h2>
+	 	</div>
  	</div>
- 	<div class="col-md-6" style="background-color:#010745;  ">
- 		<div class="row">
- 			<h2 style="font-family:Roboto; font-size:24px; color: #FFF;">Payment summary</h2><br>
- 		</div>
- 		<div class="row">
- 			<h2 style="font-family:Roboto; font-size:16px; color: #FFF;">Your payment of INR <%=pd.getTrans_amount() %>/- on <%=pd.getTrans_date() %></h2><br>
- 			<h2 style="font-family:Roboto; font-size:12px; color: #FFF;">Transaction No.:</h2>
- 			<h2 style="font-family:Roboto; font-size:24px; color: #FFF;"><%=pd.getTransaction_id() %></h2>
- 			<h2 style="font-family:Roboto; font-size:12px; color: #FFF;">Email ID:</h2>
- 			<h2 style="font-family:Roboto; font-size:24px; color: #FFF;"><%=responseFromCCAvenue.get("billing_email") %></h2>
- 			<br>
- 		</div>
+ 	<div class="col-md-6">
+ 		<div style="background-color:#010745; margin-top: 1%;padding-bottom: 2%;">
+	 		<div class="row" style="margin-left: 5%; padding-top: 5%;">
+	 			<h2 style="font-family:Roboto; font-size:24px; color: #FFF;">Payment Summary</h2><br>
+	 		</div>
+	 		<div class="row" style="margin-left: 5%;">
+	 			<div class="row">
+	 				<h2 style="font-family:Roboto; font-size:12px; color: #FFF;margin-left: 3%;">Your payment of INR <%=responseFromCCAvenue.get("amount") %>/- on <%=pd.getTrans_date() %>.</h2><br>
+	 			</div>
+	 			<div class="row" style="margin-left: 1%;">
+	 				<div class="col-md-4">
+	 					<div class="row">
+		 					<h2 style="font-family:Roboto; font-size:10px; color: #FFF;">TRANSACTION NUMBER</h2>
+		 				</div>
+		 				<div class="row">
+		 					<h2 style="font-family:Roboto; font-size:16px; color: #FFF;"><%=pd.getTransaction_id() %></h2>
+		 				</div>
+		 			</div>
+		 			<div class="col-md-4">
+	 					<div class="row">
+		 					<h2 style="font-family:Roboto; font-size:10px; color: #FFF;">EMAIL ID</h2>
+		 				</div>
+		 				<div class="row">
+		 					<h2 style="font-family:Roboto; font-size:16px; color: #FFF;"><%=responseFromCCAvenue.get("billing_email") %></h2>
+		 				</div>
+		 			</div>
+		 		</div>
+	 		</div>
+
+	 	</div>
+	 	
+	 	<div class="row">
+	 		<div class="col-md-6">
+	 			<a href="#">
+	 			<div class="confirmPayment">
+	 				Download Invoice
+	 			</div>
+	 			</a>
+			 </div>
+	 	</div>
+	 	
+	 	
  	</div>
  </div>
 <%
@@ -168,21 +197,43 @@ if(success)
 else
 {
 %>
-<div class="container">
+ <div class="container">
  	<div class="col-md-6">
- 		<h2 style="font-family:Roboto; font-size:48px; color: #c0392b;">Transaction Aborted!</h2><br>
- 		<h2 style="font-family:Roboto; font-size:32px; color: #2c3e50;">Payment was</h2><br>
- 		<h2 style="font-family:Roboto; font-size:32px; color: #2c3e50;">unsuccessful.</h2>
+ 		<div style="margin-left: 10%;margin-top: 10%;margin-bottom: 10%;">
+ 			
+ 			<img alt="thick" src="corporate/img/logos/cross.png" style="height: 10%;width: 10%;">
+	 		
+	 		<h2 style="font-family:Roboto; font-size:56px; color: #e74c3c;">
+	 		Transaction Aborted!
+	 		</h2><br>
+	 		<h2 style="font-size:44px; color: #2c3e50;margin-left: 2%;margin-bottom: 0px;">Payment was</h2><br>
+	 		<h2 style="font-size:44px; color: #2c3e50;margin-left: 2%;">unsuccessful.</h2>
+	 	</div>
  	</div>
- 	<div class="col-md-6" style="background-color:#010745;  ">
- 		<div class="row">
- 			<h2 style="font-family:Roboto; font-size:24px; color: #FFF;">Payment summary</h2><br>
- 		</div>
- 		<div class="row">
- 			<h2 style="font-family:Roboto; font-size:12px; color: #FFF;">Reason :</h2>
- 			<h2 style="font-family:Roboto; font-size:24px; color: #FFF;"><%=responseFromCCAvenue.get("status_message") %></h2>
- 			<br>
- 		</div>
+ 	<div class="col-md-6">
+ 		<div style="background-color:#010745; margin-top: 1%;padding-bottom: 2%;">
+	 		<div class="row" style="margin-left: 5%; padding-top: 5%;">
+	 			<h2 style="font-family:Roboto; font-size:24px; color: #FFF;">Payment Summary</h2><br>
+	 		</div>
+	 		<div class="row" style="margin-left: 5%;">
+	 			<div class="row">
+	 				<h2 style="font-family:Roboto; font-size:12px; color: #FFF;margin-left: 3%;">Your payment of INR <%=pd.getTrans_amount() %>/- on <%=pd.getTrans_date() %> was aborted.</h2><br>
+	 			</div>
+	 			<div class="row" style="margin-left: 1%;">
+	 				<div class="col-md-8">
+	 					<div class="row">
+		 					<h2 style="font-family:Roboto; font-size:10px; color: #FFF;">REASON</h2>
+		 				</div>
+		 				<div class="row">
+		 					<h2 style="font-family:Roboto; font-size:16px; color: #e74c3c;"><%=responseFromCCAvenue.get("status_message") %></h2>
+		 				</div>
+		 			</div>
+		 		</div>
+	 		</div>
+
+	 	</div>
+	 	
+	 	
  	</div>
  </div>
 <%
@@ -190,26 +241,11 @@ else
 %>
 	
 	
- <!-- included pop up -->
         <jsp:include page="../component/pop-up.jsp"></jsp:include>
-            <!-- BEGIN FOOTER -->
-            <div class="footer" style="font-size:10px; line-height:1">
-                <div class="container">
-                    <div class="row">
-                        <!-- BEGIN COPYRIGHT -->
-                        <div class="col-md-10 col-sm-10 padding-bottom-10 " > 2017 &copy Stoic Zeno. ALL Rights Reserved.&nbsp 
-                            <a href="#">Privacy Policy</a> |
-                            <a href="${pageContext.request.contextPath }/terms">Terms of Service</a> |
-                            <a href="javascript:;">Refund and Cancellation</a> |
-                            <a href="javascript:;">Feedback</a> |
-                            <a href="javascript:;">Contact Us</a>
-                        </div>
-                        <!-- END COPYRIGHT -->
-                    </div>
-                </div>
-            </div>
-            <!-- END FOOTER -->
-          
+            
+        <jsp:include page="../component/footer.jsp"></jsp:include>    
+            
+            
             <!-- Load javascripts at bottom, this will reduce page load time -->
         <jsp:include page="../component/js.jsp"></jsp:include>
         <!-- END BODY -->

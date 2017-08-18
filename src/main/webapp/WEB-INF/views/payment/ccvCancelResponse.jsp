@@ -51,20 +51,12 @@
                         <ul>
                             <li class="dropdown active"> </li>
                             <li ><a href="${pageContext.request.contextPath }/dashboard">Home</a></li>
-                        <li><a href="${pageContext.request.contextPath }/billingPayment">Make Payment</a></li>  
-                        <li class="active" ><a href="${pageContext.request.contextPath }/service">Service Request</a></li> 
+                        <li class="active"><a href="${pageContext.request.contextPath }/billingPayment">Make Payment</a></li>  
+                        <li><a href="${pageContext.request.contextPath }/service">Service Request</a></li> 
                         <li><a href="${pageContext.request.contextPath }/help">Help</a></li> 
                         <li><a href="${pageContext.request.contextPath }/parental-control">Parental Control</a></li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
-                                Settings      
-                            </a>
-
-                            <ul class="dropdown-menu">
-                                <li><a href="${pageContext.request.contextPath }/profile">Profile</a></li>
-                                <li><a href="${pageContext.request.contextPath }/logout">Logout</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="${pageContext.request.contextPath }/profile">Profile</a></li>
+                        <li><a href="${pageContext.request.contextPath }/logout">Logout</a></li>
                     </ul>
                 </div>
                 <!-- END NAVIGATION -->
@@ -107,52 +99,53 @@
 		
 %>
 
- <!-- BEGIN STEPS -->
-        <div class="row front-steps-wrapper"  style="margin-left: 0.001%;width: 100%;">
-            <div class="col-lg-12 col-md-12 col-sm-12 front-step-col">
-                <div class="front-step front-stepv">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 margin-top-5 ">
-                            <div class="col-lg-12 col-md-12 col-sm-12 margin-top-5"  style="padding-left: 10%;">
+ <div class="container">
+ 	<div class="col-md-6">
+ 		<div style="margin-left: 10%;margin-top: 10%;margin-bottom: 10%;">
+ 			
+ 			<img alt="thick" src="corporate/img/logos/cross.png" style="height: 10%;width: 10%;">
+	 		
+	 		<h2 style="font-family:Roboto; font-size:56px; color: #e74c3c;">
+	 		Transaction Cancelled!
+	 		</h2><br>
+	 		<h2 style="font-size:44px; color: #2c3e50;margin-left: 2%;margin-bottom: 0px;">Payment was</h2><br>
+	 		<h2 style="font-size:44px; color: #2c3e50;margin-left: 2%;">unsuccessful....</h2>
+	 	</div>
+ 	</div>
+ 	<div class="col-md-6">
+ 		<div style="background-color:#010745; margin-top: 1%;padding-bottom: 2%;">
+	 		<div class="row" style="margin-left: 5%; padding-top: 5%;">
+	 			<h2 style="font-family:Roboto; font-size:24px; color: #FFF;">Payment Summary</h2><br>
+	 		</div>
+	 		<div class="row" style="margin-left: 5%;">
+	 			<div class="row">
+	 				<h2 style="font-family:Roboto; font-size:12px; color: #FFF;margin-left: 3%;">Your payment of INR <%=responseFromCCAvenue.get("amount") %>/- was cancelled.</h2><br>
+	 			</div>
+	 			<div class="row" style="margin-left: 1%;">
+	 				<div class="col-md-12">
+	 					<div class="row">
+		 					<h2 style="font-family:Roboto; font-size:10px; color: #FFF;">REASON</h2>
+		 				</div>
+		 				<div class="row">
+		 					<h2 style="font-family:Roboto; font-size:16px; color: #e74c3c;"><%=responseFromCCAvenue.get("status_message")%></h2>
+		 				</div>
+		 			</div>
+		 		</div>
+	 		</div>
 
-                                <div class="col-md-6">
-                                    <h2 style="font-family:Roboto; font-size:30px">Transaction Has Been Failed</h2>
-                                </div>
-                                
-                                <div class="col-md-6">
-                                	<h2 style="font-family:Roboto; font-size:14px">Status Message</h2><br>
-                                	<h2 style="font-family:Roboto; font-size:30px"><%=responseFromCCAvenue.get("status_message") %></h2>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-<!-- END STEPS -->
+	 	</div>
+	 	
+	 	
+ 	</div>
+ </div>
 
 
  <!-- included pop up -->
         <jsp:include page="../component/pop-up.jsp"></jsp:include>
-            <!-- BEGIN FOOTER -->
-            <div class="footer" style="font-size:10px; line-height:1">
-                <div class="container">
-                    <div class="row">
-                        <!-- BEGIN COPYRIGHT -->
-                        <div class="col-md-10 col-sm-10 padding-bottom-10 " > 2017 &copy Stoic Zeno. ALL Rights Reserved.&nbsp 
-                            <a href="#">Privacy Policy</a> |
-                            <a href="${pageContext.request.contextPath }/terms">Terms of Service</a> |
-                            <a href="javascript:;">Refund and Cancellation</a> |
-                            <a href="javascript:;">Feedback</a> |
-                            <a href="javascript:;">Contact Us</a>
-                        </div>
-                        <!-- END COPYRIGHT -->
-                    </div>
-                </div>
-            </div>
-            <!-- END FOOTER -->
-          
+        
+        <jsp:include page="../component/footer.jsp"></jsp:include>   
+           
+           
             <!-- Load javascripts at bottom, this will reduce page load time -->
         <jsp:include page="../component/js.jsp"></jsp:include>
         <!-- END BODY -->

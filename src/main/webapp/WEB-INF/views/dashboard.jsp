@@ -4,9 +4,8 @@
 <%@ page session="true"%>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>STOIC ZENO</title>
+
+   
 
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -47,42 +46,29 @@ canvas {
 		</div>
 	</div>
 	<!-- END TOP BAR -->
-	<!-- BEGIN HEADER -->
-	<div class="header">
-		<div class="container">
-			<a class="site-logo" href="#"> <img
-				src="corporate/img/logos/logo.png" alt="Stoic Zeno">
-			</a> <a href="javascript:void(0);" class="mobi-toggler"><i
-				class="fa fa-bars"></i></a>
-			<!-- BEGIN NAVIGATION -->
-			<div class="header-navigation pull-right font-transform-inherit"
-				style="font-size: 12px">
-				<ul>
-					<li class="dropdown active"></li>
-					<li class="active"><a
-						href="${pageContext.request.contextPath }/dashboard">Home</a></li>
-					<li><a
-						href="${pageContext.request.contextPath }/billingPayment">Make
-							Payment</a></li>
-					<li><a href="${pageContext.request.contextPath }/service">Service
-							Request</a></li>
-					<li><a href="${pageContext.request.contextPath }/help">Help</a></li>
-					<li><a
-						href="${pageContext.request.contextPath }/parental-control">Parental
-							Control</a></li>
-					<li class="dropdown"><a class="dropdown-toggle"
-						data-toggle="dropdown" data-target="#" href="javascript:;">
-							Settings </a>
-						<ul class="dropdown-menu">
-							<li><a href="${pageContext.request.contextPath }/profile">Profile</a></li>
-							<li><a href="${pageContext.request.contextPath }/logout">Logout</a></li>
-						</ul></li>
-				</ul>
-			</div>
-			<!-- END NAVIGATION -->
-		</div>
-	</div>
-	<!-- Header END -->
+	  <!-- BEGIN HEADER -->
+         <div class="header">
+             <div class="container">
+                 <a class="site-logo" href="#">
+                     <img src="corporate/img/logos/logo.png" alt="Stoic Zeno"> </a>
+                 <a href="javascript:void(0);" class="mobi-toggler"><i class="fa fa-bars"></i></a>
+                 <!-- BEGIN NAVIGATION -->
+                 <div class="header-navigation pull-right font-transform-inherit" style="font-size:12px">
+                     <ul>
+                         <li class="dropdown active"> </li>
+                         <li class="active" ><a href="${pageContext.request.contextPath }/dashboard">Home</a></li>
+                     <li  ><a href="${pageContext.request.contextPath }/billingPayment">Make Payment</a></li>  
+                     <li><a href="${pageContext.request.contextPath }/service">Service Request</a></li> 
+                     <li><a href="${pageContext.request.contextPath }/help">Help</a></li> 
+                     <li><a href="${pageContext.request.contextPath }/parental-control">Parental Control</a></li>
+                     <li><a href="${pageContext.request.contextPath }/profile">Profile</a></li>
+                     <li><a href="${pageContext.request.contextPath }/logout">Logout</a></li>
+                 </ul>
+             </div>
+             <!-- END NAVIGATION -->
+         </div>
+     </div>
+     <!-- Header END -->
 
 	<!-- BEGIN STEPS -->
 	<!-- BEGIN STEPS -->
@@ -165,29 +151,14 @@ canvas {
 	</div>
 
 	<!-- included pop up -->
-	<jsp:include page="component/pop-up.jsp"></jsp:include>
-	<!-- BEGIN FOOTER -->
-	<div class="footer" style="font-size: 10px; line-height: 1">
-		<!--style="font-family:Roboto; position: fixed; right: 0; bottom: 0; left: 0;"-->
-		<div class="container">
-			<div class="row">
-				<!-- BEGIN COPYRIGHT -->
-				<div class="col-md-10 col-sm-10 padding-bottom-10 ">
-					2017 &copy; Stoic Zeno. ALL Rights Reserved.&nbsp; <a href="#">Privacy
-						Policy</a> | <a href="javascript:;">Terms of Service</a> | <a
-						href="javascript:;">Refund and Cancellation</a> | <a
-						href="javascript:;">Feedback</a> | <a href="javascript:;">Contact
-						Us</a>
-				</div>
-				<!-- END COPYRIGHT -->
-			</div>
-		</div>
-	</div>
-	<!-- END FOOTER -->
-	<!-- Load javascripts at bottom, this will reduce page load time -->
-	<jsp:include page="component/js.jsp"></jsp:include>
-	
-	<!-- END BODY -->
-</body>
+        <jsp:include page="component/pop-up.jsp"></jsp:include>
+            
+        <jsp:include page="component/footer.jsp"></jsp:include>    
+            
+            <!-- Load javascripts at bottom, this will reduce page load time -->
+        <jsp:include page="component/js.jsp"></jsp:include>
+        <!-- END BODY -->
+    </body>
+
 </html>
 

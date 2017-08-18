@@ -62,13 +62,8 @@
 					<li><a
 						href="${pageContext.request.contextPath }/parental-control">Parental
 							Control</a></li>
-					<li class="dropdown"><a class="dropdown-toggle"
-						data-toggle="dropdown" data-target="#" href="javascript:;">
-							Settings </a>
-						<ul class="dropdown-menu">
-							<li><a href="${pageContext.request.contextPath }/profile">Profile</a></li>
-							<li><a href="${pageContext.request.contextPath }/logout">Logout</a></li>
-						</ul></li>
+					<li><a href="${pageContext.request.contextPath }/profile">Profile</a></li>
+                    <li><a href="${pageContext.request.contextPath }/logout">Logout</a></li>
 				</ul>
 			</div>
 			<!-- END NAVIGATION -->
@@ -378,24 +373,7 @@
 
 
 	<jsp:include page="component/pop-up.jsp"></jsp:include>
-	<!-- BEGIN FOOTER -->
-	<div class="footer" style="font-size: 10px; line-height: 1">
-		<!--style="font-family:Roboto; position: fixed; right: 0; bottom: 0; left: 0;"-->
-		<div class="container">
-			<div class="row">
-				<!-- BEGIN COPYRIGHT -->
-				<div class="col-md-10 col-sm-10 padding-bottom-10 ">
-					2017 &copy; Stoic Zeno. ALL Rights Reserved.&nbsp; <a href="#">Privacy
-						Policy</a> | <a href="javascript:;">Terms of Service</a> | <a
-						href="javascript:;">Refund and Cancellation</a> | <a
-						href="javascript:;">Feedback</a> | <a href="javascript:;">Contact
-						Us</a>
-				</div>
-				<!-- END COPYRIGHT -->
-			</div>
-		</div>
-	</div>
-	<!-- END FOOTER -->
+	<jsp:include page="component/footer.jsp"></jsp:include>
 
 	<!-- Load javascripts at bottom, this will reduce page load time -->
 	<jsp:include page="component/js.jsp"></jsp:include>
