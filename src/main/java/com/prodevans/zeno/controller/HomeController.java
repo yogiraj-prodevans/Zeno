@@ -27,9 +27,9 @@ public class HomeController {
 	public ModelAndView loginhome(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
 
-		return new ModelAndView("login", "user", new UserInfo());
+		return new ModelAndView("redirect:login", "user", new UserInfo());
 	}
-	
+
 	@RequestMapping(value = "/paymentresponse", method = RequestMethod.GET)
 	public ModelAndView paymentresponse(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);

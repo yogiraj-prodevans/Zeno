@@ -3,6 +3,8 @@ package com.prodevans.zeno.controller;
 
 import java.util.Locale;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -103,9 +105,13 @@ public class DashboardConroller {
 	}
 
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
-	public String logout(Locale locale, Model model, HttpSession session) {
+	public String logout(Locale locale, Model model, HttpSession session, HttpServletResponse res) {
 		if (session.getAttribute("user") != null) {
 			session.invalidate();
+			Cookie ck = new Cookie("user", "");
+			ck.setHttpOnly(true);
+			ck.setMaxAge(0);
+			res.addCookie(ck);
 		}
 		return "redirect:/login";
 	}
