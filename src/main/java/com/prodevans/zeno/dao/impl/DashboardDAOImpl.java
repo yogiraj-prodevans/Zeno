@@ -2,7 +2,10 @@
 package com.prodevans.zeno.dao.impl;
 
 import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Vector;
 
 import org.apache.xmlrpc.XmlRpcException;
@@ -10,6 +13,7 @@ import org.apache.xmlrpc.client.XmlRpcClient;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.prodevans.zeno.dao.DashboardDAO;
+import com.prodevans.zeno.pojo.SessionHistory;
 import com.prodevans.zeno.pojo.SubscriptionDetails;
 import com.prodevans.zeno.pojo.SubscriptionStatus;
 import com.prodevans.zeno.pojo.UserDetails;
@@ -77,14 +81,47 @@ public class DashboardDAOImpl implements DashboardDAO {
 					details.setExpirydt(result.get("expirydt").toString());
 					details.setSvctype(result.get("svctype").toString());
 					details.setSubsno(Integer.parseInt(result.get("subsno").toString()));
-
+					details.setFUPLimit(getFUPLimit(details.getRatePlan()));
+					details.setDataUsed(getDataUsed(details.getStartDate(), details.getExpiryDate(), customer_id));
 					return details;
 				}
 			}
 		} else {
-			return null;
+			return details;
 		}
-		return null;
+		return details;
+	}
+
+	private long getFUPLimit(String rateplan) throws XmlRpcException {
+		SubscriptionStatus status = new SubscriptionStatus();
+		Vector params = new Vector();
+		params.add(rateplan);
+		HashMap<String, Object> result = (HashMap<String, Object>) rpcClient
+				.execute(unifyHandler + ".getFUPForRatePlan", params);
+		if (result.isEmpty() == false) {
+
+			return Long.parseLong(result.get("mbytesin").toString());
+		} else {
+			return 0;
+		}
+
+	}
+
+	private long getDataUsed(Date startDate, Date endDate, String customerID) throws XmlRpcException {
+		SubscriptionStatus status = new SubscriptionStatus();
+		Vector params = new Vector();
+		params.add(startDate);
+		params.add(endDate);
+		params.add(customerID);
+		Object[] token = (Object[]) rpcClient.execute(unifyHandler + ".getSessionHistory", params);
+
+		long TotalBytes = 0;
+		for (Object ob : token) {
+			HashMap<String, Object> hs = (HashMap<String, Object>) ob;
+			TotalBytes += Long.parseLong(hs.get("totalbytes").toString());
+		}
+		return TotalBytes;
+
 	}
 
 	@Override
@@ -104,6 +141,30 @@ public class DashboardDAOImpl implements DashboardDAO {
 		} else {
 			return null;
 		}
+
+	}
+
+	@Override
+	public List<SessionHistory> getAllSession(Date startDate, Date endDate, String customerID) throws XmlRpcException {
+		List<SessionHistory> allsession = new ArrayList<SessionHistory>();
+
+		Vector params = new Vector();
+		params.add(startDate);
+		params.add(endDate);
+		params.add(customerID);
+		Object[] token = (Object[]) rpcClient.execute(unifyHandler + ".getSessionHistory", params);
+
+		long TotalBytes = 0;
+		for (Object ob : token) {
+			HashMap<String, Object> hs = (HashMap<String, Object>) ob;
+			SessionHistory hsHistory = new SessionHistory();
+			hsHistory.setBytesin(Long.parseLong(hs.get("bytesin").toString()));
+			hsHistory.setBytesout(Long.parseLong(hs.get("bytesout").toString()));
+			hsHistory.setDuration(Long.parseLong(hs.get("duration").toString()));
+			hsHistory.setTotalbytes(Long.parseLong(hs.get("totalbytes").toString()));
+			allsession.add(hsHistory);
+		}
+		return allsession;
 
 	}
 
