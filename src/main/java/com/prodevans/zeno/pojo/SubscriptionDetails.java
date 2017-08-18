@@ -8,18 +8,68 @@ import java.util.Date;
 
 public class SubscriptionDetails {
 	private String ratePlan;
-	private String startDate;
+	private Date startDate;
 	private int status;
 	private Date expirydt;
 	private String svctype;
 	private int subsno;
+	private long FUPLimit;
+	private long dataUsed;
+
+	/**
+	 * @return the fUPLimit
+	 */
+	public long getFUPLimit() {
+		return FUPLimit;
+	}
+
+	/**
+	 * @param fUPLimit
+	 *            the fUPLimit to set
+	 */
+	public void setFUPLimit(long fUPLimit) {
+		FUPLimit = (fUPLimit / 1024);
+	}
+
+	public double getDataPercent() {
+		// long vv = (dataUsed / FUPLimit);
+		double mul = dataUsed * 100;
+
+		double div = mul / FUPLimit;
+		System.out.println("Division result : " + div);
+		System.out.println("multiplication result : " + mul);
+		return div;
+	}
+
+	/**
+	 * @return the dataUsed
+	 */
+	public long getDataUsed() {
+		return dataUsed;
+	}
+
+	/**
+	 * @param dataUsed
+	 *            the dataUsed to set
+	 */
+	public void setDataUsed(long dataUsed) {
+		this.dataUsed = (dataUsed / (1024 * 1024 * 1024));
+	}
+
+	/**
+	 * @param expirydt
+	 *            the expirydt to set
+	 */
+	public void setExpirydt(Date expirydt) {
+		this.expirydt = expirydt;
+	}
 
 	/**
 	 * 
 	 */
 	public SubscriptionDetails() {
 		this.ratePlan = "N.A.";
-		this.startDate = "N.A.";
+		this.startDate = new Date();
 		this.status = 0;
 		this.expirydt = new Date();
 		this.svctype = "N.A.";
@@ -35,8 +85,7 @@ public class SubscriptionDetails {
 	 * @param subsno
 	 * @param planno
 	 */
-	public SubscriptionDetails(String ratePlan, String startDate, int status, Date expirydt, String svctype,
-			int subsno) {
+	public SubscriptionDetails(String ratePlan, Date startDate, int status, Date expirydt, String svctype, int subsno) {
 		this.ratePlan = ratePlan;
 		this.startDate = startDate;
 		this.status = status;
@@ -64,16 +113,19 @@ public class SubscriptionDetails {
 	/**
 	 * @return the startDate
 	 */
-	public String getStartDate() {
+	public Date getStartDate() {
 		return startDate;
 	}
 
 	/**
 	 * @param startDate
 	 *            the startDate to set
+	 * @throws ParseException
 	 */
-	public void setStartDate(String startDate) {
-		this.startDate = startDate;
+	public void setStartDate(String startDate) throws ParseException {
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+		Date date = formatter.parse(startDate);
+		this.startDate = date;
 	}
 
 	/**
@@ -98,6 +150,11 @@ public class SubscriptionDetails {
 	public String getExpirydt() {
 
 		return DateFormat.getDateInstance(DateFormat.LONG).format(expirydt);
+	}
+
+	public Date getExpiryDate() {
+
+		return expirydt;
 	}
 
 	public String getRemainingDays() {
@@ -158,7 +215,8 @@ public class SubscriptionDetails {
 	@Override
 	public String toString() {
 		return "SubscriptionDetails [ratePlan=" + ratePlan + ", startDate=" + startDate + ", status=" + status
-				+ ", expirydt=" + expirydt + ", svctype=" + svctype + ", subsno=" + subsno + "]";
+				+ ", expirydt=" + expirydt + ", svctype=" + svctype + ", subsno=" + subsno + ", FUPLimit=" + FUPLimit
+				+ ", dataUsed=" + dataUsed + ", percentdata=" + getDataPercent() + "]";
 	}
 
 }

@@ -112,12 +112,12 @@ canvas {
 
 								<div class="front-skills " style="padding-top: 20%">
 									<p style="font-size: 10px; color: gray; line-height: 1">
-										Consumed <strong style="color: #E17C80">40GB</strong> of <strong
-											style="color: #E17C80">100GB</strong>
+										Consumed <strong style="color: #E17C80">${SubscriptionDetails.getDataUsed() } GB</strong> of <strong
+											style="color: #E17C80">${SubscriptionDetails.getFUPLimit() } GB</strong>
 									</p>
 									<div class="progress">
 										<div role="progressbar" class="progress-bar"
-											style="width: 40%;"></div>
+											style="width: ${SubscriptionDetails.getDataPercent()}%;"></div>
 									</div>
 								</div>
 								<!-- END PROGRESS BAR -->
@@ -138,9 +138,9 @@ canvas {
 							</div>
 							<div class="col-lg-12"
 								style="border: 1px solid black; min-height: 100px;">
-								<div style="width: 75%;">
-									<canvas id="canvas"></canvas>
-								</div>
+								<c:forEach items="${SessionHistory }" var="sessionHS">
+									${sessionHS.toString() }<br>
+								</c:forEach>
 
 
 							</div>

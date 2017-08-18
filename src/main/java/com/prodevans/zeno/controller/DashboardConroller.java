@@ -1,6 +1,7 @@
 
 package com.prodevans.zeno.controller;
 
+import java.util.List;
 import java.util.Locale;
 
 import javax.servlet.http.Cookie;
@@ -18,6 +19,7 @@ import com.prodevans.zeno.dao.impl.DashboardDAOImpl;
 import com.prodevans.zeno.dao.impl.InvoiceDAOImpl;
 import com.prodevans.zeno.pojo.InvoiceDetails;
 import com.prodevans.zeno.pojo.SessionDetails;
+import com.prodevans.zeno.pojo.SessionHistory;
 import com.prodevans.zeno.pojo.SubscriptionDetails;
 import com.prodevans.zeno.pojo.UserDetails;
 
@@ -52,12 +54,16 @@ public class DashboardConroller
 				model.addAttribute("user_details", user);
 
 				SubscriptionDetails details = DashboardImpl.getSubscriptionDetails(user.getActid());
-
+				System.out.println("user subscription details : " + details.toString());
 				model.addAttribute("SubscriptionDetails", details);
 				
 				//for getting invoice details
 				InvoiceDetails invoiceDetails=invoiceDAOImpl.getInvoice(user.getActno());
 				model.addAttribute("invoiceDetails", invoiceDetails);
+
+				List<SessionHistory> hs = DashboardImpl.getAllSession(details.getStartDate(), details.getExpiryDate(),
+						user.getActid());
+				model.addAttribute("SessionHistory", hs);
 
 			} catch (Exception ee) {
 				ee.printStackTrace();
