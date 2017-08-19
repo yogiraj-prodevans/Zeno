@@ -41,7 +41,7 @@ public class SessionHistory {
 	 *            the totalbytes to set
 	 */
 	public void setTotalbytes(long totalbytes) {
-		this.totalbytes = totalbytes;
+		this.totalbytes = (totalbytes / (1024 * 1024 * 1024));
 	}
 
 	/**
@@ -71,7 +71,7 @@ public class SessionHistory {
 	 *            the bytesin to set
 	 */
 	public void setBytesin(long bytesin) {
-		this.bytesin = bytesin;
+		this.bytesin = (bytesin / (1024 * 1024 * 1024));
 	}
 
 	/**
@@ -86,7 +86,7 @@ public class SessionHistory {
 	 *            the bytesout to set
 	 */
 	public void setBytesout(long bytesout) {
-		this.bytesout = bytesout;
+		this.bytesout = (bytesout / (1024 * 1024 * 1024));
 	}
 
 	/*

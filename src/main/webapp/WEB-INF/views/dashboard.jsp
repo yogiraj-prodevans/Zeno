@@ -24,6 +24,49 @@ canvas {
 }
 </style>
 
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+       /* var data = google.visualization.arrayToDataTable([
+          ['Year', 'Sales', 'Expenses', 'other'],
+          ['2004',  1000,      400, 500],
+          ['2005',  1170,      460, 300],
+          ['2006',  660,       1120, 200],
+          ['2007',  1030,      540, 100]
+        ]);*/
+        var jsonData = $.ajax({
+            url: "user-session",
+            dataType: "json",
+            async: false
+            }).responseText;
+            
+        var options = {
+          title: 'Data Usage',
+          curveType: 'function',
+          hAxis: {
+              title: 'Time in week'
+            },
+            vAxis: {
+              title: 'Data in GigaBytes'
+            },
+
+           
+
+        };
+     
+        // Create our data table out of JSON data loaded from server.
+        var data = new google.visualization.DataTable(jsonData);
+       
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
 
 </head>
 
@@ -137,10 +180,9 @@ canvas {
 								</div>
 							</div>
 							<div class="col-lg-12"
-								style="border: 1px solid black; min-height: 100px;">
-								<c:forEach items="${SessionHistory }" var="sessionHS">
-									${sessionHS.toString() }<br>
-								</c:forEach>
+								style="border: 1px solid black; min-height: 100px; margin-bottom: 100px;">
+								
+<div id="curve_chart" style="min-height: 500px" ></div>
 
 
 							</div>

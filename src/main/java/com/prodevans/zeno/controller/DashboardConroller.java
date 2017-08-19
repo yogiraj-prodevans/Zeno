@@ -1,7 +1,6 @@
 
 package com.prodevans.zeno.controller;
 
-import java.util.List;
 import java.util.Locale;
 
 import javax.servlet.http.Cookie;
@@ -19,7 +18,6 @@ import com.prodevans.zeno.dao.impl.DashboardDAOImpl;
 import com.prodevans.zeno.dao.impl.InvoiceDAOImpl;
 import com.prodevans.zeno.pojo.InvoiceDetails;
 import com.prodevans.zeno.pojo.SessionDetails;
-import com.prodevans.zeno.pojo.SessionHistory;
 import com.prodevans.zeno.pojo.SubscriptionDetails;
 import com.prodevans.zeno.pojo.UserDetails;
 
@@ -40,6 +38,11 @@ public class DashboardConroller {
 		this.invoiceDAOImpl = invoiceDAOImpl;
 	}
 
+	/**
+	 * @param model
+	 * @param session
+	 * @return
+	 */
 	@RequestMapping(value = "/dashboard", method = RequestMethod.GET)
 	public String getDashboard(ModelMap model, HttpSession session) {
 
@@ -61,9 +64,11 @@ public class DashboardConroller {
 				System.out.println("user subscription details : " + details.toString());
 				model.addAttribute("SubscriptionDetails", details);
 
-				List<SessionHistory> hs = DashboardImpl.getAllSession(details.getStartDate(), details.getExpiryDate(),
-						user.getActid());
-				model.addAttribute("SessionHistory", hs);
+				/*
+				 * List<SessionHistory> hs = DashboardImpl.getAllSession(details.getStartDate(),
+				 * details.getExpiryDate(), user.getActid());
+				 * model.addAttribute("SessionHistory", hs);
+				 */
 
 			} catch (Exception ee) {
 				ee.printStackTrace();
@@ -123,7 +128,7 @@ public class DashboardConroller {
 	public String feedback(ModelMap model) {
 		return "feedback";
 	}
-	
+
 	@RequestMapping(value = "/contactus", method = RequestMethod.GET)
 	public String contactus(ModelMap model) {
 		return "contactus";
