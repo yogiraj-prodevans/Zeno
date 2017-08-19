@@ -13,8 +13,16 @@ public class PaymentDetails
 	private int instrumentid;
 	private String instrument_detail;
 	private String trans_descr;
+	private int invoiceNo;
 	private int Transaction_id;
 	
+	
+	public int getInvoiceNo() {
+		return invoiceNo;
+	}
+	public void setInvoiceNo(int invoiceNo) {
+		this.invoiceNo = invoiceNo;
+	}
 	
 	public PaymentDetails() {
 		super();

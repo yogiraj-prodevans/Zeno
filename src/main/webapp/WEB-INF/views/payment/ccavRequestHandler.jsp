@@ -22,6 +22,7 @@
 	pd.setActno(Integer.parseInt(request.getParameter("actno")));
 	pd.setTrans_amount(Double.parseDouble(request.getParameter("trans_amount")));
 	pd.setTrans_type(request.getParameter("trans_type"));
+	pd.setInvoiceNo(Integer.parseInt(request.getParameter("invoiceNo")));
 	pd.setTrans_date(new Date());
 	pd.setCurrency(request.getParameter("currency"));
 	pd.setInstrumentid(Integer.parseInt(d[0]));
