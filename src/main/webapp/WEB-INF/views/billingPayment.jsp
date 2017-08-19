@@ -233,7 +233,7 @@
                                     <p style="font-size:16px; color:gray; line-height:1">INR <strong style="color:#E17C80">${invoiceDetails.getAmount() }/- </strong> is due in <strong style="color:#E17C80">${invoiceDetails.getRemainingDays() } </strong>days</p>
 
                                     <div class="front-skills" style=" padding-top:15%"></div>
-                                    <p style="font-size:10px; color:gray; line-height:1">Due Date : 02/06/2017</p>
+                                    <p style="font-size:10px; color:gray; line-height:1">Due Date : ${invoiceDetails.getDuedt() }</p>
 
                                 </div>
                                 
