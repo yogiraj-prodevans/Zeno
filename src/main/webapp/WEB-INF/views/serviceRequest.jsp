@@ -165,35 +165,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <form>
-                            <div class="row" style="margin-left:4%">
-                                <div class="col-md-2">
-                                    You Are:
-                                </div>
-                                <div class="col-md-6" >
-                                    <select class="form-control">
-                                        <option>Marcus Customer</option>
-                                        <option>Non Marcus Customer</option>
-                                    </select>
-                                </div><br>
-                            </div><br>
-                            <div class="row" style="margin-left:4%">
-                                <div class="col-md-2">
-                                    Name:
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control">
-                                </div>          
-                            </div><br>
-
-                            <div class="row" style="margin-left:4%">
-                                <div class="col-md-2">
-                                    Mobile:
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control">
-                                </div>          
-                            </div><br>
-
+                            
                             <div class="row" style="margin-left:4%">
                                 <div class="col-md-2">
                                     Prefered time to call you:

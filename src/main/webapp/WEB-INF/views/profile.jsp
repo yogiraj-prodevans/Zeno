@@ -143,7 +143,7 @@
 												</td>
 											</tr>
 											<tr style="font-size: 12px; color: gray; line-height: 2">
-												<td>Moble Number</td>
+												<td>Moble</td>
 												<td>${profile.getMobileno() }</td>
 												
 											</tr>
