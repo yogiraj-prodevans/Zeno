@@ -54,7 +54,6 @@ public class DashboardConroller
 				//for getting invoice details
 				InvoiceDetails invoiceDetails=invoiceDAOImpl.getInvoice(user.getActno());
 				model.addAttribute("invoiceDetails", invoiceDetails);
-				System.out.println("Amount to be pay for this month is : "+invoiceDetails.getAmount());
 				
 				model.addAttribute("user_details", user);
 
