@@ -24,22 +24,22 @@ import com.prodevans.zeno.pojo.SubscriptionDetails;
 import com.prodevans.zeno.pojo.UserDetails;
 
 @Controller
-public class DashboardConroller 
-{
-	
+public class DashboardConroller {
+
 	@Autowired
 	private DashboardDAOImpl DashboardImpl;
+
 	public void setDashboardImpl(DashboardDAOImpl dashboardImpl) {
 		DashboardImpl = dashboardImpl;
 	}
 
 	@Autowired
 	private InvoiceDAOImpl invoiceDAOImpl;
-	public void setInvoiceDAOImpl(InvoiceDAOImpl invoiceDAOImpl) 
-	{
+
+	public void setInvoiceDAOImpl(InvoiceDAOImpl invoiceDAOImpl) {
 		this.invoiceDAOImpl = invoiceDAOImpl;
 	}
-	
+
 	@RequestMapping(value = "/dashboard", method = RequestMethod.GET)
 	public String getDashboard(ModelMap model, HttpSession session) {
 
@@ -51,22 +51,20 @@ public class DashboardConroller
 				System.out.println(user.toString());
 				UserDetails userdetails = DashboardImpl.getUserDetails(user.getActid());
 
-				//for getting invoice details
-				InvoiceDetails invoiceDetails=invoiceDAOImpl.getInvoice(user.getActno());
-				model.addAttribute("invoiceDetails", invoiceDetails);
-				System.out.println("Amount to be pay for this month is : "+invoiceDetails.getAmount());
-				
 				model.addAttribute("user_details", user);
 
 				SubscriptionDetails details = DashboardImpl.getSubscriptionDetails(user.getActid());
 				System.out.println("user subscription details : " + details.toString());
 				model.addAttribute("SubscriptionDetails", details);
-				
-				
 
 				List<SessionHistory> hs = DashboardImpl.getAllSession(details.getStartDate(), details.getExpiryDate(),
 						user.getActid());
 				model.addAttribute("SessionHistory", hs);
+
+				// for getting invoice details
+				InvoiceDetails invoiceDetails = invoiceDAOImpl.getInvoice(user.getActno());
+				model.addAttribute("invoiceDetails", invoiceDetails);
+				System.out.println("Amount to be pay for this month is : " + invoiceDetails.getAmount());
 
 			} catch (Exception ee) {
 				ee.printStackTrace();
@@ -121,7 +119,7 @@ public class DashboardConroller
 	public String refund(ModelMap model) {
 		return "refund";
 	}
-	
+
 	@RequestMapping(value = "/feedback", method = RequestMethod.GET)
 	public String feedback(ModelMap model) {
 		return "feedback";

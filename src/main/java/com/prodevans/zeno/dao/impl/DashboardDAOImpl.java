@@ -1,7 +1,6 @@
 
 package com.prodevans.zeno.dao.impl;
 
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -10,6 +9,8 @@ import java.util.Vector;
 
 import org.apache.xmlrpc.XmlRpcException;
 import org.apache.xmlrpc.client.XmlRpcClient;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.prodevans.zeno.dao.DashboardDAO;
@@ -19,6 +20,8 @@ import com.prodevans.zeno.pojo.SubscriptionStatus;
 import com.prodevans.zeno.pojo.UserDetails;
 
 public class DashboardDAOImpl implements DashboardDAO {
+
+	private static final Logger logger = LoggerFactory.getLogger(DashboardDAOImpl.class);
 
 	@Autowired
 	private String unifyHandler;
@@ -59,35 +62,39 @@ public class DashboardDAOImpl implements DashboardDAO {
 			details.setActno(Integer.parseInt(result.get("actno").toString()));
 			return details;
 		} else {
-			return null;
+			return details;
 		}
 	}
 
 	@Override
-	public SubscriptionDetails getSubscriptionDetails(String customer_id) throws XmlRpcException, ParseException {
+	public SubscriptionDetails getSubscriptionDetails(String customer_id) {
 		SubscriptionDetails details = new SubscriptionDetails();
 		Vector<Object> params = new Vector<>();
 		params.add(customer_id);
-		Object[] res = (Object[]) rpcClient.execute(unifyHandler + ".getSubscriptions", params);
+		try {
+			Object[] res = (Object[]) rpcClient.execute(unifyHandler + ".getSubscriptions", params);
 
-		if (res.length > 0) {
-			for (Object o : res) {
+			if (res.length > 0) {
+				for (Object o : res) {
 
-				HashMap<String, Object> result = (HashMap<String, Object>) o;
-				if (Integer.parseInt(result.get("status").toString()) == 0) {
-					details.setRatePlan(result.get("svcdescr").toString());
-					details.setStartDate(result.get("startDate").toString());
-					details.setStatus(Integer.parseInt(result.get("status").toString()));
-					details.setExpirydt(result.get("expirydt").toString());
-					details.setSvctype(result.get("svctype").toString());
-					details.setSubsno(Integer.parseInt(result.get("subsno").toString()));
-					details.setFUPLimit(getFUPLimit(details.getRatePlan()));
-					details.setDataUsed(getDataUsed(details.getStartDate(), details.getExpiryDate(), customer_id));
-					return details;
+					HashMap<String, Object> result = (HashMap<String, Object>) o;
+					if (Integer.parseInt(result.get("status").toString()) == 0) {
+						details.setRatePlan(result.get("svcdescr").toString());
+						details.setStartDate(result.get("startDate").toString());
+						details.setStatus(Integer.parseInt(result.get("status").toString()));
+						details.setExpirydt(result.get("expirydt").toString());
+						details.setSvctype(result.get("svctype").toString());
+						details.setSubsno(Integer.parseInt(result.get("subsno").toString()));
+						details.setFUPLimit(getFUPLimit(details.getRatePlan()));
+						details.setDataUsed(getDataUsed(details.getStartDate(), details.getExpiryDate(), customer_id));
+						return details;
+					}
 				}
+			} else {
+				return details;
 			}
-		} else {
-			return details;
+		} catch (Exception ee) {
+			logger.error("No subscription found : " + ee.getMessage());
 		}
 		return details;
 	}
@@ -109,16 +116,20 @@ public class DashboardDAOImpl implements DashboardDAO {
 
 	private long getDataUsed(Date startDate, Date endDate, String customerID) throws XmlRpcException {
 		SubscriptionStatus status = new SubscriptionStatus();
+		long TotalBytes = 0;
 		Vector params = new Vector();
 		params.add(startDate);
 		params.add(endDate);
 		params.add(customerID);
-		Object[] token = (Object[]) rpcClient.execute(unifyHandler + ".getSessionHistory", params);
+		try {
+			Object[] token = (Object[]) rpcClient.execute(unifyHandler + ".getSessionHistory", params);
 
-		long TotalBytes = 0;
-		for (Object ob : token) {
-			HashMap<String, Object> hs = (HashMap<String, Object>) ob;
-			TotalBytes += Long.parseLong(hs.get("totalbytes").toString());
+			for (Object ob : token) {
+				HashMap<String, Object> hs = (HashMap<String, Object>) ob;
+				TotalBytes += Long.parseLong(hs.get("totalbytes").toString());
+			}
+		} catch (Exception ee) {
+			logger.error("No Data found : " + ee.getMessage());
 		}
 		return TotalBytes;
 
@@ -145,24 +156,29 @@ public class DashboardDAOImpl implements DashboardDAO {
 	}
 
 	@Override
-	public List<SessionHistory> getAllSession(Date startDate, Date endDate, String customerID) throws XmlRpcException {
+	public List<SessionHistory> getAllSession(Date startDate, Date endDate, String customerID) {
 		List<SessionHistory> allsession = new ArrayList<SessionHistory>();
 
 		Vector params = new Vector();
 		params.add(startDate);
 		params.add(endDate);
 		params.add(customerID);
-		Object[] token = (Object[]) rpcClient.execute(unifyHandler + ".getSessionHistory", params);
 
-		long TotalBytes = 0;
-		for (Object ob : token) {
-			HashMap<String, Object> hs = (HashMap<String, Object>) ob;
-			SessionHistory hsHistory = new SessionHistory();
-			hsHistory.setBytesin(Long.parseLong(hs.get("bytesin").toString()));
-			hsHistory.setBytesout(Long.parseLong(hs.get("bytesout").toString()));
-			hsHistory.setDuration(Long.parseLong(hs.get("duration").toString()));
-			hsHistory.setTotalbytes(Long.parseLong(hs.get("totalbytes").toString()));
-			allsession.add(hsHistory);
+		try {
+			Object[] token = (Object[]) rpcClient.execute(unifyHandler + ".getSessionHistory", params);
+
+			long TotalBytes = 0;
+			for (Object ob : token) {
+				HashMap<String, Object> hs = (HashMap<String, Object>) ob;
+				SessionHistory hsHistory = new SessionHistory();
+				hsHistory.setBytesin(Long.parseLong(hs.get("bytesin").toString()));
+				hsHistory.setBytesout(Long.parseLong(hs.get("bytesout").toString()));
+				hsHistory.setDuration(Long.parseLong(hs.get("duration").toString()));
+				hsHistory.setTotalbytes(Long.parseLong(hs.get("totalbytes").toString()));
+				allsession.add(hsHistory);
+			}
+		} catch (Exception ee) {
+			logger.error("No session found : " + ee.getMessage());
 		}
 		return allsession;
 
