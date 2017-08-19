@@ -188,7 +188,6 @@ label.css-label
                          <li ><a href="${pageContext.request.contextPath }/dashboard">Home</a></li>
                      <li class="active" ><a href="${pageContext.request.contextPath }/billingPayment">Make Payment</a></li>  
                      <li><a href="${pageContext.request.contextPath }/service">Service Request</a></li> 
-                     <li><a href="${pageContext.request.contextPath }/help">Help</a></li> 
                      <li><a href="${pageContext.request.contextPath }/parental-control">Parental Control</a></li>
                      <li><a href="${pageContext.request.contextPath }/profile">Profile</a></li>
                      <li><a href="${pageContext.request.contextPath }/logout">Logout</a></li>
@@ -208,7 +207,7 @@ label.css-label
                  <div class="col-lg-12 col-md-12 col-sm-12 margin-top-5 " style="padding-left: 10%;">
                      
                      	<div class="col-md-6">
-                     		<h2 style="font-family:Roboto; font-size:30px">Bill Summary</h2>
+                     		<h2 style="font-family:Roboto; font-size:30px">Add on new Top Up</h2>
                      	</div>  
                      	
                     

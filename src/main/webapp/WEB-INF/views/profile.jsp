@@ -59,7 +59,6 @@
 							Payment</a></li>
 					<li><a href="${pageContext.request.contextPath }/service">Service
 							Request</a></li>
-					<li><a href="${pageContext.request.contextPath }/help">Help</a></li>
 					<li><a
 						href="${pageContext.request.contextPath }/parental-control">Parental
 							Control</a></li>
