@@ -156,7 +156,7 @@
 		                     	</div>
 			                    <div class="row">
 			                    	<div class="col-md-6">
-			                    		<a href="#">
+			                    		<a href="viewBill" target="_blank">
 			                               <div class="payNowButton1">
 			                                   View Bill
 			                               </div>

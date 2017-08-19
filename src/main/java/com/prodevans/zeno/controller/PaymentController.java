@@ -107,6 +107,16 @@ public class PaymentController
 		return "payment/sendData";
 	}
 
+	@RequestMapping(value = "/viewBill", method=RequestMethod.GET)
+	public String viewBill(ModelMap model, HttpSession session) throws XmlRpcException, ParseException
+	{
+		SessionDetails user = (SessionDetails) session.getAttribute("user");
+		//for getting invoice details
+		InvoiceDetails invoiceDetails=invoiceDAOImpl.getInvoice(user.getActno());
+		model.addAttribute("invoiceDetails", invoiceDetails);
+		return "payment/viewBill";
+	}
+	
 	@RequestMapping(value = "/ccavRequestHandler", method=RequestMethod.POST)
 	public String ccavRequestHandler()
 	{
