@@ -113,6 +113,7 @@
 			params.add(pd.getInstrumentid());
 			params.add(pd.getInstrument_detail());
 			params.add(pd.getTrans_descr());
+			params.add(pd.getInvoiceNo());
 
 			String server_url = "http://52.172.205.76/unifyv3/xmlRPC.do";
 			URL serverUrl = new URL(server_url);
