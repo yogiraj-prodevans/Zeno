@@ -6,19 +6,34 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.prodevans.zeno.pojo.InvoiceDetails;
 import com.prodevans.zeno.pojo.SessionDetails;
+import com.prodevans.zeno.pojo.TopUp;
 
 @Controller
 public class TopUpController 
 {
 	@RequestMapping(value = "/toup50GB", method = RequestMethod.GET)
-	public String toup50GB(ModelMap model, HttpSession session)
+	public String toup50GB(ModelMap model, HttpSession session,@RequestParam("planSize") String planSize,@RequestParam("amount") String amount,@RequestParam("planName") String planName)
 	{
 		SessionDetails user = (SessionDetails) session.getAttribute("user");
 		model.addAttribute("user_details", user);
+		
+		TopUp topUp=new TopUp();
+		
+		topUp.setAmount(Double.parseDouble(amount));
+		topUp.setPlanName(planName);
+		topUp.setPlanSize(planSize);
+		model.addAttribute("topUp", topUp);
+
 		return "topup/toup50GB";
+	}
+	
+	@RequestMapping(value = "/ccvTopUpRequestHandler", method = RequestMethod.POST)
+	public String ccavRequestHandler() {
+		return "topup/ccvTopUpRequestHandler";
 	}
 
 }

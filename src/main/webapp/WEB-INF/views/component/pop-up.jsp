@@ -65,7 +65,7 @@
                 <tr>
                   <td>
                     <div class="circleBlock1">
-                      <a href="#">
+                      <a href="${pageContext.request.contextPath }/toup50GB?planSize=50GB&amount=120&planName=512Kbps">
                         <div class="circle1">
                           <br><p style="font-size:16px;">5GB</p><br>
                           <p style="font-size:12px;">INR 120/</p>

@@ -228,7 +228,7 @@ label.css-label
 			
 				<input type="hidden" name="actno" value="${user_details.getActno() }">				
 				<input type="hidden" name="trans_amount" value="${invoiceDetails.getAmount() }">
-				<input type="hidden" name="invoiceNo" value="${user_details.getInvoiceno() }">
+				<input type="hidden" name="invoiceNo" value="${invoiceDetails.getInvoiceno() }">
 				
 				<input type="hidden" name="trans_type" value="C">
 				<input type="hidden" name="currency" value="INR">
