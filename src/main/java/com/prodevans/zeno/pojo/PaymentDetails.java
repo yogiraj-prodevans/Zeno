@@ -29,7 +29,7 @@ public class PaymentDetails
 		// TODO Auto-generated constructor stub
 	}
 	public PaymentDetails(int actno, double trans_amount, String trans_type, Date trans_date, String currency,
-			int instrumentid, String instrument_detail, String trans_descr) {
+			int instrumentid, String instrument_detail, String trans_descr, int invoiceNo) {
 		super();
 		this.actno = actno;
 		this.trans_amount = trans_amount;
@@ -39,6 +39,8 @@ public class PaymentDetails
 		this.instrumentid = instrumentid;
 		this.instrument_detail = instrument_detail;
 		this.trans_descr = trans_descr;
+		this.invoiceNo=invoiceNo;
+		
 	}
 	public int getActno() {
 		return actno;

@@ -188,7 +188,6 @@ label.css-label
                          <li ><a href="${pageContext.request.contextPath }/dashboard">Home</a></li>
                      <li class="active" ><a href="${pageContext.request.contextPath }/billingPayment">Make Payment</a></li>  
                      <li><a href="${pageContext.request.contextPath }/service">Service Request</a></li> 
-                     <li><a href="${pageContext.request.contextPath }/help">Help</a></li> 
                      <li><a href="${pageContext.request.contextPath }/parental-control">Parental Control</a></li>
                      <li><a href="${pageContext.request.contextPath }/profile">Profile</a></li>
                      <li><a href="${pageContext.request.contextPath }/logout">Logout</a></li>
@@ -227,8 +226,8 @@ label.css-label
 			<form method="post" name="customerData" action="ccavRequestHandler" class="form-horizontal form-without-legend ">
 			
 				<input type="hidden" name="actno" value="${user_details.getActno() }">				
-				<input type="hidden" name="trans_amount" value="${user_details.getPendingAmount() }">
-				<input type="hidden" name="invoiceNo" value="${user_details.getInvoiceno() }">
+				<input type="hidden" name="trans_amount" value="${invoiceDetails.getAmount() }">
+				<input type="hidden" name="invoiceNo" value="${invoiceDetails.getInvoiceno() }">
 				
 				<input type="hidden" name="trans_type" value="C">
 				<input type="hidden" name="currency" value="INR">

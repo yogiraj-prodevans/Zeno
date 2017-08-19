@@ -59,7 +59,6 @@
 							Payment</a></li>
 					<li><a href="${pageContext.request.contextPath }/service">Service
 							Request</a></li>
-					<li><a href="${pageContext.request.contextPath }/help">Help</a></li>
 					<li><a
 						href="${pageContext.request.contextPath }/parental-control">Parental
 							Control</a></li>
@@ -144,7 +143,7 @@
 												</td>
 											</tr>
 											<tr style="font-size: 12px; color: gray; line-height: 2">
-												<td>Moble Number</td>
+												<td>Moble</td>
 												<td>${profile.getMobileno() }</td>
 												
 											</tr>
