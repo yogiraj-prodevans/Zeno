@@ -11,7 +11,7 @@
                         <a href="${pageContext.request.contextPath }/terms">Terms of Service</a> |
                         <a href="${pageContext.request.contextPath }/refund">Refund and Cancellation</a> |
                         <a href="${pageContext.request.contextPath }/feedback">Feedback</a> |
-                        <a href="javascript:;">Contact Us</a>
+                        <a href="${pageContext.request.contextPath }/contactus">Contact Us</a>
                     </div>
                     <!-- END COPYRIGHT -->
                 </div>

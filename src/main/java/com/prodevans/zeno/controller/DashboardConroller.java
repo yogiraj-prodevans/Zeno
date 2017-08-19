@@ -123,6 +123,11 @@ public class DashboardConroller {
 	public String feedback(ModelMap model) {
 		return "feedback";
 	}
+	
+	@RequestMapping(value = "/contactus", method = RequestMethod.GET)
+	public String contactus(ModelMap model) {
+		return "contactus";
+	}
 
 	@RequestMapping(value = "/privacy", method = RequestMethod.GET)
 	public String privacy(ModelMap model) {
