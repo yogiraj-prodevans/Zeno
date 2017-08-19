@@ -227,7 +227,7 @@ label.css-label
 			<form method="post" name="customerData" action="ccavRequestHandler" class="form-horizontal form-without-legend ">
 			
 				<input type="hidden" name="actno" value="${user_details.getActno() }">				
-				<input type="hidden" name="trans_amount" value="${user_details.getPendingAmount() }">
+				<input type="hidden" name="trans_amount" value="${invoiceDetails.getAmount() }">
 				<input type="hidden" name="invoiceNo" value="${user_details.getInvoiceno() }">
 				
 				<input type="hidden" name="trans_type" value="C">
