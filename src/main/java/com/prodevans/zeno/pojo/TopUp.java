@@ -6,6 +6,16 @@ public class TopUp
 	private String planSize;
 	private String planName;
 	private double amount;
+	private String postFUP;
+	
+	
+	
+	public String getPostFUP() {
+		return postFUP;
+	}
+	public void setPostFUP(String postFUP) {
+		this.postFUP = postFUP;
+	}
 	public String getPlanSize() {
 		return planSize;
 	}

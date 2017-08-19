@@ -16,7 +16,7 @@ import com.prodevans.zeno.pojo.TopUp;
 public class TopUpController 
 {
 	@RequestMapping(value = "/toup50GB", method = RequestMethod.GET)
-	public String toup50GB(ModelMap model, HttpSession session,@RequestParam("planSize") String planSize,@RequestParam("amount") String amount,@RequestParam("planName") String planName)
+	public String toup50GB(ModelMap model, HttpSession session,@RequestParam("planSize") String planSize,@RequestParam("amount") String amount,@RequestParam("planName") String planName,@RequestParam("postFUP") String postFUP)
 	{
 		SessionDetails user = (SessionDetails) session.getAttribute("user");
 		model.addAttribute("user_details", user);
@@ -26,6 +26,8 @@ public class TopUpController
 		topUp.setAmount(Double.parseDouble(amount));
 		topUp.setPlanName(planName);
 		topUp.setPlanSize(planSize);
+		topUp.setPostFUP(postFUP);
+		
 		model.addAttribute("topUp", topUp);
 
 		return "topup/toup50GB";
