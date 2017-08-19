@@ -35,5 +35,10 @@ public class TopUpController
 	public String ccavRequestHandler() {
 		return "topup/ccvTopUpRequestHandler";
 	}
+	
+	@RequestMapping(value = "/ccvTopUpResponseHandler", method = RequestMethod.POST)
+	public String ccvTopUpResponseHandler() {
+		return "topup/ccvTopUpResponseHandler";
+	}
 
 }
