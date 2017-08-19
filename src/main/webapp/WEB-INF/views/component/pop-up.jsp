@@ -34,12 +34,12 @@
 
                 <div class="col-lg-6 col-md-6">
                   <p style="font-size:15px; color:#010745; line-height:2">Your Current Plan</p>
-                  <p style="font-size:10px; color:gray; line-height:1.5">Plan Name : Name of Plan </p>
+                  <p style="font-size:10px; color:gray; line-height:1.5">Plan Name : ${SubscriptionDetails.getRatePlan() } </p>
                   <p style="font-size:10px; color:gray; line-height:1.5">Basic - INR 849 Per Month </p>
                 </div>
                 <div class="col-lg-6 col-md-6 ">  
                     <p style="font-size:15px; color:#010745; line-height:2">Plan Content</p>
-                    <p style="font-size:10px; color:gray; line-height:1.5">40GB Data</p>
+                    <p style="font-size:10px; color:gray; line-height:1.5">${SubscriptionDetails.getFUPLimit() }GB Data</p>
                     <p style="font-size:10px; color:gray; line-height:1.5">512Kbps Post FUP Speed</p>
                 </div> 
 

@@ -198,7 +198,7 @@
                                 
                                 <div class="col-lg-3 div2">
                                     <p style=" font-size:14px; line-height:.5">Your Current Plan</p><br>
-                                    <p style=" font-size:10px; color:gray; line-height:.5">Plan Name : Name of Plan </p>
+                                    <p style=" font-size:10px; color:gray; line-height:.5">Plan Name : ${SubscriptionDetails.getRatePlan() } </p>
                                     <p style=" font-size:10px; color:gray; line-height:.5">Basic -  INR 849 
                                         <span style=" font-size:8px; color:gray; line-height:.5">Per Month</span>
                                     </p>
@@ -206,7 +206,7 @@
                                     <br><br>
 
                                     <p style=" font-size:10px; line-height:.5">Plan Content</p><br>
-                                    <p style=" font-size:9px; color:gray; line-height:.5">1. 40GB Data</p>
+                                    <p style=" font-size:9px; color:gray; line-height:.5">1. ${SubscriptionDetails.getFUPLimit() }GB Data</p>
                                     <p style=" font-size:9px; color:gray; line-height:.5">2. 512Kbps Post FUP Speed Data</p>
                                 </div>
 
@@ -216,10 +216,12 @@
                                     <p style="font-size:10px; line-height:.5">Bill Period-</p>
 
                                     <div class="front-skills" style=" padding-top:20%">
-                                        <p style=" font-size:10px; color:gray; line-height:1"></strong>Usage <strong style="color:#E17C80"> &nbsp 40GB</strong></p> 
-
+                                        <p style="font-size: 10px; color: gray; line-height: 1">
+										Consumed <strong style="color: #E17C80">${SubscriptionDetails.getDataUsed() } GB</strong> of <strong
+											style="color: #E17C80">${SubscriptionDetails.getFUPLimit() } GB</strong>
+									</p>
                                         <div class=" progress">
-                                            <div role="progressbar" class="progress-bar" style="width: 50%;"></div>
+                                            <div role="progressbar" class="progress-bar" style="width: ${SubscriptionDetails.getDataPercent()}%;"></div>
                                         </div>
                                     </div>   
                                 </div>
