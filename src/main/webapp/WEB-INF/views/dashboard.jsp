@@ -127,7 +127,7 @@ canvas {
 								<p style="font-size: 10px; color: gray; line-height: .5">Account
 									No : ${user_details.getActid() }</p>
 								<p style="font-size: 15px; color: gray; line-height: 1">
-									Rs ${invoiceDetails.getAmount() } is due in <strong
+									Rs <strong style="color: #E17C80">${invoiceDetails.getAmount() }/-</strong> is due in <strong
 										style="color: #E17C80">${invoiceDetails.getRemainingDays() }
 									</strong>days
 								</p>
