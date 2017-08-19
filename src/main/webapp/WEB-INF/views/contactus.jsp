@@ -20,23 +20,38 @@
         <!--  include the all css components -->
         <jsp:include page="component/css.jsp"></jsp:include>
 
-            <style type="text/css">
+ <style type="text/css">
 
-                .submitButton
-                {
-                    margin-top:10%;
-                    margin-bottom:10%;
-                    width:70%;
-                    height: 5%;
-                    background-color: #010745;
-                    color: #FFF;
-                    border-color: #010745;
-                }
+     .submitButton
+     {
+         margin-top:10%;
+         margin-bottom:10%;
+         width:70%;
+         height: 5%;
+         background-color: #010745;
+         color: #FFF;
+         border-color: #010745;
+     }
 
+	.rotate
+	{
+		display: inline-block;
+    	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    /* -webkit-transform: rotate(270deg); */
+    	-ms-transform: rotate(270deg);
+    	transform: rotate(270deg);
+    	text-align: center;
+	}
+	.google-map
+	{
+		position: relative;
+    margin-top: 10px;
+    height: 200px;
+	}
 
-            </style>
+ </style>
 
-        </head>
+ </head>
 
         <body class="corporate">
             <!-- BEGIN TOP BAR -->
@@ -78,8 +93,7 @@
         </div>
 
 
-
-        <!-- BEGIN STEPS -->
+<!-- BEGIN STEPS -->
         <div class="row front-steps-wrapper"  style="margin-left: 0.001%;width: 100%;">
             <div class="col-lg-12 col-md-12 col-sm-12 front-step-col">
                 <div class="front-step front-stepv">
@@ -88,7 +102,7 @@
                             <div class="col-lg-12 col-md-12 col-sm-12 margin-top-5"  style="padding-left: 10%;">
 
                                 <div class="col-md-6">
-                                    <h2 style="font-family:Roboto; font-size:30px">We love to hear from you.</h2>
+                                    <h2 style="font-family:Roboto; font-size:30px">Contact Us.</h2>
                                 </div>
 
                             </div>
@@ -100,13 +114,79 @@
         <!-- END STEPS -->
 
 
+        <div class="main">
+            <div class="container">  
+                <div class="row" style="margin-left:4%;margin-top:4%">
+                    <div class="col-md-6">
+                        <form action="#">
+                            
+                            <div class="row" style="margin-left:4%">
+                                <div class="col-md-2">
+                                    Name:
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control">
+                                </div>          
+                            </div><br>
+                            
+                            <div class="row" style="margin-left:4%">
+                                <div class="col-md-2">
+                                    Email:
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control">
+                                </div>          
+                            </div><br>
+
+                            <div class="row" style="margin-left:4%">
+                                <div class="col-md-2">
+                                    Subject:
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control">
+                                </div>          
+                            </div><br>
+                            <div class="row" style="margin-left:4%">
+                                <div class="col-md-6">
+                                    Message:
+                                    <textarea class="form-control" style="height:20%; font-size:12px; font-style:italic;  box-shadow: none; border: none; border-bottom: .1px solid;"></textarea>
+                                </div>          
+                            </div><br>
 
 
+                            <div class="row col-md-6" style="margin-left:6%; margin-bottom: 8%;">
+                                <button class="submitButton" type="submit">Submit</button>
+                            </div>
 
-
-
-
-
+                        </form>
+                    </div>
+                    <div class="col-md-6">
+	                    <div class="row">
+							<div class="col-lg-6 col-md-6 col-sm-6">
+								<h2>Address</h2><br>
+								<p>Novel Tech Park, 3rd Floor,<br>
+								No. 46/4 Garvebhavi Palya Hongasandra,<br>
+								Hosur Road, Bengaluru,<br>
+								Karnataka 560068.</p>
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-6">
+								<div class="row">
+									<h2>Contact</h2><br>
+									<p>+91 - 99019602602</p><br>
+								</div>
+								<div class="row">
+									<h2>Mail</h2><br>
+									<p><a  "href="mailto:info@oneeight.co.in">info@oneeight.co.in</a></p>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="google-map" data-latitude="12.9024492" data-longitude="77.6318219"></div>
+						</div>
+					</div>
+                </div>
+            </div>
+        </div>
 
 
         <!-- included pop up -->
