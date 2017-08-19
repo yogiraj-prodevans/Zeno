@@ -143,7 +143,7 @@
                  <div class="col-lg-12 col-md-12 col-sm-12 margin-top-5 " style="padding-left: 10%;">
                      
                      	<div class="col-md-6">
-                     		<h2 style="font-family:Roboto; font-size:30px">Billing Payment</h2>
+                     		<h2 style="font-family:Roboto; font-size:30px">Bill Payment</h2>
                      	</div>
                      	<div class="col-md-6">
                      		<div class="col-md-6">
@@ -152,7 +152,7 @@
                      		
                      			<div class="row" style="margin-left: 0.2%; ">
 		                     		<h2 style="font-family:Roboto; font-size:20px">Current Bill</h2>
-		                     		<h2 style="color:#E17C80;font-family:Roboto; font-size:26px">INR ${user_details.getPendingAmount() }/-</h2><br>
+		                     		<h2 style="color:#E17C80;font-family:Roboto; font-size:26px">INR ${invoiceDetails.getAmount() }/-</h2><br>
 		                     	</div>
 			                    <div class="row">
 			                    	<div class="col-md-6">
@@ -230,7 +230,7 @@
 
                                     <div class="front-skills" style=" padding-top:15%"></div>
 
-                                    <p style="font-size:16px; color:gray; line-height:1">INR <strong style="color:#E17C80">${user_details.getPendingAmount() }/- </strong> is due in <strong style="color:#E17C80">5 </strong>days</p>
+                                    <p style="font-size:16px; color:gray; line-height:1">INR <strong style="color:#E17C80">${invoiceDetails.getAmount() }/- </strong> is due in <strong style="color:#E17C80">${invoiceDetails.getRemainingDays() } </strong>days</p>
 
                                     <div class="front-skills" style=" padding-top:15%"></div>
                                     <p style="font-size:10px; color:gray; line-height:1">Due Date : 02/06/2017</p>

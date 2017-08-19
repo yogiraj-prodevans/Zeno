@@ -1,5 +1,8 @@
 package com.prodevans.zeno.pojo;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class InvoiceDetails
@@ -21,17 +24,23 @@ public class InvoiceDetails
 	public void setInvoiceno(int invoiceno) {
 		this.invoiceno = invoiceno;
 	}
-	public Date getStartdt() {
-		return startdt;
+	public String getStartdt() {
+		return DateFormat.getDateInstance(DateFormat.LONG).format(startdt);
 	}
-	public void setStartdt(Date startdt) {
-		this.startdt = startdt;
+	public void setStartdt(String startdt) throws ParseException
+	{
+		SimpleDateFormat formatter = new SimpleDateFormat("EEE MMM dd HH:mm:ss z yyyy");
+		Date date = formatter.parse(startdt);
+		this.startdt = date;
 	}
-	public Date getEnddt() {
-		return enddt;
+	public String getEnddt() {
+		return DateFormat.getDateInstance(DateFormat.LONG).format(enddt);
 	}
-	public void setEnddt(Date enddt) {
-		this.enddt = enddt;
+	public void setEnddt(String enddt) throws ParseException 
+	{
+		SimpleDateFormat formatter = new SimpleDateFormat("EEE MMM dd HH:mm:ss z yyyy");
+		Date date = formatter.parse(enddt);
+		this.enddt = date;
 	}
 	public float getOpeningBalance() {
 		return openingBalance;
@@ -51,17 +60,24 @@ public class InvoiceDetails
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public Date getDuedt() {
-		return duedt;
+	public String getDuedt() 
+	{
+		return DateFormat.getDateInstance(DateFormat.LONG).format(duedt);
 	}
-	public void setDuedt(Date duedt) {
-		this.duedt = duedt;
+	public void setDuedt(String duedt) throws ParseException
+	{
+		SimpleDateFormat formatter = new SimpleDateFormat("EEE MMM dd HH:mm:ss z yyyy");
+		Date date = formatter.parse(duedt);
+		this.duedt = date;
 	}
-	public Date getInvoicedt() {
-		return invoicedt;
+	public String getInvoicedt() {
+		return DateFormat.getDateInstance(DateFormat.LONG).format(invoicedt);
 	}
-	public void setInvoicedt(Date invoicedt) {
-		this.invoicedt = invoicedt;
+	public void setInvoicedt(String invoicedt) throws ParseException 
+	{
+		SimpleDateFormat formatter = new SimpleDateFormat("EEE MMM dd HH:mm:ss z yyyy");
+		Date date = formatter.parse(invoicedt);
+		this.invoicedt = date;
 	}
 	public float getPendingamount() {
 		return pendingamount;
@@ -70,7 +86,10 @@ public class InvoiceDetails
 		this.pendingamount = pendingamount;
 	}
 	
-	
+	public String getRemainingDays() {
+		long diff = (duedt.getTime() - new Date().getTime()) / (24 * 60 * 60 * 1000);
+		return diff + "";
+	}
 	
 	
 }

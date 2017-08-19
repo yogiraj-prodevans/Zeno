@@ -128,12 +128,12 @@ canvas {
 									No : ${user_details.getActid() }</p>
 								<p style="font-size: 15px; color: gray; line-height: 1">
 									Rs ${invoiceDetails.getAmount() } is due in <strong
-										style="color: #E17C80">${SubscriptionDetails.getRemainingDays() }
+										style="color: #E17C80">${invoiceDetails.getRemainingDays() }
 									</strong>days
 								</p>
 								<div class="front-skills" style="padding-top: 30%">
 									<p style="font-size: 10px; color: gray; line-height: 1">Due
-										Date : ${SubscriptionDetails.getExpirydt() }</p>
+										Date : ${invoiceDetails.getDuedt() }</p>
 								</div>
 							</div>
 							<div class="col-lg-12"

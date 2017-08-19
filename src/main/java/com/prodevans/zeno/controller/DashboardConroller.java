@@ -51,6 +51,10 @@ public class DashboardConroller {
 				System.out.println(user.toString());
 				UserDetails userdetails = DashboardImpl.getUserDetails(user.getActid());
 
+				// for getting invoice details
+				InvoiceDetails invoiceDetails = invoiceDAOImpl.getInvoice(user.getActno());
+				model.addAttribute("invoiceDetails", invoiceDetails);
+
 				model.addAttribute("user_details", user);
 
 				SubscriptionDetails details = DashboardImpl.getSubscriptionDetails(user.getActid());
@@ -60,11 +64,6 @@ public class DashboardConroller {
 				List<SessionHistory> hs = DashboardImpl.getAllSession(details.getStartDate(), details.getExpiryDate(),
 						user.getActid());
 				model.addAttribute("SessionHistory", hs);
-
-				// for getting invoice details
-				InvoiceDetails invoiceDetails = invoiceDAOImpl.getInvoice(user.getActno());
-				model.addAttribute("invoiceDetails", invoiceDetails);
-				System.out.println("Amount to be pay for this month is : " + invoiceDetails.getAmount());
 
 			} catch (Exception ee) {
 				ee.printStackTrace();

@@ -1,5 +1,6 @@
 package com.prodevans.zeno.dao.impl;
 
+import java.text.ParseException;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Vector;
@@ -26,7 +27,7 @@ public class InvoiceDAOImpl implements InvoiceDAO
 	}
 
 	@Override
-	public InvoiceDetails getInvoice(int actno) throws XmlRpcException
+	public InvoiceDetails getInvoice(int actno) throws XmlRpcException, ParseException
 	{
 		InvoiceDetails invoiceDetails=new InvoiceDetails();
 
@@ -45,10 +46,10 @@ public class InvoiceDAOImpl implements InvoiceDAO
 			invoiceDetails.setOpeningBalance(Float.parseFloat(hs.get("openingBalance").toString()));
 			invoiceDetails.setPendingamount(Float.parseFloat(hs.get("pendingamount").toString()));
 			
-			//invoiceDetails.setDuedt((Date) hs.get("duedt"));
-			invoiceDetails.setEnddt((Date)hs.get("enddt"));
-			invoiceDetails.setInvoicedt((Date)hs.get("invoicedt"));
-			invoiceDetails.setStartdt((Date)hs.get("startdt"));
+			invoiceDetails.setDuedt(hs.get("duedt").toString());
+			invoiceDetails.setEnddt(hs.get("enddt").toString());
+			invoiceDetails.setInvoicedt(hs.get("invoicedt").toString());
+			invoiceDetails.setStartdt(hs.get("startdt").toString());
 			
 		}
 		

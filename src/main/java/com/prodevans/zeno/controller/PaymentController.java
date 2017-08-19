@@ -2,6 +2,7 @@ package com.prodevans.zeno.controller;
 
 import java.net.URLDecoder;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
@@ -58,7 +59,7 @@ public class PaymentController
 	private PaymentDetails paymentDetails=new PaymentDetails();
 	
 	@RequestMapping(value = "/billingPayment", method = RequestMethod.GET)
-	public String billingPayment(ModelMap model, HttpSession session) throws XmlRpcException 
+	public String billingPayment(ModelMap model, HttpSession session) throws XmlRpcException, ParseException 
 	{
 		if (session.getAttribute("user") == null) 
 		{
@@ -84,7 +85,7 @@ public class PaymentController
 	}
 
 	@RequestMapping(value = "/payment", method = RequestMethod.GET)
-	public String doPayment(ModelMap model, HttpSession session) throws XmlRpcException
+	public String doPayment(ModelMap model, HttpSession session) throws XmlRpcException, ParseException
 	{
 		SessionDetails user = (SessionDetails) session.getAttribute("user");
 	
