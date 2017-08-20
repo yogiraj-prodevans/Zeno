@@ -100,10 +100,24 @@
 		
 		TopUpPaymentDetails pd=(TopUpPaymentDetails)session.getAttribute("data");
 		boolean success=false;
+		Boolean sendCustomer=false;
+		Boolean sendOE=false;
+		
 		if(responseFromCCAvenue.get("order_status").equals("Success"))
 		{
 			
 			Vector<Object> params = new Vector<>();
+			Vector<Object> paramsCustomer = new Vector<>();
+			paramsCustomer.add("Message");
+			paramsCustomer.add("Subject");
+			paramsCustomer.add(responseFromCCAvenue.get("billing_email"));
+			paramsCustomer.add(1);
+			
+			Vector<Object> paramsOE = new Vector<>();
+			paramsOE.add("Message");
+			paramsOE.add("Subject");
+			paramsOE.add("suguna@oneeight.co.in");
+			paramsOE.add(1);
 			
 			params.add(pd.getActno());
 			params.add(pd.getTrans_amount());
@@ -127,6 +141,10 @@
 			Object o=(Object) server.execute("unify.addTransaction",params);
 			int Transaction_id=(int)o;
 			pd.setTransaction_id(Transaction_id);
+			
+			sendCustomer= (Boolean) server.execute("unify.sendMail",paramsCustomer); 
+			sendOE= (Boolean) server.execute("unify.sendMail",paramsOE);
+			
 			success=true;
 		}
 
