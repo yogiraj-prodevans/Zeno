@@ -226,7 +226,7 @@ label.css-label
 			<form method="post" name="customerData" action="ccvTopUpRequestHandler" class="form-horizontal form-without-legend ">
 			
 				<input type="hidden" name="actno" value="${user_details.getActno() }">				
-				<input type="hidden" name="trans_amount" value="${topUp.getAmount() }">
+				<input type="hidden" name="trans_amount" value="1">
 				<input type="hidden" name="planSize" value="${topUp.getPlanSize() }">
 				<input type="hidden" name="planName" value="${topUp.getPlanName() }">
 				<input type="hidden" name="postFUP" value="${topUp.getPostFUP() }">
@@ -246,7 +246,7 @@ label.css-label
 		                		<div class="col-md-4">
 			                		<p style=" font-size:14px; line-height:.5">Account No : ${user_details.getActid() }  </p><br>
 			                		<p style=" font-size:14px; line-height:.5">Name : ${user_details.getFirst_name() } ${user_details.getLast_name() } </p><br>
-			                        <p style=" font-size:14px; line-height:.5">Amount : ${topUp.getAmount() }/-  </p><br>
+			                        <p style=" font-size:14px; line-height:.5">Amount : 1/-  </p><br>
 			                        <p style=" font-size:14px; line-height:.5">Email  : ${user_details.getEmail() }</p><br>
 			                        <p style=" font-size:14px; line-height:.5">Mobile No.  : ${user_details.getMobileno() } </p><br>
 			                        
@@ -325,7 +325,7 @@ label.css-label
 						<input readonly="readonly" type="hidden" name="tid" id="tid" value=""/><!-- Transaction ID -->
 		               	<input type="hidden" name="merchant_id" value="127191"/><!-- Merchant Id	: -->
 					   	<input type="hidden" name="order_id" value="1236556561"/><!-- Order Id	: -->
-					   	<input type="hidden" name="amount" value="${topUp.getAmount() }"   />
+					   	<input type="hidden" name="amount" value="1"   />
 						<input type="hidden" name="currency" value="INR"/><!-- Currency	: -->
 						<input type="hidden" name="redirect_url" value="http://52.172.215.71/zeno/ccvTopUpResponseHandler"/><!-- Redirect URL	: -->
 						<input type="hidden" name="cancel_url" value="http://52.172.215.71/zeno/ccvCancelResponse"/><!-- Cancel URL	: -->
@@ -333,7 +333,7 @@ label.css-label
 		                <input readonly="readonly" type="hidden" name="tid" id="tid" value=""/><!-- Transction ID -->
 		                <input type="hidden" name="merchant_id" value="127191"/><!-- Merchant ID -->
 						<input type="hidden" name="order_id" value="123654789"/><!-- order id -->
-						<input type="hidden" name="amount" value="${topUp.getAmount() }"/><!--Amount  -->
+						<input type="hidden" name="amount" value="1"/><!--Amount  -->
 						<input type="hidden" name="currency" value="INR"/><!-- currency -->
 						<input type="hidden" name="redirect_url" value="http://52.172.215.71/zeno/ccvTopUpResponseHandler"/><!-- Redirect URL -->
 						<input type="hidden" name="cancel_url" value="http://52.172.215.71/zeno/ccvCancelResponse"/><!-- cancel url -->
