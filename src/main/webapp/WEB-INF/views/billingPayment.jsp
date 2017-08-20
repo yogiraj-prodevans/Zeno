@@ -87,6 +87,11 @@
 @media (max-width: 380px)
 {
 }
+
+.div2{
+margin: 40px;
+min-height: 180px;
+}
 </style>
 
 
@@ -214,7 +219,7 @@
                                     <p style="font-size:10px; line-height:.5">Account No : ${user_details.getActid() }</p>
                                     <p style="font-size:10px; line-height:.5">Bill Period-</p>
 
-                                    <div class="front-skills" style=" padding-top:20%">
+                                    <div class="front-skills" style=" padding-top:15%">
                                         <p style="font-size: 10px; color: gray; line-height: 1">
 										Consumed <strong style="color: #E17C80">${SubscriptionDetails.getDataUsed() } GB</strong> of <strong
 											style="color: #E17C80">${SubscriptionDetails.getFUPLimit() } GB</strong>
