@@ -65,7 +65,7 @@
                 <tr>
                   <td>
                     <div class="circleBlock1">
-                      <a href="${pageContext.request.contextPath }/toup50GB?planSize=5GB&amount=120&planName=Add on 5GB&postFUP=512 Kbps">
+                      <a href="${pageContext.request.contextPath }/toup50GB?planName=Add on 5GB">
                         <div class="circle1">
                           <br><p style="font-size:16px;">5GB</p><br>
                           <p style="font-size:12px;">INR 120/</p>
@@ -77,7 +77,7 @@
                   </td>
                   <td>
                     <div class="circleBlock2">
-                      <a href="${pageContext.request.contextPath }/toup50GB?planSize=10GB&amount=220&planName=Add on 10GB&postFUP=512 Kbps">
+                      <a href="${pageContext.request.contextPath }/toup50GB?planName=Add on 10GB">
                         <div class="circle2">
                           <br><p style="font-size:16px;">10GB</p><br>
                           <p style="font-size:12px;">INR 220/</p>
