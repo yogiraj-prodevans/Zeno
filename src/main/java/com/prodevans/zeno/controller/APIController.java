@@ -63,7 +63,7 @@ public class APIController {
 
 		JSONObject col1 = new JSONObject();
 		col1.put("type", "string");
-		col1.put("label", "Duration");
+		col1.put("label", "Date");
 		colomn.put(col1);
 
 		JSONObject col2 = new JSONObject();
@@ -91,7 +91,7 @@ public class APIController {
 			JSONArray jarr = new JSONArray();
 
 			JSONObject element1 = new JSONObject();
-			element1.put("v", history.getDuration() + "");
+			element1.put("v", history.getFormattedDate());
 			jarr.put(element1);
 
 			JSONObject element2 = new JSONObject();

@@ -53,10 +53,9 @@
     
   .div2 {
     min-width: 280px;
-    min-height: 180px;    
+    min-height: 150px;    
     padding: 20px;
-    margin: 40px;
-    margin-bottom: 5px;
+    
     padding-bottom: 5px;
     border: .5px solid;
     border-color: #D9D9D9;

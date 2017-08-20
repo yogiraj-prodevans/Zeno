@@ -47,7 +47,7 @@ canvas {
             
         var options = {
           title: 'Data Usage',
-          curveType: 'function',
+          curveType: 'none',
           hAxis: {
               title: 'Time in week'
             },
@@ -144,7 +144,7 @@ canvas {
 					<div class="form-group">
 						<div class="col-lg-12 col-md-12 col-sm-12 "
 							style="padding-bottom: 16">
-							<div class="col-lg-5 div2">
+							<div class="col-md-6 div2" style="width: 50%">
 								<p style="font-size: 10px; color: gray; line-height: .5">Zeno</p>
 								<p style="font-size: 10px; color: gray; line-height: .5">Account
 									No : ${user_details.getActid() }</p>
@@ -152,7 +152,7 @@ canvas {
 									Plan Name : ${SubscriptionDetails.getRatePlan() }</p>
 								<!-- BEGIN PROGRESS BAR -->
 
-								<div class="front-skills " style="padding-top: 20%">
+								<div class="front-skills " style="padding-top: 5%">
 									<p style="font-size: 10px; color: gray; line-height: 1">
 										Consumed <strong style="color: #E17C80">${SubscriptionDetails.getDataUsed() } GB</strong> of <strong
 											style="color: #E17C80">${SubscriptionDetails.getFUPLimit() } GB</strong>
@@ -164,7 +164,8 @@ canvas {
 								</div>
 								<!-- END PROGRESS BAR -->
 							</div>
-							<div class="col-lg-5 div2">
+							
+							<div class="col-md-6 div2" style="margin-left: 20px;width: 48%; ">
 								<p style="font-size: 10px; color: gray; line-height: .5">Payment</p>
 								<p style="font-size: 10px; color: gray; line-height: .5">Account
 									No : ${user_details.getActid() }</p>
@@ -173,15 +174,15 @@ canvas {
 										style="color: #E17C80">${invoiceDetails.getRemainingDays() }
 									</strong>days
 								</p>
-								<div class="front-skills" style="padding-top: 30%">
+								<div class="front-skills" style="padding-top: 13%">
 									<p style="font-size: 10px; color: gray; line-height: 1">Due
 										Date : ${invoiceDetails.getDuedt() }</p>
 								</div>
 							</div>
-							<div class="col-lg-12"
-								style="border: 1px solid black; min-height: 100px; margin-bottom: 100px;">
+							<div class="col-lg-12 div2"
+								style="min-height: 200px; margin-bottom: 100px; margin-top: 20px">
 								
-<div id="curve_chart" style="min-height: 500px" ></div>
+<div id="curve_chart"  ></div>
 
 
 							</div>

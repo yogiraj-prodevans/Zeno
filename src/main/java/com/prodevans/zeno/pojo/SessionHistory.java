@@ -1,10 +1,15 @@
 package com.prodevans.zeno.pojo;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class SessionHistory {
 	private long totalbytes;
 	private long duration;
 	private long bytesin;
 	private long bytesout;
+	private Date date;
 
 	/**
 	 * @param totalbytes
@@ -98,6 +103,32 @@ public class SessionHistory {
 	public String toString() {
 		return "SessionHistory [totalbytes=" + totalbytes + ", duration=" + duration + ", bytesin=" + bytesin
 				+ ", bytesout=" + bytesout + "]";
+	}
+
+	/**
+	 * @return the date
+	 */
+	public Date getDate() {
+		return date;
+	}
+
+	/**
+	 * @return the date
+	 */
+	public String getFormattedDate() {
+		SimpleDateFormat sm = new SimpleDateFormat("dd MMM");
+		return sm.format(date);
+	}
+
+	/**
+	 * @param date
+	 *            the date to set
+	 * @throws ParseException
+	 */
+	public void setDate(String date) throws ParseException {
+		SimpleDateFormat sm = new SimpleDateFormat("yyyy-MM-dd");
+		Date dt = sm.parse(date);
+		this.date = dt;
 	}
 
 }

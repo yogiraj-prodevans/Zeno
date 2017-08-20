@@ -175,6 +175,7 @@ public class DashboardDAOImpl implements DashboardDAO {
 				hsHistory.setBytesout(Long.parseLong(hs.get("bytesout").toString()));
 				hsHistory.setDuration(Long.parseLong(hs.get("duration").toString()));
 				hsHistory.setTotalbytes(Long.parseLong(hs.get("totalbytes").toString()));
+				hsHistory.setDate(hs.get("start").toString());
 				allsession.add(hsHistory);
 			}
 		} catch (Exception ee) {
