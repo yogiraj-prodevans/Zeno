@@ -174,7 +174,7 @@
             </div>
         </div>
         <!-- END FOOTER -->
-         <jsp:include page="component/footer.jsp"></jsp:include>
+         <jsp:include page="component/footerLogin.jsp"></jsp:include>
         <!-- Load javascripts at bottom, this will reduce page load time -->
         <!-- BEGIN CORE PLUGINS (REQUIRED FOR ALL PAGES) -->
         <!--[if lt IE 9]>
