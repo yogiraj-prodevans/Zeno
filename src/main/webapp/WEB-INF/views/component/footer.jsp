@@ -12,7 +12,9 @@
                         <a href="${pageContext.request.contextPath }/refund">Refund and Cancellation</a> |
                         <a href="${pageContext.request.contextPath }/feedback">Feedback</a> |
                         <a href="${pageContext.request.contextPath }/contactus">Contact Us</a> | 
-                        <a href="${pageContext.request.contextPath }/help">FAQ</a>
+                        <a href="${pageContext.request.contextPath }/help">FAQ</a> |
+                        <a href="#">Know your CPE</a> |
+                        <a href="#">Know your bill</a> 
                     </div>
                     <!-- END COPYRIGHT -->
                 </div>

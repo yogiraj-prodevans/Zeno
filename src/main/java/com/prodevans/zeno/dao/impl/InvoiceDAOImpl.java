@@ -27,13 +27,14 @@ public class InvoiceDAOImpl implements InvoiceDAO
 	}
 
 	@Override
-	public InvoiceDetails getInvoice(int actno) throws XmlRpcException, ParseException
+	public InvoiceDetails getInvoice(int actno) 
 	{
 		InvoiceDetails invoiceDetails=new InvoiceDetails();
 
 		Vector<Object> params = new Vector<>();
 		params.add(actno);
 		System.out.println("Actno : "+actno);
+		try {
 		Object token[]=(Object[]) rpcClient.execute(unifyHandler+".getInvoices",params);
 		
 		for (Object ob : token) 
@@ -52,7 +53,9 @@ public class InvoiceDAOImpl implements InvoiceDAO
 			invoiceDetails.setStartdt(hs.get("startdt").toString());
 			
 		}
-		
+		}catch(Exception ee) {
+			ee.printStackTrace();
+		}
 		return invoiceDetails;
 
 	}

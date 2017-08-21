@@ -12,3 +12,8 @@ buildNumber.properties
 !/.mvn/wrapper/maven-wrapper.jar
 
 
+target/zeno/WEB-INF/lib/spring-aop-4.3.9.RELEASE.jar
+*.jar
+*.jar
+target/zeno/WEB-INF/lib/javax.inject-1.jar
+*.jar

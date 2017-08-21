@@ -149,7 +149,7 @@
                             </div>
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 margin-top-0 padding-top-0">
-                            <p style="font-family:Roboto; font-size:14px; " style="font-color:#ffffff"> <a style="color:#ffffff;" href="#">Know your CPE &nbsp</a> | <a style="color:#ffffff;" href="#">&nbsp Know your bill</a></p>
+                            <!--  <p style="font-family:Roboto; font-size:14px; " style="font-color:#ffffff"> <a style="color:#ffffff;" href="#">Know your CPE &nbsp</a> | <a style="color:#ffffff;" href="#">&nbsp Know your bill</a></p>-->
                         </div>
                     </div>
                 </div>
