@@ -1,5 +1,8 @@
 package com.prodevans.zeno.controller;
 
+import java.util.Calendar;
+import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -12,12 +15,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.google.gson.Gson;
 import com.prodevans.zeno.dao.impl.DashboardDAOImpl;
 import com.prodevans.zeno.pojo.SessionDetails;
 import com.prodevans.zeno.pojo.SessionHistory;
 import com.prodevans.zeno.pojo.SubscriptionDetails;
-import com.prodevans.zeno.pojo.UserDetails;
 
 @Controller
 public class APIController {
@@ -36,24 +37,43 @@ public class APIController {
 		try {
 			SessionDetails user = (SessionDetails) session.getAttribute("user");
 			System.out.println(user.toString());
-			UserDetails userdetails = DashboardImpl.getUserDetails(user.getActid());
 
 			SubscriptionDetails details = DashboardImpl.getSubscriptionDetails(user.getActid());
 			System.out.println("user subscription details : " + details.toString());
 
 			List<SessionHistory> hs = DashboardImpl.getAllSession(details.getStartDate(), details.getExpiryDate(),
 					user.getActid());
-			Gson gson = new Gson();
+			hs = normalizeHistory(hs, details.getStartDate());
+
+			System.out.println(hs.toString());
+
+			Collections.sort(hs);
+			System.out.println(hs.toString());
 
 			return getJson(hs);
-			// return "{ \"cols\":[ {\"type\":\"string\"}, {\"type\":\"number\"}],
-			// \"rows\":[ {\"c\":[{\"v\":\"20-01-13\"}, {\"v\":22}]},
-			// {\"c\":[{\"v\":\"21-01-13\"}, {\"v\":24}]}, {\"c\":[{\"v\":\"22-01-13\"},
-			// {\"v\":27}]} ]}";
+
 		} catch (Exception ee) {
 			ee.printStackTrace();
 		}
 		return null;
+	}
+
+	private List<SessionHistory> normalizeHistory(List<SessionHistory> hs, Date StartDate) {
+		Date check_date = StartDate;
+		Date today = new Date();
+		while (check_date.after(StartDate) && check_date.before(today)) {
+			boolean res = hs.contains(check_date);
+			if (res == false) {
+				hs.add(new SessionHistory(check_date));
+			}
+
+			Calendar c = Calendar.getInstance();
+			c.setTime(check_date);
+			c.add(Calendar.DATE, 1);
+			check_date = c.getTime();
+		}
+
+		return hs;
 	}
 
 	private String getJson(List<SessionHistory> hs) {
@@ -62,7 +82,7 @@ public class APIController {
 		JSONArray colomn = new JSONArray();
 
 		JSONObject col1 = new JSONObject();
-		col1.put("type", "string");
+		col1.put("type", "number");
 		col1.put("label", "Date");
 		colomn.put(col1);
 
@@ -85,24 +105,49 @@ public class APIController {
 
 		JSONArray rows = new JSONArray();
 
+		JSONObject row = new JSONObject();
+
+		JSONArray jarr = new JSONArray();
+
+		JSONObject element1 = new JSONObject();
+		element1.put("v", 0);
+		jarr.put(element1);
+
+		JSONObject element2 = new JSONObject();
+		element2.put("v", 0);
+		jarr.put(element2);
+
+		JSONObject element3 = new JSONObject();
+		element3.put("v", 0);
+		jarr.put(element3);
+
+		JSONObject element4 = new JSONObject();
+		element4.put("v", 0);
+		jarr.put(element4);
+
+		row.put("c", jarr);
+		rows.put(row);
+
+		int cnt = 1;
 		for (SessionHistory history : hs) {
-			JSONObject row = new JSONObject();
 
-			JSONArray jarr = new JSONArray();
+			row = new JSONObject();
 
-			JSONObject element1 = new JSONObject();
-			element1.put("v", history.getFormattedDate());
+			jarr = new JSONArray();
+
+			element1 = new JSONObject();
+			element1.put("v", cnt++);
 			jarr.put(element1);
 
-			JSONObject element2 = new JSONObject();
+			element2 = new JSONObject();
 			element2.put("v", history.getBytesin());
 			jarr.put(element2);
 
-			JSONObject element3 = new JSONObject();
+			element3 = new JSONObject();
 			element3.put("v", history.getBytesout());
 			jarr.put(element3);
 
-			JSONObject element4 = new JSONObject();
+			element4 = new JSONObject();
 			element4.put("v", history.getTotalbytes());
 			jarr.put(element4);
 

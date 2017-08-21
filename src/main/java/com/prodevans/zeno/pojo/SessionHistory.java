@@ -4,7 +4,22 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class SessionHistory {
+public class SessionHistory implements Comparable<SessionHistory> {
+	/**
+	 * @param totalbytes
+	 * @param duration
+	 * @param bytesin
+	 * @param bytesout
+	 * @param date
+	 */
+	public SessionHistory(long totalbytes, long duration, long bytesin, long bytesout, Date date) {
+		this.totalbytes = totalbytes;
+		this.duration = duration;
+		this.bytesin = bytesin;
+		this.bytesout = bytesout;
+		this.date = date;
+	}
+
 	private long totalbytes;
 	private long duration;
 	private long bytesin;
@@ -17,11 +32,12 @@ public class SessionHistory {
 	 * @param bytesin
 	 * @param bytesout
 	 */
-	public SessionHistory(long totalbytes, long duration, long bytesin, long bytesout) {
-		this.totalbytes = totalbytes;
-		this.duration = duration;
-		this.bytesin = bytesin;
-		this.bytesout = bytesout;
+	public SessionHistory(Date dt) {
+		this.totalbytes = 0;
+		this.duration = 0;
+		this.bytesin = 0;
+		this.bytesout = 0;
+		this.date = dt;
 	}
 
 	/**
@@ -102,7 +118,7 @@ public class SessionHistory {
 	@Override
 	public String toString() {
 		return "SessionHistory [totalbytes=" + totalbytes + ", duration=" + duration + ", bytesin=" + bytesin
-				+ ", bytesout=" + bytesout + "]";
+				+ ", bytesout=" + bytesout + ", date=" + date + "]";
 	}
 
 	/**
@@ -129,6 +145,25 @@ public class SessionHistory {
 		SimpleDateFormat sm = new SimpleDateFormat("yyyy-MM-dd");
 		Date dt = sm.parse(date);
 		this.date = dt;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		Date dt = (Date) obj;
+		return date.equals(dt);
+	}
+
+	@Override
+	public int compareTo(SessionHistory o) {
+		if (date.before(o.getDate()))
+			return -1;
+		else
+			return 1;
 	}
 
 }
