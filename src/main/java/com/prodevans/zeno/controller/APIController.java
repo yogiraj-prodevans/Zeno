@@ -1,5 +1,6 @@
 package com.prodevans.zeno.controller;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
@@ -50,12 +51,39 @@ public class APIController {
 			Collections.sort(hs);
 			System.out.println(hs.toString());
 
+			System.out.println("Data progression added");
+			hs = ProgressionHistory(hs);
+
+			System.out.println(hs.toString());
+
 			return getJson(hs);
 
 		} catch (Exception ee) {
 			ee.printStackTrace();
 		}
 		return null;
+	}
+
+	private List<SessionHistory> ProgressionHistory(List<SessionHistory> hs) {
+		double total_bytes = 0;
+		double download = 0;
+		double upload = 0;
+		List<SessionHistory> new_hs = new ArrayList<SessionHistory>();
+		for (SessionHistory history : hs) {
+			total_bytes = total_bytes + history.getTotalbytes();
+			history.setTotalbytesMB((long) total_bytes);
+
+			upload = upload + history.getBytesin();
+			history.setBytesinMB((long) upload);
+
+			download = download + history.getBytesout();
+			history.setBytesoutMB((long) download);
+
+			new_hs.add(history);
+
+		}
+
+		return new_hs;
 	}
 
 	private List<SessionHistory> normalizeHistory(List<SessionHistory> hs, Date StartDate) {

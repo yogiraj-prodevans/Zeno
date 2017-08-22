@@ -167,19 +167,19 @@ public class DashboardDAOImpl implements DashboardDAO {
 		try {
 			Object[] token = (Object[]) rpcClient.execute(unifyHandler + ".getSessionHistory", params);
 
-			long TotalBytes = 0;
-			long download = 0;
-			long upload = 0;
+			double TotalBytes = 0;
+			double download = 0;
+			double upload = 0;
 			for (Object ob : token) {
 				HashMap<String, Object> hs = (HashMap<String, Object>) ob;
 				SessionHistory hsHistory = new SessionHistory();
-				upload += Long.parseLong(hs.get("bytesin").toString());
+				upload = Long.parseLong(hs.get("bytesin").toString());
 				hsHistory.setBytesin(upload);
-				download += Long.parseLong(hs.get("bytesout").toString());
+				download = Long.parseLong(hs.get("bytesout").toString());
 				hsHistory.setBytesout(download);
 				hsHistory.setDuration(Long.parseLong(hs.get("duration").toString()));
 
-				TotalBytes += Long.parseLong(hs.get("totalbytes").toString());
+				TotalBytes = Long.parseLong(hs.get("totalbytes").toString());
 				hsHistory.setTotalbytes(TotalBytes);
 				hsHistory.setDate(hs.get("start").toString());
 				allsession.add(hsHistory);

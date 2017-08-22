@@ -20,10 +20,10 @@ public class SessionHistory implements Comparable<SessionHistory> {
 		this.date = date;
 	}
 
-	private long totalbytes;
-	private long duration;
-	private long bytesin;
-	private long bytesout;
+	private double totalbytes;
+	private double duration;
+	private double bytesin;
+	private double bytesout;
 	private Date date;
 
 	/**
@@ -53,7 +53,7 @@ public class SessionHistory implements Comparable<SessionHistory> {
 	/**
 	 * @return the totalbytes
 	 */
-	public long getTotalbytes() {
+	public double getTotalbytes() {
 		return totalbytes;
 	}
 
@@ -61,14 +61,18 @@ public class SessionHistory implements Comparable<SessionHistory> {
 	 * @param totalbytes
 	 *            the totalbytes to set
 	 */
-	public void setTotalbytes(long totalbytes) {
+	public void setTotalbytes(double totalbytes) {
 		this.totalbytes = (totalbytes / (1024 * 1024 * 1024));
+	}
+
+	public void setTotalbytesMB(long totalbytes) {
+		this.totalbytes = totalbytes;
 	}
 
 	/**
 	 * @return the duration
 	 */
-	public long getDuration() {
+	public double getDuration() {
 		return duration;
 	}
 
@@ -83,7 +87,7 @@ public class SessionHistory implements Comparable<SessionHistory> {
 	/**
 	 * @return the bytesin
 	 */
-	public long getBytesin() {
+	public double getBytesin() {
 		return bytesin;
 	}
 
@@ -91,14 +95,18 @@ public class SessionHistory implements Comparable<SessionHistory> {
 	 * @param bytesin
 	 *            the bytesin to set
 	 */
-	public void setBytesin(long bytesin) {
+	public void setBytesin(double bytesin) {
 		this.bytesin = (bytesin / (1024 * 1024 * 1024));
+	}
+
+	public void setBytesinMB(long bytesin) {
+		this.bytesin = bytesin;
 	}
 
 	/**
 	 * @return the bytesout
 	 */
-	public long getBytesout() {
+	public double getBytesout() {
 		return bytesout;
 	}
 
@@ -106,8 +114,12 @@ public class SessionHistory implements Comparable<SessionHistory> {
 	 * @param bytesout
 	 *            the bytesout to set
 	 */
-	public void setBytesout(long bytesout) {
+	public void setBytesout(double bytesout) {
 		this.bytesout = (bytesout / (1024 * 1024 * 1024));
+	}
+
+	public void setBytesoutMB(long bytesout) {
+		this.bytesout = bytesout;
 	}
 
 	/*
