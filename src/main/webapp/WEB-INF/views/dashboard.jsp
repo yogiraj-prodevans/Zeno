@@ -50,7 +50,7 @@ canvas {
           curveType: 'none',
           hAxis: {
               title: "Time in week (${SubscriptionDetails.getStartdt() } - ${SubscriptionDetails.getExpirydt() })",
-              ticks: [{v:0, f:'week 0'},{v:7, f:'week 1'},{v:14, f:'week 2'},{v:21, f:'week 3'},{v:30, f:'week 4'}]
+              ticks: [{v:0, f:'0'},{v:7, f:'week 1'},{v:14, f:'week 2'},{v:21, f:'week 3'},{v:30, f:'week 4'}]
             },
             vAxis: {
               title: 'Data in GigaBytes',
