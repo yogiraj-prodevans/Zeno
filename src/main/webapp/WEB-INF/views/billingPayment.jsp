@@ -267,7 +267,7 @@
 
 
 	<div class="container">
-		<div class="row col-md-12" style="margin-bottom:10%;">
+		<div class="row col-md-12" style="margin-bottom:4%;">
 
 			<div class="col-md-4 ">
 				<div class="mainBlock3" style="background-color: #2980b9;">

@@ -14,6 +14,28 @@
 <style>
 
 /*Modal css start here*/
+
+input[type=password] 
+{
+    padding: 0;
+    height: 30px;
+    width: 100%;
+    position: relative;
+    left: 0;
+    outline: none;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: 0.5px solid #bdc3c7;
+    background-color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+.modal-dialog 
+{    
+    width: 25%;
+    height: 50%;
+}
 .modal-header 
 {
     padding: 8px;
@@ -25,12 +47,12 @@
 .modal-content 
 {    
     border-radius: 0px;
-    min-height: 60%;
 }
-.modal-dialog 
-{    
-    width: 30%;
+.modal-body
+{
+	height: 100%;
 }
+
 /*Modal css ends here*/    
     
  
@@ -166,7 +188,7 @@ a:hover{
     .modal-content 
     {    
         border-radius: 0px;
-        min-height: 45%;
+        min-height: 100%;
         margin: 15%;
         margin-left: 9%;
     }
@@ -174,6 +196,7 @@ a:hover{
     {    
         width: 100%;
     }
+    
     /*Modal css ends here*/ 
     
     /*Circle css starts here*/        

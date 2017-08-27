@@ -20,10 +20,39 @@
 
 <!--  include the all css components -->
 <jsp:include page="component/css.jsp"></jsp:include>
+<jsp:include page="component/Fixedblock_PopUp.jsp"></jsp:include>
 
 </head>
 
-<body class="corporate">
+<style>
+
+/* 3 blocks start here */  
+.col-md-4
+{
+    padding-left: 1px;
+    padding-right: 1px;
+}
+.mainBlock3
+{
+    max-width: 92%;
+    color: white;
+    margin-top: 5%;
+    padding-top: 1%;
+    padding-left: 4%;
+}
+/* 3 blocks End here */
+    
+.firstRow
+{
+    min-height: 70px;
+    padding-left: 5%;
+    color: white;
+}
+
+
+</style>
+
+<body class="corporate" style="font-family: Roboto;">
 	<!-- BEGIN TOP BAR -->
 	<div class="pre-header">
 		<div class="container">
@@ -71,28 +100,76 @@
 	</div>
 	<!-- Header END -->
 	
+<div class="col-md-12 firstRow" style="background-color:#ffbb19;">
+    <h3 style="text-shadow: 0.2px 0.2px white;">Login Contact and Details</h3>
+</div>    
 
-<!-- BEGIN STEPS -->
-        <div class="row front-steps-wrapper"  style="margin-left: 0.001%;width: 100%;">
-            <div class="col-lg-12 col-md-12 col-sm-12 front-step-col">
-                <div class="front-step front-stepv">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 margin-top-5 ">
-                            <div class="col-lg-12 col-md-12 col-sm-12 margin-top-5"  style="padding-left: 10%;">
-
-                                <div class="col-md-6">
-                                    <h2 style="font-family:Roboto; font-size:30px">Login Contact and Details</h2>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<div class="container">
+    <div class="row col-md-12" style="margin-left:;">
+        
+        <div class="col-md-3">
+        </div>
+        
+        <div class="col-md-6">
+            <div class="mainBlock3" style="background-color: #2980b9;">
+            	<div class="row">
+	            	<div class="col-md-6">
+	            		<h4 class="whiteShadow">Account no:</h4>
+	            	</div>
+	            	<div class="col-md-6">
+	            		<h4 class="whiteShadow">${profile.getActid() }</h4>
+	            	</div>
+	            </div>
+	            <div class="row">
+	            	<div class="col-md-6">
+	            		<h4 class="whiteShadow">Password:</h4>
+	            	</div>
+	            	<div class="col-md-6">
+	            		<div class="col-md-8">
+	            			<a href="#changePassword" data-toggle="modal">
+	            				<h4 class="whiteShadow" style="font-size:20px;color:white;">*******</h4>
+	            			</a>
+	            		</div>
+	            		<div class="col-md-4">
+	            			<a href="#changePassword" data-toggle="modal">
+	            				<i class=" fa fa-pencil" style="color:white;margin:1%;"></i>
+	            			</a>
+	            		</div>
+	            	</div>
+	            </div>
+	            <div class="row">
+	            	<div class="col-md-6">
+	            		<h4 class="whiteShadow">Mobile:</h4>
+	            	</div>
+	            	<div class="col-md-6">
+	            		<h4 class="whiteShadow">${profile.getMobileno() }</h4>
+	            	</div>
+	            </div>
+	            <div class="row">
+	            	<div class="col-md-6">
+	            		<h4 class="whiteShadow">Email ID:</h4>
+	            	</div>
+	            	<div class="col-md-6">
+	            		<h4 class="whiteShadow">${profile.getEmail() }</h4>
+	            	</div>
+	            </div>
+	            <div class="row">
+	            	<div class="col-md-6">
+	            		<h4 class="whiteShadow">Address:</h4>
+	            	</div>
+	            	<div class="col-md-6">
+	            		<h4 class="whiteShadow">${profile.getAddress() }</h4>
+	            	</div>
+	            </div>
+			
             </div>
         </div>
-        <!-- END STEPS -->	
-	
-	
+        
+        <div class="col-md-3">
+        </div>
+    </div>
+</div>
+
 	
 	<div class="main">
 		<div class="container">
@@ -114,10 +191,10 @@
 									
 									<div class="col-md-3">
 									</div>
-									<div class="col-md-6">
+									<div class="col-md-6 mainBlock3" style="background-color: #2980b9;">
 										
 										<c:if test="${not empty result}">
-											<h5 style="color: #2ecc71;margin: 1%;text-align: center;">
+											<h5 style="margin: 1%;text-align: center;">
 												*Message : 	${result}
 											</h5>
 										</c:if>
@@ -125,11 +202,11 @@
 									
 										<table style="width: 100%; margin-left: 5%;">
 											
-											<tr style="font-size: 12px; color: gray; line-height: 2">
+											<tr style="font-size: 12px;line-height: 2">
 												<td>Account Number</td>
 												<td>${profile.getActid() }</td>
 												<td
-													style="font-size: 10px; align: left; color: gray; line-height: 2"><i
+													style="font-size: 10px; align: left;line-height: 2"><i
 													class=" fa fa-lock "></i></td>
 												
 												
@@ -245,6 +322,7 @@
 	<!-- END PRE-FOOTER -->
 	<!-- BEGIN FOOTER -->
 	
+	<jsp:include page="component/pop-up.jsp"></jsp:include>
 	<jsp:include page="component/footer.jsp"></jsp:include>
 	
 	

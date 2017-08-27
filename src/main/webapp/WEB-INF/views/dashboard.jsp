@@ -15,7 +15,9 @@
 <!-- link to image for socio -->
 
 <!--  include the all css components -->
-<jsp:include page="component/css.jsp"></jsp:include>
+<!-- <jsp:include page="component/css.jsp"></jsp:include> -->
+<jsp:include page="component/Fixedblock_PopUp.jsp"></jsp:include>
+
 <style>
 canvas {
 	-moz-user-select: none;
@@ -70,10 +72,140 @@ canvas {
       }
     </script>
 
+
+<style>
+.billPayment {
+	color: white;
+}
+
+.greyBlock {
+	background-color: #bdc3c7;
+}
+
+/* 3 blocks start here */
+.col-md-4 {
+	padding-left: 1px;
+	padding-right: 1px;
+}
+
+.mainBlock3 {
+	max-width: 92%;
+	min-height: 45%;
+	color: white;
+	margin-top: 4%;
+	padding-top: 2%;
+	padding-left: 7%;
+	padding-bottom: 2%;
+}
+/* 3 blocks End here */
+.firstRow {
+	min-height: 90px;
+	padding-top: 10px;
+}
+
+.firstRowBackImage {
+	background-image: url('corporate/img/back.png');
+	background-repeat: no-repeat, no-repeat, x-repeat;
+	min-height: 90px;
+}
+
+
+.progress {
+	height: 25px;
+	width: 90%;
+	margin-bottom: 20px;
+	overflow: hidden;
+	border-radius: 1px;
+	background-color: #f5f5f5;
+	-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+}
+
+.progressbarColor {
+	background-color: #7f8c8d;
+	height: 100%;
+}
+
+.whiteShadow {
+	/*text-shadow: 0.2px 0.2px white;*/
+	
+}
+
+.blackShadow {
+	text-shadow: 0.2px 0.2px black;
+}
+
+/* iphone 6 plus*/
+@media ( max-width : 530px) {
+	.mainBlock3 {
+		width: 88%;
+		min-height: 40%;
+		margin: 5%;
+	}
+	.firstRow {
+		min-width: 100%;
+		height:120px;
+	}
+
+}
+
+/* iphone 5*/
+@media ( max-width : 320px) {
+	.currentBillFontforiPhone5 {
+		font-size: 26px;
+		margin-left: 4px;
+	}
+	.mainBlock3 {
+		width: 88%;
+		min-height: 45%;
+		margin: 5%;
+	}
+	.billButton {
+		margin-top: 5%;
+		max-width: 120px;
+	}
+	.billButtonBlock1 {
+		margin-left: 5%;
+	}
+	.billButtonBlock2 {
+		margin-top: 5%;
+		margin-left: 60px;
+	}
+}
+
+/* iPad*/
+@media ( max-width : 768px) {
+	.firstRow {
+		min-width: 100%;
+		height:150px;
+		
+	}
+	
+	
+	.mainBlock3 {
+		width: 88%;
+		min-height: 30%;
+		margin: 5%;
+	}
+	.billButton {
+		margin-top: 5%;
+		max-width: 120px;
+	}
+	.billButtonBlock1 {
+		margin-left: 5%;
+	}
+	.billButtonBlock2 {
+		margin-top: 5%;
+		margin-left: 60%;
+	}
+}
+</style>
+
+
 </head>
 
 
-<body class="corporate">
+<body class="corporate" style="font-family: Roboto;">
 	<!-- BEGIN TOP BAR -->
 	<div class="pre-header">
 		<div class="container">
@@ -114,86 +246,64 @@ canvas {
      </div>
      <!-- Header END -->
 
-	<!-- BEGIN STEPS -->
-	<!-- BEGIN STEPS -->
-	<div class="row front-steps-wrapper"
-		style="margin-left: 0.001%; width: 100%;">
-		<div class="col-lg-12 col-md-12 col-sm-12 front-step-col">
-			<div class="front-step front-stepv">
-				<div class="row">
-					<div class="col-lg-12 col-md-12 col-sm-12 margin-top-5 ">
-						<div class="col-lg-12 col-md-12 col-sm-12 margin-top-5"
-							style="padding-left: 10%;">
-							<h2 style="font-family: Roboto; font-size: 45px">
-								<strong>Experience transparency</strong>
-							</h2>
-							<h2 style="font-family: Roboto; font-size: 30px">
-								Welcome, <strong style="color: #E17C80">${user_details.getFirst_name() }</strong>
-								to your stoic zeno page
-							</h2>
+<div class="col-md-12 firstRow" style="background-color:#ffbb19;padding-left:5%;padding-bottom:0.5%;">
+    <h3 style="color:white;">Experience transparency</h3>
+    <h2 style="font-family: Roboto; font-size: 30px;color:white;">
+		Welcome, <strong style="color: #e74c3c">${user_details.getFirst_name() }</strong>
+		to your stoic zeno page
+	</h2>
+</div>
+
+
+	<div class="container">
+		<div class="row col-md-12" style="margin-bottom:4%;">
+
+			<div class="col-md-4 ">
+				<div class="mainBlock3" style="background-color: #2980b9;">
+					<h3 class="whiteShadow">Your One8 account</h3>
+					<h5 class="whiteShadow" style="margin-top: 8%;">Account
+						no: ${user_details.getActid() }</h5>
+					<h5 class="whiteShadow">Plan Name:
+						${SubscriptionDetails.getRatePlan() }</h5>
+					<table style="margin: 0%;">
+						<tr>
+							<td>
+								<h4 class="blackShadow" style="color: black; margin-top: 67%;">Usage</h4>
+							</td>
+							<td>
+								<h2 class="blackShadow" style="color: black; margin-left: 20%;">
+									<strong>${SubscriptionDetails.getDataUsed() }GB</strong>
+								</h2>
+							</td>
+						</tr>
+					</table>
+					<div class=" progress">
+						<div class="progressbarColor" style="width: ${SubscriptionDetails.getDataPercent()}%;">
 						</div>
+					</div>	
+					<h3 class="whiteShadow">INR ${invoiceDetails.getAmount() } Due in
+						${invoiceDetails.getRemainingDays() } Days
+					</h3>
+					<h5 class="whiteShadow">Due Date: ${invoiceDetails.getDuedt() }</h5>
+				</div>
+			</div>
+
+			<div class="col-md-8">
+				<div class="col-lg-12 div2" style="margin-top: 20px;min-height:90%;">
+					<div id="curve_chart">
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>
-	<!-- END STEPS -->
 
-	<div class="main">
-		<div class="container">
-			<div class="col-lg-12 col-md-12 col-sm-12" style="padding-top: 1%;">
-				<form class="form-horizontal form-without-legend ">
-					<div class="form-group">
-						<div class="col-lg-12 col-md-12 col-sm-12 "
-							style="padding-bottom: 16">
-							<div class="col-md-6 div2" style="width: 50%">
-								<p style="font-size: 10px; color: gray; line-height: .5">Zeno</p>
-								<p style="font-size: 10px; color: gray; line-height: .5">Account
-									No : ${user_details.getActid() }</p>
-								<p style="font-size: 10px; color: gray; line-height: .5">Current
-									Plan Name : ${SubscriptionDetails.getRatePlan() }</p>
-								<!-- BEGIN PROGRESS BAR -->
-
-								<div class="front-skills " style="padding-top: 5%">
-									<p style="font-size: 10px; color: gray; line-height: 1">
-										Consumed <strong style="color: #E17C80">${SubscriptionDetails.getDataUsed() } GB</strong> of <strong
-											style="color: #E17C80">${SubscriptionDetails.getFUPLimit() } GB</strong>
-									</p>
-									<div class="progress">
-										<div role="progressbar" class="progress-bar"
-											style="width: ${SubscriptionDetails.getDataPercent()}%;"></div>
-									</div>
-								</div>
-								<!-- END PROGRESS BAR -->
-							</div>
-							
-							<div class="col-md-6 div2" style="margin-left: 20px;width: 48%; ">
-								<p style="font-size: 10px; color: gray; line-height: .5">Payment</p>
-								<p style="font-size: 10px; color: gray; line-height: .5">Account
-									No : ${user_details.getActid() }</p>
-								<p style="font-size: 15px; color: gray; line-height: 1">
-									Rs <strong style="color: #E17C80">${invoiceDetails.getAmount() }/-</strong> is due in <strong
-										style="color: #E17C80">${invoiceDetails.getRemainingDays() }
-									</strong>days
-								</p>
-								<div class="front-skills" style="padding-top: 13%">
-									<p style="font-size: 10px; color: gray; line-height: 1">Due
-										Date : ${invoiceDetails.getDuedt() }</p>
-								</div>
-							</div>
-							<div class="col-lg-12 div2"
-								style="min-height: 200px; margin-bottom: 100px; margin-top: 20px">
-								
-<div id="curve_chart"  ></div>
-
-
-							</div>
-						</div>
-				</form>
-			</div>
 		</div>
 	</div>
 
+
+
+
+
+	<!-- included pop up -->
+	<jsp:include page="component/pop-up.jsp"></jsp:include>
 	<!-- included pop up -->
         <jsp:include page="component/pop-up.jsp"></jsp:include>
             

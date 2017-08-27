@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 
 <!-- Code For Floating Points (Current Plan and Top Up) -->
+<!-- Code For Floating Points (Current Plan and Top Up) -->
 <ul class="fixedBlock">
   <li>
     <a class="topUpBlock" href="#topUP" data-toggle="modal">
@@ -108,5 +109,6 @@
     
     </div>
 </div>
+
 
 <!-- End of Modal Code for above floating point -->
