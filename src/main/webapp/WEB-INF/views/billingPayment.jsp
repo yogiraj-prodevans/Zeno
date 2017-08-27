@@ -271,7 +271,7 @@
                     <tr>
                         <td>
                             <div class="billButtonBlock1">
-                                <a href="#">
+                                <a href="viewBill">
                                     <div class="billButton">
                                         VIEW BILL
                                     </div>
@@ -280,7 +280,7 @@
                         </td>
                         <td>
                             <div class="billButtonBlock2">
-                                <a href="#">
+                                <a href="payment">
                                     <div class="billButton">
                                         PAY BILL
                                     </div>
