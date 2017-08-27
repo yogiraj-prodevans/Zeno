@@ -18,84 +18,201 @@
 
 
         <!--  include the all css components -->
-        <jsp:include page="component/css.jsp"></jsp:include>
+<jsp:include page="component/css.jsp"></jsp:include>
+<jsp:include page="component/Fixedblock_PopUp.jsp"></jsp:include>
+
         </head>
-<style type="text/css">
+        
+        
+<style>
 
-.payNowButton2
+.billPayment
 {
-	width:90%;
-	height:25%;
-	margin:1%;
-	line-height:.5;
-	background-color:#010745;
-	text-align:center;
-	font-size:16px;
-	line-height:.5;
-	color:#ecf0f1;
-	align:center;
-	padding-top:12%;
+    color: white; 
 }
-.payNowButton2:hover
+.greyBlock
 {
-	background-color: #1F3A93;
-	color: #ecf0f1;
+    background-color: #bdc3c7;
 }
-.payNowButton1
+    
+/* 3 blocks start here */  
+.col-md-4
 {
-	width:90%;
-	height:6%;
-	margin:1%;
-	line-height:.5;
-	background-color:#f0f0f0;
-	text-align:center;
-	font-size:16px;
-	line-height:.5;
-	color:#010745;
-	align:center;
-	padding-top:12%;
+    padding-left: 1px;
+    padding-right: 1px;
 }
-.payNowButton1:hover
+.mainBlock3
 {
-	background-color: #bdc3c7;
-	background-color:#010745;
-	color: #f0f0f0;
-	border: 1px solid #f0f0f0; 
-	 
-	
+    max-width: 92%;
+    min-height: 45%;
+    color: white;
+    margin-top: 10%;
+    padding-top: 2%;
+    padding-left: 7%;
 }
+/* 3 blocks End here */
+    
+.firstRow
+{
+    min-height: 90px;
+    padding-top:10px;
+}
+    
+.firstRowBackImage
+{
+    background-image: url('corporate/img/back.png');
+    background-repeat:no-repeat;
+}
+    
+.billButtonBlock1
+{
+    width: 180%;
+    margin: 20%;
+    margin-top: 10%;
+}
+.billButtonBlock2
+{
 
+    width: 180%;
+    margin: 20%;
+    margin-left: 110%;
+}    
+    
+.billButton
+{
+    background-color: #e74c3c;
+    color: #ecf0f1;
+    max-width: 140px;;
+    min-height: 25px;
+    text-align: center;
+    padding: 2%;
+    margin-top: 15%;
+    font-size: 20px;
+}
+        
+.progress 
+{
+    height: 25px;
+    width: 90%;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 1px;
+    background-color: #f5f5f5;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+}    
+    
+.progressbarColor 
+{
+  background-color: #7f8c8d;
+  height: 100%;
+}  
+
+.whiteShadow
+{
+    /*text-shadow: 0.2px 0.2px white;*/
+    
+}
+    
+.blackShadow
+{
+    text-shadow: 0.2px 0.2px black;
+}    
+    
+    
 /* iphone 6 plus*/
 @media (max-width: 480px)
 {
-	.payNowButton1
-	{
-		width: 40%;
-		height: 5%;	
-		padding-top: 5%;
-	}
-	.payNowButton2
-	{
-		width: 80%;
-		height: 15%;
-	}
-	
-
-}
-
-/* iphone 6*/
-@media (max-width: 380px)
+    .mainBlock3 
+    {
+        width:88%;
+        min-height: 40%;
+        margin: 5%;
+    }
+    .billButton
+    {
+        margin-top: 5%;   
+    }
+    .billButtonBlock1
+    {
+        margin-left: 5%;
+    }
+    .billButtonBlock2
+    {
+        margin-top: 5%;
+    }
+}  
+    
+/* iphone 5*/
+@media (max-width: 320px)
 {
-}
-
-.div2{
-margin: 40px;
-min-height: 180px;
-}
+    .currentBillFontforiPhone5
+    {
+        font-size: 26px;
+        margin-left: 4px;
+    }
+    .mainBlock3 
+    {
+        width:88%;
+        min-height: 45%;
+        margin: 5%;
+    }
+    .billButton
+    {
+        margin-top: 5%; 
+        max-width: 120px;
+    }
+    .billButtonBlock1
+    {
+        margin-left: 5%;
+    }
+    .billButtonBlock2
+    {
+        margin-top: 5%;
+        margin-left: 60%;
+    }
+}      
+    
+/* iPad*/
+@media (max-width: 768px)
+{
+    .firstRow
+    {
+        min-width: 100%;
+        padding-top:10px;
+    }
+    .firstRowBackImage
+    {
+        background-image: url('corporate/img/back.png');
+        width: 100%;
+    }
+    .mainBlock3 
+    {
+        width:88%;
+        min-height: 30%;
+        margin: 5%;
+    }
+    .billButton
+    {
+        margin-top: 5%; 
+        max-width: 120px;
+    }
+    .billButtonBlock1
+    {
+        margin-left: 5%;
+    }
+    .billButtonBlock2
+    {
+        margin-top: 5%;
+        margin-left: 60%;
+    }
+}          
+    
 </style>
 
 
-<body class="corporate">
+
+<body class="corporate" style="font-family: Roboto;">
 
       <!-- BEGIN TOP BAR -->
       <div class="pre-header">
@@ -140,172 +257,92 @@ min-height: 180px;
 
 <!-- BEGIN STEPS -->
 
- <div class="row front-steps-wrapper"  style="margin-left: 0.001%;width: 100%;">
-     <div class="col-lg-12 col-md-12 col-sm-12 front-step-col">
-         <div class="front-step front-stepv">
-             <div class="row">
-                 <div class="col-lg-12 col-md-12 col-sm-12 margin-top-5 " style="padding-left: 10%;">
-                     
-                     	<div class="col-md-6">
-                     		<h2 style="font-family:Roboto; font-size:30px">Bill Payment</h2>
-                     	</div>
-                     	<div class="col-md-6">
-                     		<div class="col-md-6">
-                     		</div>
-                     		<div class="col-md-6">
-                     		
-                     			<div class="row" style="margin-left: 0.2%; ">
-		                     		<h2 style="font-family:Roboto; font-size:20px">Current Bill</h2>
-		                     		<h2 style="color:#E17C80;font-family:Roboto; font-size:26px">INR ${invoiceDetails.getAmount() }/-</h2><br>
-		                     	</div>
-			                    <div class="row">
-			                    	<div class="col-md-6">
-			                    		<a href="viewBill" target="_blank">
-			                               <div class="payNowButton1">
-			                                   View Bill
-			                               </div>
-					                    </a>
-			                    	</div>
-			                    	<div class="col-md-6">
-					                    <a href="payment">
-			                               <div class="payNowButton1">
-			                                   Pay Now
-			                               </div>
-					                    </a>
-					                </div>
-				                </div>
-				                
-				             </div>
-                        </div>
-                         
-                    
-                 </div>
-             </div>
-         </div>
-     </div>
- </div>
- <!-- END STEPS -->
-
-
-
-        
-        
-  <div class="main">
-      <div class="container">  
-          <!-- BEGIN STEPS -->
-
-                <!--  Start First Row-->
-                <div class="col-lg-12 col-md-12 col-sm-12" >
-                    <form class="form-horizontal form-without-legend ">
-                        <div class="form-group"> 
-                            <div class="col-lg-12 col-md-12 col-sm-12 " style=" padding-bottom:16">
-                                
-                                <div class="col-lg-3 div2">
-                                    <p style=" font-size:14px; line-height:.5">Your Current Plan</p><br>
-                                    <p style=" font-size:10px; color:gray; line-height:.5">Plan Name : ${SubscriptionDetails.getRatePlan() } </p>
-                                    <p style=" font-size:10px; color:gray; line-height:.5">Basic -  INR 849 
-                                        <span style=" font-size:8px; color:gray; line-height:.5">Per Month</span>
-                                    </p>
-
-                                    <br><br>
-
-                                    <p style=" font-size:10px; line-height:.5">Plan Content</p><br>
-                                    <p style=" font-size:9px; color:gray; line-height:.5">1. ${SubscriptionDetails.getFUPLimit() }GB Data</p>
-                                    <p style=" font-size:9px; color:gray; line-height:.5">2. 512Kbps Post FUP Speed Data</p>
-                                </div>
-
-                                <div class="col-lg-3 div2" >
-                                    <p style="font-size:14px; line-height:.5">Marcus</p>
-                                    <p style="font-size:10px; line-height:.5">Account No : ${user_details.getActid() }</p>
-                                    <p style="font-size:10px; line-height:.5">Bill Period-</p>
-
-                                    <div class="front-skills" style=" padding-top:15%">
-                                        <p style="font-size: 10px; color: gray; line-height: 1">
-										Consumed <strong style="color: #E17C80">${SubscriptionDetails.getDataUsed() } GB</strong> of <strong
-											style="color: #E17C80">${SubscriptionDetails.getFUPLimit() } GB</strong>
-									</p>
-                                        <div class=" progress">
-                                            <div role="progressbar" class="progress-bar" style="width: ${SubscriptionDetails.getDataPercent()}%;"></div>
-                                        </div>
-                                    </div>   
-                                </div>
-
-                                <div class="col-lg-3 div2" >
-                                    <p style=" font-size:10px; color:gray; line-height:.5">Payment</p>
-                                    <p style="font-size:10px; color:gray; line-height:.5">Account No : ${user_details.getActid() }</p>
-
-                                    <div class="front-skills" style=" padding-top:15%"></div>
-
-                                    <p style="font-size:16px; color:gray; line-height:1">INR <strong style="color:#E17C80">${invoiceDetails.getAmount() }/- </strong> is due in <strong style="color:#E17C80">${invoiceDetails.getRemainingDays() } </strong>days</p>
-
-                                    <div class="front-skills" style=" padding-top:15%"></div>
-                                    <p style="font-size:10px; color:gray; line-height:1">Due Date : ${invoiceDetails.getDuedt() }</p>
-
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <!--  End First Row-->
-  
-  
-  <!--               
+    <div class="row">
+        <div class="col-md-4 firstRow firstRowBackImage">
+            <h1 style="color:white;margin-left:15%;">Bill payment</h1>
+        </div>
+        <div class="col-md-8 firstRow" style="background-color: #ecf0f1;">
+            <div class="col-md-6">
+                <h2 style="text-shadow: 0.2px 0.2px black;" class="currentBillFontforiPhone5">Current bill INR ${invoiceDetails.getAmount() }</h2>
+            </div>
+            <div class="col-md-6">
                 
-                <div class="col-md-12 divBill">
-                    <div class="row">
-
-                        <div class="col-md-5">
-                            <div class="col-md-8">
-                                <p class="for3Text">Current Bill Amount</p><br>
-                            </div>
-                            <div class="col-md-4">  
-                                <div class="divRuppe">
-                                    <p style=" font-size:16px; line-height:.5; align:center; ">INR 1000</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="col-md-7">
-                                <p class="for3Text">Pending Payment</p><br>
-                            </div>
-                            <div class="col-md-5">  
-                                <div class="divRuppe">
-                                    <p style=" font-size:16px; line-height:.5; align:center; ">INR ${pendingAmount } </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-5">
-                            <div class="col-md-8">
-                                <p style="color:#010745;" class="for3Text">Total Amount</p><br>
-                            </div>
-                            <div class="col-md-4">  
-                                <div class="divRuppe" style="margin-top:1px;">
-                                    <p style=" font-size:16px; line-height:.5; align:center; ">INR 1000</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="col-md-1">
-                            </div>
-                            <div class="col-md-4">
-                                <a href="payment">
-                                    <div class="payNowButton2">
-                                   		<p>Pay Now</p>
-                               		</div>
+                <table>
+                    <tr>
+                        <td>
+                            <div class="billButtonBlock1">
+                                <a href="#">
+                                    <div class="billButton">
+                                        VIEW BILL
+                                    </div>
                                 </a>
-                            </div>
-                        </div>
+                            </div>    
+                        </td>
+                        <td>
+                            <div class="billButtonBlock2">
+                                <a href="#">
+                                    <div class="billButton">
+                                        PAY BILL
+                                    </div>
+                                </a>
+                            </div>    
+                        </td>
+                    </tr>
+                </table>        
+            </div>
+            
+        </div>
+    </div>
 
-                    </div>
+    
+    
+<div class="container">
+    <div class="row col-md-12" style="margin-left:;">
+        
+        <div class="col-md-4 ">
+            <div class="mainBlock3" style="background-color: #2980b9;">
+                <h3 class="whiteShadow">Your current plan</h3>
+                <h5 class="whiteShadow" style="margin-top:8%;">Plan Name: ${SubscriptionDetails.getRatePlan() }</h5>
+                <h5 class="whiteShadow">Basic-  INR 849 per Month</h5><br>
+
+                <h4 class="whiteShadow">Plan Content</h4>
+                <h5 class="whiteShadow">1. ${SubscriptionDetails.getFUPLimit() }GB Data</h5>
+                <h5 class="whiteShadow">2. 512Kbps Post FUP Speed Data</h5><br>            
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="mainBlock3" style="background-color: #ffbb19;">
+                <h3 class="whiteShadow">Your One8 account</h3>
+                <h5 style="color:black;margin-top:8%;" class="blackShadow">Account no: ${user_details.getActid() }</h5>
+                <h5 style="color:black;" class="blackShadow">Bill period- ${SubscriptionDetails.getStartdt() } - ${SubscriptionDetails.getExpirydt() }</h5><br>
+
+                <table style="margin:0%;">
+                    <tr>
+                        <td>
+                            <h4 class="blackShadow" style="color:black;margin-top:67%;">Usage</h4>
+                        </td>
+                        <td>
+                            <h2 class="blackShadow" style="color:black;margin-left:20%;"><strong>${SubscriptionDetails.getDataUsed() }GB</strong></h2>
+                        </td>
+                    </tr>
+                </table>
+                <div class=" progress">
+                    <div class="progressbarColor" style="width: ${SubscriptionDetails.getDataPercent()}%;"></div>
                 </div>
-      
-       -->          
-
-	</div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="mainBlock3" style="background-color: #e74c3c;">
+                <h3 class="whiteShadow">Payment</h3>
+                <h5 class="whiteShadow" style="margin-top:8%;">Account no: ${user_details.getActid() }</h5>
+                <h3 class="whiteShadow">INR ${invoiceDetails.getAmount() }</h3>
+                <h3 class="whiteShadow" style="margin-top:10px;">Due in ${invoiceDetails.getRemainingDays() } Days</h3><br>
+                <h5 class="whiteShadow">Due Date: ${invoiceDetails.getDuedt() }</h5>
+            </div>
+        </div>
+    </div>
 </div>
 
 
