@@ -5,14 +5,14 @@
 <!-- Code For Floating Points (Current Plan and Top Up) -->
 <ul class="fixedBlock">
   <li>
-    <a class="topUpBlock" href="toup50GB?planName=Add on 5GB" data-toggle="modal">
+    <a class="topUpBlock" href="#topUP" data-toggle="modal">
       <div class="textCSS">
         Top Up
       </div>
     </a>
   </li>
   <li>
-    <a class="currentPlanBlock" href="toup50GB?planName=Add on 10GB" data-toggle="modal">
+    <a class="currentPlanBlock" href="#currentPlan" data-toggle="modal">
       <div class="textCSS">
         Your Plan
       </div>
