@@ -14,7 +14,7 @@
 </head>
 <body>
 	<%
-	/*
+	
 	String instrument_detail=request.getParameter("instrument_detail");
 	String d[]=instrument_detail.split(",");
 
@@ -30,7 +30,7 @@
 	pd.setTrans_descr(request.getParameter("trans_descr"));
 	
 	session.setAttribute("data",pd);
-	*/
+	
 	
 	
 	 String accessCode= "AVRC72EG07BS00CRSB";		//Put in the Access Code in quotes provided by CCAVENUES.

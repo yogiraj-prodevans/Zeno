@@ -25,7 +25,47 @@
 
         <!--  include the all css components -->
         <jsp:include page="../component/css.jsp"></jsp:include>
+<jsp:include page="../component/Fixedblock_PopUp.jsp"></jsp:include>
 
+<style>
+
+.billPayment
+{
+    color: white; 
+}
+.greyBlock
+{
+    background-color: #bdc3c7;
+}
+    
+/* 3 blocks start here */  
+.mainBlock3
+{
+    max-width: 92%;
+    color: white;
+    margin-top: 5%;
+    padding-top: 1%;
+    padding-left: 4%;
+}
+/* 3 blocks End here */
+    
+.firstRow
+{
+    min-height: 100px;
+    padding-top:10px;
+}
+      
+/* iphone 6 plus*/
+@media (max-width: 480px)
+{
+    .mainBlock3 
+    {
+        width:100%;
+        margin: 5%;
+    }
+}    
+    
+</style>
 </head>
         <body class="corporate">
             <!-- BEGIN TOP BAR -->
@@ -135,107 +175,67 @@ if(success)
 {
 %>
 		
- <div class="container">
- 	<div class="col-md-6">
- 		<div style="margin-left: 10%;margin-top: 10%;margin-bottom: 10%;">
- 			
- 			<img alt="thick" src="corporate/img/logos/yes.png" style="height: 10%;width: 10%;">
-	 		
-	 		<h2 style="font-family:Roboto; font-size:56px; color: #2ecc71;">
-	 		Thank You!
-	 		</h2><br>
-	 		<h2 style="font-size:44px; color: #2c3e50;margin-left: 2%;margin-bottom: 0px;">Payment was</h2><br>
-	 		<h2 style="font-size:44px; color: #2c3e50;margin-left: 2%;">successful.</h2>
-	 	</div>
- 	</div>
- 	<div class="col-md-6">
- 		<div style="background-color:#010745; margin-top: 1%;padding-bottom: 2%;">
-	 		<div class="row" style="margin-left: 5%; padding-top: 5%;">
-	 			<h2 style="font-family:Roboto; font-size:24px; color: #FFF;">Payment Summary</h2><br>
-	 		</div>
-	 		<div class="row" style="margin-left: 5%;">
-	 			<div class="row">
-	 				<h2 style="font-family:Roboto; font-size:12px; color: #FFF;margin-left: 3%;">Your payment of INR <%=responseFromCCAvenue.get("amount") %>/- on <%=pd.getTrans_date() %>.</h2><br>
-	 			</div>
-	 			<div class="row" style="margin-left: 1%;">
-	 				<div class="col-md-4">
-	 					<div class="row">
-		 					<h2 style="font-family:Roboto; font-size:10px; color: #FFF;">TRANSACTION NUMBER</h2>
-		 				</div>
-		 				<div class="row">
-		 					<h2 style="font-family:Roboto; font-size:16px; color: #FFF;"><%=pd.getTransaction_id() %></h2>
-		 				</div>
-		 			</div>
-		 			<div class="col-md-4">
-	 					<div class="row">
-		 					<h2 style="font-family:Roboto; font-size:10px; color: #FFF;">EMAIL ID</h2>
-		 				</div>
-		 				<div class="row">
-		 					<h2 style="font-family:Roboto; font-size:16px; color: #FFF;"><%=responseFromCCAvenue.get("billing_email") %></h2>
-		 				</div>
-		 			</div>
-		 		</div>
-	 		</div>
-
-	 	</div>
-	 	
-	 	<div class="row">
-	 		<div class="col-md-6">
-	 			<a href="#">
-	 			<div class="confirmPayment">
-	 				Download Invoice
-	 			</div>
-	 			</a>
-			 </div>
-	 	</div>
-	 	
-	 	
- 	</div>
- </div>
+    <div class="row">
+        <div class="col-md-4 firstRow" style="background-image: url('back.png');background-repeat:no-repeat;">
+            <h1 style="color:white;margin-left:15%;">Bill payment</h1>
+        </div>
+        <div class="col-md-8 firstRow" style="background-color: #ecf0f1;">
+            <div class="col-md-10">
+                <h1>Your transaction was successful.</h1>
+            </div>
+            <div class="col-md-2">
+               
+            </div>
+        </div>
+    </div>
+    
+	<div class="container">
+	    <div class="row col-md-12">
+	        <div class="col-md-4">
+	        </div>
+	        <div class="col-md-8">
+	            <div class="mainBlock3" style="background-color: #2980b9;">
+	                <h4>Payment summary</h4><br>
+	                <h3>Your payment of INR.<%=responseFromCCAvenue.get("amount") %>/- was successful.</h3><br>
+	                <h5>TRANSACTION ID</h5>
+	                <h4><%=pd.getTransaction_id() %></h4><br>
+	            </div>
+	        </div>
+	    </div>
+	</div>
 <%
 }
 else
 {
 %>
- <div class="container">
- 	<div class="col-md-6">
- 		<div style="margin-left: 10%;margin-top: 10%;margin-bottom: 10%;">
- 			
- 			<img alt="thick" src="corporate/img/logos/cross.png" style="height: 10%;width: 10%;">
-	 		
-	 		<h2 style="font-family:Roboto; font-size:56px; color: #e74c3c;">
-	 		Transaction Aborted!
-	 		</h2><br>
-	 		<h2 style="font-size:44px; color: #2c3e50;margin-left: 2%;margin-bottom: 0px;">Payment was</h2><br>
-	 		<h2 style="font-size:44px; color: #2c3e50;margin-left: 2%;">unsuccessful.</h2>
-	 	</div>
- 	</div>
- 	<div class="col-md-6">
- 		<div style="background-color:#010745; margin-top: 1%;padding-bottom: 2%;">
-	 		<div class="row" style="margin-left: 5%; padding-top: 5%;">
-	 			<h2 style="font-family:Roboto; font-size:24px; color: #FFF;">Payment Summary</h2><br>
-	 		</div>
-	 		<div class="row" style="margin-left: 5%;">
-	 			<div class="row">
-	 				<h2 style="font-family:Roboto; font-size:12px; color: #FFF;margin-left: 3%;">Your payment of INR <%=pd.getTrans_amount() %>/- on <%=pd.getTrans_date() %> was aborted.</h2><br>
-	 			</div>
-	 			<div class="row" style="margin-left: 1%;">
-	 				<div class="col-md-8">
-	 					<div class="row">
-		 					<h2 style="font-family:Roboto; font-size:10px; color: #FFF;">REASON</h2>
-		 				</div>
-		 				<div class="row">
-		 					<h2 style="font-family:Roboto; font-size:16px; color: #e74c3c;"><%=responseFromCCAvenue.get("status_message") %></h2>
-		 				</div>
-		 			</div>
-		 		</div>
-	 		</div>
-
-	 	</div>
-	 	
-	 	
- 	</div>
- </div>
+	<div class="row">
+        <div class="col-md-4 firstRow" style="background-image: url('back.png');background-repeat:no-repeat;">
+            <h1 style="color:white;margin-left:15%;">Bill payment</h1>
+        </div>
+        <div class="col-md-8 firstRow" style="background-color: #ecf0f1;">
+            <div class="col-md-10">
+                <h1>Your transaction was unsuccessful.</h1>
+            </div>
+            <div class="col-md-2">
+               
+            </div>
+        </div>
+    </div>
+    
+	<div class="container">
+	    <div class="row col-md-12">
+	        <div class="col-md-4">
+	        </div>
+	        <div class="col-md-8">
+	            <div class="mainBlock3" style="background-color: #2980b9;">
+	                <h4>Payment summary</h4><br>
+	                <h3>Your payment of INR.<%=responseFromCCAvenue.get("amount") %>/- was unsuccessful.</h3><br>
+	                <h5>REASON</h5>
+	                <h4><%=responseFromCCAvenue.get("status_message") %></h4><br>
+	            </div>
+	        </div>
+	    </div>
+	</div>
 <%
 }
 %>

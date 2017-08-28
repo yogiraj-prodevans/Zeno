@@ -146,7 +146,6 @@
 		boolean success=false;
 		Boolean sendCustomer=false;
 		Boolean sendOE=false;
-		Integer Transaction_id=0;
 		
 		if(responseFromCCAvenue.get("order_status").equals("Success"))
 		{
@@ -169,67 +168,15 @@
 				paramsOE.add(1);
 				/*For Sednding Mails Start*/
 				
-				/*Setting Values for instrumetn id,details, transtype, currency, trans desciption Starts here */
-				params.add(pd.getActno());//actno 1
-				params.add(responseFromCCAvenue.get("amount"));//amount	2	
-				
-				out.println("Account no : "+pd.getActno());		
-				out.println("Amount : "+responseFromCCAvenue.get("amount"));
-				
-				if(responseFromCCAvenue.get("payment_mode").contains("Debit Card"))
-				{
-					params.add("D");//Transaction type 3
-					params.add(new Date());//trans_date 4
-					params.add(responseFromCCAvenue.get("currency"));//currency 5
-					params.add(9);//instrument_id 6
-					params.add(responseFromCCAvenue.get("payment_mode"));//instrument_detail 7
-					params.add("Transaction of "+responseFromCCAvenue.get("amount")+"/- completed successfully");//transaction description 8
-					
-					out.println("Transaction type : D");
-					out.println("Date : "+new Date());
-					out.println("Currency : "+responseFromCCAvenue.get("currency"));
-					out.println("Instruments id : 9");
-					out.println("payment_mode : "+responseFromCCAvenue.get("payment_mode"));
-					out.println("Transaction of "+responseFromCCAvenue.get("amount")+"/- completed successfully");
-				}
-				/*else if(responseFromCCAvenue.get("payment_mode").contains("Credit Card"))
-				{
-					params.add("C");//Transaction type 3
-					params.add(new Date());//trans_date 4
-					params.add(responseFromCCAvenue.get("currency"));//currency 5
-					params.add(8);//instrument_id 6
-					params.add(responseFromCCAvenue.get("payment_mode"));//instrument_detail 7
-					params.add("Transaction of "+responseFromCCAvenue.get("amount")+"/- completed successfully");//transaction description 8
-					
-					out.println("Transaction type : C");
-					out.println("Date : "+new Date());
-					out.println("Currency : "+responseFromCCAvenue.get("currency"));
-					out.println("Instruments id : 8");
-					out.println("payment_mode : "+responseFromCCAvenue.get("payment_mode"));
-					out.println("Transaction of "+responseFromCCAvenue.get("amount")+"/- completed successfully");
-				}
-				else
-				{
-					params.add("C");//Transaction type 3
-					params.add(new Date());//trans_date 4
-					params.add(responseFromCCAvenue.get("currency"));//currency 5
-					params.add(10);//instrument_id 6
-					params.add("N/A");//instrument_detail 7
-					params.add("Transaction of "+responseFromCCAvenue.get("amount")+"/- completed successfully");//transaction description 8
-					
-					out.println("Transaction type : N/A");
-					out.println("Date : "+new Date());
-					out.println("Currency : "+responseFromCCAvenue.get("currency"));
-					out.println("Instruments id : 10");
-					out.println("payment_mode : "+responseFromCCAvenue.get("payment_mode"));
-					out.println("Transaction of "+responseFromCCAvenue.get("amount")+"/- completed successfully");
-					
-				}	
-				*/
-				/*Setting Values for instrumetn id,details, transtype, currency, trans desciption ends here */
-				
-	
-	
+				params.add(pd.getActno());
+				params.add(pd.getTrans_amount());
+				params.add(pd.getTrans_type());
+				params.add(new Date());
+				params.add(pd.getCurrency());
+				params.add(pd.getInstrumentid());
+				params.add(pd.getInstrument_detail());
+				params.add(pd.getTrans_descr());
+
 				String server_url = "http://52.172.205.76/unifyv3/xmlRPC.do";
 				URL serverUrl = new URL(server_url);
 				// Create an object to represent our server.
@@ -241,16 +188,10 @@
 				
 				server.setConfig(conf);
 				Object o=(Object) server.execute("unify.addTransaction",params);
-				out.println("Transaction ID Object: "+o);
-				Transaction_id=(Integer)o;
+				int Transaction_id=(int)o;
 				pd.setTransaction_id(Transaction_id);
-				
-				out.println("Transaction ID : "+Transaction_id);
-				
-				//sendCustomer= (Boolean) server.execute("unify.sendMail",paramsCustomer); 
-				//sendOE= (Boolean) server.execute("unify.sendMail",paramsOE);
-				
 				success=true;
+				
 			}
 			catch(Exception e)
 			{
@@ -285,7 +226,7 @@ if(success)
 	                <h4>Payment summary</h4><br>
 	                <h3>Your payment of INR.<%=responseFromCCAvenue.get("amount") %>/- was successful.</h3><br>
 	                <h5>TRANSACTION ID</h5>
-	                <h4><%=Transaction_id %></h4><br>
+	                <h4><%=pd.getTransaction_id() %></h4><br>
 	            </div>
 	        </div>
 	    </div>
