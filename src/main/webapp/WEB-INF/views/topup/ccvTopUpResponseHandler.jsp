@@ -150,76 +150,83 @@
 		
 		if(responseFromCCAvenue.get("order_status").equals("Success"))
 		{
-			
-			Vector<Object> params = new Vector<>();
-			
-			/*For Sednding Mails Start*/
-			Vector<Object> paramsCustomer = new Vector<>();
-			paramsCustomer.add("Message");
-			paramsCustomer.add("Subject");
-			paramsCustomer.add(responseFromCCAvenue.get("billing_email"));
-			paramsCustomer.add(1);
-			
-			Vector<Object> paramsOE = new Vector<>();
-			paramsOE.add("Message");
-			paramsOE.add("Subject");
-			paramsOE.add("suguna@oneeight.co.in");
-			paramsOE.add(1);
-			/*For Sednding Mails Start*/
-			
-			/*Setting Values for instrumetn id,details, transtype, currency, trans desciption Starts here */
-			params.add(pd.getActno());//actno 1
-			params.add(responseFromCCAvenue.get("amount"));//amount	2	
-					
-			if(responseFromCCAvenue.get("payment_mode").equals("Debit Card"))
+			try
 			{
-				params.add(responseFromCCAvenue.get("D"));//Transaction type 3
-				params.add(new Date());//trans_date 4
-				params.add(responseFromCCAvenue.get("currency"));//currency 5
-				params.add(9);//instrument_id 6
-				params.add(responseFromCCAvenue.get("payment_mode"));//instrument_detail 7
-				params.add("Transaction of "+responseFromCCAvenue.get("amount")+"/- completed successfully");//transaction description 8
+							
+				Vector<Object> params = new Vector<>();
+				
+				/*For Sednding Mails Start*/
+				Vector<Object> paramsCustomer = new Vector<>();
+				paramsCustomer.add("Message");
+				paramsCustomer.add("Subject");
+				paramsCustomer.add(responseFromCCAvenue.get("billing_email"));
+				paramsCustomer.add(1);
+				
+				Vector<Object> paramsOE = new Vector<>();
+				paramsOE.add("Message");
+				paramsOE.add("Subject");
+				paramsOE.add("suguna@oneeight.co.in");
+				paramsOE.add(1);
+				/*For Sednding Mails Start*/
+				
+				/*Setting Values for instrumetn id,details, transtype, currency, trans desciption Starts here */
+				params.add(pd.getActno());//actno 1
+				params.add(responseFromCCAvenue.get("amount"));//amount	2	
+						
+				if(responseFromCCAvenue.get("payment_mode").contains("Debit Card"))
+				{
+					params.add(responseFromCCAvenue.get("D"));//Transaction type 3
+					params.add(new Date());//trans_date 4
+					params.add(responseFromCCAvenue.get("currency"));//currency 5
+					params.add(9);//instrument_id 6
+					params.add(responseFromCCAvenue.get("payment_mode"));//instrument_detail 7
+					params.add("Transaction of "+responseFromCCAvenue.get("amount")+"/- completed successfully");//transaction description 8
+				}
+				else if(responseFromCCAvenue.get("payment_mode").contains("Credit Card"))
+				{
+					params.add(responseFromCCAvenue.get("C"));//Transaction type 3
+					params.add(new Date());//trans_date 4
+					params.add(responseFromCCAvenue.get("currency"));//currency 5
+					params.add(8);//instrument_id 6
+					params.add(responseFromCCAvenue.get("payment_mode"));//instrument_detail 7
+					params.add("Transaction of "+responseFromCCAvenue.get("amount")+"/- completed successfully");//transaction description 8
+				}
+				else
+				{
+					params.add(responseFromCCAvenue.get("C"));//Transaction type 3
+					params.add(new Date());//trans_date 4
+					params.add(responseFromCCAvenue.get("currency"));//currency 5
+					params.add(10);//instrument_id 6
+					params.add("N/A");//instrument_detail 7
+					params.add("Transaction of "+responseFromCCAvenue.get("amount")+"/- completed successfully");//transaction description 8
+				}	
+				/*Setting Values for instrumetn id,details, transtype, currency, trans desciption ends here */
+				
+	
+	
+				String server_url = "http://52.172.205.76/unifyv3/xmlRPC.do";
+				URL serverUrl = new URL(server_url);
+				// Create an object to represent our server.
+				XmlRpcClient server = new XmlRpcClient();
+				XmlRpcClientConfigImpl conf = new XmlRpcClientConfigImpl();
+				conf.setBasicUserName("oneeight");
+				conf.setBasicPassword("!oneight@#");
+				conf.setServerURL(serverUrl);
+				
+				server.setConfig(conf);
+				Object o=(Object) server.execute("unify.addTransaction",params);
+				Transaction_id=(int)o;
+				pd.setTransaction_id(Transaction_id);
+				
+				//sendCustomer= (Boolean) server.execute("unify.sendMail",paramsCustomer); 
+				//sendOE= (Boolean) server.execute("unify.sendMail",paramsOE);
+				
+				success=true;
 			}
-			else if(responseFromCCAvenue.get("payment_mode").equals("Credit Card"))
+			catch(Exception e)
 			{
-				params.add(responseFromCCAvenue.get("C"));//Transaction type 3
-				params.add(new Date());//trans_date 4
-				params.add(responseFromCCAvenue.get("currency"));//currency 5
-				params.add(8);//instrument_id 6
-				params.add(responseFromCCAvenue.get("payment_mode"));//instrument_detail 7
-				params.add("Transaction of "+responseFromCCAvenue.get("amount")+"/- completed successfully");//transaction description 8
+				out.print("Exception : "+e);
 			}
-			else
-			{
-				params.add(responseFromCCAvenue.get("C"));//Transaction type 3
-				params.add(new Date());//trans_date 4
-				params.add(responseFromCCAvenue.get("currency"));//currency 5
-				params.add(10);//instrument_id 6
-				params.add("N/A");//instrument_detail 7
-				params.add("Transaction of "+responseFromCCAvenue.get("amount")+"/- completed successfully");//transaction description 8
-			}	
-			/*Setting Values for instrumetn id,details, transtype, currency, trans desciption ends here */
-			
-
-
-			String server_url = "http://52.172.205.76/unifyv3/xmlRPC.do";
-			URL serverUrl = new URL(server_url);
-			// Create an object to represent our server.
-			XmlRpcClient server = new XmlRpcClient();
-			XmlRpcClientConfigImpl conf = new XmlRpcClientConfigImpl();
-			conf.setBasicUserName("oneeight");
-			conf.setBasicPassword("!oneight@#");
-			conf.setServerURL(serverUrl);
-			
-			server.setConfig(conf);
-			Object o=(Object) server.execute("unify.addTransaction",params);
-			Transaction_id=(int)o;
-			pd.setTransaction_id(Transaction_id);
-			
-			//sendCustomer= (Boolean) server.execute("unify.sendMail",paramsCustomer); 
-			//sendOE= (Boolean) server.execute("unify.sendMail",paramsOE);
-			
-			success=true;
 		}
 
 
