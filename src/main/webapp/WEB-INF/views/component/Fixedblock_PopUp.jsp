@@ -47,6 +47,7 @@ input[type=password]
 .modal-content 
 {    
     border-radius: 0px;
+    height:280px;
 }
 .modal-body
 {
