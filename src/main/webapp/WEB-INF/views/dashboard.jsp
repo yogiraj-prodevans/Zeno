@@ -11,10 +11,9 @@
 <meta content="Stoic Zeno User Portal" name="description">
 <meta content="Stoic Zeno User Portal Keywords" name="keywords">
 
-<!-- link to image for socio -->
-
 <!--  include the all css components -->
-<!-- <jsp:include page="component/css.jsp"></jsp:include> -->
+<jsp:include page="component/css.jsp"></jsp:include>
+
 <jsp:include page="component/Fixedblock_PopUp.jsp"></jsp:include>
 
 <style>
@@ -205,7 +204,6 @@ canvas {
 
 
 <body class="corporate" style="font-family: Roboto;">
-	<!-- BEGIN TOP BAR -->
 	<div class="pre-header">
 		<div class="container">
 			<div class="row">
