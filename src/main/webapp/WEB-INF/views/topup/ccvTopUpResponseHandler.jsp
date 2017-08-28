@@ -3,6 +3,8 @@
 <%@page import="java.net.URL"%>
 
 <%@page import="org.apache.xmlrpc.client.XmlRpcClient"%>
+<%@page import="org.slf4j.Logger"%>
+<%@page import="org.slf4j.LoggerFactory"%>
 <%@page import="org.apache.xmlrpc.client.XmlRpcClientConfigImpl"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -138,6 +140,7 @@
 			pvalue=""+ hs.get(pname);
 			responseFromCCAvenue.put(pname, pvalue);
 		}
+		//Logger logger = LoggerFactory.getLogger(HomeController.class);
 		
 		TopUpPaymentDetails pd=(TopUpPaymentDetails)session.getAttribute("data");
 		boolean success=false;
@@ -213,8 +216,8 @@
 			Transaction_id=(int)o;
 			pd.setTransaction_id(Transaction_id);
 			
-			sendCustomer= (Boolean) server.execute("unify.sendMail",paramsCustomer); 
-			sendOE= (Boolean) server.execute("unify.sendMail",paramsOE);
+			//sendCustomer= (Boolean) server.execute("unify.sendMail",paramsCustomer); 
+			//sendOE= (Boolean) server.execute("unify.sendMail",paramsOE);
 			
 			success=true;
 		}
