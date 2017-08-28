@@ -100,6 +100,28 @@ public class PaymentController {
 
 		return "payment/sendData";
 	}
+	@RequestMapping(value = "/sampleSendData", method = RequestMethod.GET)
+	public String sampleSendData(ModelMap model, HttpSession session) throws XmlRpcException, ParseException {
+		SessionDetails user = (SessionDetails) session.getAttribute("user");
+
+		/*
+		 * paymentDetails.setActno(user.getActno()); paymentDetails.setCurrency("INR");
+		 * paymentDetails.setInstrument_detail("instrument Details");
+		 * paymentDetails.setInstrumentid(3);
+		 * paymentDetails.setTrans_amount(user.getPendingAmount());
+		 * paymentDetails.setTrans_date("Date ");
+		 * paymentDetails.setTrans_descr("Transaction Description");
+		 * paymentDetails.setTrans_type("Credit Card");
+		 */
+
+		model.addAttribute("user_details", user);
+
+		// for getting invoice details
+		InvoiceDetails invoiceDetails = invoiceDAOImpl.getInvoice(user.getActno());
+		model.addAttribute("invoiceDetails", invoiceDetails);
+
+		return "payment/sampleSendData";
+	}
 
 	@RequestMapping(value = "/viewBill", method = RequestMethod.GET)
 	public String viewBill(ModelMap model, HttpSession session) throws XmlRpcException, ParseException {
