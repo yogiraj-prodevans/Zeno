@@ -655,7 +655,7 @@ label.css-label
 	// Emi section end 		
 	
 	//dropdown value will be set depend on radio button START
-	
+	/*
    $("input[type='radio'][name='payment_option']").change(function(){
     
 	var selected = $("input[type='radio'][name='payment_option']:checked").val();
@@ -680,6 +680,7 @@ label.css-label
         
     });
 });
+	*/
  //dropdown value will be set depend on radio button START
 	
 	
