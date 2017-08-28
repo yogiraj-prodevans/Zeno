@@ -227,13 +227,14 @@ label.css-label
 			
 				<input type="hidden" name="actno" value="${user_details.getActno() }">				
 				<input type="hidden" name="trans_amount" value="${topUp.getAmount() }">
+				
 				<input type="hidden" name="planSize" value="${topUp.getPlanSize() }">
 				<input type="hidden" name="planName" value="${topUp.getPlanName() }">
 				<input type="hidden" name="postFUP" value="${topUp.getPostFUP() }">
 				
-				<input type="hidden" name="trans_type" value="C">
+				<!-- <input type="hidden" name="trans_type" value="C">
 				<input type="hidden" name="currency" value="INR">
-				<input type="hidden" name="trans_descr" value="Description">
+				<input type="hidden" name="trans_descr" value="Description"> -->
 				
 				
 				<div class="form-group">

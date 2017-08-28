@@ -1,7 +1,4 @@
 <%@page import="com.prodevans.zeno.pojo.TopUpPaymentDetails"%>
-<%@page import="com.prodevans.zeno.dao.impl.PaymentResponseDAOImpl"%>
-<%@page import="com.prodevans.zeno.dao.impl.PaymentDAOImpl"%>
-<%@page import="com.prodevans.zeno.pojo.PaymentDetails"%>
 <%@page import="java.net.URLDecoder"%>
 <%@page import="java.net.URL"%>
 
@@ -10,6 +7,49 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ page import = "java.io.*,java.util.*,com.ccavenue.security.*" %>
+
+
+<style>
+
+.billPayment
+{
+    color: white; 
+}
+.greyBlock
+{
+    background-color: #bdc3c7;
+}
+    
+/* 3 blocks start here */  
+.mainBlock3
+{
+    max-width: 92%;
+    color: white;
+    margin-top: 5%;
+    padding-top: 1%;
+    padding-left: 4%;
+}
+/* 3 blocks End here */
+    
+.firstRow
+{
+    min-height: 100px;
+    padding-top:10px;
+}
+      
+/* iphone 6 plus*/
+@media (max-width: 480px)
+{
+    .mainBlock3 
+    {
+        width:100%;
+        margin: 5%;
+    }
+}    
+    
+</style>
+
+
 <html>
         <meta charset="utf-8">
         <title>STOIC ZENO</title>
@@ -26,9 +66,10 @@
 
         <!--  include the all css components -->
         <jsp:include page="../component/css.jsp"></jsp:include>
+        <jsp:include page="../component/Fixedblock_PopUp.jsp"></jsp:include>
 
 </head>
-        <body class="corporate">
+        <body class="corporate" style="font-family: Roboto;">
             <!-- BEGIN TOP BAR -->
             <div class="pre-header">
                 <div class="container">
@@ -87,7 +128,7 @@
 				}
 			}
 		}
-		PaymentResponseDAOImpl prdi=new PaymentResponseDAOImpl();
+
 	    HashMap<String, String> responseFromCCAvenue= new HashMap<>();
 		
 	    Enumeration enumeration = hs.keys();
@@ -102,11 +143,14 @@
 		boolean success=false;
 		Boolean sendCustomer=false;
 		Boolean sendOE=false;
+		int Transaction_id=0;
 		
 		if(responseFromCCAvenue.get("order_status").equals("Success"))
 		{
 			
 			Vector<Object> params = new Vector<>();
+			
+			/*For Sednding Mails Start*/
 			Vector<Object> paramsCustomer = new Vector<>();
 			paramsCustomer.add("Message");
 			paramsCustomer.add("Subject");
@@ -118,15 +162,42 @@
 			paramsOE.add("Subject");
 			paramsOE.add("suguna@oneeight.co.in");
 			paramsOE.add(1);
+			/*For Sednding Mails Start*/
 			
-			params.add(pd.getActno());
-			params.add(pd.getTrans_amount());
-			params.add(pd.getTrans_type());
-			params.add(new Date());
-			params.add(pd.getCurrency());
-			params.add(pd.getInstrumentid());
-			params.add(pd.getInstrument_detail());
-			params.add(pd.getTrans_descr());
+			/*Setting Values for instrumetn id,details, transtype, currency, trans desciption Starts here */
+			params.add(pd.getActno());//actno 1
+			params.add(responseFromCCAvenue.get("amount"));//amount	2	
+					
+			if(responseFromCCAvenue.get("payment_mode").equals("Debit Card"))
+			{
+				params.add(responseFromCCAvenue.get("D"));//Transaction type 3
+				params.add(new Date());//trans_date 4
+				params.add(responseFromCCAvenue.get("currency"));//currency 5
+				params.add(9);//instrument_id 6
+				params.add(responseFromCCAvenue.get("payment_mode"));//instrument_detail 7
+				params.add("Transaction of "+responseFromCCAvenue.get("amount")+"/- completed successfully");//transaction description 8
+			}
+			else if(responseFromCCAvenue.get("payment_mode").equals("Credit Card"))
+			{
+				params.add(responseFromCCAvenue.get("C"));//Transaction type 3
+				params.add(new Date());//trans_date 4
+				params.add(responseFromCCAvenue.get("currency"));//currency 5
+				params.add(8);//instrument_id 6
+				params.add(responseFromCCAvenue.get("payment_mode"));//instrument_detail 7
+				params.add("Transaction of "+responseFromCCAvenue.get("amount")+"/- completed successfully");//transaction description 8
+			}
+			else
+			{
+				params.add(responseFromCCAvenue.get("C"));//Transaction type 3
+				params.add(new Date());//trans_date 4
+				params.add(responseFromCCAvenue.get("currency"));//currency 5
+				params.add(10);//instrument_id 6
+				params.add("N/A");//instrument_detail 7
+				params.add("Transaction of "+responseFromCCAvenue.get("amount")+"/- completed successfully");//transaction description 8
+			}	
+			/*Setting Values for instrumetn id,details, transtype, currency, trans desciption ends here */
+			
+
 
 			String server_url = "http://52.172.205.76/unifyv3/xmlRPC.do";
 			URL serverUrl = new URL(server_url);
@@ -139,7 +210,7 @@
 			
 			server.setConfig(conf);
 			Object o=(Object) server.execute("unify.addTransaction",params);
-			int Transaction_id=(int)o;
+			Transaction_id=(int)o;
 			pd.setTransaction_id(Transaction_id);
 			
 			sendCustomer= (Boolean) server.execute("unify.sendMail",paramsCustomer); 
@@ -152,108 +223,68 @@
 if(success)
 {
 %>
+    <div class="row">
+        <div class="col-md-4 firstRow" style="background-image: url('back.png');background-repeat:no-repeat;">
+            <h1 style="color:white;margin-left:15%;">Bill payment</h1>
+        </div>
+        <div class="col-md-8 firstRow" style="background-color: #ecf0f1;">
+            <div class="col-md-10">
+                <h1>Your transaction was successful.</h1>
+            </div>
+            <div class="col-md-2">
+               
+            </div>
+        </div>
+    </div>
+    
+	<div class="container">
+	    <div class="row col-md-12">
+	        <div class="col-md-4">
+	        </div>
+	        <div class="col-md-8">
+	            <div class="mainBlock3" style="background-color: #2980b9;">
+	                <h4>Payment summary</h4><br>
+	                <h3>Your payment of INR.<%=responseFromCCAvenue.get("amount") %>/- was successful.</h3><br>
+	                <h5>TRANSACTION ID</h5>
+	                <h4><%=Transaction_id %></h4><br>
+	            </div>
+	        </div>
+	    </div>
+	</div>
 		
- <div class="container">
- 	<div class="col-md-6">
- 		<div style="margin-left: 10%;margin-top: 10%;margin-bottom: 10%;">
- 			
- 			<img alt="thick" src="corporate/img/logos/yes.png" style="height: 10%;width: 10%;">
-	 		
-	 		<h2 style="font-family:Roboto; font-size:56px; color: #2ecc71;">
-	 		Thank You!
-	 		</h2><br>
-	 		<h2 style="font-size:44px; color: #2c3e50;margin-left: 2%;margin-bottom: 0px;">Payment was</h2><br>
-	 		<h2 style="font-size:44px; color: #2c3e50;margin-left: 2%;">successful.</h2>
-	 	</div>
- 	</div>
- 	<div class="col-md-6">
- 		<div style="background-color:#010745; margin-top: 1%;padding-bottom: 2%;">
-	 		<div class="row" style="margin-left: 5%; padding-top: 5%;">
-	 			<h2 style="font-family:Roboto; font-size:24px; color: #FFF;">Payment Summary</h2><br>
-	 		</div>
-	 		<div class="row" style="margin-left: 5%;">
-	 			<div class="row">
-	 				<h2 style="font-family:Roboto; font-size:12px; color: #FFF;margin-left: 3%;">Your payment of INR <%=responseFromCCAvenue.get("amount") %>/- on <%=pd.getTrans_date() %>.</h2><br>
-	 			</div>
-	 			<div class="row" style="margin-left: 1%;">
-	 				<div class="col-md-4">
-	 					<div class="row">
-		 					<h2 style="font-family:Roboto; font-size:10px; color: #FFF;">TRANSACTION NUMBER</h2>
-		 				</div>
-		 				<div class="row">
-		 					<h2 style="font-family:Roboto; font-size:16px; color: #FFF;"><%=pd.getTransaction_id() %></h2>
-		 				</div>
-		 			</div>
-		 			<div class="col-md-4">
-	 					<div class="row">
-		 					<h2 style="font-family:Roboto; font-size:10px; color: #FFF;">EMAIL ID</h2>
-		 				</div>
-		 				<div class="row">
-		 					<h2 style="font-family:Roboto; font-size:16px; color: #FFF;"><%=responseFromCCAvenue.get("billing_email") %></h2>
-		 				</div>
-		 			</div>
-		 		</div>
-	 		</div>
-
-	 	</div>
-	 	
-	 	<div class="row">
-	 		<div class="col-md-6">
-	 			<a href="#">
-	 			<div class="confirmPayment">
-	 				Download Invoice
-	 			</div>
-	 			</a>
-			 </div>
-	 	</div>
-	 	
-	 	
- 	</div>
- </div>
 <%
 }
 else
 {
 %>
- <div class="container">
- 	<div class="col-md-6">
- 		<div style="margin-left: 10%;margin-top: 10%;margin-bottom: 10%;">
- 			
- 			<img alt="thick" src="corporate/img/logos/cross.png" style="height: 10%;width: 10%;">
-	 		
-	 		<h2 style="font-family:Roboto; font-size:56px; color: #e74c3c;">
-	 		Transaction Aborted!
-	 		</h2><br>
-	 		<h2 style="font-size:44px; color: #2c3e50;margin-left: 2%;margin-bottom: 0px;">Payment was</h2><br>
-	 		<h2 style="font-size:44px; color: #2c3e50;margin-left: 2%;">unsuccessful.</h2>
-	 	</div>
- 	</div>
- 	<div class="col-md-6">
- 		<div style="background-color:#010745; margin-top: 1%;padding-bottom: 2%;">
-	 		<div class="row" style="margin-left: 5%; padding-top: 5%;">
-	 			<h2 style="font-family:Roboto; font-size:24px; color: #FFF;">Payment Summary</h2><br>
-	 		</div>
-	 		<div class="row" style="margin-left: 5%;">
-	 			<div class="row">
-	 				<h2 style="font-family:Roboto; font-size:12px; color: #FFF;margin-left: 3%;">Your payment of INR <%=pd.getTrans_amount() %>/- on <%=pd.getTrans_date() %> was aborted.</h2><br>
-	 			</div>
-	 			<div class="row" style="margin-left: 1%;">
-	 				<div class="col-md-8">
-	 					<div class="row">
-		 					<h2 style="font-family:Roboto; font-size:10px; color: #FFF;">REASON</h2>
-		 				</div>
-		 				<div class="row">
-		 					<h2 style="font-family:Roboto; font-size:16px; color: #e74c3c;"><%=responseFromCCAvenue.get("status_message") %></h2>
-		 				</div>
-		 			</div>
-		 		</div>
-	 		</div>
-
-	 	</div>
-	 	
-	 	
- 	</div>
- </div>
+	<div class="row">
+        <div class="col-md-4 firstRow" style="background-image: url('back.png');background-repeat:no-repeat;">
+            <h1 style="color:white;margin-left:15%;">Bill payment</h1>
+        </div>
+        <div class="col-md-8 firstRow" style="background-color: #ecf0f1;">
+            <div class="col-md-10">
+                <h1>Your transaction was unsuccessful.</h1>
+            </div>
+            <div class="col-md-2">
+               
+            </div>
+        </div>
+    </div>
+    
+	<div class="container">
+	    <div class="row col-md-12">
+	        <div class="col-md-4">
+	        </div>
+	        <div class="col-md-8">
+	            <div class="mainBlock3" style="background-color: #2980b9;">
+	                <h4>Payment summary</h4><br>
+	                <h3>Your payment of INR.<%=responseFromCCAvenue.get("amount") %>/- was unsuccessful.</h3><br>
+	                <h5>REASON</h5>
+	                <h4><%=responseFromCCAvenue.get("status_message") %></h4><br>
+	            </div>
+	        </div>
+	    </div>
+	</div>
 <%
 }
 %>

@@ -17,7 +17,10 @@
 	<%
 
 	TopUpPaymentDetails pd=new TopUpPaymentDetails();
+	pd.setActno(Integer.parseInt(request.getParameter("actno")));
+	pd.setTrans_amount(Double.parseDouble(request.getParameter("trans_amount")));
 	
+	/*
 	if((request.getParameter("instrument_detail"))!=null)
 	{
 		String instrument_detail=request.getParameter("instrument_detail");
@@ -30,15 +33,11 @@
 		pd.setInstrumentid(10);
 		pd.setInstrument_detail("N/A");
 	}
-
-
-	pd.setActno(Integer.parseInt(request.getParameter("actno")));
-	pd.setTrans_amount(Double.parseDouble(request.getParameter("trans_amount")));
 	pd.setTrans_type(request.getParameter("trans_type"));
 	pd.setTrans_date(new Date());
-	pd.setCurrency(request.getParameter("currency"));
-	
+	pd.setCurrency(request.getParameter("currency"));	
 	pd.setTrans_descr(request.getParameter("trans_descr"));
+	*/
 	
 	session.setAttribute("data",pd);
 	
