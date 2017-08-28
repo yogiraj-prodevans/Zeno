@@ -465,7 +465,7 @@ label.css-label
 	 	6)error -  This parameter will enable you to troubleshoot any configuration related issues. It will provide error description.
 	 */	  
   	  var jsonData;
-  	  var access_code = "AVRC72EG07BS00CRSB" // shared by CCAVENUE 
+  	  var access_code = "" // shared by CCAVENUE 
   	  var amount="10.00";
   	  var currency="INR";
   	  
