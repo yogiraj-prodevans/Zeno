@@ -18,7 +18,7 @@
 
 	TopUpPaymentDetails pd=new TopUpPaymentDetails();
 	
-	if(!(request.getParameter("instrument_detail")).equals(null))
+	if((request.getParameter("instrument_detail"))!=null)
 	{
 		String instrument_detail=request.getParameter("instrument_detail");
 		String d[]=instrument_detail.split(",");
