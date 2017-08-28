@@ -146,7 +146,7 @@
 		boolean success=false;
 		Boolean sendCustomer=false;
 		Boolean sendOE=false;
-		int Transaction_id=0;
+		Integer Transaction_id=0;
 		
 		if(responseFromCCAvenue.get("order_status").equals("Success"))
 		{
@@ -192,7 +192,7 @@
 					out.println("payment_mode : "+responseFromCCAvenue.get("payment_mode"));
 					out.println("Transaction of "+responseFromCCAvenue.get("amount")+"/- completed successfully");
 				}
-				else if(responseFromCCAvenue.get("payment_mode").contains("Credit Card"))
+				/*else if(responseFromCCAvenue.get("payment_mode").contains("Credit Card"))
 				{
 					params.add("C");//Transaction type 3
 					params.add(new Date());//trans_date 4
@@ -225,6 +225,7 @@
 					out.println("Transaction of "+responseFromCCAvenue.get("amount")+"/- completed successfully");
 					
 				}	
+				*/
 				/*Setting Values for instrumetn id,details, transtype, currency, trans desciption ends here */
 				
 	
@@ -240,7 +241,8 @@
 				
 				server.setConfig(conf);
 				Object o=(Object) server.execute("unify.addTransaction",params);
-				Transaction_id=(int)o;
+				out.println("Transaction ID Object: "+o);
+				Transaction_id=(Integer)o;
 				pd.setTransaction_id(Transaction_id);
 				
 				out.println("Transaction ID : "+Transaction_id);
