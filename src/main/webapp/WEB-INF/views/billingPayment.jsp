@@ -8,9 +8,7 @@
 
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta content="Stoic Zeno User Portal" name="description">
-<meta content="Stoic Zeno User Portal Keywords" name="keywords">
-<meta content="vikram" name="author">
+
 
 <!-- link to image for socio -->
 <meta property="og:url" content="-CUSTOMER VALUE-">

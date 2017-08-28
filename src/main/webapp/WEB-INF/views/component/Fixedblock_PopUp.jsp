@@ -23,11 +23,7 @@ input[type=password]
     font-size: 16px;
     font-weight: bold;
 }
-.modal-dialog 
-{    
-    width: 25%;
-    height: 50%;
-}
+
 .modal-header 
 {
     padding: 8px;
@@ -36,14 +32,18 @@ input[type=password]
     background-color: #ffbb19;
 }    
     
-.modal-content 
-{    
-    border-radius: 0px;
-    height:280px;
+.modal-dialog{
+	
+	min-width: 300px;
+	max-width: 300px;
+	
+	margin:auto;
+	margin-top: 15%;
 }
-.modal-body
-{
-	height: 100%;
+.modal-content{
+min-height:300px;
+	max-height:300px;
+	border-radius: unset;
 }
 
 /*Modal css ends here*/    
@@ -70,8 +70,7 @@ input[type=password]
     color: #ecf0f1;
     border-radius: 50%;
     padding: 2px; 
-    width: 95%;
-    height: 50%;
+    
     margin: 5%;
     text-align: center;
     text-decoration: none!important;   
@@ -89,11 +88,11 @@ a:hover{
 .circle2  
 {
     background-color: #e74c3c;
-    color: #ecf0f1;
+    
+   color: #ecf0f1;
     border-radius: 50%;
     padding: 2px; 
-    width: 80%;
-    height: 50%;
+    
     margin: 5%;
     text-align: center;
     text-decoration: none!important;   
@@ -177,20 +176,9 @@ a:hover{
         font-size: 12px;
         padding-right: 20%;
     }
-    /*Modal css start here*/
-    .modal-content 
-    {    
-        border-radius: 0px;
-        min-height: 100%;
-        margin: 15%;
-        margin-left: 9%;
-    }
-    .modal-dialog 
-    {    
-        width: 100%;
-    }
     
-    /*Modal css ends here*/ 
+    
+    
     
     /*Circle css starts here*/        
     .circleBlock1
@@ -215,9 +203,9 @@ a:hover{
     }
     .circle2  
     {
-        width: 80%;
+        width: 100%;
         height: 50%;
-        margin: 5%;
+       
     }
     /*Circle css ends here*/    
     
