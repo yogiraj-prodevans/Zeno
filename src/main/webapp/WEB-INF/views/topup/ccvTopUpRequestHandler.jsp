@@ -15,18 +15,29 @@
 </head>
 <body>
 	<%
-	
-	String instrument_detail=request.getParameter("instrument_detail");
-	String d[]=instrument_detail.split(",");
 
 	TopUpPaymentDetails pd=new TopUpPaymentDetails();
+	
+	if(!(request.getParameter("instrument_detail")).equals(null))
+	{
+		String instrument_detail=request.getParameter("instrument_detail");
+		String d[]=instrument_detail.split(",");
+		pd.setInstrumentid(Integer.parseInt(d[0]));
+		pd.setInstrument_detail(d[1]);
+	}
+	else
+	{
+		pd.setInstrumentid(10);
+		pd.setInstrument_detail("N/A");
+	}
+
+
 	pd.setActno(Integer.parseInt(request.getParameter("actno")));
 	pd.setTrans_amount(Double.parseDouble(request.getParameter("trans_amount")));
 	pd.setTrans_type(request.getParameter("trans_type"));
 	pd.setTrans_date(new Date());
 	pd.setCurrency(request.getParameter("currency"));
-	pd.setInstrumentid(Integer.parseInt(d[0]));
-	pd.setInstrument_detail(d[1]);
+	
 	pd.setTrans_descr(request.getParameter("trans_descr"));
 	
 	session.setAttribute("data",pd);
