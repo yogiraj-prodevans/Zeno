@@ -221,6 +221,11 @@
  <script language="javascript" type="text/javascript" src="json.js"></script>
  <script src="jquery-1.7.2.min.js"></script>
 <script type="text/javascript">
+
+	$(document).ready(function(){
+	  $(this).val('');
+	});
+	
   $(function(){
   
 	 /* json object contains
