@@ -20,7 +20,7 @@
 	pd.setActno(Integer.parseInt(request.getParameter("actno")));
 	pd.setTrans_amount(Double.parseDouble(request.getParameter("trans_amount")));
 	
-	/*
+	
 	if((request.getParameter("instrument_detail"))!=null)
 	{
 		String instrument_detail=request.getParameter("instrument_detail");
@@ -37,7 +37,7 @@
 	pd.setTrans_date(new Date());
 	pd.setCurrency(request.getParameter("currency"));	
 	pd.setTrans_descr(request.getParameter("trans_descr"));
-	*/
+	
 	
 	session.setAttribute("data",pd);
 	

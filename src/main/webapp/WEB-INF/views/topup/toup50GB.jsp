@@ -232,9 +232,9 @@ label.css-label
 				<input type="hidden" name="planName" value="${topUp.getPlanName() }">
 				<input type="hidden" name="postFUP" value="${topUp.getPostFUP() }">
 				
-				<!-- <input type="hidden" name="trans_type" value="C">
+				<input type="hidden" name="trans_type" value="C">
 				<input type="hidden" name="currency" value="INR">
-				<input type="hidden" name="trans_descr" value="Description"> -->
+				<input type="hidden" name="trans_descr" value="Description">
 				
 				
 				<div class="form-group">

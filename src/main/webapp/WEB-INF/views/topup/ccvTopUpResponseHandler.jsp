@@ -146,80 +146,57 @@
 		boolean success=false;
 		Boolean sendCustomer=false;
 		Boolean sendOE=false;
-		int Transaction_id=0;
 		
 		if(responseFromCCAvenue.get("order_status").equals("Success"))
 		{
-			
-			Vector<Object> params = new Vector<>();
-			
-			/*For Sednding Mails Start*/
-			Vector<Object> paramsCustomer = new Vector<>();
-			paramsCustomer.add("Message");
-			paramsCustomer.add("Subject");
-			paramsCustomer.add(responseFromCCAvenue.get("billing_email"));
-			paramsCustomer.add(1);
-			
-			Vector<Object> paramsOE = new Vector<>();
-			paramsOE.add("Message");
-			paramsOE.add("Subject");
-			paramsOE.add("suguna@oneeight.co.in");
-			paramsOE.add(1);
-			/*For Sednding Mails Start*/
-			
-			/*Setting Values for instrumetn id,details, transtype, currency, trans desciption Starts here */
-			params.add(pd.getActno());//actno 1
-			params.add(responseFromCCAvenue.get("amount"));//amount	2	
-					
-			if(responseFromCCAvenue.get("payment_mode").equals("Debit Card"))
+			try
 			{
-				params.add(responseFromCCAvenue.get("D"));//Transaction type 3
-				params.add(new Date());//trans_date 4
-				params.add(responseFromCCAvenue.get("currency"));//currency 5
-				params.add(9);//instrument_id 6
-				params.add(responseFromCCAvenue.get("payment_mode"));//instrument_detail 7
-				params.add("Transaction of "+responseFromCCAvenue.get("amount")+"/- completed successfully");//transaction description 8
-			}
-			else if(responseFromCCAvenue.get("payment_mode").equals("Credit Card"))
-			{
-				params.add(responseFromCCAvenue.get("C"));//Transaction type 3
-				params.add(new Date());//trans_date 4
-				params.add(responseFromCCAvenue.get("currency"));//currency 5
-				params.add(8);//instrument_id 6
-				params.add(responseFromCCAvenue.get("payment_mode"));//instrument_detail 7
-				params.add("Transaction of "+responseFromCCAvenue.get("amount")+"/- completed successfully");//transaction description 8
-			}
-			else
-			{
-				params.add(responseFromCCAvenue.get("C"));//Transaction type 3
-				params.add(new Date());//trans_date 4
-				params.add(responseFromCCAvenue.get("currency"));//currency 5
-				params.add(10);//instrument_id 6
-				params.add("N/A");//instrument_detail 7
-				params.add("Transaction of "+responseFromCCAvenue.get("amount")+"/- completed successfully");//transaction description 8
-			}	
-			/*Setting Values for instrumetn id,details, transtype, currency, trans desciption ends here */
-			
+							
+				Vector<Object> params = new Vector<>();
+				
+				/*For Sednding Mails Start*/
+				Vector<Object> paramsCustomer = new Vector<>();
+				paramsCustomer.add("Message");
+				paramsCustomer.add("Subject");
+				paramsCustomer.add(responseFromCCAvenue.get("billing_email"));
+				paramsCustomer.add(1);
+				
+				Vector<Object> paramsOE = new Vector<>();
+				paramsOE.add("Message");
+				paramsOE.add("Subject");
+				paramsOE.add("suguna@oneeight.co.in");
+				paramsOE.add(1);
+				/*For Sednding Mails Start*/
+				
+				params.add(pd.getActno());
+				params.add(pd.getTrans_amount());
+				params.add(pd.getTrans_type());
+				params.add(new Date());
+				params.add(pd.getCurrency());
+				params.add(pd.getInstrumentid());
+				params.add(pd.getInstrument_detail());
+				params.add(pd.getTrans_descr());
 
-
-			String server_url = "http://52.172.205.76/unifyv3/xmlRPC.do";
-			URL serverUrl = new URL(server_url);
-			// Create an object to represent our server.
-			XmlRpcClient server = new XmlRpcClient();
-			XmlRpcClientConfigImpl conf = new XmlRpcClientConfigImpl();
-			conf.setBasicUserName("oneeight");
-			conf.setBasicPassword("!oneight@#");
-			conf.setServerURL(serverUrl);
-			
-			server.setConfig(conf);
-			Object o=(Object) server.execute("unify.addTransaction",params);
-			Transaction_id=(int)o;
-			pd.setTransaction_id(Transaction_id);
-			
-			//sendCustomer= (Boolean) server.execute("unify.sendMail",paramsCustomer); 
-			//sendOE= (Boolean) server.execute("unify.sendMail",paramsOE);
-			
-			success=true;
+				String server_url = "http://52.172.205.76/unifyv3/xmlRPC.do";
+				URL serverUrl = new URL(server_url);
+				// Create an object to represent our server.
+				XmlRpcClient server = new XmlRpcClient();
+				XmlRpcClientConfigImpl conf = new XmlRpcClientConfigImpl();
+				conf.setBasicUserName("oneeight");
+				conf.setBasicPassword("!oneight@#");
+				conf.setServerURL(serverUrl);
+				
+				server.setConfig(conf);
+				Object o=(Object) server.execute("unify.addTransaction",params);
+				int Transaction_id=(int)o;
+				pd.setTransaction_id(Transaction_id);
+				success=true;
+				
+			}
+			catch(Exception e)
+			{
+				out.print("Exception : "+e);
+			}
 		}
 
 
@@ -249,7 +226,7 @@ if(success)
 	                <h4>Payment summary</h4><br>
 	                <h3>Your payment of INR.<%=responseFromCCAvenue.get("amount") %>/- was successful.</h3><br>
 	                <h5>TRANSACTION ID</h5>
-	                <h4><%=Transaction_id %></h4><br>
+	                <h4><%=pd.getTransaction_id() %></h4><br>
 	            </div>
 	        </div>
 	    </div>
