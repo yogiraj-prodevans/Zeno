@@ -26,7 +26,7 @@
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal">&times;</button>
 				<h4 class="modal-title">
-					<strong>Top Up</strong>
+					<strong>TOP UP</strong>
 				</h4>
 			</div>
 			<div class="modal-body">
@@ -47,11 +47,11 @@
 					</div>
 				</div>
 
-				<div class="row" style="margin-top:20px">
+				<div class="col-md-12" style="margin-top:20px">
 
 					<div class="   col-xs-6" >
 						<a href="toup50GB?planName=Add on 5GB">
-							<div class="circle1" style="height: 100px; width:100px;margin:auto;">
+							<div class="circle1" style="height: 110px; width:110px;margin:auto;">
 								<div style="font-size: 28px; padding-top: 20%;">
 									<strong>5GB</strong>
 								</div>
@@ -65,7 +65,7 @@
 
 					<div class=" col-xs-6" >
 						<a href="toup50GB?planName=Add on 10GB">
-							<div class="circle2" style="height: 100px; width:100px;margin:auto;">
+							<div class="circle2" style="height: 110px; width:110px;margin:auto;">
 								<div style="font-size: 28px; padding-top: 20%;">
 									<strong>10GB</strong>
 								</div>

@@ -39,12 +39,11 @@
 
 .mainBlock3 {
 	max-width: 92%;
-	min-height: 45%;
 	color: white;
 	margin-top: 10%;
-	padding-top: 2%;
-	padding-left: 7%;
+	padding: 2% 7%;
 	padding-bottom: 2%;
+	min-height: 250px;
 }
 /* 3 blocks End here */
 .firstRow {
@@ -56,6 +55,7 @@
 	background-image: url('corporate/img/back.png');
 	background-repeat: no-repeat, no-repeat, x-repeat;
 	min-height: 90px;
+	padding-top: 25px;
 }
 
 .billButtonBlock1 {
@@ -85,7 +85,7 @@
 .progress {
 	height: 25px;
 	width: 90%;
-	margin-bottom: 20px;
+	margin: unset;
 	overflow: hidden;
 	border-radius: 1px;
 	background-color: #f5f5f5;
@@ -240,13 +240,13 @@
 	<!-- BEGIN STEPS -->
 
 	<div class="row">
-		<div class="col-md-4 col-sm-12  firstRowBackImage">
-			<h1 style="color: white; margin-left: 15%;">Bill payment</h1>
+		<div class="col-md-4 col-sm-12  firstRowBackImage " >
+			<h1 style="color: white; margin-left: 15%; ">Bill payment</h1>
 		</div>
 		<div class="col-md-8 col-sm-12 firstRow"
 			style="background-color: #ecf0f1;">
 			<div class="col-md-6 col-sm-12">
-				<h2 style="text-shadow: 0.2px 0.2px black;"
+				<h2 style="text-shadow: 0.2px 0.2px black; margin-top:6%"
 					class="currentBillFontforiPhone5">Current bill INR
 					${invoiceDetails.getAmount() }</h2>
 			</div>
@@ -293,18 +293,11 @@
 						${SubscriptionDetails.getExpirydt() }</h5>
 					<br>
 
-					<table style="margin: 0%;">
-						<tr>
-							<td>
-								<h4 class="blackShadow" style="color: black; margin-top: 67%;">Usage</h4>
-							</td>
-							<td>
-								<h2 class="blackShadow" style="color: black; margin-left: 20%;">
-									<strong>${SubscriptionDetails.getDataUsed() }GB</strong>
-								</h2>
-							</td>
-						</tr>
-					</table>
+					
+								<span class="blackShadow" style="color: black; margin-top: 67%;"><h4>Usage</h4></span>
+								<span class="blackShadow" style="color: black; ">
+									<h2><strong>${SubscriptionDetails.getDataUsed() }GB</strong>
+								</h2></span>
 					<div class=" progress">
 						<div class="progressbarColor"
 							style="width: ${SubscriptionDetails.getDataPercent()}%;"></div>

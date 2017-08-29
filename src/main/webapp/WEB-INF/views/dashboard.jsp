@@ -307,11 +307,10 @@ canvas {
 				</div>
 			</div>
 
-			<div class="col-md-8">
-				<div class="col-lg-12 div2"
-					style="margin-top: 20px; min-height: 90%;">
+			<div class="col-md-8 div2" style="margin-top: 20px; min-height: 90%;">
+				
 					<div id="curve_chart"></div>
-				</div>
+				
 			</div>
 
 		</div>
