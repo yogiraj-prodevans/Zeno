@@ -31,12 +31,12 @@
 
 
 </head>
-<body class="corporate">
+<body onload="document.forms['customerData'].submit()">
 
 
-			<form method="post" name="customerData" action="payBillRequestHandler" class="form-horizontal form-without-legend ">
+			<form method="post" name="customerData" action="payBillRequestHandler" >
 			
-				<input type="text" name="actno" value="${bill.getAccount_id() }">				
+				<input type="text" name="actno" value="${bill.getAccount_no() }">				
 				<input type="text" name="trans_amount" value="${bill.getAmount() }">				
 				<input type="hidden" name="trans_type" value="C">
 				<input type="hidden" name="currency" value="INR">
@@ -50,7 +50,7 @@
 			   	<input type="hidden" name="order_id" value="1236556561"/><!-- Order Id	: -->
 			   	<input type="hidden" name="amount" value="${bill.getAmount() }"   />
 				<input type="hidden" name="currency" value="INR"/><!-- Currency	: -->
-				<input type="hidden" name="redirect_url" value="http://52.172.215.71/zeno/ccavResponseHandler"/><!-- Redirect URL	: -->
+				<input type="hidden" name="redirect_url" value="http://52.172.215.71/zeno/payBillResponseHandler"/><!-- Redirect URL	: -->
 				<input type="hidden" name="cancel_url" value="http://52.172.215.71/zeno/ccvCancelResponse"/><!-- Cancel URL	: -->
 			 	<input type="hidden" name="language" value="EN"/><!-- Language	: -->
                 <input readonly="readonly" type="hidden" name="tid" id="tid" value=""/><!-- Transction ID -->
@@ -58,7 +58,7 @@
 				<input type="hidden" name="order_id" value="123654789"/><!-- order id -->
 				<input type="hidden" name="amount" value="${bill.getAmount() }"/><!--Amount  -->
 				<input type="hidden" name="currency" value="INR"/><!-- currency -->
-				<input type="hidden" name="redirect_url" value="http://52.172.215.71/zeno/ccavResponseHandler"/><!-- Redirect URL -->
+				<input type="hidden" name="redirect_url" value="http://52.172.215.71/zeno/payBillResponseHandler"/><!-- Redirect URL -->
 				<input type="hidden" name="cancel_url" value="http://52.172.215.71/zeno/ccvCancelResponse"/><!-- cancel url -->
 			 	<input type="hidden" name="language" value="EN"/><!-- Language -->
 			 	
@@ -111,7 +111,7 @@
 						
 			</form>
 	      	    
-	      	<script>setTimeout(function(){window.location.href='payBillRequestHandler'},3000);</script>      
+	      	<!-- <script>setTimeout(function(){window.location.href='payBillRequestHandler'},3000);</script> -->      
 </body>
 
 

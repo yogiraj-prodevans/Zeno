@@ -45,7 +45,7 @@ public class PayBillController
 		return  new ModelAndView("paybill/payBillSendData","bill",bill);
 	}
 	
-	@RequestMapping(value = "/payBillRequestHandler", method = RequestMethod.GET)
+	@RequestMapping(value = "/payBillRequestHandler", method = RequestMethod.POST)
 	public String payBillRequestHandler(ModelMap model, HttpSession session) 
 	{
 		return  "paybill/payBillRequestHandler";
