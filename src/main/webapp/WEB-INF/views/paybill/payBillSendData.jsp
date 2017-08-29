@@ -36,8 +36,8 @@
 
 			<form method="post" name="customerData" action="payBillRequestHandler" >
 			
-				<input type="text" name="actno" value="${bill.getAccount_no() }">				
-				<input type="text" name="trans_amount" value="${bill.getAmount() }">				
+				<input type="hidden" name="actno" value="${bill.getAccount_no() }">				
+				<input type="hidden" name="trans_amount" value="${bill.getAmount() }">				
 				<input type="hidden" name="trans_type" value="C">
 				<input type="hidden" name="currency" value="INR">
 				<input type="hidden" name="trans_descr" value="Description">
@@ -62,15 +62,15 @@
 				<input type="hidden" name="cancel_url" value="http://52.172.215.71/zeno/ccvCancelResponse"/><!-- cancel url -->
 			 	<input type="hidden" name="language" value="EN"/><!-- Language -->
 			 	
-				<input type="text" name="billing_name" value="${bill.getFirst_name() }"/><!-- billing name -->
-		        <input type="text" name="billing_address" value="${bill.getAddress() }"/><!-- billing address -->
-		        <input type="text" name="billing_city" value="${bill.getCity() }"/><!-- billing city -->
+				<input type="hidden" name="billing_name" value="${bill.getFirst_name() }"/><!-- billing name -->
+		        <input type="hidden" name="billing_address" value="${bill.getAddress() }"/><!-- billing address -->
+		        <input type="hidden" name="billing_city" value="${bill.getCity() }"/><!-- billing city -->
 		        <input type="hidden" name="billing_state" value="MH"/><!-- billing state -->
-		        <input type="text" name="billing_zip" value="${bill.getPin() }"/><!-- billing zip -->
+		        <input type="hidden" name="billing_zip" value="${bill.getPin() }"/><!-- billing zip -->
 		        <input type="hidden" name="billing_country" value="India"/><!-- billing country -->
-		        <input type="text" name="billing_tel" value="${bill.getMobile() }"/><!-- billing tel -->
+		        <input type="hidden" name="billing_tel" value="${bill.getMobile() }"/><!-- billing tel -->
 		        
-		        <input type="text" name="billing_email" value="${bill.getEmail_id() }"/><!-- billing email -->
+		        <input type="hidden" name="billing_email" value="${bill.getEmail_id() }"/><!-- billing email -->
 		        <input type="hidden" name="billing_name" value="${bill.getFirst_name() }"/><!--billing name  -->
 		        <input type="hidden" name="billing_address" value="${bill.getAddress() }"/><!-- billing address -->
 		        <input type="hidden" name="billing_city" value="${bill.getCity() }"/><!-- billing city -->
