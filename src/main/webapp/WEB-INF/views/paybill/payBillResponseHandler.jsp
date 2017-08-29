@@ -152,8 +152,18 @@
 				params.add("D");
 				params.add(new Date());
 				params.add(pd.getCurrency());
-				params.add(8);
+				params.add(9);
 				params.add("Debit Card");
+				params.add(pd.getTrans_descr());
+				out.println("<h1>All value set to param</h1><br>");
+			}
+			if(responseFromCCAvenue.get("payment_mode").contains("Credit Card"))
+			{
+				params.add("C");
+				params.add(new Date());
+				params.add(pd.getCurrency());
+				params.add(8);
+				params.add("Credit Card");
 				params.add(pd.getTrans_descr());
 				out.println("<h1>All value set to param</h1><br>");
 			}
