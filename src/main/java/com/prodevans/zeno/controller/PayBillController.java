@@ -51,6 +51,13 @@ public class PayBillController
 		return  "paybill/payBillRequestHandler";
 	}
 	
+	@RequestMapping(value = "/payBillResponseHandler", method = RequestMethod.POST)
+	public String payBillResponseHandler(ModelMap model, HttpSession session) 
+	{
+		return  "paybill/payBillResponseHandler";
+	}
+	
+	
 	/*
 	@RequestMapping(value = "/payBillSendData", method = RequestMethod.GET)
 	public void payBillSendData(ModelMap model, HttpSession session) 
