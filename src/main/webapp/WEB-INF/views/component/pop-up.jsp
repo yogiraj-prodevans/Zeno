@@ -58,7 +58,7 @@
 								<br> <br>
 								<p style="font-size: 12px;">INR 120/</p>
 								<p style="font-size: 10px;">512 Kbps</p>
-								<p style="font-size: 10px;">post FUP</p>
+								<p style="font-size: 10px;">POST FUP</p>
 							</div>
 						</a>
 					</div>
@@ -72,7 +72,7 @@
 								<br> <br>
 								<p style="font-size: 12px;">INR 220/</p>
 								<p style="font-size: 10px;">512 Kbps</p>
-								<p style="font-size: 10px;">post FUP</p>
+								<p style="font-size: 10px;">POST FUP</p>
 							</div>
 						</a>
 					</div>
