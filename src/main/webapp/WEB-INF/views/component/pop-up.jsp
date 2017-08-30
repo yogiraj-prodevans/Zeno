@@ -34,16 +34,16 @@
 
 				<div class="row" style="text-align: center;">
 					<div style="font-size: 18px;">
-						<strong>Out of data?</strong>
+						Out of data?
 					</div>
 					<div style="font-size: 18px;">
-						<strong>Get more One8 on demand</strong>
+						Get more One8 on demand
 					</div>
 					<div style="font-size: 18px;">
-						<strong>Pick an option, pay</strong>
+						Pick an option, pay
 					</div>
 					<div style="font-size: 18px;">
-						<strong>and browse non stop.</strong>
+						and browse non stop.
 					</div>
 				</div>
 
