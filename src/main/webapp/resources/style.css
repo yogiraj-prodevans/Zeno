@@ -142,7 +142,14 @@ a
 {
 	padding-bottom: 20px;
 }
-
+.tableWidth
+{
+    width: 45%;
+}
+label
+{
+	font-weight: 300;
+}
 
 /*end*/
 .modal-header {
@@ -341,10 +348,6 @@ a:hover {
 	margin-right: 10px;
 	font-size: 20px;
 	border-radius: unset;
-}
-
-.tableWidth {
-	width: 100%;
 }
  
 .submitButton
