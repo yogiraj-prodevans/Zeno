@@ -16,6 +16,7 @@
 <link rel="shortcut icon" href="favicon.ico">
 
 
+
 <!--  include the all css components -->
 <jsp:include page="component/css.jsp"></jsp:include>
 
@@ -227,6 +228,7 @@
 				<div class="col-md-12">
 					<textarea class="form-control"
 						style="height: 30%; width: 90%; border: 0.4px solid #bdc3c7; resize: none; color: black; border-radius: 0.4px; font-size: 16px; font-weight: bold;">
+
                 </textarea>
 				</div>
 			</div>

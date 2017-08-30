@@ -274,16 +274,11 @@ label.css-label
 			                    			<input type="radio" name="payment_option" value="OPTNBK" id="radio3" class="css-checkbox" />
 			                    			<label for="radio3" class="css-label radGroup1">Net Banking</label><br>
 											
-											<input type="radio" name="payment_option" value="OPTCASHC" id="radio4" class="css-checkbox" />
-			                    			<label for="radio4" class="css-label radGroup1">Cash Card</label><br>
 		                    			</div>
 		                    			
 		                    			<div class="col-md-5">
 			                    			<input type="radio" name="payment_option" value="OPTMOBP" id="radio5" class="css-checkbox" />
 			                    			<label for="radio5" class="css-label radGroup1">Mobile Payments</label><br>
-			                    			
-			                    			<input type="radio" name="payment_option" value="OPTEMI" id="radio6" class="css-checkbox" />
-			                    			<label for="radio6" class="css-label radGroup1">EMI</label><br>
 			                    			
 			                    			<input type="radio" name="payment_option" value="OPTWLT" id="radio7" class="css-checkbox" />
 			                    			<label for="radio7" class="css-label radGroup1">Wallet</label><br>

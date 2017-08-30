@@ -14,9 +14,11 @@
 <meta property="og:url" content="-CUSTOMER VALUE-">
 <link rel="shortcut icon" href="favicon.ico">
 
+<link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
 
-<!--  include the all css components -->
+<!--  include the all css co\ dr 'mponents -->
 <jsp:include page="component/css.jsp"></jsp:include>
+
 
 </head>
 
@@ -24,26 +26,8 @@
 
 
 
-<body class="corporate" style="font-family: Roboto;">
+<body class="corporate">
 
-
-	<!-- BEGIN TOP BAR -->
-	<div class="pre-header">
-		<div class="container">
-			<div class="row">
-				<!-- BEGIN TOP BAR MENU -->
-				<div class="col-md-12 col-sm-12 additional-nav"
-					style="font-size: 12px; font-color: 000000">
-					<ul class="list-unstyled list-inline pull-right ">
-						<li><i class=" fa fa-phone"></i><span>Lets Talk: +91
-								9019602602</span></li>
-					</ul>
-				</div>
-				<!-- END TOP BAR MENU -->
-			</div>
-		</div>
-	</div>
-	<!-- END TOP BAR -->
 
 	<!-- BEGIN HEADER -->
 	<div class="header">
@@ -80,15 +64,18 @@
 	<!-- BEGIN STEPS -->
 
 	<div class="row">
+
 		<div class="col-md-4 col-sm-12  firstRowBackImage " >
 			<h1 style="color: white; margin-left: 15%; ">Bill payment</h1>
+
 		</div>
 		<div class="col-md-8 col-sm-12 firstRow"
 			style="background-color: #ecf0f1;">
 			<div class="col-md-6 col-sm-12">
-				<h2 style="text-shadow: 0.2px 0.2px black; margin-top:6%"
-					class="currentBillFontforiPhone5">Current bill INR
-					${invoiceDetails.getAmount() }</h2>
+
+				<h1 style="color:black;" class="currentBillFontforiPhone5">Current bill INR
+					${invoiceDetails.getAmount() }</h1>
+
 			</div>
 			<div class=" col-md-6 col-sm-12" style="margin-top: 1%;">
 				<div class="col-md-12 col-xs-12">
@@ -107,37 +94,41 @@
 	<div class="container" style="padding-left: 5%;padding-right: 5%">
 		<div  style="margin-bottom:4%;">
 
-			<div class="col-md-4 col-sm-6">
-				<div class="mainBlock4 " style="background-color: #2980b9;">
-					<h3 class="whiteShadow">Your current plan</h3>
-					<h5 class="whiteShadow" style="margin-top: 8%;">Plan Name:
-						${SubscriptionDetails.getRatePlan() }</h5>
-					<h5 class="whiteShadow">Basic- INR 849 per Month</h5>
-					<br>
 
-					<h4 class="whiteShadow">Plan Content</h4>
-					<h5 class="whiteShadow">1. ${SubscriptionDetails.getFUPLimit() }GB
-						Data</h5>
-					<h5 class="whiteShadow">2. 512Kbps Post FUP Speed Data</h5>
+			<div class="col-md-4 ">
+				<div class="mainBlock4" style="background-color: #2980b9;">
+					<h3 class="pb-20">Your current plan</h3>
+					<h4>Plan Name: ${SubscriptionDetails.getRatePlan() }</h4>
+					<h4 class="pb-30">Basic- INR 849 per Month</h4>
+					<h4>Plan Content</h4>
+					<h4>1. ${SubscriptionDetails.getFUPLimit() }GB Data</h4>
+					<h4>2. 512Kbps Post FUP Speed Data</h4>
+
 					<br>
 				</div>
 			</div>
 
-			<div class="col-md-4 col-sm-6">
-				<div class="mainBlock4 " style="background-color: #ffbb19;">
-					<h3 class="whiteShadow">Your One8 account</h3>
-					<h5 style="color: black; margin-top: 8%;" class="blackShadow">Account
-						no: ${user_details.getActid() }</h5>
-					<h5 style="color: black;" class="blackShadow">Bill period-
-						${SubscriptionDetails.getStartdt() } -
-						${SubscriptionDetails.getExpirydt() }</h5>
-					<br>
 
-					
-								<span class="blackShadow" style="color: black; margin-top: 67%;"><h4>Usage</h4></span>
-								<span class="blackShadow" style="color: black; ">
-									<h2><strong>${SubscriptionDetails.getDataUsed() }GB</strong>
-								</h2></span>
+			<div class="col-md-4">
+				<div class="mainBlock4" style="background-color: #ffbb19;">
+					<h3 class="pb-20">Your One8 account</h3>
+					<h4 style="color: black;">Account no: ${user_details.getActid() }</h4>
+					<h4 style="color: black;" class="pb-30">Bill period-
+						${SubscriptionDetails.getStartdt() } -
+						${SubscriptionDetails.getExpirydt() }</h4>
+					<table style="margin: 0%;">
+						<tr>
+							<td>
+								<h4 class="blackShadow" style="color: black; margin-top: 67%;">Usage</h4>
+							</td>
+							<td>
+								<h3 class="blackShadow" style="color: black; margin-left: 20%;">
+									${SubscriptionDetails.getDataUsed() }GB
+								</h3>
+							</td>
+						</tr>
+					</table>
+
 					<div class=" progress">
 						<div class="progressbarColor"
 							style="width: ${SubscriptionDetails.getDataPercent()}%;"></div>
@@ -145,16 +136,15 @@
 				</div>
 			</div>
 
-			<div class="col-md-4 col-sm-6">
-				<div class="mainBlock4 " style="background-color: #e74c3c;">
-					<h3 class="whiteShadow">Payment</h3>
-					<h5 class="whiteShadow" style="margin-top: 8%;">Account no:
-						${user_details.getActid() }</h5>
-					<h3 class="whiteShadow">INR ${invoiceDetails.getAmount() }</h3>
-					<h3 class="whiteShadow" style="margin-top: 10px;">Due in
-						${invoiceDetails.getRemainingDays() } Days</h3>
-					<br>
-					<h5 class="whiteShadow">Due Date: ${invoiceDetails.getDuedt() }</h5>
+
+			<div class="col-md-4">
+				<div class="mainBlock4" style="background-color: #e74c3c;">
+					<h3 class="pb-20">Payment</h3>
+					<h4 class="pb-20">Account no: ${user_details.getActid() }</h4>
+					<h2>INR ${invoiceDetails.getAmount() }</h2>
+					<h2 class="pb-20">Due in ${invoiceDetails.getRemainingDays() } days</h2>
+					<h4>Due Date: ${invoiceDetails.getDuedt() }</h4>
+
 				</div>
 			</div>
 		</div>
