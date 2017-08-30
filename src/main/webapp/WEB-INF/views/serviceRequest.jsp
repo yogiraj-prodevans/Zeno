@@ -16,10 +16,12 @@
         <meta property="og:url" content="-CUSTOMER VALUE-">
         <link rel="shortcut icon" href="favicon.ico">
 
-
+<link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
         <!--  include the all css components -->
 <jsp:include page="component/css.jsp"></jsp:include>
 <jsp:include page="component/Fixedblock_PopUp.jsp"></jsp:include>
+<jsp:include page="component/ExternalCSS.jsp"></jsp:include>
+
 
 
 <style>
@@ -65,7 +67,7 @@
 
 .tableWidth
 {
-    width: 40%;
+    width: 45%;
 }
 /* input text*/
     
@@ -80,10 +82,9 @@ input[type=text]
     border-left: none;
     border-right: none;
     border-top: none;
-    border-bottom: 0.5px solid #bdc3c7;
+    border-bottom: 0.6px solid #bdc3c7;
     background-color: white;
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 16px;    
 }
     
     
@@ -146,6 +147,11 @@ input[type="checkbox"]:checked + label:before {
     text-shadow: 0.2px 0.2px white;
     
 }    
+
+label
+{
+	font-weight: 300;
+}
     
     
 /* iphone 6 plus*/
@@ -212,8 +218,8 @@ input[type="checkbox"]:checked + label:before {
 
 
 
-<div class="col-md-12 firstRow" style="background-color:#ffbb19;">
-    <h3 style="text-shadow: 0.2px 0.2px white;">We're at your service</h3>
+<div class="col-md-12 firstRow" style="background-image: url('corporate/img/back.png');">
+    <h2>We're at your service</h2>
 </div>    
     
 <div class="container">
@@ -234,16 +240,16 @@ input[type="checkbox"]:checked + label:before {
             <div class="col-md-12">
                 <table class="tableWidth">
                     <tr>
-                        <td style="width:25%;">
-                            <h5 style="font-size:14px;margin-left:1%;">
-                                <strong>Time slot to call</strong>
-                            </h5>
+                        <td style="width:28%;">
+                            <h4>
+                               Time slot to call
+                            </h4>
                         </td>
                         <td>
-                            <select class="form-control" style="border-radius:1px;font-weight:bold;height:28px;">
-                                <option style="font-weight:bold;">9AM - 12PM</option>
-                                <option style="font-weight:bold;">12PM - 3PM</option>
-                                <option style="font-weight:bold;">3PM - 6PM</option>
+                            <select class="form-control" style="border-radius:1px;">
+                                <option>9AM - 12PM</option>
+                                <option>12PM - 3PM</option>
+                                <option>3PM - 6PM</option>
                             </select>
                         </td>
                     </tr>
@@ -256,7 +262,7 @@ input[type="checkbox"]:checked + label:before {
             <!-- Start Request For-->
             <div class="col-md-6">
                 <div class="row" style="margin-bottom:2%;">
-                    <h4 style="font-size:18px;"><strong>Request</strong></h4>
+                    <h3>Request</h3>
                 </div>
                 <div class="row" style="margin-left:1%;">
 
@@ -296,7 +302,7 @@ input[type="checkbox"]:checked + label:before {
             <!-- Start COmplaint For-->
             <div class="col-md-6">
                 <div class="row" style="margin-bottom:2%;">
-                    <h4 style="font-size:18px;"><strong>Complaint</strong></h4>
+                    <h3>Complaint</h3>
                 </div>
                 <div class="row" style="margin-left:1%;">
 
@@ -345,11 +351,9 @@ input[type="checkbox"]:checked + label:before {
         
         <!-- Start Tell More-->
         <div class="row">
-            <h4 style="font-size:18px;margin-left:1%;margin-bottom:1%;"><strong>Tell us more</strong></h4>
-        </div>
-        <div class="row">
+        	<h3 style="padding-left: 1%;">Tell us more</h3>
             <div class="col-md-12">
-                <textarea class="form-control" style="height:30%; width:90%; border: 0.4px solid #bdc3c7; resize: none; color:black; border-radius: 0.4px;font-size: 16px;font-weight: bold;">
+                <textarea class="form-control" style="height:30%; width:90%; border: 0.4px solid #bdc3c7; resize: none; color:black; border-radius: 0.4px;font-size: 16px;">
                 </textarea>
             </div>
         </div>

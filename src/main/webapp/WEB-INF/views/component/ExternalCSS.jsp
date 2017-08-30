@@ -6,6 +6,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
+
+<link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+
 <body>
 
 <style>
@@ -16,35 +19,43 @@ body
 	font-size: 16px;
 	line-height: 24px;
 	color: #000;
-	background-color: #f6f6f6;
+	background-color: white;
+}
+h2
+{
+	font-family: Roboto;
+	font-size: 30px;
+	line-height: 34px;
+	letter-spacing: 0.5;
 }
 h3
-{
-	font-size: 48px;
-	line-height: 50px;
-	letter-spacing: -0.4px;
-}
-h4
-{
-	font-size: 36px;
-	line-height: 40px;
-	letter-spacing: -0.1px;
-}
-h5
 {
 	font-size: 24px;
 	line-height: 28px;
 	letter-spacing: 0;
 	display: block;
 	-webkit-margin-before: 0.25em;
-	-webkit-margin-after: 1em;
 	-webkit-margin-start: 0px;
 	-webkit-margin-end: 0px;
+
+}
+h4
+{
+	font-size: 17px;
+	line-height: 24px;
+	display: block;
+	margin: 0 0 5px;
+}
+h5
+{
+	font-size: 12px;
+	line-height: 20px;
+	display: block;
+	margin: 0 0 5px;
 }
 p
 {
-	display: block;
-	margin: 0 0 5px;
+
 }
 a
 {
@@ -57,6 +68,10 @@ a
 .pb-30
 {
 	padding-bottom: 30px;
+}
+.pb-20
+{
+	padding-bottom: 20px;
 }
 </style>
 
