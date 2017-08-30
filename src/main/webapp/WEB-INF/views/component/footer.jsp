@@ -3,23 +3,26 @@
   
  <!-- BEGIN FOOTER -->
         <div class="footer" style="width:100%; font-family:Roboto; font-size:10px">
-            <div class="container">
-                <div class="row">
+            
+                <div class="row" style="margin:unset">
                     <!-- BEGIN COPYRIGHT -->
-                    <div class="col-md-10 col-sm-10 padding-top-0 padding-bottom-10 "> 2017 &copy Stoic Zeno. ALL Rights Reserved.&nbsp 
-                        <a href="${pageContext.request.contextPath }/privacy">Privacy Policy</a> |
-                        <a href="${pageContext.request.contextPath }/terms">Terms of Service</a> |
-                        <a href="${pageContext.request.contextPath }/refund">Refund and Cancellation</a> |
-                        <a href="${pageContext.request.contextPath }/feedback">Feedback</a> |
-                        <a href="${pageContext.request.contextPath }/contactus">Contact Us</a> | 
-                        <a href="${pageContext.request.contextPath }/help">FAQ</a> |
-                        <a href="#">Know your CPE</a> |
-                        <a href="#">Know your bill</a> 
+                   
+                    <div class="col-md-3 " ><h4> &copy; ONE8 TECHNOLOGIES 2017 </h4></div> 
+                    <div class="col-md-9" style="text-align: right;">
+                        <a href="${pageContext.request.contextPath }/privacy" class="font-h5">PRIVACY POLICY |</a> 
+                        <a href="${pageContext.request.contextPath }/terms" class="font-h5">TERMS OF SERVICE |</a> 
+                        <a href="${pageContext.request.contextPath }/refund" class="font-h5">REFUND AND CANCELLATION |</a> 
+                        <a href="${pageContext.request.contextPath }/feedback" class="font-h5">FEEDBACK |</a> 
+                        <a href="${pageContext.request.contextPath }/contactus" class="font-h5">CONTACT US |</a>  
+                        <a href="${pageContext.request.contextPath }/help" class="font-h5">FAQ |</a> 
+                        <a href="#" class="font-h5">KNOW YOUR CPE |</a> 
+                        <a href="#" class="font-h5">KNOW YOUR BILL</a> 
+                        </div>
                     </div>
                     <!-- END COPYRIGHT -->
                 </div>
-            </div>
-        </div>
+         
+       
         <!-- END FOOTER -->  
 
    

@@ -19,14 +19,18 @@ input[type="checkbox"] {
 	display: none;
 }
 
-.site-logo{
+
+/* Site logo*/
+.site-logo {
 	padding: unset;
 }
-.site-logo img{
+
+.site-logo img {
 	width: 120px;
-height: 80px;
-margin-top: 10px;
+	height: 80px;
+	margin-top: 10px;
 }
+
 input[type="checkbox"]+label {
 	display: block;
 	position: relative;
@@ -70,40 +74,39 @@ input[type="checkbox"]:checked+label:before {
 	transform: rotate(45deg);
 }
 
-body
-{
+body {
 	font-family: Roboto;
 	font-size: 16px;
 	line-height: 24px;
 	color: #000;
 	background-color: white;
 }
-.firstRow
-{
-    min-height: 90px;
-    color: white;
+
+.firstRow {
+	min-height: 90px;
+	color: white;
 }
-h1
-{
+
+h1 {
 	font-family: Roboto;
-    font-size: 36px;
-    line-height: 34px;
-    letter-spacing: 0.8px;
-    -webkit-margin-before: 0.8em;
-    -webkit-margin-start: 1em;
-    -webkit-margin-end: 0px;
-    margin: unset;
-    margin-top: 25px;
+	font-size: 36px;
+	line-height: 34px;
+	letter-spacing: 0.8px;
+	-webkit-margin-before: 0.8em;
+	-webkit-margin-start: 1em;
+	-webkit-margin-end: 0px;
+	margin: unset;
+	margin-top: 25px;
 }
-h2
-{
+
+h2 {
 	font-family: Roboto;
-    font-size: 30px;
-    line-height: 34px;
-    letter-spacing: 0.5px;
+	font-size: 30px;
+	line-height: 34px;
+	letter-spacing: 0.5px;
 }
-h3
-{
+
+h3 {
 	font-size: 24px;
 	line-height: 28px;
 	letter-spacing: 0;
@@ -111,48 +114,51 @@ h3
 	-webkit-margin-before: 0.25em;
 	-webkit-margin-start: 0px;
 	-webkit-margin-end: 0px;
-
 }
-h4
-{
+
+h4, font-h4 {
 	font-size: 17px;
 	line-height: 24px;
 	display: block;
 	margin: 0 0 5px;
 }
-h5
-{
+
+h5 , font-h5{
 	font-size: 12px;
 	line-height: 20px;
 	display: block;
 	margin: 0 0 5px;
 }
-p
-{
 
+p {
+	
 }
-a
-{
+
+a {
 	color: #e40000;
 	cursor: pointer;
 	white-space: nowrap;
 	font-size: 16px;
 	line-height: 24px;
+	text-decoration: none;
 }
-.pb-40
-{
+.footer a {
+	text-decoration: none;
+	
+}
+.pb-40 {
 	padding-bottom: 40px;
 }
-.pb-30
-{
+
+.pb-30 {
 	padding-bottom: 30px;
 }
-.pb-20
-{
+
+.pb-20 {
 	padding-bottom: 20px;
 }
-label
-{
+
+label {
 	font-weight: 300;
 }
 
@@ -305,22 +311,18 @@ a:hover {
 	max-height: 40%;
 }
 /* 3 blocks End here */
-
-
-
 .firstRowBackImage {
-	min-height:90px;
-	background-image: url('corporate/img/back.png') ;
+	min-height: 90px;
+	background-image: url('corporate/img/back.png');
 	background-repeat: no-repeat;
 	background-size: cover;
-	
-	
 }
 
 .progress {
 	height: 25px;
 	width: 90%;
-	margin: unset; overflow : hidden;
+	margin: unset;
+	overflow: hidden;
 	border-radius: 1px;
 	background-color: #f5f5f5;
 	-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
@@ -360,20 +362,18 @@ a:hover {
 .tableWidth {
 	width: 45%;
 }
- 
-.submitButton
-{
-    margin-top:10%;
-    margin-bottom:10%;
-    font-size: 16px;
-    width:60%;
-    height: 5%;
-    background-color: #2980b9;
-    color: #FFF;
-    border: 0.1px solid #2980b9;
-    text-shadow: 0.2px 0.2px white;
-    
-}   
+
+.submitButton {
+	margin-top: 10%;
+	margin-bottom: 10%;
+	font-size: 16px;
+	width: 60%;
+	height: 5%;
+	background-color: #2980b9;
+	color: #FFF;
+	border: 0.1px solid #2980b9;
+	text-shadow: 0.2px 0.2px white;
+}
 /* iphone 6 plus*/
 @media ( max-width : 530px) {
 	.mainBlock3 {
@@ -381,7 +381,6 @@ a:hover {
 		min-height: 40%;
 		margin: 5%;
 	}
-	
 }
 
 /* iphone 5*/
@@ -399,7 +398,6 @@ a:hover {
 
 /* iPad*/
 @media ( max-width : 768px) {
-	
 	.mainBlock3 {
 		width: 88%;
 		min-height: 30%;
