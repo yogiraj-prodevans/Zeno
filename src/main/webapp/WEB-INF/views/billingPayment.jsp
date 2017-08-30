@@ -18,6 +18,7 @@
 <!--  include the all css components -->
 <jsp:include page="component/css.jsp"></jsp:include>
 <jsp:include page="component/Fixedblock_PopUp.jsp"></jsp:include>
+<jsp:include page="component/ExternalCSS.jsp"></jsp:include>
 
 </head>
 
@@ -180,30 +181,13 @@
 		margin-left: 60%;
 	}
 }
+
 </style>
 
 
 
-<body class="corporate" style="font-family: Roboto;">
+<body class="corporate">
 
-
-	<!-- BEGIN TOP BAR -->
-	<div class="pre-header">
-		<div class="container">
-			<div class="row">
-				<!-- BEGIN TOP BAR MENU -->
-				<div class="col-md-12 col-sm-12 additional-nav"
-					style="font-size: 12px; font-color: 000000">
-					<ul class="list-unstyled list-inline pull-right ">
-						<li><i class=" fa fa-phone"></i><span>Lets Talk: +91
-								9019602602</span></li>
-					</ul>
-				</div>
-				<!-- END TOP BAR MENU -->
-			</div>
-		</div>
-	</div>
-	<!-- END TOP BAR -->
 
 	<!-- BEGIN HEADER -->
 	<div class="header">
@@ -269,16 +253,16 @@
 
 			<div class="col-md-4 ">
 				<div class="mainBlock3" style="background-color: #2980b9;">
-					<h3 class="whiteShadow">Your current plan</h3>
-					<h5 class="whiteShadow" style="margin-top: 8%;">Plan Name:
-						${SubscriptionDetails.getRatePlan() }</h5>
-					<h5 class="whiteShadow">Basic- INR 849 per Month</h5>
-					<br>
+					<h5>Your current plan</h5>
+					<p class="whiteShadow">Plan Name:
+						${SubscriptionDetails.getRatePlan() }</p>
+					<p class="pb-30">Basic- INR 849 per Month</p>
+					
 
-					<h4 class="whiteShadow">Plan Content</h4>
-					<h5 class="whiteShadow">1. ${SubscriptionDetails.getFUPLimit() }GB
-						Data</h5>
-					<h5 class="whiteShadow">2. 512Kbps Post FUP Speed Data</h5>
+					<p class="whiteShadow">Plan Content</p>
+					<p class="whiteShadow">1. ${SubscriptionDetails.getFUPLimit() }GB
+						Data</p>
+					<p class="whiteShadow">2. 512Kbps Post FUP Speed Data</p>
 					<br>
 				</div>
 			</div>
