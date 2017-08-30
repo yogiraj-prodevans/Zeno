@@ -51,12 +51,7 @@
 }
 /* 3 blocks End here */
     
-.firstRow
-{
-    min-height: 70px;
-    padding-left: 5%;
-    color: white;
-}
+
         
 /*START*/
 .boxes {
@@ -219,14 +214,14 @@ label
 
 
 <div class="col-md-12 firstRow" style="background-image: url('corporate/img/back.png');">
-    <h2>We're at your service</h2>
+    <h1>We're at your service</h1>
 </div>    
     
 <div class="container">
     
     <div class="col-md-12" style="margin-top:5%;">
         
-        <div class="row" style="margin-bottom:2%;">
+        <div class="row pb-40">
             <div class="col-md-6">
                 <input type="text" placeholder="Name"/>        
             </div>
@@ -236,7 +231,7 @@ label
         </div>
         
         
-        <div class="row">
+        <div class="row pb-20">
             <div class="col-md-12">
                 <table class="tableWidth">
                     <tr>

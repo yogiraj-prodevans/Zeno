@@ -49,10 +49,6 @@
 	padding-bottom: 2%;
 }
 /* 3 blocks End here */
-.firstRow {
-	min-height: 90px;
-	padding-top: 10px;
-}
 
 .firstRowBackImage {
 	background-image: url('corporate/img/back.png');
@@ -226,14 +222,13 @@
 
 	<div class="row">
 		<div class="col-md-4 col-sm-12  firstRowBackImage">
-			<h1 style="color: white; margin-left: 15%;">Bill payment</h1>
+			<h1 style="color:white;">Bill payment</h1>
 		</div>
 		<div class="col-md-8 col-sm-12 firstRow"
 			style="background-color: #ecf0f1;">
 			<div class="col-md-6 col-sm-12">
-				<h2 style="text-shadow: 0.2px 0.2px black;"
-					class="currentBillFontforiPhone5">Current bill INR
-					${invoiceDetails.getAmount() }</h2>
+				<h1 style="color:black;" class="currentBillFontforiPhone5">Current bill INR
+					${invoiceDetails.getAmount() }</h1>
 			</div>
 			<div class=" col-md-6 col-sm-12">
 				<div class="col-md-12 col-xs-12">

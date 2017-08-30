@@ -21,12 +21,27 @@ body
 	color: #000;
 	background-color: white;
 }
+.firstRow
+{
+    min-height: 90px;
+    color: white;
+}
+h1
+{
+	font-family: Roboto;
+    font-size: 36px;
+    line-height: 34px;
+    letter-spacing: 0.8px;
+    -webkit-margin-before: 0.8em;
+    -webkit-margin-start: 1em;
+    -webkit-margin-end: 0px;
+}
 h2
 {
 	font-family: Roboto;
-	font-size: 30px;
-	line-height: 34px;
-	letter-spacing: 0.5;
+    font-size: 30px;
+    line-height: 34px;
+    letter-spacing: 0.5px;
 }
 h3
 {
@@ -64,6 +79,10 @@ a
 	white-space: nowrap;
 	font-size: 16px;
 	line-height: 24px;
+}
+.pb-40
+{
+	padding-bottom: 40px;
 }
 .pb-30
 {
