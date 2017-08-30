@@ -20,40 +20,16 @@
         <meta property="og:url" content="-CUSTOMER VALUE-">
         <link rel="shortcut icon" href="favicon.ico">
 
+<link href="https://fonts.googleapis.com/css?family=Roboto:300"
+	rel="stylesheet">
 
-        <!--  include the all css components -->
-        <jsp:include page="component/css.jsp"></jsp:include>
+<jsp:include page="component/css.jsp"></jsp:include>
 
-<style type="text/css">
-.confirmPayment
+<style>
+.paymentImageSize
 {
-	width:160px;
-	height:40px;
-	padding:6%;
-	margin-top:2%;
-	line-height:.5;
-	background-color:#010745;
-	text-align:center;
-	font-size:16px;
-	line-height:.5;
-	color:#FFF;
-	align:center;
-	border: none;
-}
-.confirmPayment:hover
-{
-	background-color: #FFF;
-	color: #010745;
-	border: 1px solid #010745; !important;
-}
-/* iphone 6 plus*/
-@media (max-width: 480px)
-{
-	.confirmPayment
-	{
-		text-align: center;
-		padding-left: 10px;
-	}
+	max-width: 70px;
+	max-height: 90px;
 }
 </style>
 
@@ -111,15 +87,17 @@ if(success)
 {
 %>
     <div class="row">
-        <div class="col-md-4 firstRow" style="background-image: url('back.png');background-repeat:no-repeat;">
-            <h1 style="color:white;margin-left:15%;">Bill payment</h1>
+        <div class="col-md-4 firstRow" style="background-image: url('corporate/img/back1.png');background-repeat:no-repeat;">
+            <h1 style="color: white; margin-left: 15%;">Bill payment</h1>
         </div>
         <div class="col-md-8 firstRow" style="background-color: #ecf0f1;">
             <div class="col-md-10">
-                <h1 style="color:black;">Your transaction was successful.</h1>
+                <h1 style="color: black;" class="currentBillFontforiPhone5">
+                	Your transaction was successful.
+                </h1>
             </div>
             <div class="col-md-2">
-               
+               <img class="paymentImageSize" alt="Check Image" src="corporate/img/check.png">
             </div>
         </div>
     </div>
@@ -130,10 +108,10 @@ if(success)
 	        </div>
 	        <div class="col-md-8">
 	            <div class="mainBlock3" style="background-color: #2980b9;">
-	                <h4>Payment summary</h4><br>
-	                <h3>Your payment of INR. 60/- was successful.</h3><br>
+	                <h3 class="pb-40">Payment Summary</h3>
+	                <h2 class="pb-40">Your payment of INR. 60/- was successful.</h2>
 	                <h5>TRANSACTION ID</h5>
-	                <h4>123456789 </h4><br>
+	                <h3>123456789 </h3>
 	            </div>
 	        </div>
 	    </div>
@@ -143,45 +121,7 @@ if(success)
 else
 {
 %>
- <div class="container">
- 	<div class="col-md-6">
- 		<div style="margin-left: 10%;margin-top: 10%;margin-bottom: 10%;">
- 			
- 			<img alt="thick" src="corporate/img/logos/cross.png" style="height: 10%;width: 10%;">
-	 		
-	 		<h2 style="font-family:Roboto; font-size:56px; color: #e74c3c;">
-	 		Transaction Aborted!
-	 		</h2><br>
-	 		<h2 style="font-size:44px; color: #2c3e50;margin-left: 2%;margin-bottom: 0px;">Payment was</h2><br>
-	 		<h2 style="font-size:44px; color: #2c3e50;margin-left: 2%;">unsuccessful.</h2>
-	 	</div>
- 	</div>
- 	<div class="col-md-6">
- 		<div style="background-color:#010745; margin-top: 1%;padding-bottom: 2%;">
-	 		<div class="row" style="margin-left: 5%; padding-top: 5%;">
-	 			<h2 style="font-family:Roboto; font-size:24px; color: #FFF;">Payment Summary</h2><br>
-	 		</div>
-	 		<div class="row" style="margin-left: 5%;">
-	 			<div class="row">
-	 				<h2 style="font-family:Roboto; font-size:12px; color: #FFF;margin-left: 3%;">Your payment of INR 988.00/- on 10-Aug-2017 was aborted.</h2><br>
-	 			</div>
-	 			<div class="row" style="margin-left: 1%;">
-	 				<div class="col-md-4">
-	 					<div class="row">
-		 					<h2 style="font-family:Roboto; font-size:10px; color: #FFF;">REASON</h2>
-		 				</div>
-		 				<div class="row">
-		 					<h2 style="font-family:Roboto; font-size:16px; color: #e74c3c;">Reason of aborted transaction</h2>
-		 				</div>
-		 			</div>
-		 		</div>
-	 		</div>
 
-	 	</div>
-	 	
-	 	
- 	</div>
- </div>
 <%
 }
 %>
@@ -190,7 +130,7 @@ else
  <!-- included pop up -->
         <jsp:include page="component/pop-up.jsp"></jsp:include>
         
-        <jsp:include page="component/footer.jsp"></jsp:include>   
+           
            
            
             <!-- Load javascripts at bottom, this will reduce page load time -->

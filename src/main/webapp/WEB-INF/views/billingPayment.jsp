@@ -18,12 +18,7 @@
 	rel="stylesheet">
 
 <jsp:include page="component/css.jsp"></jsp:include>
-<style type="text/css">
-h1{
-	margin:unset;
-	padding-top:30px;
-}
-</style>
+
 
 </head>
 <body class="corporate">
