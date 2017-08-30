@@ -12,7 +12,6 @@ input[type=text] {
 	border-bottom: 0.5px solid #bdc3c7;
 	background-color: white;
 	font-size: 16px;
-	font-weight: bold;
 }
 
 /*Checkboxes styles*/
@@ -144,7 +143,10 @@ a
 {
 	padding-bottom: 20px;
 }
-
+label
+{
+	font-weight: 300;
+}
 
 /*end*/
 .modal-header {
@@ -346,7 +348,7 @@ a:hover {
 }
 
 .tableWidth {
-	width: 100%;
+	width: 45%;
 }
  
 .submitButton
