@@ -16,8 +16,10 @@
 
 <link href="https://fonts.googleapis.com/css?family=Roboto:300"
 	rel="stylesheet">
-<!--  include the all css co\ dr 'mponents -->
+
 <jsp:include page="component/css.jsp"></jsp:include>
+
+
 </head>
 <body class="corporate">
 
