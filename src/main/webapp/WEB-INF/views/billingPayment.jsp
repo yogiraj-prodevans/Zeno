@@ -18,7 +18,12 @@
 	rel="stylesheet">
 
 <jsp:include page="component/css.jsp"></jsp:include>
-
+<style type="text/css">
+h1{
+	margin:unset;
+	padding-top:30px;
+}
+</style>
 
 </head>
 <body class="corporate">
@@ -67,11 +72,11 @@
 					bill INR ${invoiceDetails.getAmount() }</h1>
 
 			</div>
-			<div class=" col-md-6 col-sm-12" style="margin-top: 1%;">
-				<div class="col-md-12 col-xs-12">
+			<div class=" col-md-6 col-sm-12" style="margin-top: 2%;">
+				
 					<a href="viewBill" class="btn billButton"> VIEW BILL </a> <a
 						href="payment" class="btn billButton"> PAY BILL </a>
-				</div>
+				
 
 			</div>
 
@@ -80,11 +85,11 @@
 
 
 
-	<div class="container" style="padding-left: 5%; padding-right: 5%">
+	<div class="container" style="">
 		<div style="margin-bottom: 4%;">
 
 
-			<div class="col-md-4 ">
+			<div class="col-md-4  col-sm-6">
 				<div class="mainBlock4" style="background-color: #2980b9;">
 					<h3 class="pb-20">Your current plan</h3>
 					<h4>Plan Name: ${SubscriptionDetails.getRatePlan() }</h4>
@@ -93,30 +98,25 @@
 					<h4>1. ${SubscriptionDetails.getFUPLimit() }GB Data</h4>
 					<h4>2. 512Kbps Post FUP Speed Data</h4>
 
-					<br>
+					
 				</div>
 			</div>
 
 
-			<div class="col-md-4">
+			<div class="col-md-4 col-sm-6">
 				<div class="mainBlock4" style="background-color: #ffbb19;">
 					<h3 class="pb-20">Your One8 account</h3>
-					<h4 style="color: black;">Account no:
+					<h4 style="color: black;">Account id:
 						${user_details.getActid() }</h4>
 					<h4 style="color: black;" class="pb-30">Bill period-
 						${SubscriptionDetails.getStartdt() } -
 						${SubscriptionDetails.getExpirydt() }</h4>
-					<table style="margin: 0%;">
-						<tr>
-							<td>
-								<h4 class="blackShadow" style="color: black; margin-top: 67%;">Usage</h4>
-							</td>
-							<td>
-								<h3 class="blackShadow" style="color: black; margin-left: 20%;">
+					
+								<h4 class="blackShadow" style="color: black; ">Usage</h4>
+							
+								<h3 class="blackShadow" style="color: black; ">
 									${SubscriptionDetails.getDataUsed() }GB</h3>
-							</td>
-						</tr>
-					</table>
+							
 
 					<div class=" progress">
 						<div class="progressbarColor"
@@ -126,10 +126,10 @@
 			</div>
 
 
-			<div class="col-md-4">
+			<div class="col-md-4 col-sm-6">
 				<div class="mainBlock4" style="background-color: #e74c3c;">
 					<h3 class="pb-20">Payment</h3>
-					<h4 class="pb-20">Account no: ${user_details.getActid() }</h4>
+					<h4 class="pb-20">Account id: ${user_details.getActid() }</h4>
 					<h2>INR ${invoiceDetails.getAmount() }</h2>
 					<h2 class="pb-20">Due in ${invoiceDetails.getRemainingDays() }
 						days</h2>
