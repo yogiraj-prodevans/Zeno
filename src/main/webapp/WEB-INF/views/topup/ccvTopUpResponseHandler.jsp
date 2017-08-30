@@ -68,7 +68,7 @@
 
         <!--  include the all css components -->
         <jsp:include page="../component/css.jsp"></jsp:include>
-        <jsp:include page="../component/Fixedblock_PopUp.jsp"></jsp:include>
+       
 
 </head>
         <body class="corporate" style="font-family: Roboto;">

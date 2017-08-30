@@ -6,11 +6,11 @@
 <ul class="fixedBlock">
 	<li><a class="topUpBlock" href="#topUP" data-target="#topUP"
 		data-toggle="modal">
-			<div class="textCSS">Top Up</div>
+			<div class="textCSS">TOP UP</div>
 	</a></li>
 	<li><a class="currentPlanBlock" href="#currentPlan"
 		data-target="#currentPlan" data-toggle="modal">
-			<div class="textCSS">Your Plan</div>
+			<div class="textCSS">YOUR PLAN</div>
 	</a></li>
 </ul>
 <!-- End Code For Floating Points (Current Plan and Top Up) -->

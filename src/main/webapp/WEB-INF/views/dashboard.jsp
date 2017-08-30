@@ -14,7 +14,7 @@
 <!--  include the all css components -->
 <jsp:include page="component/css.jsp"></jsp:include>
 
-<jsp:include page="component/Fixedblock_PopUp.jsp"></jsp:include>
+
 
 <style>
 canvas {
@@ -52,6 +52,7 @@ canvas {
 		var options = {
 			title : 'Data Usage',
 			curveType : 'none',
+			height: 500,
 			hAxis : {
 				title : "Time in week (${SubscriptionDetails.getStartdt() } - ${SubscriptionDetails.getExpirydt() })",
 				ticks : [ {
@@ -76,6 +77,7 @@ canvas {
 				ticks : [ 0, 20, 40, 60, 80, 100 ]
 			},
 			pointSize : 5,
+			 legend: { position: 'bottom' }
 
 		};
 
@@ -90,128 +92,6 @@ canvas {
 </script>
 
 
-<style>
-.billPayment {
-	color: white;
-}
-
-.greyBlock {
-	background-color: #bdc3c7;
-}
-
-/* 3 blocks start here */
-.col-md-4 {
-	padding-left: 1px;
-	padding-right: 1px;
-}
-
-.mainBlock3 {
-	max-width: 92%;
-	min-height: 45%;
-	color: white;
-	margin-top: 4%;
-	padding-top: 2%;
-	padding-left: 7%;
-	padding-bottom: 2%;
-}
-/* 3 blocks End here */
-.firstRow {
-	min-height: 90px;
-	padding-top: 10px;
-}
-
-.firstRowBackImage {
-	background-image: url('corporate/img/back.png');
-	background-repeat: no-repeat, no-repeat, x-repeat;
-	min-height: 90px;
-}
-
-.progress {
-	height: 25px;
-	width: 90%;
-	margin-bottom: 20px;
-	overflow: hidden;
-	border-radius: 1px;
-	background-color: #f5f5f5;
-	-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
-	box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
-}
-
-.progressbarColor {
-	background-color: #7f8c8d;
-	height: 100%;
-}
-
-.whiteShadow {
-	/*text-shadow: 0.2px 0.2px white;*/
-	
-}
-
-.blackShadow {
-	text-shadow: 0.2px 0.2px black;
-}
-
-/* iphone 6 plus*/
-@media ( max-width : 530px) {
-	.mainBlock3 {
-		width: 88%;
-		min-height: 40%;
-		margin: 5%;
-	}
-	.firstRow {
-		min-width: 100%;
-		height: 120px;
-	}
-}
-
-/* iphone 5*/
-@media ( max-width : 320px) {
-	.currentBillFontforiPhone5 {
-		font-size: 26px;
-		margin-left: 4px;
-	}
-	.mainBlock3 {
-		width: 88%;
-		min-height: 45%;
-		margin: 5%;
-	}
-	.billButton {
-		margin-top: 5%;
-		max-width: 120px;
-	}
-	.billButtonBlock1 {
-		margin-left: 5%;
-	}
-	.billButtonBlock2 {
-		margin-top: 5%;
-		margin-left: 60px;
-	}
-}
-
-/* iPad*/
-@media ( max-width : 768px) {
-	.firstRow {
-		min-width: 100%;
-		height: 150px;
-	}
-	.mainBlock3 {
-		width: 88%;
-		min-height: 30%;
-		margin: 5%;
-	}
-	.billButton {
-		margin-top: 5%;
-		max-width: 120px;
-	}
-	.billButtonBlock1 {
-		margin-left: 5%;
-	}
-	.billButtonBlock2 {
-		margin-top: 5%;
-		margin-left: 60%;
-	}
-}
-</style>
 
 
 </head>
@@ -279,6 +159,33 @@ canvas {
 		<div class="row col-md-12" style="margin-bottom: 4%;">
 
 			<div class="col-md-4 ">
+				<div class="mainBlock3" style="background-color: #2980b9;">
+					<h3 class="whiteShadow">Your One8 account</h3>
+					<h5 class="whiteShadow" style="margin-top: 8%;">Account no:
+						${user_details.getActid() }</h5>
+					<h5 class="whiteShadow">Plan Name:
+						${SubscriptionDetails.getRatePlan() }</h5>
+					<table style="margin: 0%;">
+						<tr>
+							<td>
+								<h4 class="blackShadow" style="color: black; margin-top: 67%;">Usage</h4>
+							</td>
+							<td>
+								<h2 class="blackShadow" style="color: black; margin-left: 20%;">
+									<strong>${SubscriptionDetails.getDataUsed() }GB</strong>
+								</h2>
+							</td>
+						</tr>
+					</table>
+					<div class=" progress">
+						<div class="progressbarColor"
+							style="width: ${SubscriptionDetails.getDataPercent()}%;"></div>
+					</div>
+					<h3 class="whiteShadow">INR ${invoiceDetails.getAmount() } Due
+						in ${invoiceDetails.getRemainingDays() } Days</h3>
+					<h5 class="whiteShadow">Due Date: ${invoiceDetails.getDuedt() }</h5>
+				</div>
+				
 				<div class="mainBlock3" style="background-color: #2980b9;">
 					<h3 class="whiteShadow">Your One8 account</h3>
 					<h5 class="whiteShadow" style="margin-top: 8%;">Account no:

@@ -12,7 +12,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta content="Stoic Zeno User Portal" name="description">
 <meta content="Stoic Zeno User Portal Keywords" name="keywords">
-<meta content="vikram" name="author">
 
 <!-- link to image for socio -->
 <meta property="og:url" content="-CUSTOMER VALUE-">
@@ -20,38 +19,8 @@
 
 <!--  include the all css components -->
 <jsp:include page="component/css.jsp"></jsp:include>
-<jsp:include page="component/Fixedblock_PopUp.jsp"></jsp:include>
 
 </head>
-
-<style>
-
-/* 3 blocks start here */  
-.col-md-4
-{
-    padding-left: 1px;
-    padding-right: 1px;
-}
-.mainBlock3
-{
-    max-width: 92%;
-    color: white;
-    margin-top: 5%;
-    padding-top: 1%;
-    padding-left: 4%;
-}
-/* 3 blocks End here */
-    
-.firstRow
-{
-    min-height: 70px;
-    padding-left: 5%;
-    color: white;
-}
-
-
-</style>
-
 <body class="corporate" style="font-family: Roboto;">
 	<!-- BEGIN TOP BAR -->
 	<div class="pre-header">
