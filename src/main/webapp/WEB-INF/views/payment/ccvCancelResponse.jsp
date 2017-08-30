@@ -24,22 +24,8 @@
         <jsp:include page="../component/css.jsp"></jsp:include>
 
 </head>
-        <body class="corporate">
-            <!-- BEGIN TOP BAR -->
-            <div class="pre-header">
-                <div class="container">
-                    <div class="row">
-                        <!-- BEGIN TOP BAR MENU -->
-                        <div class="col-md-12 col-sm-12 additional-nav" style=" font-size:12px; font-color:000000">
-                            <ul class="list-unstyled list-inline pull-right ">
-                                <li ><i class=" fa fa-phone"></i><span>Lets Talk: +91 9019602602</span></li>
-                            </ul>
-                        </div>
-                        <!-- END TOP BAR MENU -->
-                    </div>
-                </div>
-            </div>
-            <!-- END TOP BAR -->
+<body class="corporate">
+
             <!-- BEGIN HEADER -->
             <div class="header">
                 <div class="container">
@@ -97,47 +83,36 @@
 	}
 		
 %>
-
- <div class="container">
- 	<div class="col-md-6">
- 		<div style="margin-left: 10%;margin-top: 10%;margin-bottom: 10%;">
- 			
- 			<img alt="thick" src="corporate/img/logos/cross.png" style="height: 10%;width: 10%;">
-	 		
-	 		<h2 style="font-family:Roboto; font-size:56px; color: #e74c3c;">
-	 		Transaction Cancelled!
-	 		</h2><br>
-	 		<h2 style="font-size:44px; color: #2c3e50;margin-left: 2%;margin-bottom: 0px;">Payment was</h2><br>
-	 		<h2 style="font-size:44px; color: #2c3e50;margin-left: 2%;">unsuccessful....</h2>
-	 	</div>
- 	</div>
- 	<div class="col-md-6">
- 		<div style="background-color:#010745; margin-top: 1%;padding-bottom: 2%;">
-	 		<div class="row" style="margin-left: 5%; padding-top: 5%;">
-	 			<h2 style="font-family:Roboto; font-size:24px; color: #FFF;">Payment Summary</h2><br>
-	 		</div>
-	 		<div class="row" style="margin-left: 5%;">
-	 			<div class="row">
-	 				<h2 style="font-family:Roboto; font-size:12px; color: #FFF;margin-left: 3%;">Your payment of INR <%=responseFromCCAvenue.get("amount") %>/- was cancelled.</h2><br>
-	 			</div>
-	 			<div class="row" style="margin-left: 1%;">
-	 				<div class="col-md-12">
-	 					<div class="row">
-		 					<h2 style="font-family:Roboto; font-size:10px; color: #FFF;">REASON</h2>
-		 				</div>
-		 				<div class="row">
-		 					<h2 style="font-family:Roboto; font-size:16px; color: #e74c3c;"><%=responseFromCCAvenue.get("status_message")%></h2>
-		 				</div>
-		 			</div>
-		 		</div>
-	 		</div>
-
-	 	</div>
-	 	
-	 	
- 	</div>
- </div>
-
+  <div class="row">
+        <div class="col-md-4 firstRow billPaymentImage">
+            <h1 style="color: white; margin-left: 15%;">Bill payment</h1>
+        </div>
+        <div class="col-md-8 firstRow" style="background-color: #ecf0f1;">
+            <div class="col-md-10 col-sm-10">
+                <h1 style="color: black;" class="currentBillFontforiPhone5">
+                	Your transaction was cancelled.
+                </h1>
+            </div>
+            <div class="col-md-2 col-sm-2">
+               <img class="paymentImageSize" alt="Check Image" src="corporate/img/cross1.png">
+            </div>
+        </div>
+    </div>
+    
+	<div class="container">
+	    <div class="row col-md-12">
+	        <div class="col-md-4">
+	        </div>
+	        <div class="col-md-8">
+	            <div class="mainBlock3" style="background-color: #2980b9;">
+	                <h3 class="pb-40">Payment Summary</h3>
+	                <h2 class="pb-40">Your payment of INR. <%=responseFromCCAvenue.get("amount") %>/- was unsuccessful.</h2>
+	                <h5>REASON</h5>
+	                <h3><%=responseFromCCAvenue.get("status_message")%></h3>
+	            </div>
+	        </div>
+	    </div>
+	</div>
 
  <!-- included pop up -->
         <jsp:include page="../component/pop-up.jsp"></jsp:include>

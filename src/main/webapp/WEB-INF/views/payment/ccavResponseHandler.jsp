@@ -67,22 +67,7 @@
     
 </style>
 </head>
-        <body class="corporate">
-            <!-- BEGIN TOP BAR -->
-            <div class="pre-header">
-                <div class="container">
-                    <div class="row">
-                        <!-- BEGIN TOP BAR MENU -->
-                        <div class="col-md-12 col-sm-12 additional-nav" style=" font-size:12px; font-color:000000">
-                            <ul class="list-unstyled list-inline pull-right ">
-                                <li ><i class=" fa fa-phone"></i><span>Lets Talk: +91 9019602602</span></li>
-                            </ul>
-                        </div>
-                        <!-- END TOP BAR MENU -->
-                    </div>
-                </div>
-            </div>
-            <!-- END TOP BAR -->
+<body class="corporate">
             <!-- BEGIN HEADER -->
             <div class="header">
                 <div class="container">
@@ -174,17 +159,19 @@
 if(success)
 {
 %>
-		
+	
     <div class="row">
-        <div class="col-md-4 firstRow" style="background-image: url('back.png');background-repeat:no-repeat;">
-            <h1 style="color:white;margin-left:15%;">Bill payment</h1>
+        <div class="col-md-4 firstRow billPaymentImage">
+            <h1 style="color: white; margin-left: 15%;">Bill payment</h1>
         </div>
         <div class="col-md-8 firstRow" style="background-color: #ecf0f1;">
-            <div class="col-md-10">
-                <h1>Your transaction was successful.</h1>
+            <div class="col-md-10 col-sm-10">
+                <h1 style="color: black;" class="currentBillFontforiPhone5">
+                	Your transaction was successful.
+                </h1>
             </div>
-            <div class="col-md-2">
-               
+            <div class="col-md-2 col-sm-2">
+               <img class="paymentImageSize" alt="Check Image" src="corporate/img/check.png">
             </div>
         </div>
     </div>
@@ -195,10 +182,10 @@ if(success)
 	        </div>
 	        <div class="col-md-8">
 	            <div class="mainBlock3" style="background-color: #2980b9;">
-	                <h4>Payment summary</h4><br>
-	                <h3>Your payment of INR.<%=responseFromCCAvenue.get("amount") %>/- was successful.</h3><br>
+	                <h3 class="pb-40">Payment Summary</h3>
+	                <h2 class="pb-40">Your payment of INR. <%=responseFromCCAvenue.get("amount") %>/- was successful.</h2>
 	                <h5>TRANSACTION ID</h5>
-	                <h4><%=pd.getTransaction_id() %></h4><br>
+	                <h3><%=pd.getTransaction_id() %></h3>
 	            </div>
 	        </div>
 	    </div>
@@ -208,16 +195,18 @@ if(success)
 else
 {
 %>
-	<div class="row">
-        <div class="col-md-4 firstRow" style="background-image: url('back.png');background-repeat:no-repeat;">
-            <h1 style="color:white;margin-left:15%;">Bill payment</h1>
+  <div class="row">
+        <div class="col-md-4 firstRow billPaymentImage">
+            <h1 style="color: white; margin-left: 15%;">Bill payment</h1>
         </div>
         <div class="col-md-8 firstRow" style="background-color: #ecf0f1;">
-            <div class="col-md-10">
-                <h1>Your transaction was unsuccessful.</h1>
+            <div class="col-md-10 col-sm-10">
+                <h1 style="color: black;" class="currentBillFontforiPhone5">
+                	Your transaction was unsuccessful.
+                </h1>
             </div>
-            <div class="col-md-2">
-               
+            <div class="col-md-2 col-sm-2">
+               <img class="paymentImageSize" alt="Check Image" src="corporate/img/cross1.png">
             </div>
         </div>
     </div>
@@ -228,14 +217,15 @@ else
 	        </div>
 	        <div class="col-md-8">
 	            <div class="mainBlock3" style="background-color: #2980b9;">
-	                <h4>Payment summary</h4><br>
-	                <h3>Your payment of INR.<%=responseFromCCAvenue.get("amount") %>/- was unsuccessful.</h3><br>
+	                <h3 class="pb-40">Payment Summary</h3>
+	                <h2 class="pb-40">Your payment of INR. <%=responseFromCCAvenue.get("amount") %>/- was unsuccessful.</h2>
 	                <h5>REASON</h5>
-	                <h4><%=responseFromCCAvenue.get("status_message") %></h4><br>
+	                <h3><%=responseFromCCAvenue.get("status_message") %></h3>
 	            </div>
 	        </div>
 	    </div>
 	</div>
+	
 <%
 }
 %>

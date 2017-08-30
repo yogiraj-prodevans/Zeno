@@ -18,12 +18,7 @@
 	rel="stylesheet">
 
 <jsp:include page="component/css.jsp"></jsp:include>
-<style type="text/css">
-h1{
-	margin:unset;
-	padding-top:30px;
-}
-</style>
+
 
 </head>
 <body class="corporate">
@@ -59,7 +54,7 @@ h1{
 
 
 	<div class="row">
-		<div class="col-md-4 col-sm-12  firstRowBackImage ">
+		<div class="col-md-4 col-sm-12  firstRow billPaymentImage ">
 			<h1 style="color: white; margin-left: 15%;">Bill payment</h1>
 		</div>
 		<div class="col-md-8 col-sm-12 firstRow"
