@@ -2,7 +2,7 @@
 
   
  <!-- BEGIN FOOTER -->
-        <div class="footer" style="width:100%; font-family:Roboto; position: fixed; right: 0; bottom: 0; left: 0;font-size:10px">
+        <div class="footer" style="width:100%; font-family:Roboto; font-size:10px">
             <div class="container">
                 <div class="row">
                     <!-- BEGIN COPYRIGHT -->
