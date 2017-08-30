@@ -151,7 +151,7 @@ a
 	padding: unset;
 	padding-top: 1%;
 	padding-bottom: 1%;
-	padding-left: 8%;
+	padding-left: 4%;
 	padding-right: 8%;
 	border-bottom: 1px solid #e5e5e5;
 	text-align: left;
@@ -162,12 +162,12 @@ a
 	min-width: 350px;
 	max-width: 350px;
 	margin: auto;
-	margin-top: 15%;
+	margin-top: 10%;
 }
 
 .modal-content {
-	min-height: 280px;
-	max-height: 280px;
+	min-height: 300px;
+	max-height: 300px;
 	border-radius: unset;
 }
 

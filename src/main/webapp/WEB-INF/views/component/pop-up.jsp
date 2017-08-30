@@ -53,7 +53,7 @@
 						<a href="toup50GB?planName=Add on 5GB">
 							<div class="circle1" style="height: 110px; width:110px;margin:auto;">
 								<div style="font-size: 28px; padding-top: 20%;">
-									<strong>5GB</strong>
+									5GB
 								</div>
 								<br> <br>
 								<p style="font-size: 12px;">INR 120/</p>
@@ -67,7 +67,7 @@
 						<a href="toup50GB?planName=Add on 10GB">
 							<div class="circle2" style="height: 110px; width:110px;margin:auto;">
 								<div style="font-size: 28px; padding-top: 20%;">
-									<strong>10GB</strong>
+									10GB
 								</div>
 								<br> <br>
 								<p style="font-size: 12px;">INR 220/</p>
