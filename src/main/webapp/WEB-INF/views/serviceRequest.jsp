@@ -22,10 +22,11 @@
 
 select{
 -webkit-appearance:none;
+-moz-appearance: none;
 text-indent:1px;
 text-overflow: '';
 width:200px;
-background-image:url(corporate/img/arrow.png);
+background: url("corporate/img/arrow.png") no-repeat right center;
 background-repeat: no-repeat;
 background-position:right center;
 }
@@ -71,7 +72,7 @@ background-position:right center;
             <div class="col-md-6">
                 <input type="text" placeholder="Name"/>        
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 mb-pt-30">
                 <input type="text" placeholder="Mobile" class="mobileMargin"/>        
             </div>
         </div>

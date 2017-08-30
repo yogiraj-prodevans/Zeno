@@ -93,7 +93,7 @@ h1
     -webkit-margin-start: 1em;
     -webkit-margin-end: 0px;
     margin: unset;
-    margin-top: 25px;
+    padding-top: 25px;
 }
 h2
 {
@@ -381,6 +381,13 @@ a:hover {
 		min-height: 40%;
 		margin: 5%;
 	}
+	.tableWidth {
+    width: 100%;
+	}
+	.mb-pt-30
+	{	
+		padding-top:30px;
+	}
 	
 }
 
@@ -395,15 +402,29 @@ a:hover {
 		min-height: 45%;
 		margin: 5%;
 	}
+	.tableWidth {
+    width: 100%;
+	}
+	.mb-pt-30
+	{	
+		padding-top:30px;
+	}
 }
 
 /* iPad*/
-@media ( max-width : 768px) {
+@media ( max-width : 850px) {
 	
 	.mainBlock3 {
 		width: 88%;
 		min-height: 30%;
 		margin: 5%;
+	}
+	.tableWidth {
+    width: 100%;
+	}
+	.mb-pt-30
+	{	
+		padding-top:30px;
 	}
 }
 /* iphone 6 plus*/
@@ -414,5 +435,12 @@ a:hover {
 	.textCSS {
 		font-size: 12px;
 		padding-right: 20%;
+	}
+	.tableWidth {
+    width: 100%;
+	}
+	.mb-pt-30
+	{	
+		padding-top:30px;
 	}
 }
