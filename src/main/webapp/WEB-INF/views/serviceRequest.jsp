@@ -46,7 +46,7 @@
 
 
 
-<div class="col-md-12 firstRow" style="background-image: url('corporate/img/back.png');width:100%;">
+<div class="col-md-12 firstRow" style="background-image: url('corporate/img/back.png');">
     <h1>We're at your service</h1>
 </div>    
     
@@ -74,7 +74,7 @@
                             </h4>
                         </td>
                         <td>
-                            <select class="form-control" style="border-radius:1px;">
+                            <select class="form-control" style="border-radius:1px;border: 0.6px solid #bdc3c7">
                                 <option>9AM - 12PM</option>
                                 <option>12PM - 3PM</option>
                                 <option>3PM - 6PM</option>
