@@ -18,8 +18,14 @@ input[type=text] {
 input[type="checkbox"] {
 	display: none;
 }
+
+.site-logo{
+	padding: unset;
+}
 .site-logo img{
-	width: 80px; height: 60px;
+	width: 120px;
+height: 80px;
+margin-top: 10px;
 }
 input[type="checkbox"]+label {
 	display: block;
@@ -295,7 +301,7 @@ a:hover {
 	margin-top: 10%;
 	padding: 2% 7%;
 	padding-bottom: 2%;
-	min-height: 250px;
+	min-height: 280px;
 	max-height: 40%;
 }
 /* 3 blocks End here */
@@ -303,9 +309,11 @@ a:hover {
 
 
 .firstRowBackImage {
-	background-image: url('corporate/img/back.png');
-	background-repeat: repeat-x;
-	min-height: 90px;
+	min-height:90px;
+	background-image: url('corporate/img/back.png') ;
+	background-repeat: no-repeat;
+	background-size: cover;
+	
 	
 }
 
