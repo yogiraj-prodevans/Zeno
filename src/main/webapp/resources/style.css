@@ -1,3 +1,44 @@
+/* CSS for billPaymentImage starts here*/
+
+.billPaymentImage
+{
+	 background-image: url('corporate/img/back1.png');
+	 background-repeat:no-repeat;
+}
+
+.paymentImageSize
+{
+	max-width: 60px;
+	max-height: 80px;
+}
+
+@media (max-width : 480px) 
+{
+	.billPaymentImage
+	{
+	 background-image: url('corporate/img/back1.png');
+	 background-repeat:no-repeat;
+	}
+}/*
+@media ( max-width : 790px) 
+{
+	.billPaymentImage
+	{
+	 background-image: url('corporate/img/back3.png');
+	 background-repeat:no-repeat;
+	}
+}
+@media ( max-width : 980px) 
+{
+	.billPaymentImage
+	{
+	 background-image: url('corporate/img/back.png');
+	 background-repeat:no-repeat;
+	}
+}*/
+
+/* CSS for billPaymentImage ends here*/
+
 /* input text*/
 input[type=text] {
 	padding: 0;
@@ -451,3 +492,6 @@ a:hover {
 		padding-top:30px;
 	}
 }
+
+
+

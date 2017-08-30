@@ -25,32 +25,10 @@
 
 <jsp:include page="component/css.jsp"></jsp:include>
 
-<style>
-.paymentImageSize
-{
-	max-width: 70px;
-	max-height: 90px;
-}
-</style>
-
 </head>
-        <body class="corporate">
-            <!-- BEGIN TOP BAR -->
-            <div class="pre-header">
-                <div class="container">
-                    <div class="row">
-                        <!-- BEGIN TOP BAR MENU -->
-                        <div class="col-md-12 col-sm-12 additional-nav" style=" font-size:12px; font-color:000000">
-                            <ul class="list-unstyled list-inline pull-right ">
-                                <li ><i class=" fa fa-phone"></i><span>Lets Talk: +91 9019602602</span></li>
-                            </ul>
-                        </div>
-                        <!-- END TOP BAR MENU -->
-                    </div>
-                </div>
-            </div>
-            <!-- END TOP BAR -->
-            <!-- BEGIN HEADER -->
+<body class="corporate">
+ 
+             <!-- BEGIN HEADER -->
             <div class="header">
                 <div class="container">
                     <a class="site-logo" href="#">
@@ -83,20 +61,20 @@
         
 <%
 boolean success=true;
-if(success)
+if(!success)
 {
 %>
     <div class="row">
-        <div class="col-md-4 firstRow" style="background-image: url('corporate/img/back1.png');background-repeat:no-repeat;">
+        <div class="col-md-4 firstRow billPaymentImage">
             <h1 style="color: white; margin-left: 15%;">Bill payment</h1>
         </div>
         <div class="col-md-8 firstRow" style="background-color: #ecf0f1;">
-            <div class="col-md-10">
+            <div class="col-md-10 col-sm-10">
                 <h1 style="color: black;" class="currentBillFontforiPhone5">
                 	Your transaction was successful.
                 </h1>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 col-sm-2">
                <img class="paymentImageSize" alt="Check Image" src="corporate/img/check.png">
             </div>
         </div>
@@ -121,7 +99,36 @@ if(success)
 else
 {
 %>
-
+  <div class="row">
+        <div class="col-md-4 firstRow billPaymentImage">
+            <h1 style="color: white; margin-left: 15%;">Bill payment</h1>
+        </div>
+        <div class="col-md-8 firstRow" style="background-color: #ecf0f1;">
+            <div class="col-md-10 col-sm-10">
+                <h1 style="color: black;" class="currentBillFontforiPhone5">
+                	Your transaction was unsuccessful.
+                </h1>
+            </div>
+            <div class="col-md-2 col-sm-2">
+               <img class="paymentImageSize" alt="Check Image" src="corporate/img/cross1.png">
+            </div>
+        </div>
+    </div>
+    
+	<div class="container">
+	    <div class="row col-md-12">
+	        <div class="col-md-4">
+	        </div>
+	        <div class="col-md-8">
+	            <div class="mainBlock3" style="background-color: #2980b9;">
+	                <h3 class="pb-40">Payment Summary</h3>
+	                <h2 class="pb-40">Your payment of INR. 60/- was unsuccessful.</h2>
+	                <h5>REASON</h5>
+	                <h3>123456789 </h3>
+	            </div>
+	        </div>
+	    </div>
+	</div>
 <%
 }
 %>

@@ -56,7 +56,7 @@
 
 
 	<div class="row">
-		<div class="col-md-4 col-sm-12  firstRowBackImage ">
+		<div class="col-md-4 col-sm-12  firstRow billPaymentImage ">
 			<h1 style="color: white; margin-left: 15%;">Bill payment</h1>
 		</div>
 		<div class="col-md-8 col-sm-12 firstRow"
