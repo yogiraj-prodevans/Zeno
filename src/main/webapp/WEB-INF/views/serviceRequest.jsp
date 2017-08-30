@@ -18,6 +18,19 @@
 <!--  include the all css components -->
 <jsp:include page="component/css.jsp"></jsp:include>
 
+<style>
+
+select{
+-webkit-appearance:none;
+text-indent:1px;
+text-overflow: '';
+width:200px;
+background-image:url(corporate/img/arrow.png);
+background-repeat: no-repeat;
+background-position:right center;
+}
+</style>
+
 </head>
 
 <body class="corporate" style="font-family: Roboto;">
@@ -47,7 +60,7 @@
 
 
 <div class="col-md-12 firstRow" style="background-image: url('corporate/img/back.png');">
-    <h1>We're at your service</h1>
+    <h1 style="margin-left:5%;">We're at your service</h1>
 </div>    
     
 <div class="container">
