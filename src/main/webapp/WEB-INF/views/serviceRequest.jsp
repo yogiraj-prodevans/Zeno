@@ -60,7 +60,7 @@
 
 
 
-<div class="col-md-12 firstRow" style="background-image: url('corporate/img/back.png');">
+<div class="col-md-12 firstRow" style="background-image: url('corporate/img/back.png');width:100%;">
     <h1>We're at your service</h1>
 </div>    
     
