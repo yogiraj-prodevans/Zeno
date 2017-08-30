@@ -98,27 +98,12 @@ canvas {
 
 
 <body class="corporate" style="font-family: Roboto;">
-	<div class="pre-header">
-		<div class="container">
-			<div class="row">
-				<!-- BEGIN TOP BAR MENU -->
-				<div class="col-md-12 col-sm-12 additional-nav"
-					style="font-size: 12px; font-color: 000000">
-					<ul class="list-unstyled list-inline pull-right ">
-						<li><i class=" fa fa-phone"></i><span>Lets Talk: +91
-								9019602602</span></li>
-					</ul>
-				</div>
-				<!-- END TOP BAR MENU -->
-			</div>
-		</div>
-	</div>
-	<!-- END TOP BAR -->
+	
 	<!-- BEGIN HEADER -->
 	<div class="header">
 		<div class="container">
 			<a class="site-logo" href="#"> <img
-				src="corporate/img/logos/logo.png" alt="Stoic Zeno">
+				src="corporate/img/logos/logo.png" alt="Stoic Zeno" >
 			</a> <a href="javascript:void(0);" class="mobi-toggler"><i
 				class="fa fa-bars"></i></a>
 			<!-- BEGIN NAVIGATION -->
