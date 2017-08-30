@@ -118,9 +118,7 @@ canvas {
 							Payment</a></li>
 					<li><a href="${pageContext.request.contextPath }/service">Service
 							Request</a></li>
-					<li><a
-						href="${pageContext.request.contextPath }/parental-control">Parental
-							Control</a></li>
+					
 					<li><a href="${pageContext.request.contextPath }/profile">Profile</a></li>
 					<li><a href="${pageContext.request.contextPath }/logout">Logout</a></li>
 				</ul>
