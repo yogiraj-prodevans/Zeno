@@ -14,18 +14,11 @@
 <meta property="og:url" content="-CUSTOMER VALUE-">
 <link rel="shortcut icon" href="favicon.ico">
 
-<link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css?family=Roboto:300"
+	rel="stylesheet">
 <!--  include the all css co\ dr 'mponents -->
 <jsp:include page="component/css.jsp"></jsp:include>
-
-
 </head>
-
-
-
-
-
 <body class="corporate">
 
 
@@ -60,28 +53,22 @@
 	<!-- Header END -->
 
 
-
-	<!-- BEGIN STEPS -->
-
 	<div class="row">
-
-		<div class="col-md-4 col-sm-12  firstRowBackImage " >
-			<h1 style="color: white; margin-left: 15%; ">Bill payment</h1>
-
+		<div class="col-md-4 col-sm-12  firstRowBackImage ">
+			<h1 style="color: white; margin-left: 15%;">Bill payment</h1>
 		</div>
 		<div class="col-md-8 col-sm-12 firstRow"
 			style="background-color: #ecf0f1;">
 			<div class="col-md-6 col-sm-12">
 
-				<h1 style="color:black;" class="currentBillFontforiPhone5">Current bill INR
-					${invoiceDetails.getAmount() }</h1>
+				<h1 style="color: black;" class="currentBillFontforiPhone5">Current
+					bill INR ${invoiceDetails.getAmount() }</h1>
 
 			</div>
 			<div class=" col-md-6 col-sm-12" style="margin-top: 1%;">
 				<div class="col-md-12 col-xs-12">
-					<a href="viewBill" class="btn billButton"> VIEW BILL </a>
-				
-					<a href="payment" class="btn billButton"> PAY BILL </a>
+					<a href="viewBill" class="btn billButton"> VIEW BILL </a> <a
+						href="payment" class="btn billButton"> PAY BILL </a>
 				</div>
 
 			</div>
@@ -91,8 +78,8 @@
 
 
 
-	<div class="container" style="padding-left: 5%;padding-right: 5%">
-		<div  style="margin-bottom:4%;">
+	<div class="container" style="padding-left: 5%; padding-right: 5%">
+		<div style="margin-bottom: 4%;">
 
 
 			<div class="col-md-4 ">
@@ -112,7 +99,8 @@
 			<div class="col-md-4">
 				<div class="mainBlock4" style="background-color: #ffbb19;">
 					<h3 class="pb-20">Your One8 account</h3>
-					<h4 style="color: black;">Account no: ${user_details.getActid() }</h4>
+					<h4 style="color: black;">Account no:
+						${user_details.getActid() }</h4>
 					<h4 style="color: black;" class="pb-30">Bill period-
 						${SubscriptionDetails.getStartdt() } -
 						${SubscriptionDetails.getExpirydt() }</h4>
@@ -123,8 +111,7 @@
 							</td>
 							<td>
 								<h3 class="blackShadow" style="color: black; margin-left: 20%;">
-									${SubscriptionDetails.getDataUsed() }GB
-								</h3>
+									${SubscriptionDetails.getDataUsed() }GB</h3>
 							</td>
 						</tr>
 					</table>
@@ -142,7 +129,8 @@
 					<h3 class="pb-20">Payment</h3>
 					<h4 class="pb-20">Account no: ${user_details.getActid() }</h4>
 					<h2>INR ${invoiceDetails.getAmount() }</h2>
-					<h2 class="pb-20">Due in ${invoiceDetails.getRemainingDays() } days</h2>
+					<h2 class="pb-20">Due in ${invoiceDetails.getRemainingDays() }
+						days</h2>
 					<h4>Due Date: ${invoiceDetails.getDuedt() }</h4>
 
 				</div>
