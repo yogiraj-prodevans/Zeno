@@ -20,27 +20,7 @@
         <!--  include the all css components -->
 <jsp:include page="../component/css.jsp"></jsp:include>
 
-
-
-<style>
-    
- 
-.submitButton
-{
-    margin-top:10%;
-    margin-bottom:10%;
-    font-size: 16px;
-    width:60%;
-    height: 5%;
-    background-color: #2980b9;
-    color: #FFF;
-    border: 0.1px solid #2980b9;
-    text-shadow: 0.2px 0.2px white;
-    
-}    
-</style>
-
-        </head>
+</head>
 
         <body class="corporate" style="font-family: Roboto;">
             
@@ -74,34 +54,41 @@
     
 <div class="container">
     
-    <div class="col-md-12" style="margin-top:5%;">
         
         <form:form role="form" action="payBillRequest" method="post" modelAttribute="payBillDetails" >
 			
-	        <div class="row" style="margin-bottom:2%;">
-	            <div class="col-md-6">
-	            	<form:input path="account_id" type="text" id="account_id" placeholder="Zeno ID " required="true"/>            
-	            </div>
-	        </div>
-	        <div class="row" style="margin-bottom:2%;">
-	            <div class="col-md-6">
-	            	<form:input path="email_id" type="text" id="email_id" placeholder="Email ID " required="true"/>            
-	            </div>
-	        </div>
-	        <div class="row" style="margin-bottom:2%;">
-	            <div class="col-md-6">
-	            	<form:input path="amount" type="text" id="amount" placeholder="Amount "  required="true"/>            
-	            </div>
-	        </div>
-	        <div class="row col-md-3" style="margin-left:%; margin-bottom: 5%;">
-	            <button class="btn billButton" type="submit" style="padding: 5px;">
-					PAY BILL
-				</button>
-	        </div>
-        
+			<div class="col-md-12" style="margin-top:5%;">
+				
+				<div class="col-md-4 col-sm-4">
+				</div>
+				<div class="col-md-8 col-sm-8">
+					
+			        <div class="row pb-40">
+			            <div class="col-md-10 col-sm-10">
+			            	<form:input path="account_id" type="text" id="account_id" placeholder="Zeno ID " required="true"/>            
+			            </div>
+			        </div>
+			        <div class="row pb-40">
+			            <div class="col-md-10 col-sm-10">
+			            	<form:input path="email_id" type="text" id="email_id" placeholder="Email ID " required="true"/>            
+			            </div>
+			        </div>
+			        <div class="row pb-40">
+			            <div class="col-md-10 col-sm-10">
+			            	<form:input path="amount" type="text" id="amount" placeholder="Amount "  required="true"/>            
+			            </div>
+			        </div>
+			        <div class="row col-md-3" style="margin-left:%; margin-bottom: 5%;">
+			            <button class="btn billButton" type="submit" style="padding: 5px;">
+							PAY BILL
+						</button>
+			        </div>
+			        
+			     </div>
+        	</div>
+        	
         </form:form>
          
-    </div>
     
     
 </div>    
