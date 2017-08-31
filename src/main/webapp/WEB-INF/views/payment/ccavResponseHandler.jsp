@@ -162,16 +162,16 @@ if(success)
 	
     <div class="row">
         <div class="col-md-4 firstRow billPaymentImage">
-            <h1 style="color: white; margin-left: 15%;">Bill payment</h1>
+            <h1 style="color: white; margin-left: 15%;" class="pt-40">Bill payment</h1>
         </div>
         <div class="col-md-8 firstRow" style="background-color: #ecf0f1;">
             <div class="col-md-10 col-sm-10">
-                <h1 style="color: black;" class="currentBillFontforiPhone5">
+                <h1 style="color: black;" class="currentBillFontforiPhone5 pt-40">
                 	Your transaction was successful.
                 </h1>
             </div>
             <div class="col-md-2 col-sm-2">
-               <img class="paymentImageSize" alt="Check Image" src="corporate/img/check.png">
+               <img class="paymentImageSize pt-20" alt="Check Image" src="corporate/img/check.png">
             </div>
         </div>
     </div>
@@ -195,18 +195,18 @@ if(success)
 else
 {
 %>
-  <div class="row">
+    <div class="row">
         <div class="col-md-4 firstRow billPaymentImage">
-            <h1 style="color: white; margin-left: 15%;">Bill payment</h1>
+            <h1 style="color: white; margin-left: 15%;" class="pt-40">Bill payment</h1>
         </div>
         <div class="col-md-8 firstRow" style="background-color: #ecf0f1;">
             <div class="col-md-10 col-sm-10">
-                <h1 style="color: black;" class="currentBillFontforiPhone5">
+                <h1 style="color: black;" class="currentBillFontforiPhone5 pt-40">
                 	Your transaction was unsuccessful.
                 </h1>
             </div>
             <div class="col-md-2 col-sm-2">
-               <img class="paymentImageSize" alt="Check Image" src="corporate/img/cross1.png">
+               <img class="paymentImageSize pt-20" alt="Check Image" src="corporate/img/cross1.png">
             </div>
         </div>
     </div>
