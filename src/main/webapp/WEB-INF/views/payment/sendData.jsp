@@ -36,19 +36,6 @@
 </script>
 
 <style type="text/css">
-.summaryBlock
-{
- 	width: 90%;
-    height: 40%;    
-    padding: 5%;
-    margin: 40px;
-    margin-bottom: 5px;
-    padding-bottom: 5px;
-    background-color:#ffbb19;
-    color:black;
-    outline-offset: 15px;
-}
-
 
 input[type=radio].css-checkbox
 {
@@ -92,23 +79,6 @@ label.css-label
 	user-select: none;
 }
 
-
-/* iphone 6 plus*/
-@media (max-width: 480px)
-{
-	.summaryBlock
-	{
-		height: 90%;
-		height: 80%;
-	  	margin: 5%;
-	  	margin-bottom: 5%;
-	  	padding:5%;
-	    border-bottom: .2px solid grey;
-	}
-	
-
-}
-
 </style>
    
 <script>
@@ -148,12 +118,13 @@ label.css-label
 <!-- BEGIN STEPS -->
 
 <div class="col-md-12 firstRow" style="background-image: url('corporate/img/back.png');">
-    <h1 style="margin-left:5%;">Bill Summary</h1>
+    <h1 style="margin-left:5%;" class="pt-40">Bill Summary</h1>
 </div>    
 
 <div class="main">
 	<div class="container">  
-		<div class="col-lg-12 col-md-12 col-sm-12" >
+				
+		<div class="col-lg-12 col-md-12 col-sm-12" style="max-height: 40%;">
 
 			<form method="post" name="customerData" action="ccavRequestHandler" >
 			
@@ -171,12 +142,12 @@ label.css-label
 				<div class="form-group">
 					<div class="col-md-1">
 					</div> 
-                	<div class="col-lg-10 col-md-10 col-sm-10 " style=" padding-bottom:16;">
+                	<div class="col-lg-10 col-md-10 col-sm-10 " >
                 	
 	                	<div class="mainBlock3" style="background-color: #2980b9;">
 	                		<div class="row">
 		                		<div class="col-md-5 col-sm-5">
-		                			<h3 class="pb-20">Details:</h3>
+		                			<h3 class="pb-20">Details</h3>
 			                		<h4 class="pb-10">Account No : ${user_details.getActid() }  </h4>
 			                		<h4 class="pb-10">Name : ${user_details.getFirst_name() } ${user_details.getLast_name() } </h4>
 			                        <h4 class="pb-10">Amount : ${invoiceDetails.getAmount() }/-  </h4>
@@ -187,35 +158,40 @@ label.css-label
 			                        </select>
 			                    </div>
 			                    <div class="col-md-7 col-sm-7">
-			                    	<div class="row">
-				                    	
-				                    	<h3 class="pb-20">Details:</h3>
-				                    	<div class="col-md-5 col-sm-5">
-						                    <input type="radio" name="payment_option" value="OPTCRDC" id="radio1" class="css-checkbox" />
-			                    			<label for="radio1" class="css-label radGroup1">Credit Card</label><br>
-											<div class="pb-10"></div>
-											
-											<input type="radio" name="payment_option" value="OPTDBCRD" id="radio2" class="css-checkbox" />
-			                    			<label for="radio2" class="css-label radGroup1">Debit Card</label><br>
-			                    			<div class="pb-10"></div>
+			                    		
+			                    	<div class="col-md-12 col-sm-12">
+			                    		<div class="row">
+			                    			<h3 class="pb-20" style="padding-left:15px;">Payment Option</h3>
+			                    		</div>
+			                    		<div class="row">
+					                    	<div class="col-md-6 col-sm-6">
+							                    <input type="radio" name="payment_option" value="OPTCRDC" id="radio1" class="css-checkbox" />
+				                    			<label for="radio1" class="css-label radGroup1">Credit Card</label><br>
+												<div class="pb-10"></div>
+												
+												<input type="radio" name="payment_option" value="OPTDBCRD" id="radio2" class="css-checkbox" />
+				                    			<label for="radio2" class="css-label radGroup1">Debit Card</label><br>
+				                    			<div class="pb-10"></div>
+				                    			
+				                    			<input type="radio" name="payment_option" value="OPTNBK" id="radio3" class="css-checkbox" />
+				                    			<label for="radio3" class="css-label radGroup1">Net Banking</label><br>
+												<div class="pb-10"></div>
+												
+			                    			</div>
 			                    			
-			                    			<input type="radio" name="payment_option" value="OPTNBK" id="radio3" class="css-checkbox" />
-			                    			<label for="radio3" class="css-label radGroup1">Net Banking</label><br>
-											<div class="pb-10"></div>
-											
-		                    			</div>
-		                    			
-		                    			<div class="col-md-5 col-sm-5">
-			                    			<input type="radio" name="payment_option" value="OPTMOBP" id="radio5" class="css-checkbox" />
-			                    			<label for="radio5" class="css-label radGroup1">Mobile Payments</label><br>
-			                    			<div class="pb-10"></div>
-			                    			
-			                    			<input type="radio" name="payment_option" value="OPTWLT" id="radio7" class="css-checkbox" />
-			                    			<label for="radio7" class="css-label radGroup1">Wallet</label><br>
-			                    			<div class="pb-10"></div>
-			                    			
-										</div>	
-				                	</div><!-- end row -->
+			                    			<div class="col-md-6 col-sm-6">
+				                    			<input type="radio" name="payment_option" value="OPTMOBP" id="radio5" class="css-checkbox" />
+				                    			<label for="radio5" class="css-label radGroup1">Mobile Payments</label><br>
+				                    			<div class="pb-10"></div>
+				                    			
+				                    			<input type="radio" name="payment_option" value="OPTWLT" id="radio7" class="css-checkbox" />
+				                    			<label for="radio7" class="css-label radGroup1">Wallet</label><br>
+				                    			<div class="pb-10"></div>
+				                    			
+											</div>
+										</div>											
+									</div>
+
 				                	<div class="row">
 				                		<div class="col-md-7">
 				                		</div>
