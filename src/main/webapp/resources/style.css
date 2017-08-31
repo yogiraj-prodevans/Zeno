@@ -224,6 +224,10 @@ label {
 	font-weight: 300;
 }
 
+.div2{
+	border: 1px solid #686060;
+}
+
 /*end*/
 .modal-header {
 	padding: unset;

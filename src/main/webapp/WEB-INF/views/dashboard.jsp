@@ -22,6 +22,11 @@ canvas {
 	-webkit-user-select: none;
 	-ms-user-select: none;
 }
+
+.mainBlock4{
+	max-width: unset;
+	margin-top: 5%;
+}
 </style>
 
 <script type="text/javascript"
@@ -52,7 +57,7 @@ canvas {
 		var options = {
 			title : 'Data Usage',
 			curveType : 'none',
-			height : 500,
+			height : 300,
 			hAxis : {
 				title : "Time in week (${SubscriptionDetails.getStartdt() } - ${SubscriptionDetails.getExpirydt() })",
 				ticks : [ {
@@ -77,9 +82,7 @@ canvas {
 				ticks : [ 0, 20, 40, 60, 80, 100 ]
 			},
 			pointSize : 5,
-			legend : {
-				position : 'bottom'
-			}
+			
 
 		};
 
@@ -143,8 +146,8 @@ canvas {
 	<div class="container">
 		<div class="row col-md-12" style="margin-bottom: 4%;">
 
-			<div class="col-md-4 ">
-				<div class="">
+			<div class="col-md-6 ">
+				
 					<div class="mainBlock4" style="background-color: #2980b9;">
 						<h3 class="pb-20">Your current plan</h3>
 						<h4>Plan Name: ${SubscriptionDetails.getRatePlan() }</h4>
@@ -154,15 +157,15 @@ canvas {
 						<h4>2. 512Kbps Post FUP Speed Data</h4>
 
 
-					</div>
 				</div>
-
+			</div>
+			<div class="col-md-6 ">
 				<div>
 					<div class="mainBlock4" style="background-color: #ffbb19;">
 						<h3 class="pb-20">Your One8 account</h3>
 						<h4 style="color: black;">Account id:
 							${user_details.getActid() }</h4>
-						<h4 style="color: black;" class="pb-30">Bill period-
+						<h4 style="color: black;" class="pb-40">Bill period-
 							${SubscriptionDetails.getStartdt() } -
 							${SubscriptionDetails.getExpirydt() }</h4>
 
@@ -184,9 +187,9 @@ canvas {
 
 			</div>
 
-			<div class="col-md-8 div2" style="margin-top: 20px; min-height: 90%;">
+			<div class="col-md-12 " style="margin-top: 20px; min-height: 90%;">
 
-				<div id="curve_chart"></div>
+				<div class="div2" id="curve_chart"></div>
 
 			</div>
 
