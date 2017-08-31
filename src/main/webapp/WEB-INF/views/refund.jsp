@@ -81,7 +81,7 @@
 			<!-- END SIDEBAR & CONTENT -->
 		</div>
 	</div>
-	<div style="padding-top: 2%"></div>
+	<div style="padding-top: 18%"></div>
 
 	<jsp:include page="component/footer.jsp"></jsp:include>
 
