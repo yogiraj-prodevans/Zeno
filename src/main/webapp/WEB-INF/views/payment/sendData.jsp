@@ -144,7 +144,7 @@ label.css-label
 					</div> 
                 	<div class="col-lg-10 col-md-10 col-sm-10 " >
                 	
-	                	<div class="mainBlock3" style="background-color: #2980b9;">
+	                	<div class="mainBlock3" style="color:black;">
 	                		<div class="row">
 		                		<div class="col-md-5 col-sm-5">
 		                			<h3 class="pb-20">Details</h3>
