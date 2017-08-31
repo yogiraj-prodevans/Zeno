@@ -133,11 +133,6 @@ public class DashboardConroller {
 		return "refund";
 	}
 
-	@RequestMapping(value = "/feedback", method = RequestMethod.GET)
-	public String feedback(ModelMap model) {
-		return "feedback";
-	}
-
 	@RequestMapping(value = "/contactus", method = RequestMethod.GET)
 	public String contactus(ModelMap model) {
 		return "contactus";
