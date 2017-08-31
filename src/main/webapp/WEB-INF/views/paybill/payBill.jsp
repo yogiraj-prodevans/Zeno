@@ -65,7 +65,7 @@
 					
 			        <div class="row pb-40">
 			            <div class="col-md-10 col-sm-10">
-			            	<form:input path="account_id" type="text" id="account_id" placeholder="Zeno ID " required="true"/>            
+			            	<form:input path="account_id" type="text" id="account_id" placeholder="One8 ID " required="true"/>            
 			            </div>
 			        </div>
 			        <div class="row pb-40">
