@@ -103,14 +103,14 @@
 				
 				/*For Sednding Mails Start*/
 				Vector<Object> paramsCustomer = new Vector<>();
-				paramsCustomer.add("Message");
+				paramsCustomer.add("You have requested for and Add on, your request is under process.");
 				paramsCustomer.add("Subject");
 				paramsCustomer.add(responseFromCCAvenue.get("billing_email"));
 				paramsCustomer.add(1);
 				
 				Vector<Object> paramsOE = new Vector<>();
 				paramsOE.add("Message");
-				paramsOE.add("Subject");
+				paramsOE.add("Request for Add On");
 				paramsOE.add("suguna@oneeight.co.in");
 				paramsOE.add(1);
 				/*For Sednding Mails Start*/
@@ -137,6 +137,10 @@
 				Object o=(Object) server.execute("unify.addTransaction",params);
 				int Transaction_id=(int)o;
 				pd.setTransaction_id(Transaction_id);
+				
+				sendCustomer=(Boolean)server.execute("unify.sendMail",paramsCustomer);
+				sendOE=(Boolean)server.execute("unify.sendMail",paramsOE);
+				
 				success=true;
 				
 			}
