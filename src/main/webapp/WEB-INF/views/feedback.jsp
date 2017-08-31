@@ -57,7 +57,10 @@
 
 <div class="container">
     
-    <div class="col-md-12" style="margin-top:5%;">
+    <div class="col-md-12">
+        
+        <h1 class="pb-10" style="font-size:40px;">We're listening</h1>
+        <h3 class="pb-20">Tell us how we can make your One8 experience better.</h3>
         
         <div class="row pb-40">
             <div class="col-md-6">
@@ -85,17 +88,16 @@
         <div class="row">
         	<h3 style="padding-left: 1%;">Comment</h3>
             <div class="col-md-12">
-                <textarea class="form-control" style="height:30%; width:90%; border: 0.4px solid #bdc3c7; resize: none; color:black; border-radius: 0.4px;font-size: 16px;">
+                <textarea class="form-control" style="height:30%; width:100%; border: 0.4px solid #bdc3c7; resize: none; color:black; border-radius: 0.4px;font-size: 16px;">
                 </textarea>
             </div>
         </div>
-        <div class="row col-md-12" style="margin-left:%; margin-bottom: 5%;">
-            <div class="col-md-9">
-            </div>
-            <div class="col-md-3">
-            	<button class="btn billButton" style="width: 50%;margin-left: 20%;" type="submit">SUBMIT</button>
-            </div>
+        <div class="col-md-10" style=" margin-bottom: 5%;">
         </div>
+        <div class="col-md-2 pull-right">
+        	<button class="btn billButton " style="width: 120px;%;height: 30px;margin-left:50px;" type="submit">SUBMIT</button>
+        </div>
+        
         
          
     </div>
