@@ -29,7 +29,7 @@ public class TopUpController
 		boolean dataSet=false;
 		if(planName.equals("Add on 5GB"))
 		{
-			amount="120";
+			amount="1";
 			planSize="5GB";
 			postFUP="512 Kbps";
 			dataSet=true;
