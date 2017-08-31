@@ -103,6 +103,15 @@ public class DashboardConroller {
 			return "parental-control";
 		}
 	}
+	
+	@RequestMapping(value = "/knowYourCPE", method = RequestMethod.GET)
+	public String knowYourCPE(Locale locale, Model model, HttpSession session) {
+		if (session.getAttribute("user") == null) {
+			return "redirect:/logout";
+		} else {
+			return "knowYourCPE";
+		}
+	}
 
 	@RequestMapping(value = "/help", method = RequestMethod.GET)
 	public String help(Locale locale, Model model, HttpSession session) {
