@@ -11,45 +11,6 @@
 <%@ page import = "java.io.*,java.util.*,com.ccavenue.security.*" %>
 
 
-<style>
-
-.billPayment
-{
-    color: white; 
-}
-.greyBlock
-{
-    background-color: #bdc3c7;
-}
-    
-/* 3 blocks start here */  
-.mainBlock3
-{
-    max-width: 92%;
-    color: white;
-    margin-top: 5%;
-    padding-top: 1%;
-    padding-left: 4%;
-}
-/* 3 blocks End here */
-    
-.firstRow
-{
-    min-height: 100px;
-    padding-top:10px;
-}
-      
-/* iphone 6 plus*/
-@media (max-width: 480px)
-{
-    .mainBlock3 
-    {
-        width:100%;
-        margin: 5%;
-    }
-}    
-    
-</style>
 
 
 <html>
@@ -204,15 +165,17 @@ if(success)
 {
 %>
     <div class="row">
-        <div class="col-md-4 firstRow" style="background-image: url('back.png');background-repeat:no-repeat;">
-            <h1 style="color:white;margin-left:15%;">Bill payment</h1>
+        <div class="col-md-4 firstRow billPaymentImage">
+            <h1 style="color: white; margin-left: 15%;" class="pt-40">Bill payment</h1>
         </div>
         <div class="col-md-8 firstRow" style="background-color: #ecf0f1;">
-            <div class="col-md-10">
-                <h1>Your transaction was successful.</h1>
+            <div class="col-md-10 col-sm-10">
+                <h1 style="color: black;" class="currentBillFontforiPhone5 pt-40">
+                	Your transaction was successful.
+                </h1>
             </div>
-            <div class="col-md-2">
-               
+            <div class="col-md-2 col-sm-2">
+               <img class="paymentImageSize pt-20" alt="Check Image" src="corporate/img/check.png">
             </div>
         </div>
     </div>
@@ -223,10 +186,10 @@ if(success)
 	        </div>
 	        <div class="col-md-8">
 	            <div class="mainBlock3" style="background-color: #2980b9;">
-	                <h4>Payment summary</h4><br>
-	                <h3>Your payment of INR.<%=responseFromCCAvenue.get("amount") %>/- was successful.</h3><br>
+	                <h3 class="pb-40">Payment Summary</h3>
+	                <h2 class="pb-40">Your payment of INR. <%=responseFromCCAvenue.get("amount") %>/- was successful.</h2>
 	                <h5>TRANSACTION ID</h5>
-	                <h4><%=pd.getTransaction_id() %></h4><br>
+	                <h3><%=pd.getTransaction_id() %></h3>
 	            </div>
 	        </div>
 	    </div>
@@ -237,16 +200,18 @@ if(success)
 else
 {
 %>
-	<div class="row">
-        <div class="col-md-4 firstRow" style="background-image: url('back.png');background-repeat:no-repeat;">
-            <h1 style="color:white;margin-left:15%;">Bill payment</h1>
+    <div class="row">
+        <div class="col-md-4 firstRow billPaymentImage">
+            <h1 style="color: white; margin-left: 15%;" class="pt-40">Bill payment</h1>
         </div>
         <div class="col-md-8 firstRow" style="background-color: #ecf0f1;">
-            <div class="col-md-10">
-                <h1>Your transaction was unsuccessful.</h1>
+            <div class="col-md-10 col-sm-10">
+                <h1 style="color: black;" class="currentBillFontforiPhone5 pt-40">
+                	Your transaction was unsuccessful.
+                </h1>
             </div>
-            <div class="col-md-2">
-               
+            <div class="col-md-2 col-sm-2">
+               <img class="paymentImageSize pt-20" alt="Check Image" src="corporate/img/cross1.png">
             </div>
         </div>
     </div>
@@ -257,10 +222,10 @@ else
 	        </div>
 	        <div class="col-md-8">
 	            <div class="mainBlock3" style="background-color: #2980b9;">
-	                <h4>Payment summary</h4><br>
-	                <h3>Your payment of INR.<%=responseFromCCAvenue.get("amount") %>/- was unsuccessful.</h3><br>
+	                <h3 class="pb-40">Payment Summary</h3>
+	                <h2 class="pb-40">Your payment of INR. <%=responseFromCCAvenue.get("amount") %>/- was unsuccessful.</h2>
 	                <h5>REASON</h5>
-	                <h4><%=responseFromCCAvenue.get("status_message") %></h4><br>
+	                <h3><%=responseFromCCAvenue.get("status_message") %></h3>
 	            </div>
 	        </div>
 	    </div>

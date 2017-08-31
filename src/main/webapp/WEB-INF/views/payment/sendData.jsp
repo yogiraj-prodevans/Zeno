@@ -196,7 +196,7 @@ label.css-label
 				                		<div class="col-md-7">
 				                		</div>
 				                		<div class="col-md-5">
-				                			<button class="btn billButton" type="submit" >
+				                			<button class="btn billButton" type="submit" style="padding: 5px;">
 		                     				Confirm Payment
 		                     				</button>
 				                		</div>
