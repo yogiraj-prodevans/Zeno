@@ -101,13 +101,13 @@
 			<div class="modal-body">
 				<div class="col-md-12">
 					<div class="row" style="margin-left: 1%; margin-top: 3%;">
-						<h5>YOUR CURRENT PLAN</h5>
+						<h4>YOUR CURRENT PLAN</h4>
 						<h3>Name of plan</h3>
 						<h3>Basic- INR 849 per month</h3>
 					</div>
 					<hr>
 					<div class="row" style="margin-left: 1%;">
-						<h5>PLAN CONTENT</h5>
+						<h4>PLAN CONTENT</h4>
 						<h3>40 GB Data</h3>
 						<h3>512Kbps Post FUP speed</h3>
 					</div>

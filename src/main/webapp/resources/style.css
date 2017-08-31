@@ -71,7 +71,10 @@ input[type="checkbox"] {
 	height: 80px;
 	margin-top: 10px;
 }
-
+hr{
+margin-top: 10px;
+margin-bottom: 15px;
+}
 input[type="checkbox"]+label {
 	display: block;
 	position: relative;
