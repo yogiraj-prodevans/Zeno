@@ -42,7 +42,7 @@
 							PAYMENT</a></li>
 					<li><a href="${pageContext.request.contextPath }/service">SERVICE
 							REQUEST</a></li>
-					
+
 					<li><a href="${pageContext.request.contextPath }/profile">PROFILE</a></li>
 					<li><a href="${pageContext.request.contextPath }/logout">LOGOUT</a></li>
 				</ul>
@@ -66,10 +66,10 @@
 
 			</div>
 			<div class=" col-md-6 col-sm-12" style="margin-top: 2%;">
-				
-					<a href="viewBill" class="btn billButton"> VIEW BILL </a> <a
-						href="payment" class="btn billButton"> PAY BILL </a>
-				
+
+				<a href="viewBill" class="btn billButton"> VIEW BILL </a> <a
+					href="payment" class="btn billButton"> PAY BILL </a>
+
 
 			</div>
 
@@ -91,7 +91,7 @@
 					<h4>1. ${SubscriptionDetails.getFUPLimit() }GB Data</h4>
 					<h4>2. 512Kbps Post FUP Speed Data</h4>
 
-					
+
 				</div>
 			</div>
 
@@ -104,13 +104,13 @@
 					<h4 style="color: black;" class="pb-30">Bill period-
 						${SubscriptionDetails.getStartdt() } -
 						${SubscriptionDetails.getExpirydt() }</h4>
-					
-								<h4 class="blackShadow" style="color: black; ">Usage</h4>
-							
-								<h3 class="blackShadow" style="color: black; ">
-									${SubscriptionDetails.getDataUsed() }GB</h3>
-							
+					<div  style="margin-bottom: 10px;">
+					<span class="blackShadow font-h4" style="color: black;margin-right: 10px;">Usage</span>
 
+					<span class="blackShadow font-h2" style="color: black;">
+						${SubscriptionDetails.getDataUsed() }GB</span>
+
+					</div>
 					<div class=" progress">
 						<div class="progressbarColor"
 							style="width: ${SubscriptionDetails.getDataPercent()}%;"></div>
