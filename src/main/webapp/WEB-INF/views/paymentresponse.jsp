@@ -61,7 +61,7 @@
         
 <%
 boolean success=true;
-if(!success)
+if(success)
 {
 %>
     <div class="row">
@@ -137,7 +137,7 @@ else
  <!-- included pop up -->
         <jsp:include page="component/pop-up.jsp"></jsp:include>
         
-           
+        <jsp:include page="component/footer.jsp"></jsp:include>   
            
            
             <!-- Load javascripts at bottom, this will reduce page load time -->

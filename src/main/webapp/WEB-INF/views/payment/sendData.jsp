@@ -36,29 +36,6 @@
 </script>
 
 <style type="text/css">
-.confirmPayment
-{
-	width:90%;
-	height:20%;
-	margin:1%;
-	line-height:.5;
-	background-color:#010745;
-	text-align:center;
-	font-size:16px;
-	line-height:.5;
-	color:#FFF;
-	align:center;
-	border: none;
-}
-.confirmPayment:hover
-{
-	background-color: #FFF;
-	color: #010745;
-	border: 1px solid #010745; !important;
-}
-textarea:focus, input:focus{
-    outline: none;
-}
 .summaryBlock
 {
  	width: 90%;
@@ -67,9 +44,8 @@ textarea:focus, input:focus{
     margin: 40px;
     margin-bottom: 5px;
     padding-bottom: 5px;
-    border: .5px solid;
-    border-color: #D9D9D9;
-    outline: 2px solid white;
+    background-color:#ffbb19;
+    color:black;
     outline-offset: 15px;
 }
 
@@ -120,14 +96,6 @@ label.css-label
 /* iphone 6 plus*/
 @media (max-width: 480px)
 {
-	.confirmPayment
- 	{
-		width: 60%;
-		height: 10%;	
-		padding-top: 2%;
-		margin-top: 5%;
-		margin-bottom: 8%;
- 	}
 	.summaryBlock
 	{
 		height: 90%;
@@ -141,10 +109,6 @@ label.css-label
 
 }
 
-/* iphone 6*/
-@media (max-width: 380px)
-{
-}
 </style>
    
 <script>
@@ -158,23 +122,6 @@ label.css-label
 
 </head>
 <body class="corporate">
-
-      <!-- BEGIN TOP BAR -->
-      <div class="pre-header">
-          <div class="container">
-              <div class="row">
-                  <!-- BEGIN TOP BAR MENU -->
-                  <div class="col-md-12 col-sm-12 additional-nav" style=" font-size:12px; font-color:000000">
-                      <ul class="list-unstyled list-inline pull-right ">
-                          <li ><i class=" fa fa-phone"></i><span>Lets Talk: +91 9019602602</span></li>
-                      </ul>
-                  </div>
-                  <!-- END TOP BAR MENU -->
-              </div>
-          </div>
-      </div>
-      <!-- END TOP BAR -->
-            
          <!-- BEGIN HEADER -->
          <div class="header">
              <div class="container">
@@ -200,30 +147,15 @@ label.css-label
         
 <!-- BEGIN STEPS -->
 
- <div class="row front-steps-wrapper"  style="margin-left: 0.001%;width: 100%;">
-     <div class="col-lg-12 col-md-12 col-sm-12 front-step-col">
-         <div class="front-step front-stepv">
-             <div class="row">
-                 <div class="col-lg-12 col-md-12 col-sm-12 margin-top-5 " style="padding-left: 10%;">
-                     
-                     	<div class="col-md-6">
-                     		<h2 style="font-family:Roboto; font-size:30px">Bill Summary</h2>
-                     	</div>  
-                     	
-                    
-                 </div>
-             </div>
-         </div>
-     </div>
- </div>
- <!-- END STEPS -->
-
+<div class="col-md-12 firstRow" style="background-image: url('corporate/img/back.png');">
+    <h1 style="margin-left:5%;">Bill Summary</h1>
+</div>    
 
 <div class="main">
 	<div class="container">  
 		<div class="col-lg-12 col-md-12 col-sm-12" >
 
-			<form method="post" name="customerData" action="ccavRequestHandler" class="form-horizontal form-without-legend ">
+			<form method="post" name="customerData" action="ccavRequestHandler" >
 			
 				<input type="hidden" name="actno" value="${user_details.getActno() }">				
 				<input type="hidden" name="trans_amount" value="${invoiceDetails.getAmount() }">
@@ -234,61 +166,61 @@ label.css-label
 				<input type="hidden" name="trans_descr" value="Description">
 				
 				
+				
+				
 				<div class="form-group">
 					<div class="col-md-1">
 					</div> 
                 	<div class="col-lg-10 col-md-10 col-sm-10 " style=" padding-bottom:16;">
                 	
-	                	<div class="summaryBlock">
+	                	<div class="mainBlock3" style="background-color: #2980b9;">
 	                		<div class="row">
-		                		<div class="col-md-4">
-			                		<p style=" font-size:14px; line-height:.5">Account No : ${user_details.getActid() }  </p><br>
-			                		<p style=" font-size:14px; line-height:.5">Name : ${user_details.getFirst_name() } ${user_details.getLast_name() } </p><br>
-			                        <p style=" font-size:14px; line-height:.5">Amount : ${invoiceDetails.getAmount() }/-  </p><br>
-			                        <p style=" font-size:14px; line-height:.5">Email  : ${user_details.getEmail() }</p><br>
-			                        <p style=" font-size:14px; line-height:.5">Mobile No.  : ${user_details.getMobileno() } </p><br>
+		                		<div class="col-md-5 col-sm-5">
+		                			<h3 class="pb-20">Details:</h3>
+			                		<h4 class="pb-10">Account No : ${user_details.getActid() }  </h4>
+			                		<h4 class="pb-10">Name : ${user_details.getFirst_name() } ${user_details.getLast_name() } </h4>
+			                        <h4 class="pb-10">Amount : ${invoiceDetails.getAmount() }/-  </h4>
+			                        <h4 class="pb-10">Email  : ${user_details.getEmail() }</h4>
+			                        <h4 class="pb-10">Mobile No.  : ${user_details.getMobileno() } </h4>
+			                        
 			                        <select class="form-control" name="instrument_detail" id="instrument_detail" style="visibility: hidden;">
-			                        	<!-- <option value="0,Cash" class="form-control">Cash</option>
-			                        	<option value="1,Demand Draft" class="form-control">Demand Draft</option>
-			                        	<option value="2,Cheque" class="form-control">Cheque</option>
-			                        	<option value="3,Credit Card" class="form-control">Credit Card</option>
-			                        	<option value="4,Debit Card" class="form-control">Debit Card</option>
-			                        	<option value="5,Cash Warrant" class="form-control">Cash Warrant</option>
-			                        	<option value="6,NA" class="form-control">NA</option>
-			                        	<option value="7,TDS" class="form-control">TDS</option>
-			                        	<option value="8,Adjustment" class="form-control">Adjustment</option> -->
 			                        </select>
 			                    </div>
-			                    <div class="col-md-8">
-			                    
+			                    <div class="col-md-7 col-sm-7">
 			                    	<div class="row">
-				                    	<div class="col-md-2">
-				                    	</div>
-				                    	<div class="col-md-5">
+				                    	
+				                    	<h3 class="pb-20">Details:</h3>
+				                    	<div class="col-md-5 col-sm-5">
 						                    <input type="radio" name="payment_option" value="OPTCRDC" id="radio1" class="css-checkbox" />
 			                    			<label for="radio1" class="css-label radGroup1">Credit Card</label><br>
-										
+											<div class="pb-10"></div>
+											
 											<input type="radio" name="payment_option" value="OPTDBCRD" id="radio2" class="css-checkbox" />
 			                    			<label for="radio2" class="css-label radGroup1">Debit Card</label><br>
+			                    			<div class="pb-10"></div>
 			                    			
 			                    			<input type="radio" name="payment_option" value="OPTNBK" id="radio3" class="css-checkbox" />
 			                    			<label for="radio3" class="css-label radGroup1">Net Banking</label><br>
+											<div class="pb-10"></div>
 											
 		                    			</div>
 		                    			
-		                    			<div class="col-md-5">
+		                    			<div class="col-md-5 col-sm-5">
 			                    			<input type="radio" name="payment_option" value="OPTMOBP" id="radio5" class="css-checkbox" />
 			                    			<label for="radio5" class="css-label radGroup1">Mobile Payments</label><br>
+			                    			<div class="pb-10"></div>
 			                    			
 			                    			<input type="radio" name="payment_option" value="OPTWLT" id="radio7" class="css-checkbox" />
 			                    			<label for="radio7" class="css-label radGroup1">Wallet</label><br>
+			                    			<div class="pb-10"></div>
+			                    			
 										</div>	
 				                	</div><!-- end row -->
 				                	<div class="row">
 				                		<div class="col-md-7">
 				                		</div>
 				                		<div class="col-md-5">
-				                			<button class="confirmPayment" type="submit" >
+				                			<button class="btn billButton" type="submit" >
 		                     				Confirm Payment
 		                     				</button>
 				                		</div>
@@ -296,15 +228,7 @@ label.css-label
 				                	</div>    	
 				                </div>   
 			           		</div>	 
-			                <div class="col-md-9">
-			                </div>
-	                        <div class="row col-md-3" style="margin-top: 5%;">
-	                        	
-		                        	
-	                     		
-                     		</div>
-                     		<div class="col-md-4">
-			                </div> 
+			               
 	                    </div>
 	        
 	                    
