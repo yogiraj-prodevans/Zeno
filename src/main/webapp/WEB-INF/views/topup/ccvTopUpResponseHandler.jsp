@@ -138,18 +138,15 @@
 				int Transaction_id=(int)o;
 				pd.setTransaction_id(Transaction_id);
 				
-				out.println("<h1>Transaction ID : "+Transaction_id+"<h1>");
 				sendCustomer=(Boolean)server.execute("unify.sendMail",paramsCustomer);
-				out.println("<h1>sendCustomer : "+sendCustomer+"<h1>");
 				sendOE=(Boolean)server.execute("unify.sendMail",paramsOE);
-				out.println("<h1>sendOE : "+sendOE+"<h1>");
 				
 				success=true;
 				
 			}
 			catch(Exception e)
 			{
-				out.println("<h1>Exception : "+e+"<h1>");
+				out.println("<h6>Exception : "+e+"<h6>");
 			}
 		}
 
