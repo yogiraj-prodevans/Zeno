@@ -16,9 +16,22 @@
 <!-- link to image for socio -->
 <meta property="og:url" content="-CUSTOMER VALUE-">
 
-
+<!-- Fonts START -->
+<link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+	
 <!--  include the all css components -->
 <jsp:include page="component/css.jsp"></jsp:include>
+
+<style type="text/css">
+h1{
+	margin:unset;
+	padding-top:30px;
+}
+
+.mainBlock3 .row{
+	margin-bottom: 10px;
+}
+</style>
 
 </head>
 <body class="corporate" style="font-family: Roboto;">
@@ -35,17 +48,15 @@
 				style="font-size: 12px">
 				<ul>
 					<li class="dropdown active"></li>
-					<li><a href="${pageContext.request.contextPath }/dashboard">Home</a></li>
+					<li><a href="${pageContext.request.contextPath }/dashboard">HOME</a></li>
 					<li><a
-						href="${pageContext.request.contextPath }/billingPayment">Make
-							Payment</a></li>
-					<li><a href="${pageContext.request.contextPath }/service">Service
-							Request</a></li>
-					<li><a
-						href="${pageContext.request.contextPath }/parental-control">Parental
-							Control</a></li>
-					<li class="active"><a href="${pageContext.request.contextPath }/profile">Profile</a></li>
-                    <li><a href="${pageContext.request.contextPath }/logout">Logout</a></li>
+						href="${pageContext.request.contextPath }/billingPayment">MAKE
+							PAYMENT</a></li>
+					<li><a href="${pageContext.request.contextPath }/service">SERVICE
+							REQUEST</a></li>
+					
+					<li class="active"><a href="${pageContext.request.contextPath }/profile">PROFILE</a></li>
+                    <li><a href="${pageContext.request.contextPath }/logout">LOGOUT</a></li>
 				</ul>
 			</div>
 			<!-- END NAVIGATION -->
@@ -54,40 +65,33 @@
 	<!-- Header END -->
 	
 <div class="col-md-12 firstRow" style="background-color:#ffbb19;">
-    <h3 style="text-shadow: 0.2px 0.2px white;">Login Contact and Details</h3>
+    <h1 style="color: white; margin-left: 5%;">Login Contact and Details</h1>
 </div>    
 
 <div class="container">
-    <div class="row col-md-12" style="margin-left:;">
-        
-        <div class="col-md-3">
-        </div>
-        
-        <div class="col-md-6">
+    
+        <div class="col-md-6 col-md-offset-3">
             <div class="mainBlock3" style="background-color: #2980b9;">
             	<div class="row">
-	            	<div class="col-md-6">
+	            	<div class="col-md-4">
 	            		<h4 class="whiteShadow">Account no:</h4>
 	            	</div>
-	            	<div class="col-md-6">
+	            	<div class="col-md-8">
 	            		<h4 class="whiteShadow">${profile.getActid() }</h4>
 	            	</div>
 	            </div>
 	            <div class="row">
-	            	<div class="col-md-6">
+	            	<div class="col-md-4">
 	            		<h4 class="whiteShadow">Password:</h4>
 	            	</div>
-	            	<div class="col-md-6">
-	            		<div class="col-md-8">
-	            			<a href="#changePassword" data-toggle="modal">
-	            				<h4 class="whiteShadow" style="font-size:20px;color:white;">*******</h4>
+	            	<div class="col-md-8">
+	            		
+	            			<a href="#changePassword" data-toggle="modal" class="font-h4 whiteShadow " >
+	            				*******
+	            			
+	            				<span class="glyphicon glyphicon-pencil font-h4 whiteShadow" >(CHANGE PASSWORD)</span>
 	            			</a>
-	            		</div>
-	            		<div class="col-md-4">
-	            			<a href="#changePassword" data-toggle="modal">
-	            				<i class=" fa fa-pencil" style="color:white;margin:1%;"></i>
-	            			</a>
-	            		</div>
+	            		
 	            	</div>
 	            </div>
 	            <div class="row">
@@ -118,10 +122,9 @@
             </div>
         </div>
         
-        <div class="col-md-3">
-        </div>
+       
     </div>
-</div>
+
 	
 
 <!-- Modal Code for Change Password -->

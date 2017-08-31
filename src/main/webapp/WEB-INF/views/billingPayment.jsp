@@ -36,17 +36,15 @@
 				style="font-size: 12px">
 				<ul>
 					<li class="dropdown active"></li>
-					<li><a href="${pageContext.request.contextPath }/dashboard">Home</a></li>
+					<li><a href="${pageContext.request.contextPath }/dashboard">HOME</a></li>
 					<li class="active"><a
-						href="${pageContext.request.contextPath }/billingPayment">Make
-							Payment</a></li>
-					<li><a href="${pageContext.request.contextPath }/service">Service
-							Request</a></li>
-					<li><a
-						href="${pageContext.request.contextPath }/parental-control">Parental
-							Control</a></li>
-					<li><a href="${pageContext.request.contextPath }/profile">Profile</a></li>
-					<li><a href="${pageContext.request.contextPath }/logout">Logout</a></li>
+						href="${pageContext.request.contextPath }/billingPayment">MAKE
+							PAYMENT</a></li>
+					<li><a href="${pageContext.request.contextPath }/service">SERVICE
+							REQUEST</a></li>
+
+					<li><a href="${pageContext.request.contextPath }/profile">PROFILE</a></li>
+					<li><a href="${pageContext.request.contextPath }/logout">LOGOUT</a></li>
 				</ul>
 			</div>
 			<!-- END NAVIGATION -->
@@ -68,10 +66,10 @@
 
 			</div>
 			<div class=" col-md-6 col-sm-12" style="margin-top: 2%;">
-				
-					<a href="viewBill" class="btn billButton"> VIEW BILL </a> <a
-						href="payment" class="btn billButton"> PAY BILL </a>
-				
+
+				<a href="viewBill" class="btn billButton"> VIEW BILL </a> <a
+					href="payment" class="btn billButton"> PAY BILL </a>
+
 
 			</div>
 
@@ -88,13 +86,11 @@
 				<div class="mainBlock4" style="background-color: #2980b9;">
 					<h3 class="pb-20">Your current plan</h3>
 					<h4>Plan Name: ${SubscriptionDetails.getRatePlan() }</h4>
-					<h4 class="pb-30">Basic- INR 849 per Month</h4>
+					<h4 class="pb-20">Basic- INR 849 per Month</h4>
 					<h4>Plan Content</h4>
 					<h4>1. ${SubscriptionDetails.getFUPLimit() }GB Data</h4>
 					<h4>2. 512Kbps Post FUP Speed Data</h4>
-
-					
-				</div>
+		</div>
 			</div>
 
 
@@ -106,13 +102,13 @@
 					<h4 style="color: black;" class="pb-30">Bill period-
 						${SubscriptionDetails.getStartdt() } -
 						${SubscriptionDetails.getExpirydt() }</h4>
-					
-								<h4 class="blackShadow" style="color: black; ">Usage</h4>
-							
-								<h3 class="blackShadow" style="color: black; ">
-									${SubscriptionDetails.getDataUsed() }GB</h3>
-							
+					<div  style="margin-bottom: 10px;">
+					<span class="blackShadow font-h4" style="color: black;margin-right: 10px;">Usage</span>
 
+					<span class="blackShadow font-h2" style="color: black;">
+						${SubscriptionDetails.getDataUsed() }GB</span>
+
+					</div>
 					<div class=" progress">
 						<div class="progressbarColor"
 							style="width: ${SubscriptionDetails.getDataPercent()}%;"></div>
