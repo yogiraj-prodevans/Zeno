@@ -48,7 +48,7 @@
 		style="background-image: url('corporate/img/back.png');">
 		<h1 style="margin-left: 5%;">FAQs</h1>
 	</div>
-<div class="container-fluid">
+<div class="container-fluid pt-20">
             <div class="row">
                 <div class="col-md-1"></div>
                 <div class="col-md-4">

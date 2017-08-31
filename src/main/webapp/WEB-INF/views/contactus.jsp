@@ -47,6 +47,11 @@ input[type="text"] {
 	height: 40px;
 	font-size: 30px;
 }
+.billButton{
+	padding-right: 2%;
+
+padding-left: 2%;
+}
 </style>
 
 </head>
@@ -82,7 +87,7 @@ input[type="text"] {
 
 
 
-	<div class="row pt-20">
+	<div class="row pt-40">
 		<div class="container">
 			<div class="col-md-12">
 				<div class="col-md-4">

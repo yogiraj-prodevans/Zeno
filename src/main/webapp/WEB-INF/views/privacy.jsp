@@ -54,7 +54,7 @@
     <h1 style="margin-left:5%;">PRIVACY POLICY</h1>
 </div> 
 
-        <div class="row pt-20" >
+        <div class="row pt-40" >
             <div class="row">
 
                 <!-- BEGIN SIDEBAR & CONTENT -->

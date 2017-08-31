@@ -171,7 +171,7 @@ canvas {
 				<div>
 					<div class="mainBlock4" style="background-color: #ffbb19;">
 						<h3 class="pb-20">Your One8 account</h3>
-						<h4 style="color: black;">Account id:
+						<h4 style="color: black;">Account Id :
 							${user_details.getActid() }</h4>
 						<h4 style="color: black;" class="pb-40">Bill period-
 							${SubscriptionDetails.getStartdt() } -

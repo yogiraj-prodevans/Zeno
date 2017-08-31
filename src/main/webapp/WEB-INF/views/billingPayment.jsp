@@ -97,10 +97,10 @@
 			<div class="col-md-4 col-sm-6">
 				<div class="mainBlock4" style="background-color: #ffbb19;">
 					<h3 class="pb-20">Your One8 account</h3>
-					<h4 style="color: black;">Account id:
+					<h4 style="color: black;">Account Id :
 						${user_details.getActid() }</h4>
-					<h4 style="color: black;" class="pb-30">Bill period-
-						${SubscriptionDetails.getStartdt() } -
+					<h4 style="color: black;" >Bill period : </h4>
+						<h4 style="color: black;" class="pb-30">${SubscriptionDetails.getStartdt() } -
 						${SubscriptionDetails.getExpirydt() }</h4>
 					<div  style="margin-bottom: 10px;">
 					<span class="blackShadow font-h4" style="color: black;margin-right: 10px;">Usage</span>
@@ -120,7 +120,7 @@
 			<div class="col-md-4 col-sm-6">
 				<div class="mainBlock4" style="background-color: #e74c3c;">
 					<h3 class="pb-20">Payment</h3>
-					<h4 class="pb-20">Account id: ${user_details.getActid() }</h4>
+					<h4 class="pb-20">Account Id : ${user_details.getActid() }</h4>
 					<h2>INR ${invoiceDetails.getAmount() }</h2>
 					<h2 class="pb-20">Due in ${invoiceDetails.getRemainingDays() }
 						days</h2>
