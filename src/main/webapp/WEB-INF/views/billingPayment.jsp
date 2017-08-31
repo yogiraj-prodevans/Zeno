@@ -86,13 +86,11 @@
 				<div class="mainBlock4" style="background-color: #2980b9;">
 					<h3 class="pb-20">Your current plan</h3>
 					<h4>Plan Name: ${SubscriptionDetails.getRatePlan() }</h4>
-					<h4 class="pb-30">Basic- INR 849 per Month</h4>
+					<h4 class="pb-20">Basic- INR 849 per Month</h4>
 					<h4>Plan Content</h4>
 					<h4>1. ${SubscriptionDetails.getFUPLimit() }GB Data</h4>
 					<h4>2. 512Kbps Post FUP Speed Data</h4>
-
-
-				</div>
+		</div>
 			</div>
 
 

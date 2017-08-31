@@ -408,7 +408,10 @@ a:hover {
 	font-size: 20px;
 	border-radius: unset;
 }
-
+.btn:hover{
+	text-decoration: none;
+	color: white;
+}
 .tableWidth {
 	width: 45%;
 }
