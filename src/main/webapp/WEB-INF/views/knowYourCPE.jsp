@@ -56,18 +56,12 @@
 			<div class="col-md-6 col-sm-6">
 				<div class="row pb-20" >
 					<div class="col-md-12">
-						<div class="col-md-4 col-sm-4">
-						</div>
-						<div class="col-md-4 col-sm-4">
-							<h3 style="font-size:22px;">LEFT SIDE PANEL</h3>
-						</div>
-						<div class="col-md-4 col-sm-4">
-						</div>
+						<h3 style="font-size:22px;text-align: center;">LEFT SIDE PANEL</h3>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-12 col-sm-12">
-						<img alt="" src="corporate/img/leftPanel.JPG" style="width: 95%;height: 25%;">
+						<img alt="" src="corporate/img/leftPanel1.JPG" style="width: 95%;height: 25%;">
 					</div>
 				</div>
 			</div>
@@ -75,18 +69,12 @@
 			<div class="col-md-6 col-sm-6">
 				<div class="row pb-20" >
 					<div class="col-md-12">
-						<div class="col-md-4 col-sm-4">
-						</div>
-						<div class="col-md-4 col-sm-4">
-							<h3 style="font-size:22px;">BACK PANEL</h3>
-						</div>
-						<div class="col-md-4 col-sm-4">
-						</div>
+						<h3 style="font-size:22px;text-align: center;">BACK PANEL</h3>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-12 col-sm-12">
-						<img alt="" src="corporate/img/backSide.JPG" style="width: 95%;height: 48%;">
+						<img alt="" src="corporate/img/backSide1.JPG" style="width: 95%;height: 48%;">
 					</div>
 				</div>
 			</div>
