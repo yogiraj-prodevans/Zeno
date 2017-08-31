@@ -27,45 +27,6 @@
         <jsp:include page="../component/css.jsp"></jsp:include>
 
 
-<style>
-
-.billPayment
-{
-    color: white; 
-}
-.greyBlock
-{
-    background-color: #bdc3c7;
-}
-    
-/* 3 blocks start here */  
-.mainBlock3
-{
-    max-width: 92%;
-    color: white;
-    margin-top: 5%;
-    padding-top: 1%;
-    padding-left: 4%;
-}
-/* 3 blocks End here */
-    
-.firstRow
-{
-    min-height: 100px;
-    padding-top:10px;
-}
-      
-/* iphone 6 plus*/
-@media (max-width: 480px)
-{
-    .mainBlock3 
-    {
-        width:100%;
-        margin: 5%;
-    }
-}    
-    
-</style>
 </head>
 <body class="corporate">
             <!-- BEGIN HEADER -->
