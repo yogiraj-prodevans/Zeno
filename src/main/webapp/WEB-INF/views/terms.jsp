@@ -53,10 +53,10 @@
     <h1 style="margin-left:5%;">TERMS AND CONDITIONS</h1>
 </div> 
         <div class="row pt-40"  >
-            <div class="container">
+            <div class="row">
 
                 <!-- BEGIN SIDEBAR & CONTENT -->
-                <div class="row " >
+                <div class="container " >
                     
 
                     <!-- BEGIN CONTENT -->

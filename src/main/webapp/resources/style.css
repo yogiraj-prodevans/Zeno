@@ -1,5 +1,29 @@
 /* CSS for billPaymentImage starts here*/
 
+
+/* Navigation bar customization*/
+.header-navigation ul > li.active > a {
+
+    border-bottom: 2px solid #F44336;
+
+}
+.header-navigation > ul > li > a {
+
+   
+    display: block;
+    padding: 33px 12px 4px;
+    margin-right: 5px;
+
+}
+.header-navigation > ul > li > a:hover {
+
+   
+    display: block;
+   
+	border-bottom: 2px solid #F44336;
+}
+
+
 .billPaymentImage
 {
 	 background-image: url('corporate/img/back1.png');
