@@ -20,40 +20,11 @@
         <!--  include the all css components -->
         <jsp:include page="component/css.jsp"></jsp:include>
 
-            <style type="text/css">
-
-                .submitButton
-                {
-                    margin-top:10%;
-                    margin-bottom:10%;
-                    width:70%;
-                    height: 5%;
-                    background-color: #010745;
-                    color: #FFF;
-                    border-color: #010745;
-                }
-
-
-            </style>
 
         </head>
 
         <body class="corporate">
-            <!-- BEGIN TOP BAR -->
-            <div class="pre-header">
-                <div class="container">
-                    <div class="row">
-                        <!-- BEGIN TOP BAR MENU -->
-                        <div class="col-md-12 col-sm-12 additional-nav" style=" font-size:12px; font-color:000000">
-                            <ul class="list-unstyled list-inline pull-right ">
-                                <li ><i class=" fa fa-phone"></i><span>Lets Talk: +91 9019602602</span></li>
-                            </ul>
-                        </div>
-                        <!-- END TOP BAR MENU -->
-                    </div>
-                </div>
-            </div>
-            <!-- END TOP BAR -->
+
             <!-- BEGIN HEADER -->
             <div class="header">
                 <div class="container">
@@ -78,104 +49,60 @@
 
 
 
-        <!-- BEGIN STEPS -->
-        <div class="row front-steps-wrapper"  style="margin-left: 0.001%;width: 100%;">
-            <div class="col-lg-12 col-md-12 col-sm-12 front-step-col">
-                <div class="front-step front-stepv">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 margin-top-5 ">
-                            <div class="col-lg-12 col-md-12 col-sm-12 margin-top-5"  style="padding-left: 10%;">
+<div class="col-md-12 firstRow pt-20" style="background-image: url('corporate/img/back.png');">
+    <h1 style="margin-left:5%;">Feedback</h1>
+</div>    
 
-                                <div class="col-md-6">
-                                    <h2 style="font-family:Roboto; font-size:30px">We love to hear from you.</h2>
-                                </div>
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+<div class="container">
+    
+    <div class="col-md-12" style="margin-top:5%;">
+        
+        <div class="row pb-40">
+            <div class="col-md-6">
+                <input type="text" placeholder="Name"/>        
+            </div>
+            <div class="col-md-6 mb-pt-30">
+                <input type="text" placeholder="Mobile" class="mobileMargin"/>        
             </div>
         </div>
-        <!-- END STEPS -->
-
-
-
-
-
-
-
-        <div class="main">
-            <div class="container">  
-                <div class="row" style="margin-left:4%;margin-top:4%">
-                    <p style="font-size:16px;">Drop a comment and we will get in touch with you</p><hr>
-                </div> 
-                <div class="row">
-                    <div class="col-md-12">
-                        <form action="#">
-                            
-                            <div class="row" style="margin-left:4%">
-                                <div class="col-md-2">
-                                    Name:
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control">
-                                </div>          
-                            </div><br>
-                            
-                            <div class="row" style="margin-left:4%">
-                                <div class="col-md-2">
-                                    Email:
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control">
-                                </div>          
-                            </div><br>
-
-                            <div class="row" style="margin-left:4%">
-                                <div class="col-md-2">
-                                    Mobile:
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control">
-                                </div>          
-                            </div><br>
-                            <div class="row" style="margin-left:4%">
-                                <div class="col-md-2">
-                                    Account Number:
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control">
-                                </div>          
-                            </div><br>
-                            <div class="row" style="margin-left:4%">
-                                <div class="col-md-2">
-                                    Subject:
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control">
-                                </div>          
-                            </div><br>
-                            <div class="row" style="margin-left:4%">
-                                <div class="col-md-6">
-                                    Share your mind:
-                                
-                                    <textarea class="form-control" style="height:20%; font-size:12px; font-style:italic;  box-shadow: none; border: none; border-bottom: .1px solid;"></textarea>
-                                </div>          
-                            </div><br>
-
-
-                            <div class="row col-md-2" style="margin-left:6%; margin-bottom: 8%;">
-                                <button class="submitButton" type="submit">Submit</button>
-                            </div>
-
-                        </form>
-                    </div>
-                </div>
+        
+        <div class="row pb-40">
+            <div class="col-md-6">
+                <input type="text" placeholder="Account no"/>        
             </div>
         </div>
+        
+        <div class="row pb-40">
+            <div class="col-md-12">
+                <input type="text" placeholder="Subject"/>        
+            </div>
+        </div>
+                   
+        
+        <!-- Start Tell More-->
+        <div class="row">
+        	<h3 style="padding-left: 1%;">Comment</h3>
+            <div class="col-md-12">
+                <textarea class="form-control" style="height:30%; width:90%; border: 0.4px solid #bdc3c7; resize: none; color:black; border-radius: 0.4px;font-size: 16px;">
+                </textarea>
+            </div>
+        </div>
+        <div class="row col-md-12" style="margin-left:%; margin-bottom: 5%;">
+            <div class="col-md-9">
+            </div>
+            <div class="col-md-3">
+            	<button class="btn billButton" style="width: 50%;margin-left: 20%;" type="submit">SUBMIT</button>
+            </div>
+        </div>
+        
+         
+    </div>
+    
+    
+</div>    
 
-        <!-- included pop up -->
-        <jsp:include page="component/pop-up.jsp"></jsp:include>
            
         <jsp:include page="component/footer.jsp"></jsp:include>   
            
