@@ -187,10 +187,16 @@ a {
 	line-height: 24px;
 	text-decoration: none;
 }
-.footer a {
+
+/* footer format*/
+.footer a, .footer {
 	text-decoration: none;
-	
+	color: black;
 }
+.footer{
+	background-color: white;
+}
+
 .pb-40 {
 	padding-bottom: 40px;
 }
