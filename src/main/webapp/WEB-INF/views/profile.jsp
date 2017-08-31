@@ -64,8 +64,8 @@ h1{
 	</div>
 	<!-- Header END -->
 	
-<div class="col-md-12 firstRow" style="background-color:#ffbb19;">
-    <h1 style="color: white; margin-left: 5%;">Login Contact and Details</h1>
+<div class="col-md-12 firstRow " style="background-color:#ffbb19;">
+    <h1 class="pt-40" style="color: white; margin-left: 5%;">Login Contact and Details</h1>
 </div>    
 
 <div class="container">

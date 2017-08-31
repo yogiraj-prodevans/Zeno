@@ -130,8 +130,8 @@ canvas {
 	</div>
 	<!-- Header END -->
 
-	<div class="col-md-12 firstRow"
-		style="background-color: #ffbb19; padding-left: 5%; padding-top: 10px">
+	<div class="col-md-12 firstRow pt-20	"
+		style="background-color: #ffbb19; padding-left: 5%; ">
 		<h3 style="color: white;">Experience transparency</h3>
 		<h2 style="font-family: Roboto; font-size: 30px; color: white;">
 			Welcome, <strong style="color: #e74c3c">${user_details.getFirst_name() }</strong>

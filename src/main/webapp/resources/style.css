@@ -124,7 +124,7 @@ body {
 }
 
 .firstRow {
-	min-height: 90px;
+	min-height: 116px;
 	color: white;
 }
 
@@ -210,6 +210,14 @@ a {
 }
 .pb-10 {
 	padding-bottom: 10px;
+}
+
+.pt-20{
+	padding-top:20px;
+}
+
+.pt-40{
+	padding-top: 40px;
 }
 
 label {

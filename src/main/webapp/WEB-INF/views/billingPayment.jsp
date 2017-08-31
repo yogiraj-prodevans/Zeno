@@ -54,10 +54,10 @@
 
 
 	<div class="row">
-		<div class="col-md-4 col-sm-12  firstRow billPaymentImage ">
+		<div class="col-md-4 col-sm-12  firstRow billPaymentImage pt-20">
 			<h1 style="color: white; margin-left: 15%;">Bill payment</h1>
 		</div>
-		<div class="col-md-8 col-sm-12 firstRow"
+		<div class="col-md-8 col-sm-12 firstRow pt-20"
 			style="background-color: #ecf0f1;">
 			<div class="col-md-6 col-sm-12">
 
@@ -65,9 +65,9 @@
 					bill INR ${invoiceDetails.getAmount() }</h1>
 
 			</div>
-			<div class=" col-md-6 col-sm-12" style="margin-top: 2%;">
+			<div class=" col-md-6 col-sm-12" style="margin-top: 1%;">
 
-				<a href="viewBill" class="btn billButton"> VIEW BILL </a> <a
+				<a href="viewBill" class="btn billButton" target="_blank"> VIEW BILL </a> <a
 					href="payment" class="btn billButton"> PAY BILL </a>
 
 
