@@ -26,63 +26,8 @@
         <!--  include the all css components -->
         <jsp:include page="../component/css.jsp"></jsp:include>
 
-
-<style>
-
-.billPayment
-{
-    color: white; 
-}
-.greyBlock
-{
-    background-color: #bdc3c7;
-}
-    
-/* 3 blocks start here */  
-.mainBlock3
-{
-    max-width: 92%;
-    color: white;
-    margin-top: 5%;
-    padding-top: 1%;
-    padding-left: 4%;
-}
-/* 3 blocks End here */
-    
-.firstRow
-{
-    min-height: 100px;
-    padding-top:10px;
-}
-      
-/* iphone 6 plus*/
-@media (max-width: 480px)
-{
-    .mainBlock3 
-    {
-        width:100%;
-        margin: 5%;
-    }
-}    
-    
-</style>
 </head>
         <body class="corporate">
-            <!-- BEGIN TOP BAR -->
-            <div class="pre-header">
-                <div class="container">
-                    <div class="row">
-                        <!-- BEGIN TOP BAR MENU -->
-                        <div class="col-md-12 col-sm-12 additional-nav" style=" font-size:12px; font-color:000000">
-                            <ul class="list-unstyled list-inline pull-right ">
-                                <li ><i class=" fa fa-phone"></i><span>Lets Talk: +91 9019602602</span></li>
-                            </ul>
-                        </div>
-                        <!-- END TOP BAR MENU -->
-                    </div>
-                </div>
-            </div>
-            <!-- END TOP BAR -->
             <!-- BEGIN HEADER -->
             <div class="header">
                 <div class="container">
@@ -196,7 +141,7 @@ if(success)
 {
 %>
 		
-   <div class="row">
+    <div class="row">
         <div class="col-md-4 firstRow billPaymentImage">
             <h1 style="color: white; margin-left: 15%;" class="pt-40">Bill payment</h1>
         </div>

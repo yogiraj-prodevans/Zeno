@@ -23,25 +23,6 @@
 
 
 <style>
-
-/*    
-input[type=text] 
-{
-    padding: 0;
-    height: 30px;
-    width: 100%;
-    position: relative;
-    left: 0;
-    outline: none;
-    border-left: none;
-    border-right: none;
-    border-top: none;
-    border-bottom: 0.5px solid #bdc3c7;
-    background-color: white;
-    font-size: 16px;
-    font-weight: bold;
-}
-   */ 
     
  
 .submitButton
@@ -112,8 +93,10 @@ input[type=text]
 	            	<form:input path="amount" type="text" id="amount" placeholder="Amount "  required="true"/>            
 	            </div>
 	        </div>
-	        <div class="row col-md-2" style="margin-left:%; margin-bottom: 5%;">
-	            <button class="submitButton" type="submit">Pay Bill</button>
+	        <div class="row col-md-3" style="margin-left:%; margin-bottom: 5%;">
+	            <button class="btn billButton" type="submit" style="padding: 5px;">
+					PAY BILL
+				</button>
 	        </div>
         
         </form:form>
