@@ -27,6 +27,11 @@ canvas {
 	max-width: unset;
 	margin-top: 5%;
 }
+
+.firstRow{
+		background-image: url('corporate/img/back.png');
+		padding-left: 5%;
+}
 </style>
 
 <script type="text/javascript"
@@ -58,6 +63,7 @@ canvas {
 			title : 'Data Usage',
 			curveType : 'none',
 			height : 300,
+			colors: ['#ff6f00', '#00c853', '#2196f3'],
 			hAxis : {
 				title : "Time in week (${SubscriptionDetails.getStartdt() } - ${SubscriptionDetails.getExpirydt() })",
 				ticks : [ {
@@ -133,8 +139,7 @@ canvas {
 	</div>
 	<!-- Header END -->
 
-	<div class="col-md-12 firstRow pt-20	"
-		style="background-color: #ffbb19; padding-left: 5%; ">
+	<div class="col-md-12 firstRow pt-20" >
 		<h3 style="color: white;">Experience transparency</h3>
 		<h2 style="font-family: Roboto; font-size: 30px; color: white;">
 			Welcome, <strong style="color: #e74c3c">${user_details.getFirst_name() }</strong>

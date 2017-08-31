@@ -10,33 +10,22 @@
       <head>
         <meta charset="utf-8">
         <title>STOIC ZENO</title>
-        <link rel="shortcut icon" href="favicon.ico">
+    
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta content="Stoic Zeno User Portal" name="description">
         <meta content="Stoic Zeno User Portal Keywords" name="keywords">
-        <meta content="vikram" name="author">
+        
         <!-- link to image for socio -->
         <meta property="og:url" content="-CUSTOMER VALUE-">
+        
         <!--  include the all css components -->
         <jsp:include page="component/css.jsp"></jsp:include>
+        
+        
     </head>
     <body class="corporate">
-        <!-- BEGIN TOP BAR -->
-        <div class="pre-header">
-            <div class="container">
-                <div class="row">
-                    <!-- BEGIN TOP BAR MENU -->
-                    <div class="col-md-12 col-sm-12 additional-nav" style=" font-size:12px; font-color:000000">
-                        <ul class="list-unstyled list-inline pull-right ">
-                            <li ><i class=" fa fa-phone"></i><span>Lets Talk: +91 9019602602</span></li>
-                        </ul>
-                    </div>
-                    <!-- END TOP BAR MENU -->
-                </div>
-            </div>
-        </div>
-        <!-- END TOP BAR -->
+       
         <!-- BEGIN HEADER -->
         <div class="header">
             <div class="container">
@@ -61,25 +50,18 @@
         <!-- Header END -->
         
 
-        <div class="main" >
+<div class="row firstRow pt-20" style="background-image: url('corporate/img/back.png');">
+    <h1 style="margin-left:5%;">TERMS AND CONDITIONS</h1>
+</div> 
+        <div class="row " style="padding-top: 20px;" >
             <div class="container">
 
                 <!-- BEGIN SIDEBAR & CONTENT -->
-                <div class="row margin-bottom-0">
-                    <!-- BEGIN SIDEBAR -->
-                    <div class="col-md-3 col-sm-3">
-                        <table class="tblborder"  >
-                            <tr>
-                                <th align="center">
-                                    <div align="center" style="font-size: 50px; font-family: Roboto; " > Terms <br/> and <br/> Condition </div>
-                                </th>
-                            </tr>
-                        </table>
-                    </div>
-                    <!-- END SIDEBAR -->
+                <div class="row " >
+                    
 
                     <!-- BEGIN CONTENT -->
-                    <div class="col-md-8 col-sm-8">
+                    <div class="col-md-12 col-sm-12">
 
                         <div class="faq-page" style="line-height: 2">
                             
