@@ -57,9 +57,9 @@
         
         <form:form role="form" action="payBillRequest" method="post" modelAttribute="payBillDetails" >
 			
-			<div class="col-md-12" style="margin-top:5%;">
+			<div class="col-md-12" style="margin-top:5%;margin-bottom: 5%;">
 				
-				<div class="col-md-4 col-sm-4">
+				<div class="col-md-2 col-sm-2">
 				</div>
 				<div class="col-md-8 col-sm-8">
 					
@@ -73,7 +73,7 @@
 			            	<form:input path="email_id" type="text" id="email_id" placeholder="Email ID " required="true"/>            
 			            </div>
 			        </div>
-			        <div class="row pb-40">
+			        <div class="row pb-30">
 			            <div class="col-md-10 col-sm-10">
 			            	<form:input path="amount" type="text" id="amount" placeholder="Amount "  required="true"/>            
 			            </div>
