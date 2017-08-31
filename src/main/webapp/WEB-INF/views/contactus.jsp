@@ -84,7 +84,7 @@ input[type="text"] {
 
 	<div class="row pt-20">
 		<div class="container">
-			<div class="row">
+			<div class="col-md-12">
 				<div class="col-md-4">
 					<div>
 						<h2>Address</h2>
@@ -122,7 +122,7 @@ input[type="text"] {
 
 				<form action="#">
 
-					<div class="row pb-40">
+					<div class="col-md-12 pb-40">
 						<div class="col-md-6">
 							<input type="text" placeholder="Name" class="font-h2" />
 						</div>
@@ -130,12 +130,12 @@ input[type="text"] {
 							<input type="text" placeholder="Email" class="font-h2" />
 						</div>
 					</div>
-					<div class="row pb-40">
+					<div class="col-md-12 pb-40">
 						<div class="col-md-12">
 							<input type="text" placeholder="Subject" class="font-h2" />
 						</div>
 					</div>
-					<div class="row">
+					<div class="col-md-12">
 						<div class="col-md-12 ">
 
 							<textarea class="form-control "
@@ -144,8 +144,8 @@ input[type="text"] {
 						</div>
 					</div>
 
-					<div class="row "
-						style="margin-left: 6%; margin-bottom: 8%; text-align: right;">
+					<div class="col-md-12"
+						style="margin-bottom: 8%; text-align: right;">
 						<button class="btn billButton" type="submit">SEND NOW</button>
 					</div>
 				</form>
