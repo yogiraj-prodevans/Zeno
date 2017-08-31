@@ -18,6 +18,33 @@
 <!--  include the all css components -->
 <jsp:include page="component/css.jsp"></jsp:include>
 
+<style>
+.leftSidePanelIMG
+{
+	width: 95%;
+	height: 25%;
+}
+.backPanelIMG
+{
+	width: 95%;
+	height: 48%;
+}
+@media (max-width : 750px) 
+{
+	.leftSidePanelIMG
+	{
+		height: 20%;
+		padding-bottom: 50px;	
+	}
+	.backPanelIMG
+	{
+		width: 95%;
+		height: 25%;
+	}
+}
+</style>
+
+
 </head>
 
 <body class="corporate" style="font-family: Roboto;">
@@ -61,7 +88,7 @@
 				</div>
 				<div class="row">
 					<div class="col-md-12 col-sm-12">
-						<img alt="" src="corporate/img/leftPanel1.JPG" style="width: 95%;height: 25%;">
+						<img class="leftSidePanelIMG" alt="Left Side Panel" src="corporate/img/leftPanel1.JPG" >
 					</div>
 				</div>
 			</div>
@@ -74,7 +101,7 @@
 				</div>
 				<div class="row">
 					<div class="col-md-12 col-sm-12">
-						<img alt="" src="corporate/img/backSide1.JPG" style="width: 95%;height: 48%;">
+						<img class="backPanelIMG" alt="Back Panel" src="corporate/img/backSide1.JPG" >
 					</div>
 				</div>
 			</div>
