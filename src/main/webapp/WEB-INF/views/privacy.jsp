@@ -55,84 +55,39 @@
 </div> 
 
         <div class="row pt-20" >
-            <div class="container">
+            <div class="row">
 
                 <!-- BEGIN SIDEBAR & CONTENT -->
                 <div class="row margin-bottom-0">
                     
 
                     <!-- BEGIN CONTENT -->
-                    <div class="">
-
-                        <div class="faq-page" style="line-height: 2">
-                            <div class="panel panel-primary">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#accordion1_1">
-                                            1. What this privacy policy covers?
-                                        </a>
-                                    </h4>
-                                </div>
-                                <div id="accordion1_1" class="panel-collapse collapse in">
-                                    <div class="panel-body">
-                                        <i class=" fa fa-hand-o-right  "></i> This policy covers how Stoic-Marcus<sup>TM</sup> Technologies ("Company") treats personal information that the Company collects and receives, including information related to your past use of the Company's products and services. Personal information is information about you that is personally identifiable like your name, address, email address, or phone number etc. </br>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="panel panel-primary">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#accordion1_2">
-                                            2. Information Collection and Use
-                                        </a>
-                                    </h4>
-                                </div>
-                                <div id="accordion1_2" class="panel-collapse collapse  " >
-                                    <div class="panel-body">
-                                        <i class=" fa fa-hand-o-right  "></i> General </br>
-                                        &nbsp; <i class=" fa  fa-dot-circle-o "></i> The company has the right to combine information about you that it has, with information from partner business and has the right to pass on the same to business associates, franchisees without referring the same to the user.  </br>
-                                        &nbsp; <i class=" fa  fa-dot-circle-o "></i> We store personal information that you give us, for a specific purpose. This includes details such as your name, address, telephone, VC number, account number and/ or e-mail address. This Privacy Policy is applicable all the personal information that you give us ("User Information") via this website. <br/>
-                                        <br/><i class=" fa fa-hand-o-right  "></i> We make use of User Information for the following: <br/>
-                                        &nbsp; <i class=" fa  fa-dot-circle-o "></i> Market research, including statistical analysis of user behaviour which we may disclose to third parties in aggregated form. <br/>
-                                        &nbsp; <i class=" fa  fa-dot-circle-o "></i> In compliance with any requirement of law.<br/> 
-                                        &nbsp; <i class=" fa  fa-dot-circle-o"></i> Send you periodic communications about our features, products, services, events and special offers.
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="panel panel-primary">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#accordion1_3">
-                                            3. Information Sharing and Disclosure
-                                        </a>
-                                    </h4>
-                                </div>
-                                <div id="accordion1_3" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        <i class=" fa  fa-dot-circle-o "></i> STOIC-MARCUS<sup>TM</sup> and its authorized third parties will collect information pertaining to your identity, demographics, and related evidentiary documentation.  </br>
-                                        <i class=" fa  fa-dot-circle-o "></i> STOIC-MARCUS<sup>TM</sup> may at its discretion employ, contract or include third external to itself for strategic, tactical and operational purposes. Such agencies though external to STOIC-MARCUS<sup>TM</sup>, will always be entities which are covered by non-disclosure agreements.  </br>
-                                        <i class=" fa  fa-dot-circle-o "></i> We may also share your personal information with Government agencies or other authorized law enforcement agencies (LEAs) mandated under law to obtain such information for the purpose of verification of identity or for prevention, detection, investigation including but not limited to cyber incidents, prosecution, and punishment of offences. </br>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="panel panel-primary">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#accordion1_4">
-                                            4. Changes to this Privacy Policy
-                                        </a>
-                                    </h4>
-                                </div>
-                                <div id="accordion1_4" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        <i class=" fa  fa-dot-circle-o "></i> The Company may update this policy and display the same in their website without notice to you and such posting will be deemed to have been read by you. </br>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
+                  <div class="col-md-12">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8">
+                        
+                        <p class="font-h3" >What this privacy policy covers?</p>
+                        <p class="font-h4"> Technologies ("Company") treats personal information that the Company collects and receives, including information related to your past use of the Company's products and services. Personal information is information about you that is personally identifiable like your name, address, email address, or phone number etc. </p>
+                        
+                      <br>  <p class="font-h3" >Information Collection and Use</p>
+                        <p class="font-h4"> General</p>
+                        <p class="font-h4"> The company has the right to combine information about you that it has, with information from partner business and has the right to pass on the same to business associates, franchisees without referring the same to the user. 
+                            <br><br> We store personal information that you give us, for a specific purpose. This includes details such as your name, address, telephone, VC number, account number and/ or e-mail address. This Privacy Policy is applicable all the personal information that you give us ("User Information") via this website.</p>
+                       <br> <p class="font-h3"> We make use of User Information for the following: </p>
+                        <p class="font-h4">  Market research, including statistical analysis of user behaviour which we may disclose to third parties in aggregated form. <br/>
+                            <br>In compliance with any requirement of law.<br/> 
+                            <br>Send you periodic communications about our features, products, services, events and special offers.</p>
+                        
+                      <br>  <p class="font-h3" >Information Sharing and Disclosure</p>
+                        <p class="font-h4">STOIC-MARCUS<sup>TM</sup> and its authorized third parties will collect information pertaining to your identity, demographics, and related evidentiary documentation.  </br>
+                            <br> STOIC-MARCUS<sup>TM</sup> may at its discretion employ, contract or include third external to itself for strategic, tactical and operational purposes. Such agencies though external to STOIC-MARCUS<sup>TM</sup>, will always be entities which are covered by non-disclosure agreements.  </br>
+                            <br> We may also share your personal information with Government agencies or other authorized law enforcement agencies (LEAs) mandated under law to obtain such information for the purpose of verification of identity or for prevention, detection, investigation including but not limited to cyber incidents, prosecution, and punishment of offences.</p>
+                        
+                      <br>  <p class="font-h3" >Changes to this Privacy Policy</p>
+                        <p class="font-h4">The Company may update this policy and display the same in their website without notice to you and such posting will be deemed to have been read by you. </p>
                     </div>
+                </div>
+                <div class="col-md-2"></div>
                     <!-- END CONTENT -->
                 </div>
                 <!-- END SIDEBAR & CONTENT -->

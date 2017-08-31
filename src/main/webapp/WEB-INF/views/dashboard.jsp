@@ -32,6 +32,9 @@ canvas {
 		background-image: url('corporate/img/back.png');
 		padding-left: 5%;
 }
+.div2{
+	min-height:300px;
+}
 </style>
 
 <script type="text/javascript"
