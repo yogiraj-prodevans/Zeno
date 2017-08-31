@@ -10,33 +10,19 @@
     <head>
         <meta charset="utf-8">
         <title>STOIC ZENO</title>
-        <link rel="shortcut icon" href="favicon.ico">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta content="Stoic Zeno User Portal" name="description">
         <meta content="Stoic Zeno User Portal Keywords" name="keywords">
-        <meta content="vikram" name="author">
+      
         <!-- link to image for socio -->
         <meta property="og:url" content="-CUSTOMER VALUE-">
+     
         <!--  include the all css components -->
         <jsp:include page="component/css.jsp"></jsp:include>
         </head>
         <body class="corporate">
-            <!-- BEGIN TOP BAR -->
-            <div class="pre-header">
-                <div class="container">
-                    <div class="row">
-                        <!-- BEGIN TOP BAR MENU -->
-                        <div class="col-md-12 col-sm-12 additional-nav" style=" font-size:12px; font-color:000000">
-                            <ul class="list-unstyled list-inline pull-right ">
-                                <li ><i class=" fa fa-phone"></i><span>Lets Talk: +91 9019602602</span></li>
-                            </ul>
-                        </div>
-                        <!-- END TOP BAR MENU -->
-                    </div>
-                </div>
-            </div>
-            <!-- END TOP BAR -->
+          
             <!-- BEGIN HEADER -->
             <div class="header">
                 <div class="container">
@@ -46,13 +32,14 @@
                     <!-- BEGIN NAVIGATION -->
                     <div class="header-navigation pull-right font-transform-inherit" style="font-size:12px">
                         <ul>
-                            <li class="dropdown active"> </li>
-                            <li ><a href="${pageContext.request.contextPath }/dashboard">Home</a></li>
-                        <li><a href="${pageContext.request.contextPath }/billingPayment">Make Payment</a></li>  
-                        <li><a href="${pageContext.request.contextPath }/service">Service Request</a></li> 
-                        <li><a href="${pageContext.request.contextPath }/parental-control">Parental Control</a></li>
-                        <li><a href="${pageContext.request.contextPath }/profile">Profile</a></li>
-                        <li><a href="${pageContext.request.contextPath }/logout">Logout</a></li>
+                            <li><a href="${pageContext.request.contextPath }/dashboard">HOME</a></li>
+					<li><a
+						href="${pageContext.request.contextPath }/billingPayment">MAKE
+							PAYMENT</a></li>
+					<li><a href="${pageContext.request.contextPath }/service">SERVICE
+							REQUEST</a></li>
+					<li><a href="${pageContext.request.contextPath }/profile">PROFILE</a></li>
+					<li><a href="${pageContext.request.contextPath }/logout">LOGOUT</a></li>
                         
                         
                     </ul>
@@ -61,30 +48,24 @@
             </div>
         </div>
         <!-- Header END -->
+        
+        
+<div class="row firstRow pt-20" style="background-image: url('corporate/img/back.png');">
+    <h1 style="margin-left:5%;">PRIVACY POLICY</h1>
+</div> 
 
-
-        <div class="main" >
+        <div class="row pt-20" >
             <div class="container">
 
                 <!-- BEGIN SIDEBAR & CONTENT -->
                 <div class="row margin-bottom-0">
-                    <!-- BEGIN SIDEBAR -->
-                    <div class="col-md-3 col-sm-3">
-                        <table class="tblborder">
-                            <tr>
-                                <th align="center">
-                                    <div align="center" style="font-size: 50px; font-family: Roboto" >Privacy<br/>Policy</div>
-                                </th>
-                            </tr>
-                        </table>
-                    </div>
-                    <!-- END SIDEBAR -->
+                    
 
                     <!-- BEGIN CONTENT -->
-                    <div class="col-md-8 col-sm-8">
+                    <div class="">
 
                         <div class="faq-page" style="line-height: 2">
-                            <div class="panel panel-default">
+                            <div class="panel panel-primary">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
                                         <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#accordion1_1">
@@ -98,7 +79,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="panel panel-default">
+                            <div class="panel panel-primary">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
                                         <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#accordion1_2">
@@ -119,7 +100,7 @@
                                 </div>
                             </div>
 
-                            <div class="panel panel-default">
+                            <div class="panel panel-primary">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
                                         <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#accordion1_3">
@@ -135,7 +116,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="panel panel-default">
+                            <div class="panel panel-primary">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
                                         <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#accordion1_4">

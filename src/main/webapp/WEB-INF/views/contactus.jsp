@@ -10,12 +10,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta content="Stoic Zeno User Portal" name="description">
         <meta content="Stoic Zeno User Portal Keywords" name="keywords">
-        <meta content="vikram" name="author">
 
         <!-- link to image for socio -->
         <meta property="og:url" content="-CUSTOMER VALUE-">
-        <link rel="shortcut icon" href="favicon.ico">
-
 
         <!--  include the all css components -->
         <jsp:include page="component/css.jsp"></jsp:include>
@@ -54,21 +51,7 @@
  </head>
 
         <body class="corporate">
-            <!-- BEGIN TOP BAR -->
-            <div class="pre-header">
-                <div class="container">
-                    <div class="row">
-                        <!-- BEGIN TOP BAR MENU -->
-                        <div class="col-md-12 col-sm-12 additional-nav" style=" font-size:12px; font-color:000000">
-                            <ul class="list-unstyled list-inline pull-right ">
-                                <li ><i class=" fa fa-phone"></i><span>Lets Talk: +91 9019602602</span></li>
-                            </ul>
-                        </div>
-                        <!-- END TOP BAR MENU -->
-                    </div>
-                </div>
-            </div>
-            <!-- END TOP BAR -->
+            
             <!-- BEGIN HEADER -->
             <div class="header">
                 <div class="container">
@@ -91,31 +74,53 @@
             </div>
         </div>
 
+<div class="row firstRow pt-20" style="background-image: url('corporate/img/back.png');">
+    <h1 style="margin-left:5%;">CONTACT US.</h1>
+</div> 
 
-<!-- BEGIN STEPS -->
-        <div class="row front-steps-wrapper"  style="margin-left: 0.001%;width: 100%;">
-            <div class="col-lg-12 col-md-12 col-sm-12 front-step-col">
-                <div class="front-step front-stepv">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 margin-top-5 ">
-                            <div class="col-lg-12 col-md-12 col-sm-12 margin-top-5"  style="padding-left: 10%;">
 
-                                <div class="col-md-6">
-                                    <h2 style="font-family:Roboto; font-size:30px">Contact Us.</h2>
-                                </div>
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="row pt-20">
+            <div class="container">  
+            <div class="row">
+            <div class="col-md-4">
+            <div >
+								<h2>Address</h2>
+								<p>Novel Tech Park, 3rd Floor,<br>
+								No. 46/4 Garvebhavi Palya Hongasandra,<br>
+								Hosur Road, Bengaluru,<br>
+								Karnataka 560068.</p>
+							</div>
+							<br>
+							<div >
+								<div >
+									<h2>Contact</h2>
+									<p>+91 - 99019602602</p><br>
+								</div>
+								<div >
+									<h2>Mail</h2>
+									<p><a style="color:black" href="mailto:info@oneeight.co.in">info@oneeight.co.in</a></p>
+								</div>
+							</div>
+            </div>
+            <div class="col-md-8">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.9047081333974!2d77.6044091145098!3d12.913845819637745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15028bbddb5b%3A0x1abfed521a02d446!2sProDevAns+Technologies!5e0!3m2!1sen!2sin!4v1504167162391" width="100%" height="300px" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+            </div>
+            
+            
+                <div class="row pt-20" >
+                
+                
+                 
+        <div class="row pb-40">
+            <div class="col-md-6">
+                <input type="text" placeholder="Name" class="font-h2"/>        
+            </div>
+            <div class="col-md-6 mb-pt-30">
+                <input type="text" placeholder="Email" class="font-h2" />        
             </div>
         </div>
-        <!-- END STEPS -->
-
-
-        <div class="main">
-            <div class="container">  
-                <div class="row" style="margin-left:4%;margin-top:4%">
                     <div class="col-md-6">
                         <form action="#">
                             
@@ -124,7 +129,7 @@
                                     Name:
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control">
+                                    <input type="text" >
                                 </div>          
                             </div><br>
                             
@@ -133,7 +138,7 @@
                                     Email:
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control">
+                                    <input type="text" >
                                 </div>          
                             </div><br>
 
@@ -142,14 +147,14 @@
                                     Subject:
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control">
+                                    <input type="text" >
                                 </div>          
                             </div><br>
                             <div class="row" style="margin-left:4%">
-                                <div class="col-md-6">
+                               
                                     Message:
-                                    <textarea class="form-control" style="height:20%; font-size:12px; font-style:italic;  box-shadow: none; border: none; border-bottom: .1px solid;"></textarea>
-                                </div>          
+                                    <textarea class="form-control"  style="height:30%; width:90%; border: 0.4px solid #bdc3c7; resize: none; color:black; border-radius: 0.4px;font-size: 16px;""></textarea>
+                                         
                             </div><br>
 
 
@@ -161,23 +166,7 @@
                     </div>
                     <div class="col-md-6">
 	                    <div class="row">
-							<div class="col-lg-6 col-md-6 col-sm-6">
-								<h2>Address</h2><br>
-								<p>Novel Tech Park, 3rd Floor,<br>
-								No. 46/4 Garvebhavi Palya Hongasandra,<br>
-								Hosur Road, Bengaluru,<br>
-								Karnataka 560068.</p>
-							</div>
-							<div class="col-lg-6 col-md-6 col-sm-6">
-								<div class="row">
-									<h2>Contact</h2><br>
-									<p>+91 - 99019602602</p><br>
-								</div>
-								<div class="row">
-									<h2>Mail</h2><br>
-									<p><a  "href="mailto:info@oneeight.co.in">info@oneeight.co.in</a></p>
-								</div>
-							</div>
+							
 						</div>
 						<div class="row">
 							<div class="google-map" data-latitude="12.9024492" data-longitude="77.6318219"></div>
