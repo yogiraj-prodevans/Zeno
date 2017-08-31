@@ -118,12 +118,13 @@ label.css-label
 <!-- BEGIN STEPS -->
 
 <div class="col-md-12 firstRow" style="background-image: url('corporate/img/back.png');">
-    <h1 style="margin-left:5%;">Bill Summary</h1>
+    <h1 style="margin-left:5%;" class="pt-40">Bill Summary</h1>
 </div>    
 
 <div class="main">
 	<div class="container">  
-		<div class="col-lg-12 col-md-12 col-sm-12" >
+				
+		<div class="col-lg-12 col-md-12 col-sm-12" style="max-height: 40%;">
 
 			<form method="post" name="customerData" action="ccavRequestHandler" >
 			
@@ -141,7 +142,7 @@ label.css-label
 				<div class="form-group">
 					<div class="col-md-1">
 					</div> 
-                	<div class="col-lg-10 col-md-10 col-sm-10 " style=" padding-bottom:16;">
+                	<div class="col-lg-10 col-md-10 col-sm-10 " >
                 	
 	                	<div class="mainBlock3" style="background-color: #2980b9;">
 	                		<div class="row">
