@@ -37,6 +37,12 @@
 
 <style type="text/css">
 
+.footer {
+    position: fixed;
+   margin-top: 5%;
+   height: 30px;
+}
+
 input[type=radio].css-checkbox
 {
 	position:absolute;

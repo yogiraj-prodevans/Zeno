@@ -28,13 +28,14 @@ h1{
 	padding-top:30px;
 }
 
-.mainBlock3 .row{
-	margin-bottom: 10px;
-}
-
-.firstRow{
-		background-image: url('corporate/img/back.png');
-		padding-left: 5%;
+.mainBlock4
+{
+	color:black;
+	width: 85%;
+	margin: 5%;
+	-webkit-box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
+	-moz-box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
+	box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
 }
 </style>
 
@@ -69,57 +70,66 @@ h1{
 	</div>
 	<!-- Header END -->
 	
-<div class="col-md-12 firstRow " >
-    <h1 class="pt-40" style="color: white; margin-left: 5%;">Login Contact and Details</h1>
-</div>    
+<div class="col-md-12 firstRow pt-20" style="background-image: url('corporate/img/back.png');">
+    <h1 style="margin-left:5%;">Login contact and details.</h1>
+</div>
 
 <div class="container">
     
         <div class="col-md-6 col-md-offset-3">
-            <div class="mainBlock3" style="background-color: #2980b9;">
+            <div class="mainBlock4">
+            	<div class="row">
+            		<h3>Account details</h3>
+            	</div>
             	<div class="row">
 	            	<div class="col-md-4">
-	            		<h4 class="whiteShadow">Account no:</h4>
+	            		<h4>Account no:</h4>
 	            	</div>
-	            	<div class="col-md-8">
+	            	<div class="col-md-1 col-sm-1"></div>
+	            	<div class="col-md-7">
 	            		<h4 class="whiteShadow">${profile.getActid() }</h4>
 	            	</div>
 	            </div>
 	            <div class="row">
 	            	<div class="col-md-4">
-	            		<h4 class="whiteShadow">Password:</h4>
+	            		<h4>Password:</h4>
 	            	</div>
-	            	<div class="col-md-8">
-	            		
-	            			<a href="#changePassword" data-toggle="modal" class="font-h4 whiteShadow " >
-	            				*******
-	            			
-	            				<span class="glyphicon glyphicon-pencil font-h4 whiteShadow" >(CHANGE PASSWORD)</span>
-	            			</a>
-	            		
+	            	<div class="col-md-1 col-sm-1"></div>
+	            	<div class="col-md-5">
+	            		<a href="#changePassword" data-toggle="modal"  >
+	            			<strong style="color:black;">.............</strong>
+	            		</a>
 	            	</div>
-	            </div>
-	            <div class="row">
-	            	<div class="col-md-6">
-	            		<h4 class="whiteShadow">Mobile:</h4>
-	            	</div>
-	            	<div class="col-md-6">
-	            		<h4 class="whiteShadow">${profile.getMobileno() }</h4>
+	            	<div class="col-md-2">
+	            		<a href="#changePassword" data-toggle="modal">
+	            			<table><tr><td>Edit</td><td><img alt="" src="img/pencil.png" style="width:30px;height: 30px;"></td></tr></table>
+	            		</a>
 	            	</div>
 	            </div>
 	            <div class="row">
-	            	<div class="col-md-6">
-	            		<h4 class="whiteShadow">Email ID:</h4>
+	            	<div class="col-md-4">
+	            		<h4>Mobile:</h4>
 	            	</div>
-	            	<div class="col-md-6">
+	            	<div class="col-md-1 col-sm-1"></div>
+	            	<div class="col-md-7">
+	            		<h4>${profile.getMobileno() }</h4>
+	            	</div>
+	            </div>
+	            <div class="row">
+	            	<div class="col-md-4">
+	            		<h4>Email ID:</h4>
+	            	</div>
+	            	<div class="col-md-1 col-sm-1"></div>
+	            	<div class="col-md-7">
 	            		<h4 class="whiteShadow">${profile.getEmail() }</h4>
 	            	</div>
 	            </div>
 	            <div class="row">
-	            	<div class="col-md-6">
+	            	<div class="col-md-4">
 	            		<h4 class="whiteShadow">Address:</h4>
 	            	</div>
-	            	<div class="col-md-6">
+	            	<div class="col-md-1 col-sm-1"></div>
+	            	<div class="col-md-7">
 	            		<h4 class="whiteShadow">${profile.getAddress() }</h4>
 	            	</div>
 	            </div>
@@ -167,8 +177,7 @@ h1{
 	
 	
 	<jsp:include page="component/pop-up.jsp"></jsp:include>
-	
-	<div style="padding: 7%"></div>
+	<div style="margin:5%;"></div>
 	<jsp:include page="component/footer.jsp"></jsp:include>
 	
 	
