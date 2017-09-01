@@ -63,7 +63,7 @@
 /* CSS for billPaymentImage ends here*/
 
 /* input text*/
-input[type=text] {
+input[type=text] ,input[type=password]{
 	padding: 0;
 	height: 30px;
 	width: 100%;
