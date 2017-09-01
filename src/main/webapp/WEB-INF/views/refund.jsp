@@ -63,7 +63,7 @@
 
 					<div class="faq-page" style="line-height: 2">
 
-						<div class="panel panel-default">
+						<div class="">
 							<div id="accordion1_1" class="panel-collapse collapse in">
 								<div class="panel-body">
 									<i class=" fa fa-hand-o-right  "></i> No Refund of fixed
