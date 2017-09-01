@@ -37,6 +37,11 @@
 
 <style type="text/css">
 
+.mainBlock3
+{
+	margin-bottom: 8%;
+}
+
 input[type=radio].css-checkbox
 {
 	position:absolute;
@@ -122,9 +127,9 @@ label.css-label
 </div>    
 
 <div class="main">
-	<div class="container">  
+	<div class="container" >  
 				
-		<div class="col-lg-12 col-md-12 col-sm-12" style="max-height: 40%;">
+		
 
 			<form method="post" name="customerData" action="ccavRequestHandler" >
 			
@@ -142,7 +147,7 @@ label.css-label
 				<div class="form-group">
 					<div class="col-md-1">
 					</div> 
-                	<div class="col-lg-10 col-md-10 col-sm-10 " style="max-height:380px;">
+                	<div class="col-md-10">
                 	
 	                	<div class="mainBlock3" style="color:black;">
 	                		<div class="row">
@@ -327,18 +332,18 @@ label.css-label
 			</form>
 	      
 
-		</div>
+		
 	</div>
 </div>
 
-<div style="padding-top: 1%"></div>
+<!-- included pop up -->
+            <jsp:include page="../component/pop-up.jsp"></jsp:include>
 
-	<jsp:include page="../component/footer.jsp"></jsp:include>
-
-	<jsp:include page="../component/pop-up.jsp"></jsp:include>
-
-	<!-- Load javascripts at bottom, this will reduce page load time -->
-	<jsp:include page="../component/js.jsp"></jsp:include>   
+			<jsp:include page="../component/footer.jsp"></jsp:include>
+               
+                <!-- Load javascripts at bottom, this will reduce page load time -->
+            <jsp:include page="../component/js.jsp"></jsp:include>
+            <!-- END BODY -->	     
 	     
 	      
 	      
