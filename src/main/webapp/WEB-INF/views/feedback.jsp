@@ -62,44 +62,44 @@
         <h1 class="pb-10 pt-40" style="font-size:40px;">We're listening</h1>
         <h3 class="pb-20">Tell us how we can make your One8 experience better.</h3>
         
-        <div class="row pb-40">
-            <div class="col-md-6">
-                <input type="text" placeholder="Name"/>        
-            </div>
-            <div class="col-md-6 mb-pt-30">
-                <input type="text" placeholder="Mobile" class="mobileMargin"/>        
-            </div>
-        </div>
-        
-        <div class="row pb-40">
-            <div class="col-md-6">
-                <input type="text" placeholder="Account no"/>        
-            </div>
-        </div>
-        
-        <div class="row pb-40">
-            <div class="col-md-12">
-                <input type="text" placeholder="Subject"/>        
-            </div>
-        </div>
-                   
-        
-        <!-- Start Tell More-->
-        <div class="row">
-        	<h3 style="padding-left: 1%;">Comment</h3>
-            <div class="col-md-12">
-                <textarea class="form-control" style="height:30%; width:100%; border: 0.4px solid #bdc3c7; resize: none; color:black; border-radius: 0.4px;font-size: 16px;">
-                </textarea>
-            </div>
-        </div>
-        <div class="col-md-10" style=" margin-bottom: 5%;">
-        </div>
-        <div class="col-md-2 pull-right">
-        	<button class="btn billButton " style="width: 120px;%;height: 30px;margin-left:50px;" type="submit">SUBMIT</button>
-        </div>
-        
-        
-         
+        <form:form role="form" action="feedbackRequest" method="post" modelAttribute="feedbackDetails" >
+		        <div class="row pb-40">
+		            <div class="col-md-6">
+		            	<form:input path="name" type="text" id="name" placeholder="Name" required="true"/>
+		            </div>
+		            <div class="col-md-6 mb-pt-30">
+		            	<form:input path="mobile" type="text" id="mobile" placeholder="Mobile" required="true" class="mobileMargin"/>
+		            </div>
+		        </div>
+		        
+		        <div class="row pb-40">
+		            <div class="col-md-6">
+		            	<form:input path="account_id" type="text" id="account_id" placeholder="One8 ID" required="true" />
+		            </div>
+		        </div>
+		        
+		        <div class="row pb-40">
+		            <div class="col-md-12">
+		                <form:input path="subject" type="text" id="subject" placeholder="Subject" required="true" />
+		            </div>
+		        </div>
+		                   
+		        
+		        <!-- Start Tell More-->
+		        <div class="row">
+		        	<h3 style="padding-left: 1%;">Comment</h3>
+		            <div class="col-md-12">
+		                <form:textarea path="message" id="message" class="form-control" style="height:30%; width:100%; border: 0.4px solid #bdc3c7; resize: none; color:black; border-radius: 0.4px;font-size: 16px;" />
+		            </div>
+		        </div>
+		        <div class="col-md-10" style=" margin-bottom: 5%;">
+		        </div>
+		        <div class="col-md-2 pull-right">
+		        	<button class="btn billButton " style="width: 120px;%;height: 30px;margin-left:50px;" type="submit">SUBMIT</button>
+		        </div>
+		        
+		</form:form>        
+		     
     </div>
     
     

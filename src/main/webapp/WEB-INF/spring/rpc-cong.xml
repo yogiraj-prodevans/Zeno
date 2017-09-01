@@ -48,6 +48,11 @@
 		<property name="unifyHandler" ref="unifyHandler"></property>
 		<property name="rpcClient" ref="rpcClient"></property>
 	</bean>
+	<!-- Added by vipin -->
+	<bean id="FeedbackDAOImpl" class="com.prodevans.zeno.dao.impl.FeedbackDAOImpl">
+		<property name="unifyHandler" ref="unifyHandler"></property>
+		<property name="rpcClient" ref="rpcClient"></property>
+	</bean>
 	
 
 
