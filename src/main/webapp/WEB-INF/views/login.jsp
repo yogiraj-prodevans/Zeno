@@ -18,11 +18,13 @@
 <meta content="Stoic Zeno User Portal" name="description">
 <meta content="Stoic Zeno User Portal Keywords" name="keywords">
 
+<link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
 <!--  include the all css components -->
 <jsp:include page="component/css.jsp"></jsp:include>
 <style type="text/css">
 body {
 	font-weight: 300;
+	font-family: Roboto;
 }
 
 .row {

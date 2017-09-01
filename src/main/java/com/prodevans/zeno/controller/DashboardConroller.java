@@ -112,6 +112,28 @@ public class DashboardConroller {
 			return "knowYourCPE";
 		}
 	}
+	
+	@RequestMapping(value = "/knowYourBill", method = RequestMethod.GET)
+	public String knowYourBill(Locale locale, Model model, HttpSession session) {
+		if (session.getAttribute("user") == null) {
+			return "redirect:/logout";
+		}
+		else 
+		{
+			SessionDetails user = (SessionDetails) session.getAttribute("user");
+			model.addAttribute("user_details", user);
+			
+			// for getting invoice details
+			InvoiceDetails invoiceDetails = invoiceDAOImpl.getInvoice(user.getActno());
+			model.addAttribute("invoiceDetails", invoiceDetails);
+			
+			SubscriptionDetails details = DashboardImpl.getSubscriptionDetails(user.getActid());
+			System.out.println("user subscription details : " + details.toString());
+			model.addAttribute("SubscriptionDetails", details);
+			
+			return "knowYourBill";
+		}
+	}
 
 	@RequestMapping(value = "/help", method = RequestMethod.GET)
 	public String help(Locale locale, Model model, HttpSession session) {
