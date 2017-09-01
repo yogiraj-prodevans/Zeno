@@ -45,7 +45,7 @@
 	</div>
 	<!-- Header END -->
 <div class="row firstRow pt-20"
-		style="background-image: url('corporate/img/back.png');">
+		style="background-image: url('img/red_long.png');">
 		<h1 style="margin-left: 5%;">FAQs</h1>
 	</div>
 <div class="container-fluid pt-20">

@@ -142,10 +142,10 @@ canvas {
 	</div>
 	<!-- Header END -->
 
-	<div class="col-md-12 firstRow pt-20" >
+	<div class="col-md-12 firstRow pt-20" style="background-image: url('img/red_long.png');">
 		<h3 style="color: white;">Experience transparency</h3>
 		<h2 style="font-family: Roboto; font-size: 30px; color: white;">
-			Welcome, <strong style="color: #e74c3c">${user_details.getFirst_name() }</strong>
+			Welcome, <strong style="color: #ffbb19">${user_details.getFirst_name() }</strong>
 			to your stoic zeno page
 		</h2>
 	</div>

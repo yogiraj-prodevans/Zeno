@@ -49,7 +49,7 @@
         <!-- Header END -->
         
 
-<div class="row firstRow pt-20" style="background-image: url('corporate/img/back.png');">
+<div class="row firstRow pt-20" style="background-image: url('img/yellow_long.png');">
     <h1 style="margin-left:5%;">TERMS AND CONDITIONS</h1>
 </div> 
         <div class="row pt-40"  >
