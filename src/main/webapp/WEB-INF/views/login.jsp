@@ -32,6 +32,11 @@ body {
 .form-info {
 	border: unset;
 }
+
+.header .container {
+    position: relative;
+    width: 92%;
+}
 </style>
 </head>
 
