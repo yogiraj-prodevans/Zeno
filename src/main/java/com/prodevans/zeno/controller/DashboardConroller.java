@@ -63,7 +63,12 @@ public class DashboardConroller {
 				SubscriptionDetails details = DashboardImpl.getSubscriptionDetails(user.getActid());
 				System.out.println("user subscription details : " + details.toString());
 				model.addAttribute("SubscriptionDetails", details);
-
+				session.setAttribute("plan", details.getRatePlan());
+				session.setAttribute("FUP", details.getFUPLimit());
+				model.addAttribute("plan", details.getRatePlan());
+				model.addAttribute("FUP", details.getFUPLimit());
+				
+				
 				/*
 				 * List<SessionHistory> hs = DashboardImpl.getAllSession(details.getStartDate(),
 				 * details.getExpiryDate(), user.getActid());

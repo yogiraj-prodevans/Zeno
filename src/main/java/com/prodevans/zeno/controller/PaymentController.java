@@ -67,7 +67,8 @@ public class PaymentController {
 			SubscriptionDetails details = DashboardImpl.getSubscriptionDetails(user.getActid());
 			System.out.println("user subscription details : " + details.toString());
 			model.addAttribute("SubscriptionDetails", details);
-
+		
+			
 			/*
 			 * double pendingAmount=paymentDAOImpl.getPendingAmount(user.getActno());
 			 * session.setAttribute("pendingAmount", pendingAmount);
