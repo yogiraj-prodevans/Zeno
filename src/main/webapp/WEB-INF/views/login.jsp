@@ -39,6 +39,10 @@ body {
     position: relative;
     width: 92%;
 }
+.form-without-legend {
+    padding-top: 25px;
+    font-family: Roboto;
+}
 </style>
 </head>
 
@@ -75,7 +79,7 @@ body {
 						<div class="col-lg-8 col-md-8 col-sm-8  ">
 							<div style="margin-top: 15%; padding-left: 5%;">
 								<h2 style="font-family: Roboto; font-size: 70px">Welcome to
-									the network that never stops</h2>
+									the<br> network that never stops</h2>
 							</div>
 						</div>
 						<div class="col-md-4 col-sm-4 pull-right pt-40 "

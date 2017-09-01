@@ -63,6 +63,10 @@ public class DashboardConroller {
 				SubscriptionDetails details = DashboardImpl.getSubscriptionDetails(user.getActid());
 				System.out.println("user subscription details : " + details.toString());
 				model.addAttribute("SubscriptionDetails", details);
+				session.setAttribute("plan", details.getRatePlan());
+				session.setAttribute("FUP", details.getFUPLimit());
+				model.addAttribute("plan", details.getRatePlan());
+				model.addAttribute("FUP", details.getFUPLimit());
 
 				/*
 				 * List<SessionHistory> hs = DashboardImpl.getAllSession(details.getStartDate(),
@@ -103,7 +107,7 @@ public class DashboardConroller {
 			return "parental-control";
 		}
 	}
-	
+
 	@RequestMapping(value = "/knowYourCPE", method = RequestMethod.GET)
 	public String knowYourCPE(Locale locale, Model model, HttpSession session) {
 		if (session.getAttribute("user") == null) {
@@ -146,23 +150,39 @@ public class DashboardConroller {
 	}
 
 	@RequestMapping(value = "/terms", method = RequestMethod.GET)
-	public String terms(ModelMap model) {
-		return "terms";
+	public String terms(ModelMap model, HttpSession session) {
+		if (session.getAttribute("user") == null) {
+			return "redirect:/logout";
+		} else {
+			return "terms";
+		}
 	}
 
 	@RequestMapping(value = "/refund", method = RequestMethod.GET)
-	public String refund(ModelMap model) {
-		return "refund";
+	public String refund(ModelMap model, HttpSession session) {
+		if (session.getAttribute("user") == null) {
+			return "redirect:/logout";
+		} else {
+			return "refund";
+		}
 	}
 
 	@RequestMapping(value = "/contactus", method = RequestMethod.GET)
-	public String contactus(ModelMap model) {
-		return "contactus";
+	public String contactus(ModelMap model, HttpSession session) {
+		if (session.getAttribute("user") == null) {
+			return "redirect:/logout";
+		} else {
+			return "contactus";
+		}
 	}
 
 	@RequestMapping(value = "/privacy", method = RequestMethod.GET)
-	public String privacy(ModelMap model) {
-		return "privacy";
+	public String privacy(ModelMap model, HttpSession session) {
+		if (session.getAttribute("user") == null) {
+			return "redirect:/logout";
+		} else {
+			return "privacy";
+		}
 	}
 
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
