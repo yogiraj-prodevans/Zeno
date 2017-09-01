@@ -18,47 +18,53 @@ public class TopUpController
 	@RequestMapping(value = "/toup50GB", method = RequestMethod.GET)
 	public String toup50GB(ModelMap model, HttpSession session,@RequestParam("planName") String planName)
 	{
-		SessionDetails user = (SessionDetails) session.getAttribute("user");
-		model.addAttribute("user_details", user);
-		
-		TopUp topUp=new TopUp();
-		
-		String amount="";
-		String planSize="";
-		String postFUP="";
-		boolean dataSet=false;
-		if(planName.equals("Add on 5GB"))
+		if (session.getAttribute("user") == null) {
+			return "redirect:/logout";
+		} 
+		else 
 		{
-			amount="120";
-			planSize="5GB";
-			postFUP="512 Kbps";
-			dataSet=true;
+			SessionDetails user = (SessionDetails) session.getAttribute("user");
+			model.addAttribute("user_details", user);
+			
+			TopUp topUp=new TopUp();
+			
+			String amount="";
+			String planSize="";
+			String postFUP="";
+			boolean dataSet=false;
+			if(planName.equals("Add on 5GB"))
+			{
+				amount="120";
+				planSize="5GB";
+				postFUP="512 Kbps";
+				dataSet=true;
+			}
+			if(planName.equals("Add on 10GB"))
+			{
+				amount="220";
+				planSize="10GB";
+				postFUP="512 Kbps";
+				dataSet=true;
+			}
+			if(dataSet)
+			{			
+				topUp.setAmount(Double.parseDouble(amount));
+				topUp.setPlanName(planName);
+				topUp.setPlanSize(planSize);
+				topUp.setPostFUP(postFUP);
+				model.addAttribute("topUp", topUp);
+			}
+			else
+			{
+				topUp.setAmount(0.0);
+				topUp.setPlanName("Plese select appropriate plan");
+				topUp.setPlanSize("Plese select appropriate plan");
+				topUp.setPostFUP("Plese select appropriate plan");
+				model.addAttribute("topUp", topUp);
+			}
+	
+			return "topup/toup50GB";
 		}
-		if(planName.equals("Add on 10GB"))
-		{
-			amount="220";
-			planSize="10GB";
-			postFUP="512 Kbps";
-			dataSet=true;
-		}
-		if(dataSet)
-		{			
-			topUp.setAmount(Double.parseDouble(amount));
-			topUp.setPlanName(planName);
-			topUp.setPlanSize(planSize);
-			topUp.setPostFUP(postFUP);
-			model.addAttribute("topUp", topUp);
-		}
-		else
-		{
-			topUp.setAmount(0.0);
-			topUp.setPlanName("Plese select appropriate plan");
-			topUp.setPlanSize("Plese select appropriate plan");
-			topUp.setPostFUP("Plese select appropriate plan");
-			model.addAttribute("topUp", topUp);
-		}
-
-		return "topup/toup50GB";
 	}
 	
 	@RequestMapping(value = "/ccvTopUpRequestHandler", method = RequestMethod.POST)
