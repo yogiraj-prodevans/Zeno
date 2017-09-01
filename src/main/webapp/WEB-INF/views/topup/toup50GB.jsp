@@ -37,10 +37,9 @@
 
 <style type="text/css">
 
-.footer {
-    position: fixed;
-   margin-top: 5%;
-   height: 30px;
+.mainBlock3
+{
+	margin-bottom: 8%;
 }
 
 input[type=radio].css-checkbox
@@ -133,7 +132,7 @@ label.css-label
 <div class="main">
 	<div class="container">  
 		
-		<div class="col-lg-12 col-md-12 col-sm-12" style="max-height: 40%;">
+	
 
 			<form method="post" name="customerData" action="ccvTopUpRequestHandler">
 			
@@ -342,9 +341,7 @@ label.css-label
 					</div>
 				</div><!-- Form group -->      
 			</form>
-	      
 
-		</div>
 	</div>
 </div>
 

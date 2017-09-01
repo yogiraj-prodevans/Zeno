@@ -535,7 +535,7 @@ a:hover {
 /* iphone 6 plus*/
 @media ( max-width : 480px) {
 	.fixedBlock {
-		width: 14%;
+		width: 15%;
 	}
 	.textCSS {
 		font-size: 12px;

@@ -37,6 +37,11 @@
 
 <style type="text/css">
 
+.mainBlock3
+{
+	margin-bottom: 8%;
+}
+
 input[type=radio].css-checkbox
 {
 	position:absolute;
@@ -122,9 +127,9 @@ label.css-label
 </div>    
 
 <div class="main">
-	<div class="container">  
+	<div class="container" >  
 				
-		<div class="col-lg-12 col-md-12 col-sm-12" style="max-height: 40%;">
+		
 
 			<form method="post" name="customerData" action="ccavRequestHandler" >
 			
@@ -142,7 +147,7 @@ label.css-label
 				<div class="form-group">
 					<div class="col-md-1">
 					</div> 
-                	<div class="col-lg-10 col-md-10 col-sm-10 " >
+                	<div class="col-md-10">
                 	
 	                	<div class="mainBlock3" style="color:black;">
 	                		<div class="row">
@@ -327,7 +332,7 @@ label.css-label
 			</form>
 	      
 
-		</div>
+		
 	</div>
 </div>
 
