@@ -122,12 +122,12 @@ padding-left: 2%;
 				</div>
 			</div>
 
+</div>
+			<div class="container pt-40">
 
-			<div class="row pt-20">
+				<form class="row" action="#">
 
-				<form action="#">
-
-					<div class="col-md-12 pb-40">
+					<div class="col-md-12 pb-20">
 						<div class="col-md-6">
 							<input type="text" placeholder="Name" class="font-h2" />
 						</div>
@@ -157,7 +157,7 @@ padding-left: 2%;
 			</div>
 
 		</div>
-	</div>
+
 
 
 

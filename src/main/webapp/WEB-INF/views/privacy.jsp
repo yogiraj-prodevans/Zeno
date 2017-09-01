@@ -51,7 +51,7 @@
         
         
 <div class="row firstRow pt-20" style="background-image: url('img/red_long.png');">
-    <h1 style="margin-left:5%;">PRIVACY POLICY</h1>
+    <h1 style="margin-left:5%;">Privacy Policy</h1>
 </div> 
 
         <div class=" pt-40" >
