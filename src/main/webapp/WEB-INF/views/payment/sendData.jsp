@@ -142,7 +142,7 @@ label.css-label
 				<div class="form-group">
 					<div class="col-md-1">
 					</div> 
-                	<div class="col-lg-10 col-md-10 col-sm-10 " >
+                	<div class="col-lg-10 col-md-10 col-sm-10 " style="max-height:380px;">
                 	
 	                	<div class="mainBlock3" style="color:black;">
 	                		<div class="row">
@@ -331,14 +331,14 @@ label.css-label
 	</div>
 </div>
 
-<!-- included pop up -->
-            <jsp:include page="../component/pop-up.jsp"></jsp:include>
+<div style="padding-top: 1%"></div>
 
-			<jsp:include page="../component/footer.jsp"></jsp:include>
-               
-                <!-- Load javascripts at bottom, this will reduce page load time -->
-            <jsp:include page="../component/js.jsp"></jsp:include>
-            <!-- END BODY -->	     
+	<jsp:include page="../component/footer.jsp"></jsp:include>
+
+	<jsp:include page="../component/pop-up.jsp"></jsp:include>
+
+	<!-- Load javascripts at bottom, this will reduce page load time -->
+	<jsp:include page="../component/js.jsp"></jsp:include>   
 	     
 	      
 	      

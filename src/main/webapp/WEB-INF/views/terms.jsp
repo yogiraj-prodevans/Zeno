@@ -49,8 +49,8 @@
         <!-- Header END -->
         
 
-<div class="row firstRow pt-20" style="background-image: url('img/yellow_long.png');">
-    <h1 style="margin-left:5%;">TERMS AND CONDITIONS</h1>
+<div class="row firstRow " style="background-image: url('img/yellow_long.png'); padding-top:5%;">
+    <h1 style="margin-left:5%;padding:unset">TERMS AND CONDITIONS</h1>
 </div> 
         <div class="row pt-40"  >
             <div class="row">

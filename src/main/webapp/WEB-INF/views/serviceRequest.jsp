@@ -59,8 +59,8 @@ background-position:right center;
 
 
 
-<div class="col-md-12 firstRow pt-20" style="background-image: url('img/yellow_long.png');">
-    <h1 style="margin-left:5%;">We're at your service</h1>
+<div class="col-md-12 firstRow " style="background-image: url('img/yellow_long.png');padding-top:5%">
+    <h1 style="margin-left:5%;padding:unset;">We're at your service</h1>
 </div>    
     
 <div class="container">

@@ -33,6 +33,7 @@ h1{
 	color:black;
 	width: 85%;
 	margin: 5%;
+	max-height:unset;
 	-webkit-box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
 	-moz-box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
 	box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
@@ -42,6 +43,10 @@ h1{
 	.paddingLeftMobile
 	{
 		padding-left: 40px;
+	}
+	.mainBlock4
+	{
+		max-height: 100%;
 	}
 
 }
@@ -78,7 +83,7 @@ h1{
 	</div>
 	<!-- Header END -->
 	
-<div class="col-md-12 firstRow pt-20" style="background-image: url('corporate/img/back.png');">
+<div class="col-md-12 firstRow " style="background-image: url('corporate/img/back.png');">
     <h1 style="margin-left:5%;">Login contact and details.</h1>
 </div>
 
@@ -90,27 +95,26 @@ h1{
             		<h3>Account details</h3>
             	</div>
             	<div class="row">
-	            	<div class="col-md-4">
+	            	<div class="col-md-4 col-xs-12">
 	            		<h4>Account no:</h4>
 	            	</div>
-	            	<div class="col-md-1 col-sm-1"></div>
-	            	<div class="col-md-7">
-	            		<h4 class="paddingLeftMobile">${profile.getActid() }</h4>
+	            	
+	            	<div class="col-md-8 col-xs-12">
+	            		<h4 class="">${profile.getActid() }</h4>
 	            	</div>
 	            </div>
 	            <div class="row">
 	            	<div class="col-md-4">
 	            		<h4>Password:</h4>
 	            	</div>
-	            	<div class="col-md-1 col-sm-1"></div>
-	            	<div class="col-md-5 col-sm-5">
+	            	
+	            	<div class="col-md-8 col-sm-12" style="color:black">
 	            		<a href="#changePassword" data-toggle="modal"  >
-	            			<strong style="color:black;" class="paddingLeftMobile">.............</strong>
+	            			<strong style="color:black;" class="">***********</strong>
 	            		</a>
-	            	</div>
-	            	<div class="col-md-2 col-sm-2">
-	            		<a href="#changePassword" data-toggle="modal">
-	            			<table><tr class="paddingLeftMobile"><td>Edit</td><td><img alt="" src="img/pencil.png" style="width:30px;height: 30px;"></td></tr></table>
+	            	
+	            		<a href="#changePassword" data-toggle="modal" style="color:black;" >
+	            			Edit <span class="glyphicon glyphicon-pencil"></span>
 	            		</a>
 	            	</div>
 	            </div>
@@ -118,27 +122,27 @@ h1{
 	            	<div class="col-md-4">
 	            		<h4>Mobile:</h4>
 	            	</div>
-	            	<div class="col-md-1 col-sm-1"></div>
+	            	
 	            	<div class="col-md-7">
-	            		<h4 class="paddingLeftMobile">${profile.getMobileno() }</h4>
+	            		<h4 class="">${profile.getMobileno() }</h4>
 	            	</div>
 	            </div>
 	            <div class="row">
 	            	<div class="col-md-4">
 	            		<h4>Email ID:</h4>
 	            	</div>
-	            	<div class="col-md-1 col-sm-1"></div>
+	            	
 	            	<div class="col-md-7">
-	            		<h4 class="paddingLeftMobile">${profile.getEmail() }</h4>
+	            		<h4 class="">${profile.getEmail() }</h4>
 	            	</div>
 	            </div>
 	            <div class="row">
 	            	<div class="col-md-4">
 	            		<h4 class="whiteShadow">Address:</h4>
 	            	</div>
-	            	<div class="col-md-1 col-sm-1"></div>
+	            	
 	            	<div class="col-md-7">
-	            		<h4 class="paddingLeftMobile">${profile.getAddress() }</h4>
+	            		<h4 class="">${profile.getAddress() }</h4>
 	            	</div>
 	            </div>
 			

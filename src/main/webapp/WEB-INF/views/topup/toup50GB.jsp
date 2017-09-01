@@ -348,14 +348,14 @@ label.css-label
 	</div>
 </div>
 
-<!-- included pop up -->
-            <jsp:include page="../component/pop-up.jsp"></jsp:include>
+<div style="padding-top: 18%"></div>
 
-			<jsp:include page="../component/footer.jsp"></jsp:include>
-               
-                <!-- Load javascripts at bottom, this will reduce page load time -->
-            <jsp:include page="../component/js.jsp"></jsp:include>
-            <!-- END BODY -->	     
+	<jsp:include page="../component/footer.jsp"></jsp:include>
+
+	<jsp:include page="../component/pop-up.jsp"></jsp:include>
+
+	<!-- Load javascripts at bottom, this will reduce page load time -->
+	<jsp:include page="../component/js.jsp"></jsp:include>   
 	     
 	      
 	      
