@@ -37,6 +37,14 @@ h1{
 	-moz-box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
 	box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
 }
+@media (max-width : 650px) 
+{
+	.paddingLeftMobile
+	{
+		padding-left: 40px;
+	}
+
+}
 </style>
 
 </head>
@@ -87,7 +95,7 @@ h1{
 	            	</div>
 	            	<div class="col-md-1 col-sm-1"></div>
 	            	<div class="col-md-7">
-	            		<h4 class="whiteShadow">${profile.getActid() }</h4>
+	            		<h4 class="paddingLeftMobile">${profile.getActid() }</h4>
 	            	</div>
 	            </div>
 	            <div class="row">
@@ -95,14 +103,14 @@ h1{
 	            		<h4>Password:</h4>
 	            	</div>
 	            	<div class="col-md-1 col-sm-1"></div>
-	            	<div class="col-md-5">
+	            	<div class="col-md-5 col-sm-5">
 	            		<a href="#changePassword" data-toggle="modal"  >
-	            			<strong style="color:black;">.............</strong>
+	            			<strong style="color:black;" class="paddingLeftMobile">.............</strong>
 	            		</a>
 	            	</div>
-	            	<div class="col-md-2">
+	            	<div class="col-md-2 col-sm-2">
 	            		<a href="#changePassword" data-toggle="modal">
-	            			<table><tr><td>Edit</td><td><img alt="" src="img/pencil.png" style="width:30px;height: 30px;"></td></tr></table>
+	            			<table><tr class="paddingLeftMobile"><td>Edit</td><td><img alt="" src="img/pencil.png" style="width:30px;height: 30px;"></td></tr></table>
 	            		</a>
 	            	</div>
 	            </div>
@@ -112,7 +120,7 @@ h1{
 	            	</div>
 	            	<div class="col-md-1 col-sm-1"></div>
 	            	<div class="col-md-7">
-	            		<h4>${profile.getMobileno() }</h4>
+	            		<h4 class="paddingLeftMobile">${profile.getMobileno() }</h4>
 	            	</div>
 	            </div>
 	            <div class="row">
@@ -121,7 +129,7 @@ h1{
 	            	</div>
 	            	<div class="col-md-1 col-sm-1"></div>
 	            	<div class="col-md-7">
-	            		<h4 class="whiteShadow">${profile.getEmail() }</h4>
+	            		<h4 class="paddingLeftMobile">${profile.getEmail() }</h4>
 	            	</div>
 	            </div>
 	            <div class="row">
@@ -130,7 +138,7 @@ h1{
 	            	</div>
 	            	<div class="col-md-1 col-sm-1"></div>
 	            	<div class="col-md-7">
-	            		<h4 class="whiteShadow">${profile.getAddress() }</h4>
+	            		<h4 class="paddingLeftMobile">${profile.getAddress() }</h4>
 	            	</div>
 	            </div>
 			
@@ -143,7 +151,7 @@ h1{
 	
 
 <!-- Modal Code for Change Password -->
-<div id="changePassword" class="modal fade" style="margin-top:10%;">
+<div id="changePassword" class="modal fade" style="margin-top:5%;">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -155,14 +163,10 @@ h1{
               <div class="col-md-12 col-sm-12" style="margin-top:3%">
 
 					<form:form role="form" action="profile/change-pass" method="post" modelAttribute="change_pass">
-						<form:input type="hidden" path="actid" readonly="true" />
-						<strong>Password :</strong> 
-						<form:input path="password" type="password" class="form-control" placeholder="Enter Password" required="true"/>
-						<br>
-						<strong>Confirm Password :</strong> 
-						<form:input path="confirm_password" type="password" class="form-control" placeholder="Confirm Password" required="true"/>
-						<br>
-						<button type="submit" class="btn btn-primary">Update Password</button>
+						<form:input type="hidden"  style="margin-bottom:40px;" path="actid" readonly="true" />
+						<form:input path="password" type="password" style="margin-bottom:30px;" placeholder="Enter Password" required="true"/>
+						<form:input path="confirm_password" type="password" style="margin-bottom:30px;" placeholder="Confirm Password" required="true"/>
+						<button type="submit" class="btn billButton">Update Password</button>
 					</form:form>
 					
                  
