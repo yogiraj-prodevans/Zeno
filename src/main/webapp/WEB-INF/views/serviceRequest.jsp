@@ -199,7 +199,7 @@ background-position:right center;
             </div>
         </div>
         <div class="row col-md-2" style="margin-left:%; margin-bottom: 5%;">
-            <button class="submitButton" type="submit">Submit</button>
+            <button class="btn billButton" type="submit">Submit</button>
         </div>
         
          
