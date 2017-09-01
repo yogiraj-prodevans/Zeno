@@ -50,8 +50,8 @@
 	</div>
 	<!-- Header END -->
 
-<div class="row firstRow pt-20" style="background-image: url('corporate/img/back.png');">
-    <h1 style="margin-left:5%;">REFUND  AND  CANCELLATION</h1>
+<div class="row firstRow " style="background-image: url('corporate/img/back.png'); padding-top:5%;">
+    <h1 style="margin-left:5%;padding:unset">REFUND  AND  CANCELLATION</h1>
 </div> 
 	<div class="row pt-40">
 		<div class="container">

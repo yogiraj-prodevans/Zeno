@@ -28,9 +28,10 @@ h1{
 {
 	color:black;
 	width: 90%;
-	height:70%;
+	min-height:70%;
 	margin-top: 5%;
-	margin-left:5%;	
+	margin-left:5%;
+	margin-bottom: 5%;	
 	padding:4%;
 	-webkit-box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
 	-moz-box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
@@ -77,7 +78,7 @@ h1{
 	            		<h4>Email ID: ${user_details.getEmail() }</h4>
 	            		<h4>Mobile: ${user_details.getMobileno() }</h4>
 	            	</div>
-	            	<div class="col-md-6">
+	            	<div class="col-md-6" style=" overflow-y: scroll">
 	            		<table class="table table-responsive table-bordered">
 	            			<tr><td>Account ID</td><td>${user_details.getActid() }</td></tr>
 	            			<tr><td>Bill Period</td><td>${SubscriptionDetails.getStartdt() } -
