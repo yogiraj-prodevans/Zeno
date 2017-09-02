@@ -18,7 +18,8 @@
 <meta content="Stoic Zeno User Portal" name="description">
 <meta content="Stoic Zeno User Portal Keywords" name="keywords">
 
-<link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300"
+	rel="stylesheet">
 <!--  include the all css components -->
 <jsp:include page="component/css.jsp"></jsp:include>
 <style type="text/css">
@@ -36,12 +37,29 @@ body {
 }
 
 .header .container {
-    position: relative;
-    width: 92%;
+	position: relative;
+	width: 92%;
 }
+
 .form-without-legend {
-    padding-top: 25px;
-    font-family: Roboto;
+	padding-top: 25px;
+	font-family: Roboto;
+}
+
+.tag-line {
+	font-family: Roboto;
+	font-size: 70px;
+}
+.front-steps-wrapper h2, .ecommerce .front-steps-wrapper h2 tag-line{
+	font-size: 70px;
+}
+@media ( max-width : 480px) {
+	.front-steps-wrapper h2, .ecommerce .front-steps-wrapper h2 tag-line{
+		font-size: 40px;
+	}
+	.pt-40{
+		padding-top: 20px;
+	}
 }
 </style>
 </head>
@@ -78,14 +96,14 @@ body {
 					<div class="row">
 						<div class="col-lg-8 col-md-8 col-sm-8  ">
 							<div style="margin-top: 15%; padding-left: 5%;">
-								<h2 style="font-family: Roboto; font-size: 70px">Welcome to
-									the<br> network that never stops</h2>
+								<h2 class="tag-line">
+									Welcome to the<br> network that never stops
+								</h2>
 							</div>
 						</div>
-						<div class="col-md-4 col-sm-4 pull-right pt-40 "
-							style="font-family: Lato; font-wait: 100">
+						<div class="col-md-4 col-sm-4  pt-40 pb-20" style="padding-left: 20px;">
 							<div class="form-info">
-								<h2>Login</h2>
+								<h2 style="font-size: 30px">Login</h2>
 								<div class="content-form-page">
 
 
@@ -109,13 +127,15 @@ body {
 													Password</a>
 											</div>
 											<div class="col-md-12">
-												<input id="remember" type="checkbox" name="remember" value="remember" >
-												&nbsp; <label for="remember" class="font-h4"> Remember me </label>
+												<input id="remember" type="checkbox" name="remember"
+													value="remember"> &nbsp; <label for="remember"
+													class="font-h4"> Remember me </label>
 											</div>
 										</div>
 										<div class="row" style="text-align: right;">
 											<!-- added ID for button for testing -->
-											<button type="submit" id="submitButton" class="btn billButton font-h3 ">LOGIN</button>
+											<button type="submit" id="submitButton"
+												class="btn billButton font-h3 ">LOGIN</button>
 
 
 										</div>

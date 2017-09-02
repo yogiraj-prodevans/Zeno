@@ -1,207 +1,145 @@
 
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ page session="false"%>
-<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+<c:set var="contextPath" value="${pageContext.request.contextPath}" />
 
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="shortcut icon" href="img/favicon.ico">
-        <meta charset="utf-8">
-        <title>STOIC ZENO</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta content="Stoic Zeno User Portal" name="description">
-        <meta content="Stoic Zeno User Portal Keywords" name="keywords">
-        <meta content="vikram" name="author">
+<head>
+<link rel="shortcut icon" href="img/favicon.ico">
+<meta charset="utf-8">
+<title>STOIC ZENO</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta content="Stoic Zeno User Portal" name="description">
+<meta content="Stoic Zeno User Portal Keywords" name="keywords">
 
-        <!-- link to image for socio -->
-        <meta property="og:url" content="-CUSTOMER VALUE-">
-        <link rel="shortcut icon" href="favicon.ico">
-        <!-- Fonts START -->
-        <link href="https://fonts.googleapis.com/css?family=Lato|Roboto:100" rel="stylesheet">
-        <!-- Fonts END -->
-        <!-- Global styles START -->          
-        <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-        <link href="plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <!-- Global styles END --> 
+<link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+<!--  include the all css components -->
+<jsp:include page="component/css.jsp"></jsp:include>
+<style type="text/css">
+body {
+	font-weight: 300;
+	font-family: Roboto;
+}
 
+.row {
+	margin: unset;
+}
 
+.form-info {
+	border: unset;
+}
 
-        <!-- Theme styles START -->
-        <link href="pages/css/components.css" rel="stylesheet">
+.header .container {
+    position: relative;
+    width: 92%;
+}
+.form-without-legend {
+    padding-top: 25px;
+    font-family: Roboto;
+}
+</style>
+</head>
 
-        <link href="corporate/css/styleblue.css" rel="stylesheet">
-        <link href="corporate/css/style-responsive.css" rel="stylesheet">
-        <link href="corporate/css/themes/blue.css" rel="stylesheet" id="style-color">
-        <link href="corporate/css/custom.css" rel="stylesheet">
-        <!-- Theme styles END -->
-        <style>
-            .v_text {
-                font-family: 'Lato', sans-serif;
-                font-size: 20px;
-            }
-        </style>
-    </head>
+<body class="corporate">
 
-    <body class="corporate">
-        <!-- BEGIN TOP BAR -->
-        <div class="pre-header">
-            <div class="container">
-                <div class="row">
-                    <!-- BEGIN TOP BAR MENU -->
-                    <div class="col-md-12 col-sm-12 additional-nav" style="font-size:12px;  font-color:000000">
-                        <ul class="list-unstyled list-inline pull-right ">
-                            <li ><i class=" fa fa-phone"></i><span>Lets Talk: +91 9019602602</span></li>
-                        </ul>
-                    </div>
-                    <!-- END TOP BAR MENU -->
-                </div>
-            </div>
-        </div>
-        <!-- END TOP BAR -->
-        <!-- BEGIN HEADER -->
-        <div class="header">
-            <div class="container">
-                <a class="site-logo" href="#">
-                    <img src="corporate/img/logos/logo.png" alt="Stoic Zeno"> </a>
-                <a href="javascript:void(0);" class="mobi-toggler"><i class="fa fa-bars"></i></a>
-                <!-- BEGIN NAVIGATION -->
-                <div class="header-navigation pull-right font-transform-inherit"  style="font-size:12px">
-                    <ul>
-                        <li class="dropdown active"> </li>
-                        <li class="active" >
-                            <a href="${contextPath}/login" >Login</a>
-                        </li>
-                        <!--  <li>
+	<!-- BEGIN HEADER -->
+	<div class="header">
+		<div class="container">
+			<a class="site-logo" href="#"> <img
+				src="corporate/img/logos/logo.png" alt="Stoic Zeno">
+			</a> <a href="javascript:void(0);" class="mobi-toggler"><i
+				class="fa fa-bars"></i></a>
+			<!-- BEGIN NAVIGATION -->
+			<div class="header-navigation pull-right font-transform-inherit"
+				style="font-size: 12px">
+				<ul>
+					<li class="dropdown active"></li>
+					<li class="active"><a href="${contextPath}/login">Login</a></li>
+					<!--  <li>
                     <a href="${contextPath}/register">Register</a>
                   </li>-->
-                    </ul>
-                </div>
-                <!-- END NAVIGATION -->
-            </div>
-        </div>
-        <!-- Header END -->
-        <div class="main">
-            <div class="container">
-                <!-- BEGIN CONTENT -->
-                <div class="col-md-12 col-sm-12">
-                    <div class="front-step front-step1"> </div>
-                </div>
-                <!-- END CONTENT -->
-                <!-- BEGIN STEPS -->
-                <div class="row margin-bottom-10 front-steps-wrapper">
-                    <div class="front-step front-stepv margin-top-30">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6 margin-top-10 ">
-                                <div class="col-lg-12 col-md-12 col-sm-12 margin-top-10 ">
-                                    <h2 style="font-family:Roboto; font-size:70px">Sign into the thinking network</h2>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-4 pull-right  " style="font-family:Lato; font-wait:100">
-                                <div class="form-info">
-                                    <p style="font-family:Roboto; font-color:#gray; font-size:16px; padding-bottom:5px"> Login </P>
-                                    <div class="content-form-page">
+				</ul>
+			</div>
+			<!-- END NAVIGATION -->
+		</div>
+	</div>
+	<!-- Header END -->
+	<div class="">
+		<div class="row">
+			<!-- BEGIN STEPS -->
+			<div class="row margin-bottom-10 front-steps-wrapper">
+				<div style="background: url('img/slide_1.jpg'); min-height: 500px">
+					<div class="row">
+						<div class="col-lg-8 col-md-8 col-sm-8  ">
+							<div style="margin-top: 15%; padding-left: 5%;">
+								<h2 style="font-family: Roboto; font-size: 70px">Welcome to
+									the<br> network that never stops</h2>
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-4 pull-right pt-40 "
+							style="font-family: Lato; font-wait: 100">
+							<div class="form-info">
+								<h2>Login</h2>
+								<div class="content-form-page">
 
 
-                                        <form:form class="form-horizontal form-without-legend" role="form" action="login" method="post" modelAttribute="user">
-                                            <div class="form-group"> <label for="email" class="col-lg-12 control-label"> <span class="require"></span></label>
-                                                <div class="col-lg-12">
-                                                    <form:input path="customer_id" type="text" class="form-control" id="mystoicid" style=" font-size:12px; font-style:italic;  box-shadow: none; border: none; border-bottom: .1px solid;" placeholder="My Stoic ID " /> 
-                                                    <!--<label for="customer_id" class="col-lg-12 control-label"><a style="color:#F2F2F2F2; font-size:11px" href="#">I forgot my Stoic ID</a></label>-->
-                                                </div>
-                                            </div>
-                                            <div class="form-group"> <label for="password" class="col-lg-12 control-label"><span class="require"></span></label>
-                                                <div class="col-lg-12">
-                                                    <form:input path="password" type="password" class="form-control" id="password" style=" font-size:12px; font-style:italic;  box-shadow: none; border: none; border-bottom: .1px solid;" placeholder="My Stoic Password " />
-                                                    <label for="password" class="col-lg-12 control-label"><a style="color:#F2F2F2F2; font-size:11px" href="#">I forgot my Stoic Password</a></label>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-lg-05 col-md-offset-1 padding-left-1 padding-top-10">
-                                                    <button type="submit" style=" color:#F2F2F2F2; font-size:14px; font-family:Roboto" class="btn btn-primary ">Login</button>
+									<form:form class="form-horizontal form-without-legend"
+										role="form" action="login" method="post" modelAttribute="user">
+										<div class="form-group">
 
-                                                    <input type="checkbox" class= "padding-5 padding-left-7" name="remember" value="remember" />&nbsp; <label style="font-family:Roboto; color:#F2F2F2F2; font-size:10px" > Remember me </label>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <!--<div class="col-lg-10 col-md-offset-1 padding-left-0 padding-right-0 padding-top-10" >
-                                                    <p style="color:gray; font-size:11px; line-height:1">If you are already a stoic customer and don’t have my stoic account, you can<a style="color:#010745; font-size:12px; line-height: 1;" href="${contextPath}/register"><strong> register now</strong></a>. It is prety quick.</p>
-                                                </div>-->
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-lg-12 col-md-offset-1 padding-left-0 padding-top-0">
-                                                    <!-- <a style="color:#7E548A;" href="#">Forget Password?</a>-->
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-lg-12 col-md-offset-1 padding-left-0 padding-top-0">
-                                                    <!-- <a style="color:#F2F2F2F2; font-size:12px;" href="register.html">Regiser Now</a>-->                      
-                                                </div>
-                                            </div>
-                                            <c:if test="${ not empty error}">${error}</c:if>
-                                        </form:form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-12 col-md-12 col-sm-12 margin-top-0 padding-top-0">
-                            <p style="font-family:Roboto; font-size:14px; " style="font-color:#ffffff"> <a style="color:#ffffff;" href="#">Know your CPE &nbsp</a> | <a style="color:#ffffff;" href="#">&nbsp Know your bill</a></p>
-                        </div>
-                    </div>
-                </div>
-                <!-- END STEPS -->
-            </div>
-        </div>
-        <!-- END PRE-FOOTER -->
-        <!-- BEGIN FOOTER --
-        <div class="footer" style="font-family:Roboto; position: fixed; right: 0; bottom: 0; left: 0;font-size:10px">
-            <div class="container">
-                <div class="row">
-                    <!-- BEGIN COPYRIGHT --
-                    <div class="col-md-10 col-sm-10 padding-top-0 padding-bottom-10 "> 2017 &copy Stoic Zeno. ALL Rights Reserved.&nbsp 
-                        <a href="javascript:;">Privacy Policy</a> |
-                        <a href="${pageContext.request.contextPath }/terms">Terms of Service</a> |
-                        <a href="javascript:;">Refund and Cancellation</a> |
-                        <a href="javascript:;">Feedback</a> |
-                        <a href="javascript:;">Contact Us</a>
-                    </div>
-                    <!-- END COPYRIGHT --
-                </div>
-            </div>
-        </div>
-        <!-- END FOOTER -->
-         <jsp:include page="component/footer.jsp"></jsp:include>
-        <!-- Load javascripts at bottom, this will reduce page load time -->
-        <!-- BEGIN CORE PLUGINS (REQUIRED FOR ALL PAGES) -->
-        <!--[if lt IE 9]>
-          <script src="plugins/respond.min.js"></script>
-          <![endif]-->
-        <script src="plugins/jquery.min.js" type="text/javascript"></script>
-        <script src="plugins/jquery-migrate.min.js" type="text/javascript"></script>
-        <script src="plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="corporate/scripts/back-to-top.js" type="text/javascript"></script>
-        <!-- END CORE PLUGINS -->
-        <!-- BEGIN PAGE LEVEL JAVASCRIPTS (REQUIRED ONLY FOR CURRENT PAGE) -->
-        <script src="plugins/fancybox/source/jquery.fancybox.pack.js" type="text/javascript"></script>
-        <!-- pop up -->
-        <script src="plugins/owl.carousel/owl.carousel.min.js" type="text/javascript"></script>
-        <!-- slider for products -->
-        <script src="corporate/scripts/layout.js" type="text/javascript"></script>
+											<div class="col-lg-12 pb-20">
+												<form:input path="customer_id" type="text" id="mystoicid"
+													style="font-size:24px;" placeholder="My One8 ID " />
+											</div>
+										</div>
+										<div class="form-group">
 
-        <script type="text/javascript">
-            jQuery(document).ready(function () {
-                Layout.init();
-                Layout.initOWL();
-                Layout.initFixHeaderWithPreHeader(); /* Switch On Header Fixing (only if you have pre-header) */
-                Layout.initNavScrolling();
-            });
-        </script>
-        <!-- END PAGE LEVEL JAVASCRIPTS -->
-        <!-- END BODY -->
-    </body>
+											<div class="col-lg-12 pb-10">
+												<form:input path="password" type="password" id="password"
+													style="font-size:24px;" placeholder="My One8 Password " />
+											</div>
+											<div class="col-md-12">
+												<a style="color: #989494;" href="#">I forgot my One8
+													Password</a>
+											</div>
+											<div class="col-md-12">
+												<input id="remember" type="checkbox" name="remember" value="remember" >
+												&nbsp; <label for="remember" class="font-h4"> Remember me </label>
+											</div>
+										</div>
+										<div class="row" style="text-align: right;">
+											<!-- added ID for button for testing -->
+											<button type="submit" id="submitButton" class="btn billButton font-h3 ">LOGIN</button>
+
+
+										</div>
+
+										<c:if test="${ not empty error}">${error}</c:if>
+									</form:form>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<!-- END STEPS -->
+		</div>
+	</div>
+	<!-- END PRE-FOOTER -->
+
+	<jsp:include page="component/footerLogin.jsp"></jsp:include>
+
+
+	<!-- Load javascripts at bottom, this will reduce page load time -->
+	<jsp:include page="component/js.jsp"></jsp:include>
+	<!-- END BODY -->
+</body>
 
 </html>
