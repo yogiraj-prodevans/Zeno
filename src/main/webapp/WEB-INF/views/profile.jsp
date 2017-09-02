@@ -47,7 +47,7 @@ h1{
 	.mainBlock4
 	{
 		max-height: 100%;
-		max-width: 100%;
+		min-width: 92%;
 		margin-left: 1%;
 		margin-top: 5%;
 	}
@@ -92,7 +92,9 @@ h1{
 
 <div class="container">
     
-        <div class="col-md-6 col-md-offset-3">
+    	<div class="col-md-3">
+    	</div>
+        <div class="col-md-6">
             <div class="mainBlock4">
             	<div class="row">
             		<h3>Account details</h3>
@@ -151,7 +153,8 @@ h1{
 			
             </div>
         </div>
-        
+        <div class="col-md-3">
+    	</div>
 </div>
 
 	
