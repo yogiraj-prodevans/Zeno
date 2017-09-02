@@ -47,7 +47,7 @@ h1{
 	.mainBlock4
 	{
 		max-height: 100%;
-		min-width: 92%;
+		min-width: 100%;
 		margin-top: 5%;
 	}
 
