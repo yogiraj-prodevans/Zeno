@@ -48,7 +48,6 @@ h1{
 	{
 		max-height: 100%;
 		min-width: 92%;
-		margin-left: 1%;
 		margin-top: 5%;
 	}
 
