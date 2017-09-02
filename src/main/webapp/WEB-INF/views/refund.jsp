@@ -51,7 +51,7 @@
 	<!-- Header END -->
 
 <div class="row firstRow " style="background-image: url('corporate/img/back.png'); padding-top:3%;">
-    <h1 style="margin-left:5%;padding:unset">Refund  And  Cancellsation</h1>
+    <h1 style="margin-left:5%;padding:unset">Refund  And  Cancellation</h1>
 </div> 
 	<div class="row pt-40">
 		<div class="container">

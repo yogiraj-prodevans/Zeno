@@ -533,13 +533,22 @@ a:hover {
 	}
 }
 /* iphone 6 plus*/
-@media ( max-width : 480px) {
+@media ( max-width : 480px) 
+{
 	.fixedBlock {
 		width: 15%;
+		min-height:100px;
+		right: 0.5;
+	}
+	.fixedBlock li a 
+	{
+		width: 90%;
+		min-height: 50px;
 	}
 	.textCSS {
 		font-size: 12px;
-		padding-right: 20%;
+		word-wrap: break-word;
+		float: left;
 	}
 	.tableWidth {
     width: 100%;

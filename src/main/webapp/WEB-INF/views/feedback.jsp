@@ -95,7 +95,7 @@
 		        <div class="col-md-10" style=" margin-bottom: 5%;">
 		        </div>
 		        <div class="col-md-2 pull-right">
-		        	<button class="btn billButton " style="width: 120px;%;height: 30px;margin-left:50px;" type="submit">SUBMIT</button>
+		        	<button class="btn billButton " id="submitButton" style="width: 120px;%;height: 30px;margin-left:50px;" type="submit">SUBMIT</button>
 		        </div>
 		        
 		</form:form>        
