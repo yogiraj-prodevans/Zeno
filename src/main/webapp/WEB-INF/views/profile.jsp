@@ -189,7 +189,7 @@ h1{
 	
 	
 	<jsp:include page="component/pop-up.jsp"></jsp:include>
-	<div style="margin:5%;"></div>
+	<div style="margin:3%;"></div>
 	<jsp:include page="component/footer.jsp"></jsp:include>
 	
 	

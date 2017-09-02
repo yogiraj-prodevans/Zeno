@@ -39,7 +39,7 @@
 
 .mainBlock3
 {
-	margin-bottom: 8%;
+	margin-bottom: 2%;
 }
 
 input[type=radio].css-checkbox
@@ -345,7 +345,7 @@ label.css-label
 	</div>
 </div>
 
-<div style="padding-top: 18%"></div>
+
 
 	<jsp:include page="../component/footer.jsp"></jsp:include>
 
