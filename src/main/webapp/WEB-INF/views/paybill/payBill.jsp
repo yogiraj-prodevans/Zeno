@@ -34,7 +34,7 @@
                     <div class="header-navigation pull-right font-transform-inherit" style="font-size:12px">
                         <ul>
                             <li class="dropdown active"> </li>
-                            <li ><a href="${pageContext.request.contextPath }/dashboard">Home</a></li>
+                            <li ><a href="marcus.oneeight.co.in">Home</a></li>
                           
                         
                     </ul>
