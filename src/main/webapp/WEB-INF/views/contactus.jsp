@@ -125,27 +125,27 @@ padding-left: 2%;
 </div>
 			<div class="container pt-40">
 
-				<form class="row" action="#">
+				<form:form class="row" action="contactRequest" method="post" modelAttribute="contactDetails">
 
 					<div class="col-md-12 pb-20">
 						<div class="col-md-6">
-							<input type="text" placeholder="Name" class="font-h2" />
+							<form:input type="text" path="name" id="name" placeholder="Name" class="font-h2" />
 						</div>
 						<div class="col-md-6 mb-pt-30">
-							<input type="text" placeholder="Email" class="font-h2" />
+							<form:input type="text"  path="email_id" id="email_id"  placeholder="Email" class="font-h2" />
 						</div>
 					</div>
 					<div class="col-md-12 pb-40">
 						<div class="col-md-12">
-							<input type="text" placeholder="Subject" class="font-h2" />
+							<form:input type="text" path="subject" id="subject"  placeholder="Subject" class="font-h2" />
 						</div>
 					</div>
 					<div class="col-md-12">
 						<div class="col-md-12 ">
 
-							<textarea class="form-control "
+							<form:textarea path="message" id="message" class="form-control "
 								style="height: 30%; width: 100%; border: 0.4px solid #bdc3c7; resize: none; color: black; border-radius: 0.4px; font-size: 30px;"
-								placeholder=" Message"></textarea>
+								placeholder=" Message"></form:textarea>
 						</div>
 					</div>
 
@@ -153,7 +153,7 @@ padding-left: 2%;
 						style="margin-bottom: 8%; text-align: right;">
 						<button class="btn billButton" type="submit">SEND NOW</button>
 					</div>
-				</form>
+				</form:form>
 			</div>
 
 		</div>
