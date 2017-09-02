@@ -114,8 +114,8 @@ body {
 											</div>
 										</div>
 										<div class="row" style="text-align: right;">
-
-											<button type="submit" class="btn billButton font-h3 ">LOGIN</button>
+											<!-- added ID for button for testing -->
+											<button type="submit" id="submitButton" class="btn billButton font-h3 ">LOGIN</button>
 
 
 										</div>
