@@ -95,20 +95,20 @@ h1{
             		<h3>Account details</h3>
             	</div>
             	<div class="row">
-	            	<div class="col-md-4 col-xs-12">
+	            	<div class="col-md-4 col-xs-4">
 	            		<h4>Account no:</h4>
 	            	</div>
 	            	
-	            	<div class="col-md-8 col-xs-12">
+	            	<div class="col-md-8 col-xs-8">
 	            		<h4 class="">${profile.getActid() }</h4>
 	            	</div>
 	            </div>
 	            <div class="row">
-	            	<div class="col-md-4">
+	            	<div class="col-md-4 col-xs-4">
 	            		<h4>Password:</h4>
 	            	</div>
 	            	
-	            	<div class="col-md-8 col-sm-12" style="color:black">
+	            	<div class="col-md-8 col-xs-8" style="color:black">
 	            		<a href="#changePassword" data-toggle="modal"  >
 	            			<strong style="color:black;" class="">***********</strong>
 	            		</a>
@@ -119,29 +119,29 @@ h1{
 	            	</div>
 	            </div>
 	            <div class="row">
-	            	<div class="col-md-4">
+	            	<div class="col-md-4 col-xs-4">
 	            		<h4>Mobile:</h4>
 	            	</div>
 	            	
-	            	<div class="col-md-7">
+	            	<div class="col-md-8 col-xs-8">
 	            		<h4 class="">${profile.getMobileno() }</h4>
 	            	</div>
 	            </div>
 	            <div class="row">
-	            	<div class="col-md-4">
+	            	<div class="col-md-4 col-xs-4">
 	            		<h4>Email ID:</h4>
 	            	</div>
 	            	
-	            	<div class="col-md-7">
+	            	<div class="col-md-8 col-xs-8">
 	            		<h4 class="">${profile.getEmail() }</h4>
 	            	</div>
 	            </div>
 	            <div class="row">
-	            	<div class="col-md-4">
-	            		<h4 class="whiteShadow">Address:</h4>
+	            	<div class="col-md-4 col-xs-4">
+	            		<h4>Address:</h4>
 	            	</div>
 	            	
-	            	<div class="col-md-7">
+	            	<div class="col-md-8 col-xs-8">
 	            		<h4 class="">${profile.getAddress() }</h4>
 	            	</div>
 	            </div>
