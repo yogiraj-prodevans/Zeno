@@ -31,11 +31,10 @@ public class FeedbackController
 	}
 	
 	@RequestMapping(value = "/feedbackRequest", method = RequestMethod.POST)
-	public ModelAndView payBillRequest(ModelMap model, HttpSession session,@ModelAttribute(name="feedbackDetails")FeedbakDetails feedback) throws XmlRpcException 
+	public String payBillRequest(ModelMap model, HttpSession session,@ModelAttribute(name="feedbackDetails")FeedbakDetails feedback) throws XmlRpcException 
 	{
-		feedback=feedbackDAOImpl.getAccountDetails(feedback);
-		boolean result=feedbackDAOImpl.senMail(feedback);
-		return  new ModelAndView("","bill",feedback);
+		boolean result=feedbackDAOImpl.getAccountDetails(feedback);
+		return  "redirect:feedback";
 	}
 	
 }

@@ -6,6 +6,6 @@ import com.prodevans.zeno.pojo.FeedbakDetails;
 
 public interface FeedbackDAO 
 {
-	public FeedbakDetails getAccountDetails(FeedbakDetails feedback) throws XmlRpcException;
+	public Boolean getAccountDetails(FeedbakDetails feedback) throws XmlRpcException;
 	public Boolean senMail(FeedbakDetails feedback) throws XmlRpcException;
 }
