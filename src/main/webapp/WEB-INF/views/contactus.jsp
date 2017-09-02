@@ -150,7 +150,7 @@ padding-left: 2%;
 					</div>
 
 					<div class="col-md-12"
-						style="margin-bottom: 8%; text-align: right;">
+						style="margin-bottom: 2%; text-align: right;">
 						<button class="btn billButton" type="submit">SEND NOW</button>
 					</div>
 				</form:form>

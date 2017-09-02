@@ -39,7 +39,7 @@
 
 .mainBlock3
 {
-	margin-bottom: 8%;
+	margin-bottom: 2%;
 }
 
 input[type=radio].css-checkbox
@@ -291,7 +291,7 @@ label.css-label
 						</select>
 						
 						<div id="emi_duration" class="span12">
-				        <td id="processing_fee" colspan="2">
+				      
 					        	
 				       
 				             <input type="text" id="card_type" name="card_type" value="" readonly="readonly"/><!-- card type -->
@@ -326,8 +326,7 @@ label.css-label
 				        
 			
 					</div><!-- col-md-10 -->
-					<div class="col-md-1">
-					</div>
+					
 				</div><!-- Form group -->      
 			</form>
 	      
