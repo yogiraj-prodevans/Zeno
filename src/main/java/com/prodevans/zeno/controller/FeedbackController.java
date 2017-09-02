@@ -25,16 +25,30 @@ public class FeedbackController
 	}
 
 	@RequestMapping(value = "/feedback", method = RequestMethod.GET)
-	public ModelAndView viewBill(ModelMap model, HttpSession session) 
+	public ModelAndView feedback(ModelMap model, HttpSession session) 
 	{
 		return  new ModelAndView("feedback","feedbackDetails",new FeedbakDetails());
 	}
 	
 	@RequestMapping(value = "/feedbackRequest", method = RequestMethod.POST)
-	public String payBillRequest(ModelMap model, HttpSession session,@ModelAttribute(name="feedbackDetails")FeedbakDetails feedback) throws XmlRpcException 
+	public String feedbackRequest(ModelMap model, HttpSession session,@ModelAttribute(name="feedbackDetails")FeedbakDetails feedback) throws XmlRpcException 
 	{
-		boolean result=feedbackDAOImpl.getAccountDetails(feedback);
+		boolean result=feedbackDAOImpl.sentMailFeedback(feedback);
 		return  "redirect:feedback";
 	}
+	
+	@RequestMapping(value = "/contactus", method = RequestMethod.GET)
+	public ModelAndView contactus(ModelMap model, HttpSession session) 
+	{
+		return  new ModelAndView("contactus","contactusDetails",new FeedbakDetails());
+	}
+	
+	@RequestMapping(value = "/contactusRequest", method = RequestMethod.POST)
+	public String contactusRequest(ModelMap model, HttpSession session,@ModelAttribute(name="contactusDetails")FeedbakDetails feedback) throws XmlRpcException 
+	{
+		boolean result=feedbackDAOImpl.sentMailContactUs(feedback);
+		return  "redirect:contactus";
+	}
+	
 	
 }

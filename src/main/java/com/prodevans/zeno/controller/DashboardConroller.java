@@ -167,15 +167,6 @@ public class DashboardConroller {
 		}
 	}
 
-	@RequestMapping(value = "/contactus", method = RequestMethod.GET)
-	public String contactus(ModelMap model, HttpSession session) {
-		if (session.getAttribute("user") == null) {
-			return "redirect:/logout";
-		} else {
-			return "contactus";
-		}
-	}
-
 	@RequestMapping(value = "/privacy", method = RequestMethod.GET)
 	public String privacy(ModelMap model, HttpSession session) {
 		if (session.getAttribute("user") == null) {

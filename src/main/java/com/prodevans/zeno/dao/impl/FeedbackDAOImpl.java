@@ -25,24 +25,20 @@ public class FeedbackDAOImpl implements FeedbackDAO
 	}
 	
 	@Override
-	public Boolean getAccountDetails(FeedbakDetails feedback) throws XmlRpcException 
+	public Boolean sentMailFeedback(FeedbakDetails feedback) throws XmlRpcException 
 	{
 		Vector params = new Vector();
 		params.add(feedback.getAccount_id());
 		
 		HashMap<String, Object> result = (HashMap<String, Object>) rpcClient.execute(unifyHandler + ".getAccountDetails", params);
 		feedback.setAccount_no(Integer.parseInt((String)result.get("actno")));
-		feedback.setEmail_id((String)result.get("email"));
-		
-		System.out.println(feedback.getMessage());
-		System.out.println(feedback.getSubject());
+		feedback.setEmail_id((String)result.get("email"));		
 		
 		Vector params1 = new Vector();
 		params1.add(feedback.getMessage());
 		params1.add(feedback.getSubject());
 		params1.add("vipin.prodevans@gmail.com");
 		params1.add(1);
-		
 		
 		Boolean mailResult = (Boolean) rpcClient.execute(unifyHandler + ".sendMail", params1);
 		
@@ -52,7 +48,7 @@ public class FeedbackDAOImpl implements FeedbackDAO
 	}
 	
 	@Override
-	public Boolean senMail(FeedbakDetails feedback) throws XmlRpcException 
+	public Boolean sentMailContactUs(FeedbakDetails feedback) throws XmlRpcException 
 	{
 		Vector params = new Vector();
 		params.add(feedback.getMessage());
@@ -60,7 +56,11 @@ public class FeedbackDAOImpl implements FeedbackDAO
 		params.add("vipin.prodevans@gmail.com");
 		params.add(1);
 		
-		return null;
+		Boolean mailResult = (Boolean) rpcClient.execute(unifyHandler + ".sendMail", params);
+		
+		System.out.println("mail send successfully");
+		
+		return mailResult;
 	}
 
 }
