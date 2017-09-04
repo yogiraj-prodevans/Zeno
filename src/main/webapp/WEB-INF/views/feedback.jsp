@@ -92,11 +92,9 @@
 		                <form:textarea path="message" id="message" class="form-control" style="height:30%; width:100%; border: 0.4px solid #bdc3c7; resize: none; color:black; border-radius: 0.4px;font-size: 16px;" />
 		            </div>
 		        </div>
-		        <div class="col-md-10" style=" margin-bottom: 5%;">
-		        </div>
-		        <div class="col-md-2 pull-right">
-		        	<button class="btn billButton " id="submitButton" style="width: 120px;%;height: 30px;margin-left:50px;" type="submit">SUBMIT</button>
-		        </div>
+		        <div class="col-md-12" style="margin-bottom: 2%; text-align: right;">
+						<button class="btn billButton" type="submit">SEND NOW</button>
+				</div>
 		        
 		</form:form>        
 		     

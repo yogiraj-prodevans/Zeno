@@ -540,6 +540,9 @@ a:hover {
 		min-height:100px;
 		right: 0.5;
 	}
+	h1{
+		font-size: 30px;
+	}
 	.fixedBlock li a 
 	{
 		width: 90%;
