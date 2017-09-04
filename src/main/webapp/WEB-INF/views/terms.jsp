@@ -50,12 +50,13 @@
         
 
 
-<div class="row firstRow " style="background-image: url('img/yellow_long.png'); padding-top:3%;">
-    <h1 style="margin-left:5%; padding: unset">Terms And Conditions</h1>
+<div class="col-md-12 firstRow pt-20" style="background-image: url('img/yellow_long.png');">
+    <h1 style="margin-left:4%;">Terms And Conditions</h1>
+</div>
 
-</div> 
-        <div class="row pt-40"  >
-            <div class="row">
+
+        <div class="pt-40">
+            
 
                 <!-- BEGIN SIDEBAR & CONTENT -->
                 <div class="container " >
@@ -113,7 +114,7 @@
                     <!-- END CONTENT -->
                 </div>
                 <!-- END SIDEBAR & CONTENT -->
-            </div>
+            
         </div>
         <div style="padding-top: 2%">
         </div>

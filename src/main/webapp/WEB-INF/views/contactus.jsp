@@ -80,16 +80,15 @@ padding-left: 2%;
 		</div>
 	</div>
 
-	<div class="row firstRow pt-20"
-		style="background-image: url('corporate/img/back.png');">
-		<h1 style="margin-left: 5%;">Contact</h1>
-	</div>
+<div class="col-md-12 firstRow pt-20" style="background-image: url('corporate/img/back.png');">
+    <h1 style="margin-left:5%;">Contact</h1>
+</div>
 
 
 
-	<div class="row pt-40">
+	<div class="pt-40">
 		<div class="container">
-			<div class="col-md-12">
+			<div class="col-md-12 pt-40">
 				<div class="col-md-4">
 					<div>
 						<h2>Address</h2>

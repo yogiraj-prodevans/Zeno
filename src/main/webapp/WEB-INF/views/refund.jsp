@@ -50,38 +50,32 @@
 	</div>
 	<!-- Header END -->
 
-<div class="row firstRow " style="background-image: url('corporate/img/back.png'); padding-top:3%;">
-    <h1 style="margin-left:5%;padding:unset">Refund  And  Cancellation</h1>
-</div> 
-	<div class="row pt-40">
-		<div class="container">
+<div class="col-md-12 firstRow pt-20" style="background-image: url('corporate/img/back.png');">
+    <h1 style="margin-left:4%;">Refund  And  Cancellation</h1>
+</div>
 
-			
+	
+	<div class="container">
 
-				<!-- BEGIN CONTENT -->
-				<div class="">
+		<div class="pt-40">
 
-					<div class="faq-page" style="line-height: 2">
-
-						<div class="">
-							<div id="accordion1_1" class="panel-collapse collapse in">
-								<div class="panel-body">
-									<i class=" fa fa-hand-o-right  "></i> No Refund of fixed
-									duration pack or Cancellation of payment transaction is
-									allowed. Any disputes in regards to payments/ refund of
-									transaction(s) due to technical reasons are subject to
-									arbitration / resolution on a case to case basis.
-								</div>
-							</div>
-						</div>
+			<div class="">
+				<div id="accordion1_1" class="panel-collapse collapse in">
+					<div class="panel-body pt-40">
+						<i class=" fa fa-hand-o-right  "></i> No Refund of fixed
+						duration pack or Cancellation of payment transaction is
+						allowed. Any disputes in regards to payments/ refund of
+						transaction(s) due to technical reasons are subject to
+						arbitration / resolution on a case to case basis.
 					</div>
 				</div>
-				<!-- END CONTENT -->
 			</div>
-			<!-- END SIDEBAR & CONTENT -->
 		</div>
 	</div>
-	<div style="padding-top: 18%"></div>
+				<!-- END CONTENT -->
+			
+		
+	<div style="padding-top: 23%"></div>
 
 	<jsp:include page="component/footer.jsp"></jsp:include>
 
