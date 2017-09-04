@@ -69,7 +69,13 @@ canvas {
 			colors: ['#ff6f00', '#00c853', '#2196f3'],
 			hAxis : {
 				title : "Time in week (${SubscriptionDetails.getStartdt() } - ${SubscriptionDetails.getExpirydt() })",
-				ticks : [ 0 ]
+				ticks : [ {
+					v : 0,
+					f : ''
+				},  {
+					v : 30,
+					f : ''
+				} ]
 			},
 			vAxis : {
 				title : 'Data in GigaBytes',
