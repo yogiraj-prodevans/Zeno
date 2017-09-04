@@ -536,7 +536,7 @@ a:hover {
 @media ( max-width : 480px) 
 {
 	.fixedBlock {
-		width: 15%;
+		min-width: 15%;
 		min-height:100px;
 		right: 0.5;
 	}

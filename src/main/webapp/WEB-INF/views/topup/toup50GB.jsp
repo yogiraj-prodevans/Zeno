@@ -163,6 +163,8 @@ label.css-label
 			                        <h4 class="pb-10">Email  : ${user_details.getEmail() } </h4>
 			                        <h4 class="pb-10">Mobile No.  : ${user_details.getMobileno() } </h4>
 			                        
+			                        
+			                        
 			                        <select class="form-control" name="instrument_detail" id="instrument_detail" style="visibility: hidden;">
 			                        </select>
 			                        
@@ -171,12 +173,19 @@ label.css-label
 			                    		
 			                    	<div class="col-md-12 col-sm-12">
 			                    		<div class="row">
-			                    			<h3 class="pb-20" style="padding-left:15px;">Payment Option</h3>
+			                    			<div class="col-md-6" style="padding-left:5px;">
+			                    				<h4 class="pb-10">Plan name  : <strong> ${topUp.getPlanName() }</strong> </h4>
+			                    			</div>
+			                    			<div class="col-md-6" style="padding-left:5px;">
+			                    				<h4 class="pb-20">Post FUP  : <strong> ${topUp.getPostFUP() }</strong> </h4>
+			                    			</div>
 			                    		</div>
 			                    		<div class="row">
+			                    			<h3 class="pb-10" style="padding-left:5px;">Payment Option</h3>
+			                    		</div>
+			                    		<div class="row">
+			                    			
 					                    	<div class="col-md-6 col-sm-6">
-				                    	
-					                    		<h4 class="pb-10">Plan name  : <strong> ${topUp.getPlanName() }</strong> </h4>
 				                        		
 							                    <input type="radio" name="payment_option" value="OPTCRDC" id="radio1" class="css-checkbox" />
 				                    			<label for="radio1" class="css-label radGroup1">Credit Card</label><br>
@@ -193,8 +202,6 @@ label.css-label
 		                    				</div>
 			                    			
 			                    			<div class="col-md-6 col-sm-6">
-			                    			
-			                    				<h4 class="pb-10">Post FUP  : <strong> ${topUp.getPostFUP() }</strong> </h4>
 			                    				
 				                    			<input type="radio" name="payment_option" value="OPTMOBP" id="radio5" class="css-checkbox" />
 				                    			<label for="radio5" class="css-label radGroup1">Mobile Payments</label><br>
