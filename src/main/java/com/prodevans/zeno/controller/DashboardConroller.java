@@ -90,15 +90,6 @@ public class DashboardConroller {
 		}
 	}
 
-	@RequestMapping(value = "/service", method = RequestMethod.GET)
-	public String service(Locale locale, Model model, HttpSession session) {
-		if (session.getAttribute("user") == null) {
-			return "redirect:/logout";
-		} else {
-			return "serviceRequest";
-		}
-	}
-
 	@RequestMapping(value = "/parental-control", method = RequestMethod.GET)
 	public String parentControl(Locale locale, Model model, HttpSession session) {
 		if (session.getAttribute("user") == null) {

@@ -7,10 +7,10 @@ import org.apache.xmlrpc.XmlRpcException;
 import org.apache.xmlrpc.client.XmlRpcClient;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.prodevans.zeno.dao.FeedbackDAO;
-import com.prodevans.zeno.pojo.FeedbakDetails;
+import com.prodevans.zeno.dao.SendMailDAO;
+import com.prodevans.zeno.pojo.SendMailDetails;
 
-public class FeedbackDAOImpl implements FeedbackDAO 
+public class SendMailDAOImpl implements SendMailDAO 
 {
 	@Autowired
 	private String unifyHandler;
@@ -25,7 +25,7 @@ public class FeedbackDAOImpl implements FeedbackDAO
 	}
 	
 	@Override
-	public Boolean sentMailFeedback(FeedbakDetails feedback) throws XmlRpcException 
+	public Boolean sentMailFeedback(SendMailDetails feedback) throws XmlRpcException 
 	{
 		Vector params = new Vector();
 		params.add(feedback.getAccount_id());
@@ -49,7 +49,7 @@ public class FeedbackDAOImpl implements FeedbackDAO
 	}
 	
 	@Override
-	public Boolean sentMailContactUs(FeedbakDetails feedback) throws XmlRpcException 
+	public Boolean sentMailContactUs(SendMailDetails feedback) throws XmlRpcException 
 	{
 		Vector params = new Vector();
 		params.add(feedback.getMessage());
@@ -62,6 +62,23 @@ public class FeedbackDAOImpl implements FeedbackDAO
 		System.out.println("mail send successfully");
 		
 		return mailResult;
+	}
+	@Override
+	public Boolean sentMailServiceRequest(SendMailDetails feedback) throws XmlRpcException 
+	{
+	
+		Vector params = new Vector();
+		params.add(feedback.getMessage());
+		params.add(feedback.getSubject());
+		params.add("vipin.prodevans@gmail.com");
+		params.add(1);
+		
+		Boolean mailResult = (Boolean) rpcClient.execute(unifyHandler + ".sendMail", params);
+		
+		System.out.println("mail send successfully");
+		
+		return mailResult;
+		
 	}
 
 }

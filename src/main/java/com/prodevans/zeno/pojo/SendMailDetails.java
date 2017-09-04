@@ -1,6 +1,6 @@
 package com.prodevans.zeno.pojo;
 
-public class FeedbakDetails 
+public class SendMailDetails 
 {
 
 	private String name;
