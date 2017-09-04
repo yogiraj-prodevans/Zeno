@@ -35,7 +35,8 @@ public class FeedbackDAOImpl implements FeedbackDAO
 		feedback.setEmail_id((String)result.get("email"));		
 		
 		Vector params1 = new Vector();
-		params1.add(feedback.getMessage());
+		String Complete="Concated message that might have HTML code"+feedback.getMessage();
+		params1.add(Complete);
 		params1.add(feedback.getSubject());
 		params1.add("vipin.prodevans@gmail.com");
 		params1.add(1);

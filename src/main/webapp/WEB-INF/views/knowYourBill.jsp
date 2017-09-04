@@ -55,8 +55,15 @@ h1{
     
 <div class="container1">
     
-    	<div class="col-md-1"></div>
+    	<div class="col-md-1">
+    		
+    	</div>
         <div class="col-md-10 ">
+        	<div class="col-md-10"></div>
+        	<div class="col-md-2">
+	            <a href="dashboard" class="btn billButton pull-right">My One8</a>
+	        </div>
+            
             <div class="mainBlock">
             	
             	<div class="row">
