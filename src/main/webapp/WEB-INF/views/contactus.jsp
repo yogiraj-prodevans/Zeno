@@ -124,7 +124,7 @@ padding-left: 2%;
 </div>
 			<div class="container pt-40">
 
-				<form:form class="row" action="contactusRequest" method="post" modelAttribute="contactusDetails">
+				<form:form class="row" action="contactusRequestPage" method="post" modelAttribute="contactusDetails">
 
 					<div class="col-md-12 pb-20">
 						<div class="col-md-6">

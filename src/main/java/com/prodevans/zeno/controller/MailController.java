@@ -36,7 +36,7 @@ public class MailController
 		return  new ModelAndView("feedback","feedbackDetails",new SendMailDetails());
 	}
 	
-	@RequestMapping(value = "/feedbackRequest", method = RequestMethod.POST)
+	@RequestMapping(value = "/feedbackRequestPage", method = RequestMethod.POST)
 	public String feedbackRequest(ModelMap model, HttpSession session,@ModelAttribute(name="feedbackDetails")SendMailDetails feedback) throws XmlRpcException 
 	{
 		boolean result=feedbackDAOImpl.sentMailFeedback(feedback);
@@ -49,7 +49,7 @@ public class MailController
 		return  new ModelAndView("contactus","contactusDetails",new SendMailDetails());
 	}
 	
-	@RequestMapping(value = "/contactusRequest", method = RequestMethod.POST)
+	@RequestMapping(value = "/contactusRequestPage", method = RequestMethod.POST)
 	public String contactusRequest(ModelMap model, HttpSession session,@ModelAttribute(name="contactusDetails")SendMailDetails feedback) throws XmlRpcException 
 	{
 		boolean result=feedbackDAOImpl.sentMailContactUs(feedback);
@@ -88,7 +88,7 @@ public class MailController
 		}
 	}
 	
-	@RequestMapping(value = "/serviceRequest", method = RequestMethod.POST)
+	@RequestMapping(value = "/serviceRequestPage", method = RequestMethod.POST)
 	public String serviceRequest(ModelMap model, HttpSession session,@ModelAttribute(name="serviceRequestDetails")SendMailDetails feedback) throws XmlRpcException 
 	{
 		boolean result=feedbackDAOImpl.sentMailServiceRequest(feedback);
