@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.prodevans.zeno.dao.SendMailDAO;
 import com.prodevans.zeno.pojo.SendMailDetails;
+import com.prodevans.zeno.pojo.ServiceRequest;
 
 public class SendMailDAOImpl implements SendMailDAO 
 {
@@ -64,11 +65,11 @@ public class SendMailDAOImpl implements SendMailDAO
 		return mailResult;
 	}
 	@Override
-	public Boolean sentMailServiceRequest(SendMailDetails feedback) throws XmlRpcException 
+	public Boolean sentMailServiceRequest(ServiceRequest serviceRequest) throws XmlRpcException 
 	{
 	
 		Vector params = new Vector();
-		params.add(feedback.getMessage());
+		params.add(serviceRequest.getMessage()+" Time slot to call : "+serviceRequest.getTime_slot_to_call().toString());
 		params.add("Subject");
 		params.add("vipin.prodevans@gmail.com");
 		params.add(1);

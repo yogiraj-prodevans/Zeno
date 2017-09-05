@@ -10,7 +10,7 @@ public class SendMailDetails
 	private int account_no;
 	private String subject;
 	private String message;
-	
+	private String time_slot_to_call;
 	
 	
 	public String getName() {
@@ -55,11 +55,22 @@ public class SendMailDetails
 	public void setMessage(String message) {
 		this.message = message;
 	}
+	public String getTime_slot_to_call() {
+		return time_slot_to_call;
+	}
+	public void setTime_slot_to_call(String time_slot_to_call) {
+		this.time_slot_to_call = time_slot_to_call;
+	}
 	@Override
 	public String toString() {
-		return "FeedbakDetails [name=" + name + ", mobile=" + mobile + ", account_id=" + account_id + ", email_id="
-				+ email_id + ", account_no=" + account_no + ", subject=" + subject + ", message=" + message + "]";
+		return "SendMailDetails [name=" + name + ", mobile=" + mobile + ", account_id=" + account_id + ", email_id="
+				+ email_id + ", account_no=" + account_no + ", subject=" + subject + ", message=" + message
+				+ ", time_slot_to_call=" + time_slot_to_call + "]";
 	}
+	
+	
+	
+	
 
 	
 	

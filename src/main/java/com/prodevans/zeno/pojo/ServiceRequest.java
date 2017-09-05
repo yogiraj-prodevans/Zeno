@@ -14,11 +14,23 @@ public class ServiceRequest {
 	private String time_slot;
 	private ArrayList<String> request;
 	private ArrayList<String> complaint;
+	
+	List<String> time_slot_to_call = new ArrayList<String>();
+	
+	
+	
 	@Override
 	public String toString() {
 		return "ServiceRequest [name=" + name + ", mobile=" + mobile + ", account_id=" + account_id + ", email_id="
 				+ email_id + ", account_no=" + account_no + ", subject=" + subject + ", message=" + message
-				+ ", time_slot=" + time_slot + ", request=" + request + ", complaint=" + complaint + "]";
+				+ ", time_slot=" + time_slot + ", request=" + request + ", complaint=" + complaint
+				+ ", time_slot_to_call=" + time_slot_to_call + "]";
+	}
+	public List<String> getTime_slot_to_call() {
+		return time_slot_to_call;
+	}
+	public void setTime_slot_to_call(List<String> time_slot_to_call) {
+		this.time_slot_to_call = time_slot_to_call;
 	}
 	public String getTime_slot() {
 		return time_slot;

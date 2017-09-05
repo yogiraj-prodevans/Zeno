@@ -2,6 +2,7 @@ package com.prodevans.zeno.controller;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Locale;
 
 import javax.servlet.http.HttpSession;
@@ -64,9 +65,20 @@ public class MailController
 			return new ModelAndView("redirect:logout");
 		} else {
 			ServiceRequest request = new ServiceRequest();
-		/*	request.setTime_slot(new ArrayList<String>(Arrays.asList("9AM - 12PM",
+			
+			/*request.setTime_slot(new ArrayList<String>(Arrays.asList("9AM - 12PM",
             "12PM - 3PM",
             "3PM - 6PM")));*/
+			
+			List<String> time_slot_to_call = new ArrayList<String>();
+			time_slot_to_call.add("9AM - 12PM");
+			time_slot_to_call.add("12PM - 3PM");
+			time_slot_to_call.add("3PM - 6PM");
+			
+			request.setTime_slot_to_call(time_slot_to_call);
+			model.addAttribute("time_slot_to_call", time_slot_to_call);
+
+			
 			request.setRequest(new ArrayList<String>(Arrays.asList("New Connection",
 		            "Activation / Deactivation of Services",
 		            "Duplicate Bill",
@@ -89,14 +101,14 @@ public class MailController
 	}
 	
 	@RequestMapping(value = "/serviceRequestPage", method = RequestMethod.POST)
-	public String serviceRequest(ModelMap model, HttpSession session,@ModelAttribute(name="serviceRequestDetails")SendMailDetails feedback) throws XmlRpcException 
+	public String serviceRequest(ModelMap model, HttpSession session,@ModelAttribute(name="serviceRequestDetails")ServiceRequest serviceRequest) throws XmlRpcException 
 	{
 		
-		boolean result=feedbackDAOImpl.sentMailServiceRequest(feedback);
+		boolean result=feedbackDAOImpl.sentMailServiceRequest(serviceRequest);
 		
-		System.out.println("Name : "+feedback.getName());
-		System.out.println("Mobile : "+feedback.getMobile());
-		System.out.println("Message : "+feedback.getMessage());
+		System.out.println("Name : "+serviceRequest.getName());
+		System.out.println("Mobile : "+serviceRequest.getMobile());
+		System.out.println("Message : "+serviceRequest.getMessage());
 		return  "redirect:service";
 		
 		
