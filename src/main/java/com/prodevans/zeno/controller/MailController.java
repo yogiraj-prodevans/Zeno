@@ -57,11 +57,11 @@ public class MailController
 	}
 	
 	
-	@RequestMapping(value = "/servicePage", method = RequestMethod.GET)
+	@RequestMapping(value = "/service", method = RequestMethod.GET)
 	public ModelAndView service(Locale locale, Model model, HttpSession session) 
 	{
 		if (session.getAttribute("user") == null) {
-			return new ModelAndView("logout");
+			return new ModelAndView("redirect:logout");
 		} else {
 			ServiceRequest request = new ServiceRequest();
 		/*	request.setTime_slot(new ArrayList<String>(Arrays.asList("9AM - 12PM",
@@ -91,8 +91,17 @@ public class MailController
 	@RequestMapping(value = "/serviceRequestPage", method = RequestMethod.POST)
 	public String serviceRequest(ModelMap model, HttpSession session,@ModelAttribute(name="serviceRequestDetails")SendMailDetails feedback) throws XmlRpcException 
 	{
+		
 		boolean result=feedbackDAOImpl.sentMailServiceRequest(feedback);
-		return  "redirect:servicePage";
+		
+		System.out.println("Name : "+feedback.getName());
+		System.out.println("Mobile : "+feedback.getMobile());
+		System.out.println("Message : "+feedback.getMessage());
+		return  "redirect:service";
+		
+		
+		//boolean result=feedbackDAOImpl.sentMailServiceRequest(feedback);
+		//return  "redirect:service";
 	}
 	
 	

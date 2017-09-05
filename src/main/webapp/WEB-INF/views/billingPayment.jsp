@@ -78,7 +78,7 @@
 
 
 	<div class="container" style="">
-		<div style="margin-bottom: 4%;">
+		<div style="margin-bottom: 7%;">
 
 
 			<div class="col-md-4  col-sm-6">

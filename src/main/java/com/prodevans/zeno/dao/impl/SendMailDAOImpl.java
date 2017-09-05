@@ -69,7 +69,7 @@ public class SendMailDAOImpl implements SendMailDAO
 	
 		Vector params = new Vector();
 		params.add(feedback.getMessage());
-		params.add(feedback.getSubject());
+		params.add("Subject");
 		params.add("vipin.prodevans@gmail.com");
 		params.add(1);
 		
