@@ -65,7 +65,7 @@ background-position:right center;
     
 <div class="container">
     
-    <div class="col-md-12" style="margin-top:5%;">
+    <form:form class="col-md-12" style="margin-top:5%;" modelAttribute="serviceRequestDetails" method="post" >
         
         <div class="row pb-40">
             <div class="col-md-6">
@@ -202,12 +202,11 @@ background-position:right center;
             <button class="btn billButton" type="submit">Submit</button>
         </div>
         
-         
-    </div>
+ 
     
     
-</div>    
-   
+</form:form>    
+  </div> 
 
 
 

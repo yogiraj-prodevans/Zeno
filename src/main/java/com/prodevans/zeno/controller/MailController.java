@@ -1,5 +1,7 @@
 package com.prodevans.zeno.controller;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Locale;
 
 import javax.servlet.http.HttpSession;
@@ -16,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.prodevans.zeno.dao.impl.SendMailDAOImpl;
 import com.prodevans.zeno.pojo.SendMailDetails;
+import com.prodevans.zeno.pojo.ServiceRequest;
 
 
 @Controller
@@ -60,7 +63,28 @@ public class MailController
 		if (session.getAttribute("user") == null) {
 			return new ModelAndView("logout");
 		} else {
-			return  new ModelAndView("serviceRequest","serviceRequestDetails",new SendMailDetails());
+			ServiceRequest request = new ServiceRequest();
+		/*	request.setTime_slot(new ArrayList<String>(Arrays.asList("9AM - 12PM",
+            "12PM - 3PM",
+            "3PM - 6PM")));*/
+			request.setRequest(new ArrayList<String>(Arrays.asList("New Connection",
+		            "Activation / Deactivation of Services",
+		            "Duplicate Bill",
+		            "Change of Location",
+		            "Restoration of Service",
+		            "Any Other"
+					
+					)));
+			request.setComplaint(new ArrayList<String>(Arrays.asList("Not able to pay online",
+		            "Activation / Deactivation of Services",
+		            "Billing Related",
+		            "Marcus Website",
+		            "Marcus Customer Care",
+		            "FUP/Speed",
+		            "CPE",
+		            "Zeno Portal"
+					)));
+			return  new ModelAndView("serviceRequest","serviceRequestDetails",request);
 		}
 	}
 	
