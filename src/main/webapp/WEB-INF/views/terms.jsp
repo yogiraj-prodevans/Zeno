@@ -51,7 +51,7 @@
 
 
 <div class="col-md-12 firstRow pt-20" style="background-image: url('img/yellow_long.png');">
-    <h1 style="margin-left:2%;">Terms And Conditions</h1>
+    <h1 style="margin-left:5%;">Terms And Conditions</h1>
 </div>
 
 
@@ -63,7 +63,7 @@
                     
 
                     <!-- BEGIN CONTENT -->
-                    <div class="col-md-12 col-sm-12">
+                    <div class="col-md-12 col-sm-12 pt-40">
 
                         <div class="faq-page" style="line-height: 2">
                             
