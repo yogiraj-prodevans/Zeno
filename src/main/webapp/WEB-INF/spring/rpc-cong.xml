@@ -54,6 +54,11 @@
 		<property name="rpcClient" ref="rpcClient"></property>
 	</bean>
 	
+	
+	<bean id="FeedbackDAOImpl" class="com.prodevans.zeno.dao.impl.FeedbackDAOImpl">
+		<property name="unifyHandler" ref="unifyHandler"></property>
+		<property name="rpcClient" ref="rpcClient"></property>
+	</bean>
 
 
 	<bean id="LoginImpl" class="com.prodevans.zeno.dao.impl.UserInfoDAOImpl">
