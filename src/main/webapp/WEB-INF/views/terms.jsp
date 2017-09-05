@@ -81,7 +81,7 @@
                                 <div id="accordion1_1" class="panel-collapse collapse in">
                                     <div class="panel-body">
                                        <h3 class="pb-20"> Definitions:</h3>
-                                        <br/> "Agreement" is the Terms and Conditions (T&C) contained herein along with the Privacy Policy and Terms of Use including other T&C at other portals of STOIC-MARCUS<sup>TM</sup>. It will also include references to this Agreement as and when amended or replaced. 
+                                        "Agreement" is the Terms and Conditions (T&C) contained herein along with the Privacy Policy and Terms of Use including other T&C at other portals of STOIC-MARCUS<sup>TM</sup>. It will also include references to this Agreement as and when amended or replaced. 
                                         <br/> "Portal/Site" means the STOIC-MARCUS<sup>TM</sup> platform owned and operated by STOIC-MARCUS<sup>TM</sup>. 
                                         <br/> "User/You" means and includes any Customer / Users / You (the person or any legal entity) who uses the services offered by STOIC-MARCUS<sup>TM</sup> through its Portal.
                                     </div>
