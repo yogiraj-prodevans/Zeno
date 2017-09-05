@@ -16,7 +16,7 @@
                      
                     
                           <a href="${pageContext.request.contextPath }/feedbackPage" class="font-h5">FEEDBACK </a> <span style="padding: 5px;"></span>
-                        <a href="${pageContext.request.contextPath }/contactus" class="font-h5">CONTACT US </a>  <span style="padding: 5px;"></span>
+                        <a href="${pageContext.request.contextPath }/contactusPage" class="font-h5">CONTACT US </a>  <span style="padding: 5px;"></span>
                         <a href="${pageContext.request.contextPath }/help" class="font-h5">FAQ </a> <span style="padding: 5px;"></span>
                         <a href="${pageContext.request.contextPath }/knowYourCPE" class="font-h5">KNOW YOUR CPE </a> <span style="padding: 5px;"></span>
                         <a href="${pageContext.request.contextPath }/knowYourBill" class="font-h5" target="_blank">KNOW YOUR BILL</a> 

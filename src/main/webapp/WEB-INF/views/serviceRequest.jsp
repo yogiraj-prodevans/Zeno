@@ -65,7 +65,7 @@ background-position:right center;
     
 <div class="container">
     
-    <form:form class="col-md-12" style="margin-top:5%;" modelAttribute="serviceRequestDetails" method="post" >
+    <form:form class="col-md-12" action="servicePage" style="margin-top:5%;" modelAttribute="serviceRequestDetails" method="post" >
         
         <div class="row pb-40">
             <div class="col-md-6">

@@ -40,10 +40,10 @@ public class MailController
 	public String feedbackRequest(ModelMap model, HttpSession session,@ModelAttribute(name="feedbackDetails")SendMailDetails feedback) throws XmlRpcException 
 	{
 		boolean result=feedbackDAOImpl.sentMailFeedback(feedback);
-		return  "redirect:feedback";
+		return  "redirect:feedbackPage";
 	}
 	
-	@RequestMapping(value = "/contactus", method = RequestMethod.GET)
+	@RequestMapping(value = "/contactusPage", method = RequestMethod.GET)
 	public ModelAndView contactus(ModelMap model, HttpSession session) 
 	{
 		return  new ModelAndView("contactus","contactusDetails",new SendMailDetails());
@@ -53,11 +53,11 @@ public class MailController
 	public String contactusRequest(ModelMap model, HttpSession session,@ModelAttribute(name="contactusDetails")SendMailDetails feedback) throws XmlRpcException 
 	{
 		boolean result=feedbackDAOImpl.sentMailContactUs(feedback);
-		return  "redirect:contactus";
+		return  "redirect:contactusPage";
 	}
 	
 	
-	@RequestMapping(value = "/service", method = RequestMethod.GET)
+	@RequestMapping(value = "/servicePage", method = RequestMethod.GET)
 	public ModelAndView service(Locale locale, Model model, HttpSession session) 
 	{
 		if (session.getAttribute("user") == null) {
@@ -92,7 +92,7 @@ public class MailController
 	public String serviceRequest(ModelMap model, HttpSession session,@ModelAttribute(name="serviceRequestDetails")SendMailDetails feedback) throws XmlRpcException 
 	{
 		boolean result=feedbackDAOImpl.sentMailServiceRequest(feedback);
-		return  "redirect:serviceRequest";
+		return  "redirect:servicePage";
 	}
 	
 	
