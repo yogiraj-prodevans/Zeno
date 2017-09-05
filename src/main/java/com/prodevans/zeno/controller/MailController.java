@@ -30,8 +30,8 @@ public class MailController
 		return feedbackDAOImpl;
 	}
 
-	@RequestMapping(value = "/feedback", method = RequestMethod.GET)
-	public ModelAndView feedback(ModelMap model, HttpSession session) 
+	@RequestMapping(value = "/feedbackPage", method = RequestMethod.GET)
+	public ModelAndView feedbackPage(ModelMap model, HttpSession session) 
 	{
 		return  new ModelAndView("feedback","feedbackDetails",new SendMailDetails());
 	}
