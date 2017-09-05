@@ -49,7 +49,7 @@
 		<property name="rpcClient" ref="rpcClient"></property>
 	</bean>
 	<!-- Added by vipin -->
-	<bean id="FeedbackDAOImpl" class="com.prodevans.zeno.dao.impl.SendMailDAOImpl">
+	<bean id="SendMailDAOImpl" class="com.prodevans.zeno.dao.impl.SendMailDAOImpl">
 		<property name="unifyHandler" ref="unifyHandler"></property>
 		<property name="rpcClient" ref="rpcClient"></property>
 	</bean>
