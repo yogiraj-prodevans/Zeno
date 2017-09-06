@@ -87,8 +87,7 @@ background-position:right center;
                             </h4>
                         </td>
                         <td>
-                        	<form:select path="time_slot_to_call" class="form-control" style="border-radius:1px;border: 0.6px solid #bdc3c7">
-                                <form:options items="${time_slot_to_call}" />
+                        	<form:select path="time_slot_to_call" multiple="false" items="${time_slot_to_call}" class="form-control" style="border-radius:1px;border: 0.6px solid #bdc3c7">
                             </form:select>
                         </td>
                     </tr>
