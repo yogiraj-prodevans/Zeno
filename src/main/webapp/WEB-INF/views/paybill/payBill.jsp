@@ -18,12 +18,12 @@
 
 
         <!--  include the all css components -->
-<jsp:include page="../component/css.jsp"></jsp:include>
+        <jsp:include page="../component/css.jsp"></jsp:include>
 
-</head>
+        </head>
 
         <body class="corporate" style="font-family: Roboto;">
-            
+
             <!-- BEGIN HEADER -->
             <div class="header">
                 <div class="container">
@@ -35,67 +35,67 @@
                         <ul>
                             <li class="dropdown active"> </li>
                             <li ><a href="marcus.oneeight.co.in">Home</a></li>
-                          
-                        
-                    </ul>
+
+
+                        </ul>
+                    </div>
+                    <!-- END NAVIGATION -->
                 </div>
-                <!-- END NAVIGATION -->
             </div>
-        </div>
 
 
 
-<div class="col-md-12 firstRow pt-20" style="background-image: url('corporate/img/back.png');">
-    <h1 style="margin-left:5%;">Pay bill</h1>
-</div>    
-    
-<div class="container">
-    
-        
-        <form:form role="form" action="payBillRequest" method="post" modelAttribute="payBillDetails" >
-			
-			<div class="col-md-12" style="margin-top:5%;margin-bottom: 5%;">
-				
-				<div class="col-md-2 col-sm-2">
-				</div>
-				<div class="col-md-8 col-sm-8">
-					
-			        <div class="row pb-40">
-			            <div class="col-md-10 col-sm-10">
-			            	<form:input path="account_id" type="text" id="account_id" placeholder="One8 ID " required="true"/>            
-			            </div>
-			        </div>
-			        <div class="row pb-40">
-			            <div class="col-md-10 col-sm-10">
-			            	<form:input path="email_id" type="text" id="email_id" placeholder="Email ID " required="true"/>            
-			            </div>
-			        </div>
-			        <div class="row pb-30">
-			            <div class="col-md-10 col-sm-10">
-			            	<form:input path="amount" type="text" id="amount" placeholder="Amount "  required="true"/>            
-			            </div>
-			        </div>
-			        <div class="row col-md-3" style="margin-left:%; margin-bottom: 5%;">
-			            <button class="btn billButton" type="submit" style="padding: 5px;">
-							PAY BILL
-						</button>
-			        </div>
-			        
-			     </div>
-        	</div>
-        	
-        </form:form>
-         
-    
-    
-</div>    
-    
+            <div class="col-md-12 firstRow pt-20" style="background-image: url('corporate/img/back.png');">
+                <h1 style="margin-left:5%;">Pay bill</h1>
+            </div>    
+
+            <div class="container">
 
 
-           
+            <form:form role="form" action="payBillRequest" method="post" modelAttribute="payBillDetails" >
+
+                <div class="col-md-12" style="margin-top:5%;margin-bottom: 5%;">
+
+                    <div class="col-md-2 col-sm-2">
+                    </div>
+                    <div class="col-md-8 col-sm-8">
+
+                        <div class="row pb-40">
+                            <div class="col-md-10 col-sm-10">
+                                <form:input path="account_id" type="text" id="account_id" placeholder="One8 ID " required="true"/>            
+                            </div>
+                        </div>
+                        <div class="row pb-40">
+                            <div class="col-md-10 col-sm-10">
+                                <form:input path="email_id" type="text" id="email_id" placeholder="Email ID " required="true"/>            
+                            </div>
+                        </div>
+                        <div class="row pb-30">
+                            <div class="col-md-10 col-sm-10">
+                                <form:input path="amount" type="text" id="amount" placeholder="Amount "  required="true"/>            
+                            </div>
+                        </div>
+                        <div class="row col-md-3"  margin-bottom: 5%;">
+                             <button class="btn billButton" type="submit" style="padding: 5px;">
+                                PAY BILL
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+
+            </form:form>
+
+
+
+        </div>    
+
+
+
+
         <jsp:include page="../component/footer.jsp"></jsp:include>   
-           
-          
+
+
             <!-- Load javascripts at bottom, this will reduce page load time -->
         <jsp:include page="../component/js.jsp"></jsp:include>
         <!-- END BODY -->
