@@ -27,12 +27,25 @@ h1{
 	margin:unset;
 	padding-top:30px;
 }
-
+.font-h3
+{
+	font-size: 20px;
+}
+.col-md-4
+{
+	padding: 0px;
+}
+.col-md-6, col-sm-8
+{
+	padding-left: 1px;
+	padding-right:1px;
+}
 .mainBlock4
 {
+	width :100%;
 	color:black;
-	width: 85%;
 	margin: 5%;
+	padding-left:5%;
 	max-height:unset;
 	-webkit-box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
 	-moz-box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
@@ -43,6 +56,12 @@ h1{
 	.paddingLeftMobile
 	{
 		padding-left: 40px;
+	}
+	.col-md-6
+	{
+		padding-left: 0px;
+		padding-right: 5%;
+		margin-left: -5%;
 	}
 	.mainBlock4
 	{
@@ -90,73 +109,72 @@ h1{
 </div>
 
 <div class="container">
-    
-    	<div class="col-md-3">
-    	</div>
-        <div class="col-md-6">
-            <div class="mainBlock4">
-            	<div class="row">
-            		<h3>Account details</h3>
-            	</div>
-            	<div class="row">
-	            	<div class="col-md-4 col-xs-4">
-	            		<h4>Account no:</h4>
-	            	</div>
-	            	
-	            	<div class="col-md-8 col-xs-8">
-	            		<h4 class="">${profile.getActid() }</h4>
-	            	</div>
-	            </div>
-	            <div class="row">
-	            	<div class="col-md-4 col-xs-4">
-	            		<h4>Password:</h4>
-	            	</div>
-	            	
-	            	<div class="col-md-8 col-xs-8" style="color:black">
-	            		<a href="#changePassword" data-toggle="modal"  >
-	            			<strong style="color:black;" class="">***********</strong>
-	            		</a>
-	            	
-	            		<a href="#changePassword" data-toggle="modal" style="color:black;" >
-	            			Edit <span class="glyphicon glyphicon-pencil"></span>
-	            		</a>
-	            	</div>
-	            </div>
-	            <div class="row">
-	            	<div class="col-md-4 col-xs-4">
-	            		<h4>Mobile:</h4>
-	            	</div>
-	            	
-	            	<div class="col-md-8 col-xs-8">
-	            		<h4 class="">${profile.getMobileno() }</h4>
-	            	</div>
-	            </div>
-	            <div class="row">
-	            	<div class="col-md-4 col-xs-4">
-	            		<h4>Email ID:</h4>
-	            	</div>
-	            	
-	            	<div class="col-md-8 col-xs-8">
-	            		<h4 class="">${profile.getEmail() }</h4>
-	            	</div>
-	            </div>
-	            <div class="row">
-	            	<div class="col-md-4 col-xs-4">
-	            		<h4>Address:</h4>
-	            	</div>
-	            	
-	            	<div class="col-md-8 col-xs-8">
-	            		<h4 class="">${profile.getAddress() }</h4>
-	            	</div>
-	            </div>
-			
-            </div>
-        </div>
-        <div class="col-md-3">
-    	</div>
+	<div class="col-md-121">
+		<div class="col-md-6 col-sm-8">
+			<div class="mainBlock4" style="background-color: #FFB819">
+				<h2 class="pb-20 pt-20">Account details</h2>
+				
+				<div class="pb-10">
+					<div class="col-md-4 col-xs-4">
+						<h3 class="font-h3">Account ID:</h3>
+					</div>
+					<div class="col-md-7 col-xs-8">
+						<h3 class="font-h3">${profile.getActid() }</h3>
+					</div>
+				</div>
+				<div class="pb-10">
+					<div class="col-md-4 col-xs-4">
+						<h3 class="font-h3">Password:</h3>
+					</div>
+					<div class="col-md-7 col-xs-8">
+						<h3 class="font-h3">..............</h3>
+					</div>
+				</div>
+				<div class="pb-10">
+					<div class="col-md-7 col-xs-5">
+					</div>
+					<div class="col-md-5 col-xs-7  pt-10">
+						<a href="#changePassword" data-toggle="modal"  style="color:black;">
+							<h4>Edit password &nbsp &nbsp <img alt="pencil" src="img/pencil.png" style="width:30px;height: 30px;margin-bottom: 10%;"></h4>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="col-md-6 col-sm-8">
+			<div class="mainBlock4" style="background-color: #FFB819">
+				
+				<div class="pb-10 pt-30">
+					<div class="col-md-4 col-xs-4">
+						<h3 class="font-h3">Mobile:</h3>
+					</div>
+					<div class="col-md-7 col-xs-8">
+						<h3 class="font-h3">${profile.getMobileno() }</h3>
+					</div>
+				</div>
+				<div class="pb-10">
+					<div class="col-md-4 col-xs-4">
+						<h3 class="font-h3">Email ID:</h3>
+					</div>
+					<div class="col-md-7 col-xs-8">
+						<h3 class="font-h3">${profile.getEmail() }</h3>
+					</div>
+				</div>
+				<div class="pb-10">
+					<div class="col-md-4 col-xs-4">
+						<h3 class="font-h3">Address:</h3>
+					</div>
+					<div class="col-md-7 col-xs-8">
+						<h3 class="font-h3">${profile.getAddress() }</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
 </div>
 
-	
 
 <!-- Modal Code for Change Password -->
 <div id="changePassword" class="modal fade" style="margin-top:5%;">
