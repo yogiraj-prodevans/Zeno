@@ -21,6 +21,13 @@
    background-color: unset;
 	border-bottom: 2px solid #F44336;
 }
+.header .row {
+    
+   margin-left: 5%;
+   margin-right: 5%;
+   
+}
+
 
 
 .billPaymentImage
@@ -93,6 +100,7 @@ input[type="checkbox"] {
 	width: 100px;
 	height: 70px;
 	margin: 10px;
+	margin-left:unset;
 }
 hr{
 margin-top: 10px;

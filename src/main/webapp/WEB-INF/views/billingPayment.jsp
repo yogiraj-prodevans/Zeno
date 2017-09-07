@@ -26,7 +26,7 @@
 
 	<!-- BEGIN HEADER -->
 	<div class="header">
-		<div class="container">
+		<div class="row">
 			<a class="site-logo" href="#"> <img
 				src="corporate/img/logos/logo.png" alt="Stoic Zeno">
 			</a> <a href="javascript:void(0);" class="mobi-toggler"><i
@@ -54,7 +54,7 @@
 
 
 
-<div class="col-md-4 col-sm-12  firstRow billPaymentImage pt-20">
+<div class="col-md-4 col-sm-12  firstRow billPaymentImage pt-20" style="background-size: cover;">
 	<h1 style="color: white; margin-left: 15%;">Bill payment</h1>
 </div>
 <div class="col-md-8 col-sm-12 firstRow pt-20"
