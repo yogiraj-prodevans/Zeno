@@ -1,7 +1,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@ page session="false"%>
+
 <html>
 <head>
 <meta charset="utf-8">
@@ -42,6 +42,7 @@ h1{
 {
 	width :100%;
 	max-height:230px;
+	min-height:230px;
 	color:white;
 	padding:4%;
 	background-color: #FFB819;
@@ -157,14 +158,14 @@ h1{
 		</div>
 		<div class="col-md-4 col-xs-5">
 			<div class="mainBlock4">
-				<h1 class="pb-40">Basic</h1>
+				<h1 class="pb-40">${plan}</h1>
 				<h1 class="fs-44">INR 849/-</h1>
 				<h3 class="pb-10">per month</h3>
 			</div>
 		</div>
 		<div class="col-md-4 col-xs-5">
-			<div class="mainBlock4">
-				<h1 class="fs-44">40 GB</h1>
+			<div class="mainBlock4" style="background-color: #e74c3c;">
+				<h1 class="fs-44">${FUP} GB</h1>
 				<h4 class="pb-40">data</h4>
 				<h3>512 Kbps</h3>
 				<h3>Post FUP speed</h3>
