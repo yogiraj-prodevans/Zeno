@@ -40,8 +40,8 @@ h1{
 }
 .mainBlock4
 {
-	width :unset;
-	min-height:unset;
+	width :100%;
+	max-height:230px;
 	color:white;
 	padding:4%;
 	background-color: #FFB819;
@@ -100,16 +100,11 @@ h1{
 	{
 		font-size: 32px;
 	}
-	.mainBlock4_1
+	.mainBlock4
 	{
-		max-height: 100%;
-		min-width: 100%;
-		margin: 2%;
-	}
-	.mainBlock4_2
-	{
-		max-height: 100%;
-		min-width: 100%;
+		min-height: 230px;
+		max-height:23px;
+		min-width: 94%;
 		margin: 2%;
 	}
 }
@@ -158,16 +153,16 @@ h1{
 
 <div class="container">
 	<div class="col-md-12">
-		<div class="col-md-2">
+		<div class="col-md-2 col-xs-1">
 		</div>
-		<div class="col-md-4 col-xs-6">
+		<div class="col-md-4 col-xs-5">
 			<div class="mainBlock4">
 				<h1 class="pb-40">Basic</h1>
 				<h1 class="fs-44">INR 849/-</h1>
-				<h3>per month</h3>
+				<h3 class="pb-10">per month</h3>
 			</div>
 		</div>
-		<div class="col-md-4 col-xs-6">
+		<div class="col-md-4 col-xs-5">
 			<div class="mainBlock4">
 				<h1 class="fs-44">40 GB</h1>
 				<h4 class="pb-40">data</h4>
@@ -175,7 +170,7 @@ h1{
 				<h3>Post FUP speed</h3>
 			</div>
 		</div>
-		<div class="col-md-2">
+		<div class="col-md-2 col-xs-1">
 		</div>
 	</div>
 </div>
