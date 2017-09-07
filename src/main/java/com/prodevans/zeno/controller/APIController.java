@@ -51,6 +51,11 @@ public class APIController {
 			Collections.sort(hs);
 			System.out.println(hs.toString());
 
+			System.out.println("Remove duplicate elemets");
+			hs = removeDuplicateHistory(hs);
+			System.out.println(hs.toString());
+			
+			
 			System.out.println("Data progression added");
 			hs = ProgressionHistory(hs);
 
@@ -103,7 +108,23 @@ public class APIController {
 
 		return hs;
 	}
+	private List<SessionHistory> removeDuplicateHistory(List<SessionHistory> hs) {
+	//	Date check_date = StartDate;
+	// today = new Date();
+		List<SessionHistory> new_hs =new ArrayList<>();
+		
+		for(int i =0 ; i < hs.size() ; i++) {
+			for(int j =i + 1 ; j < hs.size() ; j++) {
+				if(hs.get(i).getDate().equals(hs.get(j).getDate())) {
+					hs.get(i).add(hs.get(j));
+					hs.remove(j);
+				}
+			}
+			new_hs.add(hs.get(i));
+		}
 
+		return new_hs;
+	}
 	private String getJson(List<SessionHistory> hs) {
 		JSONObject data = new JSONObject();
 

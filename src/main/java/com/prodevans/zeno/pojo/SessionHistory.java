@@ -178,4 +178,10 @@ public class SessionHistory implements Comparable<SessionHistory> {
 			return 1;
 	}
 
+	public void add(SessionHistory sessionHistory) {
+		this.bytesin += sessionHistory.getBytesin();
+		this.bytesout += sessionHistory.getBytesout();
+		this.totalbytes += sessionHistory.getTotalbytes(); 
+	}
+
 }
