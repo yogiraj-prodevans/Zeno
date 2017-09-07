@@ -24,7 +24,6 @@
 <style type="text/css">
 h1{
 	margin:unset;
-	padding-top:30px;
 }
 .font-h3
 {
@@ -41,16 +40,51 @@ h1{
 }
 .mainBlock4
 {
-	width :100%;
-	color:black;
-	margin: 5%;
-	padding-left:5%;
-	max-height:unset;
+	width :unset;
+	min-height:unset;
+	color:white;
+	padding:4%;
+	background-color: #FFB819;
+	text-align: center;
 	-webkit-box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
 	-moz-box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
 	box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
 }
-@media (max-width : 650px) 
+.mainBlock4_1
+{
+	width :unset;
+	min-height:unset;
+	color:white;
+	margin-left:15%;
+	margin-right:3%;
+	margin-top:5%;
+	padding:4%;
+	background-color: #FFB819;
+	text-align: center;
+	-webkit-box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
+	-moz-box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
+	box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
+}
+.mainBlock4_2
+{
+	width :unset;
+	min-height:unset;
+	color:white;
+	margin-right:15%;
+	margin-left:3%;
+	margin-top:5%;
+	padding:4%;
+	background-color: #e74c3c;
+	text-align: center;
+	-webkit-box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
+	-moz-box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
+	box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
+}
+.fs-44
+{
+	font-size: 44px;
+}
+@media (max-width : 680px) 
 {
 	.paddingLeftMobile
 	{
@@ -62,11 +96,21 @@ h1{
 		padding-right: 5%;
 		margin-left: -5%;
 	}
-	.mainBlock4
+	.fs-44
+	{
+		font-size: 32px;
+	}
+	.mainBlock4_1
 	{
 		max-height: 100%;
 		min-width: 100%;
-		margin-top: 5%;
+		margin: 2%;
+	}
+	.mainBlock4_2
+	{
+		max-height: 100%;
+		min-width: 100%;
+		margin: 2%;
 	}
 }
 </style>
@@ -111,6 +155,33 @@ h1{
 		<h1>Your plan</h1>
 	</div>
 </div>
+
+<div class="container">
+	<div class="col-md-12">
+		<div class="col-md-2">
+		</div>
+		<div class="col-md-4 col-xs-6">
+			<div class="mainBlock4">
+				<h1 class="pb-40">Basic</h1>
+				<h1 class="fs-44">INR 849/-</h1>
+				<h3>per month</h3>
+			</div>
+		</div>
+		<div class="col-md-4 col-xs-6">
+			<div class="mainBlock4">
+				<h1 class="fs-44">40 GB</h1>
+				<h4 class="pb-40">data</h4>
+				<h3>512 Kbps</h3>
+				<h3>Post FUP speed</h3>
+			</div>
+		</div>
+		<div class="col-md-2">
+		</div>
+	</div>
+</div>
+
+
+
 
 
 
