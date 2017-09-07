@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 
 <!-- Code For Floating Points (Current Plan and Top Up) -->
-<!-- Code For Floating Points (Current Plan and Top Up) -->
+<!-- Code For Floating Points (Current Plan and Top Up) --
 <ul class="fixedBlock">
 	<li><a class="topUpBlock" href="#topUP" data-target="#topUP"
 		data-toggle="modal">
@@ -14,6 +14,31 @@
 	</a></li>
 </ul>
 <!-- End Code For Floating Points (Current Plan and Top Up) -->
+
+ <div id="container-floating">
+        <div id="floating-button" data-toggle="tooltip">
+            <p class="plus valign" style="padding-top: 8px;" >
+                
+                <br>
+                <a class="external fv" href="${pageContext.request.contextPath }/topup">
+                    Top Up
+                </a>
+            </p>
+        </div>
+    </div>
+<div id="container-floating">
+    <div id="floating-button1" data-toggle="tooltip">
+        <p class="plus valign" style="padding-top: 8px;" >
+            
+            <br>
+            <a class="external fv" href="${pageContext.request.contextPath }/YourPlan">
+                Your Plan
+            </a>
+        </p>
+    </div>
+</div>  
+
+
 
 
 
@@ -56,7 +81,7 @@
 									5GB
 								</div>
 								<br> <br>
-								<p style="font-size: 12px;">INR 120/</p>
+								<p style="font-size: 12px;">&#8377; 120/</p>
 								<p style="font-size: 10px;">512 Kbps</p>
 								<p style="font-size: 10px;">POST FUP</p>
 							</div>
@@ -70,7 +95,7 @@
 									10GB
 								</div>
 								<br> <br>
-								<p style="font-size: 12px;">INR 220/</p>
+								<p style="font-size: 12px;">&#8377; 220/</p>
 								<p style="font-size: 10px;">512 Kbps</p>
 								<p style="font-size: 10px;">POST FUP</p>
 							</div>
@@ -103,7 +128,7 @@
 					<div class="row" style="margin-left: 1%; margin-top: 3%;">
 						<h4>YOUR CURRENT PLAN</h4>
 						<h3>${plan }</h3>
-						<h3>Basic- INR 849 per month</h3>
+						<h3>Basic- &#8377; 849 per month</h3>
 					</div>
 					<hr>
 					<div class="row" style="margin-left: 1%;">
