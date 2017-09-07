@@ -71,7 +71,7 @@ h1{
             			<img alt="ONE EIGHt" height="80" src="corporate/img/logos/logo.png" width="110"  style="margin-top:20px;margin-left: 30px;"/>
             		</div>
             		<div class="col-md-6">
-            			<h1 style="padding-left:20px;">Amount: INR ${invoiceDetails.getAmount() }</h1>
+            			<h1 style="padding-left:20px;">Amount: &#8377; ${invoiceDetails.getAmount() }</h1>
             		</div>
             	</div>
             	<div class="pb-40">
