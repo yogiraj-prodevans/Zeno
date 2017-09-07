@@ -132,7 +132,7 @@
       <div class="col-md-2">
          <div class="circle1">
             <p class="for3Text" style="font-size:16px;">5GB</p><br>
-            <p class="for3Text" style="font-size:12px;">₹ 120/</p>
+            <p class="for3Text" style="font-size:12px;">&#8377; 120/</p>
             <p class="for3Text" style="font-size:10px;">512 Kbps</p>
             <p class="for3Text" style="font-size:10px;">post FUP</p>
          </div>   
@@ -140,7 +140,7 @@
       <div class="col-md-3">
          <div class="circle2">
             <p class="for3Text" style="font-size:16px;">10GB</p><br>
-            <p class="for3Text" style="font-size:12px;">₹ 220/</p>
+            <p class="for3Text" style="font-size:12px;">&#8377; 220/</p>
             <p class="for3Text" style="font-size:10px;">512 Kbps</p>
             <p class="for3Text" style="font-size:10px;">post FUP</p>
          </div>   
@@ -155,7 +155,7 @@
     <div class="container">
       <div class="row">
         <!-- BEGIN COPYRIGHT -->
-          <div class="col-md-10 col-sm-10 padding-bottom-10 " > 2017 �&copy Stoic Zeno. ALL Rights Reserved.&nbsp 
+          <div class="col-md-10 col-sm-10 padding-bottom-10 " > 2017 &copy; Stoic Zeno. ALL Rights Reserved.&nbsp 
       <a href="#">Privacy Policy</a> |
           <a href="javascript:;">Terms of Service</a> |
       <a href="javascript:;">Refund and Cancellation</a> |

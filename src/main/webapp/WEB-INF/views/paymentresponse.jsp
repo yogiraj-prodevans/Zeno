@@ -87,7 +87,7 @@ if(!success)
 	        <div class="col-md-8">
 	            <div class="mainBlock3" style="background-color: #2980b9;">
 	                <h3 class="pb-40">Payment Summary</h3>
-	                <h2 class="pb-40">Your payment of INR. 60/- was successful.</h2>
+	                <h2 class="pb-40">Your payment of &#8377;. 60/- was successful.</h2>
 	                <h5>TRANSACTION ID</h5>
 	                <h3>123456789 </h3>
 	            </div>
@@ -122,7 +122,7 @@ else
 	        <div class="col-md-8">
 	            <div class="mainBlock3" style="background-color: #2980b9;">
 	                <h3 class="pb-40">Payment Summary</h3>
-	                <h2 class="pb-40">Your payment of INR. 60/- was unsuccessful.</h2>
+	                <h2 class="pb-40">Your payment of &#8377;. 60/- was unsuccessful.</h2>
 	                <h5>REASON</h5>
 	                <h3>123456789 </h3>
 	            </div>

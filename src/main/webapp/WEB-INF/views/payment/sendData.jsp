@@ -164,7 +164,7 @@ label.css-label
 		                			<h3 class="pb-20">Details</h3>
 			                		<h4 class="pb-10">Account No : ${user_details.getActid() }  </h4>
 			                		<h4 class="pb-10">Name : ${user_details.getFirst_name() } ${user_details.getLast_name() } </h4>
-			                        <h4 class="pb-10">Amount : INR ${invoiceDetails.getAmount() }/-  </h4>
+			                        <h4 class="pb-10">Amount : &#8377; ${invoiceDetails.getAmount() }/-  </h4>
 			                        <h4 class="pb-10">Email  : ${user_details.getEmail() }</h4>
 			                        <h4 class="pb-10">Mobile No.  : ${user_details.getMobileno() } </h4>
 			                        

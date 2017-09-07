@@ -159,7 +159,7 @@ h1{
 		<div class="col-md-4 col-xs-5">
 			<div class="mainBlock4">
 				<h1 class="pb-40">${plan}</h1>
-				<h1 class="fs-44">INR 849/-</h1>
+				<h1 class="fs-44">&#8377; 849/-</h1>
 				<h3 class="pb-10">per month</h3>
 			</div>
 		</div>
