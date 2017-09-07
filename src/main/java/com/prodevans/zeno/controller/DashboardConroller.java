@@ -130,6 +130,26 @@ public class DashboardConroller {
 		}
 	}
 
+	@RequestMapping(value = "/topup", method = RequestMethod.GET)
+	public String topup(Locale locale, Model model, HttpSession session) {
+		if (session.getAttribute("user") == null) {
+			return "redirect:/logout";
+		} else {
+			return "topup";
+		}
+
+	}
+	
+	@RequestMapping(value = "/YourPlan", method = RequestMethod.GET)
+	public String YourPlan(Locale locale, Model model, HttpSession session) {
+		if (session.getAttribute("user") == null) {
+			return "redirect:/logout";
+		} else {
+			return "YourPlan";
+		}
+
+	}
+	
 	@RequestMapping(value = "/help", method = RequestMethod.GET)
 	public String help(Locale locale, Model model, HttpSession session) {
 		if (session.getAttribute("user") == null) {
