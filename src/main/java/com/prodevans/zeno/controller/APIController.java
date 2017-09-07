@@ -1,5 +1,6 @@
 package com.prodevans.zeno.controller;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpSession;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.openqa.selenium.safari.SafariDriver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -160,18 +162,22 @@ public class APIController {
 
 		JSONObject element1 = new JSONObject();
 		element1.put("v", 0);
+		
 		jarr.put(element1);
 
 		JSONObject element2 = new JSONObject();
 		element2.put("v", 0);
+		element2.put("f", 0+" GB");
 		jarr.put(element2);
 
 		JSONObject element3 = new JSONObject();
 		element3.put("v", 0);
+		element3.put("f", 0+" GB");
 		jarr.put(element3);
 
 		JSONObject element4 = new JSONObject();
 		element4.put("v", 0);
+		element4.put("f", 0+" GB");
 		jarr.put(element4);
 
 		row.put("c", jarr);
@@ -186,18 +192,24 @@ public class APIController {
 
 			element1 = new JSONObject();
 			element1.put("v", cnt++);
+			SimpleDateFormat sm = new SimpleDateFormat("MMM dd");
+			String dt = sm.format(history.getDate());
+			element1.put("f", dt);
 			jarr.put(element1);
 
 			element2 = new JSONObject();
 			element2.put("v", history.getBytesin());
+			element2.put("f", history.getBytesin()+" GB");
 			jarr.put(element2);
 
 			element3 = new JSONObject();
 			element3.put("v", history.getBytesout());
+			element3.put("f", history.getBytesout()+" GB");
 			jarr.put(element3);
 
 			element4 = new JSONObject();
 			element4.put("v", history.getTotalbytes());
+			element4.put("f", history.getTotalbytes()+" GB");
 			jarr.put(element4);
 
 			row.put("c", jarr);
