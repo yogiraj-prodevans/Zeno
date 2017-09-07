@@ -25,7 +25,8 @@ canvas {
 
 .mainBlock4{
 	max-width: unset;
-	margin-top: 5%;
+	margin-top: 10%;
+	max-width: 95%;
 }
 
 .firstRow{
@@ -33,7 +34,19 @@ canvas {
 		padding-left: 5%;
 }
 .div2{
-	min-height:300px;
+max-width : unset;
+margin-top:7.5%;
+	min-height:260px;
+	border : none;
+	
+	padding: unset;
+	-webkit-box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
+	-moz-box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
+	box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
+}
+.firstRow{
+	background-image: url('img/red_small.png');
+	background-size: cover;
 }
 </style>
 
@@ -65,7 +78,7 @@ canvas {
 		var options = {
 			title : 'Data Usage',
 			curveType : 'none',
-			height : 300,
+		
 			colors: ['#ff6f00', '#00c853', '#2196f3'],
 			hAxis : {
 				title : "Time in week (${SubscriptionDetails.getStartdt() } - ${SubscriptionDetails.getExpirydt() })",
@@ -133,64 +146,62 @@ canvas {
 	</div>
 	<!-- Header END -->
 
-	<div class="col-md-12 firstRow pt-20" style="background-image: url('img/red_long.png');">
-		<h3 style="color: white;">Experience transparency</h3>
-		<h2 style="font-family: Roboto; font-size: 30px; color: white;">
-			Welcome, <strong style="color: #ffbb19">${user_details.getFirst_name() }</strong>
-			to your stoic zeno page
-		</h2>
+
+<div class="col-md-4 col-sm-12  firstRow pt-40" style="">
+	<h2 style="color: white; ">Manage your network</h2>
+</div>
+<div class="col-md-8 col-sm-12  pt-40"
+	style="background-color: #ecf0f1;min-height: 116px;">
+	<div class="col-md-12 col-sm-12">
+
+		<h2 style="color: black;" class="currentBillFontforiPhone5">Welcome ${user_details.getFirst_name() }, to your One8 page</h2>
+
 	</div>
+	
+
+</div>
+	
 
 
 	<div class="container">
 		<div class="row col-md-12" style="margin-bottom: 4%;">
 
-			<div class="col-md-6 ">
+			<div class="col-md-4 ">
 				
-					<div class="mainBlock4" style="background-color: #2980b9;">
-						<h3 class="pb-20">Your current plan</h3>
-						<h4>Plan Name: ${SubscriptionDetails.getRatePlan() }</h4>
-						<h4 class="pb-30">Basic- INR 849 per Month</h4>
-						<h4>Plan Content</h4>
-						<h4>1. ${SubscriptionDetails.getFUPLimit() }GB Data</h4>
-						<h4>2. 512Kbps Post FUP Speed Data</h4>
-
-
-				</div>
-			</div>
-			<div class="col-md-6 ">
-				<div>
-					<div class="mainBlock4" style="background-color: #ffbb19;">
-						<h3 class="pb-20">Your One8 account</h3>
-						<h4 style="color: black;">Account Id :
+					<div class="mainBlock4" style="background-color: #e74c3c;">
+						<h3 class="pb-10">Your One8 account</h3>
+						<h4 >Account Id :
 							${user_details.getActid() }</h4>
-						<h4 style="color: black;" class="pb-40">Bill period-
-							${SubscriptionDetails.getStartdt() } -
-							${SubscriptionDetails.getExpirydt() }</h4>
-
-						<div style="margin-bottom: 10px;">
+						<h4>Plan Name: ${SubscriptionDetails.getRatePlan() }</h4>
+						
+						<div class="pt-20 pb-10">
 							<span class="blackShadow font-h4"
-								style="color: black; margin-right: 10px;">Usage</span> <span
-								class="blackShadow font-h2" style="color: black;">
+								style="margin-right: 10px;">Usage</span> <span
+								class="blackShadow font-h2" ">
 								${SubscriptionDetails.getDataUsed() }GB</span>
 
 						</div>
 
 
-						<div class=" progress">
+						<div class=" progress ">
 							<div class="progressbarColor"
 								style="width: ${SubscriptionDetails.getDataPercent()}%;"></div>
 						</div>
-					</div>
+						<h2 class="pt-20">INR ${invoiceDetails.getAmount() }</h2>
+						<h4 >Due in ${invoiceDetails.getRemainingDays() }
+						days</h4>
+				
+
+
 				</div>
-
 			</div>
-
-			<div class="col-md-12 " style="margin-top: 20px; min-height: 90%;">
-
+			<div class="col-md-8 ">
+			<div class="">
 				<div class="div2" id="curve_chart"></div>
-
+</div>
 			</div>
+
+			
 
 		</div>
 	</div>
