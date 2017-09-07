@@ -570,5 +570,64 @@ a:hover {
 	}
 }
 
+/*Floating button*/
+#floating-button{
 
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: #F44336;
+    position: fixed;
+    top: 150px;
+    right: 20px;
+    cursor: pointer;
+    box-shadow: 0px 2px 5px #666;
+}
+.fv{
+    font-size: 9px;
+    color: #ffffff;
+}
+#floating-button1{
+
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: #ffb81c;
+    position: fixed;
+    top: 220px;
+    right: 20px;
+    cursor: pointer;
+    box-shadow: 0px 2px 5px #666;
+}
+
+
+#floating-buttongray{
+
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: #9cafad;
+    position: fixed;
+    top: 160px;
+    right: 20px;
+    cursor: pointer;
+    box-shadow: 0px 2px 5px #666;
+}
+.plus{
+    color: white;
+    position: absolute;
+    top: 0;
+    display: block;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    line-height: 8px;
+    font-size: 6px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #ffffff;
+}
 

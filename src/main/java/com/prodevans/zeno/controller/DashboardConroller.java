@@ -145,7 +145,8 @@ public class DashboardConroller {
 	public String YourPlan(Locale locale, Model model, HttpSession session) {
 		if (session.getAttribute("user") == null) {
 			return "redirect:/logout";
-		} else {
+		} else 
+		{
 			return "YourPlan";
 		}
 

@@ -62,7 +62,7 @@
 	<div class="col-md-6 col-sm-12">
 
 		<h1 style="color: black;" class="currentBillFontforiPhone5">Current
-			bill INR ${invoiceDetails.getAmount() }</h1>
+			bill &#8377; ${invoiceDetails.getAmount() }</h1>
 
 	</div>
 	<div class=" col-md-6 col-sm-12" style="margin-top: 1%;">
@@ -85,7 +85,7 @@
 				<div class="mainBlock4" style="background-color: #2980b9;">
 					<h3 class="pb-20">Your current plan</h3>
 					<h4>Plan Name: ${SubscriptionDetails.getRatePlan() }</h4>
-					<h4 class="pb-20">Basic- INR 849 per Month</h4>
+					<h4 class="pb-20">Basic- &#8377; 849 per Month</h4>
 					<h4>Plan Content</h4>
 					<h4>1. ${SubscriptionDetails.getFUPLimit() }GB Data</h4>
 					<h4>2. 512Kbps Post FUP Speed Data</h4>
@@ -120,7 +120,7 @@
 				<div class="mainBlock4" style="background-color: #e74c3c;">
 					<h3 class="pb-20">Payment</h3>
 					<h4 class="pb-20">Account Id : ${user_details.getActid() }</h4>
-					<h2>INR ${invoiceDetails.getAmount() }</h2>
+					<h2>&#8377; ${invoiceDetails.getAmount() }</h2>
 					<h2 class="pb-20">Due in ${invoiceDetails.getRemainingDays() }
 						days</h2>
 					<h4>Due Date: ${invoiceDetails.getDuedt() }</h4>

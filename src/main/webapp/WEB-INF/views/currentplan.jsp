@@ -105,7 +105,7 @@
                                         <div class="col-lg-12">
                                             <p style="font-size:15px; color:gray; line-height:2">Your Current Plan</p>
                                             <p style="font-size:10px; color:gray; line-height:1.5">Plan Name</p>
-                                            <p style="font-size:10px; color:gray; line-height:1.5">Basic - INR 849 Per Month </p>
+                                            <p style="font-size:10px; color:gray; line-height:1.5">Basic - &#8377; 849 Per Month </p>
                                             <div style=" padding-top:10%">
                                                 <p style="font-size:15px; color:gray; line-height:2">Plan Content</p>
                                                 <p style="font-size:10px; color:gray; line-height:1.5">1. 40GB Data <br/>2. 512Kbps Post FUP Speed</p>  
