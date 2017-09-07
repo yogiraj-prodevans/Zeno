@@ -180,7 +180,7 @@ h1{
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color:#FFF">&times;</button>
-                <h4 class="modal-title">Change Password</h4>
+                <h4 class="modal-title" style="color:white;">Change Password</h4>
             </div>
 
             <div class="modal-body" style="margin-bottom:20%">

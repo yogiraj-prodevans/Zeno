@@ -1,198 +1,206 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@taglib uri = "http://www.springframework.org/tags/form" prefix = "form"%>
-<%@ page session="false" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>STOIC ZENO</title>
+<meta charset="utf-8">
+<title>STOIC ZENO</title>
+<link rel="shortcut icon" href="favicon.ico">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta content="Stoic Zeno User Portal" name="description">
+<meta content="Stoic Zeno User Portal Keywords" name="keywords">
 
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta content="Stoic Zeno User Portal" name="description">
-  <meta content="Stoic Zeno User Portal Keywords" name="keywords">
-  <meta content="vikram" name="author">
-  
-  <!-- link to image for socio -->
-  <meta property="og:url" content="-CUSTOMER VALUE-">
-  <link rel="shortcut icon" href="favicon.ico">
-  <!-- Fonts START -->
-  <link href="https://fonts.googleapis.com/css?family=Lato|Roboto:100" rel="stylesheet">
-  <!-- Fonts END -->
-  <!-- Global styles START -->          
-  <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Global styles END --> 
-   
-  <!-- Page level plugin styles START -->
-  <link href="pages/css/animate.css" rel="stylesheet">
-  <link href="plugins/fancybox/source/jquery.fancybox.css" rel="stylesheet">
-  <link href="plugins/owl.carousel/assets/owl.carousel.css" rel="stylesheet">
-  <!-- Page level plugin styles END -->
+<!-- link to image for socio -->
+<meta property="og:url" content="-CUSTOMER VALUE-">
 
-  <!-- Theme styles START -->
-  <!--<link href="pages/css/components.css" rel="stylesheet">-->
-  <link href="pages/css/slider.css" rel="stylesheet">
-  <link href="corporate/css/styleblue.css" rel="stylesheet">
-  <link href="corporate/css/style-responsive.css" rel="stylesheet">
-  <link href="corporate/css/themes/blue.css" rel="stylesheet" id="style-color">
-  <link href="corporate/css/custom.css" rel="stylesheet">
-  <!-- Theme styles END -->
-  <style>
+<!-- Fonts START -->
+<link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+	
+<!--  include the all css components -->
+<jsp:include page="component/css.jsp"></jsp:include>
 
-  .circle1  {
-    border-radius: 50%;
-    border: 1px solid #010745;
-    padding: 20px; 
-    width: 120px;
-    height: 120px; 
-    margin: 40px;
-    text-align: center;
-    
+<style type="text/css">
+h1{
+	margin:unset;
 }
-
-  .circle2  {
-    border-radius: 50%;
-    border: 2px solid #010745;
-    padding: 20px; 
-    width: 120px;
-    height: 120px; 
-    margin: 40px;
-    text-align: center;
-    
+.font-h3
+{
+	font-size: 20px;
 }
-
-.for3Text{
-  margin:10%; 
-  line-height:.5;
-  color: #010745;
+.col-md-3
+{
+	padding: 0px;
+}
+.col-md-6, col-sm-8
+{
+	padding-left: 1px;
+	padding-right:1px;
+}
+.mainBlock4
+{
+	width :310px;
+	max-height:260px;
+	min-height:260px;
+	color:white;
+	padding:4%;
+	background-color: #FFB819;
+	text-align: center;
+	-webkit-box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
+	-moz-box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
+	box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
+}
+.circle-Font
+{
+	min-height:90px;
+	max-width:90px;
+	border: 3px solid white;
+	border-radius: 50%;
+	font-size: 58px;
+	font-weight: bold;
+	text-align: center;
+	margin-left: 8%;
+	
 }
 
 
+@media (max-width : 990px) 
+{
+	.paddingLeftMobile
+	{
+		padding-left: 40px;
+	}
+	.col-md-6
+	{
+		padding-left: 0px;
+		padding-right: 5%;
+		margin-left: -5%;
+	}
+	.fs-44
+	{
+		font-size: 32px;
+	}
+	.mainBlock4
+	{
+		width :310px;
+		max-height:260px;
+		min-height:260px;
+		margin: 2%;
+	}
+}
+</style>
 
-  </style>
 </head>
+<body class="corporate" style="font-family: Roboto;">
+	
+	<!-- BEGIN HEADER -->
+	<div class="header">
+		<div class="container">
+			<a class="site-logo" href="#"> <img
+				src="corporate/img/logos/logo.png" alt="Stoic Zeno">
+			</a> <a href="javascript:void(0);" class="mobi-toggler"><i
+				class="fa fa-bars"></i></a>
+			<!-- BEGIN NAVIGATION -->
+			<div class="header-navigation pull-right font-transform-inherit"
+				style="font-size: 12px">
+				<ul>
+					<li class="dropdown active"></li>
+					<li><a href="${pageContext.request.contextPath }/dashboard">HOME</a></li>
+					<li><a
+						href="${pageContext.request.contextPath }/billingPayment">MAKE
+							PAYMENT</a></li>
+					<li><a href="${pageContext.request.contextPath }/service">SERVICE
+							REQUEST</a></li>
+					
+					<li class="active"><a href="${pageContext.request.contextPath }/profile">PROFILE</a></li>
+                    <li><a href="${pageContext.request.contextPath }/logout">LOGOUT</a></li>
+				</ul>
+			</div>
+			<!-- END NAVIGATION -->
+		</div>
+	</div>
+	<!-- Header END -->
+	
+<div class="col-md-12 firstRow " style="background-image: url('corporate/img/back.png');padding-top:3%">
+    <h1 style="margin-left:5%;padding:unset;">Get more out of One8</h1>
+</div>    
 
-<body class="corporate">
-  <!-- BEGIN TOP BAR -->
-  <div class="pre-header">
-    <div class="container">
-      <div class="row">
-        <!-- BEGIN TOP BAR MENU -->
-        <div class="col-md-12 col-sm-12 additional-nav" style=" font-size:12px; font-color:000000">
-          <ul class="list-unstyled list-inline pull-right ">
-            <li ><i class=" fa fa-phone"></i><span>Lets Talk: +91 9019602602</span></li>
-          </ul>
-        </div>
-        <!-- END TOP BAR MENU -->
-      </div>
-    </div>
-  </div>
-  <!-- END TOP BAR -->
-  <!-- BEGIN HEADER -->
-  <div class="header">
-    <div class="container">
-      <a class="site-logo" href="#">
-        <img src="corporate/img/logos/logo.png" alt="Stoic Zeno"> </a>
-      <a href="javascript:void(0);" class="mobi-toggler"><i class="fa fa-bars"></i></a>
-      <!-- BEGIN NAVIGATION -->
-      <div class="header-navigation pull-right font-transform-inherit" style="font-size:12px">
-        <ul>
-        <li class="dropdown active"> </li>
-          <li ><a href="dashboard">Home</a></li>
-          <li><a href="${pageContext.request.contextPath }/currentplan">Current plan</a></li>  
-          <li><a href="${pageContext.request.contextPath }/billingPayment">Make Payment</a></li>  
-          <li class="active" ><a href="${pageContext.request.contextPath }/topup">Top up</a></li> 
-          <li><a href="#">Service Request</a></li> 
-          <li><a href="#">Help</a></li> 
-          <li><a href="#">Parental Control</a></li>
-          <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
-          		Settings      
-              </a>
-                
-              <ul class="dropdown-menu">
-                <li><a href="${pageContext.request.contextPath }/profile">Profile</a></li>
-                <li><a href="#">Account</a></li>
-                <li><a href="#">Logout</a></li>
-              </ul>
-            </li>
-        </ul>
-      </div>
-      <!-- END NAVIGATION -->
-    </div>
-  </div>
+<div class="container">
+		<div class="col-md-1">
+		</div>
+		<div class="col-md-10 col-xs-12">
+			<h1>Get more One8 on demand</h1>
+			<h3>Pick an option, pay and browse non stop.</h3>
+		</div>
+</div>
+
+<div class="col-md-12 col-lg-12 col-xl-12 container">
+	<div class="row">
+		<div class="col-md-3 col-lg-3 col-xl-3">
+		</div>
+		<div class="col-md-3 col-xs-6 col-lg-3 col-xl-3">
+			<div class="mainBlock4" style="background-color: #2980b9;">
+				<div class="row">
+					<div class="col-md-4 col-xs-3"></div>
+					<div class="col-md-4 col-xs-6">
+						<h1 class="circle-Font">
+							5
+						</h1>
+					</div>
+					<div class="col-md-4 col-xs-3" style="padding-top: 10%;text-align: left;">
+						<h2>GB</h2>
+					</div>
+				</div>
+				<h1>&#8377; 120</h1>
+				<h4>512 Kbps * POST FUP</h4>
+				<a href="">
+					<div class="btn billButton" style="border: 1px solid white;background-color: inherit;">
+						BUY NOW
+					</div>
+				</a>
+			</div>
+		</div>
+		<div class="col-md-3 col-xs-6 col-lg-3 col-xl-3">
+			<div class="mainBlock4" style="background-color: #e74c3c;">
+				<div class="row">
+					<div class="col-md-4 col-xs-3"></div>
+					<div class="col-md-4 col-xs-6">
+						<h1 class="circle-Font">
+							10
+						</h1>
+					</div>
+					<div class="col-md-4 col-xs-3" style="padding-top: 10%;text-align: left;">
+						<h2>GB</h2>
+					</div>
+				</div>
+				<h1>&#8377; 220</h1>
+				<h4>512 Kbps * POST FUP</h4>
+				<a href="">
+					<div class="btn billButton" style="border: 1px solid white;">
+						BUY NOW
+					</div>
+				</a>
+			</div>
+		</div>
+		<div class="col-md-3 col-lg-3 col-xl-3">
+		</div>
+	</div>
+</div>
 
 
-  <!-- Header END -->
-  <div class="main">
-    <div class="container">  
-      <!-- BEGIN STEPS -->
-      <div class="col-md-4">
-      </div>
-      <div class="col-md-2">
-         <div class="circle1">
-            <p class="for3Text" style="font-size:16px;">5GB</p><br>
-            <p class="for3Text" style="font-size:12px;">&#8377; 120/</p>
-            <p class="for3Text" style="font-size:10px;">512 Kbps</p>
-            <p class="for3Text" style="font-size:10px;">post FUP</p>
-         </div>   
-      </div>    
-      <div class="col-md-3">
-         <div class="circle2">
-            <p class="for3Text" style="font-size:16px;">10GB</p><br>
-            <p class="for3Text" style="font-size:12px;">&#8377; 220/</p>
-            <p class="for3Text" style="font-size:10px;">512 Kbps</p>
-            <p class="for3Text" style="font-size:10px;">post FUP</p>
-         </div>   
-      </div>          
-
-    </div>
-  </div>
 
 
- <!-- BEGIN FOOTER -->
-  <div class="footer" style="font-size:10px; line-height:1; margin-top:20%;"><!--style="font-family:Roboto; position: fixed; right: 0; bottom: 0; left: 0;"-->
-    <div class="container">
-      <div class="row">
-        <!-- BEGIN COPYRIGHT -->
-          <div class="col-md-10 col-sm-10 padding-bottom-10 " > 2017 &copy; Stoic Zeno. ALL Rights Reserved.&nbsp 
-      <a href="#">Privacy Policy</a> |
-          <a href="javascript:;">Terms of Service</a> |
-      <a href="javascript:;">Refund and Cancellation</a> |
-      <a href="javascript:;">Feedback</a> |
-      <a href="javascript:;">Contact Us</a>
-        </div>
-        <!-- END COPYRIGHT -->
-      </div>
-    </div>
-  </div>
-  <!-- END FOOTER -->
-  <!-- Load javascripts at bottom, this will reduce page load time -->
-  <!-- BEGIN CORE PLUGINS (REQUIRED FOR ALL PAGES) -->
-  <!--[if lt IE 9]>
-    <script src="plugins/respond.min.js"></script>
-    <![endif]-->
-  <script src="plugins/jquery.min.js" type="text/javascript"></script>
-  <script src="plugins/jquery-migrate.min.js" type="text/javascript"></script>
-  <script src="plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-  <script src="corporate/scripts/back-to-top.js" type="text/javascript"></script>
-  <!-- END CORE PLUGINS -->
-  <!-- BEGIN PAGE LEVEL JAVASCRIPTS (REQUIRED ONLY FOR CURRENT PAGE) -->
-  <script src="plugins/fancybox/source/jquery.fancybox.pack.js" type="text/javascript"></script>
-  <!-- pop up -->
-  <script src="plugins/owl.carousel/owl.carousel.min.js" type="text/javascript"></script>
-  <!-- slider for products -->
-  <script src="corporate/scripts/layout.js" type="text/javascript"></script>
-  <script src="pages/scripts/bs-carousel.js" type="text/javascript"></script>
-  <script type="text/javascript">
-    jQuery(document).ready(function() {
-            Layout.init();    
-            Layout.initOWL();
-            Layout.initFixHeaderWithPreHeader(); /* Switch On Header Fixing (only if you have pre-header) */
-            Layout.initNavScrolling();
-        });
-  </script>
-  <!-- END PAGE LEVEL JAVASCRIPTS -->
-  <!-- END BODY -->
+
+
+	<jsp:include page="component/pop-up.jsp"></jsp:include>
+	<div style="margin:3%;"></div>
+	<jsp:include page="component/footer.jsp"></jsp:include>
+	
+	
+	<!-- Load javascripts at bottom, this will reduce page load time -->
+	<jsp:include page="component/js.jsp"></jsp:include>
+	<!-- END BODY -->
 </body>
+
 </html>

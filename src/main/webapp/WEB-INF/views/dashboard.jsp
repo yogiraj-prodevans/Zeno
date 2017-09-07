@@ -146,7 +146,7 @@
     <!-- Header END -->
 
 
-<div class="row">
+
 <div class="col-md-4 col-sm-12  firstRow pt-40" style="">
 	<h2 style="color: white; ">Manage your network</h2>
 </div>
@@ -162,7 +162,7 @@
 
 
     </div>
-</div>
+
 
 
     <div class="container">

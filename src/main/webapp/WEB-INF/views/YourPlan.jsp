@@ -29,7 +29,7 @@ h1{
 {
 	font-size: 20px;
 }
-.col-md-4
+.col-md-3
 {
 	padding: 0px;
 }
@@ -147,31 +147,33 @@ h1{
 </div>    
 
 <div class="container">
-	<div class="col-md-12">
-		<h1>Your plan</h1>
-	</div>
+		<div class="col-md-1 col-xs-1">
+		</div>
+		<div class="col-md-10 col-xs-11">
+			<h1>Your plan</h1>
+		</div>
 </div>
 
-<div class="container">
+<div class="container1">
 	<div class="col-md-12">
-		<div class="col-md-2 col-xs-1">
+		<div class="col-md-3 col-xs-1">
 		</div>
-		<div class="col-md-4 col-xs-5">
+		<div class="col-md-3 col-xs-5">
 			<div class="mainBlock4">
 				<h1 class="pb-40">${plan}</h1>
 				<h1 class="fs-44">&#8377; 849/-</h1>
 				<h3 class="pb-10">per month</h3>
 			</div>
 		</div>
-		<div class="col-md-4 col-xs-5">
+		<div class="col-md-3 col-xs-5">
 			<div class="mainBlock4" style="background-color: #e74c3c;">
 				<h1 class="fs-44">${FUP} GB</h1>
-				<h4 class="pb-40">data</h4>
+				<h3 class="pb-40">data</h3>
 				<h3>512 Kbps</h3>
 				<h3>Post FUP speed</h3>
 			</div>
 		</div>
-		<div class="col-md-2 col-xs-1">
+		<div class="col-md-3 col-xs-1">
 		</div>
 	</div>
 </div>
