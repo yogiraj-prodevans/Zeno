@@ -110,10 +110,10 @@ padding-left: 2%;
 
 					<div class="col-md-12 pb-20">
 						<div class="col-md-6">
-							<form:input type="text" path="name" id="name" placeholder="Name" class="font-h2" />
+							<form:input type="text" path="name" id="name"  value="${user_details.getFirst_name() }" placeholder="Name" class="font-h2" />
 						</div>
 						<div class="col-md-6 mb-pt-30">
-							<form:input type="text"  path="email_id" id="email_id"  placeholder="Email" class="font-h2" />
+							<form:input type="text"  path="email_id" id="email_id"  value="${user_details.getEmail() }"  placeholder="Email" class="font-h2" readonly="true" />
 						</div>
 					</div>
 					<div class="col-md-12 pb-40">

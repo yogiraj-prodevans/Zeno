@@ -35,12 +35,6 @@ public class MailController
 		return feedbackDAOImpl;
 	}
 	
-	@Autowired
-	private DashboardDAOImpl DashboardImpl;
-
-	public void setDashboardImpl(DashboardDAOImpl dashboardImpl) {
-		DashboardImpl = dashboardImpl;
-	}
 
 	@RequestMapping(value = "/feedbackPage", method = RequestMethod.GET)
 	public ModelAndView feedbackPage(ModelMap model, HttpSession session) throws XmlRpcException 
@@ -52,7 +46,6 @@ public class MailController
 		else 
 		{
 			SessionDetails user = (SessionDetails) session.getAttribute("user");
-			UserDetails userdetails = DashboardImpl.getUserDetails(user.getActid());
 			model.addAttribute("user_details", user);
 			
 			return  new ModelAndView("feedback","feedbackDetails",new SendMailDetails());
@@ -67,9 +60,19 @@ public class MailController
 	}
 	
 	@RequestMapping(value = "/contactusPage", method = RequestMethod.GET)
-	public ModelAndView contactus(ModelMap model, HttpSession session) 
+	public ModelAndView contactus(ModelMap model, HttpSession session) throws XmlRpcException 
 	{
-		return  new ModelAndView("contactus","contactusDetails",new SendMailDetails());
+		if (session.getAttribute("user") == null) 
+		{
+			return  new ModelAndView("redirect:logout");
+		} 
+		else 
+		{
+			SessionDetails user = (SessionDetails) session.getAttribute("user");
+			model.addAttribute("user_details", user);
+			
+			return  new ModelAndView("contactus","contactusDetails",new SendMailDetails());
+		}
 	}
 	
 	@RequestMapping(value = "/contactusRequestPage", method = RequestMethod.POST)
