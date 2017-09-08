@@ -97,7 +97,7 @@ body {
 						<div class="col-lg-8 col-md-8 col-sm-8  ">
 							<div style="margin-top: 15%; padding-left: 5%;">
 								<h2 class="tag-line">
-									Welcome to the<br> network that never stops
+									Welcome to the<br> network that never stops...
 								</h2>
 							</div>
 						</div>
