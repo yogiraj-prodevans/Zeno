@@ -117,7 +117,7 @@ h1{
 </div>
 
 <div class="col-md-12 col-lg-12 col-xl-12 ">
-	<div class="row" style="margin-bottom: 2.5%;">
+	<div class="row" style="margin-bottom: 7%;">
 		<div class="col-md-3 col-lg-3 col-xl-3">
 		</div>
 		<div class="col-md-3 col-xs-12 col-lg-3 col-xl-3">

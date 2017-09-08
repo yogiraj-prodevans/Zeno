@@ -133,7 +133,7 @@ label.css-label
                 	
 	                	<div class="mainBlock3" style="color:black;">
 	                		<div class="row">
-		                		<div class="col-md-5 col-sm-5">
+		                		<div class="col-md-5 col-xs-12">
 		                			<h3 class="pb-20">Details</h3>
 			                		<h4 class="pb-10">Account No : ${user_details.getActid() } </h4>
 			                		<h4 class="pb-10">Name : ${user_details.getFirst_name() } ${user_details.getLast_name() } </h4>
@@ -147,9 +147,9 @@ label.css-label
 			                        </select>
 			                        
 			                    </div>
-			                     <div class="col-md-7 col-sm-7">
+			                     <div class="col-md-7 col-xs-12">
 			                    		
-			                    	<div class="col-md-12 col-sm-12">
+			                    	<div class="col-md-12 col-xs-12">
 			                    		<div class="row">
 			                    			<div class="col-md-6" style="padding-left:5px;">
 			                    				<h4 class="pb-10">Plan name  : <strong> ${topUp.getPlanName() }</strong> </h4>
@@ -163,7 +163,7 @@ label.css-label
 			                    		</div>
 			                    		<div class="row">
 			                    			
-					                    	<div class="col-md-6 col-sm-6">
+					                    	<div class="col-md-6 col-xs-6">
 				                        		
 							                    <input type="radio" name="payment_option" value="OPTCRDC" id="radio1" class="css-checkbox" />
 				                    			<label for="radio1" class="css-label radGroup1">Credit Card</label><br>
@@ -179,7 +179,7 @@ label.css-label
 		                    			
 		                    				</div>
 			                    			
-			                    			<div class="col-md-6 col-sm-6">
+			                    			<div class="col-md-6 col-xs-6">
 			                    				
 				                    			<input type="radio" name="payment_option" value="OPTMOBP" id="radio5" class="css-checkbox" />
 				                    			<label for="radio5" class="css-label radGroup1">Mobile Payments</label><br>
@@ -194,9 +194,9 @@ label.css-label
 									</div>
 
 				                	<div class="row">
-				                		<div class="col-md-7">
+				                		<div class="col-md-7 col-xs-7">
 				                		</div>
-				                		<div class="col-md-5">
+				                		<div class="col-md-5 col-xs-5">
 				                			<button class="btn billButton" type="submit" style="padding: 5px;">
 		                     				Confirm Payment
 		                     				</button>
