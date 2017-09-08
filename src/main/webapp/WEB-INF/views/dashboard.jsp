@@ -107,10 +107,6 @@
                 chart.draw(data, options);
             }
     </script>
-
-
-
-
 </head>
 
 
@@ -118,7 +114,7 @@
 
     <!-- BEGIN HEADER -->
     <div class="header">
-        <div class="container">
+        <div class="row">
             <a class="site-logo" href="#"> <img
                     src="corporate/img/logos/logo.png" alt="Stoic Zeno">
             </a> <a href="javascript:void(0);" class="mobi-toggler"><i
@@ -146,23 +142,17 @@
     <!-- Header END -->
 
 
-
+<div class="row">
 <div class="col-md-4 col-sm-12  firstRow pt-40" style="">
 	<h2 style="color: white; ">Manage your network</h2>
 </div>
 <div class="col-md-8 col-sm-12  pt-40"
 	style="background-color: #ecf0f1;min-height: 116px;">
 	<div class="col-md-12 col-sm-12">
-
-
             <h2 style="color: black;" class="currentBillFontforiPhone5">Welcome ${user_details.getFirst_name() }, to your One8 page</h2>
-
         </div>
-
-
-
     </div>
-
+</div>
 
 
     <div class="container">
@@ -197,7 +187,7 @@
 
                 </div>
             </div>
-            <div class="col-md-8 ">
+            <div class="col-md-8 " style="padding:unset;">
                 <div class="">
                     <div class="div2" id="curve_chart"></div>
                 </div>
