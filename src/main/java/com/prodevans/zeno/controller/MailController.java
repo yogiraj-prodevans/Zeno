@@ -17,9 +17,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.prodevans.zeno.dao.impl.DashboardDAOImpl;
 import com.prodevans.zeno.dao.impl.SendMailDAOImpl;
+import com.prodevans.zeno.pojo.InvoiceDetails;
 import com.prodevans.zeno.pojo.SendMailDetails;
 import com.prodevans.zeno.pojo.ServiceRequest;
+import com.prodevans.zeno.pojo.SessionDetails;
+import com.prodevans.zeno.pojo.UserDetails;
 
 
 @Controller
@@ -30,11 +34,29 @@ public class MailController
 	public SendMailDAOImpl getFeedbackDAOImpl() {
 		return feedbackDAOImpl;
 	}
+	
+	@Autowired
+	private DashboardDAOImpl DashboardImpl;
+
+	public void setDashboardImpl(DashboardDAOImpl dashboardImpl) {
+		DashboardImpl = dashboardImpl;
+	}
 
 	@RequestMapping(value = "/feedbackPage", method = RequestMethod.GET)
-	public ModelAndView feedbackPage(ModelMap model, HttpSession session) 
+	public ModelAndView feedbackPage(ModelMap model, HttpSession session) throws XmlRpcException 
 	{
-		return  new ModelAndView("feedback","feedbackDetails",new SendMailDetails());
+		if (session.getAttribute("user") == null) 
+		{
+			return  new ModelAndView("redirect:logout");
+		} 
+		else 
+		{
+			SessionDetails user = (SessionDetails) session.getAttribute("user");
+			UserDetails userdetails = DashboardImpl.getUserDetails(user.getActid());
+			model.addAttribute("user_details", user);
+			
+			return  new ModelAndView("feedback","feedbackDetails",new SendMailDetails());
+		}
 	}
 	
 	@RequestMapping(value = "/feedbackRequestPage", method = RequestMethod.POST)

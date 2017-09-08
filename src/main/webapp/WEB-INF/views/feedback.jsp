@@ -45,16 +45,16 @@
         <form:form role="form" action="feedbackRequestPage" method="post" modelAttribute="feedbackDetails" >
 		        <div class="row pb-40">
 		            <div class="col-md-6">
-		            	<form:input path="name" type="text" id="name" placeholder="Name" required="true"/>
+		            	<form:input path="name" type="text" id="name" placeholder="Name" value="${user_details.getFirst_name() }" required="true"/>
 		            </div>
 		            <div class="col-md-6 mb-pt-30">
-		            	<form:input path="mobile" type="text" id="mobile" placeholder="Mobile" required="true" class="mobileMargin"/>
+		            	<form:input path="mobile" type="text" id="mobile" placeholder="Mobile" required="true" value="${user_details.getMobileno() }" class="mobileMargin"/>
 		            </div>
 		        </div>
 		        
 		        <div class="row pb-40">
 		            <div class="col-md-6">
-		            	<form:input path="account_id" type="text" id="account_id" placeholder="One8 ID" required="true" />
+		            	<form:input path="account_id" type="text" id="account_id" placeholder="One8 ID" value="${user_details.getActid() }" readonly="true" />
 		            </div>
 		        </div>
 		        
