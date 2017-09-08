@@ -38,13 +38,14 @@ h1{
 	padding-left: 1px;
 	padding-right:1px;
 }
-.mainBlock4
+.mainBlock41
 {
 	width :310px;
 	max-height:260px;
 	min-height:260px;
 	color:white;
 	padding:4%;
+	padding-top:10px;
 	background-color: #FFB819;
 	text-align: center;
 	-webkit-box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
@@ -93,34 +94,10 @@ h1{
 
 </head>
 <body class="corporate" style="font-family: Roboto;">
-	
-	<!-- BEGIN HEADER -->
-	<div class="header">
-		<div class="container">
-			<a class="site-logo" href="#"> <img
-				src="corporate/img/logos/logo.png" alt="Stoic Zeno">
-			</a> <a href="javascript:void(0);" class="mobi-toggler"><i
-				class="fa fa-bars"></i></a>
-			<!-- BEGIN NAVIGATION -->
-			<div class="header-navigation pull-right font-transform-inherit"
-				style="font-size: 12px">
-				<ul>
-					<li class="dropdown active"></li>
-					<li><a href="${pageContext.request.contextPath }/dashboard">HOME</a></li>
-					<li><a
-						href="${pageContext.request.contextPath }/billingPayment">MAKE
-							PAYMENT</a></li>
-					<li><a href="${pageContext.request.contextPath }/service">SERVICE
-							REQUEST</a></li>
-					
-					<li class="active"><a href="${pageContext.request.contextPath }/profile">PROFILE</a></li>
-                    <li><a href="${pageContext.request.contextPath }/logout">LOGOUT</a></li>
-				</ul>
-			</div>
-			<!-- END NAVIGATION -->
-		</div>
-	</div>
-	<!-- Header END -->
+
+<!--  include menubar -->
+<jsp:include page="component/menubar.jsp"></jsp:include>	
+
 	
 <div class="col-md-12 firstRow " style="background-image: url('corporate/img/back.png');padding-top:3%">
     <h1 style="margin-left:5%;padding:unset;">Get more out of One8</h1>
@@ -136,11 +113,11 @@ h1{
 </div>
 
 <div class="col-md-12 col-lg-12 col-xl-12 container">
-	<div class="row">
+	<div class="row" style="margin-bottom: 2.5%;">
 		<div class="col-md-3 col-lg-3 col-xl-3">
 		</div>
 		<div class="col-md-3 col-xs-6 col-lg-3 col-xl-3">
-			<div class="mainBlock4" style="background-color: #2980b9;">
+			<div class="mainBlock41" style="background-color: #2980b9;">
 				<div class="row">
 					<div class="col-md-4 col-xs-3"></div>
 					<div class="col-md-4 col-xs-6">
@@ -162,7 +139,7 @@ h1{
 			</div>
 		</div>
 		<div class="col-md-3 col-xs-6 col-lg-3 col-xl-3">
-			<div class="mainBlock4" style="background-color: #e74c3c;">
+			<div class="mainBlock41" style="background-color: #e74c3c;">
 				<div class="row">
 					<div class="col-md-4 col-xs-3"></div>
 					<div class="col-md-4 col-xs-6">
