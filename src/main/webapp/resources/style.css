@@ -234,6 +234,9 @@ a {
 .pb-40 {
 	padding-bottom: 40px;
 }
+.pb-50 {
+	padding-bottom: 50px;
+}
 
 .pb-30 {
 	padding-bottom: 30px;
@@ -578,14 +581,17 @@ a:hover {
     border-radius: 50%;
     background: #F44336;
     position: fixed;
-    top: 150px;
+    top: 220px;
     right: 20px;
     cursor: pointer;
     box-shadow: 0px 2px 5px #666;
 }
-.fv{
-    font-size: 9px;
+.fv
+{
+	padding-top: 30%;
+    font-size: 12px;
     color: #ffffff;
+    text-align: center;
 }
 #floating-button1{
 
@@ -594,7 +600,7 @@ a:hover {
     border-radius: 50%;
     background: #ffb81c;
     position: fixed;
-    top: 220px;
+    top: 290px;
     right: 20px;
     cursor: pointer;
     box-shadow: 0px 2px 5px #666;

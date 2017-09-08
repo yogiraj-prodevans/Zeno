@@ -142,7 +142,7 @@
     <!-- Header END -->
 
 
-<div class="row">
+<div class="container1">
 <div class="col-md-4 col-sm-12  firstRow pt-40" style="">
 	<h2 style="color: white; ">Manage your network</h2>
 </div>
@@ -160,7 +160,7 @@
 
             <div class="col-md-4 ">
 
-                <div class="mainBlock4" style="background-color: #e74c3c;">
+                <div class="mainBlock4" style="background-color: #F44336;">
                     <h3 class="pb-10">Your One8 account</h3>
                     <h4 >Account Id :
                         ${user_details.getActid() }</h4>

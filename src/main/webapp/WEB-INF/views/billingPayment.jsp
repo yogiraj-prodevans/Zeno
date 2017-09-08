@@ -94,7 +94,7 @@
 
 
 			<div class="col-md-4 col-sm-6">
-				<div class="mainBlock4" style="background-color: #ffbb19;">
+				<div class="mainBlock4" style="background-color: #ffb81c;">
 					<h3 class="pb-20">Your One8 account</h3>
 					<h4 style="color: black;">Account Id :
 						${user_details.getActid() }</h4>
@@ -117,7 +117,7 @@
 
 
 			<div class="col-md-4 col-sm-6">
-				<div class="mainBlock4" style="background-color: #e74c3c;">
+				<div class="mainBlock4" style="background-color: #F44336;">
 					<h3 class="pb-20">Payment</h3>
 					<h4 class="pb-20">Account Id : ${user_details.getActid() }</h4>
 					<h2>&#8377; ${invoiceDetails.getAmount() }</h2>

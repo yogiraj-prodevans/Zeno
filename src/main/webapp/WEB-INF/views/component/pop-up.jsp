@@ -15,28 +15,25 @@
 </ul>
 <!-- End Code For Floating Points (Current Plan and Top Up) -->
 
- <div id="container-floating">
-        <div id="floating-button" data-toggle="tooltip">
-            <p class="plus valign" style="padding-top: 8px;" >
-                
-                <br>
-                <a class="external fv" href="${pageContext.request.contextPath }/topup">
+<a href="${pageContext.request.contextPath }/topup">
+	<div id="container-floating"> 		
+    	<div id="floating-button" data-toggle="tooltip">
+        	<h5 class="fv">   
                     Top Up
-                </a>
-            </p>
+              </h5>  
         </div>
     </div>
-<div id="container-floating">
-    <div id="floating-button1" data-toggle="tooltip">
-        <p class="plus valign" style="padding-top: 8px;" >
-            
-            <br>
-            <a class="external fv" href="${pageContext.request.contextPath }/YourPlan">
-                Your Plan
-            </a>
-        </p>
+</a>
+
+<a href="${pageContext.request.contextPath }/YourPlan">
+	<div id="container-floating">
+    	<div id="floating-button1" data-toggle="tooltip">
+        	<h5 class="fv">   
+                    Your Plan
+              </h5>  
+        </div>
     </div>
-</div>  
+</a>
 
 
 

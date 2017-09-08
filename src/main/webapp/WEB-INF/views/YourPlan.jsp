@@ -38,54 +38,40 @@ h1{
 	padding-left: 1px;
 	padding-right:1px;
 }
-.mainBlock4
+.mainBlock41
 {
-	width :100%;
-	max-height:230px;
-	min-height:230px;
+	width :310px;
+	max-height:240px;
+	min-height:240px;
 	color:white;
 	padding:4%;
+	padding-top:10px;
 	background-color: #FFB819;
 	text-align: center;
+	margin:auto;
+	margin-top:5%;
 	-webkit-box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
 	-moz-box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
 	box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
 }
-.mainBlock4_1
+.circle-Font
 {
-	width :unset;
-	min-height:unset;
-	color:white;
-	margin-left:15%;
-	margin-right:3%;
-	margin-top:5%;
-	padding:4%;
-	background-color: #FFB819;
+	min-height:90px;
+	max-width:90px;
+	border: 3px solid white;
+	border-radius: 50%;
+	font-size: 58px;
+	font-weight: bold;
 	text-align: center;
-	-webkit-box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
-	-moz-box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
-	box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
-}
-.mainBlock4_2
-{
-	width :unset;
-	min-height:unset;
-	color:white;
-	margin-right:15%;
-	margin-left:3%;
-	margin-top:5%;
-	padding:4%;
-	background-color: #e74c3c;
-	text-align: center;
-	-webkit-box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
-	-moz-box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
-	box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
+	margin-left: 8%;
+	
 }
 .fs-44
 {
 	font-size: 44px;
 }
-@media (max-width : 680px) 
+
+@media (max-width : 990px) 
 {
 	.paddingLeftMobile
 	{
@@ -97,15 +83,20 @@ h1{
 		padding-right: 5%;
 		margin-left: -5%;
 	}
+	.col-md-4
+	{
+		padding-left: 7% !important;
+		padding-right: 7% !important;
+	}
 	.fs-44
 	{
 		font-size: 32px;
 	}
 	.mainBlock4
 	{
-		min-height: 230px;
-		max-height:23px;
-		min-width: 94%;
+		width :310px;
+		max-height:260px;
+		min-height:260px;
 		margin: 2%;
 	}
 }
@@ -122,40 +113,36 @@ h1{
 </div>
 	
 <div class="container">
-		<div class="col-md-1 col-xs-1">
+		<div class="col-md-1">
 		</div>
-		<div class="col-md-10 col-xs-11">
+		<div class="col-md-10 col-xs-12">
 			<h1>Your plan</h1>
 		</div>
 </div>
 
-<div class="container1">
-	<div class="col-md-12">
-		<div class="col-md-3 col-xs-1">
+<div class="col-md-12 col-lg-12 col-xl-12 ">
+	<div class="row" style="margin-bottom: 7%;">
+		<div class="col-md-3 col-lg-3 col-xl-3">
 		</div>
-		<div class="col-md-3 col-xs-5">
-			<div class="mainBlock4">
-				<h1 class="pb-40">${plan}</h1>
+		<div class="col-md-3 col-xs-12 col-lg-3 col-xl-3">
+			<div class="mainBlock41" style="background-color: #ffb81c;">
+				<h1 class="pb-50">${plan}</h1>
 				<h1 class="fs-44">&#8377; 849/-</h1>
 				<h3 class="pb-10">per month</h3>
 			</div>
 		</div>
-		<div class="col-md-3 col-xs-5">
-			<div class="mainBlock4" style="background-color: #e74c3c;">
+		<div class="col-md-3 col-xs-12 col-lg-3 col-xl-3">
+			<div class="mainBlock41" style="background-color: #F44336;">
 				<h1 class="fs-44">${FUP} GB</h1>
 				<h3 class="pb-40">data</h3>
 				<h3>512 Kbps</h3>
 				<h3>Post FUP speed</h3>
 			</div>
 		</div>
-		<div class="col-md-3 col-xs-1">
+		<div class="col-md-3 col-lg-3 col-xl-3 ">
 		</div>
 	</div>
 </div>
-
-
-
-
 
 
 	<jsp:include page="component/pop-up.jsp"></jsp:include>

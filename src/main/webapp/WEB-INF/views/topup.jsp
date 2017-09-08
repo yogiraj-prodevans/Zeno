@@ -33,11 +33,6 @@ h1{
 {
 	padding: 0px;
 }
-.col-md-4
-{
-	padding-left: 7% !important;
-	padding-right: 7% !important;
-}
 .col-md-6, col-sm-8
 {
 	padding-left: 1px;
@@ -84,6 +79,11 @@ h1{
 		padding-left: 0px;
 		padding-right: 5%;
 		margin-left: -5%;
+	}
+	.col-md-4
+	{
+		padding-left: 7% !important;
+		padding-right: 7% !important;
 	}
 	.fs-44
 	{
@@ -137,7 +137,7 @@ h1{
 				</div>
 				<h1>&#8377; 120</h1>
 				<h4>512 Kbps * POST FUP</h4>
-				<a href="">
+				<a href="toup50GB?planName=Add on 5GB">
 					<div class="btn billButton" style="border: 1px solid white;background-color: inherit;">
 						BUY NOW
 					</div>
@@ -145,7 +145,7 @@ h1{
 			</div>
 		</div>
 		<div class="col-md-3 col-xs-12 col-lg-3 col-xl-3">
-			<div class="mainBlock41" style="background-color: #e74c3c;">
+			<div class="mainBlock41" style="background-color: #F44336;">
 				<div class="row">
 					<div class="col-md-4 col-xs-3"></div>
 					<div class="col-md-4 col-xs-6">
@@ -159,8 +159,8 @@ h1{
 				</div>
 				<h1>&#8377; 220</h1>
 				<h4>512 Kbps * POST FUP</h4>
-				<a href="">
-					<div class="btn billButton" style="border: 1px solid white;">
+				<a href="toup50GB?planName=Add on 10GB">
+					<div class="btn billButton" style="border: 1px solid white;background-color: #F44336;">
 						BUY NOW
 					</div>
 				</a>

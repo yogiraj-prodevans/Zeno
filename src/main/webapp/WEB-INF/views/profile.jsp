@@ -109,7 +109,7 @@ h1{
 <div class="container">
 	<div class="col-md-121">
 		<div class="col-md-6 col-sm-8">
-			<div class="mainBlock4" style="background-color: #FFB819">
+			<div class="mainBlock4" style="background-color: #ffb81c">
 				<h2 class="pb-20 pt-20">Account details</h2>
 				
 				<div class="pb-10">
@@ -141,7 +141,7 @@ h1{
 		</div>
 		
 		<div class="col-md-6 col-sm-8">
-			<div class="mainBlock4" style="background-color: #FFB819">
+			<div class="mainBlock4" style="background-color: #ffb81c">
 				
 				<div class="pb-10 pt-30">
 					<div class="col-md-4 col-xs-4">
