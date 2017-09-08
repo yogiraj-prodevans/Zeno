@@ -33,6 +33,11 @@ h1{
 {
 	padding: 0px;
 }
+.col-md-4
+{
+	padding-left: 7% !important;
+	padding-right: 7% !important;
+}
 .col-md-6, col-sm-8
 {
 	padding-left: 1px;
@@ -48,6 +53,8 @@ h1{
 	padding-top:10px;
 	background-color: #FFB819;
 	text-align: center;
+	margin:auto;
+	margin-top:5%;
 	-webkit-box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
 	-moz-box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
 	box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
@@ -98,11 +105,10 @@ h1{
 <!--  include menubar -->
 <jsp:include page="component/menubar.jsp"></jsp:include>	
 
+<div class="col-md-12 firstRow pt-20" style="background-image: url('img/yellow_long.png');">
+    <h1 style="margin-left:5%;">Get more out of One8</h1>
+</div>
 	
-<div class="col-md-12 firstRow " style="background-image: url('corporate/img/back.png');padding-top:3%">
-    <h1 style="margin-left:5%;padding:unset;">Get more out of One8</h1>
-</div>    
-
 <div class="container">
 		<div class="col-md-1">
 		</div>
@@ -112,11 +118,11 @@ h1{
 		</div>
 </div>
 
-<div class="col-md-12 col-lg-12 col-xl-12 container">
+<div class="col-md-12 col-lg-12 col-xl-12 ">
 	<div class="row" style="margin-bottom: 2.5%;">
 		<div class="col-md-3 col-lg-3 col-xl-3">
 		</div>
-		<div class="col-md-3 col-xs-6 col-lg-3 col-xl-3">
+		<div class="col-md-3 col-xs-12 col-lg-3 col-xl-3">
 			<div class="mainBlock41" style="background-color: #2980b9;">
 				<div class="row">
 					<div class="col-md-4 col-xs-3"></div>
@@ -125,7 +131,7 @@ h1{
 							5
 						</h1>
 					</div>
-					<div class="col-md-4 col-xs-3" style="padding-top: 10%;text-align: left;">
+					<div class="col-md-4 col-xs-3" style="padding-top: 10%;text-align: left;padding-left: 0% !important;">
 						<h2>GB</h2>
 					</div>
 				</div>
@@ -138,7 +144,7 @@ h1{
 				</a>
 			</div>
 		</div>
-		<div class="col-md-3 col-xs-6 col-lg-3 col-xl-3">
+		<div class="col-md-3 col-xs-12 col-lg-3 col-xl-3">
 			<div class="mainBlock41" style="background-color: #e74c3c;">
 				<div class="row">
 					<div class="col-md-4 col-xs-3"></div>
@@ -147,7 +153,7 @@ h1{
 							10
 						</h1>
 					</div>
-					<div class="col-md-4 col-xs-3" style="padding-top: 10%;text-align: left;">
+					<div class="col-md-4 col-xs-3" style="padding-top: 10%;text-align: left;padding-left: 0% !important;">
 						<h2>GB</h2>
 					</div>
 				</div>
@@ -160,7 +166,7 @@ h1{
 				</a>
 			</div>
 		</div>
-		<div class="col-md-3 col-lg-3 col-xl-3">
+		<div class="col-md-3 col-lg-3 col-xl-3 ">
 		</div>
 	</div>
 </div>

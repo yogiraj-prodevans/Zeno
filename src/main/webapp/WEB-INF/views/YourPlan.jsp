@@ -117,11 +117,10 @@ h1{
 <!--  include menubar -->
 <jsp:include page="component/menubar.jsp"></jsp:include>	
 
+<div class="col-md-12 firstRow pt-20" style="background-image: url('corporate/img/back.png');">
+    <h1 style="margin-left:5%;">Get more out of One8</h1>
+</div>
 	
-<div class="col-md-12 firstRow " style="background-image: url('corporate/img/back.png');padding-top:3%">
-    <h1 style="margin-left:5%;padding:unset;">Get more out of One8</h1>
-</div>    
-
 <div class="container">
 		<div class="col-md-1 col-xs-1">
 		</div>
