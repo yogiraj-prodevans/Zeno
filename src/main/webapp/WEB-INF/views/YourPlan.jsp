@@ -41,8 +41,8 @@ h1{
 .mainBlock41
 {
 	width :310px;
-	max-height:240px;
-	min-height:240px;
+	max-height:260px;
+	min-height:260px;
 	color:white;
 	padding:4%;
 	padding-top:10px;
@@ -88,10 +88,6 @@ h1{
 		padding-left: 7% !important;
 		padding-right: 7% !important;
 	}
-	.fs-44
-	{
-		font-size: 32px;
-	}
 	.mainBlock4
 	{
 		width :310px;
@@ -104,7 +100,7 @@ h1{
 
 </head>
 <body class="corporate" style="font-family: Roboto;">
-	
+
 <!--  include menubar -->
 <jsp:include page="component/menubar.jsp"></jsp:include>	
 
@@ -121,12 +117,12 @@ h1{
 </div>
 
 <div class="col-md-12 col-lg-12 col-xl-12 ">
-	<div class="row" style="margin-bottom: 7%;">
+	<div class="row" style="margin-bottom: 2.5%;">
 		<div class="col-md-3 col-lg-3 col-xl-3">
 		</div>
 		<div class="col-md-3 col-xs-12 col-lg-3 col-xl-3">
 			<div class="mainBlock41" style="background-color: #ffb81c;">
-				<h1 class="pb-50">${plan}</h1>
+				<h1 class="pb-50">Basic</h1>
 				<h1 class="fs-44">&#8377; 849/-</h1>
 				<h3 class="pb-10">per month</h3>
 			</div>
@@ -143,6 +139,10 @@ h1{
 		</div>
 	</div>
 </div>
+
+
+
+
 
 
 	<jsp:include page="component/pop-up.jsp"></jsp:include>
