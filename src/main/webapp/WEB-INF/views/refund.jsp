@@ -29,7 +29,7 @@
 
 
 <div class="col-md-12 firstRow pt-20" style="background-image: url('corporate/img/back.png');">
-    <h1 style="margin-left:4%;">Refund  And  Cancellation</h1>
+    <h1 style="margin-left: 4%;" >Refund  And  Cancellation</h1>
 </div>
 
 	

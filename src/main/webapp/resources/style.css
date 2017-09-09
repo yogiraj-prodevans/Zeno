@@ -261,7 +261,10 @@ a {
 .pt-40{
 	padding-top: 40px;
 }
-
+.ml-4
+{
+	margin-left: 4%;
+}
 
 label {
 	font-weight: 300;

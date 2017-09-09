@@ -27,7 +27,7 @@
 <jsp:include page="component/menubar.jsp"></jsp:include>	
       
 <div class="col-md-12 firstRow pt-20" style="background-image: url('img/red_long.png');">
-    <h1 style="margin-left:5%;">Privacy Policy</h1>
+    <h1 style="margin-left: 4%;">Privacy Policy</h1>
 </div>
 
                 

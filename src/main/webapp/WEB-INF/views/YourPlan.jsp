@@ -105,7 +105,7 @@ h1{
 <jsp:include page="component/menubar.jsp"></jsp:include>	
 
 <div class="col-md-12 firstRow pt-20" style="background-image: url('corporate/img/back.png');">
-    <h1 style="margin-left:5%;">Get more out of One8</h1>
+    <h1 style="margin-left: 4%;">Get more out of One8</h1>
 </div>
 	
 <div class="container">

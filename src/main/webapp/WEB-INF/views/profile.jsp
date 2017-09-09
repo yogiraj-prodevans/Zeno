@@ -76,7 +76,7 @@ h1{
 	
 	<!-- BEGIN HEADER -->
 	<div class="header">
-		<div class="container">
+		<div class="row">
 			<a class="site-logo" href="#"> <img
 				src="corporate/img/logos/logo.png" alt="Stoic Zeno">
 			</a> <a href="javascript:void(0);" class="mobi-toggler"><i
@@ -92,9 +92,9 @@ h1{
 							PAYMENT</a></li>
 					<li><a href="${pageContext.request.contextPath }/service">SERVICE
 							REQUEST</a></li>
-					
+
 					<li class="active"><a href="${pageContext.request.contextPath }/profile">PROFILE</a></li>
-                    <li><a href="${pageContext.request.contextPath }/logout">LOGOUT</a></li>
+					<li><a href="${pageContext.request.contextPath }/logout">LOGOUT</a></li>
 				</ul>
 			</div>
 			<!-- END NAVIGATION -->
@@ -103,7 +103,7 @@ h1{
 	<!-- Header END -->
 	
 <div class="col-md-12 firstRow " style="background-image: url('corporate/img/back.png');">
-    <h1 style="margin-left:5%;">Login contact and details.</h1>
+    <h1 style="margin-left: 4%;">Login contact and details.</h1>
 </div>
 
 <div class="container">
