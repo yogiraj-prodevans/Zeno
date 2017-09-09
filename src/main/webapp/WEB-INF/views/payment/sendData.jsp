@@ -107,14 +107,16 @@ label.css-label
 </head>
 <body class="corporate">
 
+<!--  include menubar -->
+<jsp:include page="../component/menubar.jsp"></jsp:include>	
 
-<jsp:include page="../component/menubar.jsp"></jsp:include>
-        
-<!-- BEGIN STEPS -->
 
-<div class="col-md-12 firstRow" style="background-image: url('corporate/img/back.png');">
-    <h1 style="margin-left:5%;" class="pt-40">Bill Summary</h1>
-</div>    
+<div class="col-md-12 firstRow pt-20" style="background-image: url('corporate/img/back.png');">
+    <h1 style="margin-left: 4%;">Bill Summary</h1>
+</div>
+            
+ <!-- END STEPS -->
+
 
 <div class="main">
 	<div class="container" >  

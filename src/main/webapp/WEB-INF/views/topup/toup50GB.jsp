@@ -97,13 +97,14 @@ label.css-label
 </head>
 <body class="corporate">
             
+<!--  include menubar -->
+<jsp:include page="../component/menubar.jsp"></jsp:include>	
+
+
+<div class="col-md-12 firstRow pt-20" style="background-image: url('corporate/img/back.png');">
+    <h1 style="margin-left: 4%;">Add new top up</h1>
+</div>
             
-<jsp:include page="../component/menubar.jsp"></jsp:include>
-
- <div class="col-md-12 firstRow" style="background-image: url('corporate/img/back.png');">
-    <h1 style="margin-left:5%;" class="pt-40">Add new top up.</h1>
-</div>    
-
  <!-- END STEPS -->
 
 
