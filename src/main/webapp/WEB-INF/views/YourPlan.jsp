@@ -70,6 +70,10 @@ h1{
 {
 	font-size: 44px;
 }
+#floating-button1
+{
+	background: #9cafad !important;
+}
 
 @media (max-width : 990px) 
 {
@@ -117,7 +121,7 @@ h1{
 </div>
 
 <div class="col-md-12 col-lg-12 col-xl-12 ">
-	<div class="row" style="margin-bottom: 7%;">
+	<div class="row" style="margin-bottom: 4.5%;">
 		<div class="col-md-3 col-lg-3 col-xl-3">
 		</div>
 		<div class="col-md-3 col-xs-12 col-lg-3 col-xl-3">

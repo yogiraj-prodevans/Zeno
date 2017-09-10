@@ -67,6 +67,10 @@ h1{
 	
 }
 
+#floating-button
+{
+	background: #9cafad !important;
+}
 
 @media (max-width : 990px) 
 {

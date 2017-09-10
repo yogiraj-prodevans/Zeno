@@ -20,6 +20,16 @@
 <jsp:include page="component/css.jsp"></jsp:include>
 
 
+<style type="text/css">
+.firstRow
+{
+     background-image: url('img/blue_small.png');
+     padding-left: 5%;
+     min-height: 116px;
+     background-size: cover;
+}
+</style>
+
 </head>
 <body class="corporate">
 
@@ -53,23 +63,22 @@
 	<!-- Header END -->
 
 
-
-<div class="col-md-4 col-sm-12  firstRow billPaymentImage pt-20" style="background-size: cover;">
-	<h1 style="color: white; margin-left: 15%;">Bill payment</h1>
+<div class="col-md-4 col-sm-12  firstRow pt-20">
+	<h1 style="color: white; ">Bill payment</h1>
 </div>
-<div class="col-md-8 col-sm-12 firstRow pt-20"
-	style="background-color: #ecf0f1;">
+
+<div class="col-md-8 col-sm-12 pt-20" style="background-color: #ecf0f1;min-height: 116px;">
 	<div class="col-md-6 col-sm-12">
 
-		<h1 style="color: black;" class="currentBillFontforiPhone5">Current
-			bill &#8377; ${invoiceDetails.getAmount() }</h1>
+		<h1 style="color: black;" class="currentBillFontforiPhone5">
+			Current bill &#8377; ${invoiceDetails.getAmount() }
+		</h1>
 
 	</div>
 	<div class=" col-md-6 col-sm-12" style="margin-top: 1%;">
 
-		<a href="viewBill" class="btn billButton" target="_blank"> VIEW BILL </a> <a
-			href="payment" class="btn billButton"> PAY BILL </a>
-
+		<a href="viewBill" class="btn billButton" target="_blank"> VIEW BILL </a> 
+		<a href="payment" class="btn billButton"> PAY BILL </a>
 
 	</div>
 

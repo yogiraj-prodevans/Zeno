@@ -29,10 +29,6 @@
                 max-width: 95%;
             }
 
-            .firstRow{
-                background-image: url('corporate/img/back.png');
-                padding-left: 5%;
-            }
             .div2{
                 max-width : unset;
                 margin-top:7.5%;
@@ -47,6 +43,7 @@
             .firstRow{
                 background-image: url('img/red_small.png');
                 background-size: cover;
+                padding-left: 5%;
             }
         </style>
 
