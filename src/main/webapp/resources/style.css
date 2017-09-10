@@ -490,7 +490,8 @@ a:hover {
 	text-shadow: 0.2px 0.2px white;
 }
 /* iphone 6 plus*/
-@media ( max-width : 530px) {
+@media ( max-width : 530px) 
+{
 	.mainBlock3 {
 		width: 88%;
 		min-height: 40%;

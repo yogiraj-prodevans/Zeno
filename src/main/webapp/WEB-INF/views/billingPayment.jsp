@@ -28,6 +28,14 @@
      min-height: 116px;
      background-size: cover;
 }
+/* iphone 6 plus*/
+@media ( max-width : 530px) 
+{
+	.mainBlock4
+	{
+		max-width: 98% !important;
+	}
+}
 </style>
 
 </head>

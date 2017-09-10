@@ -45,6 +45,14 @@
                 background-size: cover;
                 padding-left: 5%;
             }
+            /* iphone 6 plus*/
+			@media ( max-width : 530px) 
+			{
+				.mainBlock4
+				{
+					max-width: 100% !important;
+				}
+			}
         </style>
 
         <script type="text/javascript"
