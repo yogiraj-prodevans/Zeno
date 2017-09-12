@@ -200,4 +200,13 @@ public class DashboardConroller {
 		}
 		return "redirect:/login";
 	}
+	
+	@RequestMapping(value = "/slider", method = RequestMethod.GET)
+	public String slider(Locale locale, Model model, HttpSession session) {
+		
+			return "slider";
+		
+	}
+	
+	
 }
