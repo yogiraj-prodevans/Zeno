@@ -125,7 +125,7 @@ h1{
 						<h3 class="font-h3">Password:</h3>
 					</div>
 					<div class="col-md-7 col-xs-8">
-						<h3 class="font-h3">..............</h3>
+						<h3 class="font-h3">&#9679; &#9679; &#9679; &#9679; &#9679; &#9679; &#9679; &#9679;</h3>
 					</div>
 				</div>
 				<div class="pb-10">

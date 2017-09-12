@@ -140,7 +140,7 @@ h1{
 					</div>
 				</div>
 				<h1>&#8377; 120</h1>
-				<h4>512 Kbps * POST FUP</h4>
+				<h4>512 Kbps  &#9679; POST FUP</h4>
 				<a href="toup50GB?planName=Add on 5GB">
 					<div class="btn billButton" style="border: 1px solid white;background-color: inherit;">
 						BUY NOW
@@ -162,7 +162,7 @@ h1{
 					</div>
 				</div>
 				<h1>&#8377; 220</h1>
-				<h4>512 Kbps * POST FUP</h4>
+				<h4>512 Kbps &#9679; POST FUP</h4>
 				<a href="toup50GB?planName=Add on 10GB">
 					<div class="btn billButton" style="border: 1px solid white;background-color: #F44336;">
 						BUY NOW

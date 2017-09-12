@@ -40,7 +40,7 @@
 			<div class="">
 				<div id="accordion1_1" class="panel-collapse collapse in">
 					<div class="panel-body pt-40">
-						<i class=" fa fa-hand-o-right  "></i> No Refund of fixed
+						<i class=" fa fa-hand-o-right" style="margin-top: 10%;"></i> No Refund of fixed
 						duration pack or Cancellation of payment transaction is
 						allowed. Any disputes in regards to payments/ refund of
 						transaction(s) due to technical reasons are subject to
