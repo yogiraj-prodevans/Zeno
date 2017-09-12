@@ -75,10 +75,10 @@ background-position:right center;
         
         <div class="row pb-40">
             <div class="col-md-6">
-                <form:input path="name" type="text" id="name" placeholder="Name" required="true"/>        
+                <form:input path="name" type="text" id="name" placeholder="Name" required="true" style="width:97%;"/>        
             </div>
             <div class="col-md-6 mb-pt-30">
-            	<form:input path="mobile" type="text" id="mobile" placeholder="Mobile" required="true" class="mobileMargin"/>
+            	<form:input path="mobile" type="text" id="mobile" placeholder="Mobile" required="true" class="mobileMargin" />
             </div>
         </div>
         
@@ -197,15 +197,12 @@ background-position:right center;
         <div class="row">
         	<h3 style="padding-left: 1%;">Tell us more</h3>
             <div class="col-md-12">
-            	<form:textarea path="message" id="message" class="form-control" style="height:30%; width:90%; border: 0.4px solid #bdc3c7; resize: none; color:black; border-radius: 0.4px;font-size: 16px;" />
+            	<form:textarea path="message" id="message" class="form-control" style="height:30%; width:100%; border: 0.4px solid #bdc3c7; resize: none; color:black; border-radius: 0.4px;font-size: 16px;" />
             </div>
+            <div class="col-md-12" style="margin-bottom: 2%; text-align: right;">
+				<button class="btn billButton" type="submit">SEND NOW</button>
+			</div>
         </div>
-        <div class="row col-md-2" style="margin-left:%; margin-bottom: 5%;">
-            <button class="btn billButton" type="submit">Submit</button>
-        </div>
-        
- 
-    
     
 </form:form>    
   </div> 

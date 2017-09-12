@@ -106,7 +106,7 @@ h1{
     <h1 style="margin-left: 4%;">Login contact and details.</h1>
 </div>
 
-<div class="container">
+<div class="container" style="margin-bottom: 5%;">
 	<div class="col-md-121">
 		<div class="col-md-6 col-sm-8">
 			<div class="mainBlock4" style="background-color: #ffb81c">
@@ -190,8 +190,8 @@ h1{
 
 					<form:form role="form" action="profile/change-pass" method="post" modelAttribute="change_pass">
 						<form:input type="hidden"  style="margin-bottom:40px;" path="actid" readonly="true" />
-						<form:input path="password" type="password" style="margin-bottom:30px;" placeholder="Enter Password" required="true"/>
-						<form:input path="confirm_password" type="password" style="margin-bottom:20px;" placeholder="Confirm Password" required="true"/>
+						<form:input path="password" type="password" style="margin-bottom:30px;" placeholder="Enter Password" required="true" value=""/>
+						<form:input path="confirm_password" type="password" style="margin-bottom:20px;" placeholder="Confirm Password" required="true" value=""/>
 						<button type="submit" class="btn billButton pull-right" style="">UPDATE PASSWORD</button>
 					</form:form>
 					

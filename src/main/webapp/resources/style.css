@@ -455,21 +455,42 @@ a:hover {
 .blackShadow {
 	text-shadow: 0.2px 0.2px black;
 }
-
-.billButton {
-	background-color: #e74c3c;
-	color: #ecf0f1;
-	min-height: 25px;
-	text-align: center;
-	padding: unset;
-	padding-right: 5%;
-	padding-left: 5%;
-	margin-top: 15px;
-	margin-bottom: 10px;
-	margin-right: 10px;
-	font-size: 20px;
-	border-radius: unset;
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    margin-top:10px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
 }
+.billButton 
+{
+	font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    border-radius: 0px;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-indent: 0px;
+    text-shadow: none;
+    background-color: #F44336;
+    border-color: #F44336;
+    color: white;
+}
+
 .btn:hover{
 	text-decoration: none;
 	color: white;
@@ -586,16 +607,20 @@ a:hover {
     background: #F44336;
     position: fixed;
     top: 220px;
-    right: 40px !important;
+    right: 40px;
     cursor: pointer;
     box-shadow: 0px 2px 5px #666;
 }
 .fv
 {
-	padding-top: 30%;
-    font-size: 12px;
-    color: #ffffff;
-    text-align: center;
+	color:white;
+	text-align:center;
+	font-size: 12px;
+	line-height: 5px;
+	letter-spacing: 0;
+	-webkit-margin-before: 0.25em;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
 }
 #floating-button1{
 
@@ -605,7 +630,7 @@ a:hover {
     background: #ffb81c;
     position: fixed;
     top: 290px;
-    right: 40px !important;
+    right: 40px;
     cursor: pointer;
     box-shadow: 0px 2px 5px #666;
 }
@@ -619,7 +644,7 @@ a:hover {
     background: #9cafad;
     position: fixed;
     top: 160px;
-    right: 40px !important;
+    right: 40px;
     cursor: pointer;
     box-shadow: 0px 2px 5px #666;
 }

@@ -17,20 +17,18 @@
 
 <a href="${pageContext.request.contextPath }/topup">
 	<div id="container-floating"> 		
-    	<div id="floating-button" data-toggle="tooltip">
-        	<h5 class="fv">   
-                    Top Up
-              </h5>  
+    	<div id="floating-button" data-toggle="tooltip" style="right: 40px;">
+        	<h6 class="fv" style="padding-top: 18px;">TOP</h6>
+        	<h6 class="fv">UP</h6>  
         </div>
     </div>
 </a>
 
 <a href="${pageContext.request.contextPath }/YourPlan">
 	<div id="container-floating">
-    	<div id="floating-button1" data-toggle="tooltip">
-        	<h5 class="fv">   
-                    Your Plan
-              </h5>  
+    	<div id="floating-button1" data-toggle="tooltip" style="right: 40px;">
+        	<h6 class="fv" style="padding-top: 18px;">YOUR</h6>
+        	<h6 class="fv">PLAN</h6>  
         </div>
     </div>
 </a>

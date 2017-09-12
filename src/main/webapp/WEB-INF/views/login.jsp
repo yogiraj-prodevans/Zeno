@@ -76,13 +76,7 @@ body {
 			<!-- BEGIN NAVIGATION -->
 			<div class="header-navigation pull-right font-transform-inherit"
 				style="font-size: 12px">
-				<ul>
-					<li class="dropdown active"></li>
-					<li class="active"><a href="${contextPath}/login">Login</a></li>
-					<!--  <li>
-                    <a href="${contextPath}/register">Register</a>
-                  </li>-->
-				</ul>
+				
 			</div>
 			<!-- END NAVIGATION -->
 		</div>
@@ -101,8 +95,8 @@ body {
 								</h2>
 							</div>
 						</div>
-						<div class="col-md-4 col-sm-4  pt-40 pb-20" style="padding-left: 20px;">
-							<div class="form-info">
+						<div class="col-md-4 col-sm-4  pt-40 pb-20" style="padding-left: 10px;">
+							<div class="form-info" style="width: 92%;">
 								<h2 style="font-size: 30px">Login</h2>
 								<div class="content-form-page">
 
@@ -113,14 +107,14 @@ body {
 
 											<div class="col-lg-12 pb-20">
 												<form:input path="customer_id" type="text" id="mystoicid"
-													style="font-size:24px;" placeholder="My One8 ID " />
+													style="font-size:18px;" placeholder="My One8 ID " />
 											</div>
 										</div>
 										<div class="form-group">
 
 											<div class="col-lg-12 pb-10">
 												<form:input path="password" type="password" id="password"
-													style="font-size:24px;" placeholder="My One8 Password " />
+													style="font-size:18px;" placeholder="My One8 Password " />
 											</div>
 											<div class="col-md-12">
 												<a style="color: #989494;" href="#">I forgot my One8
@@ -136,7 +130,6 @@ body {
 											<!-- added ID for button for testing -->
 											<button type="submit" id="submitButton"
 												class="btn billButton font-h3 ">LOGIN</button>
-
 
 										</div>
 
