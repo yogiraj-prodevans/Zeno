@@ -179,8 +179,10 @@ h1{
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color:#FFF">&times;</button>
-                <h4 class="modal-title" style="color:white;">Change Password</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color:#FFF">
+                	<img alt="" src="img/close.png" style="height: 25px;width: 25px;">
+                </button>
+                <h4 class="modal-title" style="color:white;background-color: #2980b9;padding-left: 5%;">Change Password</h4>
             </div>
 
             <div class="modal-body" style="margin-bottom:20%">
@@ -189,8 +191,8 @@ h1{
 					<form:form role="form" action="profile/change-pass" method="post" modelAttribute="change_pass">
 						<form:input type="hidden"  style="margin-bottom:40px;" path="actid" readonly="true" />
 						<form:input path="password" type="password" style="margin-bottom:30px;" placeholder="Enter Password" required="true"/>
-						<form:input path="confirm_password" type="password" style="margin-bottom:30px;" placeholder="Confirm Password" required="true"/>
-						<button type="submit" class="btn billButton">Update Password</button>
+						<form:input path="confirm_password" type="password" style="margin-bottom:20px;" placeholder="Confirm Password" required="true"/>
+						<button type="submit" class="btn billButton pull-right" style="">UPDATE PASSWORD</button>
 					</form:form>
 					
                  

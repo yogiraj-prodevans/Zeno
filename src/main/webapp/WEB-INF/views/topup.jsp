@@ -42,7 +42,7 @@ h1{
 {
 	width :310px;
 	max-height:260px;
-	min-height:260px;
+	min-height:250px;
 	color:white;
 	padding:4%;
 	padding-top:10px;
@@ -64,7 +64,7 @@ h1{
 	font-weight: bold;
 	text-align: center;
 	margin-left: 8%;
-	
+	margin-top: 8px;
 }
 
 #floating-button
@@ -139,10 +139,10 @@ h1{
 						<h2>GB</h2>
 					</div>
 				</div>
-				<h1>&#8377; 120</h1>
-				<h4>512 Kbps  &#9679; POST FUP</h4>
-				<a href="toup50GB?planName=Add on 5GB">
-					<div class="btn billButton" style="border: 1px solid white;background-color: inherit;">
+				<h1 style="padding-top: 15px;">&#8377; 120</h1>
+				<h4>512 Kbps  &#9679;  POST FUP</h4>
+				<a href="toup50GB?planName=Add on 5GB" style="margin-left: 8%;">
+					<div class="btn billButton" style="border: 0.1px solid white;background-color: inherit;">
 						BUY NOW
 					</div>
 				</a>
@@ -161,9 +161,9 @@ h1{
 						<h2>GB</h2>
 					</div>
 				</div>
-				<h1>&#8377; 220</h1>
+				<h1 style="padding-top: 15px;">&#8377; 220</h1>
 				<h4>512 Kbps &#9679; POST FUP</h4>
-				<a href="toup50GB?planName=Add on 10GB">
+				<a href="toup50GB?planName=Add on 10GB" style="margin-left: 8%;">
 					<div class="btn billButton" style="border: 1px solid white;background-color: #F44336;">
 						BUY NOW
 					</div>
