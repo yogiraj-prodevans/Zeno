@@ -22,10 +22,7 @@
 <jsp:include page="component/css.jsp"></jsp:include>
 
 <style type="text/css">
-h1{
-	margin:unset;
-	padding-top:30px;
-}
+
 .font-h3
 {
 	font-size: 20px;
@@ -101,11 +98,11 @@ h1{
 		</div>
 	</div>
 	<!-- Header END -->
-	
-<div class="col-md-12 firstRow " style="background-image: url('corporate/img/back.png');">
-    <h1 style="margin-left: 4%;">Login contact and details </h1>
-</div>
 
+<div class="col-md-12 firstRow pt-20" style="background-image: url('corporate/img/back.png');">
+    <h1 style="margin-left: 4%;" >Login contact and details</h1>
+</div>
+	
 <div class="container" style="margin-bottom: 3%;">
 	<div class="col-md-121">
 		<div class="col-md-6 col-sm-8">
@@ -133,7 +130,7 @@ h1{
 					</div>
 					<div class="col-md-5 col-xs-7  pt-10">
 						<a href="#changePassword" data-toggle="modal"  style="color:black;">
-							<h4 style="color:white;">Edit password &nbsp &nbsp <img alt="pencil" src="img/pencil.png" style="width:30px;height: 30px;margin-bottom: 10%;"></h4>
+							<h4 style="color:white;">Edit password &nbsp &nbsp <img alt="pencil" src="img/pencil1.png" style="width:30px;height: 30px;margin-bottom: 10%;"></h4>
 						</a>
 					</div>
 				</div>

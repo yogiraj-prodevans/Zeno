@@ -158,7 +158,7 @@
 	<!-- included pop up -->
 	<jsp:include page="component/pop-up.jsp"></jsp:include>
 
-	<div style="padding: 20px;"></div>
+	<div style="margin-bottom:  4%;"></div>
 	<jsp:include page="component/footer.jsp"></jsp:include>
 
 
