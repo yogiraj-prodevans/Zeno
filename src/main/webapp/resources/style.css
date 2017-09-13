@@ -527,7 +527,10 @@ a:hover {
 	{	
 		padding-top:30px;
 	}
-	
+	.mainBlock4
+	{
+		min-width: 100%;
+	}	
 
 }
 

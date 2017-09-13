@@ -33,6 +33,13 @@
      background-size: cover;
 }
 /* iphone 6 plus*/
+@media ( max-width : 530px) 
+{
+	pbForProgress
+	{
+		margin-bottom: 10px;
+	}
+}
 @media ( max-width : 970px) 
 {
 	h1
@@ -119,7 +126,7 @@
 					<h4>Plan Content</h4>
 					<h4>1. ${SubscriptionDetails.getFUPLimit() }GB Data</h4>
 					<h4>2. 512Kbps Post FUP Speed Data</h4>
-		</div>
+				</div>
 			</div>
 
 
@@ -138,7 +145,7 @@
 						${SubscriptionDetails.getDataUsed() }GB</span>
 
 					</div>
-					<div class=" progress">
+					<div class=" progress pbForProgress">
 						<div class="progressbarColor"
 							style="width: ${SubscriptionDetails.getDataPercent()}%;"></div>
 					</div>

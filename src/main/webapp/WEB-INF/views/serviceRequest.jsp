@@ -96,7 +96,16 @@ background-position:right center;
         
         
         <div class="row pb-20">
-            <div class="col-md-12">
+            <div class="col-md-6">
+            
+            	<div class="col-md-4 col-xs-5 col-sm-4">
+            		<h4>Time slot to call</h4>
+            	</div>
+            	<div class="col-md-8 col-xs-7 col-sm-8">
+            		<form:select path="time_slot_to_call" multiple="false" items="${time_slot_to_call}" class="form-control" style="border-radius:1px;border: 0.6px solid #bdc3c7">
+                    </form:select>
+            	</div>
+            	<!-- 
                 <table class="tableWidth">
                     <tr>
                         <td style="width:37%;">
@@ -110,6 +119,7 @@ background-position:right center;
                         </td>
                     </tr>
                 </table>
+                -->
             </div>
         </div>
         
