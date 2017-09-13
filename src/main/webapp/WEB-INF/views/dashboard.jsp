@@ -161,7 +161,7 @@
 </div>
 
 <div class="col-md-8 col-sm-12 pt-20 pt-20M" style="background-color: #ecf0f1;min-height: 116px;">
-	<div class="col-md-6 col-sm-12">
+	<div class="col-md-12 col-sm-12">
 
 		<h1 style="color: black;" class="currentBillFontforiPhone5">Welcome ${user_details.getFirst_name() }, to your One8 page</h1>
 		
