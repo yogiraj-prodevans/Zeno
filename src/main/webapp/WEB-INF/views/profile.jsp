@@ -105,7 +105,7 @@
 	
 <div class="container" style="margin-bottom: 3%;">
 	<div class="col-md-121">
-		<div class="col-md-6 col-sm-8">
+		<div class="col-md-6 col-sm-12">
 			<div class="mainBlock4" style="background-color: #ffb81c">
 				<h2 class="pb-20 pt-20">Account details</h2>
 				
@@ -137,7 +137,7 @@
 			</div>
 		</div>
 		
-		<div class="col-md-6 col-sm-8">
+		<div class="col-md-6 col-sm-12">
 			<div class="mainBlock4" style="background-color: #ffb81c">
 				
 				<div class="pb-10 pt-30">
