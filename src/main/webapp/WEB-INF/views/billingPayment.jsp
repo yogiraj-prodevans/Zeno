@@ -33,7 +33,7 @@
      background-size: cover;
 }
 /* iphone 6 plus*/
-@media ( max-width : 530px) 
+@media ( max-width : 970px) 
 {
 	h1
 	{
