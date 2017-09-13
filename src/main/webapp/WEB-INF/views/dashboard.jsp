@@ -170,7 +170,7 @@
 
 
     <div class="container">
-        <div class="row" style="margin-bottom: 1%;">
+        <div class="row col-md-12" style="margin-bottom: 1%;">
 
             <div class="col-md-4 ">
 

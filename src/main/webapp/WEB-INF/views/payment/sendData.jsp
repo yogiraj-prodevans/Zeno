@@ -37,23 +37,43 @@
 
 <style type="text/css">
 
-@media ( max-width : 480px) 
+.col-xs-12,.col-md-7, .col-md-6, .col-sm-6  
 {
-.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 
+	padding-left: 1px !important;
+	padding-right: 1px !important;
+}
+
+@media ( max-width : 680px) 
+{
+  	.mainBlock31
+  	{
+  		width: 98% !important;
+  		min-height: 80% !important;
+  	}
+}
+@media (max-width:900px) and (min-width:680px)
+{	
+	.col-xs-12,.col-md-7  
 	{
-    	 padding-left: 1px;
+    	 padding-left: 1px !important;
+  	}
+  	.mainBlock31
+  	{
+  		width: 98% !important;
+  		min-height: 140% !important;
   	}
 }
 
 
-.mainBlock3
+.mainBlock31
 {
 	width :100%;
+	height: 40%;
 	color:black !important;
 	margin: 5%;
 	margin-left:2%;
-	padding-left:5%;
-	max-height:unset;
+	 padding: 2% 4%;
+	 margin-bottom: 15%;
 	-webkit-box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
 	-moz-box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
 	box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
@@ -153,34 +173,34 @@ label.css-label
 			<div class="col-md-4">
 			</div>
 			<div class="col-md-7 col-xs-12">
-				<div class="mainBlock3">
+				<div class="mainBlock31">
 					<div class="col-md-5 col-xs-12">
 						<h3 class="pb-20">Details</h3>
 						
-						<div class="col-md-4 col-xs-6">
+						<div class="col-md-4 col-xs-4">
 							<h4 class="pb-10">Name :</h4>
 						</div>
-						<div class="col-md-8 col-xs-6">
+						<div class="col-md-8 col-xs-8">
 							<h4 class="pb-10">${user_details.getFirst_name() } ${user_details.getLast_name() }</h4>
 						</div>					
 						
 						
-						<div class="col-md-4 col-xs-6">
+						<div class="col-md-4 col-xs-4">
 							<h4 class="pb-10">Amount</h4>
 						</div>
-						<div class="col-md-8 col-xs-6">
+						<div class="col-md-8 col-xs-8">
 							<h4 class="pb-10">&#8377; ${invoiceDetails.getAmount() }</h4>
 						</div>					
-						<div class="col-md-4 col-xs-6">
+						<div class="col-md-4 col-xs-4">
 							<h4 class="pb-10">Email :</h4>
 						</div>
-						<div class="col-md-8 col-xs-6">
+						<div class="col-md-8 col-xs-8">
 							<h4 class="pb-10">${user_details.getEmail() }</h4>
 						</div>					
-						<div class="col-md-4 col-xs-6">
+						<div class="col-md-4 col-xs-4">
 							<h4 class="pb-10">Mobile :</h4>
 						</div>
-						<div class="col-md-8 col-xs-6">
+						<div class="col-md-8 col-xs-8">
 							<h4 class="pb-10">${user_details.getMobileno() }</h4>
 						</div>					
 						<!-- 
@@ -193,13 +213,13 @@ label.css-label
                         <select class="form-control" name="instrument_detail" id="instrument_detail" style="visibility: hidden;">
                         </select>
 					</div>
-					
-					<div class="col-md-7 col-xs-12">
+					<div class="col-md-1"></div>
+					<div class="col-md-6 col-xs-12">
 						
 						
 						<div class="col-md-12 col-sm-12">
 			                    		<div class="row">
-			                    			<h3 class="pb-20" style="padding-left:15px;">Payment Option</h3>
+			                    			<h3 class="pb-20" style="padding-left:5px;">Payment Option</h3>
 			                    		</div>
 			                    		<div class="row">
 					                    	<div class="col-md-6 col-sm-6">
@@ -252,7 +272,7 @@ label.css-label
 					</div> 
                 	<div class="col-md-10">
                 	
-	                	<div class="mainBlock3" style="color:black;">
+	                	<div class="mainBlock31" style="color:black;">
 	                		<div class="row">
 		                		<div class="col-md-5 col-sm-5">
 		                			<h3 class="pb-20">Details</h3>
@@ -399,7 +419,7 @@ label.css-label
 					        	
 				       
 				             <input type="text" id="card_type" name="card_type" value="" readonly="readonly"/><!-- card type -->
-				             <select name="card_name" id="card_name"> <option value="">Select Card Name</option> </select> </td>
+				             <select name="card_name" id="card_name"> <option value="">Select Card Name</option> </select> 
 				       
 				             <input type="text" id="data_accept" name="data_accept" readonly="readonly"/><!-- Data accept -->
 		
@@ -427,17 +447,11 @@ label.css-label
 				        
 				        </div>
 				        </div>
-				        
-			
-					</div><!-- col-md-10 -->
-					
-				</div><!-- Form group -->      
-			</form>
-	      
+				
+</form>
 
-		
-	</div>
-</div>
+
+
 
 <!-- included pop up -->
             <jsp:include page="../component/pop-up.jsp"></jsp:include>
