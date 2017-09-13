@@ -33,13 +33,13 @@
 {
 	.leftSidePanelIMG
 	{
-		height: 60%;
+		height: 50%;
 		padding-bottom: 50px;	
 	}
 	.backPanelIMG
 	{
 		width: 95%;
-		height: 65%;
+		height: 55%;
 	}
 }
 @media (max-width : 480px) 
