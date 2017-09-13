@@ -87,7 +87,7 @@ background-position:right center;
             <div class="col-md-12">
                 <table class="tableWidth">
                     <tr>
-                        <td style="width:28%;">
+                        <td style="width:37%;">
                             <h4>
                                Time slot to call
                             </h4>

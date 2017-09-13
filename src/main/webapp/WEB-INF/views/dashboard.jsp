@@ -46,13 +46,22 @@
                 padding-left: 5%;
             }
             /* iphone 6 plus*/
-			@media ( max-width : 530px) 
-			{
-				.mainBlock4
-				{
-					max-width: 100% !important;
-				}
-			}
+@media ( max-width : 530px) 
+{
+	h1
+	{
+		padding-top: 20px;
+	}
+	.pt-20M
+	{
+		padding-top: 1px;
+	}
+	.mainBlock4
+	{
+		max-width: 98% !important;
+		margin-top: 5%;
+	}
+}
         </style>
 
         <script type="text/javascript"
@@ -147,16 +156,16 @@
     <!-- Header END -->
 
 
-<div class="container1">
-<div class="col-md-4 col-sm-12  firstRow pt-40" style="">
-	<h2 style="color: white; ">Manage your network</h2>
+<div class="col-md-4 col-sm-12  firstRow pt-20">
+	<h1 style="color: white; ">Manage your network</h1>
 </div>
-<div class="col-md-8 col-sm-12  pt-40"
-	style="background-color: #ecf0f1;min-height: 116px;">
-	<div class="col-md-12 col-sm-12">
-            <h2 style="color: black;" class="currentBillFontforiPhone5">Welcome ${user_details.getFirst_name() }, to your One8 page</h2>
-        </div>
-    </div>
+
+<div class="col-md-8 col-sm-12 pt-20 pt-20M" style="background-color: #ecf0f1;min-height: 116px;">
+	<div class="col-md-6 col-sm-12">
+
+		<h2 style="color: black;" class="currentBillFontforiPhone5">Welcome ${user_details.getFirst_name() }, to your One8 page</h2>
+		
+	</div>
 </div>
 
 

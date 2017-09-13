@@ -35,9 +35,18 @@
 /* iphone 6 plus*/
 @media ( max-width : 530px) 
 {
+	h1
+	{
+		padding-top: 20px;
+	}
+	.pt-20M
+	{
+		padding-top: 1px;
+	}
 	.mainBlock4
 	{
 		max-width: 98% !important;
+		margin-top: 5%;
 	}
 }
 </style>
@@ -79,7 +88,7 @@
 	<h1 style="color: white; ">Bill payment</h1>
 </div>
 
-<div class="col-md-8 col-sm-12 pt-20" style="background-color: #ecf0f1;min-height: 116px;">
+<div class="col-md-8 col-sm-12 pt-20 pt-20M" style="background-color: #ecf0f1;min-height: 116px;">
 	<div class="col-md-6 col-sm-12">
 
 		<h1 style="color: black;" class="currentBillFontforiPhone5">

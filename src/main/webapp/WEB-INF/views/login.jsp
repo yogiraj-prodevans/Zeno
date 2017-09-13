@@ -95,8 +95,8 @@ body {
 								</h2>
 							</div>
 						</div>
-						<div class="col-md-4 col-sm-4  pt-40 pb-20" style="padding-left: 10px;">
-							<div class="form-info" style="width: 92%;">
+						<div class="col-md-4 col-sm-4  pt-40 pb-20">
+							<div class="form-info" style="width: 90%;">
 								<h2 style="font-size: 30px">Login</h2>
 								<div class="content-form-page">
 
