@@ -20,6 +20,18 @@
 
 <style>
 
+.NameWidth
+{
+	width: 97%;
+}
+@media ( max-width : 950px) 
+{
+	.NameWidth
+	{
+		width: 100%;
+	}
+}
+
 select{
 -webkit-appearance:none;
 -moz-appearance: none;
@@ -75,7 +87,7 @@ background-position:right center;
         
         <div class="row pb-40">
             <div class="col-md-6">
-                <form:input path="name" type="text" id="name" placeholder="Name" required="true" style="width:97%;"/>        
+                <form:input class="NameWidth" path="name" type="text" id="name" placeholder="Name" required="true" />        
             </div>
             <div class="col-md-6 mb-pt-30">
             	<form:input path="mobile" type="text" id="mobile" placeholder="Mobile" required="true" class="mobileMargin" />
