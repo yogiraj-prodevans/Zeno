@@ -21,6 +21,10 @@
 
 
 <style type="text/css">
+.mainBlock4
+{
+	margin-top: 15%;
+}
 .firstRow
 {
      background-image: url('img/blue_small.png');
@@ -95,7 +99,7 @@
 
 
 	<div class="container" style="">
-		<div style="margin-bottom: 7%;">
+		<div style="margin-bottom: 4%;">
 
 
 			<div class="col-md-4  col-sm-6">
@@ -154,7 +158,7 @@
 	<!-- included pop up -->
 	<jsp:include page="component/pop-up.jsp"></jsp:include>
 
-	<div style="padding: 2%"></div>
+	<div style="padding: 20px;"></div>
 	<jsp:include page="component/footer.jsp"></jsp:include>
 
 

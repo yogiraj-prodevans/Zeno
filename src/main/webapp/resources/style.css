@@ -607,7 +607,7 @@ a:hover {
     border-radius: 50%;
     background: #F44336;
     position: fixed;
-    top: 220px;
+    top: 260px;
     right: 40px;
     cursor: pointer;
     box-shadow: 0px 2px 5px #666;
@@ -630,7 +630,7 @@ a:hover {
     border-radius: 50%;
     background: #ffb81c;
     position: fixed;
-    top: 290px;
+    top: 330px;
     right: 40px;
     cursor: pointer;
     box-shadow: 0px 2px 5px #666;
