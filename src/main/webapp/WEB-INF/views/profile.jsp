@@ -42,7 +42,7 @@ h1{
 .mainBlock4
 {
 	width :100%;
-	color:black;
+	color:white;
 	margin: 5%;
 	padding-left:5%;
 	max-height:unset;
@@ -106,7 +106,7 @@ h1{
     <h1 style="margin-left: 4%;">Login contact and details </h1>
 </div>
 
-<div class="container" style="margin-bottom: 5%;">
+<div class="container" style="margin-bottom: 3%;">
 	<div class="col-md-121">
 		<div class="col-md-6 col-sm-8">
 			<div class="mainBlock4" style="background-color: #ffb81c">
@@ -133,7 +133,7 @@ h1{
 					</div>
 					<div class="col-md-5 col-xs-7  pt-10">
 						<a href="#changePassword" data-toggle="modal"  style="color:black;">
-							<h4>Edit password &nbsp &nbsp <img alt="pencil" src="img/pencil.png" style="width:30px;height: 30px;margin-bottom: 10%;"></h4>
+							<h4 style="color:white;">Edit password &nbsp &nbsp <img alt="pencil" src="img/pencil.png" style="width:30px;height: 30px;margin-bottom: 10%;"></h4>
 						</a>
 					</div>
 				</div>
@@ -185,14 +185,14 @@ h1{
                 <h4 class="modal-title" style="color:white;background-color: #2980b9;padding-left: 5%;">Change Password</h4>
             </div>
 
-            <div class="modal-body" style="margin-bottom:20%">
-              <div class="col-md-12 col-sm-12" style="margin-top:3%">
+            <div class="modal-body" style="margin-bottom:30%">
+              <div class="col-md-12 col-sm-12" style="margin-top:12%">
 
 					<form:form role="form" action="profile/change-pass" method="post" modelAttribute="change_pass">
-						<form:input type="hidden"  style="margin-bottom:40px;" path="actid" readonly="true" />
+						<form:input type="hidden"  style="margin-bottom:10px;" path="actid" readonly="true" />
 						<form:input path="password" type="password" style="margin-bottom:30px;" placeholder="Enter Password" required="true" value=""/>
-						<form:input path="confirm_password" type="password" style="margin-bottom:20px;" placeholder="Confirm Password" required="true" value=""/>
-						<button type="submit" class="btn billButton pull-right" style="">UPDATE PASSWORD</button>
+						<form:input path="confirm_password" type="password" style="margin-bottom:10px;" placeholder="Confirm Password" required="true" value=""/>
+						<button type="submit" class="btn billButton pull-right" style="">UPDATE</button>
 					</form:form>
 					
                  

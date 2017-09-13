@@ -25,14 +25,14 @@
 
             .mainBlock4{
                 max-width: unset;
-                margin-top: 10%;
+                margin-top: 15%;
                 max-width: 95%;
             }
 
             .div2{
                 max-width : unset;
                 margin-top:7.5%;
-                min-height:260px;
+                min-height:308px;
                 border : none;
 
                 padding: unset;
@@ -161,7 +161,7 @@
 
 
     <div class="container">
-        <div class="row col-md-12" style="margin-bottom: 4%;">
+        <div class="row col-md-12" style="margin-bottom: 1%;">
 
             <div class="col-md-4 ">
 
