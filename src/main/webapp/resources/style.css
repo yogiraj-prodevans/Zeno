@@ -479,7 +479,7 @@ a:hover {
 }
 .billButton 
 {
-	font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: 300;
     border-radius: 0px;
     letter-spacing: normal;
@@ -490,6 +490,7 @@ a:hover {
     border-color: #F44336;
     color: white;
 }
+
 
 .btn:hover{
 	text-decoration: none;
