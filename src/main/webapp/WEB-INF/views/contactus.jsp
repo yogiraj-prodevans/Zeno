@@ -128,11 +128,11 @@ padding-left: 2%;
 								style="height: 30%; width: 100%; border: 0.4px solid #bdc3c7; resize: none; color: black; border-radius: 0.4px; font-size: 30px;"
 								placeholder=" Message"></form:textarea>
 						</div>
+						<div class="col-md-12" style="margin-bottom: 2%; text-align: right;">
+							<button class="btn billButton" type="submit">SEND NOW</button>
+						</div>
 					</div>
 
-					<div class="row col-md-12" style="margin-bottom: 2%; text-align: right;">
-						<button class="btn billButton" type="submit">SEND NOW</button>
-					</div>
 				</form:form>
 			</div>
 

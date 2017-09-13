@@ -35,9 +35,13 @@
 /* iphone 6 plus*/
 @media ( max-width : 530px) 
 {
-	pbForProgress
+	.pbForProgress
 	{
-		margin-bottom: 10px;
+		margin-top: 15px;
+	}
+	.col-md-6, col-sm-12
+	{
+		padding-left: 5px;
 	}
 }
 @media ( max-width : 970px) 
@@ -136,19 +140,19 @@
 					<h4 style="color: black;">Account ID :
 						${user_details.getActid() }</h4>
 					<h4 style="color: black;" >Bill period : </h4>
-						<h4 style="color: black;" class="pb-30">${SubscriptionDetails.getStartdt() } -
-						${SubscriptionDetails.getExpirydt() }</h4>
-					<div  style="margin-bottom: 10px;">
+						<h4 style="color: black;" class="pb-30">${SubscriptionDetails.getStartdt() }-${SubscriptionDetails.getExpirydt() }</h4>
+					<div  style="margin-bottom: 7px;">
 					<span class="blackShadow font-h4" style="color: black;margin-right: 10px;">Usage</span>
 
 					<span class="blackShadow font-h2" style="color: black;">
 						${SubscriptionDetails.getDataUsed() }GB</span>
 
 					</div>
-					<div class=" progress pbForProgress">
+					<div class=" progress">
 						<div class="progressbarColor"
 							style="width: ${SubscriptionDetails.getDataPercent()}%;"></div>
 					</div>
+					
 				</div>
 			</div>
 
