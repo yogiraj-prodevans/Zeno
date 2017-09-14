@@ -21,7 +21,11 @@
         
         <!--  include the all css components -->
         <jsp:include page="component/css.jsp"></jsp:include>
-        
+        <style type="text/css">
+p {
+	margin: 0 0 2px;
+}
+</style>
         
     </head>
     <body class="corporate">
@@ -35,7 +39,7 @@
 </div>
 
 
-        <div class="pt-40">
+        <div class="pt-20">
             
 
                 <!-- BEGIN SIDEBAR & CONTENT -->
@@ -43,7 +47,7 @@
                     
 
                     <!-- BEGIN CONTENT -->
-                    <div class="col-md-12 col-sm-12 pt-40">
+                    <div class="col-md-12 col-sm-12 pt-20">
 
                         <div class="faq-page" style="line-height: 2">
                             
@@ -60,7 +64,7 @@
                             <div class=" ">
                                 <div id="accordion1_1" class="panel-collapse collapse in">
                                     <div class="panel-body">
-                                       <h3 class="pb-20"> Definitions:</h3>
+                                       <p class="font-h3"> Definitions:</p>
                                         "Agreement" is the Terms and Conditions (T&C) contained herein along with the Privacy Policy and Terms of Use including other T&C at other portals of STOIC-MARCUS<sup>TM</sup>. It will also include references to this Agreement as and when amended or replaced. 
                                         <br/> "Portal/Site" means the STOIC-MARCUS<sup>TM</sup> platform owned and operated by STOIC-MARCUS<sup>TM</sup>. 
                                         <br/> "User/You" means and includes any Customer / Users / You (the person or any legal entity) who uses the services offered by STOIC-MARCUS<sup>TM</sup> through its Portal.
@@ -70,8 +74,8 @@
                             <div class=" ">
                                 <div id="accordion1_1" class="panel-collapse collapse in">
                                     <div class="panel-body">
-                                        <h3 class="pb-20"> The agreement between you and STOIC-MARCUS<sup>TM</sup> is subject to the following terms and conditions:</h3>
-                                        <br/> The User agrees to use the services provided by STOIC-MARCUS<sup>TM</sup>, its affiliates, consultants and contracted companies, for lawful purposes only.
+                                        <p class="font-h3"> The agreement between you and STOIC-MARCUS<sup>TM</sup> is subject to the following terms and conditions:</p>
+                                         The User agrees to use the services provided by STOIC-MARCUS<sup>TM</sup>, its affiliates, consultants and contracted companies, for lawful purposes only.
                                         <br/> Disclaimer of Warranties/Limitation Of Liability: User agrees that STOIC-MARCUS<sup>TM</sup> does not warrant that the services contained in this site will be uninterrupted or error free, that?s defects will be corrected, or that this site or the servers that make it available are free of viruses or other harmful components. Having stated that, the STOIC-MARCUS<sup>TM</sup> endeavors to provide a satisfactory experience to the customer.
                                         <br/> STOIC-MARCUS<sup>TM</sup> shall not be held responsible for non availability of the website during periodic maintenance operations or any unplanned suspension of access to the website that may occur due to technical reason beyond STOIC-MARCUS<sup>TM</sup>'s control. The user understands and agrees that any material and/or data downloaded or otherwise obtained through website is done entirely at their own discretion and risk and they will be solely responsible for any damage to their computer systems or loss of data that results from the download of such material and/or data.
                                         <br/> Payment Terms - the User certifies that he/she is at least 18 (eighteen) years of age or has the consent of a parent or legal guardian. User is responsible for the security of User's password and for all transactions undertaken using User's password through our service. User confirms that he/she is the authorized holder of the credit card or the original account holder used in the transactions under this Site. STOIC-MARCUS<sup>TM</sup> will not be responsible for any financial loss, inconvenience or mental agony resulting from misuse of user's ID/password/credit card number/account details number for using STOIC-MARCUS<sup>TM</sup>'s payment service. 

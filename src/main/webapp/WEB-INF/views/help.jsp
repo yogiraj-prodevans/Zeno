@@ -19,6 +19,11 @@
 <meta property="og:url" content="-CUSTOMER VALUE-">
 <!--  include the all css components -->
 <jsp:include page="component/css.jsp"></jsp:include>
+<style type="text/css">
+p {
+	margin: 0 0 2px;
+}
+</style>
 </head>
 <body class="corporate">
 	

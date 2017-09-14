@@ -28,18 +28,16 @@
 <jsp:include page="component/menubar.jsp"></jsp:include>	
 
 
-<div class="col-md-12 firstRow pt-20" style="background-image: url('corporate/img/back.png');">
+<div class="row firstRow pt-20" style="background-image: url('corporate/img/back.png');">
     <h1 style="margin-left: 4%;" >Refund  And  Cancellation</h1>
 </div>
 
 	
-	<div class="container">
+	<div class="container pt-20 ">
 
-		<div class="">
-
-			<div class="">
+		
 				<div id="accordion1_1" class="panel-collapse collapse in">
-					<div class="panel-body" style="margin-top: 10%;">
+					<div class="panel-body" >
 						<i class=" fa fa-hand-o-right"></i> No Refund of fixed
 						duration pack or Cancellation of payment transaction is
 						allowed. Any disputes in regards to payments/ refund of
@@ -48,9 +46,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>
-				<!-- END CONTENT -->
+		<!-- END CONTENT -->
 			
 		
 	<div style="padding-top: 23%"></div>
