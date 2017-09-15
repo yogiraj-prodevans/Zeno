@@ -52,6 +52,7 @@ select
     -webkit-appearance:none;
 	background-image:url(img/drop.jpg);    
 }
+
 option:hover {
 	background-color: grey;
 }

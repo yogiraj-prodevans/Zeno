@@ -34,6 +34,7 @@ body {
 
 .form-info {
 	border: unset;
+	padding-left: 1px !important;
 }
 
 .header .container {
@@ -53,12 +54,28 @@ body {
 .front-steps-wrapper h2, .ecommerce .front-steps-wrapper h2 tag-line{
 	font-size: 70px;
 }
+.loginBoxSqr
+{
+	width: 85% !important;
+}
 @media ( max-width : 480px) {
 	.front-steps-wrapper h2, .ecommerce .front-steps-wrapper h2 tag-line{
 		font-size: 40px;
 	}
 	.pt-40{
 		padding-top: 20px;
+	}
+}
+
+@media ( max-width : 750px) 
+{
+	.loginBoxSqr
+	{
+		width: 95% !important;
+	}
+	.form-info
+	{
+		padding-left: 8% !important;
 	}
 }
 </style>
@@ -89,14 +106,14 @@ body {
 				<div style="background: url('img/slide_1.jpg'); min-height: 500px">
 					<div class="row">
 						<div class="col-lg-8 col-md-8 col-sm-8  ">
-							<div style="margin-top: 15%; padding-left: 5%;">
+							<div style="margin-top: 15%; padding-left: 6.5%;">
 								<h2 class="tag-line">
 									Welcome to the<br> network that never stops
 								</h2>
 							</div>
 						</div>
 						<div class="col-md-4 col-sm-4  pt-40 pb-20">
-							<div class="form-info" style="width: 90%;">
+							<div class="form-info loginBoxSqr">
 								<h2 style="font-size: 30px">Login</h2>
 								<div class="content-form-page">
 
