@@ -39,18 +39,22 @@
 	}
 }
 
+
 select
 {
     border: none;
     font-size: 16px;
-    height: 24px;
-    width:92%;
+    height: 34px;
+    width:59%;
+    padding-bottom:5px;
     outline: none;
-    border-bottom: 2px solid #FFb81c;
+    border-bottom: 2px solid #F44336;
     -webkit-appearance:none;
-	-webkit-appearance: url("corporate/img/play-button.png") no-repeat right center;    
+	background-image:url(img/drop.jpg);    
 }
-
+option:hover {
+	background-color: grey;
+}
 /*
 select{
 -webkit-appearance:none;
@@ -124,7 +128,7 @@ background-position:right center;
             		<h4>Time slot to call</h4>
             	</div>
             	<div class="col-md-8 col-xs-7 col-sm-8">
-            		<form:select path="time_slot_to_call" multiple="false" items="${time_slot_to_call}" >
+            		<form:select path="time_slot_to_call" multiple="false" items="${time_slot_to_call}" class="hoverColor">
                     </form:select>
             	</div>
             	<!-- 

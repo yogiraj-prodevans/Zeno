@@ -158,207 +158,101 @@ label.css-label
 
 <form method="post" name="customerData" action="ccvTopUpRequestHandler">
 			
-	<input type="hidden" name="actno" value="${user_details.getActno() }">				
-	<input type="hidden" name="trans_amount" value="${topUp.getAmount() }">
-	
-	<input type="hidden" name="planSize" value="${topUp.getPlanSize() }">
-	<input type="hidden" name="planName" value="${topUp.getPlanName() }">
-	<input type="hidden" name="postFUP" value="${topUp.getPostFUP() }">
-	
-	<input type="hidden" name="trans_type" value="C">
-	<input type="hidden" name="currency" value="INR">
-	<input type="hidden" name="trans_descr" value="Description">
-		
-		
-		
-			<div class="container1" >  
-		<div class="col-md-12">
-			<div class="col-md-4">
-			</div>
-			<div class="col-md-7 col-xs-12">
-				<div class="mainBlock31">
-					<div class="col-md-5 col-xs-12">
-						<h3 class="pb-20">Details</h3>
-						
-						<div class="col-md-4 col-xs-4">
-							<h4 class="pb-10">Name :</h4>
-						</div>
-						<div class="col-md-8 col-xs-8">
-							<h4 class="pb-10">${user_details.getFirst_name() } ${user_details.getLast_name() }</h4>
-						</div>					
-						
-						
-						<div class="col-md-4 col-xs-4">
-							<h4 class="pb-10">Amount</h4>
-						</div>
-						<div class="col-md-8 col-xs-8">
-							<h4 class="pb-10">&#8377; ${topUp.getAmount() }/-</h4>
-						</div>					
-						<div class="col-md-4 col-xs-4">
-							<h4 class="pb-10">Email :</h4>
-						</div>
-						<div class="col-md-8 col-xs-8">
-							<h4 class="pb-10">${user_details.getEmail() }</h4>
-						</div>					
-						<div class="col-md-4 col-xs-4">
-							<h4 class="pb-10">Mobile :</h4>
-						</div>
-						<div class="col-md-8 col-xs-8">
-							<h4 class="pb-10">${user_details.getMobileno() }</h4>
-						</div>					
-						<!-- 
-                		<h4 class="pb-10">Name : ${user_details.getFirst_name() } ${user_details.getLast_name() } </h4>
-                        <h4 class="pb-10">Amount : &#8377; ${invoiceDetails.getAmount() }/-  </h4>
-                        <h4 class="pb-10">Email  : ${user_details.getEmail() }</h4>
-                        <h4 class="pb-10">Mobile No.  : ${user_details.getMobileno() } </h4>
-                        -->
-                        
-                        <select class="form-control" name="instrument_detail" id="instrument_detail" style="visibility: hidden;">
-                        </select>
-					</div>
-					<div class="col-md-1"></div>
-					<div class="col-md-6 col-xs-12">
-						
-						
-						<div class="col-md-12 col-sm-12">
-										<div class="row" style="padding-left: 1%;">
-											<div class="col-md-6 col-xs-12">
-												<h4 style="font-size: 14px;">Plan name  : <strong> ${topUp.getPlanName() }</strong> </h4>
-											</div>
-											<div class="col-md-6 col-xs-12">
-												<h4 style="font-size: 14px;">Post FUP  : <strong> ${topUp.getPostFUP() }</strong> </h4>
-											</div>
-										</div>
-			                    		<div class="row">
-			                    			<h3 class="pb-10" style="padding-left:5px;">Payment Option</h3>
-			                    		</div>
-			                    		<div class="row">
-					                    	<div class="col-md-6 col-sm-6">
-							                    <input type="radio" name="payment_option" value="OPTCRDC" id="radio1" class="css-checkbox" />
-				                    			<label for="radio1" class="css-label radGroup1">Credit Card</label><br>
-												<div class="pb-10"></div>
-												
-												<input type="radio" name="payment_option" value="OPTDBCRD" id="radio2" class="css-checkbox" />
-				                    			<label for="radio2" class="css-label radGroup1">Debit Card</label><br>
-				                    			<div class="pb-10"></div>
-				                    			
-				                    			<input type="radio" name="payment_option" value="OPTNBK" id="radio3" class="css-checkbox" />
-				                    			<label for="radio3" class="css-label radGroup1">Net Banking</label><br>
-												<div class="pb-10"></div>
-												
-			                    			</div>
-			                    			
-			                    			<div class="col-md-6 col-sm-6">
-				                    			<input type="radio" name="payment_option" value="OPTMOBP" id="radio5" class="css-checkbox" />
-				                    			<label for="radio5" class="css-label radGroup1">Mobile Payments</label><br>
-				                    			<div class="pb-10"></div>
-				                    			
-				                    			<input type="radio" name="payment_option" value="OPTWLT" id="radio7" class="css-checkbox" />
-				                    			<label for="radio7" class="css-label radGroup1">Wallet</label><br>
-				                    			<div class="pb-10"></div>
-				                    			
-											</div>
-										</div>											
-						</div>
-						
-						
-						<div class="col-md-12" style="margin-bottom: 2%; text-align: right;">
-							<button class="btn billButton" type="submit">CONFIRM PAYMENT</button>
-						</div>
-					
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>						
-				
-				
-				
-				
-				
-				<!-- 
-				<div class="form-group">
-					<div class="col-md-1">
-					</div> 
-                	<div class="col-lg-10 col-md-10 col-sm-10 ">
-                	
-	                	<div class="mainBlock3" style="color:black;">
-	                		<div class="row">
-		                		<div class="col-md-5 col-xs-12">
-		                			<h3 class="pb-20">Details</h3>
-			                		<h4 class="pb-10">Account No : ${user_details.getActid() } </h4>
-			                		<h4 class="pb-10">Name : ${user_details.getFirst_name() } ${user_details.getLast_name() } </h4>
-			                        <h4 class="pb-10">Amount : &#8377; ${topUp.getAmount() }/-  </h4>
-			                        <h4 class="pb-10">Email  : ${user_details.getEmail() } </h4>
-			                        <h4 class="pb-10">Mobile No.  : ${user_details.getMobileno() } </h4>
-			                        
-			                        
-			                        
-			                        <select class="form-control" name="instrument_detail" id="instrument_detail" style="visibility: hidden;">
-			                        </select>
-			                        
-			                    </div>
-			                     <div class="col-md-7 col-xs-12">
-			                    		
-			                    	<div class="col-md-12 col-xs-12">
-			                    		<div class="row">
-			                    			<div class="col-md-6" style="padding-left:5px;">
-			                    				<h4 class="pb-10">Plan name  : <strong> ${topUp.getPlanName() }</strong> </h4>
-			                    			</div>
-			                    			<div class="col-md-6" style="padding-left:5px;">
-			                    				<h4 class="pb-20">Post FUP  : <strong> ${topUp.getPostFUP() }</strong> </h4>
-			                    			</div>
-			                    		</div>
-			                    		<div class="row">
-			                    			<h3 class="pb-10" style="padding-left:5px;">Payment Option</h3>
-			                    		</div>
-			                    		<div class="row">
-			                    			
-					                    	<div class="col-md-6 col-xs-6">
-				                        		
-							                    <input type="radio" name="payment_option" value="OPTCRDC" id="radio1" class="css-checkbox" />
-				                    			<label for="radio1" class="css-label radGroup1">Credit Card</label><br>
-												<div class="pb-10"></div>
-												
-												<input type="radio" name="payment_option" value="OPTDBCRD" id="radio2" class="css-checkbox" />
-				                    			<label for="radio2" class="css-label radGroup1">Debit Card</label><br>
-				                    			<div class="pb-10"></div>
-				                    			
-				                    			<input type="radio" name="payment_option" value="OPTNBK" id="radio3" class="css-checkbox" />
-				                    			<label for="radio3" class="css-label radGroup1">Net Banking</label><br>
-												<div class="pb-10"></div>
-		                    			
-		                    				</div>
-			                    			
-			                    			<div class="col-md-6 col-xs-6">
-			                    				
-				                    			<input type="radio" name="payment_option" value="OPTMOBP" id="radio5" class="css-checkbox" />
-				                    			<label for="radio5" class="css-label radGroup1">Mobile Payments</label><br>
-				                    			<div class="pb-10"></div>
-				                    			
-				                    			<input type="radio" name="payment_option" value="OPTWLT" id="radio7" class="css-checkbox" />
-				                    			<label for="radio7" class="css-label radGroup1">Wallet</label><br>
-				                    			<div class="pb-10"></div>
-				                    			
-											</div>
-										</div>											
-									</div>
 
-				                	<div class="row">
-				                		<div class="col-md-7 col-xs-7">
-				                		</div>
-				                		<div class="col-md-5 col-xs-5">
-				                			<button class="btn billButton" type="submit" style="padding: 5px;">
-		                     				Confirm Payment
-		                     				</button>
-				                		</div>
-				                	
-				                	</div>    	
+						<input type="hidden" name="actno" value="${user_details.getActno() }">				
+						<input type="hidden" name="trans_amount" value="${topUp.getAmount() }">
+						
+						<input type="hidden" name="planSize" value="${topUp.getPlanSize() }">
+						<input type="hidden" name="planName" value="${topUp.getPlanName() }">
+						<input type="hidden" name="postFUP" value="${topUp.getPostFUP() }">
+						
+						<input type="hidden" name="trans_type" value="C">
+						<input type="hidden" name="currency" value="INR">
+						<input type="hidden" name="trans_descr" value="Description">
+				
+				
+						<div class="form-group col-md-12">
+							<div class="col-md-4">
+							</div> 
+                			<div class="col-md-7 col-xs-12">
+	                			<div class="mainBlock31" style="color:black;">
+	                				
+	                				<div class="col-md-5 col-xs-12">
+										<h3 class="pb-20">Details</h3>
+						
+										<div class="col-md-4 col-xs-4">
+											<h4 class="pb-10">Name :</h4>
+											</div>
+											<div class="col-md-8 col-xs-8">
+												<h4 class="pb-10">${user_details.getFirst_name() } ${user_details.getLast_name() }</h4>
+											</div>					
+											
+											
+											<div class="col-md-4 col-xs-4">
+												<h4 class="pb-10">Amount</h4>
+											</div>
+											<div class="col-md-8 col-xs-8">
+												<h4 class="pb-10">&#8377; ${topUp.getAmount() }/-</h4>
+											</div>					
+											<div class="col-md-4 col-xs-4">
+												<h4 class="pb-10">Email :</h4>
+											</div>
+											<div class="col-md-8 col-xs-8">
+												<h4 class="pb-10">${user_details.getEmail() }</h4>
+											</div>					
+											<div class="col-md-4 col-xs-4">
+												<h4 class="pb-10">Mobile :</h4>
+											</div>
+											<div class="col-md-8 col-xs-8">
+												<h4 class="pb-10">${user_details.getMobileno() }</h4>
+											</div>				
+				                        <select class="form-control" name="instrument_detail" id="instrument_detail" style="visibility: hidden;">
+             				           </select>
+									</div><!-- col-md-5 -->
+									<div class="col-md-1">
+									</div>
+				                    <div class="col-md-6 col-sm-7">
+				                    		
+				                    	<div class="col-md-12 col-sm-12">
+				                    		<div class="row">
+				                    			<h3 class="pb-20" style="padding-left:5px;">Payment Option</h3>
+				                    		</div>
+				                    		<div class="row">
+						                    	<div class="col-md-6 col-sm-6">
+								                    <input type="radio" name="payment_option" value="OPTCRDC" id="radio1" class="css-checkbox" />
+					                    			<label for="radio1" class="css-label radGroup1">Credit Card</label><br>
+													<div class="pb-10"></div>
+													
+													<input type="radio" name="payment_option" value="OPTDBCRD" id="radio2" class="css-checkbox" />
+					                    			<label for="radio2" class="css-label radGroup1">Debit Card</label><br>
+					                    			<div class="pb-10"></div>
+					                    			
+					                    			<input type="radio" name="payment_option" value="OPTNBK" id="radio3" class="css-checkbox" />
+					                    			<label for="radio3" class="css-label radGroup1">Net Banking</label><br>
+													<div class="pb-10"></div>
+													
+				                    			</div>
+				                    			
+				                    			<div class="col-md-6 col-sm-6">
+					                    			<input type="radio" name="payment_option" value="OPTMOBP" id="radio5" class="css-checkbox" />
+					                    			<label for="radio5" class="css-label radGroup1">Mobile Payments</label><br>
+					                    			<div class="pb-10"></div>
+					                    			
+					                    			<input type="radio" name="payment_option" value="OPTWLT" id="radio7" class="css-checkbox" />
+					                    			<label for="radio7" class="css-label radGroup1">Wallet</label><br>
+					                    			<div class="pb-10"></div>
+					                    			
+												</div>
+											</div>											
+										</div>
+
+				                	<div class="col-md-12" style="margin-bottom: 2%; text-align: right;">
+										<button class="btn billButton" type="submit">CONFIRM PAYMENT</button>
+									</div> 	
 				                </div>   
 			           		</div>	 
 			               
 	                    </div>
-	                    -->
 	        
 	                    
 						<input readonly="readonly" type="hidden" name="tid" id="tid" value=""/><!-- Transaction ID -->
