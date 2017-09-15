@@ -1,34 +1,35 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri = "http://www.springframework.org/tags/form" prefix = "form"%>
 <%@ page session="false" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-<html lang="en">
-
-    <!-- Head BEGIN -->
+<html>
     <head>
-      <head>
         <meta charset="utf-8">
         <title>STOIC ZENO</title>
-    
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta content="Stoic Zeno User Portal" name="description">
         <meta content="Stoic Zeno User Portal Keywords" name="keywords">
-        
+        <meta content="vikram" name="author">
+
         <!-- link to image for socio -->
         <meta property="og:url" content="-CUSTOMER VALUE-">
-        
+        <link rel="shortcut icon" href="favicon.ico">
+
+
         <!--  include the all css components -->
         <jsp:include page="component/css.jsp"></jsp:include>
-        <style type="text/css">
+</head>
+
+
+<style>
 p {
 	margin: 0 0 2px;
 }
 </style>
         
-    </head>
-    <body class="corporate">
+ 
+<body class="corporate">
        
 <!--  include menubar -->
 <jsp:include page="component/menubar.jsp"></jsp:include>	
