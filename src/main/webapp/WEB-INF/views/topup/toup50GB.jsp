@@ -48,7 +48,7 @@
   	.mainBlock31
   	{
   		width: 98% !important;
-  		min-height: 80% !important;
+  		min-height: 85% !important;
   	}
 }
 @media (max-width:900px) and (min-width:680px)
@@ -60,7 +60,7 @@
   	.mainBlock31
   	{
   		width: 98% !important;
-  		min-height: 140% !important;
+  		min-height: 145% !important;
   	}
 }
 

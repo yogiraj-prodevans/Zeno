@@ -48,6 +48,10 @@
 	-moz-box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
 	box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
 }
+.row
+{
+	margin: unset;
+}
 @media (max-width : 650px) 
 {
 	.paddingLeftMobile
@@ -65,6 +69,13 @@
 		max-height: 100%;
 		min-width: 100%;
 		margin-top: 5%;
+	}
+}
+@media (max-width : 370px) 
+{
+	h1, h2
+	{
+		font-size: 26px;
 	}
 }
 </style>
@@ -110,7 +121,7 @@
 			<div class="mainBlock4" style="background-color: #ffb81c">
 				<h2 class="pb-20 pt-20">Account details</h2>
 				
-				<div class="pb-10">
+				<div class="pb-10 row">
 					<div class="col-md-4 col-xs-4">
 						<h3 class="font-h3">Account ID:</h3>
 					</div>
@@ -118,7 +129,7 @@
 						<h3 class="font-h3">${profile.getActid() }</h3>
 					</div>
 				</div>
-				<div class="pb-10">
+				<div class="pb-10 row">
 					<div class="col-md-4 col-xs-4">
 						<h3 class="font-h3">Password:</h3>
 					</div>
@@ -126,10 +137,10 @@
 						<h3 class="font-h3">&#9679; &#9679; &#9679; &#9679; &#9679; &#9679; &#9679; &#9679;</h3>
 					</div>
 				</div>
-				<div class="pb-10">
+				<div class="row pb-10">
 					<div class="col-md-7 col-xs-5">
 					</div>
-					<div class="col-md-5 col-xs-7  pt-10">
+					<div class="col-md-5 col-xs-7" >
 						<a href="#changePassword" data-toggle="modal"  style="color:black;">
 							<h4 style="color:white;">Edit password &nbsp &nbsp <img alt="pencil" src="img/pencil1.png" style="width:30px;height: 30px;margin-bottom: 10%;"></h4>
 						</a>

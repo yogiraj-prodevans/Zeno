@@ -43,12 +43,21 @@
 	padding-right: 1px !important;
 }
 
-@media ( max-width : 680px) 
+@media (max-width: 380px) 
+{
+	.mainBlock31
+  	{
+  		width: 100% !important;
+  		min-height: 85% !important;
+  	}
+}
+
+@media (max-width: 680px), (min-width: 390px) 
 {
   	.mainBlock31
   	{
-  		width: 98% !important;
-  		min-height: 80% !important;
+  		width: 100% !important;
+  		min-height: 92% !important;
   	}
 }
 @media (max-width:900px) and (min-width:680px)
