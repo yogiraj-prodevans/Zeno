@@ -8,8 +8,8 @@
 <title>One8</title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta content="Stoic Zeno User Portal" name="description">
-<meta content="Stoic Zeno User Portal Keywords" name="keywords">
+<meta content="ONE8 User Portal" name="description">
+<meta content="ONE8 User Portal Keywords" name="keywords">
 
 <!-- link to image for socio -->
 <meta property="og:url" content="-CUSTOMER VALUE-">
@@ -80,7 +80,7 @@ background-position:right center;
 	<div class="header">
 		<div class="row">
 			<a class="site-logo" href="#"> <img
-				src="corporate/img/logos/logo.png" alt="Stoic Zeno">
+				src="corporate/img/logos/logo.png" alt="ONE8">
 			</a> <a href="javascript:void(0);" class="mobi-toggler"><i
 				class="fa fa-bars"></i></a>
 			<!-- BEGIN NAVIGATION -->

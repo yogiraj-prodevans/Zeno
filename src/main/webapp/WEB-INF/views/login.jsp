@@ -12,11 +12,11 @@
 <head>
 <link rel="shortcut icon" href="img/favicon.ico">
 <meta charset="utf-8">
-<title>STOIC ZENO</title>
+<title>ONE8</title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta content="Stoic Zeno User Portal" name="description">
-<meta content="Stoic Zeno User Portal Keywords" name="keywords">
+<meta content="ONE8 User Portal" name="description">
+<meta content="ONE8 User Portal Keywords" name="keywords">
 
 <link href="https://fonts.googleapis.com/css?family=Roboto:300"
 	rel="stylesheet">
@@ -87,7 +87,7 @@ body {
 	<div class="header">
 		<div class="container">
 			<a class="site-logo" href="#"> <img
-				src="corporate/img/logos/logo.png" alt="Stoic Zeno">
+				src="corporate/img/logos/logo.png" alt="ONE8">
 			</a> 
 			<!-- BEGIN NAVIGATION -->
 			<div class="header-navigation pull-right font-transform-inherit"

@@ -4,12 +4,12 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>STOIC ZENO</title>
+        <title>ONE8</title>
         <link rel="shortcut icon" href="favicon.ico">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta content="Stoic Zeno User Portal" name="description">
-        <meta content="Stoic Zeno User Portal Keywords" name="keywords">
+        <meta content="ONE8 User Portal" name="description">
+        <meta content="ONE8 User Portal Keywords" name="keywords">
         <meta content="vikram" name="author">
 
         <!-- link to image for socio -->
@@ -57,7 +57,7 @@
         <div class="header">
             <div class="container">
                 <a class="site-logo" href="#">
-                    <img src="corporate/img/logos/logo.png" alt="Stoic Zeno"> </a>
+                    <img src="corporate/img/logos/logo.png" alt="ONE8"> </a>
                 <a href="javascript:void(0);" class="mobi-toggler"><i class="fa fa-bars"></i></a>
                 <!-- BEGIN NAVIGATION -->
                 <div class="header-navigation pull-right font-transform-inherit"  style="font-size:12px">
@@ -131,7 +131,7 @@
             <div class="container">
                 <div class="row">
                     <!-- BEGIN COPYRIGHT -->
-                    <div class="col-md-10 col-sm-10 padding-top-0 padding-bottom-10 "> 2017 &copy; Stoic Zeno. ALL Rights Reserved.&nbsp; 
+                    <div class="col-md-10 col-sm-10 padding-top-0 padding-bottom-10 "> 2017 &copy; ONE8. ALL Rights Reserved.&nbsp; 
                         <a href="javascript:;">Privacy Policy</a> |
                         <a href="javascript:;">Terms of Service</a> |
                         <a href="javascript:;">Refund and Cancellation</a> |
