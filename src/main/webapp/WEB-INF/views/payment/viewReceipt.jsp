@@ -1,6 +1,5 @@
 <%@page import="com.prodevans.zeno.dao.impl.PaymentResponseDAOImpl"%>
 <%@page import="com.prodevans.zeno.dao.impl.PaymentDAOImpl"%>
-<%@page import="com.prodevans.zeno.pojo.ReceiptDetails"%>
 <%@page import="java.net.URLDecoder"%>
 <%@page import="java.net.URL"%>
 <%@page import="java.util.List" %>

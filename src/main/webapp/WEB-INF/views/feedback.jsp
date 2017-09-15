@@ -40,7 +40,7 @@
 
 
 <div class="col-md-12 firstRow pt-20" style="background-image: url('img/red_long.png');">
-    <h1 style="margin-left: 4%;">Feedback</h1>
+    <h1 style="margin-left: 3.8%;">Feedback</h1>
 </div>    
 
 
