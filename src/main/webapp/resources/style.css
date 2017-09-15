@@ -21,6 +21,9 @@
    background-color: unset;
 	border-bottom: 2px solid #F44336;
 }
+.header{
+	box-shadow: unset;
+}
 .header .row {
     
    margin-left: 5%;
