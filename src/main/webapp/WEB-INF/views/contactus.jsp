@@ -45,7 +45,7 @@
 
 input[type="text"] {
 	height: 40px;
-	font-size: 30px;
+	font-size: 19px;
 }
 .billButton{
 	padding-right: 2%;

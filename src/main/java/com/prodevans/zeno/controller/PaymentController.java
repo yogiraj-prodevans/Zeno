@@ -145,4 +145,14 @@ public class PaymentController {
 			throws XmlRpcException {
 		return "payment/ccavResponseHandler";
 	}
+	
+	@RequestMapping(value = "/viewReceipt", method = RequestMethod.POST)
+	public String viewReceipt(ModelMap model, HttpSession session,HttpServletRequest request) throws XmlRpcException, ParseException
+	{
+		//System.out.print("Data from controller :"+request.getParameter("viewReceipt"));
+		//model.addAttribute("viewReceipt",request.getParameter("viewReceipt"));
+		
+		return "payment/viewReceipt";
+	}
+	
 }

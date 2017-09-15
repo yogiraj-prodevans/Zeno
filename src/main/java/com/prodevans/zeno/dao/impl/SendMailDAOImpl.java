@@ -67,10 +67,24 @@ public class SendMailDAOImpl implements SendMailDAO
 	@Override
 	public Boolean sentMailServiceRequest(ServiceRequest serviceRequest) throws XmlRpcException 
 	{
-	
+		String requestData="";
+		String complaintData="";
+		String mailContent="";
+		
+		for(String data : serviceRequest.getRequestCheckboxArray()) 
+		{
+			requestData=requestData+" "+data;
+		}
+		for(String data : serviceRequest.getComplaintCheckboxArray()) 
+		{
+			complaintData=complaintData+" "+data;
+		}
+		
+		mailContent="Name : "+serviceRequest.getName()+" Mobile No. : "+serviceRequest.getMobile()+" Time Slot to call : "+serviceRequest.getTime_slot_to_call().toString()+" Request : "+requestData+" Complaint : "+complaintData;
+		
 		Vector params = new Vector();
-		params.add(serviceRequest.getMessage()+" Time slot to call : "+serviceRequest.getTime_slot_to_call().toString());
-		params.add("Subject");
+		params.add(mailContent);
+		params.add("Service Request");
 		params.add("vipin.prodevans@gmail.com");
 		params.add(1);
 		

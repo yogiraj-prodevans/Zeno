@@ -1,31 +1,34 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@ page session="false"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri = "http://www.springframework.org/tags/form" prefix = "form"%>
+<%@ page session="false" %>
 
-<html lang="en">
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>STOIC ZENO</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta content="Stoic Zeno User Portal" name="description">
+        <meta content="Stoic Zeno User Portal Keywords" name="keywords">
+        <meta content="vikram" name="author">
 
-<!-- Head BEGIN -->
-<head>
-<head>
-<meta charset="utf-8">
-<title>STOIC ZENO</title>
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta content="Stoic Zeno User Portal" name="description">
-<meta content="Stoic Zeno User Portal Keywords" name="keywords">
+        <!-- link to image for socio -->
+        <meta property="og:url" content="-CUSTOMER VALUE-">
+        <link rel="shortcut icon" href="favicon.ico">
 
-<!-- link to image for socio -->
-<meta property="og:url" content="-CUSTOMER VALUE-">
 
-<!--  include the all css components -->
-<jsp:include page="component/css.jsp"></jsp:include>
+        <!--  include the all css components -->
+        <jsp:include page="component/css.jsp"></jsp:include>
+
+
+        </head>
+        
 <style type="text/css">
 p {
 	margin: 0 0 2px;
 }
 </style>
-</head>
+
 <body class="corporate">
 
 	<!--  include menubar -->
@@ -80,11 +83,11 @@ p {
 			<p class="font-h4">
 				STOIC-MARCUS<sup>TM</sup> and its authorized third parties will
 				collect information pertaining to your identity, demographics, and
-				related evidentiary documentation. </br> <br> STOIC-MARCUS<sup>TM</sup>
+				related evidentiary documentation. <br> <br> STOIC-MARCUS<sup>TM</sup>
 				may at its discretion employ, contract or include third external to
 				itself for strategic, tactical and operational purposes. Such
 				agencies though external to STOIC-MARCUS<sup>TM</sup>, will always
-				be entities which are covered by non-disclosure agreements. </br> <br>
+				be entities which are covered by non-disclosure agreements. <br> <br>
 				We may also share your personal information with Government agencies
 				or other authorized law enforcement agencies (LEAs) mandated under
 				law to obtain such information for the purpose of verification of

@@ -117,6 +117,7 @@ input[type="checkbox"]+label {
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
+	padding-bottom: 20px;
 }
 
 input[type="checkbox"]+label:last-child {

@@ -26,6 +26,9 @@
 <jsp:include page="component/css.jsp"></jsp:include>
 
 </head>
+<style>
+
+</style>
 <body class="corporate">
  
              <!-- BEGIN HEADER -->
@@ -61,7 +64,7 @@
         
 <%
 boolean success=true;
-if(!success)
+if(success)
 {
 %>
     <div class="row">
@@ -90,6 +93,11 @@ if(!success)
 	                <h2 class="pb-40">Your payment of &#8377;. 60/- was successful.</h2>
 	                <h5>TRANSACTION ID</h5>
 	                <h3>123456789 </h3>
+		            
+		            <form action="viewReceipt" method="post">
+		            	<input type="hidden" value="<%=43 %>" name="trans_id">
+		            	<button class="btn billButton" type="submit">VIEW RECEIPT</button>
+		            </form>
 	            </div>
 	        </div>
 	    </div>

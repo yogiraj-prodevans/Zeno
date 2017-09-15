@@ -39,6 +39,19 @@
 	}
 }
 
+select
+{
+    border: none;
+    font-size: 16px;
+    height: 24px;
+    width:92%;
+    outline: none;
+    border-bottom: 2px solid #FFb81c;
+    -webkit-appearance:none;
+	-webkit-appearance: url("corporate/img/play-button.png") no-repeat right center;    
+}
+
+/*
 select{
 -webkit-appearance:none;
 -moz-appearance: none;
@@ -49,6 +62,8 @@ background: url("corporate/img/arrow.png") no-repeat right center;
 background-repeat: no-repeat;
 background-position:right center;
 }
+*/
+
 </style>
 
 </head>
@@ -94,10 +109,10 @@ background-position:right center;
         
         <div class="row pb-40">
             <div class="col-md-6">
-                <form:input class="NameWidth" path="name" type="text" id="name" placeholder="Name" required="true" />        
+                <form:input class="NameWidth" path="name" type="text" id="name" placeholder="Name" value="${user_details.getFirst_name() }" required="true" />        
             </div>
             <div class="col-md-6 mb-pt-30">
-            	<form:input path="mobile" type="text" id="mobile" placeholder="Mobile" required="true" class="mobileMargin" />
+            	<form:input path="mobile" type="text" id="mobile" placeholder="Mobile" required="true" class="mobileMargin" value="${user_details.getMobileno() }"/>
             </div>
         </div>
         
@@ -109,7 +124,7 @@ background-position:right center;
             		<h4>Time slot to call</h4>
             	</div>
             	<div class="col-md-8 col-xs-7 col-sm-8">
-            		<form:select path="time_slot_to_call" multiple="false" items="${time_slot_to_call}" class="form-control" style="border-radius:1px;border: 0.6px solid #bdc3c7">
+            		<form:select path="time_slot_to_call" multiple="false" items="${time_slot_to_call}" >
                     </form:select>
             	</div>
             	<!-- 
@@ -139,11 +154,17 @@ background-position:right center;
                 </div>
                 <div class="row" style="margin-left:1%;">
 
+					<div class="row">
+                        <form:checkboxes items="${requestList}" path="requestCheckboxArray" style="padding-bottom:10px;"/>
+                        <br>
+                    </div>
+
+					<!-- 
                     <div class="row">
                         <input type="checkbox" id="box-1">
                         <label for="box-1">New Connection</label>
                     </div><br>
-
+					 
                     <div class="row">
                         <input type="checkbox" id="box-2">
                         <label for="box-2">Activation / Deactivation of Services</label>
@@ -168,6 +189,8 @@ background-position:right center;
                         <input type="checkbox" id="box-6">
                         <label for="box-6">Any Other</label>
                     </div><br>
+                    
+                    -->
                 </div>
             </div>		
             <!-- End Request For-->
@@ -179,6 +202,11 @@ background-position:right center;
                 </div>
                 <div class="row" style="margin-left:1%;">
 
+					<div class="row">
+                        <form:checkboxes items="${complaintList}" path="complaintCheckboxArray"/>
+                    </div><br>
+
+					<!-- 
                     <div class="row">
                         <input type="checkbox" id="box-7">
                         <label for="box-7">Not able to pay online</label>
@@ -218,6 +246,8 @@ background-position:right center;
                         <input type="checkbox" id="box-14">
                         <label for="box-14">Zeno Portal</label>
                     </div><br>
+                    
+                    -->
                 </div>
             </div>		
             <!-- End Complaint For-->

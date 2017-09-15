@@ -162,6 +162,11 @@ if(success)
 	                <h2 class="pb-40">Your payment of &#8377;. <%=responseFromCCAvenue.get("amount") %>/- was successful.</h2>
 	                <h5>TRANSACTION ID</h5>
 	                <h3><%=pd.getTransaction_id() %></h3>
+	                
+	                <form action="viewReceipt" method="post">
+		            	<input type="hidden" value="<%=pd.getTransaction_id() %>" name="trans_id">
+		            	<button class="btn billButton" type="submit">VIEW RECEIPT</button>
+		            </form>
 	            </div>
 	        </div>
 	    </div>

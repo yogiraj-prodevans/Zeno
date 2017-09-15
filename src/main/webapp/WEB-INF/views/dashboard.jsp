@@ -26,12 +26,12 @@
             .mainBlock4{
                 max-width: unset;
                 margin-top: 15%;
-                max-width: 95%;
+                max-width: 93%;
                  min-height:308px;
             }
 
             .div2{
-                max-width : 95%;
+                max-width : 96%;
                 margin-top:7.5%;
                 min-height:308px;
                 border : none;
@@ -190,9 +190,8 @@
 </div>
 </div>
 
-    <div class="container">
-        <div class=" col-md-12" style="margin-bottom: 1%;">
-
+    <div class="container" style="margin-bottom: 0.5%;">
+        
             <div class="col-md-4 ">
 
                 <div class="mainBlock4" style="background-color: #F44336;">
@@ -231,7 +230,7 @@
 
 
         </div>
-    </div>
+  
 
    
 

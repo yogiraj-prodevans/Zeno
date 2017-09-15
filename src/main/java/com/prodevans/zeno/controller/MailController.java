@@ -88,12 +88,13 @@ public class MailController
 	{
 		if (session.getAttribute("user") == null) {
 			return new ModelAndView("redirect:logout");
-		} else {
-			ServiceRequest request = new ServiceRequest();
+		} 
+		else 
+		{
+			SessionDetails user = (SessionDetails) session.getAttribute("user");
+			model.addAttribute("user_details", user);
 			
-			/*request.setTime_slot(new ArrayList<String>(Arrays.asList("9AM - 12PM",
-            "12PM - 3PM",
-            "3PM - 6PM")));*/
+			ServiceRequest request = new ServiceRequest();
 			
 			List<String> time_slot_to_call = new ArrayList<String>();
 			time_slot_to_call.add("9AM - 12PM");
@@ -104,24 +105,6 @@ public class MailController
 			request.setTime_slot_to_call(time_slot_to_call);
 			model.addAttribute("time_slot_to_call", time_slot_to_call);
 
-			
-			request.setRequest(new ArrayList<String>(Arrays.asList("New Connection",
-		            "Activation / Deactivation of Services",
-		            "Duplicate Bill",
-		            "Change of Location",
-		            "Restoration of Service",
-		            "Any Other"
-					
-					)));
-			request.setComplaint(new ArrayList<String>(Arrays.asList("Not able to pay online",
-		            "Activation / Deactivation of Services",
-		            "Billing Related",
-		            "Marcus Website",
-		            "Marcus Customer Care",
-		            "FUP/Speed",
-		            "CPE",
-		            "Zeno Portal"
-					)));
 			return  new ModelAndView("serviceRequest","serviceRequestDetails",request);
 		}
 	}
@@ -140,6 +123,36 @@ public class MailController
 		
 		//boolean result=feedbackDAOImpl.sentMailServiceRequest(feedback);
 		//return  "redirect:service";
+	}
+	
+	@ModelAttribute("requestList")
+	public List<String> getRequestList()
+	{
+		List<String> request=new ArrayList<String>();
+		request.add("New Connection");
+		request.add("Activation / Deactivation of Services");
+		request.add("Duplicate Bill");
+		request.add("Change of Location");
+		request.add("Restoration of Service");
+		request.add("Any Other");
+		
+		return request;
+	}
+	
+	@ModelAttribute("complaintList")
+	public List<String> getComplaintList()
+	{
+		List<String> complaint=new ArrayList<String>();
+		complaint.add("Not able to pay online");
+		complaint.add("Activation / Deactivation of Services");
+		complaint.add("Billing Related");
+		complaint.add("Marcus Website");
+		complaint.add("Marcus Customer Care");
+		complaint.add("FUP/Speed");
+		complaint.add("CPE");
+		complaint.add("Zeno Portal");
+		
+		return complaint;
 	}
 	
 	
