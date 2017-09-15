@@ -105,7 +105,7 @@ body {
 				<div style="background: url('img/slide_1.jpg'); min-height: 500px">
 					<div class="row">
 						<div class="col-lg-8 col-md-8 col-sm-8  ">
-							<div style="margin-top: 15%; padding-left: 6.5%;">
+							<div style="margin-top: 15%; padding-left: 6.2%;">
 								<h2 class="tag-line">
 									Welcome to the<br> network that never stops
 								</h2>
