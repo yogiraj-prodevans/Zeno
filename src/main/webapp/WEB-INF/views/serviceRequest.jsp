@@ -50,6 +50,7 @@ select
     outline: none;
     border-bottom: 2px solid #F44336;
     -webkit-appearance:none;
+    -moz-appearance: none;
 	background-image:url(img/drop.jpg);    
 }
 
