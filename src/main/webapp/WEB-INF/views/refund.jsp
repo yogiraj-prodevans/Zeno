@@ -28,14 +28,14 @@
 <jsp:include page="component/menubar.jsp"></jsp:include>	
 
 
-<div class="row firstRow pt-20" style="background-image: url('corporate/img/back.png');">
+<div class="col-md-12 firstRow pt-20" style="background-image: url('corporate/img/back.png');">
     <h1 style="margin-left: 4%;" >Refund  And  Cancellation</h1>
 </div>
 
 	
-	<div class="container pt-20 ">
+	<div class="container ">
 
-		
+		<div class="col-md-12 pt-20 ">
 				<div id="accordion1_1" class="panel-collapse collapse in">
 					<div class="panel-body" >
 						<i class=" fa fa-hand-o-right"></i> No Refund of fixed
@@ -45,6 +45,7 @@
 						arbitration / resolution on a case to case basis.
 					</div>
 				</div>
+			</div>
 			</div>
 		<!-- END CONTENT -->
 			
