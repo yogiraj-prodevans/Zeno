@@ -23,7 +23,17 @@
 
         </head>
 
-        <body class="corporate">
+<style>
+@media ( max-width : 750px) 
+{
+	.plForMobile
+	{
+		padding-left: 3% !important;
+	}
+}
+</style>
+
+<body class="corporate">
 
 <!--  include menubar -->
 <jsp:include page="component/menubar.jsp"></jsp:include>	
@@ -67,7 +77,7 @@
 		        
 		        <!-- Start Tell More-->
 		        <div class="row">
-		        	<h3 style="padding-left: 1%;">Comment</h3>
+		        	<h3 style="padding-left: 1%;" class="plForMobile">Comment</h3>
 		            <div class="col-md-12">
 		                <form:textarea path="message" id="message" class="form-control" style="height:30%; width:100%; border: 0.4px solid #bdc3c7; resize: none; color:black; border-radius: 0.4px;font-size: 16px;" />
 		            </div>

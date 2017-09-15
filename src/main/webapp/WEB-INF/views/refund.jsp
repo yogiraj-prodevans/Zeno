@@ -21,20 +21,27 @@
 <!--  include the all css components -->
 <jsp:include page="component/css.jsp"></jsp:include>
 
+<style>
+ .row
+ {
+ 	margin:unset;
+}
+</style>
+
 </head>
 <body class="corporate">
 
 <!--  include menubar -->
 <jsp:include page="component/menubar.jsp"></jsp:include>	
 
-
+ 
 <div class="row firstRow pt-20" style="background-image: url('corporate/img/back.png');">
-    <h1 style="margin-left: 4%;" >Refund  And  Cancellation</h1>
+    <h1 style="margin-left: 5%;" >Refund  And  Cancellation</h1>
 </div>
 
+ 
 	
-	<div class="container pt-20 ">
-
+	<div class="container ">
 		
 				<div id="accordion1_1" class="panel-collapse collapse in">
 					<div class="panel-body" >
@@ -49,7 +56,7 @@
 		<!-- END CONTENT -->
 			
 		
-	<div style="padding-top: 23%"></div>
+	<div style="padding-top: 22%"></div>
 
 	<jsp:include page="component/footer.jsp"></jsp:include>
 
