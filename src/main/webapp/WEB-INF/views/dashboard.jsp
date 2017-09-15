@@ -46,7 +46,23 @@
                 background-size: cover;
                 padding-left: 5%;
             }
+            .row{
+            	margin:unset;
+            }
             /* iphone 6 plus*/
+
+@media ( max-width : 991px) 
+{
+	.mainBlock4
+	{
+		max-width: 98% !important;
+		margin-top: 10%;
+	}
+	.div2{
+		max-width: 98% !important;
+		
+	}
+}
 @media ( max-width : 530px) 
 {
 	h1
@@ -62,13 +78,9 @@
 		max-width: 98% !important;
 		margin-top: 5%;
 	}
-}
-@media ( max-width : 991px) 
-{
-	.mainBlock4
-	{
+	.div2{
+		max-width: 100% !important;
 		
-		margin-top: 10%;
 	}
 }
         </style>
@@ -179,7 +191,7 @@
 </div>
 
     <div class="container">
-        <div class="row col-md-12" style="margin-bottom: 1%;">
+        <div class=" col-md-12" style="margin-bottom: 1%;">
 
             <div class="col-md-4 ">
 
