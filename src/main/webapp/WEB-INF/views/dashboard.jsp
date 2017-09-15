@@ -31,7 +31,7 @@
             }
 
             .div2{
-                max-width : 96%;
+                max-width : 95%;
                 margin-top:7.5%;
                 min-height:308px;
                 border : none;
