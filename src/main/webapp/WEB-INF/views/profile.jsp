@@ -142,7 +142,7 @@
 					</div>
 					<div class="col-md-5 col-xs-7" >
 						<a href="#changePassword" data-toggle="modal"  style="color:black;">
-							<h4 style="color:white;">Edit password &nbsp &nbsp <img alt="pencil" src="img/pencil.png" style="width:30px;height: 30px;margin-bottom: 10%;"></h4>
+							<h4 style="color:black;">Edit password &nbsp &nbsp <img alt="pencil" src="img/pencil.png" style="width:30px;height: 30px;margin-bottom: 10%;"></h4>
 						</a>
 					</div>
 				</div>
