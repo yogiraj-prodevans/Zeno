@@ -22,40 +22,36 @@
 <jsp:include page="component/css.jsp"></jsp:include>
 
 <style>
- .row
- {
- 	margin:unset;
+.row {
+	margin: unset;
 }
 </style>
 
 </head>
 <body class="corporate">
 
-<!--  include menubar -->
-<jsp:include page="component/menubar.jsp"></jsp:include>	
+	<!--  include menubar -->
+	<jsp:include page="component/menubar.jsp"></jsp:include>
 
- 
-<div class="row firstRow pt-20" style="background-image: url('corporate/img/back.png');">
-    <h1 style="margin-left: 5%;" >Refund  And  Cancellation</h1>
-</div>
 
- 
-	
+	<div class="row firstRow pt-20"
+		style="background-image: url('corporate/img/back.png');">
+		<h1 style="margin-left: 5%;">Refund And Cancellation</h1>
+	</div>
+
+
+
 	<div class="container ">
-		
-				<div id="accordion1_1" class="panel-collapse collapse in">
-					<div class="panel-body" >
-						<i class=" fa fa-hand-o-right"></i> No Refund of fixed
-						duration pack or Cancellation of payment transaction is
-						allowed. Any disputes in regards to payments/ refund of
-						transaction(s) due to technical reasons are subject to
-						arbitration / resolution on a case to case basis.
-					</div>
-				</div>
+		<div class="pt-40">
+		<p>No Refund of fixed duration pack or Cancellation of payment
+			transaction is allowed. Any disputes in regards to payments/ refund
+			of transaction(s) due to technical reasons are subject to arbitration
+			/ resolution on a case to case basis.</p>
 			</div>
-		<!-- END CONTENT -->
-			
-		
+	</div>
+	<!-- END CONTENT -->
+
+
 	<div style="padding-top: 22%"></div>
 
 	<jsp:include page="component/footer.jsp"></jsp:include>
