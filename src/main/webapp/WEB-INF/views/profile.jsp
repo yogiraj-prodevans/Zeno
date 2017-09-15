@@ -39,7 +39,7 @@
 .mainBlock4
 {
 	width :100%;
-	color:white;
+	color:black;
 	margin: 5%;
 	padding-left:5%;
 	max-height:unset;
@@ -118,7 +118,7 @@
 <div class="container">
 	<div class="col-md-121">
 		<div class="col-md-6 col-sm-12">
-			<div class="mainBlock4" style="background-color: #ffb81c">
+			<div class="mainBlock4">
 				<h2 class="pb-20 pt-20">Account details</h2>
 				
 				<div class="pb-10 row">
@@ -142,7 +142,7 @@
 					</div>
 					<div class="col-md-5 col-xs-7" >
 						<a href="#changePassword" data-toggle="modal"  style="color:black;">
-							<h4 style="color:white;">Edit password &nbsp &nbsp <img alt="pencil" src="img/pencil1.png" style="width:30px;height: 30px;margin-bottom: 10%;"></h4>
+							<h4 style="color:white;">Edit password &nbsp &nbsp <img alt="pencil" src="img/pencil.png" style="width:30px;height: 30px;margin-bottom: 10%;"></h4>
 						</a>
 					</div>
 				</div>
@@ -150,7 +150,7 @@
 		</div>
 		
 		<div class="col-md-6 col-sm-12">
-			<div class="mainBlock4" style="background-color: #ffb81c">
+			<div class="mainBlock4" >
 				
 				<div class="pb-10 pt-30">
 					<div class="col-md-4 col-xs-4">

@@ -28,7 +28,7 @@
 .firstRow
 {
      background-image: url('img/blue_small.png');
-     padding-left: 5.2%;
+     padding-left: 5.1%;
      min-height: 116px;
      background-size: cover;
 }

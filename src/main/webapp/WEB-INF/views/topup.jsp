@@ -117,7 +117,7 @@ h1{
 		<div class="col-md-1">
 		</div>
 		<div class="col-md-10 col-xs-12">
-			<h1>Get more One8 on demand</h1>
+			<h1 style="padding-bottom: 3px;">Get more One8 on demand</h1>
 			<h3>Pick an option, pay and browse non stop.</h3>
 		</div>
 </div>

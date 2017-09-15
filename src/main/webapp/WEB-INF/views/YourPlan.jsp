@@ -42,7 +42,7 @@ h1{
 {
 	width :310px;
 	max-height:260px;
-	min-height:260px;
+	min-height:250px;
 	color:white;
 	padding:4%;
 	padding-top:10px;

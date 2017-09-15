@@ -81,7 +81,7 @@
 		            <div class="col-md-12">
 		                <form:textarea path="message" id="message" class="form-control" style="height:30%; width:100%; border: 0.4px solid #bdc3c7; resize: none; color:black; border-radius: 0.4px;font-size: 16px;" />
 		            </div>
-		             <div class="col-md-12" style="margin-bottom: 2%; text-align: right;">
+		             <div class="col-md-12" style="margin-top:2% ;text-align: right;">
 						<button class="btn billButton" type="submit">SEND NOW</button>
 					</div>
 		        </div>
@@ -93,6 +93,7 @@
     
 </div>    
 
+		<jsp:include page="component/pop-up.jsp"></jsp:include>
            
         <jsp:include page="component/footer.jsp"></jsp:include>   
            
