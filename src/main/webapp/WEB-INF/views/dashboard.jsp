@@ -27,10 +27,11 @@
                 max-width: unset;
                 margin-top: 15%;
                 max-width: 95%;
+                 min-height:308px;
             }
 
             .div2{
-                max-width : unset;
+                max-width : 95%;
                 margin-top:7.5%;
                 min-height:308px;
                 border : none;
@@ -60,6 +61,14 @@
 	{
 		max-width: 98% !important;
 		margin-top: 5%;
+	}
+}
+@media ( max-width : 991px) 
+{
+	.mainBlock4
+	{
+		
+		margin-top: 10%;
 	}
 }
         </style>
@@ -155,7 +164,7 @@
     </div>
     <!-- Header END -->
 
-
+<div class="row">
 <div class="col-md-4 col-sm-12  firstRow pt-20">
 	<h1 style="color: white; ">Manage your network</h1>
 </div>
@@ -167,7 +176,7 @@
 		
 	</div>
 </div>
-
+</div>
 
     <div class="container">
         <div class="row col-md-12" style="margin-bottom: 1%;">
