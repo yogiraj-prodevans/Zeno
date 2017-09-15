@@ -45,7 +45,7 @@ select
     border: none;
     font-size: 16px;
     height: 34px;
-    width:59%;
+    width:60%;
     padding-bottom:5px;
     outline: none;
     border-bottom: 2px solid #F44336;

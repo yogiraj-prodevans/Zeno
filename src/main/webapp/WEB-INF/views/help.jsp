@@ -40,14 +40,14 @@ p {
       <h1 class="pb-40">General</h1>
           <p class="font-h3" >What is FTTH?</p>
           <p class="font-h4"> FTTH stands for Fiber-to-the-Home. This means a fiber optic line is hooked directly to your home or business. Fiber optic line uses a thin strand of glass to transmit beams of light that carry an amazing amount of data. This delivers high-speed Internet services.</p>
-         <br> <p class="font-h3" >What is FUP</p>
+         <p class="font-h3" >What is FUP</p>
           <p class="font-h4">Fair Usage Policy (also known as Fair Access Policy or  Band width  Cap) is implemented by Internet Service Providers (ISPs) where once you reach data transfer limit as per the plan opted,speed reduces to as stated in your plan and is reset as per plan at the start of your next monthly billing cycle.</p>
-         <br> <p class="font-h3" style="color:red;">What is One8 Cube?</p>
+         <p class="font-h3" style="color:red;">What is One8 Cube?</p>
           <p class="font-h4">Lorem ipsum dolor sit amet, tellus ut nibh odio lacinia, purus nam faucibus maecenas mauris quam ultricies, vel magna maecenas. Tempor nunc velit suspe ndisse in in, mauris amet, nullam condimentum arcu vehicula,curab itur sed risus ipsum. lnventore nullam sed non, dui ut tristique molestie. Rutrum velit magna integer id, in erat nulla justo at, ultr icies pellentesque vel duis in,enim porttitor phasellus aliquam, rutrum ac eu sed pellentesque.</p>
-         <br> <p class="font-h3" >How many devices can I use on One8 Cube?</p>
+         <p class="font-h3" style="color:red;">How many devices can I use on One8 Cube?</p>
           <p class="font-h4">Erat semper elementum eras vestibulum ipsum luctus, velvitae mauris per ipsum lea quam, suspendisse vehicula, mauris eu quae ut nu llam quam,eget massa ultricies dignissim. Quis diam,tellus vitae dictumst sed ipsum, nam tincidunt. Semper pharetra venenatis fermentum urna vitae volutpat.</p>
-       <br>   <p class="font-h2" >New connection</p>
-          <p class="font-h3">What is the cost of a new connection?</p>
+         <p class="font-h2" >New connection</p>
+          <p class="font-h3" style="color:red;">What is the cost of a new connection?</p>
           <p class="font-h4">Erat semper elementum eras vestibulum ipsum luctus, velvitae mauris per ipsum lea quam, sretra venenatis fermentum urna vitae volutpat</p>          
    </div>
 </div>                
