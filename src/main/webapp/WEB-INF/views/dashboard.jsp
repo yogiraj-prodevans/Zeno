@@ -134,6 +134,7 @@
                         ticks: [0]
                     },
                     pointSize: 5,
+                    legend: { position: 'bottom' }
 
                 };
 
