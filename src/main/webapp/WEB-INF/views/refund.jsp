@@ -35,16 +35,16 @@
 	
 	<div class="container ">
 
-		<div class="col-md-12 pt-20 ">
-				<div id="accordion1_1" class="panel-collapse collapse in">
-					<div class="panel-body" >
-						<i class=" fa fa-hand-o-right"></i> No Refund of fixed
+		<div class="col-md-12 pt-40 ">
+				<p >
+					
+						 No Refund of fixed
 						duration pack or Cancellation of payment transaction is
 						allowed. Any disputes in regards to payments/ refund of
 						transaction(s) due to technical reasons are subject to
 						arbitration / resolution on a case to case basis.
-					</div>
-				</div>
+					
+				</p>
 			</div>
 			</div>
 		<!-- END CONTENT -->

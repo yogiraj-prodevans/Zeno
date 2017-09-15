@@ -37,7 +37,7 @@ p {
 
 <div class="container">
   <div class="col-md-12">
-      <h1 class="pb-20">General</h1>
+      <h1 class="pb-40">General</h1>
           <p class="font-h3" >What is FTTH?</p>
           <p class="font-h4"> FTTH stands for Fiber-to-the-Home. This means a fiber optic line is hooked directly to your home or business. Fiber optic line uses a thin strand of glass to transmit beams of light that carry an amazing amount of data. This delivers high-speed Internet services.</p>
          <br> <p class="font-h3" >What is FUP</p>

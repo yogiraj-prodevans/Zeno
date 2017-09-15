@@ -39,41 +39,36 @@ p {
 </div>
 
 
-        <div class="pt-20">
-            
-
+     
                 <!-- BEGIN SIDEBAR & CONTENT -->
                 <div class="container " >
                     
 
                     <!-- BEGIN CONTENT -->
-                    <div class="col-md-12 col-sm-12 pt-20">
+                    <div class="col-md-12 pt-40">
 
-                        <div class="faq-page" style="line-height: 2">
+                      
                             
-                            <div class=" ">
-                                <div id="accordion1_1" class="panel-collapse collapse in">
-                                    <div class="panel-body">
+                            <p >
+                                
                                          The Terms and Conditions (T&C) contained along with the Privacy Policy and Terms of Use, form an Agreement regulating the relationship with regard to the use of Stoic-Marcus<sup>TM</sup> Technologies (STOIC-MARCUS<sup>TM</sup>) products and services by Stoic-Marcus<sup>TM</sup> Technologies to you. 
                                         <br/> Visitors to this website are subject to the below terms and conditions ("Terms") so kindly read carefully before using the site.
                                         <br/> Changes and updates to the website may be made at any time. Packages, prices and service offerings are liable to change at the instance. Your use of a Site after any amendment to the Terms of Use shall constitute your acceptance of these terms and you also agree to be bound by any such changes/revisions.
 
-                                    </div>
-                                </div>
-                            </div>
-                            <div class=" ">
-                                <div id="accordion1_1" class="panel-collapse collapse in">
-                                    <div class="panel-body">
+                                   
+                            </p>
+                            <br>
+                            <p>
+                               
                                        <p class="font-h3"> Definitions:</p>
-                                        "Agreement" is the Terms and Conditions (T&C) contained herein along with the Privacy Policy and Terms of Use including other T&C at other portals of STOIC-MARCUS<sup>TM</sup>. It will also include references to this Agreement as and when amended or replaced. 
+                                        "Agreement" is the Terms and Conditions (T&amp;C) contained herein along with the Privacy Policy and Terms of Use including other T&amp;C at other portals of STOIC-MARCUS<sup>TM</sup>. It will also include references to this Agreement as and when amended or replaced. 
                                         <br/> "Portal/Site" means the STOIC-MARCUS<sup>TM</sup> platform owned and operated by STOIC-MARCUS<sup>TM</sup>. 
                                         <br/> "User/You" means and includes any Customer / Users / You (the person or any legal entity) who uses the services offered by STOIC-MARCUS<sup>TM</sup> through its Portal.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class=" ">
-                                <div id="accordion1_1" class="panel-collapse collapse in">
-                                    <div class="panel-body">
+                                   
+                            </p>
+                             <br>
+                            <p >
+                               
                                         <p class="font-h3"> The agreement between you and STOIC-MARCUS<sup>TM</sup> is subject to the following terms and conditions:</p>
                                          The User agrees to use the services provided by STOIC-MARCUS<sup>TM</sup>, its affiliates, consultants and contracted companies, for lawful purposes only.
                                         <br/> Disclaimer of Warranties/Limitation Of Liability: User agrees that STOIC-MARCUS<sup>TM</sup> does not warrant that the services contained in this site will be uninterrupted or error free, that?s defects will be corrected, or that this site or the servers that make it available are free of viruses or other harmful components. Having stated that, the STOIC-MARCUS<sup>TM</sup> endeavors to provide a satisfactory experience to the customer.
@@ -90,16 +85,15 @@ p {
                                         <br/> The User agrees that STOIC-MARCUS<sup>TM</sup> may under certain circumstances and without prior notice, immediately terminate the User's user ID and access to the Website/Services. Causes for termination may include, but shall not be limited to requests by enforcement or government agencies, etc 
                                         <br/> User shall consent to receive SMS / email or any such Electronic / Written communications from STOIC-MARCUS<sup>TM</sup>. 
                                         <br/> Applicable Law and Jurisdiction: This agreement is governed by the laws of republic of India. You hereby irrevocably consent to the exclusive jurisdiction and venue of courts in Bengaluru, Karnataka, India in all disputes arising out of or relating to the use of the website.
-                                    </div>
-                                </div>
-                            </div>
+                                   
+                            </p>
                         </div>
                     </div>
                     <!-- END CONTENT -->
-                </div>
+              
                 <!-- END SIDEBAR & CONTENT -->
             
-        </div>
+       
         <div style="padding-top: 2%">
         </div>
 
