@@ -43,21 +43,12 @@
 	padding-right: 1px !important;
 }
 
-@media (max-width: 380px) 
-{
-	.mainBlock31
-  	{
-  		width: 100% !important;
-  		min-height: 85% !important;
-  	}
-}
-
-@media (max-width: 680px), (min-width: 390px) 
+@media ( max-width : 680px) 
 {
   	.mainBlock31
   	{
-  		width: 100% !important;
-  		min-height: 92% !important;
+  		width: 98% !important;
+  		min-height: 80% !important;
   	}
 }
 @media (max-width:900px) and (min-width:680px)
@@ -128,7 +119,7 @@ input[type=radio].css-checkbox:checked + label.css-label
 
 label.css-label
 {
-	background-image:url(http://csscheckbox.com/checkboxes/u/csscheckbox_98809849d4d88f570f5ad4ce6c2be5b1.png);
+	background-image:url('img/checkbox.png');
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	-khtml-user-select: none;
