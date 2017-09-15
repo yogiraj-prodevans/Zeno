@@ -110,7 +110,7 @@ label.css-label
 
 .mainBlock31
 {
-	width :100%;
+	width :96%;
 	height: 40%;
 	color:black !important;
 	margin: 5%;

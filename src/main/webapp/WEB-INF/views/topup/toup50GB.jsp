@@ -64,10 +64,14 @@
   	}
 }
 
+#floating-button
+{
+	background: #9cafad !important;
+}
 
 .mainBlock31
 {
-	width :100%;
+	width :96%;
 	height: 45%;
 	color:black !important;
 	margin: 5%;
