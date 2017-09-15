@@ -43,6 +43,7 @@
 	margin: 5%;
 	padding-left:5%;
 	max-height:unset;
+	margin-top:10%;
 	-webkit-box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
 	-moz-box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
 	box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
@@ -103,7 +104,7 @@
     <h1 style="margin-left: 4%;" >Login contact and details</h1>
 </div>
 	
-<div class="container" style="margin-bottom: 3%;">
+<div class="container">
 	<div class="col-md-121">
 		<div class="col-md-6 col-sm-12">
 			<div class="mainBlock4" style="background-color: #ffb81c">
@@ -204,7 +205,7 @@
 	
 	
 	<jsp:include page="component/pop-up.jsp"></jsp:include>
-	<div style="margin:3%;"></div>
+	<div style="margin:1%;"></div>
 	<jsp:include page="component/footer.jsp"></jsp:include>
 	
 	

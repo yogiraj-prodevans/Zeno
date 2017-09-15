@@ -37,11 +37,55 @@
 
 <style type="text/css">
 
-.mainBlock3
+.col-xs-12,.col-md-7, .col-md-6, .col-sm-6  
 {
-	margin-bottom: 2%;
+	padding-left: 1px !important;
+	padding-right: 1px !important;
 }
 
+@media ( max-width : 680px) 
+{
+  	.mainBlock31
+  	{
+  		width: 98% !important;
+  		min-height: 80% !important;
+  	}
+}
+@media (max-width:900px) and (min-width:680px)
+{	
+	.col-xs-12,.col-md-7  
+	{
+    	 padding-left: 1px !important;
+  	}
+  	.mainBlock31
+  	{
+  		width: 98% !important;
+  		min-height: 140% !important;
+  	}
+}
+
+
+.mainBlock31
+{
+	width :100%;
+	height: 45%;
+	color:black !important;
+	margin: 5%;
+	margin-left:2%;
+	 padding: 2% 4%;
+	 margin-bottom: 9%;
+	-webkit-box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
+	-moz-box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
+	box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
+}
+
+.firstRow
+{
+     background-image: url('img/blue_small.png');
+     padding-left: 5% !important;
+     min-height: 116px;
+     background-size: cover;
+}
 input[type=radio].css-checkbox
 {
 	position:absolute;
@@ -83,6 +127,7 @@ label.css-label
 	-ms-user-select: none;
 	user-select: none;
 }
+
 </style>
    
 <script>
@@ -101,32 +146,137 @@ label.css-label
 <jsp:include page="../component/menubar.jsp"></jsp:include>	
 
 
-<div class="col-md-12 firstRow pt-20" style="background-image: url('corporate/img/back.png');">
-    <h1 style="margin-left: 4%;">Add new top up</h1>
+<div class="col-md-4 col-sm-12  firstRow pt-20">
+	<h1 style="color: white; ">Top Up</h1>
 </div>
-            
+
+<div class="col-md-8 col-sm-12 pt-20 pt-20M" style="background-color: #ecf0f1;min-height: 116px;">
+</div>            
  <!-- END STEPS -->
 
 
-<div class="main">
-	<div class="container">  
-		
-	
 
-			<form method="post" name="customerData" action="ccvTopUpRequestHandler">
+<form method="post" name="customerData" action="ccvTopUpRequestHandler">
 			
-				<input type="hidden" name="actno" value="${user_details.getActno() }">				
-				<input type="hidden" name="trans_amount" value="${topUp.getAmount() }">
+	<input type="hidden" name="actno" value="${user_details.getActno() }">				
+	<input type="hidden" name="trans_amount" value="${topUp.getAmount() }">
+	
+	<input type="hidden" name="planSize" value="${topUp.getPlanSize() }">
+	<input type="hidden" name="planName" value="${topUp.getPlanName() }">
+	<input type="hidden" name="postFUP" value="${topUp.getPostFUP() }">
+	
+	<input type="hidden" name="trans_type" value="C">
+	<input type="hidden" name="currency" value="INR">
+	<input type="hidden" name="trans_descr" value="Description">
+		
+		
+		
+			<div class="container1" >  
+		<div class="col-md-12">
+			<div class="col-md-4">
+			</div>
+			<div class="col-md-7 col-xs-12">
+				<div class="mainBlock31">
+					<div class="col-md-5 col-xs-12">
+						<h3 class="pb-20">Details</h3>
+						
+						<div class="col-md-4 col-xs-4">
+							<h4 class="pb-10">Name :</h4>
+						</div>
+						<div class="col-md-8 col-xs-8">
+							<h4 class="pb-10">${user_details.getFirst_name() } ${user_details.getLast_name() }</h4>
+						</div>					
+						
+						
+						<div class="col-md-4 col-xs-4">
+							<h4 class="pb-10">Amount</h4>
+						</div>
+						<div class="col-md-8 col-xs-8">
+							<h4 class="pb-10">&#8377; ${topUp.getAmount() }/-</h4>
+						</div>					
+						<div class="col-md-4 col-xs-4">
+							<h4 class="pb-10">Email :</h4>
+						</div>
+						<div class="col-md-8 col-xs-8">
+							<h4 class="pb-10">${user_details.getEmail() }</h4>
+						</div>					
+						<div class="col-md-4 col-xs-4">
+							<h4 class="pb-10">Mobile :</h4>
+						</div>
+						<div class="col-md-8 col-xs-8">
+							<h4 class="pb-10">${user_details.getMobileno() }</h4>
+						</div>					
+						<!-- 
+                		<h4 class="pb-10">Name : ${user_details.getFirst_name() } ${user_details.getLast_name() } </h4>
+                        <h4 class="pb-10">Amount : &#8377; ${invoiceDetails.getAmount() }/-  </h4>
+                        <h4 class="pb-10">Email  : ${user_details.getEmail() }</h4>
+                        <h4 class="pb-10">Mobile No.  : ${user_details.getMobileno() } </h4>
+                        -->
+                        
+                        <select class="form-control" name="instrument_detail" id="instrument_detail" style="visibility: hidden;">
+                        </select>
+					</div>
+					<div class="col-md-1"></div>
+					<div class="col-md-6 col-xs-12">
+						
+						
+						<div class="col-md-12 col-sm-12">
+										<div class="row" style="padding-left: 1%;">
+											<div class="col-md-6 col-xs-12">
+												<h4 style="font-size: 14px;">Plan name  : <strong> ${topUp.getPlanName() }</strong> </h4>
+											</div>
+											<div class="col-md-6 col-xs-12">
+												<h4 style="font-size: 14px;">Post FUP  : <strong> ${topUp.getPostFUP() }</strong> </h4>
+											</div>
+										</div>
+			                    		<div class="row">
+			                    			<h3 class="pb-10" style="padding-left:5px;">Payment Option</h3>
+			                    		</div>
+			                    		<div class="row">
+					                    	<div class="col-md-6 col-sm-6">
+							                    <input type="radio" name="payment_option" value="OPTCRDC" id="radio1" class="css-checkbox" />
+				                    			<label for="radio1" class="css-label radGroup1">Credit Card</label><br>
+												<div class="pb-10"></div>
+												
+												<input type="radio" name="payment_option" value="OPTDBCRD" id="radio2" class="css-checkbox" />
+				                    			<label for="radio2" class="css-label radGroup1">Debit Card</label><br>
+				                    			<div class="pb-10"></div>
+				                    			
+				                    			<input type="radio" name="payment_option" value="OPTNBK" id="radio3" class="css-checkbox" />
+				                    			<label for="radio3" class="css-label radGroup1">Net Banking</label><br>
+												<div class="pb-10"></div>
+												
+			                    			</div>
+			                    			
+			                    			<div class="col-md-6 col-sm-6">
+				                    			<input type="radio" name="payment_option" value="OPTMOBP" id="radio5" class="css-checkbox" />
+				                    			<label for="radio5" class="css-label radGroup1">Mobile Payments</label><br>
+				                    			<div class="pb-10"></div>
+				                    			
+				                    			<input type="radio" name="payment_option" value="OPTWLT" id="radio7" class="css-checkbox" />
+				                    			<label for="radio7" class="css-label radGroup1">Wallet</label><br>
+				                    			<div class="pb-10"></div>
+				                    			
+											</div>
+										</div>											
+						</div>
+						
+						
+						<div class="col-md-12" style="margin-bottom: 2%; text-align: right;">
+							<button class="btn billButton" type="submit">CONFIRM PAYMENT</button>
+						</div>
+					
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>						
 				
-				<input type="hidden" name="planSize" value="${topUp.getPlanSize() }">
-				<input type="hidden" name="planName" value="${topUp.getPlanName() }">
-				<input type="hidden" name="postFUP" value="${topUp.getPostFUP() }">
-				
-				<input type="hidden" name="trans_type" value="C">
-				<input type="hidden" name="currency" value="INR">
-				<input type="hidden" name="trans_descr" value="Description">
 				
 				
+				
+				
+				<!-- 
 				<div class="form-group">
 					<div class="col-md-1">
 					</div> 
@@ -208,6 +358,7 @@ label.css-label
 			           		</div>	 
 			               
 	                    </div>
+	                    -->
 	        
 	                    
 						<input readonly="readonly" type="hidden" name="tid" id="tid" value=""/><!-- Transaction ID -->
@@ -318,19 +469,10 @@ label.css-label
 				       <input type="hidden" name="otp" value=""/><!-- otp -->
 				       <input name="promo_code" id="promo_code" type="hidden" /> 
 				        
-				        </div>
-				        </div>
-				        
-			
-					</div><!-- col-md-10 -->
-					<div class="col-md-1">
-					</div>
-				</div><!-- Form group -->      
-			</form>
-
-	</div>
-</div>
-
+				       
+				</div>
+		</div>		
+</form>
 
 
 	<jsp:include page="../component/footer.jsp"></jsp:include>
