@@ -100,17 +100,17 @@
 </div>
 
 <div class="col-md-8 col-sm-12 pt-20 pt-20M" style="background-color: #ecf0f1;min-height: 116px;">
-	<div class="col-md-6 col-sm-12">
+	<div class="col-md-8 col-sm-12">
 
 		<h1 style="color: black;" class="currentBillFontforiPhone5">
 			Current bill &#8377; ${invoiceDetails.getAmount() }
 		</h1>
 
 	</div>
-	<div class=" col-md-6 col-sm-12" style="margin-top: 1.5%;">
+	<div class=" col-md-4 col-sm-12" style="margin-top: 1.5%;">
 
-		<a href="viewBill" class="btn billButton" target="_blank"> VIEW BILL </a> 
-		<a href="payment" class="btn billButton"> PAY BILL </a>
+		<a href="viewBill" class="btn billButton" target="_blank" style="width:120px;"> VIEW BILL </a> 
+		<a href="payment" class="btn billButton" style="width:120px;"> PAY BILL </a>
 
 	</div>
 

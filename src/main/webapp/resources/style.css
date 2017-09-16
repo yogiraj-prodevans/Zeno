@@ -622,12 +622,12 @@ a:hover {
 /*Floating button*/
 #floating-button{
 
-    width: 55px;
-    height: 55px;
+    width: 75px;
+    height: 75px;
     border-radius: 50%;
     background: #F44336;
     position: fixed;
-    top: 260px;
+    top: 265px;
     right: 40px;
     cursor: pointer;
     box-shadow: 0px 2px 5px #666;
@@ -636,7 +636,7 @@ a:hover {
 {
 	color:white;
 	text-align:center;
-	font-size: 12px;
+	font-size: 16px;
 	line-height: 5px;
 	letter-spacing: 0;
 	-webkit-margin-before: 0.25em;
@@ -645,12 +645,12 @@ a:hover {
 }
 #floating-button1{
 
-    width: 55px;
-    height: 55px;
+    width: 75px;
+    height: 75px;
     border-radius: 50%;
     background: #ffb81c;
     position: fixed;
-    top: 330px;
+    top: 365px;
     right: 40px;
     cursor: pointer;
     box-shadow: 0px 2px 5px #666;
@@ -659,8 +659,8 @@ a:hover {
 
 #floating-buttongray{
 
-    width: 55px;
-    height: 55px;
+    width: 75px;
+    height: 75px;
     border-radius: 50%;
     background: #9cafad;
     position: fixed;

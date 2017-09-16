@@ -196,7 +196,7 @@
 </div>
 </div>
 
-    <div class="container" style="margin-bottom: 0.5%;">
+    <div class="container" style="margin-bottom: 3%;">
         
             <div class="col-md-4 ">
 

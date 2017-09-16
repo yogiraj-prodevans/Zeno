@@ -26,68 +26,86 @@
 <jsp:include page="component/css.jsp"></jsp:include>
 
 </head>
-<style>
+<style type="text/css">
+
+.col-xs-12,.col-md-7, .col-md-6, .col-sm-6  
+{
+	padding-left: 1px !important;
+	padding-right: 1px !important;
+}
+
+@media ( max-width : 680px) 
+{
+  	.mainBlock3
+  	{
+  		width: 90% !important;
+  		min-height: 80% !important;
+  	}
+  	.pt-20M
+	{
+		padding-top: 1px;
+	}
+}
+@media (max-width:900px) and (min-width:680px)
+{	
+	.col-xs-12, .col-md-8  
+	{
+    	 padding-left: 1px !important;
+  	}
+  	.mainBlock3
+  	{
+  		width: 90% !important;
+  		min-height: 140% !important;
+  	} 	
+}
+
+.firstRow
+{
+     background-image: url('img/blue_small.png');
+     padding-left: 4.8% !important;
+     min-height: 116px;
+     background-size: cover;
+}
+.col-md-1
+{
+	padding-left: 1px !important;
+}
 
 </style>
 <body class="corporate">
  
-             <!-- BEGIN HEADER -->
-            <div class="header">
-                <div class="container">
-                    <a class="site-logo" href="#">
-                        <img src="corporate/img/logos/logo.png" alt="ONE8"> </a>
-                    <a href="javascript:void(0);" class="mobi-toggler"><i class="fa fa-bars"></i></a>
-                    <!-- BEGIN NAVIGATION -->
-                    <div class="header-navigation pull-right font-transform-inherit" style="font-size:12px">
-                        <ul>
-                            <li class="dropdown active"> </li>
-                            <li ><a href="${pageContext.request.contextPath }/dashboard">Home</a></li>
-                        <li class="active"><a href="${pageContext.request.contextPath }/billingPayment">Make Payment</a></li>  
-                        <li><a href="${pageContext.request.contextPath }/service">Service Request</a></li> 
-                        <li><a href="${pageContext.request.contextPath }/help">Help</a></li> 
-                        <li><a href="${pageContext.request.contextPath }/parental-control">Parental Control</a></li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
-                                Settings      
-                            </a>
+<!--  include menubar -->
+<jsp:include page="component/menubar.jsp"></jsp:include>	
 
-                            <ul class="dropdown-menu">
-                                <li><a href="${pageContext.request.contextPath }/profile">Profile</a></li>
-                                <li><a href="${pageContext.request.contextPath }/logout">Logout</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-                <!-- END NAVIGATION -->
-            </div>
-        </div>
         
 <%
 boolean success=true;
 if(success)
 {
 %>
-    <div class="row">
-        <div class="col-md-4 firstRow billPaymentImage">
-            <h1 style="color: white; margin-left: 15%;" class="pt-40">Bill payment</h1>
-        </div>
-        <div class="col-md-8 firstRow" style="background-color: #ecf0f1;">
-            <div class="col-md-10 col-sm-10">
-                <h1 style="color: black;" class="currentBillFontforiPhone5 pt-40">
-                	Your transaction was successful.
-                </h1>
-            </div>
-            <div class="col-md-2 col-sm-2">
-               <img class="paymentImageSize pt-20" alt="Check Image" src="corporate/img/check.png">
-            </div>
-        </div>
-    </div>
+<div class="col-md-4 col-sm-12  firstRow pt-20">
+	<h1 style="color: white; ">Bill payment</h1>
+</div>
+
+<div class="col-md-8 col-sm-12 " style="background-color: #ecf0f1;min-height: 116px;">
+	<div class="col-md-10 col-xs-10 pt-20M pt-20">
+
+		<h1 style="color: black;" class="currentBillFontforiPhone5">
+                	Your transaction was cancelled.
+        </h1>
+			
+	</div>
+	<div class="col-md-1">
+		<img class="paymentImageSize pt-20" alt="Check Image" src="corporate/img/cross1.png">
+	</div>	
+</div>
+
     
 	<div class="container">
 	    <div class="row col-md-12">
 	        <div class="col-md-4">
 	        </div>
-	        <div class="col-md-8">
+	        <div class="col-md-8 col-xs-12">
 	            <div class="mainBlock3" style="background-color: #2980b9;">
 	                <h3 class="pb-40">Payment Summary</h3>
 	                <h2 class="pb-40">Your payment of &#8377;. 60/- was successful.</h2>

@@ -32,7 +32,50 @@
        
 
 </head>
-        <body class="corporate" style="font-family: Roboto;">
+
+<style type="text/css">
+
+.col-xs-12,.col-md-7, .col-md-6, .col-sm-6  
+{
+	padding-left: 1px !important;
+	padding-right: 1px !important;
+}
+
+@media ( max-width : 680px) 
+{
+  	.mainBlock3
+  	{
+  		width: 90% !important;
+  		min-height: 80% !important;
+  	}
+  	.pt-20M
+	{
+		padding-top: 1px;
+	}
+}
+@media (max-width:900px) and (min-width:680px)
+{	
+	.col-xs-12, .col-md-8  
+	{
+    	 padding-left: 1px !important;
+  	}
+  	.mainBlock3
+  	{
+  		width: 90% !important;
+  		min-height: 140% !important;
+  	} 	
+}
+
+.firstRow
+{
+     background-image: url('img/blue_small.png');
+     padding-left: 4.8% !important;
+     min-height: 116px;
+     background-size: cover;
+}
+</style>
+
+<body class="corporate" style="font-family: Roboto;">
           
 <!--  include menubar -->
 <jsp:include page="../component/menubar.jsp"></jsp:include>	
@@ -135,21 +178,22 @@
 if(success)
 {
 %>
-    <div class="row">
-        <div class="col-md-4 firstRow billPaymentImage">
-            <h1 style="color: white; margin-left: 15%;" class="pt-40">Bill payment</h1>
-        </div>
-        <div class="col-md-8 firstRow" style="background-color: #ecf0f1;">
-            <div class="col-md-10 col-sm-10">
-                <h1 style="color: black;" class="currentBillFontforiPhone5 pt-40">
-                	Your transaction was successful.
-                </h1>
-            </div>
-            <div class="col-md-2 col-sm-2">
-               <img class="paymentImageSize pt-20" alt="Check Image" src="corporate/img/check.png">
-            </div>
-        </div>
-    </div>
+<div class="col-md-4 col-sm-12  firstRow pt-20">
+	<h1 style="color: white; ">Bill payment</h1>
+</div>
+
+<div class="col-md-8 col-sm-12 " style="background-color: #ecf0f1;min-height: 116px;">
+	<div class="col-md-10 col-xs-10 pt-20M pt-20">
+
+		<h1 style="color: black;" class="currentBillFontforiPhone5">
+                	Your transaction was successful
+        </h1>
+
+	</div>
+	<div class=" col-md-2 col-xs-2 pt-10">
+		<img class="paymentImageSize pt-20" alt="Check Image" src="corporate/img/check.png">
+	</div>
+</div>
     
 	<div class="container">
 	    <div class="row col-md-12">
@@ -176,21 +220,23 @@ if(success)
 else
 {
 %>
-    <div class="row">
-        <div class="col-md-4 firstRow billPaymentImage">
-            <h1 style="color: white; margin-left: 15%;" class="pt-40">Bill payment</h1>
-        </div>
-        <div class="col-md-8 firstRow" style="background-color: #ecf0f1;">
-            <div class="col-md-10 col-sm-10">
-                <h1 style="color: black;" class="currentBillFontforiPhone5 pt-40">
-                	Your transaction was unsuccessful.
-                </h1>
-            </div>
-            <div class="col-md-2 col-sm-2">
-               <img class="paymentImageSize pt-20" alt="Check Image" src="corporate/img/cross1.png">
-            </div>
-        </div>
-    </div>
+<div class="col-md-4 col-sm-12  firstRow pt-20">
+	<h1 style="color: white; ">Bill payment</h1>
+</div>
+
+<div class="col-md-8 col-sm-12 " style="background-color: #ecf0f1;min-height: 116px;">
+	<div class="col-md-10 col-xs-10 pt-20M pt-20">
+
+		<h1 style="color: black;" class="currentBillFontforiPhone5">
+                	Your transaction was unsuccessful
+        </h1>
+
+	</div>
+	<div class=" col-md-2 col-xs-2 pt-10">
+		<img class="paymentImageSize pt-20" alt="Check Image" src="corporate/img/cross1.png">
+	</div>
+</div>
+
     
 	<div class="container">
 	    <div class="row col-md-12">

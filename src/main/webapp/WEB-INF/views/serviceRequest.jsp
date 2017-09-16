@@ -115,10 +115,10 @@ background-position:right center;
         
         <div class="row pb-40">
             <div class="col-md-6">
-                <form:input path="name" type="text" id="name" placeholder="Name" value="${user_details.getFirst_name() }" required="true" style="width:98%;" />        
+                <form:input path="name" type="text" id="name" placeholder="Name" value="${user_details.getFirst_name() }" required="true" style="width:96%;" />        
             </div>
             <div class="col-md-6 mb-pt-30">
-            	<form:input path="mobile" type="text" id="mobile" placeholder="Mobile" required="true" class="NameWidth mobileMargin" value="${user_details.getMobileno() }" style="width:98%;" />
+            	<form:input path="mobile" type="text" id="mobile" placeholder="Mobile" required="true" class="NameWidth mobileMargin" value="${user_details.getMobileno() }" style="width:96%;" />
             </div>
         </div>
         
@@ -151,7 +151,7 @@ background-position:right center;
             </div>
         </div>
         
-        <hr style="height:1px;border:none;color:#333;background-color:#bdc3c7;width: 99%;" />
+        <hr style="height:1px;border:none;color:#333;background-color:#bdc3c7;width: 96%;" />
         
             <!-- Start Request For-->
             <div class="col-md-6">
@@ -262,9 +262,9 @@ background-position:right center;
         <div class="row">
         	<h3 style="padding-left: 1%;" class="plForMobile">Tell us more</h3>
             <div class="col-md-12">
-            	<form:textarea path="message" id="message" class="form-control" style="height:30%; width:99%; border: 0.4px solid #bdc3c7; resize: none; color:black; border-radius: 0.4px;font-size: 16px;" />
+            	<form:textarea path="message" id="message" class="form-control" style="height:30%; width:98%; border: 0.4px solid #bdc3c7; resize: none; color:black; border-radius: 0.4px;font-size: 16px;" />
             </div>
-            <div class="col-md-12" style="margin-top:2% ;text-align: right;margin-left: -1%;">
+            <div class="col-md-12" style="margin-top:2% ;text-align: right;margin-left: -2%;">
 				<button class="btn billButton" type="submit">SEND NOW</button>
 			</div>
         </div>
