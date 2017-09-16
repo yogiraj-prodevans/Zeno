@@ -1,19 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-<!-- Code For Floating Points (Current Plan and Top Up) -->
-<!-- Code For Floating Points (Current Plan and Top Up) --
-<ul class="fixedBlock">
-	<li><a class="topUpBlock" href="#topUP" data-target="#topUP"
-		data-toggle="modal">
-			<div class="textCSS">TOP UP</div>
-	</a></li>
-	<li><a class="currentPlanBlock" href="#currentPlan"
-		data-target="#currentPlan" data-toggle="modal">
-			<div class="textCSS">YOUR PLAN</div>
-	</a></li>
-</ul>
-<!-- End Code For Floating Points (Current Plan and Top Up) -->
 
 <a href="${pageContext.request.contextPath }/topup">
 	<div id="container-floating"> 		
@@ -35,13 +22,27 @@
 
 
 
+<!-- Code For Floating Points (Current Plan and Top Up) -->
+<!-- Code For Floating Points (Current Plan and Top Up) --
+<ul class="fixedBlock">
+	<li><a class="topUpBlock" href="#topUP" data-target="#topUP"
+		data-toggle="modal">
+			<div class="textCSS">TOP UP</div>
+	</a></li>
+	<li><a class="currentPlanBlock" href="#currentPlan"
+		data-target="#currentPlan" data-toggle="modal">
+			<div class="textCSS">YOUR PLAN</div>
+	</a></li>
+</ul>
+<!-- End Code For Floating Points (Current Plan and Top Up) -->
 
 
 <!-- Modal -->
+<!-- 
 <div class="modal fade" id="topUP" role="dialog" >
 	<div class="modal-dialog  modal-sm">
 
-		<!-- Modal content-->
+		
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -105,12 +106,11 @@
 
 
 
-<!-- Modal -->
-<div class="modal fade" id="currentPlan" role="dialog"
-	>
+
+<div class="modal fade" id="currentPlan" role="dialog">
 	<div class="modal-dialog"> 
 
-		<!-- Modal content -->
+		
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal">&times;</button>

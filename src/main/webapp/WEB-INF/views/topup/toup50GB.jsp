@@ -376,7 +376,7 @@ label.css-label
 				       <input name="promo_code" id="promo_code" type="hidden" /> 
 				        
 				       
-				</div>
+				
 		</div>		
 </form>
 
