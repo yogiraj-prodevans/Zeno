@@ -26,7 +26,7 @@
             .mainBlock4{
                 max-width: unset;
                 margin-top: 15%;
-                max-width: 93%;
+                max-width: 92.5%;
                  min-height:308px;
             }
 
@@ -44,7 +44,7 @@
             .firstRow{
                 background-image: url('img/red_small.png');
                 background-size: cover;
-                padding-left: 5%;
+                padding-left: 4.8%;
             }
             .row{
             	margin:unset;

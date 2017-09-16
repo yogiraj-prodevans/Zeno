@@ -28,7 +28,7 @@
 .firstRow
 {
      background-image: url('img/blue_small.png');
-     padding-left: 5.1%;
+     padding-left: 4.8%;
      min-height: 116px;
      background-size: cover;
 }
@@ -107,7 +107,7 @@
 		</h1>
 
 	</div>
-	<div class=" col-md-6 col-sm-12" style="margin-top: 1%;">
+	<div class=" col-md-6 col-sm-12" style="margin-top: 1.5%;">
 
 		<a href="viewBill" class="btn billButton" target="_blank"> VIEW BILL </a> 
 		<a href="payment" class="btn billButton"> PAY BILL </a>

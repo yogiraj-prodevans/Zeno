@@ -63,7 +63,7 @@ padding-left: 2%;
 
 
 <div class="col-md-12 firstRow pt-20" style="background-image: url('corporate/img/back.png');">
-    <h1 style="margin-left: 3.8%;">Contact</h1>
+    <h1 class="paddingLeftTop" >Contact</h1>
 </div>
 
 

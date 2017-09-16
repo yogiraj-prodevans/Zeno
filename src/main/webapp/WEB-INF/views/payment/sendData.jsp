@@ -111,7 +111,7 @@ label.css-label
 .mainBlock31
 {
 	width :96%;
-	height: 40%;
+	height: 38%;
 	color:black !important;
 	margin: 5%;
 	margin-left:2%;
@@ -125,7 +125,7 @@ label.css-label
 .firstRow
 {
      background-image: url('img/blue_small.png');
-     padding-left: 5% !important;
+     padding-left: 4.8% !important;
      min-height: 116px;
      background-size: cover;
 }

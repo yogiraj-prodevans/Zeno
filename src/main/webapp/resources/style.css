@@ -1,5 +1,9 @@
 /* CSS for billPaymentImage starts here*/
 
+.paddingLeftTop
+{
+	padding-left: 3.8%;
+}
 
 /* Navigation bar customization*/
 .header-navigation ul > li.active > a {

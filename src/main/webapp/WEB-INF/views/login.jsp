@@ -52,7 +52,7 @@ body {
 	font-size: 70px;
 }
 .front-steps-wrapper h2, .ecommerce .front-steps-wrapper h2 tag-line{
-	font-size: 70px;
+	font-size: 70px !important;
 }
 .loginBoxSqr
 {

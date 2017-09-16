@@ -36,7 +36,7 @@ p {
 
 	<div class="col-md-12 firstRow pt-20"
 		style="background-image: url('img/red_long.png');">
-		<h1 style="margin-left: 3.8%;">Privacy Policy</h1>
+		<h1 class="paddingLeftTop" >Privacy Policy</h1>
 	</div>
 
 

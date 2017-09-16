@@ -112,7 +112,7 @@
 	<!-- Header END -->
 
 <div class="col-md-12 firstRow pt-20" style="background-image: url('corporate/img/back.png');">
-    <h1 style="margin-left: 4%;" >Login contact and details</h1>
+    <h1 class="paddingLeftTop" >Login contact and details</h1>
 </div>
 	
 <div class="container">

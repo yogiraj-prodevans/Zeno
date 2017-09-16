@@ -6,7 +6,7 @@
 <%@ page session="false"%>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 
-<!DOCTYPE html>
+<html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -14,69 +14,106 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Booster &mdash; A free HTML5 Template by FREEHTML5.CO</title>
+	<title>STOIC ZENO</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
-	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
-	<meta name="author" content="FREEHTML5.CO" />
+	<meta content="Stoic Zeno User Portal" name="description">
+	<meta content="Stoic Zeno User Portal Keywords" name="keywords">
 
-  <!-- 
-	//////////////////////////////////////////////////////
 
-	FREE HTML5 TEMPLATE 
-	DESIGNED & DEVELOPED by FREEHTML5.CO
-		
-	Website: 		http://freehtml5.co/
-	Email: 			info@freehtml5.co
-	Twitter: 		http://twitter.com/fh5co
-	Facebook: 		https://www.facebook.com/fh5co
-
-	//////////////////////////////////////////////////////
-	 -->
-
-  <!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
-
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link rel="shortcut icon" href="favicon.ico">
-
-	<!-- Google Webfonts -->
-	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
-	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+	<style>
 	
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="slider-resource/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="slider-resource/icomoon.css">
-	<!-- Owl Carousel -->
-	<link rel="stylesheet" href="slider-resource/owl.carousel.min.css">
-	<link rel="stylesheet" href="slider-resource/owl.theme.default.min.css">
-	<!-- Magnific Popup -->
-	<link rel="stylesheet" href="slider-resource/magnific-popup.css">
-	<!-- Theme Style -->
-	<link rel="stylesheet" href="slider-resource/style.css">
-	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
+.row {
+	margin: unset;
+}
+
+.form-info {
+	border: unset;
+	padding-left: 1px !important;
+}
+
+.header .container {
+	position: relative;
+	width: 92%;
+}
+
+.form-without-legend {
+	padding-top: 25px;
+	font-family: Roboto;
+}
+
+.tag-line {
+	font-family: Roboto;
+	font-size: 70px;
+}
+.front-steps-wrapper h2, .ecommerce .front-steps-wrapper h2 tag-line{
+	font-size: 70px;
+}
+.loginBoxSqr
+{
+	width: 85% !important;
+}
+    body {
+        background: #eee;
+        color:#000;
+        margin: 0;
+        padding: 0;
+    }
+    .swiper-container {
+        width: 100%;
+        height: 78%;
+    }
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+    
+    .logincontainer {
+ position: absolute;
+  height: calc(100vh);
+  margin-top: 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
+  z-index: 997;
+  top: 0px;
+   width: 100%;
+}
+
+    </style>
+
+  
 
 
-<link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+
+
+	
+	<link rel="stylesheet" href="slider-resource/swiper.min.css">
+	
+	
+
+
+
 <jsp:include page="component/css.jsp"></jsp:include>
 
 
 	</head>
-	<body>
+	<body class="corporate">
 	
 	
 	<!-- BEGIN HEADER -->
@@ -87,39 +124,40 @@
 			</a> <a href="javascript:void(0);" class="mobi-toggler"><i
 				class="fa fa-bars"></i></a>
 			<!-- BEGIN NAVIGATION -->
-			<div class="header-navigation pull-right font-transform-inherit"
-				style="font-size: 12px">
-				<ul>
-					<li class="dropdown active"></li>
-					<li class="active"><a href="${contextPath}/login">Login</a></li>
-					<!--  <li>
-                    <a href="${contextPath}/register">Register</a>
-                  </li>-->
-				</ul>
-			</div>
+			
 			<!-- END NAVIGATION -->
 		</div>
 	</div>
 	<!-- Header END -->
-		
 	
-	<div class="fh5co-slider">
-		<div class="owl-carousel owl-carousel-fullwidth">
-		    <div class="item" style="background-image:url(slider-resource/slide_1.jpg)">
-		    	<div class="fh5co-overlay"></div>
-		    	<div class="container">
-		    		<div class="row">
-		    			<div class="col-md-8 col-md-offset-2">
-			    			<div class="fh5co-owl-text-wrap">
-							
-						    	<div class="fh5co-owl-text">
-						    		<h1 class="fh5co-sub-lead">Welcome to the network that stops</h1>
-									
-						    	</div>
-						    </div>
-					    </div>
-					    <div class="col-md-4 col-sm-4  pt-40 pb-20" style="padding-left: 20px;">
-							<div class="form-info">
+	 <!-- Swiper -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+         <div class="swiper-slide" style="background-image:url(slider-resource/slide_1.jpg)"></div>
+         <div class="swiper-slide" style="background-image:url(slider-resource/slide_2.jpg)"></div>
+         <div class="swiper-slide" style="background-image:url(slider-resource/slide_3.jpg)"></div>
+         <div class="swiper-slide" style="background-image:url(slider-resource/slide_4.jpg)"></div>
+         <div class="swiper-slide" style="background-image:url(slider-resource/slide_5.jpg)"></div>
+     	</div>
+     	
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+      <div class="" style="position: absolute;height: calc(100vh);margin-top: 64px;display: flex;flex-direction: column;justify-content: left;align-items: left;z-index: 997;top: 0px;width: 100%;">    		
+				<div class="row">	
+				<div class="row margin-bottom-10 front-steps-wrapper">
+						
+					<div class="col-lg-8 col-md-8 col-sm-8">
+							<div style="margin-top: 15%; padding-left: 6.2%;">
+								<h2 class="tag-line">
+									Welcome to the<br> network that never stops
+								</h2>
+							</div>
+					</div>	 
+						
+					   
+					   <div class="col-sm-4 ">
+					    
+							<div class="form-info" style="border-left:0;">
 								<h2 style="font-size: 30px">Login</h2>
 								<div class="content-form-page">
 
@@ -163,70 +201,18 @@
 							</div>
 						</div>
 		    		</div>
-		    	</div>
-		    </div>
-		    <div class="item" style="background-image:url(slider-resource/slide_2.jpg)">
-		    	<div class="fh5co-overlay"></div>
-		    	<div class="container">
-		    		<div class="row">
-		    			<div class="col-md-8 col-md-offset-2">
-			    			<div class="fh5co-owl-text-wrap">
-						    	<div class="fh5co-owl-text text-center to-animate">
-						    		<h1 class="fh5co-lead">A Digital Studio</h1>
-									<h2 class="fh5co-sub-lead">Booster is a free responsive HTML5 template using bootstrap released under Creative Commons 3.0. Lovely crafted by <a href="#">FREEHTML5.co</a></h2>
-						    	</div>
-						    </div>
-					    </div>
 		    		</div>
 		    	</div>
 		    </div>
-		    <div class="item" style="background-image:url(slider-resource/slide_3.jpg)">
-		    	<div class="fh5co-overlay"></div>
-		    	<div class="container">
-		    		<div class="row">
-		    			<div class="col-md-8 col-md-offset-2">
-			    			<div class="fh5co-owl-text-wrap">
-						    	<div class="fh5co-owl-text text-center to-animate">
-						    		<h1 class="fh5co-lead">Branding, UX under in one roof</h1>
-									<h2 class="fh5co-sub-lead">Booster is a free responsive HTML5 template using bootstrap released under Creative Commons 3.0. Lovely crafted by <a href="#">FREEHTML5.co</a></h2>
-						    	</div>
-						    </div>
-					    </div>
-		    		</div>
-		    	</div>
-		    </div>
-		    <div class="item" style="background-image:url(slider-resource/slide_4.jpg)">
-		    	<div class="fh5co-overlay"></div>
-		    	<div class="container">
-		    		<div class="row">
-		    			<div class="col-md-8 col-md-offset-2">
-			    			<div class="fh5co-owl-text-wrap">
-						    	<div class="fh5co-owl-text text-center to-animate">
-						    		<h1 class="fh5co-lead">Creative Folks</h1>
-									<h2 class="fh5co-sub-lead">Booster is a free responsive HTML5 template using bootstrap released under Creative Commons 3.0. Lovely crafted by <a href="#">FREEHTML5.co</a></h2>
-						    	</div>
-						    </div>
-					    </div>
-		    		</div>
-		    	</div>
-		    </div>
-			<div class="item" style="background-image:url(slider-resource/slide_5.jpg)">
-		    	<div class="fh5co-overlay"></div>
-		    	<div class="container">
-		    		<div class="row">
-		    			<div class="col-md-8 col-md-offset-2">
-			    			<div class="fh5co-owl-text-wrap">
-						    	<div class="fh5co-owl-text text-center to-animate">
-						    		<h1 class="fh5co-lead">Creative Folks</h1>
-									<h2 class="fh5co-sub-lead">Booster is a free responsive HTML5 template using bootstrap released under Creative Commons 3.0. Lovely crafted by <a href="#">FREEHTML5.co</a></h2>
-						    	</div>
-						    </div>
-					    </div>
-		    		</div>
-		    	</div>
-		    </div>
-		</div>
-	</div>	
+	
+               
+   	
+        
+        
+   
+
+    
+		
 	
 	
 	<jsp:include page="component/footerLogin.jsp"></jsp:include>
@@ -234,19 +220,23 @@
 
 
 	<!-- jQuery -->
-	<script src="slider-resource/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src="slider-resource/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src="slider-resource/bootstrap.min.js"></script>
-	<!-- Owl carousel -->
-	<script src="slider-resource/owl.carousel.min.js"></script>
-	<!-- Waypoints -->
-	<script src="slider-resource/jquery.waypoints.min.js"></script>
-	<!-- Magnific Popup -->
-	<script src="slider-resource/jquery.magnific-popup.min.js"></script>
-	<!-- Main JS -->
-	<script src="slider-resource/main.js"></script>
+	<script src="slider-resource/swiper.min.js"></script>
+	
+	
+
+    <!-- Initialize Swiper -->
+    <script>
+   var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        paginationClickable: true,
+        spaceBetween: 0,
+        centeredSlides: true,
+        autoplay: 4000,
+        autoplayDisableOnInteraction: false
+    });
+    </script>
 
 	
 	</body>
