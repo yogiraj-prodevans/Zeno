@@ -111,7 +111,7 @@ label.css-label
 .mainBlock31
 {
 	width :96%;
-	height: 38%;
+	height: 40%;
 	color:black !important;
 	margin: 5%;
 	margin-left:2%;
@@ -320,89 +320,6 @@ label.css-label
 						<input type="hidden" name="trans_descr" value="Description">
 				
 				
-						<div class="form-group col-md-12">
-							<div class="col-md-4">
-							</div> 
-                			<div class="col-md-7 col-xs-12">
-	                			<div class="mainBlock31" style="color:black;">
-	                				
-	                				<div class="col-md-5 col-xs-12">
-										<h3 class="pb-20">Details</h3>
-						
-										<div class="col-md-4 col-xs-4">
-											<h4 class="pb-10">Name :</h4>
-										</div>
-										<div class="col-md-8 col-xs-8">
-											<h4 class="pb-10">${user_details.getFirst_name() } ${user_details.getLast_name() }</h4>
-										</div>					
-										<div class="col-md-4 col-xs-4">
-											<h4 class="pb-10">Amount</h4>
-										</div>
-										<div class="col-md-8 col-xs-8">
-											<h4 class="pb-10">&#8377; ${invoiceDetails.getAmount() }</h4>
-										</div>					
-										<div class="col-md-4 col-xs-4">
-											<h4 class="pb-10">Email :</h4>
-										</div>
-										<div class="col-md-8 col-xs-8">
-											<h4 class="pb-10">${user_details.getEmail() }</h4>
-										</div>					
-										<div class="col-md-4 col-xs-4">
-											<h4 class="pb-10">Mobile :</h4>
-										</div>
-										<div class="col-md-8 col-xs-8">
-											<h4 class="pb-10">${user_details.getMobileno() }</h4>
-										</div>					
-				                        <select class="form-control" name="instrument_detail" id="instrument_detail" style="visibility: hidden;">
-             				           </select>
-									</div><!-- col-md-5 -->
-									<div class="col-md-1">
-									</div>
-				                    <div class="col-md-6 col-sm-7">
-				                    		
-				                    	<div class="col-md-12 col-sm-12">
-				                    		<div class="row">
-				                    			<h3 class="pb-20" style="padding-left:5px;">Payment Option</h3>
-				                    		</div>
-				                    		<div class="row">
-						                    	<div class="col-md-6 col-sm-6">
-								                    <input type="radio" name="payment_option" value="OPTCRDC" id="radio1" class="css-checkbox" />
-					                    			<label for="radio1" class="css-label radGroup1">Credit Card</label><br>
-													<div class="pb-10"></div>
-													
-													<input type="radio" name="payment_option" value="OPTDBCRD" id="radio2" class="css-checkbox" />
-					                    			<label for="radio2" class="css-label radGroup1">Debit Card</label><br>
-					                    			<div class="pb-10"></div>
-					                    			
-					                    			<input type="radio" name="payment_option" value="OPTNBK" id="radio3" class="css-checkbox" />
-					                    			<label for="radio3" class="css-label radGroup1">Net Banking</label><br>
-													<div class="pb-10"></div>
-													
-				                    			</div>
-				                    			
-				                    			<div class="col-md-6 col-sm-6">
-					                    			<input type="radio" name="payment_option" value="OPTMOBP" id="radio5" class="css-checkbox" />
-					                    			<label for="radio5" class="css-label radGroup1">Mobile Payments</label><br>
-					                    			<div class="pb-10"></div>
-					                    			
-					                    			<input type="radio" name="payment_option" value="OPTWLT" id="radio7" class="css-checkbox" />
-					                    			<label for="radio7" class="css-label radGroup1">Wallet</label><br>
-					                    			<div class="pb-10"></div>
-					                    			
-												</div>
-											</div>											
-										</div>
-
-				                	<div class="col-md-12" style="margin-bottom: 2%; text-align: right;">
-										<button class="btn billButton" type="submit">CONFIRM PAYMENT</button>
-									</div> 	
-				                </div>   
-			           		</div>	 
-			               
-	                    </div>
-	        
-	        			 
-	                    
 						<input readonly="readonly" type="hidden" name="tid" id="tid" value=""/><!-- Transaction ID -->
 		               	<input type="hidden" name="merchant_id" value="127191"/><!-- Merchant Id	: -->
 					   	<input type="hidden" name="order_id" value="1236556561"/><!-- Order Id	: -->
@@ -459,61 +376,98 @@ label.css-label
 				        <input type="hidden" name="delivery_zip" value="${user_details.getPin() }"/><!-- shiping zip -->
 				        <input type="hidden" name="delivery_country" value="India"/><!-- shiping country -->
 				        <input type="hidden" name="delivery_tel" value="${user_details.getMobileno() }"/><!-- shiping tel -->
-				        
-				        <input type="hidden" name="merchant_param1" value="additional Info."/><!-- merchant param1 -->
-				        <input type="hidden" name="merchant_param2" value="additional Info."/><!-- merchant param2 -->
-				        <input type="hidden" name="merchant_param3" value="additional Info."/><!-- merchant param3 -->
-						<input type="hidden" name="merchant_param4" value="additional Info."/><!-- merchant param4 -->
-						<input type="hidden" name="merchant_param5" value="additional Info."/><!-- merchant param5 -->
+				
+				
+				
+                			<div class="col-md-4">
+							</div> 
+                			<div class="col-md-7 col-xs-12">
+	                			<div class="mainBlock31" style="color:black;">
+	                				
+	                				<div class="col-md-5 col-xs-12">
+										<h3 class="pb-20">Details</h3>
 						
+										<div class="col-md-4 col-xs-4">
+											<h4 class="pb-10">Name :</h4>
+										</div>
+										<div class="col-md-8 col-xs-8">
+											<h4 class="pb-10">${user_details.getFirst_name() } ${user_details.getLast_name() }</h4>
+										</div>					
+										<div class="col-md-4 col-xs-4">
+											<h4 class="pb-10">Amount</h4>
+										</div>
+										<div class="col-md-8 col-xs-8">
+											<h4 class="pb-10">&#8377; ${invoiceDetails.getAmount() }</h4>
+										</div>					
+										<div class="col-md-4 col-xs-4">
+											<h4 class="pb-10">Email :</h4>
+										</div>
+										<div class="col-md-8 col-xs-8">
+											<h4 class="pb-10">${user_details.getEmail() }</h4>
+										</div>					
+										<div class="col-md-4 col-xs-4">
+											<h4 class="pb-10">Mobile :</h4>
+										</div>
+										<div class="col-md-8 col-xs-8">
+											<h4 class="pb-10">${user_details.getMobileno() }</h4>
+										</div>					
+				                        <select class="form-control" name="instrument_detail" id="instrument_detail" style="visibility: hidden;">
+             				           </select>
+									</div><!-- col-md-5 -->
+									
+									<div class="col-md-1">
+									</div>
+				                    
+				                    <div class="col-md-6 col-sm-7">
+				                    		
+				                    	<div class="col-md-12 col-sm-12">
+				                    		<div class="row">
+				                    			<h3 class="pb-20" style="padding-left:5px;">Payment Option</h3>
+				                    		</div>
+				                    		<div class="row">
+						                    	<div class="col-md-6 col-sm-6">
+								                    <input type="radio" name="payment_option" value="OPTCRDC" id="radio1" class="css-checkbox" />
+					                    			<label for="radio1" class="css-label radGroup1">Credit Card</label><br>
+													<div class="pb-10"></div>
+													
+													<input type="radio" name="payment_option" value="OPTDBCRD" id="radio2" class="css-checkbox" />
+					                    			<label for="radio2" class="css-label radGroup1">Debit Card</label><br>
+					                    			<div class="pb-10"></div>
+					                    			
+					                    			<input type="radio" name="payment_option" value="OPTNBK" id="radio3" class="css-checkbox" />
+					                    			<label for="radio3" class="css-label radGroup1">Net Banking</label><br>
+													<div class="pb-10"></div>
+													
+				                    			</div>
+				                    			
+				                    			<div class="col-md-6 col-sm-6">
+					                    			<input type="radio" name="payment_option" value="OPTMOBP" id="radio5" class="css-checkbox" />
+					                    			<label for="radio5" class="css-label radGroup1">Mobile Payments</label><br>
+					                    			<div class="pb-10"></div>
+					                    			
+					                    			<input type="radio" name="payment_option" value="OPTWLT" id="radio7" class="css-checkbox" />
+					                    			<label for="radio7" class="css-label radGroup1">Wallet</label><br>
+					                    			<div class="pb-10"></div>
+												</div>
 												
+											</div>											
+										</div>
+
+					                	<div class="col-md-12" style="margin-bottom: 2%; text-align: right;">
+											<button class="btn billButton" type="submit">CONFIRM PAYMENT</button>
+										</div> 
+										
+				                	</div>   
+			           		
+	       
+	        			 </div>
+	        			 </div>
+	                    </div>
+	                   
 						
 				       
-				         <!-- EMI section start -->
-				         
-				         
-			          	<div id="emi_div" style="display: none">
-				      	<input readonly="readonly" type="hidden" id="emi_plan_id"  name="emi_plan_id" value=""/>
-				      	<input readonly="readonly" type="hidden" id="emi_tenure_id" name="emi_tenure_id" value=""/>
-				      	<input readonly="readonly" type="hidden" id="emi_plan_id"  name="emi_plan_id" value=""/>
-				      	<input readonly="readonly" type="hidden" id="emi_tenure_id" name="emi_tenure_id" value=""/>
-						<select name="emi_banks"  id="emi_banks">
-						</select>
-						
-						<div id="emi_duration" class="span12">
-				      
-					        	
-				       
-				             <input type="text" id="card_type" name="card_type" value="" readonly="readonly"/><!-- card type -->
-				             <select name="card_name" id="card_name"> <option value="">Select Card Name</option> </select> 
-				       
-				             <input type="text" id="data_accept" name="data_accept" readonly="readonly"/><!-- Data accept -->
-		
-				             <input type="text" id="card_number" name="card_number" value=""/><!-- card number -->
-				         
-				             <input type="text" name="expiry_month" value=""/><!-- expiry month -->
-		
-				          	 <input type="text" name="expiry_year" value=""/><!--  -->
-				             <input type="text" name="cvv_number" value=""/><!-- cvv number -->
-				         
-				       <input type="text" name="issuing_bank" value=""/><!-- issueing bank -->
-				       <input type="text" name="mobile_number" value=""/><!-- mobile number -->
-				       <input type="text" name="mm_id" value=""/><!-- mm_id -->
-				       <input type="text" name="otp" value=""/><!-- otp -->
-				       <input type="hidden" id="data_accept" name="data_accept" readonly="readonly"/><!-- data accept -->
-				       <input type="hidden" id="card_number" name="card_number" value=""/><!-- card number -->
-				       <input type="hidden" name="expiry_month" value=""/><!-- expry month -->
-				       <input type="hidden" name="expiry_year" value=""/><!-- expiry year -->
-				       <input type="hidden" name="cvv_number" value=""/><!-- cvv number -->
-				       <input type="hidden" name="issuing_bank" value=""/><!-- issuing bank -->
-				       <input type="hidden" name="mobile_number" value=""/><!--mobile no  -->
-				       <input type="hidden" name="mm_id" value=""/><!-- mmid -->
-				       <input type="hidden" name="otp" value=""/><!-- otp -->
-				       <input name="promo_code" id="promo_code" type="hidden" /> 
-				    
-					</div>
-					</div>
-					</form>				    
+				  
+    </form>		    
 				   
 
 
@@ -532,7 +486,7 @@ label.css-label
 	      
 	      
 	      
-</body>
+
 <!-- <script language="javascript" type="text/javascript" src="json.js"></script>-->
 <!-- <script src="jquery-1.7.2.min.js"></script>-->
  <script language="javascript" type="text/javascript" src="js/json.js"></script>
@@ -831,4 +785,7 @@ label.css-label
       }
   });
 </script>
+
+
+</body>
 </html>
