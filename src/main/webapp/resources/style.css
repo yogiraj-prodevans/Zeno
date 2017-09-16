@@ -5,6 +5,14 @@
 	padding-left: 3.8%;
 }
 
+@media (max-width : 730px) 
+{
+	.paddingLeftTop
+	{
+		padding-left: 2.8%;
+	}
+}
+
 /* Navigation bar customization*/
 .header-navigation ul > li.active > a {
     border-bottom: 2px solid #F44336;
