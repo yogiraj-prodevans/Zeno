@@ -26,28 +26,8 @@
 </head>
 <body class="corporate">
 
-            <!-- BEGIN HEADER -->
-            <div class="header">
-                <div class="container">
-                    <a class="site-logo" href="#">
-                        <img src="corporate/img/logos/logo.png" alt="ONE8"> </a>
-                    <a href="javascript:void(0);" class="mobi-toggler"><i class="fa fa-bars"></i></a>
-                    <!-- BEGIN NAVIGATION -->
-                    <div class="header-navigation pull-right font-transform-inherit" style="font-size:12px">
-                        <ul>
-                            <li class="dropdown active"> </li>
-                            <li ><a href="${pageContext.request.contextPath }/dashboard">Home</a></li>
-                        <li class="active"><a href="${pageContext.request.contextPath }/billingPayment">Make Payment</a></li>  
-                        <li><a href="${pageContext.request.contextPath }/service">Service Request</a></li> 
-                        <li><a href="${pageContext.request.contextPath }/parental-control">Parental Control</a></li>
-                        <li><a href="${pageContext.request.contextPath }/profile">Profile</a></li>
-                        <li><a href="${pageContext.request.contextPath }/logout">Logout</a></li>
-                    </ul>
-                </div>
-                <!-- END NAVIGATION -->
-            </div>
-        </div>
-
+<!--  include menubar -->
+<jsp:include page="../component/menubar.jsp"></jsp:include>	
 
 <%
 	String workingKey = "F9F7E30646BF9F9163D6912C338D61FC";		//32 Bit Alphanumeric Working Key should be entered here so that data can be decrypted.
