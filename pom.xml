@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.prodevans</groupId>
 	<artifactId>zeno</artifactId>
-	<name>Stoic Zeno</name>
+	<name>Zeno</name>
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 
