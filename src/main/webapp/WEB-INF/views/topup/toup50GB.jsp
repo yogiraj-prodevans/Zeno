@@ -47,7 +47,7 @@
 {
   	.mainBlock31
   	{
-  		width: 98% !important;
+  		width: 95% !important;
   		min-height: 88% !important;
   	}
 }

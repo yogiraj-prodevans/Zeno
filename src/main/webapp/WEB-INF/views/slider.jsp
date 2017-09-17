@@ -66,8 +66,8 @@ div.content-form-page
         padding: 0;
     }
     .swiper-container {
-        width: 100%;
-        height: 78%;
+        width: 105%;
+        height: 77%;
     }
     .swiper-slide {
         text-align: center;
@@ -102,6 +102,13 @@ div.content-form-page
    width: 100%;
 }
 
+@media ( max-width : 750px) 
+{
+	.swiper-container
+	{
+		height: 250%;
+	}
+} 
     </style>
 
   
@@ -136,7 +143,8 @@ div.content-form-page
 		</div>
 	</div>
 	<!-- Header END -->
-	
+	<div id="is-desktop" class="show">
+
 	 <!-- Swiper -->
     <div class="swiper-container">
         <div class="swiper-wrapper">
@@ -213,7 +221,87 @@ div.content-form-page
 		    	</div>
 		    </div>
 	
-               
+    </div>
+	<div id="is-mobile" class="show">
+
+	 <!-- Swiper -->
+    <div class="swiper-container" style="height: 145%;">
+        <div class="swiper-wrapper">
+         <div class="swiper-slide" style="background-image:url(slider-resource/slide_1.jpg)"></div>
+         <div class="swiper-slide" style="background-image:url(slider-resource/slide_2.jpg)"></div>
+         <div class="swiper-slide" style="background-image:url(slider-resource/slide_3.jpg)"></div>
+         <div class="swiper-slide" style="background-image:url(slider-resource/slide_4.jpg)"></div>
+         <div class="swiper-slide" style="background-image:url(slider-resource/slide_5.jpg)"></div>
+     	</div>
+     	
+        <!-- Add Pagination -->
+        <div class="swiper-pagination" ></div>
+      <div class="" style="position: absolute;height: calc(100vh);margin-top: 64px;display: flex;flex-direction: column;justify-content: left;align-items: left;z-index: 997;top: 0px;width: 100%;">    		
+				<div class="row">	
+				<div class="col-md-12 margin-bottom-10 front-steps-wrapper">
+						
+					<div class="col-lg-8 col-md-8 col-sm-8">
+							<div style="margin-top: 8%; padding-left: 6%;">
+								<h2 class="tag-line">
+									Welcome to the<br> network that never stops
+								</h2>
+							</div>
+					</div>	 
+						
+					   
+					   <div class="col-md-4 col-sm-4  pb-30">
+					    
+							<div class="loginBoxSqr" style="padding-left: 55px;">
+								<h3 style="font-size: 24px">Login</h3>
+								<div class="content-form-page">
+
+
+									<form class="form-horizontal form-without-legend"
+										role="form" action="login" method="post" >
+										<div class="form-group">
+
+											<div class="col-lg-12 pb-20">
+												<input  type="text" id="mystoicid"
+													style="font-size:24px;" placeholder="My One8 ID " />
+											</div>
+										</div>
+										<div class="form-group">
+
+											<div class="col-lg-12 pb-10">
+												<input path="password" type="password" id="password"
+													style="font-size:24px;" placeholder="My One8 Password " />
+											</div>
+											<div class="col-md-12">
+												<a style="color: #989494;" href="#">I forgot my One8
+													Password</a>
+											</div>
+											<div class="col-md-12">
+												<input id="remember" type="checkbox" name="remember"
+													value="remember"> &nbsp; <label for="remember"
+													class="font-h4"> Remember me </label>
+											</div>
+										</div>
+										<div class="row" style="text-align: right;">
+											<!-- added ID for button for testing -->
+											<button type="submit" id="submitButton"
+												class="btn billButton font-h3 ">LOGIN</button>
+
+
+										</div>
+
+										<c:if test="${ not empty error}">${error}</c:if>
+									</form>
+								</div>
+							</div>
+						</div>
+						
+		    		</div>
+		    		</div>
+		    	</div>
+		    </div>
+	
+    </div>
+	
    	
         
         
@@ -229,11 +317,45 @@ div.content-form-page
 
 	<!-- jQuery -->
 	<script src="slider-resource/swiper.min.js"></script>
-	
+	<script src="plugins/jquery.min.js"></script>     
+    <script src="bootsrap/js/bootstrap.min.js"></script>     
 	
 
     <!-- Initialize Swiper -->
     <script>
+	
+   
+   var isMobile = {
+                Android: function () {
+                    return navigator.userAgent.match(/Android/i);
+                },
+                BlackBerry: function () {
+                    return navigator.userAgent.match(/BlackBerry/i);
+                },
+                iOS: function () {
+                    return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+                },
+                Opera: function () {
+                    return navigator.userAgent.match(/Opera Mini/i);
+                },
+                Windows: function () {
+                    return navigator.userAgent.match(/IEMobile/i);
+                },
+                any: function () {
+                    return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+                }};
+
+            jQuery(function ($) {
+                if (!isMobile.any())
+                {
+                
+                 $('#is-mobile').toggleClass('show hide');}
+                 else{
+                  
+                 $('#is-desktop').toggleClass('show hide');}
+            });
+
+			
    var swiper = new Swiper('.swiper-container', {
         pagination: '.swiper-pagination',
         nextButton: '.swiper-button-next',

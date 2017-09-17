@@ -47,7 +47,7 @@
 {
   	.mainBlock31
   	{
-  		width: 98% !important;
+  		width: 95% !important;
   		min-height: 80% !important;
   	}
 }
@@ -189,6 +189,7 @@ label.css-label
 <!--  include menubar -->
 <jsp:include page="../component/menubar.jsp"></jsp:include>	
 
+<jsp:include page="../component/pop-up.jsp"></jsp:include>
 
 <div class="col-md-4 col-sm-12  firstRow pt-20">
 	<h1 style="color: white; ">Bill summary</h1>
@@ -472,34 +473,35 @@ label.css-label
 				         <!-- EMI section start -->
 				         
 				         
-			          	<div id="emi_div" style="display: none">
+			          	
 				      	<input readonly="readonly" type="hidden" id="emi_plan_id"  name="emi_plan_id" value=""/>
 				      	<input readonly="readonly" type="hidden" id="emi_tenure_id" name="emi_tenure_id" value=""/>
 				      	<input readonly="readonly" type="hidden" id="emi_plan_id"  name="emi_plan_id" value=""/>
 				      	<input readonly="readonly" type="hidden" id="emi_tenure_id" name="emi_tenure_id" value=""/>
-						<select name="emi_banks"  id="emi_banks">
+						<select name="emi_banks"  id="emi_banks" style="visibility: hidden;">
 						</select>
 						
 						<div id="emi_duration" class="span12">
 				      
 					        	
 				       
-				             <input type="text" id="card_type" name="card_type" value="" readonly="readonly"/><!-- card type -->
-				             <select name="card_name" id="card_name"> <option value="">Select Card Name</option> </select> 
+				             <input type="hidden" id="card_type" name="card_type" value="" readonly="readonly"/><!-- card type -->
+				             <select name="card_name" id="card_name" style="visibility: hidden;">
+				             </select> 
 				       
-				             <input type="text" id="data_accept" name="data_accept" readonly="readonly"/><!-- Data accept -->
+				             <input type="hidden" id="data_accept" name="data_accept" readonly="readonly"/><!-- Data accept -->
 		
-				             <input type="text" id="card_number" name="card_number" value=""/><!-- card number -->
+				             <input type="hidden" id="card_number" name="card_number" value=""/><!-- card number -->
 				         
-				             <input type="text" name="expiry_month" value=""/><!-- expiry month -->
+				             <input type="hidden" name="expiry_month" value=""/><!-- expiry month -->
 		
-				          	 <input type="text" name="expiry_year" value=""/><!--  -->
-				             <input type="text" name="cvv_number" value=""/><!-- cvv number -->
+				          	 <input type="hidden" name="expiry_year" value=""/><!--  -->
+				             <input type="hidden" name="cvv_number" value=""/><!-- cvv number -->
 				         
-				       <input type="text" name="issuing_bank" value=""/><!-- issueing bank -->
-				       <input type="text" name="mobile_number" value=""/><!-- mobile number -->
-				       <input type="text" name="mm_id" value=""/><!-- mm_id -->
-				       <input type="text" name="otp" value=""/><!-- otp -->
+				       <input type="hidden" name="issuing_bank" value=""/><!-- issueing bank -->
+				       <input type="hidden" name="mobile_number" value=""/><!-- mobile number -->
+				       <input type="hidden" name="mm_id" value=""/><!-- mm_id -->
+				       <input type="hidden" name="otp" value=""/><!-- otp -->
 				       <input type="hidden" id="data_accept" name="data_accept" readonly="readonly"/><!-- data accept -->
 				       <input type="hidden" id="card_number" name="card_number" value=""/><!-- card number -->
 				       <input type="hidden" name="expiry_month" value=""/><!-- expry month -->
@@ -521,7 +523,7 @@ label.css-label
 
 
 <!-- included pop up -->
-            <jsp:include page="../component/pop-up.jsp"></jsp:include>
+            
 
 			<jsp:include page="../component/footer.jsp"></jsp:include>
                

@@ -113,7 +113,7 @@ body {
 						</div>
 						<div class="col-md-4 col-sm-4  pt-40 pb-20">
 							<div class="form-info loginBoxSqr">
-								<h2 style="font-size: 30px">Login</h2>
+								<h3 style="font-size: 24px; color:white;">Login</h3>
 								<div class="content-form-page">
 
 
