@@ -39,9 +39,9 @@
 	{
 		margin-top: 15px;
 	}
-	.col-md-8, col-sm-12
+	.col-md-8
 	{
-		padding-left: 5px;
+		padding-left: 10px !important;
 	}
 }
 @media ( max-width : 970px) 
@@ -58,6 +58,11 @@
 	{
 		max-width: 98% !important;
 		margin-top: 5%;
+	}
+
+	.pdl
+	{
+		padding-left: 20px;
 	}
 }
 </style>
@@ -107,7 +112,7 @@
 		</h1>
 
 	</div>
-	<div class=" col-md-4 col-sm-12" style="margin-top: 1.5%;">
+	<div class=" col-md-4 col-sm-12 pdl" style="margin-top: 1.5%;">
 
 		<a href="viewBill" class="btn billButton" target="_blank" style="width:115px;"> VIEW BILL </a> 
 		<a href="payment" class="btn billButton" style="width:115px;"> PAY BILL </a>
