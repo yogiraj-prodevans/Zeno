@@ -58,9 +58,15 @@ body {
 {
 	width: 85% !important;
 }
-@media ( max-width : 480px) {
-	.front-steps-wrapper h2, .ecommerce .front-steps-wrapper h2 tag-line{
-		font-size: 40px;
+.pt-15Per
+{
+	padding-top: 15%;
+}
+@media ( max-width : 480px) 
+{
+	.front-steps-wrapper h2, .ecommerce .front-steps-wrapper h2 tag-line
+	{
+		font-size: 40px !important;
 	}
 	.pt-40{
 		padding-top: 20px;
@@ -76,6 +82,11 @@ body {
 	.form-info
 	{
 		padding-left: 8% !important;
+		padding-top: 1px !important;
+	}
+	.pt-15Per
+	{
+		padding-top: 10% !important;
 	}
 }
 </style>
@@ -105,7 +116,7 @@ body {
 				<div style="background: url('img/slide_1.jpg'); min-height: 500px">
 					<div class="row">
 						<div class="col-lg-8 col-md-8 col-sm-8  ">
-							<div style="margin-top: 15%; padding-left: 6.2%;">
+							<div class="pt-15Per" style="padding-left: 6.2%;">
 								<h2 class="tag-line">
 									Welcome to the<br> network that never stops
 								</h2>
@@ -133,8 +144,9 @@ body {
 													style="font-size:18px;" placeholder="My One8 Password " />
 											</div>
 											<div class="col-md-12">
-												<a style="color: #989494;" href="#">I forgot my One8
+												<!-- <a style="color: #989494;" href="#">I forgot my One8
 													Password</a>
+												 -->	
 											</div>
 											<div class="col-md-12">
 												<input id="remember" type="checkbox" name="remember"
