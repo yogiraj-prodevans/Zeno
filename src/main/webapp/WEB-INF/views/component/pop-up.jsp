@@ -1,11 +1,86 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
+<style>
+
+.floatingRight
+{
+	right: 40px;
+}
+.pt-18
+{
+	padding-top: 18px;
+}
+
+/*Floating button*/
+#floating-button
+{
+
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: #F44336;
+    position: fixed;
+    top: 260px;
+    cursor: pointer;
+    box-shadow: 0px 2px 5px #666;
+}
+
+#floating-button1
+{
+
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: #ffb81c;
+    position: fixed;
+    top: 330px;
+    cursor: pointer;
+    box-shadow: 0px 2px 5px #666;
+}
+.fv
+{
+	color:white;
+	text-align:center;
+	font-size: 12px;
+	line-height: 5px;
+	letter-spacing: 0;
+	-webkit-margin-before: 0.25em;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+}
+@media (max-width : 730px) 
+{
+	.floatingRight
+	{
+		right: 5% !important;
+	}
+	.fv
+	{
+		font-size: 10px;
+	}
+	#floating-button
+	{
+	    width: 45px;
+	    height: 45px;
+	}
+	#floating-button1
+	{
+	    width: 45px;
+	    height: 45px;
+	}
+	.pt-18
+	{
+		padding-top: 14px;
+	}
+
+}
+</style>
 
 <a href="${pageContext.request.contextPath }/topup">
 	<div id="container-floating"> 		
-    	<div id="floating-button" data-toggle="tooltip" style="right: 35px;">
-        	<h6 class="fv" style="padding-top: 28px;">TOP</h6>
+    	<div id="floating-button" data-toggle="tooltip" class="floatingRight">
+        	<h6 class="fv pt-18">TOP</h6>
         	<h6 class="fv">UP</h6>  
         </div>
     </div>
@@ -13,8 +88,8 @@
 
 <a href="${pageContext.request.contextPath }/YourPlan">
 	<div id="container-floating">
-    	<div id="floating-button1" data-toggle="tooltip" style="right: 35px;">
-        	<h6 class="fv" style="padding-top: 28px;">YOUR</h6>
+    	<div id="floating-button1" data-toggle="tooltip" class="floatingRight">
+        	<h6 class="fv pt-18">YOUR</h6>
         	<h6 class="fv">PLAN</h6>  
         </div>
     </div>

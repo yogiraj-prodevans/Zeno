@@ -31,6 +31,13 @@
 	padding-left: 1px !important;
 }
 
+div.content-form-page 
+{
+    background: #fff;
+    padding: 5px 20px 30px;
+    margin-right: 20px !important;
+}
+
 .header .container {
 	position: relative;
 	width: 92%;
@@ -46,7 +53,7 @@
 	font-size: 70px;
 }
 .front-steps-wrapper h2, .ecommerce .front-steps-wrapper h2 tag-line{
-	font-size: 70px;
+	font-size: 70px !important;
 }
 .loginBoxSqr
 {
@@ -144,10 +151,10 @@
         <div class="swiper-pagination"></div>
       <div class="" style="position: absolute;height: calc(100vh);margin-top: 64px;display: flex;flex-direction: column;justify-content: left;align-items: left;z-index: 997;top: 0px;width: 100%;">    		
 				<div class="row">	
-				<div class="row margin-bottom-10 front-steps-wrapper">
+				<div class="col-md-12 margin-bottom-10 front-steps-wrapper">
 						
 					<div class="col-lg-8 col-md-8 col-sm-8">
-							<div style="margin-top: 15%; padding-left: 6.2%;">
+							<div style="margin-top: 8%; padding-left: 6%;">
 								<h2 class="tag-line">
 									Welcome to the<br> network that never stops
 								</h2>
@@ -155,10 +162,10 @@
 					</div>	 
 						
 					   
-					   <div class="col-sm-4 ">
+					   <div class="col-md-4 col-sm-4  pb-30">
 					    
-							<div class="form-info" style="border-left:0;">
-								<h2 style="font-size: 30px">Login</h2>
+							<div class="loginBoxSqr">
+								<h3 style="font-size: 24px">Login</h3>
 								<div class="content-form-page">
 
 
@@ -200,6 +207,7 @@
 								</div>
 							</div>
 						</div>
+						
 		    		</div>
 		    		</div>
 		    	</div>

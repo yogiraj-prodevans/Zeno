@@ -39,6 +39,7 @@
 .mainBlock4
 {
 	width :100%;
+	min-height:270px !important;
 	color:black;
 	margin: 5%;
 	padding-left:5%;
@@ -75,7 +76,11 @@
 {
 	h1, h2
 	{
-		font-size: 26px;
+		font-size: 24px;
+	}
+	.font-h3
+	{
+		font-size: 16px;
 	}
 }
 </style>
@@ -152,7 +157,7 @@
 		<div class="col-md-6 col-sm-12">
 			<div class="mainBlock4" >
 				
-				<div class="pb-10 pt-30">
+				<div class="row pb-10 pt-30">
 					<div class="col-md-4 col-xs-4">
 						<h3 class="font-h3">Mobile:</h3>
 					</div>
@@ -160,7 +165,7 @@
 						<h3 class="font-h3">${profile.getMobileno() }</h3>
 					</div>
 				</div>
-				<div class="pb-10">
+				<div class="row pb-10">
 					<div class="col-md-4 col-xs-4">
 						<h3 class="font-h3">Email ID:</h3>
 					</div>
@@ -168,7 +173,7 @@
 						<h3 class="font-h3">${profile.getEmail() }</h3>
 					</div>
 				</div>
-				<div class="pb-10">
+				<div class="row pb-10">
 					<div class="col-md-4 col-xs-4">
 						<h3 class="font-h3">Address:</h3>
 					</div>

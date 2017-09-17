@@ -39,7 +39,7 @@
 	{
 		margin-top: 15px;
 	}
-	.col-md-6, col-sm-12
+	.col-md-8, col-sm-12
 	{
 		padding-left: 5px;
 	}
@@ -109,8 +109,8 @@
 	</div>
 	<div class=" col-md-4 col-sm-12" style="margin-top: 1.5%;">
 
-		<a href="viewBill" class="btn billButton" target="_blank" style="width:120px;"> VIEW BILL </a> 
-		<a href="payment" class="btn billButton" style="width:120px;"> PAY BILL </a>
+		<a href="viewBill" class="btn billButton" target="_blank" style="width:115px;"> VIEW BILL </a> 
+		<a href="payment" class="btn billButton" style="width:115px;"> PAY BILL </a>
 
 	</div>
 
@@ -178,7 +178,7 @@
 	<!-- included pop up -->
 	<jsp:include page="component/pop-up.jsp"></jsp:include>
 
-	<div style="margin-bottom:  2.5%;"></div>
+	<div style="margin-bottom:  3%;"></div>
 	<jsp:include page="component/footer.jsp"></jsp:include>
 
 
