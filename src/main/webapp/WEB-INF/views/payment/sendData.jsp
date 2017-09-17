@@ -73,7 +73,8 @@
 	margin: 5%;
 	margin-left:2%;
 	 padding: 2% 4%;
-	 margin-bottom: 15%;
+	 margin-bottom: 8%;
+	 margin-top:8%;
 	-webkit-box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
 	-moz-box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
 	box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);

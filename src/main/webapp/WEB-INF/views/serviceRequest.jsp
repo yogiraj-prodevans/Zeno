@@ -42,9 +42,19 @@
 
 select
 {
-    border: none;
+	background-image:url(img/varrow2.png);
+	background-size: 29px 29px;
+	background-repeat: no-repeat;
+	background-position: right top;
+	width:195px;
+	height: 34px;
+	border:none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	border-bottom: 2px solid red; 
+
+/*    border: none;
     font-size: 16px;
-    
     width:195px;
     padding-bottom:5px;
     outline: none;
@@ -52,6 +62,7 @@ select
     -webkit-appearance:none;
     -moz-appearance: none;
 	background-image:url(img/drop.jpg);    
+	*/
 }
 
 option:hover {
