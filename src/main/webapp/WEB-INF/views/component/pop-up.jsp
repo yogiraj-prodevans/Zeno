@@ -49,6 +49,21 @@
 	-webkit-margin-start: 0px;
 	-webkit-margin-end: 0px;
 }
+
+@media (max-height : 730px) 
+{
+	#floating-button
+	{
+	    top: 120px;
+	    right: 2% !important;
+	}
+	#floating-button1
+	{
+	    top: 190px;
+	    right: 2% !important;
+	}
+}
+
 @media (max-width : 730px) 
 {
 	.floatingRight

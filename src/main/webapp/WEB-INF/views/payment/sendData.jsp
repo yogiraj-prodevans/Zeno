@@ -43,12 +43,12 @@
 	padding-right: 1px !important;
 }
 
-@media ( max-width : 680px) 
+@media ( max-width : 680px) and (max-height: 740px) 
 {
   	.mainBlock31
   	{
   		width: 95% !important;
-  		min-height: 80% !important;
+  		min-height: 95% !important;
   	}
 }
 @media (max-width:900px) and (min-width:680px)
@@ -59,52 +59,9 @@
   	}
   	.mainBlock31
   	{
-  		width: 98% !important;
-  		min-height: 140% !important;
-  	}
-  	
- input[type=radio].css-checkbox
-{
-	position:absolute;
-	z-index:-1000;
-	left:-1000px;
-	overflow: hidden;
-	clip: rect(0 0 0 0);
-	height:1px; width:1px;
-	margin:-1px;
-	padding:0;
-	border:0;
-}
-
-input[type=radio].css-checkbox + label.css-label 
-{
-	padding-left:30px;
-	height:25px; 
-	display:inline-block;
-	line-height:25px;
-	background-repeat:no-repeat;
-	background-position: 0 0;
-	
-	vertical-align:middle;
-	cursor:pointer;
-}
-
-input[type=radio].css-checkbox:checked + label.css-label 
-{
-	background-position: 0 -25px;
-}
-
-label.css-label
-{
-	background-image:url('img/checkbox.png');
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-} 	
-  	
+  		width: 95% !important;
+  		min-height: 180% !important;
+  	}  	
 }
 
 
@@ -189,7 +146,7 @@ label.css-label
 <!--  include menubar -->
 <jsp:include page="../component/menubar.jsp"></jsp:include>	
 
-<jsp:include page="../component/pop-up.jsp"></jsp:include>
+
 
 <div class="col-md-4 col-sm-12  firstRow pt-20">
 	<h1 style="color: white; ">Bill summary</h1>
@@ -524,6 +481,7 @@ label.css-label
 
 <!-- included pop up -->
             
+<jsp:include page="../component/pop-up.jsp"></jsp:include>
 
 			<jsp:include page="../component/footer.jsp"></jsp:include>
                
