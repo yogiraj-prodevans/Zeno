@@ -49,8 +49,8 @@
 	-webkit-margin-start: 0px;
 	-webkit-margin-end: 0px;
 }
-
-@media (max-height : 730px) 
+/*
+@media (min-height : 730px) 
 {
 	#floating-button
 	{
@@ -63,6 +63,7 @@
 	    right: 2% !important;
 	}
 }
+*/
 
 @media (max-width : 730px) 
 {
