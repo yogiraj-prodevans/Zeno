@@ -39,7 +39,7 @@ public class SendMailDAOImpl implements SendMailDAO
 		String Complete="Concated message that might have HTML code"+feedback.getMessage();
 		params1.add(Complete);
 		params1.add(feedback.getSubject());
-		params1.add("siddu.prodevans@gmail.com");
+		params1.add("suguna@oneeight.co.in");
 		params1.add(1);
 		
 		Boolean mailResult = (Boolean) rpcClient.execute(unifyHandler + ".sendMail", params1);
@@ -55,7 +55,7 @@ public class SendMailDAOImpl implements SendMailDAO
 		Vector params = new Vector();
 		params.add(feedback.getMessage());
 		params.add(feedback.getSubject());
-		params.add("siddu.prodevans@gmail.com");
+		params.add("suguna@oneeight.co.in");
 		params.add(1);
 		
 		Boolean mailResult = (Boolean) rpcClient.execute(unifyHandler + ".sendMail", params);
@@ -85,7 +85,7 @@ public class SendMailDAOImpl implements SendMailDAO
 		Vector params = new Vector();
 		params.add(mailContent);
 		params.add("Service Request");
-		params.add("siddu.prodevans@gmail.com");
+		params.add("suguna@oneeight.co.in");
 		params.add(1);
 		
 		Boolean mailResult = (Boolean) rpcClient.execute(unifyHandler + ".sendMail", params);
