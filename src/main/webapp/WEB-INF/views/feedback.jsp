@@ -90,7 +90,8 @@
 		     
     </div>
     
-    
+    <h3 style="color:green; text-align: center;"><b>
+<c:if test="${ not empty msg}">${msg}</c:if></b></h3>
 </div>    
 
 		<jsp:include page="component/pop-up.jsp"></jsp:include>
