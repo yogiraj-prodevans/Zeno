@@ -138,7 +138,8 @@ padding-left: 2%;
 
 		</div>
 
-
+<h3 style="color:green; text-align: center;"><b>
+<c:if test="${ not empty msg}">${msg}</c:if></b></h3>
 
 
 	<!-- included pop up -->

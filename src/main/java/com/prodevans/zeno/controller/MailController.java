@@ -48,6 +48,12 @@ public class MailController
 			SessionDetails user = (SessionDetails) session.getAttribute("user");
 			model.addAttribute("user_details", user);
 			
+			if(session.getAttribute("successfull") != null)
+			{
+				session.removeAttribute("successfull");
+				model.addAttribute("msg", "Thank you for your valuable feedback...");
+			}
+			
 			return  new ModelAndView("feedback","feedbackDetails",new SendMailDetails());
 		}
 	}
@@ -56,6 +62,7 @@ public class MailController
 	public String feedbackRequest(ModelMap model, HttpSession session,@ModelAttribute(name="feedbackDetails")SendMailDetails feedback) throws XmlRpcException 
 	{
 		boolean result=feedbackDAOImpl.sentMailFeedback(feedback);
+		session.setAttribute("successfull", "successfull");
 		return  "redirect:feedbackPage";
 	}
 	
@@ -71,6 +78,12 @@ public class MailController
 			SessionDetails user = (SessionDetails) session.getAttribute("user");
 			model.addAttribute("user_details", user);
 			
+			if(session.getAttribute("successfull") != null)
+			{
+				session.removeAttribute("successfull");
+				model.addAttribute("msg", "Will get back to you soon...");
+			}
+			
 			return  new ModelAndView("contactus","contactusDetails",new SendMailDetails());
 		}
 	}
@@ -79,6 +92,7 @@ public class MailController
 	public String contactusRequest(ModelMap model, HttpSession session,@ModelAttribute(name="contactusDetails")SendMailDetails feedback) throws XmlRpcException 
 	{
 		boolean result=feedbackDAOImpl.sentMailContactUs(feedback);
+		session.setAttribute("successfull", "successfull");
 		return  "redirect:contactusPage";
 	}
 	
@@ -104,6 +118,12 @@ public class MailController
 			
 			request.setTime_slot_to_call(time_slot_to_call);
 			model.addAttribute("time_slot_to_call", time_slot_to_call);
+			
+			if(session.getAttribute("successfull") != null)
+			{
+				session.removeAttribute("successfull");
+				model.addAttribute("msg", "Your request has been initiated...");
+			}
 
 			return  new ModelAndView("serviceRequest","serviceRequestDetails",request);
 		}
@@ -114,6 +134,7 @@ public class MailController
 	{
 		
 		boolean result=feedbackDAOImpl.sentMailServiceRequest(serviceRequest);
+		session.setAttribute("successfull", "successfull");
 		
 		System.out.println("Name : "+serviceRequest.getName());
 		System.out.println("Mobile : "+serviceRequest.getMobile());
