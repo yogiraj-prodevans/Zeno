@@ -27,29 +27,62 @@
 
 <style type="text/css">
 
-.col-xs-12,.col-md-7, .col-md-6, .col-sm-6  
+.row
+{
+	margin: unset;
+}
+.mainBlock3
+{
+	max-height: 105% !important;
+	min-height: 105% !important;
+	margin-top: 7% !important;
+	margin-bottom: 7% !important;
+}
+
+.col-md-7, .col-md-6, .col-sm-6  
 {
 	padding-left: 1px !important;
 	padding-right: 1px !important;
 }
 
+.pt-20M
+{
+	padding-top: 10px;
+}
+.pt-20I
+{
+	padding-top: 10px;
+}
 @media ( max-width : 680px) 
 {
-  	.mainBlock31
+  	.mainBlock3
   	{
-  		width: 98% !important;
+  		width: 90% !important;
   		min-height: 80% !important;
+  	}
+  	.pt-20M
+	{
+		padding-top: 1px;
+	}
+	.pt-20I
+	{
+		padding-top: 30px;
+	}
+	.col-xs-12, .col-md-8  
+	{
+    	 padding-left: 1px !important;
+    	 padding-right: 1px !important;
   	}
 }
 @media (max-width:900px) and (min-width:680px)
 {	
-	.col-xs-12,.col-md-7  
+	.col-xs-12, .col-md-8  
 	{
     	 padding-left: 1px !important;
   	}
-  	.mainBlock31
+  	.mainBlock3
   	{
-  		width: 98% !important;
+  		width: 90% !important;
   		min-height: 140% !important;
   	} 	
 }
@@ -61,6 +94,11 @@
      min-height: 116px;
      background-size: cover;
 }
+.col-md-1
+{
+	padding-left: 1px !important;
+}
+
 </style>
 
 <body class="corporate">
@@ -106,53 +144,31 @@
 	<h1 style="color: white; ">Bill payment</h1>
 </div>
 
-<div class="col-md-8 col-sm-12 pt-20 pt-20M" style="background-color: #ecf0f1;min-height: 116px;">
-	<div class="col-md-8 col-sm-10">
-
-		<h1 style="color: black;" class="currentBillFontforiPhone5 pt-40">
-                	Your transaction was cancelled.
-        </h1>
-
-	</div>
-	<div class=" col-md-2 col-sm-2" style="margin-top: 1.5%;">
-		<img class="paymentImageSize pt-20" alt="Check Image" src="corporate/img/cross1.png">
+<div class="col-md-8 col-sm-12 " style="background-color: #ecf0f1;min-height: 116px;">
+	<div class="col-md-12 col-xs-11 pt-20M ">
+		<div class="col-xs-10">
+			<h1 style="color: black;" class="currentBillFontforiPhone5">
+	        Your transaction was unsuccessful</h1>
+	    </div>
+	    <div class="col-xs-2"> 
+	        <img class="paymentImageSize pt-20I" alt="Check Image" src="corporate/img/cross1.png">
+		</div>	
 	</div>
 </div>
 
-<!-- 
-  <div class="row">
-        <div class="col-md-4 firstRow billPaymentImage">
-            <h1 style="color: white; margin-left: 15%;" class="pt-40">Bill payment</h1>
+<div class="container ">
+        <div class="col-md-4">
         </div>
-        <div class="col-md-8 firstRow" style="background-color: #ecf0f1;">
-            <div class="col-md-10 col-sm-10">
-                <h1 style="color: black;" class="currentBillFontforiPhone5 pt-40">
-                	Your transaction was cancelled.
-                </h1>
-            </div>
-            <div class="col-md-2 col-sm-2">
-               <img class="paymentImageSize pt-20" alt="Check Image" src="corporate/img/cross1.png">
+        <div class="col-md-8 col-xs-12">
+            <div class="mainBlock3" style="background-color: #2980b9;">
+                <h3 class="pb-40">Payment Summary</h3>
+                <h2 class="pb-40">Your payment of &#8377;. <%=responseFromCCAvenue.get("amount") %>/- was unsuccessful</h2>
+                <h5>REASON</h5>
+                <h3><%=responseFromCCAvenue.get("status_message")%></h3>
             </div>
         </div>
-    </div>
+</div>
     
-   --> 
-    
-	<div class="container">
-	    <div class="col-md-12">
-	        <div class="col-md-4">
-	        </div>
-	        <div class="col-md-8">
-	            <div class="mainBlock3" style="background-color: #2980b9;">
-	                <h3 class="pb-40">Payment Summary</h3>
-	                <h2 class="pb-40">Your payment of &#8377;. <%=responseFromCCAvenue.get("amount") %>/- was unsuccessful.</h2>
-	                <h5>REASON</h5>
-	                <h3><%=responseFromCCAvenue.get("status_message")%></h3>
-	            </div>
-	        </div>
-	    </div>
-	</div>
-
  <!-- included pop up -->
         <jsp:include page="../component/pop-up.jsp"></jsp:include>
         
