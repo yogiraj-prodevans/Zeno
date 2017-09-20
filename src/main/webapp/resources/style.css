@@ -1,7 +1,19 @@
 /* CSS for billPaymentImage starts here*/
 
+
+::selection 
+{
+  background: #ffb81c; /* WebKit/Blink Browsers */
+  color: #F44336;
+}
+::-moz-selection 
+{
+  background: #ffb81c; /* WebKit/Blink Browsers */
+  color: #F44336;
+}
+
 /* TABLET LANDSCAPE / DESKTOP */
-@media (max-width:1340px) and (min-width:1024px)
+@media (max-width:1340px) and (min-width:1023px)
 {
 	.header .header-navigation 
 	{
@@ -9,7 +21,7 @@
 	    clear: both !important;
 	    margin-top: -60px !important;
 	    float: right !important;
-	    padding-left: 36%;
+	    padding-left: 33%;
 	}
 	
 }

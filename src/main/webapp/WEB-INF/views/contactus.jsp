@@ -124,8 +124,8 @@ padding-left: 2%;
 					<div class="col-md-12">
 						<div class="col-md-12 ">
 
-							<form:textarea path="message" id="message" class="form-control "
-								style="height: 30%; width: 100%; border: 0.4px solid #bdc3c7; resize: none; color: black; border-radius: 0.4px; font-size: 30px;"
+							<form:textarea path="message" id="message" 
+								style="height: 30%; width: 100%; border: 0.4px solid #bdc3c7; resize: none; color: black; border-radius: 0.4px; font-size: 19px;"
 								placeholder=" Message"></form:textarea>
 						</div>
 						<div class="col-md-12" style="margin-top:3% ;text-align: right;">
