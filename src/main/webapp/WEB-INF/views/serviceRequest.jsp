@@ -38,7 +38,13 @@
 		padding-left: 3% !important;
 	}
 }
-
+@media ( max-width : 380px) 
+{
+	select
+	{
+		width: 98% !important;
+	}
+}
 
 select
 {

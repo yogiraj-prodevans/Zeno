@@ -78,14 +78,14 @@
 		
 	}
 }
-@media ( max-width : 6800px) 
+@media ( max-width : 680px) 
 {
 	.col-md-12
 	{
 		padding-left: 2.5% !important;
 	}
 }
-@media ( max-width : 530px) 
+@media ( max-width : 570px) 
 {
 	h1
 	{

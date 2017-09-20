@@ -101,6 +101,28 @@ h1{
 		margin: 2%;
 	}
 }
+
+
+/* TABLET LANDSCAPE / DESKTOP */
+@media (max-width:1340px) and (min-width:991px)
+{	
+	.mainBlock41
+	{
+		width :230px !important;
+		max-height:230px;
+		min-height:230px;
+		margin: 2%;
+	}
+	.fs-44
+	{
+		font-size: 38px;
+	}
+	h1
+	{
+		font-size: 32px;
+	}
+}
+
 </style>
 
 </head>

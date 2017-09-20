@@ -70,8 +70,8 @@
 
 	.pdl
 	{
-		padding-left: 20px;
-		margin-top: 0.5% !important;
+		padding-left: 23px;
+		margin-top: 0.8% !important;
 	}
 	.billButton
 	{
@@ -80,11 +80,11 @@
 	}
 	.col-md-8 , .col-sm-12
 	{
-		padding-left: 2.2%;
+		padding-left: 2.5%;
 	}
 	.pdlADJ
 	{
-		padding-left: 2%;
+		padding-left: 2.4%;
 	}
 }
 @media ( max-width : 1207px) 
