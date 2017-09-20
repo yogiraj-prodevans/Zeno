@@ -40,7 +40,8 @@ h1{
 }
 .mainBlock41
 {
-	width :310px;
+	width :92%;
+	max-width: 310px;
 	max-height:260px;
 	min-height:250px;
 	color:white;
@@ -72,7 +73,19 @@ h1{
 	background: #9cafad !important;
 }
 
-@media (max-width : 886px) 
+@media (max-width:1083px){
+	.circle-Font{
+		margin-left: 15%;
+	}
+}
+
+@media (max-width:1340px){
+	.circle-Font{
+		margin-left: unset;
+	}
+}
+
+/* @media (max-width : 886px) 
 {
 	.paddingLeftMobile
 	{
@@ -93,29 +106,17 @@ h1{
 	{
 		font-size: 32px;
 	}
-	.mainBlock4
-	{
-		width :310px;
-		max-height:260px;
-		min-height:260px;
-		margin: 2%;
-	}
+	
 	.col-md-10, .col-xs-12
 	{
 		padding-left: 2.2% !important;
 	}
 	
-}
+} */
 /* TABLET LANDSCAPE / DESKTOP */
-@media (max-width:1340px) and (min-width:991px)
+/* @media (max-width:1340px) and (min-width:991px)
 {	
-	.mainBlock41
-	{
-		width :230px !important;
-		max-height:230px;
-		min-height:230px;
-		margin: 2%;
-	}
+	
 	.circle-Font
 	{
 		min-height:60px;
@@ -132,12 +133,9 @@ h1{
 	{
 		padding-top: 12px;
 	}
-}
+} */
 
-@media (min-width : 990px), (max-width: 1340px)
-{
-	
-}
+
 </style>
 
 </head>
@@ -160,10 +158,10 @@ h1{
 </div>
 
 <div class="col-md-12 col-lg-12 col-xl-12 ">
-	<div class="row" style="margin-bottom: 2.5%;">
-		<div class="col-md-3 col-lg-3 col-xl-3">
+	<div class="container" style="margin-bottom: 2.5%;">
+		<div class="col-md-2 col-sm-2  ">
 		</div>
-		<div class="col-md-3 col-xs-12 col-lg-3 col-xl-3">
+		<div class="col-md-4 col-sm-4 ">
 			<div class="mainBlock41" style="background-color: #2980b9;">
 				<div class="row" style="padding-right: 2%;">
 					<div class="col-md-4 col-xs-3"></div>
@@ -185,7 +183,7 @@ h1{
 				</a>
 			</div>
 		</div>
-		<div class="col-md-3 col-xs-12 col-lg-3 col-xl-3">
+		<div class="col-md-4 col-sm-4 ">
 			<div class="mainBlock41" style="background-color: #F44336;">
 				<div class="row" style="padding-right: 2%;">
 					<div class="col-md-4 col-xs-3"></div>
@@ -207,7 +205,7 @@ h1{
 				</a>
 			</div>
 		</div>
-		<div class="col-md-3 col-lg-3 col-xl-3 ">
+		<div class="col-md-2  ">
 		</div>
 	</div>
 </div>
