@@ -5,7 +5,7 @@
 
 .floatingRight
 {
-	right: 40px;
+	right: 3%;
 }
 .pt-18
 {

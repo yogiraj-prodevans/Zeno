@@ -32,6 +32,14 @@
      min-height: 116px;
      background-size: cover;
 }
+.billButton
+{
+	width: 40%;
+}
+.pdl
+{
+	margin-top: 1.5%;
+}
 /* iphone 6 plus*/
 @media ( max-width : 530px) 
 {
@@ -44,7 +52,7 @@
 		padding-left: 10px !important;
 	}
 }
-@media ( max-width : 970px) 
+@media ( max-width : 992px) 
 {
 	h1
 	{
@@ -63,6 +71,27 @@
 	.pdl
 	{
 		padding-left: 20px;
+		margin-top: 0.5% !important;
+	}
+	.billButton
+	{
+		width: 115px !important;
+		margin-top: 1% !important;
+	}
+	.col-md-8 , .col-sm-12
+	{
+		padding-left: 2.2%;
+	}
+	.pdlADJ
+	{
+		padding-left: 2%;
+	}
+}
+@media ( max-width : 1207px) 
+{
+	.pdl
+	{
+		margin-top: 2%;
 	}
 }
 </style>
@@ -101,7 +130,7 @@
 
 
 <div class="col-md-4 col-sm-12  firstRow pt-20">
-	<h1 style="color: white; ">Bill payment</h1>
+	<h1 style="color: white; " class="pdlADJ">Bill payment</h1>
 </div>
 
 <div class="col-md-8 col-sm-12 pt-20 pt-20M" style="background-color: #ecf0f1;min-height: 116px;">
@@ -112,10 +141,10 @@
 		</h1>
 
 	</div>
-	<div class=" col-md-4 col-sm-12 pdl" style="margin-top: 1.5%;">
+	<div class=" col-md-4 col-sm-12 pdl">
 
-		<a href="viewBill" class="btn billButton" target="_blank" style="width:115px;"> VIEW BILL </a> 
-		<a href="payment" class="btn billButton" style="width:115px;"> PAY BILL </a>
+		<a href="viewBill" class="btn billButton" target="_blank" > VIEW BILL </a> 
+		<a href="payment" class="btn billButton"> PAY BILL </a>
 
 	</div>
 

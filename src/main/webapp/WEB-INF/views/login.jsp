@@ -56,7 +56,7 @@ body {
 }
 .loginBoxSqr
 {
-	width: 85% !important;
+	width: 88% !important;
 }
 .pt-15Per
 {

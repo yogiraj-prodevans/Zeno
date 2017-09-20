@@ -310,8 +310,8 @@ label {
 }
 
 .modal-content {
-	min-height: 300px;
-	max-height: 300px;
+	min-height: 280px;
+	max-height: 280px;
 	border-radius: unset;
 }
 
@@ -619,7 +619,7 @@ a:hover {
 	}
 }
 
-/*Floating button*/
+/*Floating button
 #floating-button{
 
     width: 55px;
@@ -686,7 +686,7 @@ a:hover {
     font-weight: 300;
     color: #ffffff;
 }
-
+*/
 
 
 /*FAQ*/

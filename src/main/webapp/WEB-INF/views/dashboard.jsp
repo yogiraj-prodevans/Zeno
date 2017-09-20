@@ -62,6 +62,28 @@
 		max-width: 98% !important;
 		
 	}
+	.col-md-12
+	{
+		padding-left: 2.8% !important;
+	}
+}
+@media ( max-width : 1254px) 
+{
+	h1
+	{
+		font-size: 28px;
+	}
+	.div2{
+		min-width: 98% !important;
+		
+	}
+}
+@media ( max-width : 6800px) 
+{
+	.col-md-12
+	{
+		padding-left: 2.5% !important;
+	}
 }
 @media ( max-width : 530px) 
 {

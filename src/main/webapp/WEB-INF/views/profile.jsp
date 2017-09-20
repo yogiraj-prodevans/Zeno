@@ -40,6 +40,7 @@
 {
 	width :100%;
 	min-height:270px !important;
+	max-height:270px !important;
 	color:black;
 	margin: 5%;
 	padding-left:5%;
@@ -157,7 +158,7 @@
 		<div class="col-md-6 col-sm-12">
 			<div class="mainBlock4" >
 				
-				<div class="row pb-10 pt-30">
+				<div class="row pb-10 pt-10">
 					<div class="col-md-4 col-xs-4">
 						<h3 class="font-h3">Mobile:</h3>
 					</div>
@@ -200,12 +201,12 @@
             </div>
 
             <div class="modal-body" style="margin-bottom:30%">
-              <div class="col-md-12 col-sm-12" style="margin-top:12%">
+              <div class="col-md-12 col-sm-12" style="margin-top:8%">
 
 					<form:form role="form" action="profile/change-pass" method="post" modelAttribute="change_pass">
-						<form:input type="hidden"  style="margin-bottom:10px;" path="actid" readonly="true" />
+						<form:input type="hidden"  path="actid" readonly="true" />
 						<form:input path="password" type="password" style="margin-bottom:30px;" placeholder="Enter Password" required="true" value=""/>
-						<form:input path="confirm_password" type="password" style="margin-bottom:10px;" placeholder="Confirm Password" required="true" value=""/>
+						<form:input path="confirm_password" type="password" style="margin-bottom:30px;" placeholder="Confirm Password" required="true" value=""/>
 						<button type="submit" class="btn billButton pull-right" style="">UPDATE</button>
 					</form:form>
 					
