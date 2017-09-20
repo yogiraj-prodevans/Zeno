@@ -11,16 +11,7 @@
   <!-- slider for products -->
   <script src="corporate/scripts/layout.js" type="text/javascript"></script>
   
-  <script type="text/javascript">
-    jQuery(document).ready(function() {
-            Layout.init();    
-            Layout.initOWL();
-            Layout.initFixHeaderWithPreHeader(); /* Switch On Header Fixing (only if you have pre-header) */
-            Layout.initNavScrolling();
-            
-            
-        });
-  </script>
+ 
   <!-- END PAGE LEVEL JAVASCRIPTS -->
   
   

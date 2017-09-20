@@ -12,8 +12,7 @@
   color: #F44336;
 }
 
-/* TABLET LANDSCAPE / DESKTOP */
-@media (max-width:1340px) and (min-width:1023px)
+@media (max-width:1340px) and (min-width:1026px)
 {
 	.header .header-navigation 
 	{
@@ -219,7 +218,7 @@ body {
 	color: white;
 }
 
-h1 {
+h1, .font-h1 {
 	font-family: Roboto;
 
 	font-size: 36px;
