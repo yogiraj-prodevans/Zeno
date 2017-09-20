@@ -207,7 +207,7 @@ body {
 	color: white;
 }
 
-h1 {
+h1, .font-h1 {
 	font-family: Roboto;
 
 	font-size: 36px;
