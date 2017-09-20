@@ -20,20 +20,21 @@
 
 <style>
 
-.NameWidth
+input[type="text"]
 {
-	width: 97%;
+	width: 98% !important;
 }
+
 @media ( max-width : 950px) 
 {
 	.NameWidth
 	{
-		width: 100%;
+		max-width: 98 !important%;
 	}
 }
 @media ( max-width : 750px) 
 {
-		.plForMobile
+	.plForMobile
 	{
 		padding-left: 3% !important;
 	}
@@ -135,7 +136,7 @@ background-position:right center;
                 <form:input path="name" type="text" id="name" placeholder="Name" value="${user_details.getFirst_name() }" required="true" class="NameWidth" />        
             </div>
             <div class="col-md-6 mb-pt-30">
-            	<form:input path="mobile" type="text" id="mobile" placeholder="Mobile" required="true" class="mobileMargin" value="${user_details.getMobileno() }"  />
+            	<form:input path="mobile" type="text" id="mobile" placeholder="Mobile" required="true" class="mobileMargin" value="${user_details.getMobileno() }" />
             </div>
         </div>
         
@@ -168,7 +169,7 @@ background-position:right center;
             </div>
         </div>
         
-        <hr style="height:1px;border:none;color:#333;background-color:#bdc3c7;" />
+        <hr style="height:1px;border:none;color:#333;background-color:#bdc3c7;margin-right: 1%;" />
         
             <!-- Start Request For-->
             <div class="col-md-6">

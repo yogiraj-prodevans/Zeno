@@ -1,5 +1,27 @@
 /* CSS for billPaymentImage starts here*/
 
+/* TABLET LANDSCAPE / DESKTOP */
+@media (max-width:1340px) and (min-width:1024px)
+{
+	.header .header-navigation 
+	{
+	    display: block !important;
+	    clear: both !important;
+	    margin-top: -60px !important;
+	    float: right !important;
+	    padding-left: 36%;
+	}
+	
+}
+/* TABLET LANDSCAPE / DESKTOP */
+@media (max-width:1340px) and (min-width:1206px)
+{
+	.header .header-navigation 
+	{
+		margin-top: -90px !important;
+	}
+}
+
 .paddingLeftTop
 {
 	padding-left: 3.8%;
