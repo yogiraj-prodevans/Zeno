@@ -1,110 +1,88 @@
 /* CSS for billPaymentImage starts here*/
-
-
-::selection 
-{
-  background: #ffb81c; /* WebKit/Blink Browsers */
-  color: #F44336;
-}
-::-moz-selection 
-{
-  background: #ffb81c; /* WebKit/Blink Browsers */
-  color: #F44336;
+::selection {
+	background: #ffb81c; /* WebKit/Blink Browsers */
+	color: #F44336;
 }
 
-@media (max-width:1340px) and (min-width:1026px)
-{
-	.header .header-navigation 
-	{
-	    display: block !important;
-	    clear: both !important;
-	    margin-top: -60px !important;
-	    float: right !important;
-	    padding-left: 33%;
+::-moz-selection {
+	background: #ffb81c; /* WebKit/Blink Browsers */
+	color: #F44336;
+}
+
+@media ( max-width :1340px) and (min-width:1025px) {
+	.header .header-navigation {
+		display: block !important;
+		clear: both !important;
+		margin-top: -60px !important;
+		float: right !important;
+		padding-left: 33%;
 	}
-	
 }
 /* TABLET LANDSCAPE / DESKTOP */
-@media (max-width:1340px) and (min-width:1206px)
-{
-	.header .header-navigation 
-	{
+@media ( max-width :1340px) and (min-width:1206px) {
+	.header .header-navigation {
 		margin-top: -90px !important;
 	}
 }
 
-.paddingLeftTop
-{
+.paddingLeftTop {
 	padding-left: 3.8%;
 }
 
-@media (max-width : 730px) 
-{
-	.paddingLeftTop
-	{
+@media ( max-width : 730px) {
+	.paddingLeftTop {
 		padding-left: 2.6% !important;
 	}
 }
 
-@media (max-width : 680px) 
-{
-	.paddingLeftTop
-	{
+@media ( max-width : 680px) {
+	.paddingLeftTop {
 		padding-left: 2.4% !important;
 	}
 }
 /* Navigation bar customization*/
-.header-navigation ul > li.active > a {
-    border-bottom: 2px solid #F44336;
-    background-color: unset;
+.header-navigation ul>li.active>a {
+	border-bottom: 2px solid #F44336;
+	background-color: unset;
 }
-.header-navigation > ul > li > a {
 
-   
-    display: block;
-    padding: 33px 12px 4px;
-    margin-right: 5px;
-
+.header-navigation>ul>li>a {
+	display: block;
+	padding: 33px 12px 4px;
+	margin-right: 5px;
 }
-.header-navigation > ul > li > a:hover {
 
-   
-    display: block;
-   background-color: unset;
+.header-navigation>ul>li>a:hover {
+	display: block;
+	background-color: unset;
 	border-bottom: 2px solid #F44336;
 }
-.header{
+
+.header {
 	box-shadow: unset;
 }
+
 .header .row {
-    
-   margin-left: 5%;
-   margin-right: 3%;
-   
+	margin-left: 5%;
+	margin-right: 3%;
 }
 
-
-
-.billPaymentImage
-{
-	 background-image: url('img/blue_small.png');
-	 background-repeat:no-repeat;
+.billPaymentImage {
+	background-image: url('img/blue_small.png');
+	background-repeat: no-repeat;
 }
 
-.paymentImageSize
-{
+.paymentImageSize {
 	max-width: 60px;
 	max-height: 90px;
 }
 
-@media (max-width : 480px) 
-{
-	.billPaymentImage
-	{
-	 background-image: url('corporate/img/back1.png');
-	 background-repeat:no-repeat;
+@media ( max-width : 480px) {
+	.billPaymentImage {
+		background-image: url('corporate/img/back1.png');
+		background-repeat: no-repeat;
 	}
-}/*
+} /*
 @media ( max-width : 790px) 
 {
 	.billPaymentImage
@@ -125,7 +103,7 @@
 /* CSS for billPaymentImage ends here*/
 
 /* input text*/
-input[type=text] ,input[type=password]{
+input[type=text], input[type=password] {
 	padding: 0;
 	height: 30px;
 	width: 100%;
@@ -145,7 +123,6 @@ input[type="checkbox"] {
 	display: none;
 }
 
-
 /* Site logo*/
 .site-logo {
 	padding: unset;
@@ -155,12 +132,14 @@ input[type="checkbox"] {
 	width: 100px;
 	height: 70px;
 	margin: 10px;
-	margin-left:unset;
+	margin-left: unset;
 }
-hr{
-margin-top: 10px;
-margin-bottom: 15px;
+
+hr {
+	margin-top: 10px;
+	margin-bottom: 15px;
 }
+
 input[type="checkbox"]+label {
 	display: block;
 	position: relative;
@@ -220,7 +199,6 @@ body {
 
 h1, .font-h1 {
 	font-family: Roboto;
-
 	font-size: 36px;
 	line-height: 34px;
 	letter-spacing: 0.8px;
@@ -231,21 +209,17 @@ h1, .font-h1 {
 	padding-top: 25px;
 }
 
-
-h2, .font-h2
-{
-
+h2, .font-h2 {
 	font-family: Roboto;
 	font-size: 30px;
 	line-height: 34px;
 	letter-spacing: 0.5px;
 }
 
-h3, .font-h3{
+h3, .font-h3 {
 	font-size: 24px;
 	line-height: 28px;
 	letter-spacing: 0;
-	
 	-webkit-margin-before: 0.25em;
 	-webkit-margin-start: 0px;
 	-webkit-margin-end: 0px;
@@ -254,14 +228,12 @@ h3, .font-h3{
 h4, .font-h4 {
 	font-size: 17px;
 	line-height: 24px;
-	
 	margin: 0 0 5px;
 }
 
-h5 , .font-h5{
+h5, .font-h5 {
 	font-size: 12px;
 	line-height: 20px;
-	
 	margin: 0 0 5px;
 }
 
@@ -283,13 +255,15 @@ a {
 	text-decoration: none;
 	color: black;
 }
-.footer{
+
+.footer {
 	background-color: white;
 }
 
 .pb-40 {
 	padding-bottom: 40px;
 }
+
 .pb-50 {
 	padding-bottom: 50px;
 }
@@ -301,24 +275,28 @@ a {
 .pb-20 {
 	padding-bottom: 20px;
 }
+
 .pb-10 {
 	padding-bottom: 10px;
 }
 
-.pt-10{
+.pt-10 {
 	padding-top: 10px;
 }
-.pt-20{
-	padding-top:20px;
+
+.pt-20 {
+	padding-top: 20px;
 }
-.pt-30{
+
+.pt-30 {
 	padding-top: 30px;
 }
-.pt-40{
+
+.pt-40 {
 	padding-top: 40px;
 }
-.ml-4
-{
+
+.ml-4 {
 	margin-left: 4%;
 }
 
@@ -326,7 +304,7 @@ label {
 	font-weight: 300;
 }
 
-.div2{
+.div2 {
 	border: 1px solid #686060;
 }
 
@@ -461,12 +439,12 @@ a:hover {
 
 .mainBlock3 {
 	max-width: 100%;
-    color: white;
-    margin-top: 5%;
-    padding: 2% 4%;
-    padding-bottom: 2%;
-    min-height: 250px;
-    margin-bottom: 15%;
+	color: white;
+	margin-top: 5%;
+	padding: 2% 4%;
+	padding-bottom: 2%;
+	min-height: 250px;
+	margin-bottom: 15%;
 }
 
 .mainBlock4 {
@@ -488,7 +466,6 @@ a:hover {
 
 .progress {
 	height: 25px;
-	
 	margin: unset;
 	overflow: hidden;
 	border-radius: 1px;
@@ -511,47 +488,48 @@ a:hover {
 .blackShadow {
 	text-shadow: 0.2px 0.2px black;
 }
+
 .btn {
-    display: inline-block;
-    padding: 6px 12px;
-    margin-bottom: 0;
-    margin-top:10px;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.42857143;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    -ms-touch-action: manipulation;
-    touch-action: manipulation;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-image: none;
-    border: 1px solid transparent;
-    border-radius: 4px;
-}
-.billButton 
-{
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    border-radius: 0px;
-    letter-spacing: normal;
-    word-spacing: normal;
-    text-indent: 0px;
-    text-shadow: none;
-    background-color: #F44336;
-    border-color: #F44336;
-    color: white;
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	margin-top: 10px;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
 }
 
+.billButton {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	border-radius: 0px;
+	letter-spacing: normal;
+	word-spacing: normal;
+	text-indent: 0px;
+	text-shadow: none;
+	background-color: #F44336;
+	border-color: #F44336;
+	color: white;
+}
 
-.btn:hover{
+.btn:hover {
 	text-decoration: none;
 	color: white;
 }
+
 .tableWidth {
 	width: 45%;
 }
@@ -568,26 +546,21 @@ a:hover {
 	text-shadow: 0.2px 0.2px white;
 }
 /* iphone 6 plus*/
-@media ( max-width : 530px) 
-{
+@media ( max-width : 530px) {
 	.mainBlock3 {
 		width: 88%;
 		min-height: 40%;
 		margin: 5%;
 	}
-
 	.tableWidth {
-    width: 100%;
+		width: 100%;
 	}
-	.mb-pt-30
-	{	
-		padding-top:30px;
+	.mb-pt-30 {
+		padding-top: 30px;
 	}
-	.mainBlock4
-	{
+	.mainBlock4 {
 		min-width: 100%;
-	}	
-
+	}
 }
 
 /* iphone 5*/
@@ -602,46 +575,38 @@ a:hover {
 		margin: 5%;
 	}
 	.tableWidth {
-    width: 100%;
+		width: 100%;
 	}
-	.mb-pt-30
-	{	
-		padding-top:30px;
+	.mb-pt-30 {
+		padding-top: 30px;
 	}
 }
 
 /* iPad*/
-
 @media ( max-width : 950px) {
-	
-
 	.mainBlock3 {
 		width: 88%;
 		min-height: 30%;
 		margin: 5%;
 	}
 	.tableWidth {
-    width: 100%;
+		width: 100%;
 	}
-	.mb-pt-30
-	{	
-		padding-top:30px;
+	.mb-pt-30 {
+		padding-top: 30px;
 	}
-	
 }
 /* iphone 6 plus*/
-@media ( max-width : 480px) 
-{
+@media ( max-width : 480px) {
 	.fixedBlock {
 		min-width: 16%;
-		min-height:100px;
+		min-height: 100px;
 		right: 1% !important;
 	}
-	h1{
+	h1 {
 		font-size: 30px;
 	}
-	.fixedBlock li a 
-	{
+	.fixedBlock li a {
 		width: 105%;
 		min-height: 50px;
 	}
@@ -651,11 +616,10 @@ a:hover {
 		float: left;
 	}
 	.tableWidth {
-    width: 100%;
+		width: 100%;
 	}
-	.mb-pt-30
-	{	
-		padding-top:30px;
+	.mb-pt-30 {
+		padding-top: 30px;
 	}
 }
 
@@ -728,37 +692,32 @@ a:hover {
 }
 */
 
-
 /*FAQ*/
-.faqp
-{
-    font-family: 'Roboto', sans-serif;
-    color: #000000;
-    font-size: 19px;
-    font-weight: 300;
-    line-height:1.4;
-    padding: 10px 0 0;
-    margin: 0px 0px 0px 0px;
+.faqp {
+	font-family: 'Roboto', sans-serif;
+	color: #000000;
+	font-size: 19px;
+	font-weight: 300;
+	line-height: 1.4;
+	padding: 10px 0 0;
+	margin: 0px 0px 0px 0px;
 }
 
-.faqh
-{
-    font-family: 'Roboto', sans-serif;
-    color: #000000;
-    font-size: 30px;
-    font-weight: 300;
-    line-height: 20px;
-    padding: 10px 0 0 0;
+.faqh {
+	font-family: 'Roboto', sans-serif;
+	color: #000000;
+	font-size: 30px;
+	font-weight: 300;
+	line-height: 20px;
+	padding: 10px 0 0 0;
 }
 
-.faqp1
-{
-    font-family: 'Roboto', sans-serif;
-    color: #000000;
-
-    font-size: 15px;
-    font-weight: 300;
-    line-height: 1.4;
-    padding: 0px 0 0 0px;
-    margin: 0 0 0 0;
+.faqp1 {
+	font-family: 'Roboto', sans-serif;
+	color: #000000;
+	font-size: 15px;
+	font-weight: 300;
+	line-height: 1.4;
+	padding: 0px 0 0 0px;
+	margin: 0 0 0 0;
 }
