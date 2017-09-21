@@ -103,11 +103,11 @@ h1{
 	
 	.fs-44
 	{
-		font-size: 38px;
+		font-size: 38px !important;
 	}
 	h1
 	{
-		font-size: 32px;
+		font-size: 32px !important;
 	}
 }
 

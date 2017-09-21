@@ -91,6 +91,36 @@
 	}
 
 }
+@media ( max-width :1340px) and (min-width:1024px) 
+{
+
+	.floatingRight
+	{
+		right: 1.7% !important;
+	}
+	.fv
+	{
+		font-size: 10px;
+	}
+	#floating-button
+	{
+	    width: 40px;
+	    height: 45px;
+	    top: 250px;
+	}
+	#floating-button1
+	{
+	    width: 40px;
+	    height: 45px;
+	    top: 310px;
+	}
+	.pt-18
+	{
+		padding-top: 12px;
+	}
+	
+
+}
 </style>
 
 <a href="${pageContext.request.contextPath }/topup">

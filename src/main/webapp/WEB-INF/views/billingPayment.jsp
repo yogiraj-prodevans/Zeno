@@ -194,9 +194,9 @@
 			<div class="col-md-4 col-sm-6">
 				<div class="mainBlock4" style="background-color: #F44336;">
 					<h3 class="pb-20">Payment</h3>
-					<h4 class="pb-20">Account ID : ${user_details.getActid() }</h4>
+					<h4 class="pb-20 pb1024">Account ID : ${user_details.getActid() }</h4>
 					<h2>&#8377; ${invoiceDetails.getAmount() }</h2>
-					<h2 class="pb-20">Due in ${invoiceDetails.getRemainingDays() }
+					<h2 class="pb-20 pb1024">Due in ${invoiceDetails.getRemainingDays() }
 						days</h2>
 					<h4>Due Date: ${invoiceDetails.getDuedt() }</h4>
 

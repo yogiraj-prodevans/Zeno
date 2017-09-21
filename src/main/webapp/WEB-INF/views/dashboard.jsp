@@ -67,7 +67,7 @@
 		padding-left: 2.8% !important;
 	}
 }
-@media ( max-width : 1254px) 
+@media ( max-width : 1023px) 
 {
 	h1
 	{

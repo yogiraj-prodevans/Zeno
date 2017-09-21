@@ -9,8 +9,10 @@
 	color: #F44336;
 }
 
-@media ( max-width :1340px) and (min-width:1025px) {
-	.header .header-navigation {
+@media ( max-width :1340px) and (min-width:1025px) 
+{
+	.header .header-navigation 
+	{
 		display: block !important;
 		clear: both !important;
 		margin-top: -60px !important;
@@ -24,6 +26,43 @@
 		margin-top: -90px !important;
 	}
 }
+
+@media ( max-width :1340px) and (min-width:1024px) 
+{
+	.container
+	{
+		padding-left: 30px !important;
+		padding-right: 30px !important;
+	}
+	.div2
+	{
+		min-width: 96% !important;
+		max-width: 96% !important;
+		min-height: 323px !important;
+	}
+	h1
+	{
+		font-size: 28px !important;
+	}
+	.font-h5
+	{
+		font-size: 9px !important;
+	}
+	.pb1024
+	{
+		padding-bottom: 33px !important;
+	}
+	.paddingLeftTop 
+	{
+		padding-left: 3.6% !important;
+	}
+	.circle-Font
+	{
+		font-size: 58px !important;
+	}
+	
+}
+
 
 .paddingLeftTop {
 	padding-left: 3.8%;
