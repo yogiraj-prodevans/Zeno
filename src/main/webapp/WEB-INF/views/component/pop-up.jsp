@@ -91,7 +91,14 @@
 	}
 
 }
-@media ( max-width :1340px) and (min-width:1280px) 
+@media ( max-width :1931px) and ( min-width:1340px ) 
+{
+	.floatingRight
+	{
+		right: 2.1% !important;
+	}
+}
+@media ( max-width :1339px) and (min-width:1280px) 
 {
 
 	.floatingRight

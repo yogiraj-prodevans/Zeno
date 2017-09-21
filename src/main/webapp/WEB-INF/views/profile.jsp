@@ -84,6 +84,14 @@
 		font-size: 16px;
 	}
 }
+
+@media ( max-width :1921px) and (min-width:1340px) 
+{
+	.mainBlock4
+	{
+		min-width: 88% !important;
+	}
+}
 </style>
 
 </head>

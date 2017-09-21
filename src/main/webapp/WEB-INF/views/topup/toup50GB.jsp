@@ -134,6 +134,14 @@ label.css-label
 	user-select: none;
 }
 
+@media ( max-width :1921px) and (min-width:1340px) 
+{
+	.mainBlock31
+	{
+		height: 48% !important;
+	}
+
+}
 </style>
    
 <script>
@@ -224,10 +232,10 @@ label.css-label
 				                    	<div class="col-md-12 col-sm-12">
 				                    		<div class="row">
 					                    		<div class="col-md-6 col-xs-6">
-					                    			<h4 class="pb-10" style="font-size: 15px;">Plan Size: <strong>${topUp.getPlanSize() }</strong></h4>
+					                    			<h4 class="pb-10" style="font-size: 14px;">Plan Size: <strong>${topUp.getPlanSize() }</strong></h4>
 					                    		</div>
 					                    		<div class="col-md-6 col-xs-6">
-					                    			<h4 class="pb-10" style="font-size: 15px;">Plan Name: <strong>${topUp.getPlanName() }</strong></h4>
+					                    			<h4 class="pb-10" style="font-size: 14px;">Plan Name: <strong>${topUp.getPlanName() }</strong></h4>
 					                    		</div>
 					                    	</div>
 				                    		<div class="row">
