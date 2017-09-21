@@ -1,7 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ page session="false"%>
-
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
@@ -11,12 +11,9 @@
 <meta content="ONE8 User Portal" name="description">
 <meta content="ONE8 User Portal Keywords" name="keywords">
 
-<!-- link to image for socio -->
-<meta property="og:url" content="-CUSTOMER VALUE-">
-
 <!--  include the all css components -->
 <jsp:include page="component/css.jsp"></jsp:include>
-
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,600,700" rel="stylesheet">
 <style type="text/css">
 .submitButton {
 	margin-top: 10%;
@@ -52,6 +49,14 @@ input[type="text"] {
 
 padding-left: 2%;
 }
+#map {
+    width: 100%;
+    height: 250px;
+    background-color: grey;
+}
+h3{
+	margin: unset;
+}
 </style>
 
 </head>
@@ -63,7 +68,7 @@ padding-left: 2%;
 
 
 <div class="col-md-12 firstRow pt-20" style="background-image: url('corporate/img/back.png');">
-    <h1 class="paddingLeftTop" >Contact</h1>
+    <div class="paddingLeftTop font-h1" >Contact</div>
 </div>
 
 
@@ -73,22 +78,22 @@ padding-left: 2%;
 			<div class="col-md-12 pt-40">
 				<div class="col-md-4">
 					<div>
-						<h2>Address</h2>
+						<div class="font-h3">Address</div>
 						<p>
 							Novel Tech Park, 3rd Floor,<br> No. 46/4 Garvebhavi Palya
 							Hongasandra,<br> Hosur Road, Bengaluru,<br> Karnataka
 							560068.
 						</p>
 					</div>
-					<br>
+					
 					<div>
 						<div>
-							<h2>Contact</h2>
+							<div class="font-h3">Contact</div>
 							<p>+91 - 99019602602</p>
-							<br>
+							
 						</div>
 						<div>
-							<h2>Mail</h2>
+							<div class="font-h3">Mail</div>
 							<p>
 								<a style="color: black" href="mailto:info@oneeight.co.in">info@oneeight.co.in</a>
 							</p>
@@ -96,11 +101,10 @@ padding-left: 2%;
 					</div>
 				</div>
 				<div class="col-md-8">
-					<iframe
-						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.9047081333974!2d77.6044091145098!3d12.913845819637745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15028bbddb5b%3A0x1abfed521a02d446!2sProDevAns+Technologies!5e0!3m2!1sen!2sin!4v1504167162391"
-						width="100%" height="300px" frameborder="0" style="border: 0"
-						allowfullscreen></iframe>
+					<div id="map" ></div>
 				</div>
+				
+				
 			</div>
 
 </div>
@@ -124,8 +128,8 @@ padding-left: 2%;
 					<div class="col-md-12">
 						<div class="col-md-12 ">
 
-							<form:textarea path="message" id="message" class="form-control "
-								style="height: 30%; width: 100%; border: 0.4px solid #bdc3c7; resize: none; color: black; border-radius: 0.4px; font-size: 30px;"
+							<form:textarea path="message" id="message" 
+								style="height: 30%; width: 100%; border: 0.4px solid #bdc3c7; resize: none; color: black; border-radius: 0.4px; font-size: 19px;"
 								placeholder=" Message"></form:textarea>
 						</div>
 						<div class="col-md-12" style="margin-top:3% ;text-align: right;">
@@ -148,8 +152,30 @@ padding-left: 2%;
 	<jsp:include page="component/footer.jsp"></jsp:include>
 
 
-	<!-- Load javascripts at bottom, this will reduce page load time -->
+	<!-- Included for the map -->
+	 <script type="text/javascript">
+	function initMap() {
+	    var uluru = {lat: 12.9024492, lng: 77.6318219};
+	    var map = new google.maps.Map(document.getElementById('map'), {
+	        zoom: 15,
+	        center: uluru
+	    });
+	    var marker = new google.maps.Marker({
+	        position: uluru,
+	        map: map
+	    });
+	    
+	}
+	</script>
+    <!-- Load javascripts at bottom, this will reduce page load time -->
 	<jsp:include page="component/js.jsp"></jsp:include>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8lEpXR-Ni1-PLpVrs3V4ofgmKyK6OwYI&callback=initMap"></script> 
+	
+	<style>
+	body{
+		font-weight: 300;
+	}
+	</style>
 	<!-- END BODY -->
 </body>
 </html>

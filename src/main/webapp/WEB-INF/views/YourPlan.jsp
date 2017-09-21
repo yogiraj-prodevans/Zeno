@@ -41,7 +41,7 @@ h1{
 }
 .mainBlock41
 {
-	width :310px;
+	width :92%;
 	max-height:260px;
 	min-height:250px;
 	color:white;
@@ -93,14 +93,24 @@ h1{
 		padding-left: 7% !important;
 		padding-right: 7% !important;
 	}
-	.mainBlock4
+	
+}
+
+
+/* TABLET LANDSCAPE / DESKTOP */
+@media (max-width:1340px) and (min-width:991px)
+{	
+	
+	.fs-44
 	{
-		width :310px;
-		max-height:260px;
-		min-height:260px;
-		margin: 2%;
+		font-size: 38px;
+	}
+	h1
+	{
+		font-size: 32px;
 	}
 }
+
 </style>
 
 </head>
@@ -121,18 +131,18 @@ h1{
 		</div>
 </div>
 
-<div class="col-md-12 col-lg-12 col-xl-12 ">
-	<div class="row" style="margin-bottom: 4.5%;">
-		<div class="col-md-3 col-lg-3 col-xl-3">
+<div class="col-md-12  ">
+	<div class="container" style="margin-bottom: 4.5%;">
+		<div class="col-md-2 ">
 		</div>
-		<div class="col-md-3 col-xs-12 col-lg-3 col-xl-3">
+		<div class=" col-md-4">
 			<div class="mainBlock41" style="background-color: #ffb81c;">
 				<h1 class="pb-50">Basic</h1>
 				<h1 class="fs-44">&#8377; 849/-</h1>
 				<h3 class="pb-10">per month</h3>
 			</div>
 		</div>
-		<div class="col-md-3 col-xs-12 col-lg-3 col-xl-3">
+		<div class="col-md-4">
 			<div class="mainBlock41" style="background-color: #F44336;">
 				<h1 class="fs-44">${FUP} GB</h1>
 				<h3 class="pb-40">data</h3>
@@ -140,8 +150,7 @@ h1{
 				<h3>Post FUP speed</h3>
 			</div>
 		</div>
-		<div class="col-md-3 col-lg-3 col-xl-3 ">
-		</div>
+		
 	</div>
 </div>
 

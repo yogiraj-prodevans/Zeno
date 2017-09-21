@@ -31,7 +31,7 @@
             }
 
             .div2{
-                max-width : 95%;
+                max-width : 96%;
                 margin-top:7.5%;
                 min-height:308px;
                 border : none;
@@ -78,14 +78,14 @@
 		
 	}
 }
-@media ( max-width : 6800px) 
+@media ( max-width : 680px) 
 {
 	.col-md-12
 	{
 		padding-left: 2.5% !important;
 	}
 }
-@media ( max-width : 530px) 
+@media ( max-width : 570px) 
 {
 	h1
 	{

@@ -40,7 +40,8 @@ h1{
 }
 .mainBlock41
 {
-	width :310px;
+	width :92%;
+	max-width: 310px;
 	max-height:260px;
 	min-height:250px;
 	color:white;
@@ -63,7 +64,7 @@ h1{
 	font-size: 58px;
 	font-weight: bold;
 	text-align: center;
-	margin-left: 8%;
+	margin-left: 15%;
 	margin-top: 8px;
 }
 
@@ -72,7 +73,19 @@ h1{
 	background: #9cafad !important;
 }
 
-@media (max-width : 990px) 
+@media (max-width:1083px){
+	.circle-Font{
+		margin-left: 15%;
+	}
+}
+
+@media (max-width:1340px){
+	.circle-Font{
+		margin-left: unset;
+	}
+}
+
+/* @media (max-width : 886px) 
 {
 	.paddingLeftMobile
 	{
@@ -93,14 +106,36 @@ h1{
 	{
 		font-size: 32px;
 	}
-	.mainBlock4
+	
+	.col-md-10, .col-xs-12
 	{
-		width :310px;
-		max-height:260px;
-		min-height:260px;
-		margin: 2%;
+		padding-left: 2.2% !important;
 	}
-}
+	
+} */
+/* TABLET LANDSCAPE / DESKTOP */
+/* @media (max-width:1340px) and (min-width:991px)
+{	
+	
+	.circle-Font
+	{
+		min-height:60px;
+		max-width:60px;
+		border: 3px solid white;
+		border-radius: 50%;
+		font-size: 42px;
+		font-weight: bold;
+		text-align: center;
+		margin-left: 15%;
+		margin-top: 10px;
+	}
+	h1
+	{
+		padding-top: 12px;
+	}
+} */
+
+
 </style>
 
 </head>
@@ -123,12 +158,12 @@ h1{
 </div>
 
 <div class="col-md-12 col-lg-12 col-xl-12 ">
-	<div class="row" style="margin-bottom: 2.5%;">
-		<div class="col-md-3 col-lg-3 col-xl-3">
+	<div class="container" style="margin-bottom: 2.5%;">
+		<div class="col-md-2 col-sm-2  ">
 		</div>
-		<div class="col-md-3 col-xs-12 col-lg-3 col-xl-3">
+		<div class="col-md-4 col-sm-4 ">
 			<div class="mainBlock41" style="background-color: #2980b9;">
-				<div class="row">
+				<div class="row" style="padding-right: 2%;">
 					<div class="col-md-4 col-xs-3"></div>
 					<div class="col-md-4 col-xs-6">
 						<h1 class="circle-Font">
@@ -141,16 +176,16 @@ h1{
 				</div>
 				<h1 style="padding-top: 15px;">&#8377; 120</h1>
 				<h4>512 Kbps  &#9679;  POST FUP</h4>
-				<a href="toup50GB?planName=Add on 5GB" style="margin-left: 8%;">
+				<a href="toup50GB?planName=Add on 5GB" style="margin-left: 2%;">
 					<div class="btn billButton" style="border: 0.1px solid white;background-color: inherit;">
 						BUY NOW
 					</div>
 				</a>
 			</div>
 		</div>
-		<div class="col-md-3 col-xs-12 col-lg-3 col-xl-3">
+		<div class="col-md-4 col-sm-4 ">
 			<div class="mainBlock41" style="background-color: #F44336;">
-				<div class="row">
+				<div class="row" style="padding-right: 2%;">
 					<div class="col-md-4 col-xs-3"></div>
 					<div class="col-md-4 col-xs-6">
 						<h1 class="circle-Font">
@@ -163,14 +198,14 @@ h1{
 				</div>
 				<h1 style="padding-top: 15px;">&#8377; 220</h1>
 				<h4>512 Kbps &#9679; POST FUP</h4>
-				<a href="toup50GB?planName=Add on 10GB" style="margin-left: 8%;">
+				<a href="toup50GB?planName=Add on 10GB" style="margin-left: 2%;">
 					<div class="btn billButton" style="border: 1px solid white;background-color: #F44336;">
 						BUY NOW
 					</div>
 				</a>
 			</div>
 		</div>
-		<div class="col-md-3 col-lg-3 col-xl-3 ">
+		<div class="col-md-2  ">
 		</div>
 	</div>
 </div>
