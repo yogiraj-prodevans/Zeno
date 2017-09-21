@@ -129,7 +129,7 @@ padding-left: 2%;
 								placeholder=" Message"></form:textarea>
 						</div>
 						<div class="col-md-12" style="margin-top:3% ;text-align: right;">
-							<button class="btn billButton" type="submit">SEND NOW</button>
+							<button id="csendnow" class="btn billButton" type="submit">SEND NOW</button>
 						</div>
 					</div>
 

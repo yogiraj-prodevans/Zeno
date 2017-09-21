@@ -81,7 +81,7 @@ public class MailController
 			if(session.getAttribute("successfull") != null)
 			{
 				session.removeAttribute("successfull");
-				model.addAttribute("msg", "Will get back to you soon...");
+				model.addAttribute("msg", "One8 team Will get back to you soon...");
 			}
 			
 			return  new ModelAndView("contactus","contactusDetails",new SendMailDetails());
