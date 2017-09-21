@@ -51,7 +51,7 @@ public class MailController
 			if(session.getAttribute("successfull") != null)
 			{
 				session.removeAttribute("successfull");
-				model.addAttribute("msg", "Thank you for your valuable feedback...");
+				model.addAttribute("msg", "Thank you for your valuable feedback.");
 			}
 			
 			return  new ModelAndView("feedback","feedbackDetails",new SendMailDetails());
@@ -81,7 +81,7 @@ public class MailController
 			if(session.getAttribute("successfull") != null)
 			{
 				session.removeAttribute("successfull");
-				model.addAttribute("msg", "One8 team Will get back to you soon...");
+				model.addAttribute("msg", "Thanks for your message. Our customer care executive will connect with you shortly. ");
 			}
 			
 			return  new ModelAndView("contactus","contactusDetails",new SendMailDetails());
@@ -122,7 +122,7 @@ public class MailController
 			if(session.getAttribute("successfull") != null)
 			{
 				session.removeAttribute("successfull");
-				model.addAttribute("msg", "Your request has been initiated...");
+				model.addAttribute("msg", "Your request has been received. We’ll work on it right away!");
 			}
 
 			return  new ModelAndView("serviceRequest","serviceRequestDetails",request);
