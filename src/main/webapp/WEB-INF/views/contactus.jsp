@@ -43,7 +43,7 @@
 input[type="text"] {
 	height: 40px;
 	font-size: 19px;
-	width: 99% !important;
+	width: 98% !important;
 }
 .billButton{
 	padding-right: 2%;
@@ -57,6 +57,10 @@ padding-left: 2%;
 }
 h3{
 	margin: unset;
+}
+h6
+{
+	font-weight: 100 !important;
 }
 </style>
 
@@ -123,17 +127,17 @@ h3{
 					</div>
 					<div class="col-md-12 pb-40">
 						<div class="col-md-12">
-							<form:input type="text" path="subject" id="subject"  placeholder="Subject" class="font-h2" />
+							<form:input type="text" path="subject" id="subject"  placeholder="Subject" class="font-h2" style="width:99% !important;" />
 						</div>
 					</div>
 					<div class="col-md-12">
 						<div class="col-md-12 ">
 
 							<form:textarea path="message" id="message" 
-								style="height: 30%; width: 99%; border: 0.4px solid #bdc3c7; resize: none; color: black; border-radius: 0.4px; font-size: 19px;"
+								style="height:150px; width: 99%; border: 0.4px solid #bdc3c7; resize: none; color: black; border-radius: 0.4px; font-size: 19px;"
 								placeholder=" Message"></form:textarea>
 						</div>
-						<div class="col-md-12" style="margin-top:3% ;text-align: right;margin-left: -1%;">
+						<div class="col-md-12" style="margin-top:1.5%;margin-bottom:1.5%; text-align: right;margin-left: -1%;">
 							<button id="csendnow" class="btn billButton" type="submit">SEND NOW</button>
 						</div>
 					</div>

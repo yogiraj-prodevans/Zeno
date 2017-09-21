@@ -75,7 +75,7 @@ input[type="text"]
 		        
 		        <div class="row pb-40">
 		            <div class="col-md-12">
-		                <form:input path="subject" type="text" id="subject" placeholder="Subject" required="true" />
+		                <form:input path="subject" type="text" id="subject" placeholder="Subject" required="true" style="width:99% !important;"/>
 		            </div>
 		        </div>
 		                   

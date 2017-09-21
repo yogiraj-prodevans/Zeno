@@ -9,6 +9,15 @@
 	color: #F44336;
 }
 
+@media ( max-width :1920px) and (min-width:1341px) 
+{
+	.paddingLeftTop 
+	{
+		padding-left: 4% !important;
+	}
+	
+}	
+
 @media ( max-width :1340px) and (min-width:1025px) 
 {
 	.header .header-navigation 
