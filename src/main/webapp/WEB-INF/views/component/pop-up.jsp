@@ -91,12 +91,41 @@
 	}
 
 }
-@media ( max-width :1340px) and (min-width:1024px) 
+@media ( max-width :1340px) and (min-width:1280px) 
 {
 
 	.floatingRight
 	{
-		right: 1.7% !important;
+		right: 2.2% !important;
+	}
+	.fv
+	{
+		font-size: 12px;
+	}
+	#floating-button
+	{
+	    width: 55px;
+	    height: 55px;
+	    top: 260px;
+	}
+	#floating-button1
+	{
+	    width: 55px;
+	    height: 55px;
+	    top: 330px;
+	}
+	.pt-18
+	{
+		padding-top: 16px;
+	}
+	
+
+}
+@media ( max-width :1279px) and (min-width:1024px) 
+{
+.floatingRight
+	{
+		right: 1.3% !important;
 	}
 	.fv
 	{
@@ -104,13 +133,13 @@
 	}
 	#floating-button
 	{
-	    width: 40px;
+	    width: 45px;
 	    height: 45px;
 	    top: 250px;
 	}
 	#floating-button1
 	{
-	    width: 40px;
+	    width: 45px;
 	    height: 45px;
 	    top: 310px;
 	}
@@ -118,7 +147,6 @@
 	{
 		padding-top: 12px;
 	}
-	
 
 }
 </style>

@@ -109,7 +109,16 @@
 		padding-left: 5px;
 	}
 }
-        </style>
+@media ( max-width :1279px) and (min-width:1024px) 
+{
+	.div2
+	{
+		min-height: 330px !important;
+	}
+		
+}
+
+</style>
 
         <script type="text/javascript"
         src="https://www.gstatic.com/charts/loader.js"></script>

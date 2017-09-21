@@ -94,6 +94,18 @@
 		margin-top: 2%;
 	}
 }
+@media ( max-width :1279px) and (min-width:1024px) 
+{
+	h4
+	{
+		font-size: 16px !important;
+	}
+	.pb-30
+	{
+		padding-bottom: 8px !important;
+	}
+
+}
 </style>
 
 </head>
