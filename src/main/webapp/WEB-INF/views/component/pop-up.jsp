@@ -91,13 +91,36 @@
 	}
 
 }
-@media ( max-width :1921px) and (min-width:1340px) 
+
+
+@media ( max-width :1279px) and (min-width:1024px) 
 {
-	.floatingRight
+.floatingRight
 	{
-		right: 2.1% !important;
+		right: 1.3% !important;
+	}
+	.fv
+	{
+		font-size: 10px;
+	}
+	#floating-button
+	{
+	    width: 45px;
+	    height: 45px;
+	    top: 250px;
+	}
+	#floating-button1
+	{
+	    width: 45px;
+	    height: 45px;
+	    top: 310px;
+	}
+	.pt-18
+	{
+		padding-top: 12px;
 	}
 }
+
 @media ( max-width :1339px) and (min-width:1280px) 
 {
 
@@ -128,34 +151,15 @@
 	
 
 }
-@media ( max-width :1279px) and (min-width:1024px) 
-{
-.floatingRight
-	{
-		right: 1.3% !important;
-	}
-	.fv
-	{
-		font-size: 10px;
-	}
-	#floating-button
-	{
-	    width: 45px;
-	    height: 45px;
-	    top: 250px;
-	}
-	#floating-button1
-	{
-	    width: 45px;
-	    height: 45px;
-	    top: 310px;
-	}
-	.pt-18
-	{
-		padding-top: 12px;
-	}
 
+@media ( max-width :1921px) and (min-width:1340px) 
+{
+	.floatingRight
+	{
+		right: 2.1% !important;
+	}
 }
+
 </style>
 
 <a href="${pageContext.request.contextPath }/topup">
