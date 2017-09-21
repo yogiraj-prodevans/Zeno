@@ -91,7 +91,7 @@
 	}
 
 }
-@media ( max-width :1931px) and ( min-width:1340px ) 
+@media ( max-width :1921px) and (min-width:1340px) 
 {
 	.floatingRight
 	{
