@@ -130,6 +130,14 @@ label.css-label
 	user-select: none;
 }
 
+@media ( max-width :1366px ) and (min-width:1024px)
+{
+	.mainBlock31
+	{
+		width: 94% !important;
+		height: 38% !important;
+	}
+}
 </style>
    
 <script>

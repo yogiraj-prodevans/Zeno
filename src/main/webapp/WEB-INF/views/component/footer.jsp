@@ -1,5 +1,29 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
+<style>
+
+.pdlFooter
+{
+	padding-left: 0.1%;
+}
+.footerPR
+{
+	padding-right: 0.1%;
+}
+@media ( max-width :1366px ) and (min-width:1024px)
+{
+	.pdlFooter
+	{
+		padding-left: unset;		
+	}
+	.footerPR
+	{
+		padding-right: unset;
+	}
+}
+
+
+</style>
   
  <!-- BEGIN FOOTER -->
         <div class="footer"  style="width:100%;  font-size:10px">
@@ -7,7 +31,7 @@
                 <div class="row" style="margin:unset;margin-left: 5%; margin-right: 5%;">
                     <!-- BEGIN COPYRIGHT -->
                    
-                    <div class="col-md-3 col-xs-12" style="color:black;padding-left: 0.1%;"><div class="font-h5"> &copy; COPYRIGHT ONE8 TECHNOLOGIES 2017 </div></div> 
+                    <div class="col-md-3 col-xs-12 pdlFooter" style="color:black;"><div class="font-h5"> &copy; COPYRIGHT ONE8 TECHNOLOGIES 2017 </div></div> 
                     <div class="col-md-9 col-xs-12 footerPR" style="text-align: right;">
                     <div class="row">
                      <a href="${pageContext.request.contextPath }/privacy" class="font-h5">PRIVACY POLICY </a> <span style="padding: 5px;"></span>

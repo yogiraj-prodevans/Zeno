@@ -62,6 +62,11 @@ body {
 {
 	padding-top: 15%;
 }
+
+.plWelcomeText
+{
+	padding-left: 6.2%;
+}
 @media ( max-width : 480px) 
 {
 	.front-steps-wrapper h2, .ecommerce .front-steps-wrapper h2 tag-line
@@ -88,6 +93,24 @@ body {
 	{
 		padding-top: 10% !important;
 	}
+}
+
+@media ( max-width :1366px ) and (min-width:1024px)
+{
+	.plWelcomeText
+	{
+		padding-left: 8%;
+	}
+	.pt-15Per
+	{
+		padding-top: 18%;
+	}
+	.loginBoxSqr
+	{
+		width: 86% !important;
+		margin-top: 10% !important;
+	}
+	
 }
 </style>
 </head>
@@ -116,7 +139,7 @@ body {
 				<div style="background: url('img/slide_1.jpg'); min-height: 500px">
 					<div class="row">
 						<div class="col-lg-8 col-md-8 col-sm-8  ">
-							<div class="pt-15Per" style="padding-left: 6.2%;">
+							<div class="pt-15Per plWelcomeText">
 								<h2 class="tag-line">
 									Welcome to the<br> network that never stops
 								</h2>

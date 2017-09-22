@@ -121,12 +121,12 @@
 	}
 }
 
-@media ( max-width :1339px) and (min-width:1280px) 
+@media ( max-width :1366px) and (min-width:1280px) 
 {
 
 	.floatingRight
 	{
-		right: 2.2% !important;
+		right: 3.2% !important;
 	}
 	.fv
 	{
@@ -152,7 +152,7 @@
 
 }
 
-@media ( max-width :1921px) and (min-width:1340px) 
+@media ( max-width :1921px) and (min-width:1367px) 
 {
 	.floatingRight
 	{
