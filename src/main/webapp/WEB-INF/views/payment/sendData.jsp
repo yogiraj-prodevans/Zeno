@@ -136,6 +136,8 @@ label.css-label
 	{
 		width: 94% !important;
 		height: 38% !important;
+		margin-top: 7% !important;
+		margin-bottom: 7% !important;
 	}
 }
 </style>

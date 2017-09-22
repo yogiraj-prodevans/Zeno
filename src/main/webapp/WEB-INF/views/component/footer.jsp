@@ -18,7 +18,7 @@
 	}
 	.footerPR
 	{
-		padding-right: unset;
+		padding-right: 1.2%;
 	}
 }
 

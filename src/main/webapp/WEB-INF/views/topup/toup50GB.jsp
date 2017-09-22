@@ -134,13 +134,15 @@ label.css-label
 	user-select: none;
 }
 
-@media ( max-width :1921px) and (min-width:1340px) 
+@media ( max-width :1366px ) and (min-width:1024px)
 {
 	.mainBlock31
 	{
-		height: 48% !important;
+		width: 94% !important;
+		height: 42% !important;
+		margin-top: 7% !important;
+		margin-bottom: 7% !important;
 	}
-
 }
 </style>
    
