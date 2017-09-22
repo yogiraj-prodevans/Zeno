@@ -91,14 +91,7 @@ public class DashboardConroller {
 		}
 	}
 
-	@RequestMapping(value = "/parental-control", method = RequestMethod.GET)
-	public String parentControl(Locale locale, Model model, HttpSession session) {
-		if (session.getAttribute("user") == null) {
-			return "redirect:/logout";
-		} else {
-			return "parental-control";
-		}
-	}
+	
 
 	@RequestMapping(value = "/knowYourCPE", method = RequestMethod.GET)
 	public String knowYourCPE(Locale locale, Model model, HttpSession session) {

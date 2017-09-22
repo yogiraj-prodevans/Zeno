@@ -3,13 +3,10 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
 
-	<!-- Root Context: defines shared resources visible to all other web components -->
-
-	<!-- Configuration of XML-RPC -->
-	<import resource="rpc-cong.xml" />
-
-	<!-- Configuration of the Rest API -->
-	<import resource="rest.xml"/>
+	<!-- Bean created for the user registration process.
+	  	Created by . RK-->
+	<bean id="REGISTER_PROCESS"
+	class="com.prodevans.zeno.dao.impl.RegistrationUserParentalControlImpl">
+	</bean>
 	
 </beans>
-
