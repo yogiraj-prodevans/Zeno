@@ -32,6 +32,27 @@ public interface RestConfig {
 	 */
 	String PASSWORD = "Oneeight@admin18";
 	
+        /*
+        * API url for get the address object list.
+        */
 	String GET_ADDRESS_OBJECT_LIST = HOST + "/api/config/devices/device/Branch01-OneEight/config/orgs/org-services/OneEight/objects/addresses/address";
 	
+        
+        /*
+        *  API url for create the address object.
+        */
+        String CREATE_ADDRESS_OBJECT = HOST + "/api/config/devices/device/Branch01-OneEight/config/orgs/org-services/OneEight/objects/addresses";
+        
+        
+        /*
+        *  API url for create the filter policy object.
+        */
+        String CREATE_POLICY_FILTER_OBJECT = HOST + "/api/config/devices/device/Branch01-OneEight/config/orgs/org-services/OneEight/security/profiles/url-filtering";
+        
+        /*
+        *  API url for create the access policy rule object.
+        */
+        String CREATE_RULE_OBJECT = HOST + "/api/config/devices/device/Branch01-OneEight/config/orgs/org-services/OneEight/security/access-policies/access-policy-group/Default-Policy/rules";
+        
+        
 }
