@@ -31,18 +31,26 @@
     <div class="row" style="margin:unset;margin-left: 5%; margin-right: 5%;">
         <!-- BEGIN COPYRIGHT -->
 
-        <div class="col-md-4 col-xs-12 pdlFooter" style="color:black;"><div class="font-h5"> &copy; COPYRIGHT ONE8 TECHNOLOGIES 2017 </div></div> 
-        <div class="col-md-8 col-xs-12 footerPR" style="text-align: right;">
+        <div class="col-md-3 col-xs-12 pdlFooter" style="color:black;"><div class="font-h5"> &copy; COPYRIGHT ONE8 TECHNOLOGIES 2017 </div></div> 
+        <div class="col-md-9 col-xs-12 footerPR" style="text-align: right;">
             <div class="row">
-                <a href="${pageContext.request.contextPath }/privacy" class="font-h5">PRIVACY POLICY </a> <span style="padding: 5px;"></span>
-                <a href="${pageContext.request.contextPath }/terms" class="font-h5">TERMS OF SERVICE </a> <span style="padding: 5px;"></span>
-                <a href="${pageContext.request.contextPath }/refund" class="font-h5">REFUND AND CANCELLATION </a> <span style="padding: 5px;"></span>
-                <a href="${pageContext.request.contextPath }/feedbackPage" class="font-h5">FEEDBACK </a> <span style="padding: 5px;"></span>
-                <a href="${pageContext.request.contextPath }/contactusPage" class="font-h5">CONTACT US </a>  <span style="padding: 5px;"></span>
                 <a href="${pageContext.request.contextPath }/help" class="font-h5">FAQ </a> <span style="padding: 5px;"></span>
+               
+                <a href="${pageContext.request.contextPath }/terms" class="font-h5">TERMS AND CONDITIONS </a> <span style="padding: 5px;"></span>
+                
+                <a href="${pageContext.request.contextPath }/privacy" class="font-h5">PRIVACY POLICY </a> <span style="padding: 5px;"></span>
+                
+                <a href="${pageContext.request.contextPath }/refund" class="font-h5">REFUND AND CANCELLATION </a> <span style="padding: 5px;"></span>
+                
                 <a href="${pageContext.request.contextPath }/knowYourCPE" class="font-h5">KNOW YOUR CPE </a> <span style="padding: 5px;"></span>
-                <a href="${pageContext.request.contextPath }/knowYourBill" class="font-h5" target="_blank">KNOW YOUR BILL</a> 
+                
+                <a href="${pageContext.request.contextPath }/knowYourBill" class="font-h5" target="_blank">KNOW YOUR BILL</a> <span style="padding: 5px;"></span>
 
+                <a href="${pageContext.request.contextPath }/contactusPage" class="font-h5">CONTACT US </a>  <span style="padding: 5px;"></span>
+                
+                <a href="${pageContext.request.contextPath }/feedbackPage" class="font-h5">FEEDBACK </a> 
+                
+                
             </div>
         </div>
     </div>
