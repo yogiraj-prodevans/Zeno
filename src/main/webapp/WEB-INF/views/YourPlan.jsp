@@ -137,7 +137,7 @@ h1{
 		</div>
 		<div class=" col-md-4">
 			<div class="mainBlock41" style="background-color: #ffb81c;">
-				<h1 class="pb-50">Basic</h1>
+                            <h1 class="pb-50">Basic</h1>
 				<h1 class="fs-44">&#8377; 849/-</h1>
 				<h3 class="pb-10">per month</h3>
 			</div>

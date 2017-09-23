@@ -13,7 +13,7 @@
         <meta content="vikram" name="author">
 
         <!-- link to image for socio -->
-       
+
         <!-- Fonts START -->
         <link href="https://fonts.googleapis.com/css?family=Lato|Roboto:100" rel="stylesheet">
         <!-- Fonts END -->
