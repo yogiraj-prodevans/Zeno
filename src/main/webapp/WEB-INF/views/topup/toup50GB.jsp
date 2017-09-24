@@ -144,6 +144,17 @@
                         margin-bottom: 7% !important;
                     }
                 }
+                
+                @media ( min-width :1367px ) and ( max-width:1920px )
+                {
+                    .mainBlock31
+                    {
+                        width: 94% !important;
+                        height: 40% !important;
+                        margin-top: 7% !important;
+                        margin-bottom: 7% !important;
+                    }
+                }
             </style>
 
             <script>
