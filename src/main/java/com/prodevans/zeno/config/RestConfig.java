@@ -55,4 +55,21 @@ public interface RestConfig {
         String CREATE_RULE_OBJECT = HOST + "/api/config/devices/device/Branch01-OneEight/config/orgs/org-services/OneEight/security/access-policies/access-policy-group/Default-Policy/rules";
         
         
+        /**
+         * API URL for find address object.
+         */
+        String SEARCH_ADDRESS_OBJECT = HOST + "/api/config/devices/device/Branch01-OneEight/config/orgs/org-services/OneEight/objects/addresses/address/{address_object_name}";
+        
+        /**
+         * API URL for get list of objects.
+         */
+        String LIST_ACCESS_RULE = HOST + "/api/config/devices/device/Branch01-OneEight/config/orgs/org-services/OneEight/security/access-policies/access-policy-group/Default-Policy/rules/access-policy";
+        
+        
+        /**
+         * API URL for rearranging the rules.
+         */
+        String REORDER_RULE_LIST = HOST + "/api/config/devices/device/Branch01-OneEight/config/orgs/org-services/OneEight/security/access-policies/access-policy-group/Default-Policy/rules";
+        
+        
 }

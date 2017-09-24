@@ -8,8 +8,14 @@
 <title>Parental Control</title>
 </head>
 <body>
+    <h3> ${message}</h3>
+    
 <PRE>
 ${object_list}
 </PRE>
+
+<pre>
+${rules}
+</pre>
 </body>
 </html>

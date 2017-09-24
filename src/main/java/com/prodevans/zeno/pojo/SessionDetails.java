@@ -19,7 +19,9 @@ public class SessionDetails {
 	private String cityname;
 	private String countryname;
 	private double pendingAmount;
-
+        
+        private String ip_address;
+        
 	public String getFirst_name() {
 		return first_name;
 	}
@@ -161,5 +163,19 @@ public class SessionDetails {
 	public void setPendingAmount(double pendingAmount) {
 		this.pendingAmount = pendingAmount;
 	}
+
+    /**
+     * @return the ip_address
+     */
+    public String getIp_address() {
+        return ip_address;
+    }
+
+    /**
+     * @param ip_address the ip_address to set
+     */
+    public void setIp_address(String ip_address) {
+        this.ip_address = ip_address;
+    }
 
 }

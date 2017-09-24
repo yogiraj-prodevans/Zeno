@@ -86,7 +86,9 @@ public class DashboardDAOImpl implements DashboardDAO {
 						details.setSvctype(result.get("svctype").toString());
 						details.setSubsno(Integer.parseInt(result.get("subsno").toString()));
 						details.setFUPLimit(getFUPLimit(details.getRatePlan()));
-						details.setDataUsed(getDataUsed(details.getStartDate(), details.getExpiryDate(), customer_id));
+                                                HashMap<String, Object> res_session_detials = getDataUsed(details.getStartDate(), details.getExpiryDate(), customer_id);
+						details.setDataUsed(Long.parseLong( res_session_detials.get("total_bytes").toString()));
+                                                details.setIp_address(res_session_detials.get("ip_address").toString());
 						return details;
 					}
 				}
@@ -114,9 +116,11 @@ public class DashboardDAOImpl implements DashboardDAO {
 
 	}
 
-	private long getDataUsed(Date startDate, Date endDate, String customerID) throws XmlRpcException {
+	private HashMap<String,Object> getDataUsed(Date startDate, Date endDate, String customerID) throws XmlRpcException {
 		SubscriptionStatus status = new SubscriptionStatus();
+                HashMap<String, Object> result = new HashMap<>();
 		long TotalBytes = 0;
+                String ip_address = "";
 		Vector params = new Vector();
 		params.add(startDate);
 		params.add(endDate);
@@ -127,11 +131,15 @@ public class DashboardDAOImpl implements DashboardDAO {
 			for (Object ob : token) {
 				HashMap<String, Object> hs = (HashMap<String, Object>) ob;
 				TotalBytes += Long.parseLong(hs.get("totalbytes").toString());
+                                ip_address = hs.get("ipaddr").toString();
 			}
 		} catch (Exception ee) {
 			logger.error("No Data found : " + ee.getMessage());
 		}
-		return TotalBytes;
+                
+                result.put("ip_address", ip_address);
+                result.put("total_bytes",TotalBytes);
+		return result;
 
 	}
 

@@ -65,7 +65,10 @@ public class DashboardConroller {
 				model.addAttribute("SubscriptionDetails", details);
 				session.setAttribute("plan", details.getRatePlan());
 				session.setAttribute("FUP", details.getFUPLimit());
-				
+                               
+                                //set ip address to the user for the parental control.
+				session.setAttribute("user_ip_address", details.getIp_address());
+                                        
 				model.addAttribute("plan", details.getRatePlan());
 				model.addAttribute("FUP", details.getFUPLimit());
 

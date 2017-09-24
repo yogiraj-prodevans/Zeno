@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.prodevans.zeno.dao.impl.RegistrationUserParentalControlImpl;
+import com.prodevans.zeno.pojo.SessionDetails;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -24,9 +25,9 @@ public class ParentalControl {
      * Created logger object for the logging.
      */
     private static final Logger logger = LoggerFactory.getLogger(ParentalControl.class);
-    
+
     /**
-     * @param rEGISTER_PROCESS
+     * @param rEGISTER_PROCESS 
      */
     public void setREGISTER_PROCESS(RegistrationUserParentalControlImpl rEGISTER_PROCESS) {
         REGISTER_PROCESS = rEGISTER_PROCESS;
@@ -42,14 +43,49 @@ public class ParentalControl {
      */
     @RequestMapping(value = "/control", method = RequestMethod.GET)
     public String parentControl(Locale locale, Model model, HttpSession session) {
-        try {
-            model.addAttribute("object_list", REGISTER_PROCESS.getUserList());
+        if (session.getAttribute("user") == null) {
+            return "redirect:/logout";
+        } else {
+            try {
+                //fetching the user details from the session.
+                SessionDetails user = (SessionDetails) session.getAttribute("user");
+                String ip_address = (String) session.getAttribute("user_ip_address");
+                logger.error("ip address : " + ip_address);
+                
+                boolean check_ip_result = REGISTER_PROCESS.checkRegistration(user.getActid());
+                if(check_ip_result){
+                    model.addAttribute("message", "user "+user.getActname()+" is already present");
+                }
+                else{
+                    model.addAttribute("message", "user "+user.getActname()+" is succesfually registered in prental control");
+                }
+                
+                // Checking of IP address is get found in the session or not
+                if(!check_ip_result)
+                if (!ip_address.isEmpty() ) {
+                    //Regestration process for the uesr.
+                    REGISTER_PROCESS.registerUser(user.getActid(), ip_address);
+                } else {
+                    model.addAttribute("message", "IP address is not found");
+                    logger.error("IP address is not found ");
+                }
 
-            REGISTER_PROCESS.registerUser("OE_000007", "172.168.31.99");
-
-        } catch (Exception e) {
-            logger.error(e.getMessage());
+                
+                //Displaying the list of Adderss objects
+                model.addAttribute("object_list", REGISTER_PROCESS.getUserList());
+   
+//                // Experiment .
+//                String rule_details = REGISTER_PROCESS.rearrangerRules(user.getActid());
+//                model.addAttribute("rules", rule_details);
+                
+            } catch (Exception e) {
+                logger.error(e.getMessage());
+            }
+            return "parental-control";
         }
-        return "parental-control";
     }
+    
+    
+    
+    
 }
