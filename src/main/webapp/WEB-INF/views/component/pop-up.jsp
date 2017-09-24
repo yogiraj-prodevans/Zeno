@@ -152,11 +152,11 @@
 
 }
 
-@media ( max-width :1921px) and (min-width:1367px) 
+@media (min-width:1367px) 
 {
 	.floatingRight
 	{
-		right: 2.1% !important;
+		right: 2.4% !important;
 	}
 }
 
