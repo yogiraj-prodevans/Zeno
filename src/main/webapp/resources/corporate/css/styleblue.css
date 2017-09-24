@@ -225,7 +225,7 @@ input.form-control,
 textarea.form-control {
     
     font-size:11px; 
-    font-style:italic; 
+     
     border: none; 
     border-bottom: .1px solid;
     
@@ -1337,7 +1337,7 @@ div.content-form-page {
 }
 .content-form-page input.form-control {
 	 font-size:11px; 
-    font-style:italic; 
+     
     border: none; 
     border-bottom: .1px solid;
     

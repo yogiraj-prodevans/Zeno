@@ -104,13 +104,13 @@
                                         <form class="form-horizontal form-without-legend" role="form">
                                             <div class="form-group"> <label for="myaccountnumber" class="col-lg-12 control-label"> <span class="require"></span></label>
                                                 <div class="col-lg-12">
-                                                    <input type="text" class="form-control" style=" font-size:12px; font-style:italic;  box-shadow: none; border: none; border-bottom: .1px solid;" id="myaccountnumber" placeholder="My Account Number "> 
+                                                    <input type="text" class="form-control" style=" font-size:12px;   box-shadow: none; border: none; border-bottom: .1px solid;" id="myaccountnumber" placeholder="My Account Number "> 
                                                     <label for="myaccountnumber" class="col-lg-12 control-label"><!--<a style="color:#F2F2F2F2; font-size:11px" href="#">I forgot my Stoic ID</a>--></label>
                                                 </div>
                                             </div>
                                             <div class="form-group"> <label for="registeredemail" class="col-lg-12 control-label"><span class="require"></span></label>
                                                 <div class="col-lg-12">
-                                                    <input type="email" class="form-control" id="registeredemail"style=" font-size:12px; font-style:italic;  box-shadow: none; border: none; border-bottom: .1px solid;" placeholder="Registered Email ">
+                                                    <input type="email" class="form-control" id="registeredemail"style=" font-size:12px;   box-shadow: none; border: none; border-bottom: .1px solid;" placeholder="Registered Email ">
                                                     <label for="registeredemail" class="col-lg-12 control-label"><!--<a style="color:#F2F2F2F2; font-size:11px" href="#">I forgot my Stoic Password</a>--></label>
                                                 </div>
                                             </div>

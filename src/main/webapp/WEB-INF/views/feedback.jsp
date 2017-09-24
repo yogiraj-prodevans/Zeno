@@ -82,9 +82,9 @@ input[type="text"]
 		        
 		        <!-- Start Tell More-->
 		        <div class="row">
-		        	<h3 style="padding-left: 1%;" class="plForMobile">Comment</h3>
+		        	<!--<h3 style="padding-left: 1%;" class="plForMobile">Comment</h3>-->
 		            <div class="col-md-12">
-		                <form:textarea path="message" id="message" style="height:30%; width:99%; border: 0.4px solid #bdc3c7; resize: none; color:black; border-radius: 0.4px;font-size: 16px;" />
+		                <form:textarea path="message" id="message" style="height:30%; width:99%; border: 0.4px solid #bdc3c7; resize: none; color:black; border-radius: 0.4px;font-size: 16px;" placeholder="Comment" />
 		            </div>
 		             <div class="col-md-12" style="margin-top:3% ;text-align: right;margin-left: -1%;">
 						<button id="fsendnow" class="btn billButton"  type="submit">SEND NOW</button>

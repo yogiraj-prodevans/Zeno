@@ -183,38 +183,7 @@ background-position:right center;
                         <br>
                     </div>
 
-					<!-- 
-                    <div class="row">
-                        <input type="checkbox" id="box-1">
-                        <label for="box-1">New Connection</label>
-                    </div><br>
-					 
-                    <div class="row">
-                        <input type="checkbox" id="box-2">
-                        <label for="box-2">Activation / Deactivation of Services</label>
-                    </div><br>
-
-                    <div class="row">
-                        <input type="checkbox" id="box-3">
-                        <label for="box-3">Duplicate Bill</label>
-                    </div><br>
-
-                    <div class="row">
-                        <input type="checkbox" id="box-4">
-                        <label for="box-4">Change of Location</label>
-                    </div><br>
-
-                    <div class="row">
-                        <input type="checkbox" id="box-5">
-                        <label for="box-5">Restoration of Service</label>
-                    </div><br>
-
-                    <div class="row">
-                        <input type="checkbox" id="box-6">
-                        <label for="box-6">Any Other</label>
-                    </div><br>
-                    
-                    -->
+			
                 </div>
             </div>		
             <!-- End Request For-->
@@ -230,57 +199,17 @@ background-position:right center;
                         <form:checkboxes items="${complaintList}" path="complaintCheckboxArray"/>
                     </div><br>
 
-					<!-- 
-                    <div class="row">
-                        <input type="checkbox" id="box-7">
-                        <label for="box-7">Not able to pay online</label>
-                    </div><br>
-
-                    <div class="row">
-                        <input type="checkbox" id="box-8">
-                        <label for="box-8">Activation / Deactivation of Services</label>
-                    </div><br>
-
-                    <div class="row">
-                        <input type="checkbox" id="box-9">
-                        <label for="box-9">Billing Related</label>
-                    </div><br>
-
-                    <div class="row">
-                        <input type="checkbox" id="box-10">
-                        <label for="box-10">Marcus Website</label>
-                    </div><br>
-
-                    <div class="row">
-                        <input type="checkbox" id="box-11">
-                        <label for="box-11">Marcus Customer Care</label>
-                    </div><br>
-
-                    <div class="row">
-                        <input type="checkbox" id="box-12">
-                        <label for="box-12">FUP/Speed</label>
-                    </div><br>
-
-                    <div class="row">
-                        <input type="checkbox" id="box-13">
-                        <label for="box-13">CPE</label>
-                    </div><br>
-
-                    <div class="row">
-                        <input type="checkbox" id="box-14">
-                        <label for="box-14">Zeno Portal</label>
-                    </div><br>
-                    
-                    -->
+					
                 </div>
             </div>		
             <!-- End Complaint For-->
         
         <!-- Start Tell More-->
         <div class="row">
-        	<h3 style="padding-left: 1%;" class="plForMobile">Tell us more</h3>
+        	
             <div class="col-md-12">
-            	<form:textarea path="message" id="message" class="form-control" style="height:30%; width:99%; border: 0.4px solid #bdc3c7; resize: none; color:black; border-radius: 0.4px;font-size: 16px;" />
+            	<form:textarea path="message" id="message" class="form-control" style="height:150px; width: 99%; border: 0.4px solid #bdc3c7; resize: none; color: black; border-radius: 0.4px; font-size: 19px;" placeholder=" Tell us more"></form:textarea>
+                
             </div>
             <div class="col-md-12" style="margin-top:3% ;text-align: right;margin-left: -1%;">
 				<button id="ssendnow" class="btn billButton" type="submit">SEND NOW</button>
