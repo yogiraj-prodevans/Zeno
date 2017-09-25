@@ -43,28 +43,6 @@
                     padding-right: 1px !important;
                 }
 
-                @media ( max-width : 680px) and (max-height: 740px) 
-                {
-                    .mainBlock31
-                    {
-                        width: 95% !important;
-                        min-height: 95% !important;
-                    }
-                }
-                @media (max-width:900px) and (min-width:680px)
-                {	
-                    .col-xs-12,.col-md-7  
-                    {
-                        padding-left: 1px !important;
-                    }
-                    .mainBlock31
-                    {
-                        width: 95% !important;
-                        min-height: 180% !important;
-                    }  	
-                }
-
-
                 .mainBlock31
                 {
                     width :96%;
@@ -129,27 +107,39 @@
                     -ms-user-select: none;
                     user-select: none;
                 }
+                
+                @media ( max-width : 767px) 
+                {
+                    .mainBlock31
+                    {
+                        width: 95% !important;
+                        min-height: 575px !important;
+                    }
+                }
+                @media (max-width:991px) and (min-width:768px)
+                {	
+                    .col-xs-12,.col-md-7  
+                    {
+                        padding-left: 1px !important;
+                    }
+                    .mainBlock31
+                    {
+                        width: 95% !important;
+                        min-height: 510px !important;
+                    }  	
+                }
 
-                @media ( max-width :1366px ) and (min-width:1024px)
+                @media ( max-width :1366px ) and (min-width:992px)
                 {
                     .mainBlock31
                     {
                         width: 94% !important;
-                        height: 38% !important;
+                        height: 265px !important;
                         margin-top: 7% !important;
                         margin-bottom: 7% !important;
                     }
                 }
-                 @media ( max-width :1366px ) and (min-width:1020px)
-                {
-                    .mainBlock31
-                    {
-                        width: 94% !important;
-                        height: 270px !important;
-                        margin-top: 7% !important;
-                        margin-bottom: 7% !important;
-                    }
-                }
+                
                 
             </style>
 

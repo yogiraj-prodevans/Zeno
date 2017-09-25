@@ -43,26 +43,7 @@
                     padding-right: 1px !important;
                 }
 
-                @media ( max-width : 680px) and (max-height: 740px) 
-                {
-                    .mainBlock31
-                    {
-                        width: 95% !important;
-                        min-height: 98% !important;
-                    }
-                }
-                @media (max-width:900px) and (min-width:680px)
-                {	
-                    .col-xs-12,.col-md-7  
-                    {
-                        padding-left: 1px !important;
-                    }
-                    .mainBlock31
-                    {
-                        width: 95% !important;
-                        min-height: 195% !important;
-                    }  	
-                }
+                
 
 
                 #floating-button
@@ -73,7 +54,7 @@
                 .mainBlock31
                 {
                     width :96%;
-                    height: 45%;
+                    height: 300px;
                     color:black !important;
                     margin: 5%;
                     margin-left:2%;
@@ -134,27 +115,38 @@
                     user-select: none;
                 }
 
-                @media ( max-width :1366px ) and (min-width:1024px)
+				@media ( max-width : 767px) 
+                {
+                    .mainBlock31
+                    {
+                        width: 95% !important;
+                        min-height: 615px !important;
+                        margin-bottom: 2% !important;
+                    }
+                }
+                @media (max-width:991px) and (min-width:768px)
+                {	
+                    .col-xs-12,.col-md-7  
+                    {
+                        padding-left: 1px !important;
+                    }
+                    .mainBlock31
+                    {
+                        width: 95% !important;
+                        min-height: 540px !important;
+                    }  	
+                }
+                @media ( max-width :1366px ) and (min-width:992px)
                 {
                     .mainBlock31
                     {
                         width: 94% !important;
-                        height: 48% !important;
+                        height: 290px !important;
                         margin-top: 7% !important;
                         margin-bottom: 7% !important;
                     }
                 }
                 
-                @media ( min-width :1367px ) and ( max-width:1920px )
-                {
-                    .mainBlock31
-                    {
-                        width: 94% !important;
-                        height: 40% !important;
-                        margin-top: 7% !important;
-                        margin-bottom: 7% !important;
-                    }
-                }
             </style>
 
             <script>
