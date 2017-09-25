@@ -72,6 +72,10 @@
 		min-width: 100%;
 		margin-top: 5%;
 	}
+	h1
+	{
+		font-size: 28px !important;
+	}
 }
 @media (max-width : 370px) 
 {

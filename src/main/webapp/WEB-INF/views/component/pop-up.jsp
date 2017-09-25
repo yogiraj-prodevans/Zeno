@@ -64,12 +64,26 @@
 	}
 }
 */
+@media (max-height : 414px) 
+{
+	#floating-button
+	{
+		top:30% !important;
+		right: 2% !important;
+	}
+	#floating-button1
+	{
+		top:45% !important;
+		right: 2% !important;
+	}
+}
+
 
 @media (max-width : 730px) 
 {
 	.floatingRight
 	{
-		right: 5% !important;
+		right: 2% !important;
 	}
 	.fv
 	{

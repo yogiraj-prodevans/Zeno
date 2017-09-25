@@ -76,6 +76,14 @@ body {
 	.pt-40{
 		padding-top: 20px;
 	}
+	.plWelcomeText
+	{
+		padding-left: 4.2%;
+	}
+	.loginBoxSqr
+	{
+		margin-bottom: 10%;
+	}
 }
 
 @media ( max-width : 750px) 

@@ -73,6 +73,18 @@ h1{
 	background: #9cafad !important;
 }
 
+@media ( max-width : 766px) 
+{
+	.circle-Font
+	{
+		margin-left: 5% !important;
+	}
+	.col-xs-5
+	{
+		width: 35%;
+	}
+}
+
 @media (max-width:1083px){
 	.circle-Font{
 		margin-left: 15%;
@@ -164,8 +176,8 @@ h1{
 		<div class="col-md-4 col-sm-4 ">
 			<div class="mainBlock41" style="background-color: #2980b9;">
 				<div class="row" style="padding-right: 2%;">
-					<div class="col-md-4 col-xs-3"></div>
-					<div class="col-md-4 col-xs-6">
+					<div class="col-md-4 col-xs-4"></div>
+					<div class="col-md-4 col-xs-5">
 						<h1 class="circle-Font">
 							5
 						</h1>
@@ -186,8 +198,8 @@ h1{
 		<div class="col-md-4 col-sm-4 ">
 			<div class="mainBlock41" style="background-color: #F44336;">
 				<div class="row" style="padding-right: 2%;">
-					<div class="col-md-4 col-xs-3"></div>
-					<div class="col-md-4 col-xs-6">
+					<div class="col-md-4 col-xs-4"></div>
+					<div class="col-md-4 col-xs-5">
 						<h1 class="circle-Font">
 							10
 						</h1>

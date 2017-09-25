@@ -77,7 +77,7 @@
             {
                 .col-md-12
                 {
-                    padding-left: 2.5% !important;
+                    padding-left: 1.5% !important;
                 }
             }
             @media ( max-width : 570px) 

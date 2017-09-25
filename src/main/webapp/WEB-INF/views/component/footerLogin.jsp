@@ -11,6 +11,18 @@
     {
         padding-right: 0.1%;
     }
+    @media ( max-width : 480px) 
+	{
+		.pdlFooter
+		{
+			padding-left: 8.1%;
+		}
+		.pdRFooter
+		{
+			padding-right: 7.5%;
+		}
+	}
+    
     @media ( max-width :1366px ) and (min-width:1024px)
     {
         .pdlFooter
