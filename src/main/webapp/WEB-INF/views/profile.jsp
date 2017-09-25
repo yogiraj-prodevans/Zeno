@@ -74,7 +74,7 @@
 	}
 	h1
 	{
-		font-size: 28px !important;
+		font-size: 27px !important;
 	}
 }
 @media (max-width : 370px) 

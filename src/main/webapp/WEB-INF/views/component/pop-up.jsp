@@ -68,12 +68,12 @@
 {
 	#floating-button
 	{
-		top:30% !important;
+		top:140px !important;
 		right: 2% !important;
 	}
 	#floating-button1
 	{
-		top:45% !important;
+		top:210px !important;
 		right: 2% !important;
 	}
 }
