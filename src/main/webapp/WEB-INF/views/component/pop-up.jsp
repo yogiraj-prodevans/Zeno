@@ -140,7 +140,7 @@
 
 	.floatingRight
 	{
-		right: 3.2% !important;
+		right: 2.2% !important;
 	}
 	.fv
 	{
