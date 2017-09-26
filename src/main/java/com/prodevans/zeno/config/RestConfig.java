@@ -67,4 +67,14 @@ public interface RestConfig {
      */
     String REORDER_RULE_LIST = HOST + "/api/config/devices/device/Branch01-OneEight/config/orgs/org-services/OneEight/security/access-policies/access-policy-group/Default-Policy/rules";
 
+     /**
+     * API URL for find RULE object.
+     */
+    String SEARCH_RULE_OBJECT = HOST + "/api/config/devices/device/Branch01-OneEight/config/orgs/org-services/OneEight/security/access-policies/access-policy-group/Default-Policy/rules/access-policy/{rule_object_name}";
+
+    /**
+     * API URL for find RULE object.
+     */
+    String UPDATE_RULE_OBJECT = HOST + "/api/config/devices/device/Branch01-OneEight/config/orgs/org-services/OneEight/security/access-policies/access-policy-group/Default-Policy/rules/access-policy/{rule_object_name}";
+ 
 }

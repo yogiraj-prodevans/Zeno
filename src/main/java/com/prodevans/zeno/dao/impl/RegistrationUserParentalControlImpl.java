@@ -133,77 +133,177 @@ public class RegistrationUserParentalControlImpl implements RegistrationUserPare
         return person.getBody();
     }
 
+    /**
+     * This method is used for the checking the registration is present or not.
+     * @param user_name
+     * @return --- true when present or false.
+     */
     @Override
     public boolean checkRegistration(String user_name) {
-         /**
-        * change the user name as per the requirements of business logic.
-        * user name ex. OE_000007_address_object
+        boolean final_result = false;
+        final_result = checkIpAddress(user_name);
+        if(final_result){
+            final_result = checkRule(user_name);
+        }
+        return final_result;
+    }
+
+    /**
+     * It check the Address object is present in the versa or not.
+     * @param user_name
+     * @return 
+     */
+    private boolean checkIpAddress(String user_name) {
+        /**
+         * change the user name as per the requirements of business logic. user
+         * name ex. OE_000007_address_object
          */
         user_name = user_name.trim() + "_address_object";
-        
+
         /**
-		 * Creation of the response object with the string data type. Because it return
-		 * the JSON.
+         * Creation of the response object with the string data type. Because it
+         * return the JSON.
          */
         ResponseEntity<String> person;
 
         /**
-		 * Headers for the response type if we want to return JSON response then we
-		 * require to add.
+         * Headers for the response type if we want to return JSON response then
+         * we require to add.
          */
         HttpHeaders headers = new HttpHeaders();
 
         /**
-		 * Adding of the response header with application/json type
+         * Adding of the response header with application/json type
          */
         headers.add("Accept", "application/json");
 
         /**
-		 * Adding of the request header with application/json type
+         * Adding of the request header with application/json type
          */
         headers.setContentType(MediaType.APPLICATION_JSON);
 
         /**
-		 * Creation of the Entity object for the adding the headers and JSON request body into request.
+         * Creation of the Entity object for the adding the headers and JSON
+         * request body into request.
          */
-        entity = new HttpEntity<>( headers);
+        entity = new HttpEntity<>(headers);
 
         /**
-		 * Creation of REST TEMPLET object for the executing of the REST calls.
+         * Creation of REST TEMPLET object for the executing of the REST calls.
          */
         restTemplate = new RestTemplate();
 
         /**
-		 * Adding the basic type of authentication on the REST TEMPLETE.
+         * Adding the basic type of authentication on the REST TEMPLETE.
          */
         restTemplate.getInterceptors()
                 .add(new BasicAuthorizationInterceptor(RestConfig.USER_NAME, RestConfig.PASSWORD));
 
         /**
-		 * Execution of the REST call with basic authentication and JSON response type
+         * Execution of the REST call with basic authentication and JSON
+         * response type
          */
-        try{
+        try {
             Map<String, String> map = new HashMap<String, String>();
-        map.put("address_object_name", user_name);
-        person = restTemplate.exchange(RestConfig.SEARCH_ADDRESS_OBJECT, HttpMethod.GET, entity, String.class, map);
-        
-        //status code 200 specify the address is already present.
-        if(person.getStatusCodeValue()==200){
-            return true;
-        }
-        else{
-            return false;
-        }
-        }catch(RestClientException e){
+            map.put("address_object_name", user_name);
+            person = restTemplate.exchange(RestConfig.SEARCH_ADDRESS_OBJECT, HttpMethod.GET, entity, String.class, map);
+
+            //status code 200 specify the address is already present.
+            if (person.getStatusCodeValue() == 200) {
+                logger.error("filter already exixts user_name : " + user_name);
+                return true;
+            } else {
+                logger.error("filter not exixts user_name : " + user_name);
+                return false;
+            }
+        } catch (RestClientException e) {
             if (e.getMessage().contains("404")) {
-                logger.error("filter already exixts user_name : " + user_name );
+                logger.error("filter not exixts user_name : " + user_name);
                 return false;
             } else {
                 logger.error(e.getMessage());
                 return false;
             }
         }
-        
+    }
+
+    /**
+     * this method is used for the check the access policy rule is present or not.
+     * @param user_name --- ActId from the inventum.
+     * @return 
+     */
+    private boolean checkRule(String user_name) {
+        /**
+         * change the user name as per the requirements of business logic. user
+         * name ex. OE_000007_address_object
+         */
+        user_name = user_name.trim() + "_access_policy_rule";
+
+        /**
+         * Creation of the response object with the string data type. Because it
+         * return the JSON.
+         */
+        ResponseEntity<String> person;
+
+        /**
+         * Headers for the response type if we want to return JSON response then
+         * we require to add.
+         */
+        HttpHeaders headers = new HttpHeaders();
+
+        /**
+         * Adding of the response header with application/json type
+         */
+        headers.add("Accept", "application/json");
+
+        /**
+         * Adding of the request header with application/json type
+         */
+        headers.setContentType(MediaType.APPLICATION_JSON);
+
+        /**
+         * Creation of the Entity object for the adding the headers and JSON
+         * request body into request.
+         */
+        entity = new HttpEntity<>(headers);
+
+        /**
+         * Creation of REST TEMPLET object for the executing of the REST calls.
+         */
+        restTemplate = new RestTemplate();
+
+        /**
+         * Adding the basic type of authentication on the REST TEMPLETE.
+         */
+        restTemplate.getInterceptors()
+                .add(new BasicAuthorizationInterceptor(RestConfig.USER_NAME, RestConfig.PASSWORD));
+
+        /**
+         * Execution of the REST call with basic authentication and JSON
+         * response type
+         */
+        try {
+            Map<String, String> map = new HashMap<String, String>();
+            map.put("rule_object_name", user_name);
+            person = restTemplate.exchange(RestConfig.SEARCH_RULE_OBJECT, HttpMethod.GET, entity, String.class, map);
+
+            //status code 200 specify the address is already present.
+            if (person.getStatusCodeValue() == 200) {
+                 logger.error("rule already exixts user_name : " + user_name);
+                return true;
+            } else {
+                 logger.error("rule not exixts user_name : " + user_name);
+                return false;
+            }
+        } catch (RestClientException e) {
+            if (e.getMessage().contains("404")) {
+                logger.error("rule not exixts user_name : " + user_name);
+                return false;
+            } else {
+                logger.error(e.getMessage());
+                return false;
+            }
+        }
     }
 
     /**
@@ -216,8 +316,8 @@ public class RegistrationUserParentalControlImpl implements RegistrationUserPare
     @Override
     public boolean registerUser(String user_name, String ip_address) {
         /**
-        * change the ip address as per the requirements of REST API.
-        * user name ex. 192.168.1.100/32
+         * change the ip address as per the requirements of REST API. user name
+         * ex. 192.168.1.100/32
          */
         ip_address = ip_address.trim() + "/32";
 
@@ -240,8 +340,8 @@ public class RegistrationUserParentalControlImpl implements RegistrationUserPare
         if (address_object_result == 201) {
             logger.info("user address is created with the user_name : " + user_name + ", and ip_address : " + ip_address);
         }
-        
-         /**
+
+        /**
          * Business logic for the creating the Filter object.
          */
         int filter_object_result = 0;
@@ -250,7 +350,7 @@ public class RegistrationUserParentalControlImpl implements RegistrationUserPare
         } catch (Exception e) {
             // If status code returns 409 means the filter is already exists.
             if (e.getMessage().contains("409")) {
-                logger.error("filter already exixts user_name : " + user_name );
+                logger.error("filter already exixts user_name : " + user_name);
             } else {
                 logger.error(e.getMessage());
             }
@@ -258,10 +358,9 @@ public class RegistrationUserParentalControlImpl implements RegistrationUserPare
 
         // If status code returns 201 means the successful created the filter object.
         if (filter_object_result == 201) {
-            logger.info("filter is created with the user_name : " + user_name );
+            logger.info("filter is created with the user_name : " + user_name);
         }
 
-        
         /**
          * Business logic for the creating the Access policy object.
          */
@@ -271,7 +370,7 @@ public class RegistrationUserParentalControlImpl implements RegistrationUserPare
         } catch (Exception e) {
             // If status code returns 409 means the access policy rule is already exists.
             if (e.getMessage().contains("409")) {
-                logger.error("access policy rule already exixts user_name : " + user_name );
+                logger.error("access policy rule already exixts user_name : " + user_name);
             } else {
                 logger.error(e.getMessage());
             }
@@ -279,24 +378,24 @@ public class RegistrationUserParentalControlImpl implements RegistrationUserPare
 
         // If status code returns 201 means the successful created the access policy rule.
         if (access_policy_rule_result == 201) {
-            logger.info("access policy rule is created with the user_name : " + user_name );
+            logger.info("access policy rule is created with the user_name : " + user_name);
         }
-        
-        
+
         /**
-         * Business logic for the rearranging[ make policy to top ] the Access policy object.
+         * Business logic for the rearranging[ make policy to top ] the Access
+         * policy object.
          */
         int access_policy_rule_rearrange = 0;
         try {
             access_policy_rule_rearrange = rearrangerRules(user_name);
         } catch (Exception e) {
-                logger.error(e.getMessage());
-           
+            logger.error(e.getMessage());
+
         }
 
         // If status code returns 204 means the successful rearranging.
         if (access_policy_rule_rearrange == 204) {
-            logger.info("access policy rule is created with the user_name : " + user_name );
+            logger.info("access policy rule is created with the user_name : " + user_name);
         }
         return false;
     }
@@ -313,7 +412,7 @@ public class RegistrationUserParentalControlImpl implements RegistrationUserPare
         * user name ex. OE_000007_address_object
          */
         user_name = user_name.trim() + "_address_object";
-        
+
         /*
 		 * Creation of the response object with the string data type. Because it return
 		 * the JSON.
@@ -373,17 +472,19 @@ public class RegistrationUserParentalControlImpl implements RegistrationUserPare
         return person.getStatusCodeValue();
     }
 
-    /** This for the create the filter policy for the user
+    /**
+     * This for the create the filter policy for the user
+     *
      * @param user_name -- address object in the versa.
      * @return -- response from the user.
      */
-    private int createProfileFilter(String user_name){
+    private int createProfileFilter(String user_name) {
         /*
         * change the user name as per the requirements of business logic.
         * filter ex. OE_000007_filter_object
          */
         user_name = user_name.trim() + "_filter_object";
-        
+
         /*
 		 * Creation of the response object with the string data type. Because it return
 		 * the JSON.
@@ -412,18 +513,18 @@ public class RegistrationUserParentalControlImpl implements RegistrationUserPare
         JSONObject request_data = new JSONObject();
         JSONObject request_attributes = new JSONObject();
         request_attributes.put("name", user_name);
-        request_attributes.put("default-action",new JSONObject().put("predefined", "allow"));
+        request_attributes.put("default-action", new JSONObject().put("predefined", "allow"));
         request_attributes.put("decrypt-bypass", false);
         request_attributes.put("cloud-lookup-mode", "never");
         request_attributes.put("lef-profile", "Default-Logging-Profile");
         request_attributes.put("category-action-map", new JSONObject().put("category-action", new JSONArray()));
-        
+
         JSONObject blacklist = new JSONObject();
         blacklist.put("action", new JSONObject().put("predefined", "block"));
         blacklist.put("patterns", new JSONArray());
         request_attributes.put("blacklist", blacklist);
         request_attributes.put("whitelist", new JSONObject());
-        
+
         request_data.put("url-filtering-profile", request_attributes);
 
         logger.error("Json data for the Address object : " + request_data.toString());
@@ -452,27 +553,27 @@ public class RegistrationUserParentalControlImpl implements RegistrationUserPare
 		 * Returning the response body with string format that easily readable.
          */
         return policy.getStatusCodeValue();
-        
+
     }
-    
+
     /**
-     * createAccessPolicyRule method is used for the create the access policy rule.
+     * createAccessPolicyRule method is used for the create the access policy
+     * rule.
+     *
      * @param user_name -- specify the user name form inventum
      * @return response code 201 for the success and 409 for conflict.
      */
-   private int createAccessPolicyRule(String user_name){
-       
-       /**
-        * change the user name as per the requirements of business logic.
-        * user name ex. OE_000007_address_object
-        * filter ex. OE_000007_filter_object
-        * Access policy rule ex. OE_000007 _access_policy_rule
-        */
-       
+    private int createAccessPolicyRule(String user_name) {
+
+        /**
+         * change the user name as per the requirements of business logic. user
+         * name ex. OE_000007_address_object filter ex. OE_000007_filter_object
+         * Access policy rule ex. OE_000007 _access_policy_rule
+         */
         String access_policy_rule = user_name.trim() + "_access_policy_rule";
-        String filter_policy = user_name.trim() + "_filter_object";
+        String filter_policy = "basic_filter_zeno";
         String address_object = user_name.trim() + "_address_object";
-        
+
         /*
 		 * Creation of the response object with the string data type. Because it return
 		 * the JSON.
@@ -501,43 +602,43 @@ public class RegistrationUserParentalControlImpl implements RegistrationUserPare
         JSONObject request_data = new JSONObject();
         JSONObject request_attributes = new JSONObject();
         request_attributes.put("name", access_policy_rule);
-        
-            JSONObject match =new JSONObject();
-                JSONObject source =new JSONObject();
-                    source.put("zone", new JSONObject());
-                        JSONObject address = new JSONObject();
-                            JSONArray addresses = new JSONArray();
-                            addresses.put(address_object);
-                        address.put("address-list", addresses);
-                    source.put("address", address);
-                    source.put("site-id", new JSONArray());
-                    source.put("user", new JSONObject().put("user-type", "any"));
-            match.put("source", source);
 
-                JSONObject destination =new JSONObject();
-                    destination.put("zone", new JSONObject());
-                    destination.put("address", new JSONObject());
-                    destination.put("site-id", new JSONArray());
+        JSONObject match = new JSONObject();
+        JSONObject source = new JSONObject();
+        source.put("zone", new JSONObject());
+        JSONObject address = new JSONObject();
+        JSONArray addresses = new JSONArray();
+        addresses.put(address_object);
+        address.put("address-list", addresses);
+        source.put("address", address);
+        source.put("site-id", new JSONArray());
+        source.put("user", new JSONObject().put("user-type", "any"));
+        match.put("source", source);
 
-            match.put("destination", destination);
-            match.put("application", new JSONObject());
-            match.put("ttl", new JSONObject());
+        JSONObject destination = new JSONObject();
+        destination.put("zone", new JSONObject());
+        destination.put("address", new JSONObject());
+        destination.put("site-id", new JSONArray());
+
+        match.put("destination", destination);
+        match.put("application", new JSONObject());
+        match.put("ttl", new JSONObject());
         request_attributes.put("match", match);
-        
-            JSONObject set =new JSONObject();
-                JSONObject lef =new JSONObject();
-                    lef.put("profile", "Default-Logging-Profile");
-                    lef.put("event", "both");
-                    JSONObject send_pcap_data = new JSONObject();
-                        send_pcap_data.put("enable", false);
-                     lef.put("options", new JSONObject().put("send-pcap-data", send_pcap_data));
-                set.put("lef", lef);
-                set.put("action", "allow");
-                JSONObject security_profile = new JSONObject();
-                    JSONObject url_filtering = new JSONObject();
-                    url_filtering.put("user-defined", filter_policy);
-                security_profile.put("url-filtering", url_filtering);
-                set.put("security-profile", security_profile);
+
+        JSONObject set = new JSONObject();
+        JSONObject lef = new JSONObject();
+        lef.put("profile", "Default-Logging-Profile");
+        lef.put("event", "both");
+        JSONObject send_pcap_data = new JSONObject();
+        send_pcap_data.put("enable", false);
+        lef.put("options", new JSONObject().put("send-pcap-data", send_pcap_data));
+        set.put("lef", lef);
+        set.put("action", "allow");
+        JSONObject security_profile = new JSONObject();
+        JSONObject url_filtering = new JSONObject();
+        url_filtering.put("user-defined", filter_policy);
+        security_profile.put("url-filtering", url_filtering);
+        set.put("security-profile", security_profile);
         request_attributes.put("set", set);
         request_data.put("access-policy", request_attributes);
 
@@ -567,110 +668,109 @@ public class RegistrationUserParentalControlImpl implements RegistrationUserPare
 		 * Returning the response body with string format that easily readable.
          */
         return rule.getStatusCodeValue();
-   }
-   
-   
-   /**
-    * This method is used for the rearrange the rules. [ make the newly created rule to the top]
-    * @param user_name -- user name form inventum.
-    * @return -- status code 204 when success.
-    */
-   public int rearrangerRules(String user_name){
-       
-       /**
-        * change the user name as per the requirements of business logic. user
-        * name ex. OE_000007_address_object filter ex. OE_000007_filter_object
-        * Access policy rule ex. OE_000007 _access_policy_rule
-        */
-       String access_policy_rule = user_name.trim() + "_access_policy_rule";
+    }
 
-       //Creation of the response object with the string data type. Because it return
-       //the JSON.
-       ResponseEntity<String> rule;
+    /**
+     * This method is used for the rearrange the rules. [ make the newly created
+     * rule to the top]
+     *
+     * @param user_name -- user name form inventum.
+     * @return -- status code 204 when success
+     */
+    public int rearrangerRules(String user_name) {
 
-       /**
-        * Headers for the response type if we want to return JSON response then
-        * we require to add.
-        */
-       HttpHeaders headers = new HttpHeaders();
+        /**
+         * change the user name as per the requirements of business logic. user
+         * name ex. OE_000007_address_object filter ex. OE_000007_filter_object
+         * Access policy rule ex. OE_000007 _access_policy_rule
+         */
+        String access_policy_rule = user_name.trim() + "_access_policy_rule";
 
-       /**
-        * Adding of the response header with application/json type
-        */
-       headers.add("Accept", "application/json");
+        //Creation of the response object with the string data type. Because it return
+        //the JSON.
+        ResponseEntity<String> rule;
 
-       /*
+        /**
+         * Headers for the response type if we want to return JSON response then
+         * we require to add.
+         */
+        HttpHeaders headers = new HttpHeaders();
+
+        /**
+         * Adding of the response header with application/json type
+         */
+        headers.add("Accept", "application/json");
+
+        /*
 		 * Adding of the request header with application/json type
-        */
-       headers.setContentType(MediaType.APPLICATION_JSON);
+         */
+        headers.setContentType(MediaType.APPLICATION_JSON);
 
-       /**
-        * Creation of the Entity object for the adding the headers and JSON
-        * request body into request.
-        */
-       entity = new HttpEntity<>(headers);
+        /**
+         * Creation of the Entity object for the adding the headers and JSON
+         * request body into request.
+         */
+        entity = new HttpEntity<>(headers);
 
-       /**
-        * Creation of REST TEMPLET object for the executing of the REST calls.
-        */
-       restTemplate = new RestTemplate();
+        /**
+         * Creation of REST TEMPLET object for the executing of the REST calls.
+         */
+        restTemplate = new RestTemplate();
 
-       /**
-        * Adding the basic type of authentication on the REST TEMPLETE.
-        */
-       restTemplate.getInterceptors()
-               .add(new BasicAuthorizationInterceptor(RestConfig.USER_NAME, RestConfig.PASSWORD));
+        /**
+         * Adding the basic type of authentication on the REST TEMPLETE.
+         */
+        restTemplate.getInterceptors()
+                .add(new BasicAuthorizationInterceptor(RestConfig.USER_NAME, RestConfig.PASSWORD));
 
-       /**
-        * Execution of the REST call with basic authentication and JSON response
-        * type
-        */
-       rule = restTemplate.exchange(RestConfig.LIST_ACCESS_RULE, HttpMethod.GET, entity, String.class);
+        /**
+         * Execution of the REST call with basic authentication and JSON
+         * response type
+         */
+        rule = restTemplate.exchange(RestConfig.LIST_ACCESS_RULE, HttpMethod.GET, entity, String.class);
 
-       /**
-        * Returning the response body with string format that easily readable.
-        */
-       
-       JSONObject root = new JSONObject( rule.getBody());
-       
-       System.out.println("data : "+root.getJSONArray("access-policy").getJSONObject(0).toString());
-       
-       JSONArray jarr = root.getJSONArray("access-policy");
-              
-       ArrayList<JSONObject> list_rearrange = new ArrayList<>();
-       
-       JSONObject target_object = null;
-       for( int i=0 ; i < jarr.length() ; i++){
-           if(jarr.getJSONObject(i).getString("name").equals(access_policy_rule)){
-               target_object = jarr.getJSONObject(i);
-           }
-           else{
-               list_rearrange.add(jarr.getJSONObject(i));
-           }
-       }
-       
-       list_rearrange.add(0, target_object);
-       
-       JSONObject new_rules = new JSONObject();
-       JSONArray new_access_policy = new JSONArray(list_rearrange);
-       new_rules.put("access-policy", new_access_policy );
-       JSONObject rules = new JSONObject();
-       rules.put("rules", new_rules);
-       
-       /**
-        * Creation of the Entity object for the adding the headers and JSON
-        * request body into request.
-        */
-       entity = new HttpEntity<>(rules.toString(),headers);
-       
-         /**
-        * Execution of the REST call with basic authentication and JSON response
-        * type
-        */
-       rule = restTemplate.exchange(RestConfig.REORDER_RULE_LIST, HttpMethod.PUT, entity, String.class);
-       
-       logger.info("Status code after the rearrangement : "+rule.getStatusCodeValue());
-       
-       return rule.getStatusCodeValue();
-   }
+        /**
+         * Returning the response body with string format that easily readable.
+         */
+        JSONObject root = new JSONObject(rule.getBody());
+
+        System.out.println("data : " + root.getJSONArray("access-policy").getJSONObject(0).toString());
+
+        JSONArray jarr = root.getJSONArray("access-policy");
+
+        ArrayList<JSONObject> list_rearrange = new ArrayList<>();
+
+        JSONObject target_object = null;
+        for (int i = 0; i < jarr.length(); i++) {
+            if (jarr.getJSONObject(i).getString("name").equals(access_policy_rule)) {
+                target_object = jarr.getJSONObject(i);
+            } else {
+                list_rearrange.add(jarr.getJSONObject(i));
+            }
+        }
+
+        list_rearrange.add(0, target_object);
+
+        JSONObject new_rules = new JSONObject();
+        JSONArray new_access_policy = new JSONArray(list_rearrange);
+        new_rules.put("access-policy", new_access_policy);
+        JSONObject rules = new JSONObject();
+        rules.put("rules", new_rules);
+
+        /**
+         * Creation of the Entity object for the adding the headers and JSON
+         * request body into request.
+         */
+        entity = new HttpEntity<>(rules.toString(), headers);
+
+        /**
+         * Execution of the REST call with basic authentication and JSON
+         * response type
+         */
+        rule = restTemplate.exchange(RestConfig.REORDER_RULE_LIST, HttpMethod.PUT, entity, String.class);
+
+        logger.info("Status code after the rearrangement : " + rule.getStatusCodeValue());
+
+        return rule.getStatusCodeValue();
+    }
 }
