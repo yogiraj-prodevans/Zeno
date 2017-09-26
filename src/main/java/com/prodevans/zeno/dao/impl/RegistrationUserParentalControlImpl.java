@@ -570,7 +570,11 @@ public class RegistrationUserParentalControlImpl implements RegistrationUserPare
    }
    
    
-   
+   /**
+    * This method is used for the rearrange the rules. [ make the newly created rule to the top]
+    * @param user_name -- user name form inventum.
+    * @return -- status code 204 when success.
+    */
    public int rearrangerRules(String user_name){
        
        /**
