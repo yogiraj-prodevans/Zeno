@@ -13,7 +13,7 @@
              style="font-size: 12px">
             <ul>
                 <li class="dropdown active"></li>
-                <li><a href="${pageContext.request.contextPath }/dashboard">HOME</a></li>
+                <li><a href="${pageContext.request.contextPath }/dashboard">MY ONE8</a></li>
                 <li><a href="${pageContext.request.contextPath }/billingPayment">MAKE PAYMENT</a></li>
                 <li><a href="${pageContext.request.contextPath }/service">SERVICE REQUEST</a></li>
                 <li><a href="${pageContext.request.contextPath }/profile">PROFILE</a></li>

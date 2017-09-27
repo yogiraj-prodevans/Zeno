@@ -173,7 +173,7 @@
                 <ul>
                     <li class="dropdown active"></li>
                     <li class="dropdown active"></li>
-                    <li class="active"><a href="${pageContext.request.contextPath }/dashboard">HOME</a></li>
+                    <li class="active"><a href="${pageContext.request.contextPath }/dashboard">MY ONE8</a></li>
                     <li><a href="${pageContext.request.contextPath }/billingPayment">MAKE PAYMENT</a></li>
                     <li><a href="${pageContext.request.contextPath }/service">SERVICE REQUEST</a></li>
                     <li><a href="${pageContext.request.contextPath }/profile">PROFILE</a></li>
