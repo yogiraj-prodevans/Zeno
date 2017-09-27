@@ -49,7 +49,7 @@
         <div class="row">
             <!-- BEGIN COPYRIGHT -->
             <div style="padding-left:10px"></div>
-            <div class="col-md-4 pdlFooter" style="color:black;"><h5> &copy; COPYRIGHT ONE8 TECHNOLOGIES 2017 </h5></div> 
+            <div class="col-md-4 pdlFooter" style="color:black;"><h5> &copy; <script type="text/JavaScript">document.write(new Date().getFullYear());</script> ONE-EIGHT TECHNOLOGIES PRIVATE LTD  </h5></div> 
             <div class="col-md-8 pdRFooter" style="text-align: right;">
                 <div class="row">
                     <a href="http://marcus.oneeight.co.in/faq" class="font-h5">FAQ </a> <span style="padding: 5px;"></span>
