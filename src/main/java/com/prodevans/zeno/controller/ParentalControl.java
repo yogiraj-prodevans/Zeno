@@ -76,32 +76,29 @@ public class ParentalControl {
                 
                 boolean check_ip_result = REGISTER_PROCESS.checkRegistration(user.getActid());
                 if(check_ip_result){
-                    model.addAttribute("message", "user "+user.getActname()+" is already present");
-                    
+                   //Return the parental control status/Details.
+                    parentalControlDetails = PROTECTION_STATUS.getProtectionDetails(user.getActid());
+                    parentalControlDetails.setUser_name(user.getActid());
+                    //Displaying the list of Adderss objects
                 }
                 else{
-                    model.addAttribute("message", "user "+user.getActname()+" is succesfually registered in prental control");
+                    // Checking of IP address is get found in the session or not
+                    if (!check_ip_result) {
+                        if (!ip_address.isEmpty()) {
+                            //Regestration process for the uesr.
+                            REGISTER_PROCESS.registerUser(user.getActid(), ip_address);
+                            //Return the parental control status/Details.
+                            parentalControlDetails = PROTECTION_STATUS.getProtectionDetails(user.getActid());
+                            parentalControlDetails.setUser_name(user.getActid());
+                            //Displaying the list of Adderss objects
+                        } else {
+                            model.addAttribute("message", "IP address is not found");
+                            logger.error("IP address is not found ");
+                        }
+                    }
+                   // model.addAttribute("message", "user "+user.getActname()+" is succesfually registered in prental control");
                 }
-                
-                
-                // Checking of IP address is get found in the session or not
-                if(!check_ip_result)
-                if (!ip_address.isEmpty() ) {
-                    //Regestration process for the uesr.
-                    REGISTER_PROCESS.registerUser(user.getActid(), ip_address);
-                } else {
-                    model.addAttribute("message", "IP address is not found");
-                    logger.error("IP address is not found ");
-                }
-
-                //Return the parental control status/Details.
-                parentalControlDetails = PROTECTION_STATUS.getProtectionDetails(user.getActid());
-                parentalControlDetails.setUser_name(user.getActid());
-                //Displaying the list of Adderss objects
-              
-                
-                
-                
+                  
             } catch (Exception e) {
                 logger.error(e.getMessage());
             }
@@ -122,17 +119,20 @@ public class ParentalControl {
         
         logger.info(" Protection Status : "+controlDetails.getProtection_status());
         logger.info(" Request Data : "+controlDetails.getRequest_data());
-        
-        boolean result = PROTECTION_STATUS.protectionStatusUpdate(controlDetails);
-        if(result){
-            model.addAttribute("error", "Protection status has been updated");
-            logger.info("Protection status has been updated ");
+        if (!controlDetails.getRequest_data().isEmpty() && !controlDetails.getProtection_status().isEmpty()) {
+            boolean result = PROTECTION_STATUS.protectionStatusUpdate(controlDetails);
+            if (result) {
+                model.addAttribute("error", "Protection status has been updated");
+                logger.info("Protection status has been updated ");
+            } else {
+                model.addAttribute("error", "Protection status not updated");
+                logger.info("Protection status not updated ");
+
+            }
+        }else{
+            model.addAttribute("error", "IP address is not registared or protection status is not selected.");
         }
-        else{
-            model.addAttribute("error", "Protection status not updated");
-            logger.info("Protection status not updated ");
-        
-        }
+
         return "redirect:/control";
     }
     

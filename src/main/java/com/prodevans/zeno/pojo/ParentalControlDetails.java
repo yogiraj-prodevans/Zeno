@@ -11,6 +11,14 @@ public class ParentalControlDetails {
     private String protection_status;
     private String user_name;
     private String request_data;
+   
+    public ParentalControlDetails(){
+        protection_status = "";
+        user_name = "";
+        request_data = "";
+    }
+    
+    
     /**
      * @return the protection_status
      */
@@ -31,8 +39,11 @@ public class ParentalControlDetails {
        else if(protection_status.equals("advance_filter_zeno")){
             return "ADVANCE";
         }
+       else if(protection_status.equals("custom_filter")){
+            return "CUSTOM";
+        }
        else{
-           return "CUSTOM";
+           return "NOT SELECTED";
        }
     }
     
