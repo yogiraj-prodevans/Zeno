@@ -174,7 +174,9 @@
 
         <h3 style="color:green; text-align: center;"><b>
                 <c:if test="${ not empty error}">${error}</c:if></b></h3>
-
+        <h3 style="color:red; text-align: center;"><b>
+                <c:if test="${ not empty message}">${message}</c:if></b></h3>
+        
             <div class="pt-30"></div>
 
             <!-- included pop up -->
