@@ -42,7 +42,7 @@
 
                     <p class="faqp" >What is One8 Cube? </p>
                     <p class="faqp1">The One8 cube is the nerve centre of your One8 internet experience. It is a hotspot router and entertainment platform, all in one sleek, intelligent box. It is loaded with a music and video player, and soon, a rich selection of on-demand video streaming and gaming services along with a browser so you can surf on your television. With two USB ports and Bluetooth capabilities, you can connect external hard disks, keyboard, mouse and more. </p>
-
+                 
                     <p class="faqp" >How many devices can I use with the One8 cube? </p>
                     <p class="faqp1">Use upto 8 wifi-enabled devices (laptop, tablet, phone etc.), and that’s not all. Turn your TV into a smart TV — just plug it into the One8 Cube’s HDMI port. </p>
 
@@ -51,10 +51,10 @@
 
 
                     <h1 class="h1-font">New Connection </h1>
-
+					<!--  
                     <p class="faqp">How can I sign up for a new connection? </p>
                     <p class="faqp1">Sign up online <a class="external" href="${pageContext.request.contextPath }/newconnection"><b>here</b></a> and our customer care executives will get in touch with you within 24 hours. </p>
-
+					-->
 
                     <p class="faqp">What is the cost of a new connection? </p>
                     <p class="faqp1">Pay Rs 2600 for the One8 Cube and an installation service fee of Rs 750. Thereafter, depending on the plan you opt for, enjoy the convenience of post-paid bill-ing. Note: The given prices are exclusive of applicable taxes. </p>
