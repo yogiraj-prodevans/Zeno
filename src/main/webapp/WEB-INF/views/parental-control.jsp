@@ -136,9 +136,8 @@
         <div class="container">
 
             <div class="col-md-12">
-                <p><h1>Lorem ipsum dolor sit amet, consectetur </h1></p>
-                <p><h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </h2></p>
-                <p><h3>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</h3></p>
+                <p><h1>Help control what your family views online.</h1></p>
+                <p><h3>ONE8 Parental Control is a simple, powerful tool to help shield your children from explicit websites. Simply choose protection status while your children surf the internet, and the toolbar will block access to adult-oriented websites.</h3></p>
                 <p><br></p>
 
 

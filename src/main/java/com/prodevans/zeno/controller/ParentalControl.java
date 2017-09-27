@@ -136,4 +136,9 @@ public class ParentalControl {
         return "redirect:/control";
     }
     
+    @RequestMapping(value = "/control-category", method = RequestMethod.GET)
+    public String categoryList(Locale locale, Model model ){
+        return "control-category-list";
+    }
+    
 }
