@@ -49,8 +49,8 @@
         <div class="row">
             <!-- BEGIN COPYRIGHT -->
             <div style="padding-left:10px"></div>
-            <div class="col-md-3 pdlFooter" style="color:black;"><h5> &copy; <script type="text/JavaScript">document.write(new Date().getFullYear());</script> ONE-EIGHT TECHNOLOGIES PRIVATE LTD  </h5></div> 
-            <div class="col-md-9 pdRFooter" style="text-align: right;">
+            <div class="col-md-4 pdlFooter" style="color:black;"><h5> &copy; <script type="text/JavaScript">document.write(new Date().getFullYear());</script> ONE-EIGHT TECHNOLOGIES PRIVATE LTD  </h5></div> 
+            <div class="col-md-8 pdRFooter" style="text-align: right;">
                 <div class="row">
                     <a href="http://marcus.oneeight.co.in/faq" class="font-h5">FAQ </a> <span style="padding: 5px;"></span>
                     <a href="http://marcus.oneeight.co.in/terms" class="font-h5">TERMS AND CONDITIONS </a> <span style="padding: 5px;"></span>
