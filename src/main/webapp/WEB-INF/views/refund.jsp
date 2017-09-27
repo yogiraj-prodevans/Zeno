@@ -43,10 +43,9 @@
 
 	<div class="container ">
 		<div class="pt-40">
-		<p>No Refund of fixed duration pack or Cancellation of payment
-			transaction is allowed. Any disputes in regards to payments/ refund
-			of transaction(s) due to technical reasons are subject to arbitration
-			/ resolution on a case to case basis.</p>
+		<p>Once purchased, no refunds or cancellations will be accommodated. Any disputes with regard to payment/refund of transaction(s) due to technical reasons are subject to arbitration/resolution on a case to case basis.
+
+</p>
 			</div>
 	</div>
 	<!-- END CONTENT -->
