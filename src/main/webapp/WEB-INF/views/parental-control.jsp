@@ -137,9 +137,9 @@
 
             <div class="col-md-12">
                 <p><h1>Help control what your family views online.</h1></p>
-                <p><h3>ONE8 Parental Control is a simple, powerful tool to help shield your children from explicit websites. Simply choose protection status while your children surf the internet, and the toolbar will block access to adult-oriented websites.</h3></p>
+            <br>
+                <p><h3>ONE8 Parental Control is a simple yet powerful tool to help shield your children from explicit websites. Simply choose protection status while your children surf the internet and ONE8 will block access to the requested contents.</h3></p>
                 <p><br></p>
-
 
                 <form:form role="form" action="control" method="post" modelAttribute="ParentalControlDetails" class="row" >
                     <div class="col-md-2">
