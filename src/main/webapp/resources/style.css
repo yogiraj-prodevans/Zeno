@@ -302,6 +302,10 @@ body {
 	color: white;
 }
 
+.sRow {
+	min-height: 116px;
+	color:#000;
+}
 h1, .font-h1 {
 	font-family: Roboto;
 	font-size: 36px;

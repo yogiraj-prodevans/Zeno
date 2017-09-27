@@ -1,5 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page session="false"%>
 
 <html>
@@ -21,38 +22,38 @@
 <style>
 .leftSidePanelIMG
 {
-	width: 95%;
-	height: 25%;
+	width: 90%;
+	height: 45%;
 }
 .backPanelIMG
 {
-	width: 95%;
-	height: 48%;
+	width: 75%;
+	height: 35%;
 }
 @media (max-width : 750px) 
 {
 	.leftSidePanelIMG
 	{
-		height: 50%;
+		height: 45%;
 		padding-bottom: 50px;	
 	}
 	.backPanelIMG
 	{
-		width: 95%;
-		height: 55%;
+		width: 75%;
+		height: 35%;
 	}
 }
 @media (max-width : 480px) 
 {
 	.leftSidePanelIMG
 	{
-		height: 40%;
+		height: 45%;
 		padding-bottom: 50px;	
 	}
 	.backPanelIMG
 	{
-		width: 95%;
-		height: 40%;
+		width: 85%;
+		height: 35%;
 	}
 }
 </style>
@@ -68,35 +69,42 @@
 
 
 <div class="col-md-12 firstRow pt-20" style="background-image: url('corporate/img/back.png');">
-    <h1 class="paddingLeftTop" >Know your CPE</h1>
+    <h1 class="paddingLeftTop" >Know your One8 Cube</h1>
 </div>    
-    
-<div class="container">
-	<div class="row">
-		<div class="col-md-12 col-sm-12 pt-40">
+  <div class="col-md-12 sRow pt-20">
+  <h1 class="paddingLeftTop" > The One8 Cube</h1>
+  <div style="padding-left:2%;">
+<ul>
+                    <p class="faqp paddingLeftTop pt-20"  ><li>The out-of-the-box internet experience that fits neatly in one</li></p>
+                    <p class="faqp paddingLeftTop pt-20"><li>All-in-one router-modem connects your wifi devices,including your TV</li></p>
 
-			<div class="col-md-6 col-sm-6">
-				<div class="row pb-20" >
-					<div class="col-md-12">
-						<h3 style="font-size:22px;text-align: center;">LEFT SIDE PANEL</h3>
-					</div>
-				</div>
+                    <p class="faqp"><li>X USB ports: plug in hard drives and more</li></p>
+                    <p class="faqp"><li>Netflix,hoststar and more</li></p>
+
+                    <p class="faqp"><li>In-builit analytics engine that continuously optimises your speed </li></p>
+   </ul> </div></div>
+<div class="container" align="center">
+	<div class="col-md-12 sRow pt-20" align="left">
+	<div class="row">
+		<div class="col-md-12 col-sm-12">
+
+			<div class="col-md-6 col-sm-6" style="padding-right:-5%;">
+				
 				<div class="row">
 					<div class="col-md-12 col-sm-12">
-						<img class="leftSidePanelIMG" alt="Left Side Panel" src="corporate/img/leftPanel1.JPG" >
+						<img class="leftSidePanelIMG" alt="Left Side Panel" src="corporate/img/leftPanel.PNG" >
 					</div>
 				</div>
 			</div>
 			
 			<div class="col-md-6 col-sm-6">
 				<div class="row pb-20" >
-					<div class="col-md-12">
-						<h3 style="font-size:22px;text-align: center;">BACK PANEL</h3>
-					</div>
+				
+					
 				</div>
 				<div class="row">
 					<div class="col-md-12 col-sm-12">
-						<img class="backPanelIMG" alt="Back Panel" src="corporate/img/backSide1.JPG" >
+						<img class="backPanelIMG" alt="Back Panel" src="corporate/img/rightPanel.png" >
 					</div>
 				</div>
 			</div>
@@ -104,11 +112,8 @@
 			
 		</div>
 	</div>
+	</div>
 </div>
-
-
-
-
 
 	<!-- included pop up -->
 	<jsp:include page="component/pop-up.jsp"></jsp:include>
