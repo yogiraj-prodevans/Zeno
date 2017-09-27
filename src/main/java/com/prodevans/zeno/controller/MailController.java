@@ -167,11 +167,11 @@ public class MailController
 		complaint.add("Not able to pay online");
 		complaint.add("Activation / Deactivation of Services");
 		complaint.add("Billing Related");
-		complaint.add("Marcus Website");
-		complaint.add("Marcus Customer Care");
+		complaint.add("One8 Website");
+		complaint.add("One8 Customer Care");
 		complaint.add("FUP/Speed");
-		complaint.add("CPE");
-		complaint.add("Zeno Portal");
+		complaint.add("One8 Cube");
+		complaint.add("One8 Portal");
 		
 		return complaint;
 	}

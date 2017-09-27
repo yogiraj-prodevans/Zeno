@@ -42,7 +42,7 @@
                 
                 <a href="${pageContext.request.contextPath }/refund" class="font-h5">REFUND AND CANCELLATION </a> <span style="padding: 5px;"></span>
                 
-                <a href="${pageContext.request.contextPath }/knowYourCPE" class="font-h5">KNOW YOUR CPE </a> <span style="padding: 5px;"></span>
+                <a href="${pageContext.request.contextPath }/knowYourCPE" class="font-h5">KNOW YOUR ONE8 CUBE </a> <span style="padding: 5px;"></span>
                 
                 <a href="${pageContext.request.contextPath }/knowYourBill" class="font-h5" target="_blank">KNOW YOUR BILL</a> <span style="padding: 5px;"></span>
 
