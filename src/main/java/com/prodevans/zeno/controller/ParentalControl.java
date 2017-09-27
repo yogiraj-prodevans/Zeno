@@ -21,6 +21,7 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class ParentalControl {
@@ -50,16 +51,20 @@ public class ParentalControl {
      * @return
      */
     @RequestMapping(value = "/control", method = RequestMethod.GET)
-    public String parentControl(Locale locale, Model model, HttpSession session) {
+    public String parentControl(Locale locale, Model model, HttpSession session, @RequestParam(name = "error", required = false) String error) {
         
         ParentalControlDetails parentalControlDetails = new ParentalControlDetails();
         Map<String, String> protection_level = new LinkedHashMap<String,String>();
                         protection_level.put("","");
-			protection_level.put("elementary_filter_zeno","Elementry");
-			protection_level.put("basic_filter_zeno","Basic");
-			protection_level.put("advance_filter_zeno","Advanced");
-                        protection_level.put("Custom Filter","Custom");
+			protection_level.put("elementary_filter_zeno","ELEMENTRY");
+			protection_level.put("basic_filter_zeno","BASIC");
+			protection_level.put("advance_filter_zeno","ADVANCE");
+                        protection_level.put("custom_filter","CUSTOM");
+        
         model.addAttribute("protection_level", protection_level);
+        
+        model.addAttribute("error", error);
+        
         if (session.getAttribute("user") == null) {
             return "redirect:/logout";
         } else {
@@ -93,7 +98,7 @@ public class ParentalControl {
                 parentalControlDetails = PROTECTION_STATUS.getProtectionDetails(user.getActid());
                 parentalControlDetails.setUser_name(user.getActid());
                 //Displaying the list of Adderss objects
-                model.addAttribute("object_list", REGISTER_PROCESS.getUserList());
+              
                 
                 
                 

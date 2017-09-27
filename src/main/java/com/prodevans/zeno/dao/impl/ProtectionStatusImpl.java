@@ -153,8 +153,13 @@ public class ProtectionStatusImpl implements ProtectionStatusDAO {
                 logger.error("filter already exixts user_name : " + user_name);
                 JSONObject obj = new JSONObject(person.getBody());
                 String protection_status = obj.getJSONObject("access-policy").getJSONObject("set").getJSONObject("security-profile").getJSONObject("url-filtering").getString("user-defined");
-                
-                controlDetails.setProtection_status(protection_status);
+               
+                if(!protection_status.equals("advance_filter_zeno") && !protection_status.equals("basic_filter_zeno") && !protection_status.equals("elementary_filter_zeno")){
+                    controlDetails.setProtection_status("custom_filter");
+                } else {
+                    controlDetails.setProtection_status(protection_status);
+                }
+                //controlDetails.setProtection_status(protection_status);
                 controlDetails.setRequest_data(person.getBody().toString());
             } 
         } catch (RestClientException e) {

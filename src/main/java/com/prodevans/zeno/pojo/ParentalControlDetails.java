@@ -19,6 +19,24 @@ public class ParentalControlDetails {
     }
 
     /**
+     * 
+     */
+    public String getProtectionStatusName(){
+        if(protection_status.equals("elementary_filter_zeno")){
+            return "ELEMENTRY";
+        }
+        else if(protection_status.equals("basic_filter_zeno")){
+            return "BASIC";
+        }
+       else if(protection_status.equals("advance_filter_zeno")){
+            return "ADVANCE";
+        }
+       else{
+           return "CUSTOM";
+       }
+    }
+    
+    /**
      * @param protection_status the protection_status to set
      */
     public void setProtection_status(String protection_status) {
