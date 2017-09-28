@@ -16,8 +16,10 @@ import com.prodevans.zeno.dao.impl.DashboardDAOImpl;
 import com.prodevans.zeno.dao.impl.InvoiceDAOImpl;
 //import com.ccavenue.security.AesCryptUtil;
 import com.prodevans.zeno.dao.impl.PaymentDAOImpl;
+import com.prodevans.zeno.dao.impl.rcDAOImpl;
 import com.prodevans.zeno.pojo.InvoiceDetails;
 import com.prodevans.zeno.pojo.PaymentDetails;
+import com.prodevans.zeno.pojo.RcDetails;
 import com.prodevans.zeno.pojo.SessionDetails;
 import com.prodevans.zeno.pojo.SubscriptionDetails;
 
@@ -43,6 +45,14 @@ public class PaymentController {
 	public void setInvoiceDAOImpl(InvoiceDAOImpl invoiceDAOImpl) {
 		this.invoiceDAOImpl = invoiceDAOImpl;
 	}
+	
+	
+	@Autowired
+	private rcDAOImpl rcImpl;
+
+	public void setRc(rcDAOImpl RcImpl) {
+		rcImpl = RcImpl;
+	}
 
 	/*
 	 * @Autowired private PaymentDetails paymentDetails; public void
@@ -62,11 +72,14 @@ public class PaymentController {
 
 			// for getting invoice details
 			InvoiceDetails invoiceDetails = invoiceDAOImpl.getInvoice(user.getActno());
+			RcDetails rcdetails=rcImpl.getrcdetails(user.getActid(), user.isGetClosed(), user.getFromDate(),user.getToDate());
+			
 			model.addAttribute("invoiceDetails", invoiceDetails);
-
+			session.setAttribute("amount", rcdetails.getAmount());
 			SubscriptionDetails details = DashboardImpl.getSubscriptionDetails(user.getActid());
 			System.out.println("user subscription details : " + details.toString());
 			model.addAttribute("SubscriptionDetails", details);
+			model.addAttribute("amount",rcdetails.getAmount());
 		
 			
 			/*

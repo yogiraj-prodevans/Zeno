@@ -16,10 +16,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.prodevans.zeno.dao.impl.DashboardDAOImpl;
 import com.prodevans.zeno.dao.impl.InvoiceDAOImpl;
+import com.prodevans.zeno.dao.impl.rcDAOImpl;
 import com.prodevans.zeno.pojo.InvoiceDetails;
 import com.prodevans.zeno.pojo.SessionDetails;
 import com.prodevans.zeno.pojo.SubscriptionDetails;
 import com.prodevans.zeno.pojo.UserDetails;
+import com.prodevans.zeno.pojo.RcDetails;
 
 @Controller
 public class DashboardConroller {
@@ -37,6 +39,13 @@ public class DashboardConroller {
 	public void setInvoiceDAOImpl(InvoiceDAOImpl invoiceDAOImpl) {
 		this.invoiceDAOImpl = invoiceDAOImpl;
 	}
+	
+	@Autowired
+	private rcDAOImpl rcImpl;
+
+	public void setRc(rcDAOImpl RcImpl) {
+		rcImpl = RcImpl;
+	}
 
 	/**
 	 * @param model
@@ -53,6 +62,7 @@ public class DashboardConroller {
 				SessionDetails user = (SessionDetails) session.getAttribute("user");
 				System.out.println(user.toString());
 				UserDetails userdetails = DashboardImpl.getUserDetails(user.getActid());
+				RcDetails rcdetails=rcImpl.getrcdetails(user.getActid(), user.isGetClosed(), user.getFromDate(),user.getToDate());
 
 				// for getting invoice details
 				InvoiceDetails invoiceDetails = invoiceDAOImpl.getInvoice(user.getActno());
@@ -65,9 +75,13 @@ public class DashboardConroller {
 				model.addAttribute("SubscriptionDetails", details);
 				session.setAttribute("plan", details.getRatePlan());
 				session.setAttribute("FUP", details.getFUPLimit());
+				session.setAttribute("amount", rcdetails.getAmount());
+				session.setAttribute("brcdesc", rcdetails.getBrcdesc());
 				
 				model.addAttribute("plan", details.getRatePlan());
 				model.addAttribute("FUP", details.getFUPLimit());
+				model.addAttribute("amount",rcdetails.getAmount());
+				model.addAttribute("brcdesc",rcdetails.getBrcdesc());
 
 				/*
 				 * List<SessionHistory> hs = DashboardImpl.getAllSession(details.getStartDate(),

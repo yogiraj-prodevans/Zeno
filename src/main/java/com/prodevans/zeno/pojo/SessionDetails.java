@@ -1,5 +1,7 @@
 package com.prodevans.zeno.pojo;
 
+import java.util.Date;
+
 public class SessionDetails {
 
 	private int actno;
@@ -19,6 +21,45 @@ public class SessionDetails {
 	private String cityname;
 	private String countryname;
 	private double pendingAmount;
+	private String amount;
+	private boolean getClosed;
+	private Date fromDate ;
+	private Date toDate;
+	
+	
+	
+
+	public boolean isGetClosed() {
+		return getClosed;
+	}
+
+	public void setGetClosed(boolean getClosed) {
+		this.getClosed = getClosed;
+	}
+
+	public Date getFromDate() {
+		return fromDate;
+	}
+
+	public void setFromDate(Date fromDate) {
+		this.fromDate = fromDate;
+	}
+
+	public Date getToDate() {
+		return toDate;
+	}
+
+	public void setToDate(Date toDate) {
+		this.toDate = toDate;
+	}
+
+	public String getAmount() {
+		return amount;
+	}
+
+	public void setAmount(String amount) {
+		this.amount = amount;
+	}
 
 	public String getFirst_name() {
 		return first_name;

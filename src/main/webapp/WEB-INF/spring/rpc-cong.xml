@@ -27,6 +27,13 @@
 		<property name="unifyHandler" ref="unifyHandler"></property>
 		<property name="rpcClient" ref="rpcClient"></property>
 	</bean>
+	
+	<!-- Added by siddu -->
+	<bean id="rcImpl" class="com.prodevans.zeno.dao.impl.rcDAOImpl">
+		<property name="unifyHandler" ref="unifyHandler"></property>
+		<property name="rpcClient" ref="rpcClient"></property>
+	</bean>
+	
 
 	<!-- Added by vipin -->
 	<bean id="PaymentImpl" class="com.prodevans.zeno.dao.impl.PaymentDAOImpl">
