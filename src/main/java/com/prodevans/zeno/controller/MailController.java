@@ -122,7 +122,7 @@ public class MailController
 			if(session.getAttribute("successfull") != null)
 			{
 				session.removeAttribute("successfull");
-				model.addAttribute("msg", "Your request has been received. We’ll work on it right away!");
+				model.addAttribute("msg", "Your request has been received. We'll work on it right away!");
 			}
 
 			return  new ModelAndView("serviceRequest","serviceRequestDetails",request);

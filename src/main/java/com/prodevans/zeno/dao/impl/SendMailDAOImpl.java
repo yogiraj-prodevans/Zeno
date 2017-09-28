@@ -36,9 +36,10 @@ public class SendMailDAOImpl implements SendMailDAO
 		feedback.setEmail_id((String)result.get("email"));		
 		
 		Vector params1 = new Vector();
-		String Complete="Concated message that might have HTML code"+feedback.getMessage();
-		params1.add(Complete);
-		params1.add(feedback.getSubject());
+		//String Complete="Concated message that might have HTML code"+feedback.getMessage();
+		String content = "Name: " + feedback.getName() + "\nMobile: " + feedback.getMobile() + "\nActno: " + feedback.getAccount_id() + "\nSubject: " + feedback.getSubject()+ "\nComment:" + feedback.getMessage();
+		params1.add(content);
+		params1.add("FeedBack");
 		params1.add("siddu.prodevans@gmail.com");
 		params1.add(1);
 		
@@ -53,8 +54,9 @@ public class SendMailDAOImpl implements SendMailDAO
 	public Boolean sentMailContactUs(SendMailDetails feedback) throws XmlRpcException 
 	{
 		Vector params = new Vector();
-		params.add(feedback.getMessage());
-		params.add(feedback.getSubject());
+		 String content = "Name: " + feedback.getName() + "\nEmail: " + feedback.getEmail_id() + "\nSubject: " + feedback.getSubject() + "\nMessage: " + feedback.getMessage();
+		params.add(content);
+		params.add("Contact Us..");
 		params.add("siddu.prodevans@gmail.com");
 		params.add(1);
 		
@@ -73,14 +75,14 @@ public class SendMailDAOImpl implements SendMailDAO
 		
 		for(String data : serviceRequest.getRequestCheckboxArray()) 
 		{
-			requestData=requestData+" "+data;
+			requestData=requestData+""+data+"\n";
 		}
 		for(String data : serviceRequest.getComplaintCheckboxArray()) 
 		{
-			complaintData=complaintData+" "+data;
+			complaintData=complaintData+""+data+"\n";
 		}
 		
-		mailContent="Name : "+serviceRequest.getName()+" Mobile No. : "+serviceRequest.getMobile()+" Time Slot to call : "+serviceRequest.getTime_slot_to_call().toString()+" Request : "+requestData+" Complaint : "+complaintData;
+		mailContent="Name : "+serviceRequest.getName()+" \nMobile No. : "+serviceRequest.getMobile()+" \nTime Slot to call : "+serviceRequest.getTime_slot_to_call().toString()+" \nRequest : "+requestData+" \nComplaint : "+complaintData;
 		
 		Vector params = new Vector();
 		params.add(mailContent);
