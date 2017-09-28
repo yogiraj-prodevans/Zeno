@@ -129,16 +129,16 @@
             <!--  <h1 class="paddingLeftTop" >Parental Control</h1> <h1 class="paddingRight" >Hi Vamsi </h1>  -->
             <div class="col-md-5" style="padding-left: 3.8%;">
                 <h1 >Parental Control</h1> </div>
-            <div class="col-md-7"> <h1 style="float: middle">Hi Vamsi</h1> </div>
+            <div class="col-md-7"> <h1 style="float: middle">Hi ${uesr_name}</h1> </div>
 
         </div>
 
         <div class="container">
 
             <div class="col-md-12">
-                <p><h1>Help control what your family views online.</h1></p>
-            <br>
-                <p><h3>ONE8 Parental Control is a simple yet powerful tool to help shield your children from explicit websites. Simply choose protection status while your children surf the internet and ONE8 will block access to the requested contents.</h3></p>
+                <p><h1>With Surf Safe, you're in control</h1></p>
+              
+                <p><h3>Your home is your safe space and you deserve to keep it that way. With our Advanced Surf Safe control you can decide what to let in and when. If there are specific websites you want to block, go ahead and add to your Custom setting. Schedule hourly, daily or date-wise, and we?ll ensure your chosen categories and URLs remain blocked when you want them to be. Surf Safe, and ensure everyone on your network does too.</h3></p>
                 <p><br></p>
 
                 <form:form role="form" action="control" method="post" modelAttribute="ParentalControlDetails" class="row" >
@@ -148,11 +148,13 @@
                     <div class="col-md-3 mb-pt-30">
                         <h4 type="text" style="background-color:Blue; color:White; padding: 5px; padding-left: 15px;" name="current_protectionstatus" disabled value="" > ${ParentalControlDetails.getProtectionStatusName()}   </h4>     
                     </div>
-                    <div class="col-md-1"></div>
-                    <div class="col-md-3">
-                        <h4 style="padding-top: 1%;">Change your protection status</h4>
+                  
+                    <div class="col-md-4">
+                         <div class="col-md-2" ><a href="${pageContext.request.contextPath }/control-category" class="glyphicon glyphicon-question-sign"></a></div>
+                        <h4 style="padding-top: 1%;" class="mb-pt-1">Change your protection status</h4>
                     </div>
-                    <div class="col-md-3 mb-pt-30">
+                    
+                    <div class="col-md-3 mb-pt-25">
                         <form:select path="protection_status" multiple="false" >
 
                             <form:options items="${protection_level}" />                   
@@ -173,9 +175,9 @@
 
         <h3 style="color:green; text-align: center;"><b>
                 <c:if test="${ not empty error}">${error}</c:if></b></h3>
-        <h3 style="color:red; text-align: center;"><b>
+            <h3 style="color:red; text-align: center;"><b>
                 <c:if test="${ not empty message}">${message}</c:if></b></h3>
-        
+
             <div class="pt-30"></div>
 
             <!-- included pop up -->
