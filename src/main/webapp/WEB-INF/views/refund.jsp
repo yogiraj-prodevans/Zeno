@@ -36,7 +36,7 @@
 
 
  
-<div class="row firstRow pt-20" style="background-image: url('corporate/img/back.png');">
+<div class="row firstRow pt-20" style="background-image: url('corporate/img/backb.png');">
     <h1 style="margin-left: 4.8%;" >Refund  And  Cancellation</h1>
 </div>
 

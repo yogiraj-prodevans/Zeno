@@ -97,7 +97,7 @@ background-position:right center;
 	<!-- BEGIN HEADER -->
 	<div class="header">
 		<div class="row">
-			<a class="site-logo" href="#"> <img
+			<a class="site-logo" href="${pageContext.request.contextPath }/dashboard"> <img
 				src="corporate/img/logos/logo.png" alt="ONE8">
 			</a> <a href="javascript:void(0);" class="mobi-toggler"><i
 				class="fa fa-bars"></i></a>

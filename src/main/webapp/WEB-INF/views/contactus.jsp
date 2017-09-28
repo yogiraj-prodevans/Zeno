@@ -72,7 +72,7 @@
         <jsp:include page="component/menubar.jsp"></jsp:include>	
 
 
-            <div class="col-md-12 firstRow pt-20" style="background-image: url('corporate/img/back.png');">
+            <div class="col-md-12 firstRow pt-20" style="background-image: url('corporate/img/backb.png');">
                 <div class="paddingLeftTop font-h1" >Contact</div>
             </div>
 
