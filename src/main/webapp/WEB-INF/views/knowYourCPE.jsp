@@ -71,6 +71,7 @@
 <div class="col-md-12 firstRow pt-20" style="background-image: url('corporate/img/backb.png');">
     <h1 class="paddingLeftTop" >Know your One8 Cube</h1>
 </div>    
+
   <div class="col-md-12 sRow pt-20">
   <h1 class="paddingLeftTop" > The One8 Cube</h1>
   <div style="padding-left:2%;">
