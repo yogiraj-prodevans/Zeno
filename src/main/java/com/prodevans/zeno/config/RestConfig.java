@@ -76,5 +76,10 @@ public interface RestConfig {
      * API URL for find RULE object.
      */
     String UPDATE_RULE_OBJECT = HOST + "/api/config/devices/device/Branch01-OneEight/config/orgs/org-services/OneEight/security/access-policies/access-policy-group/Default-Policy/rules/access-policy/{rule_object_name}";
+    
+    /**
+     * API URL for list URL category these blocked by the filter.
+     */
+    String URL_CATEGORY_LIST_PROTECTION_LEVEL = HOST + "/api/config/appliances/Branch01-OneEight/orgs/org-services/OneEight/security/profiles/url-filtering/url-filtering-profile/{protection_status}/category-action-map/category-action";
  
 }

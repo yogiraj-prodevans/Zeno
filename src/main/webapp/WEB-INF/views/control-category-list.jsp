@@ -4,7 +4,7 @@
     Author     : rajanikant
 --%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ page session="false"%>
 <!DOCTYPE html>
 <html>
@@ -13,6 +13,22 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <a href="${pageContext.request.contextPath}/control-category/basic">Basic</a>
+        <a href="${pageContext.request.contextPath}/control-category/advance">Advance</a>
+        <a href="${pageContext.request.contextPath}/control-category/custom">Custom</a>
+        <a  class="glyphicon glyphicon-question-sign"></a>
+        
+        <h2>Block Category</h2>
+        <c:forEach items="${CAT.getBlocked_catogery()}" var="cat">
+           <c:out value="${cat}"/> <br>
+            
+        </c:forEach> 
+           
+          <h2>Allow Category</h2>
+        <c:forEach items="${CAT.getAllowded_catogery()}" var="cat">
+           <c:out value="${cat}"/> <br>
+            
+        </c:forEach>   
+           
     </body>
 </html>

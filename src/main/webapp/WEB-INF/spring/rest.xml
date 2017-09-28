@@ -14,5 +14,9 @@
 	class="com.prodevans.zeno.dao.impl.ProtectionStatusImpl">
 	</bean>
         
+         <!-- bean created for the getting the category list -->
+        <bean id="categoryimpl"
+	class="com.prodevans.zeno.dao.impl.CategoryListDAOImpl">
+	</bean>
 	
 </beans>
