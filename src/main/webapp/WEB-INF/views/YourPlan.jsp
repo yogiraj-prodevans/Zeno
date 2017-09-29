@@ -142,7 +142,14 @@ h1{
 				<h3 class="pb-10">per month</h3>
 			</div>
 		</div>
-		<div class="col-md-4">
+		
+		<% String s=(String)session.getAttribute("brcdesc");%>
+		<%=s %>
+		<%
+			if((s.equals("Starter 40") || s.equals("Starter 60") || s.equals("Power 60") || s.equals("Power 90") ))  
+			{
+			%>
+			<div class="col-md-4">
 			<div class="mainBlock41" style="background-color: #F44336;">
 				<h1 class="fs-44">${FUP} GB</h1>
 				<h3 class="pb-40">data</h3>
@@ -150,7 +157,20 @@ h1{
 				<h3>Post FUP speed</h3>
 			</div>
 		</div>
-		
+			<%
+			}
+			 else { %>
+			
+			<div class="col-md-4">
+			<div class="mainBlock41" style="background-color: #F44336;">
+				<h1 class="fs-44">${FUP} GB</h1>
+				<h3 class="pb-40">data</h3>
+				<h3>2mbps</h3>
+				<h3>Post FUP speed</h3>
+			</div>
+		</div>
+		<%} %>
+				
 	</div>
 </div>
 
