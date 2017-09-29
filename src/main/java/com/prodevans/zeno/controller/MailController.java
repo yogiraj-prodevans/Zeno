@@ -155,6 +155,7 @@ public class MailController
 		request.add("Duplicate Bill");
 		request.add("Change of Location");
 		request.add("Restoration of Service");
+		request.add("Change Plan");
 		request.add("Any Other");
 		
 		return request;
