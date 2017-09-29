@@ -113,7 +113,7 @@
                                 href="${pageContext.request.contextPath }/billingPayment">MAKE
                                 PAYMENT</a></li>
                         <li class="active"><a href="${pageContext.request.contextPath }/control">SURF
-                        SAFE</a></li>
+                                SAFE</a></li>
                         <li><a href="${pageContext.request.contextPath }/service">SERVICE
                                 REQUEST</a></li> 
 
@@ -137,8 +137,8 @@
 
             <div class="col-md-12">
                 <p><h1>With Surf Safe, you're in control</h1></p>
-              
-                <p><h3>Your home is your safe space and you deserve to keep it that way. With our Advanced Surf Safe control you can decide what to let in and when. If there are specific websites you want to block, go ahead and add to your Custom setting. Schedule hourly, daily or date-wise, and we?ll ensure your chosen categories and URLs remain blocked when you want them to be. Surf Safe, and ensure everyone on your network does too.</h3></p>
+
+                <p><h3>Your home is your safe space and you deserve to keep it that way. With our Advanced Surf Safe control you can decide what to let in and when. If there are specific websites you want to block, go ahead and add to your Custom setting. Schedule hourly, daily or date-wise, and we'll ensure your chosen categories and URLs remain blocked when you want them to be. Surf Safe, and ensure everyone on your network does too.</h3></p>
                 <p><br></p>
 
                 <form:form role="form" action="control" method="post" modelAttribute="ParentalControlDetails" class="row" >
@@ -148,12 +148,12 @@
                     <div class="col-md-3 mb-pt-30">
                         <h4 type="text" style="background-color:Blue; color:White; padding: 5px; padding-left: 15px;" name="current_protectionstatus" disabled value="" > ${ParentalControlDetails.getProtectionStatusName()}   </h4>     
                     </div>
-                  
+
                     <div class="col-md-4">
-                         <div class="col-md-2" ><a href="${pageContext.request.contextPath }/control-category" class="glyphicon glyphicon-question-sign"></a></div>
+                        <div class="col-md-2" ><a href="${pageContext.request.contextPath }/control-category" class="glyphicon glyphicon-question-sign"></a></div>
                         <h4 style="padding-top: 1%;" class="mb-pt-1">Change your protection status</h4>
                     </div>
-                    
+
                     <div class="col-md-3 mb-pt-25">
                         <form:select path="protection_status" multiple="false" >
 
