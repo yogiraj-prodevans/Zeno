@@ -117,13 +117,13 @@ public class CategoryListDAOImpl implements CategoryListDAO{
         for (Object str : block_rule) {
             sr.add(str.toString());
         }
-
        list.setBlocked_catogery(sr);
-       sr.clear();
+       //sr.clear();
+       ArrayList<String> br = new ArrayList<String>();
         for (Object str : allow_rule) {
-            sr.add(str.toString());
+            br.add(str.toString());
         }
-        list.setAllowded_catogery(sr);
+        list.setAllowded_catogery(br);
         
         
         logger.info("Response body : \n"+responce_body);

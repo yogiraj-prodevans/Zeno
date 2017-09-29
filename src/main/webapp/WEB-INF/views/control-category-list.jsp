@@ -199,7 +199,7 @@
         <div class="container">
 
             <div class="col-md-12">
-                
+
 
                 <p><br></p>
 
@@ -292,20 +292,22 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>             
 
 
 
+        <!-- included pop up -->
+        <jsp:include page="component/pop-up.jsp"></jsp:include>
 
-                    <!-- included pop up -->
-                    <jsp:include page="component/pop-up.jsp"></jsp:include>
-
-                    <jsp:include page="component/footer.jsp"></jsp:include>
+        <jsp:include page="component/footer.jsp"></jsp:include>
 
 
-                        <!-- Load javascripts at bottom, this will reduce page load time -->
-                    <jsp:include page="component/js.jsp"></jsp:include>
-                    <!-- END BODY -->
+            <!-- Load javascripts at bottom, this will reduce page load time -->
+        <jsp:include page="component/js.jsp"></jsp:include>
+        <!-- END BODY -->
 
-                    </body>
+    </body>
 
-                    </html>
+</html>
