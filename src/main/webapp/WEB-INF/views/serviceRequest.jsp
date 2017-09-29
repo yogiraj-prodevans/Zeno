@@ -110,8 +110,8 @@
                         <li><a
                                 href="${pageContext.request.contextPath }/billingPayment">MAKE
                                 PAYMENT</a></li>
-                                <li><a href="${pageContext.request.contextPath }/control">PARENTAL
-                                CONTROL</a></li>
+                                <li><a href="${pageContext.request.contextPath }/control">SURF
+                                SAFE</a></li>
                         <li class="active"><a href="${pageContext.request.contextPath }/service">SERVICE
                                 REQUEST</a></li>
 
