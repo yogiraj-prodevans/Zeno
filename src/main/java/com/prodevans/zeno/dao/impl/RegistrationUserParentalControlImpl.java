@@ -738,7 +738,11 @@ public class RegistrationUserParentalControlImpl implements RegistrationUserPare
          * Execution of the REST call with basic authentication and JSON
          * response type
          */
-        rule = restTemplate.exchange(RestConfig.LIST_ACCESS_RULE, HttpMethod.GET, entity, String.class);
+        
+        Map<String, String> map = new HashMap<String, String>();
+           map.put("domain_id", domain_id);
+           
+        rule = restTemplate.exchange(RestConfig.LIST_ACCESS_RULE, HttpMethod.GET, entity, String.class, map);
 
         /**
          * Returning the response body with string format that easily readable.
@@ -774,8 +778,7 @@ public class RegistrationUserParentalControlImpl implements RegistrationUserPare
          */
         entity = new HttpEntity<>(rules.toString(), headers);
 
-         Map<String, String> map = new HashMap<String, String>();
-           map.put("domain_id", domain_id);
+         
          
         /**
          * Execution of the REST call with basic authentication and JSON
