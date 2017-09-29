@@ -10,6 +10,6 @@ import com.prodevans.zeno.pojo.ParentalControlDetails;
  * @author rajanikant
  */
 public interface ProtectionStatusDAO {
-    ParentalControlDetails getProtectionDetails(String user_name);
-    boolean protectionStatusUpdate(ParentalControlDetails controlDetails);
+    ParentalControlDetails getProtectionDetails(String user_name, String domain_id);
+    boolean protectionStatusUpdate(ParentalControlDetails controlDetails, String domain_id);
 }

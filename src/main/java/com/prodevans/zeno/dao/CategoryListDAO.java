@@ -12,5 +12,5 @@ import com.prodevans.zeno.pojo.CategoryList;
  * @author rajanikant
  */
 public interface CategoryListDAO {
-    CategoryList getCategoryList(String protection_status);
+    CategoryList getCategoryList(String protection_status, String domain_id);
 }

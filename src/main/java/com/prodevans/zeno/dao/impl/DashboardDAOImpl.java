@@ -85,11 +85,11 @@ public class DashboardDAOImpl implements DashboardDAO {
 						details.setExpirydt(result.get("expirydt").toString());
 						details.setSvctype(result.get("svctype").toString());
 						details.setSubsno(Integer.parseInt(result.get("subsno").toString()));
-						details.setFUPLimit(getFUPLimit(details.getRatePlan()));
-                                                HashMap<String, Object> res_session_detials = getDataUsed(details.getStartDate(), details.getExpiryDate(), customer_id);
-						details.setDataUsed(Long.parseLong( res_session_detials.get("total_bytes").toString()));
+						HashMap<String, Object> res_session_detials = getDataUsed(details.getStartDate(), details.getExpiryDate(), customer_id);
+						details.setDataUsed((Long) res_session_detials.get("total_bytes"));
                                                 details.setIp_address(res_session_detials.get("ip_address").toString());
-						return details;
+						details.setFUPLimit(getFUPLimit(details.getRatePlan()));
+                                                return details;
 					}
 				}
 			} else {

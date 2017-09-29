@@ -139,11 +139,11 @@ public class RegistrationUserParentalControlImpl implements RegistrationUserPare
      * @return --- true when present or false.
      */
     @Override
-    public boolean checkRegistration(String user_name) {
+    public boolean checkRegistration(String user_name, String domain_id) {
         boolean final_result = false;
-        final_result = checkIpAddress(user_name);
+        final_result = checkIpAddress(user_name, domain_id);
         if(final_result){
-            final_result = checkRule(user_name);
+            final_result = checkRule(user_name, domain_id);
         }
         return final_result;
     }
@@ -153,7 +153,7 @@ public class RegistrationUserParentalControlImpl implements RegistrationUserPare
      * @param user_name
      * @return 
      */
-    private boolean checkIpAddress(String user_name) {
+    private boolean checkIpAddress(String user_name, String domain_id) {
         /**
          * change the user name as per the requirements of business logic. user
          * name ex. OE_000007_address_object
@@ -205,6 +205,7 @@ public class RegistrationUserParentalControlImpl implements RegistrationUserPare
          */
         try {
             Map<String, String> map = new HashMap<String, String>();
+            map.put("domain_id", domain_id);
             map.put("address_object_name", user_name);
             person = restTemplate.exchange(RestConfig.SEARCH_ADDRESS_OBJECT, HttpMethod.GET, entity, String.class, map);
 
@@ -232,7 +233,7 @@ public class RegistrationUserParentalControlImpl implements RegistrationUserPare
      * @param user_name --- ActId from the inventum.
      * @return 
      */
-    private boolean checkRule(String user_name) {
+    private boolean checkRule(String user_name, String domain_id) {
         /**
          * change the user name as per the requirements of business logic. user
          * name ex. OE_000007_address_object
@@ -284,6 +285,7 @@ public class RegistrationUserParentalControlImpl implements RegistrationUserPare
          */
         try {
             Map<String, String> map = new HashMap<String, String>();
+            map.put("domain_id", domain_id);
             map.put("rule_object_name", user_name);
             person = restTemplate.exchange(RestConfig.SEARCH_RULE_OBJECT, HttpMethod.GET, entity, String.class, map);
 
@@ -314,7 +316,7 @@ public class RegistrationUserParentalControlImpl implements RegistrationUserPare
      * @return true after address created
      */
     @Override
-    public boolean registerUser(String user_name, String ip_address) {
+    public boolean registerUser(String user_name, String ip_address, String domain_id) {
         /**
          * change the ip address as per the requirements of REST API. user name
          * ex. 192.168.1.100/32
@@ -326,7 +328,7 @@ public class RegistrationUserParentalControlImpl implements RegistrationUserPare
          */
         int address_object_result = 0;
         try {
-            address_object_result = createAddressObject(user_name, ip_address);
+            address_object_result = createAddressObject(user_name, ip_address,domain_id);
         } catch (Exception e) {
             // If status code returns 409 means the address is already exists.
             if (e.getMessage().contains("409")) {
@@ -346,7 +348,7 @@ public class RegistrationUserParentalControlImpl implements RegistrationUserPare
          */
         int filter_object_result = 0;
         try {
-            filter_object_result = createProfileFilter(user_name);
+            filter_object_result = createProfileFilter(user_name,domain_id);
         } catch (Exception e) {
             // If status code returns 409 means the filter is already exists.
             if (e.getMessage().contains("409")) {
@@ -366,7 +368,7 @@ public class RegistrationUserParentalControlImpl implements RegistrationUserPare
          */
         int access_policy_rule_result = 0;
         try {
-            access_policy_rule_result = createAccessPolicyRule(user_name);
+            access_policy_rule_result = createAccessPolicyRule(user_name,domain_id);
         } catch (Exception e) {
             // If status code returns 409 means the access policy rule is already exists.
             if (e.getMessage().contains("409")) {
@@ -387,7 +389,7 @@ public class RegistrationUserParentalControlImpl implements RegistrationUserPare
          */
         int access_policy_rule_rearrange = 0;
         try {
-            access_policy_rule_rearrange = rearrangerRules(user_name);
+            access_policy_rule_rearrange = rearrangerRules(user_name,domain_id);
         } catch (Exception e) {
             logger.error(e.getMessage());
 
@@ -406,7 +408,7 @@ public class RegistrationUserParentalControlImpl implements RegistrationUserPare
      * @param user_name -- OE username form inventum.
      * @param ip_address -- IP address from inventum.
      */
-    private int createAddressObject(String user_name, String ip_address) {
+    private int createAddressObject(String user_name, String ip_address, String domain_id) {
         /*
         * change the user name as per the requirements of business logic.
         * user name ex. OE_000007_address_object
@@ -461,10 +463,13 @@ public class RegistrationUserParentalControlImpl implements RegistrationUserPare
         restTemplate.getInterceptors()
                 .add(new BasicAuthorizationInterceptor(RestConfig.USER_NAME, RestConfig.PASSWORD));
 
+          Map<String, String> map = new HashMap<String, String>();
+            map.put("domain_id", domain_id);
+          
         /*
 		 * Execution of the REST call with basic authentication and JSON response type
          */
-        person = restTemplate.exchange(RestConfig.CREATE_ADDRESS_OBJECT, HttpMethod.POST, entity, String.class);
+        person = restTemplate.exchange(RestConfig.CREATE_ADDRESS_OBJECT, HttpMethod.POST, entity, String.class, map);
 
         /*
 		 * Returning the response body with string format that easily readable.
@@ -478,7 +483,7 @@ public class RegistrationUserParentalControlImpl implements RegistrationUserPare
      * @param user_name -- address object in the versa.
      * @return -- response from the user.
      */
-    private int createProfileFilter(String user_name) {
+    private int createProfileFilter(String user_name,String domain_id) {
         /*
         * change the user name as per the requirements of business logic.
         * filter ex. OE_000007_filter_object
@@ -544,10 +549,13 @@ public class RegistrationUserParentalControlImpl implements RegistrationUserPare
         restTemplate.getInterceptors()
                 .add(new BasicAuthorizationInterceptor(RestConfig.USER_NAME, RestConfig.PASSWORD));
 
+         Map<String, String> map = new HashMap<String, String>();
+            map.put("domain_id", domain_id);
+         
         /*
 		 * Execution of the REST call with basic authentication and JSON response type
          */
-        policy = restTemplate.exchange(RestConfig.CREATE_POLICY_FILTER_OBJECT, HttpMethod.POST, entity, String.class);
+        policy = restTemplate.exchange(RestConfig.CREATE_POLICY_FILTER_OBJECT, HttpMethod.POST, entity, String.class,map);
 
         /*
 		 * Returning the response body with string format that easily readable.
@@ -563,7 +571,7 @@ public class RegistrationUserParentalControlImpl implements RegistrationUserPare
      * @param user_name -- specify the user name form inventum
      * @return response code 201 for the success and 409 for conflict.
      */
-    private int createAccessPolicyRule(String user_name) {
+    private int createAccessPolicyRule(String user_name,String domain_id) {
 
         /**
          * change the user name as per the requirements of business logic. user
@@ -659,10 +667,13 @@ public class RegistrationUserParentalControlImpl implements RegistrationUserPare
         restTemplate.getInterceptors()
                 .add(new BasicAuthorizationInterceptor(RestConfig.USER_NAME, RestConfig.PASSWORD));
 
+         Map<String, String> map = new HashMap<String, String>();
+            map.put("domain_id", domain_id);
+         
         /*
 		 * Execution of the REST call with basic authentication and JSON response type
          */
-        rule = restTemplate.exchange(RestConfig.CREATE_RULE_OBJECT, HttpMethod.POST, entity, String.class);
+        rule = restTemplate.exchange(RestConfig.CREATE_RULE_OBJECT, HttpMethod.POST, entity, String.class, map);
 
         /*
 		 * Returning the response body with string format that easily readable.
@@ -677,7 +688,7 @@ public class RegistrationUserParentalControlImpl implements RegistrationUserPare
      * @param user_name -- user name form inventum.
      * @return -- status code 204 when success
      */
-    public int rearrangerRules(String user_name) {
+    public int rearrangerRules(String user_name, String domain_id) {
 
         /**
          * change the user name as per the requirements of business logic. user
@@ -763,11 +774,14 @@ public class RegistrationUserParentalControlImpl implements RegistrationUserPare
          */
         entity = new HttpEntity<>(rules.toString(), headers);
 
+         Map<String, String> map = new HashMap<String, String>();
+           map.put("domain_id", domain_id);
+         
         /**
          * Execution of the REST call with basic authentication and JSON
          * response type
          */
-        rule = restTemplate.exchange(RestConfig.REORDER_RULE_LIST, HttpMethod.PUT, entity, String.class);
+        rule = restTemplate.exchange(RestConfig.REORDER_RULE_LIST, HttpMethod.PUT, entity, String.class, map);
 
         logger.info("Status code after the rearrangement : " + rule.getStatusCodeValue());
 

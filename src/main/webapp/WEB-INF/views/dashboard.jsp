@@ -234,7 +234,7 @@
                         <span class="blackShadow font-h4"
                               style="margin-right: 10px;">Usage</span> <span
                               class="blackShadow font-h2" ">
-                            ${SubscriptionDetails.getDataUsed() }GB</span>
+                            ${SubscriptionDetails.getDataUsed()} GB</span>
 
                     </div>
 

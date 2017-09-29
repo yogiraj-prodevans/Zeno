@@ -37,9 +37,9 @@ import org.springframework.web.client.RestTemplate;
  * @author rajanikant
  */
 @Component
-public class CategoryListDAOImpl implements CategoryListDAO{
+public class CategoryListDAOImpl implements CategoryListDAO {
 
-     private RestTemplate restTemplate;
+    private RestTemplate restTemplate;
     private HttpEntity<String> entity;
 
     final static private Logger logger = LoggerFactory.getLogger(CategoryListDAOImpl.class);
@@ -88,10 +88,11 @@ public class CategoryListDAOImpl implements CategoryListDAO{
             logger.error(e.getMessage());
         }
     }
+
     @Override
-    public CategoryList getCategoryList(String protection_status) {
+    public CategoryList getCategoryList(String protection_status, String domain_id) {
         CategoryList list = new CategoryList();
-        String responce_body = getCategory(protection_status);
+        String responce_body = getCategory(protection_status, domain_id);
 //        JSONArray allow = new JSONObject(responce_body).getJSONArray("category-action").getJSONObject(0).getJSONObject("url-categories").getJSONArray("predefined");
 //        ArrayList<String> sr = new ArrayList<String>();
 //        for(Object str : allow ){
@@ -101,15 +102,14 @@ public class CategoryListDAOImpl implements CategoryListDAO{
 //        list.setBlocked_catogery(sr);
 //        
         JSONArray category_action = new JSONObject(responce_body).getJSONArray("category-action");
-        
+
         JSONArray block_rule = null;
         JSONArray allow_rule = null;
-        for(Object obj : category_action){
-            JSONObject jon = (JSONObject)obj;
-            if(jon.getString("name").equals("Allowded")){
-               allow_rule = jon.getJSONObject("url-categories").getJSONArray("predefined");
-            }
-            else{
+        for (Object obj : category_action) {
+            JSONObject jon = (JSONObject) obj;
+            if (jon.getString("name").equals("Allowded")) {
+                allow_rule = jon.getJSONObject("url-categories").getJSONArray("predefined");
+            } else {
                 block_rule = jon.getJSONObject("url-categories").getJSONArray("predefined");
             }
         }
@@ -117,23 +117,22 @@ public class CategoryListDAOImpl implements CategoryListDAO{
         for (Object str : block_rule) {
             sr.add(str.toString());
         }
-       list.setBlocked_catogery(sr);
-       //sr.clear();
-       ArrayList<String> br = new ArrayList<String>();
+        list.setBlocked_catogery(sr);
+        //sr.clear();
+        ArrayList<String> br = new ArrayList<String>();
         for (Object str : allow_rule) {
             br.add(str.toString());
         }
         list.setAllowded_catogery(br);
-        
-        
-        logger.info("Response body : \n"+responce_body);
-        logger.info("List Allow : "+list.getAllowded_catogery().toString());
-        logger.info("List Block : "+list.getBlocked_catogery().toString());
+
+        logger.info("Response body : \n" + responce_body);
+        logger.info("List Allow : " + list.getAllowded_catogery().toString());
+        logger.info("List Block : " + list.getBlocked_catogery().toString());
         return list;
     }
-    
-    private String getCategory(String protection_status){
-        
+
+    private String getCategory(String protection_status, String domain_id) {
+
         /*
 		 * Creation of the response object with the string data type. Because it return
 		 * the JSON.
@@ -170,17 +169,17 @@ public class CategoryListDAOImpl implements CategoryListDAO{
         /*
 		 * Execution of the REST call with basic authentication and JSON response type
          */
-        
         Map<String, String> params = new HashMap<String, String>();
+        params.put("domain_id", domain_id);
         params.put("protection_status", protection_status);
-        person = restTemplate.exchange(RestConfig.URL_CATEGORY_LIST_PROTECTION_LEVEL, HttpMethod.GET, entity, String.class,params);
+
+        person = restTemplate.exchange(RestConfig.URL_CATEGORY_LIST_PROTECTION_LEVEL, HttpMethod.GET, entity, String.class, params);
 
         /*
 		 * Returning the response body with string format that easily readable.
          */
         return person.getBody();
-        
-        
+
     }
-    
+
 }

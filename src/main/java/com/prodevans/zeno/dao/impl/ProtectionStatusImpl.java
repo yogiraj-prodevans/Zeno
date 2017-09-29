@@ -88,14 +88,16 @@ public class ProtectionStatusImpl implements ProtectionStatusDAO {
     }
 
     /**
-     * getProtectionDetails method is for getting the protection status from the versa
+     * getProtectionDetails method is for getting the protection status from the
+     * versa
+     *
      * @param user_name
-     * @return 
+     * @return
      */
     @Override
-    public ParentalControlDetails getProtectionDetails(String user_name) {
-        ParentalControlDetails controlDetails = new  ParentalControlDetails();
-         /**
+    public ParentalControlDetails getProtectionDetails(String user_name, String domain_id) {
+        ParentalControlDetails controlDetails = new ParentalControlDetails();
+        /**
          * change the user name as per the requirements of business logic. user
          */
         user_name = user_name.trim() + "_access_policy_rule";
@@ -145,6 +147,7 @@ public class ProtectionStatusImpl implements ProtectionStatusDAO {
          */
         try {
             Map<String, String> map = new HashMap<String, String>();
+            map.put("domain_id", domain_id);
             map.put("rule_object_name", user_name);
             person = restTemplate.exchange(RestConfig.SEARCH_RULE_OBJECT, HttpMethod.GET, entity, String.class, map);
 
@@ -153,27 +156,27 @@ public class ProtectionStatusImpl implements ProtectionStatusDAO {
                 logger.error("filter already exixts user_name : " + user_name);
                 JSONObject obj = new JSONObject(person.getBody());
                 String protection_status = obj.getJSONObject("access-policy").getJSONObject("set").getJSONObject("security-profile").getJSONObject("url-filtering").getString("user-defined");
-               
-                if(!protection_status.equals("advance_filter_zeno") && !protection_status.equals("basic_filter_zeno") && !protection_status.equals("elementary_filter_zeno")){
+
+                if (!protection_status.equals("advance_filter_zeno") && !protection_status.equals("basic_filter_zeno") && !protection_status.equals("elementary_filter_zeno")) {
                     controlDetails.setProtection_status("custom_filter");
                 } else {
                     controlDetails.setProtection_status(protection_status);
                 }
                 //controlDetails.setProtection_status(protection_status);
                 controlDetails.setRequest_data(person.getBody().toString());
-            } 
+            }
         } catch (RestClientException e) {
-                 logger.error(e.getMessage());
-            
+            logger.error(e.getMessage());
+
         }
-        
+
         return controlDetails;
     }
 
     @Override
-    public boolean protectionStatusUpdate(ParentalControlDetails controlDetails) {
+    public boolean protectionStatusUpdate(ParentalControlDetails controlDetails, String domain_id) {
         boolean result = false;
-        
+
         /**
          * change the user name as per the requirements of business logic. user
          * name ex. OE_000007_address_object
@@ -181,13 +184,12 @@ public class ProtectionStatusImpl implements ProtectionStatusDAO {
         String access_policy_rule = controlDetails.getUser_name().trim() + "_access_policy_rule";
         String filter_policy = "";
 
-        if(!controlDetails.getProtection_status().contains("advance_filter_zeno") && !controlDetails.getProtection_status().contains("basic_filter_zeno") && !controlDetails.getProtection_status().contains("elementary_filter_zeno")){
+        if (!controlDetails.getProtection_status().contains("advance_filter_zeno") && !controlDetails.getProtection_status().contains("basic_filter_zeno") && !controlDetails.getProtection_status().contains("elementary_filter_zeno")) {
             filter_policy = controlDetails.getUser_name().trim() + "_filter_object";
-        }
-        else{
+        } else {
             filter_policy = controlDetails.getProtection_status().trim();
         }
-        
+
         /**
          * Creation of the response object with the string data type. Because it
          * return the JSON.
@@ -211,16 +213,15 @@ public class ProtectionStatusImpl implements ProtectionStatusDAO {
         headers.setContentType(MediaType.APPLICATION_JSON);
 
         // Json data for the update rule.
-         JSONObject obj = new JSONObject(controlDetails.getRequest_data());
-                JSONObject new_data = obj.getJSONObject("access-policy").getJSONObject("set").getJSONObject("security-profile").getJSONObject("url-filtering").put("user-defined",filter_policy);
-                logger.info("Request Data  :" + new_data.toString());
-        
-        
+        JSONObject obj = new JSONObject(controlDetails.getRequest_data());
+        JSONObject new_data = obj.getJSONObject("access-policy").getJSONObject("set").getJSONObject("security-profile").getJSONObject("url-filtering").put("user-defined", filter_policy);
+        logger.info("Request Data  :" + new_data.toString());
+
         /**
          * Creation of the Entity object for the adding the headers and JSON
          * request body into request.
          */
-        entity = new HttpEntity<>(obj.toString(),headers);
+        entity = new HttpEntity<>(obj.toString(), headers);
 
         /**
          * Creation of REST TEMPLET object for the executing of the REST calls.
@@ -239,6 +240,7 @@ public class ProtectionStatusImpl implements ProtectionStatusDAO {
          */
         try {
             Map<String, String> map = new HashMap<String, String>();
+            map.put("domain_id", domain_id);
             map.put("rule_object_name", access_policy_rule);
             person = restTemplate.exchange(RestConfig.UPDATE_RULE_OBJECT, HttpMethod.PUT, entity, String.class, map);
 
@@ -252,8 +254,7 @@ public class ProtectionStatusImpl implements ProtectionStatusDAO {
             logger.error(e.getMessage());
             return false;
         }
-        
-       
+
     }
 
 }

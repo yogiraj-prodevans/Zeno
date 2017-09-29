@@ -5,8 +5,8 @@ package com.prodevans.zeno.config;
  * of the Versa director.
  * Created by : RK
  */
-
 public interface RestConfig {
+
     /**
      * URL of the Versa for fetch the REST API.
      */
@@ -35,51 +35,51 @@ public interface RestConfig {
     /**
      * API url for get the address object list.
      */
-    String GET_ADDRESS_OBJECT_LIST = HOST + "/api/config/devices/device/Branch01-OneEight/config/orgs/org-services/OneEight/objects/addresses/address";
+    String GET_ADDRESS_OBJECT_LIST = HOST + "/api/config/devices/device/{domain_id}/config/orgs/org-services/OneEight/objects/addresses/address";
 
     /**
      * API url for create the address object.
      */
-    String CREATE_ADDRESS_OBJECT = HOST + "/api/config/devices/device/Branch01-OneEight/config/orgs/org-services/OneEight/objects/addresses";
+    String CREATE_ADDRESS_OBJECT = HOST + "/api/config/devices/device/{domain_id}/config/orgs/org-services/OneEight/objects/addresses";
 
     /**
      * API url for create the filter policy object.
      */
-    String CREATE_POLICY_FILTER_OBJECT = HOST + "/api/config/devices/device/Branch01-OneEight/config/orgs/org-services/OneEight/security/profiles/url-filtering";
+    String CREATE_POLICY_FILTER_OBJECT = HOST + "/api/config/devices/device/{domain_id}/config/orgs/org-services/OneEight/security/profiles/url-filtering";
 
     /*
         *  API url for create the access policy rule object.
      */
-    String CREATE_RULE_OBJECT = HOST + "/api/config/devices/device/Branch01-OneEight/config/orgs/org-services/OneEight/security/access-policies/access-policy-group/Default-Policy/rules";
+    String CREATE_RULE_OBJECT = HOST + "/api/config/devices/device/{domain_id}/config/orgs/org-services/OneEight/security/access-policies/access-policy-group/Default-Policy/rules";
 
     /**
      * API URL for find address object.
      */
-    String SEARCH_ADDRESS_OBJECT = HOST + "/api/config/devices/device/Branch01-OneEight/config/orgs/org-services/OneEight/objects/addresses/address/{address_object_name}";
+    String SEARCH_ADDRESS_OBJECT = HOST + "/api/config/devices/device/{domain_id}/config/orgs/org-services/OneEight/objects/addresses/address/{address_object_name}";
 
     /**
      * API URL for get list of objects.
      */
-    String LIST_ACCESS_RULE = HOST + "/api/config/devices/device/Branch01-OneEight/config/orgs/org-services/OneEight/security/access-policies/access-policy-group/Default-Policy/rules/access-policy";
+    String LIST_ACCESS_RULE = HOST + "/api/config/devices/device/{domain_id}/config/orgs/org-services/OneEight/security/access-policies/access-policy-group/Default-Policy/rules/access-policy";
 
     /**
      * API URL for rearranging the rules.
      */
-    String REORDER_RULE_LIST = HOST + "/api/config/devices/device/Branch01-OneEight/config/orgs/org-services/OneEight/security/access-policies/access-policy-group/Default-Policy/rules";
-
-     /**
-     * API URL for find RULE object.
-     */
-    String SEARCH_RULE_OBJECT = HOST + "/api/config/devices/device/Branch01-OneEight/config/orgs/org-services/OneEight/security/access-policies/access-policy-group/Default-Policy/rules/access-policy/{rule_object_name}";
+    String REORDER_RULE_LIST = HOST + "/api/config/devices/device/{domain_id}/config/orgs/org-services/OneEight/security/access-policies/access-policy-group/Default-Policy/rules";
 
     /**
      * API URL for find RULE object.
      */
-    String UPDATE_RULE_OBJECT = HOST + "/api/config/devices/device/Branch01-OneEight/config/orgs/org-services/OneEight/security/access-policies/access-policy-group/Default-Policy/rules/access-policy/{rule_object_name}";
-    
+    String SEARCH_RULE_OBJECT = HOST + "/api/config/devices/device/{domain_id}/config/orgs/org-services/OneEight/security/access-policies/access-policy-group/Default-Policy/rules/access-policy/{rule_object_name}";
+
+    /**
+     * API URL for find RULE object.
+     */
+    String UPDATE_RULE_OBJECT = HOST + "/api/config/devices/device/{domain_id}/config/orgs/org-services/OneEight/security/access-policies/access-policy-group/Default-Policy/rules/access-policy/{rule_object_name}";
+
     /**
      * API URL for list URL category these blocked by the filter.
      */
-    String URL_CATEGORY_LIST_PROTECTION_LEVEL = HOST + "/api/config/appliances/Branch01-OneEight/orgs/org-services/OneEight/security/profiles/url-filtering/url-filtering-profile/{protection_status}/category-action-map/category-action";
- 
+    String URL_CATEGORY_LIST_PROTECTION_LEVEL = HOST + "/api/config/appliances/{domain_id}/orgs/org-services/OneEight/security/profiles/url-filtering/url-filtering-profile/{protection_status}/category-action-map/category-action";
+
 }

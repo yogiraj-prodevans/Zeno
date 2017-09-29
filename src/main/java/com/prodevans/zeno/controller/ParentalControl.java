@@ -83,10 +83,10 @@ public class ParentalControl {
                 String ip_address = (String) session.getAttribute("user_ip_address");
                 logger.error("ip address : " + ip_address);
 
-                boolean check_ip_result = REGISTER_PROCESS.checkRegistration(user.getActid());
+                boolean check_ip_result = REGISTER_PROCESS.checkRegistration(user.getActid(), user.getDomid().trim());
                 if (check_ip_result) {
                     //Return the parental control status/Details.
-                    parentalControlDetails = PROTECTION_STATUS.getProtectionDetails(user.getActid());
+                    parentalControlDetails = PROTECTION_STATUS.getProtectionDetails(user.getActid(), user.getDomid().trim());
                     model.addAttribute("uesr_name", user.getActname());
                     parentalControlDetails.setUser_name(user.getActid());
                     //Displaying the list of Adderss objects
@@ -95,9 +95,9 @@ public class ParentalControl {
                     if (!check_ip_result) {
                         if (!ip_address.isEmpty()) {
                             //Regestration process for the uesr.
-                            REGISTER_PROCESS.registerUser(user.getActid(), ip_address);
+                            REGISTER_PROCESS.registerUser(user.getActid(), ip_address, user.getDomid().trim());
                             //Return the parental control status/Details.
-                            parentalControlDetails = PROTECTION_STATUS.getProtectionDetails(user.getActid());
+                            parentalControlDetails = PROTECTION_STATUS.getProtectionDetails(user.getActid(), user.getDomid().trim());
                             parentalControlDetails.setUser_name(user.getActid());
                             //Displaying the list of Adderss objects
                         } else {
@@ -111,7 +111,7 @@ public class ParentalControl {
             } catch (Exception e) {
                 logger.error(e.getMessage());
             }
-            
+
             model.addAttribute("ParentalControlDetails", parentalControlDetails);
             return "parental-control";
         }
@@ -129,8 +129,10 @@ public class ParentalControl {
 
         logger.info(" Protection Status : " + controlDetails.getProtection_status());
         logger.info(" Request Data : " + controlDetails.getRequest_data());
+        //fetching the user details from the session.
+        SessionDetails user = (SessionDetails) session.getAttribute("user");
         if (!controlDetails.getRequest_data().isEmpty() && !controlDetails.getProtection_status().isEmpty()) {
-            boolean result = PROTECTION_STATUS.protectionStatusUpdate(controlDetails);
+            boolean result = PROTECTION_STATUS.protectionStatusUpdate(controlDetails, user.getDomid().trim());
             if (result) {
                 model.addAttribute("error", "Protection status has been updated");
                 logger.info("Protection status has been updated ");
@@ -155,7 +157,7 @@ public class ParentalControl {
             try {
                 //fetching the user details from the session.
                 SessionDetails user = (SessionDetails) session.getAttribute("user");
-                CategoryList list = categoryimpl.getCategoryList("basic_filter_zeno");
+                CategoryList list = categoryimpl.getCategoryList("basic_filter_zeno", user.getDomid().trim());
                 model.addAttribute("CAT", list);
                 model.addAttribute("uesr_name", user.getActname());
                 //logger.info("List Blocked : " + list.getBlocked_catogery().toString());
@@ -179,15 +181,15 @@ public class ParentalControl {
 
                 CategoryList list = null;
                 if (protection_status.equals("basic")) {
-                    list = categoryimpl.getCategoryList("basic_filter_zeno");
+                    list = categoryimpl.getCategoryList("basic_filter_zeno", user.getDomid().trim());
                 } else if (protection_status.equals("advance")) {
-                    list = categoryimpl.getCategoryList("advance_filter_zeno");
+                    list = categoryimpl.getCategoryList("advance_filter_zeno", user.getDomid().trim());
                 } else if (protection_status.equals("custom")) {
-                    list = categoryimpl.getCategoryList(user.getActid() + "_filter_object");
+                    list = categoryimpl.getCategoryList(user.getActid() + "_filter_object", user.getDomid().trim());
                 }
                 model.addAttribute("uesr_name", user.getActname());
                 model.addAttribute("CAT", list);
-             
+
             } catch (Exception ee) {
                 logger.error("" + ee.getMessage());
             }
