@@ -146,15 +146,17 @@
                         <h4 style="padding-top: 1%;">Protection Status</h4>
                     </div>
                     <div class="col-md-3 mb-pt-30">
-                        <h4 type="text" style="background-color:#ffb81c; color:White; padding: 5px; padding-left: 15px;" name="current_protectionstatus" disabled value="" > ${ParentalControlDetails.getProtectionStatusName()}   </h4>     
+                        <h4 type="text" style="background-color:#ffb81c; color:White; padding: 5px; padding-left: 15px;" id="current_protectionstatus" data-toggle="tooltip" title="Default: Government-mandated list of blocked content
+Advanced: Check types of content that you want to keep out of your home
+Custom: Key in specific URLs you want to block, separated by commas" > ${ParentalControlDetails.getProtectionStatusName()}   </h4>     
                     </div>
 
-                    <div class="col-md-4">
-                        <div class="col-md-2" ><a href="${pageContext.request.contextPath }/control-category" class="glyphicon glyphicon-question-sign"></a></div>
+                    <div class="col-md-4 text-right">
+                        <!--<div class="col-md-2" ><a href="${pageContext.request.contextPath }/control-category" class="glyphicon glyphicon-question-sign"></a></div>-->
                         <h4 style="padding-top: 1%;" class="mb-pt-1">Change your protection status</h4>
                     </div>
 
-                    <div class="col-md-3 mb-pt-25">
+                    <div class="col-md-3 ">
                         <form:select path="protection_status" multiple="false" >
 
                             <form:options items="${protection_level}" />                   
@@ -189,7 +191,12 @@
             <!-- Load javascripts at bottom, this will reduce page load time -->
         <jsp:include page="component/js.jsp"></jsp:include>
         <!-- END BODY -->
-
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+//    $('current_protectionstatus').title = "hi";
+});
+</script>
 
     </body>
 </html>

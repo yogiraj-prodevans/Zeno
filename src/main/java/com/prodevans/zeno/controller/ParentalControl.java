@@ -68,7 +68,8 @@ public class ParentalControl {
         //protection_level.put("elementary_filter_zeno", "ELEMENTRY");
         protection_level.put("basic_filter_zeno", "DEFAULT");
         protection_level.put("advance_filter_zeno", "ADVANCED");
-        protection_level.put("custom_filter", "CUSTOM");
+        //Next version [ v2.0 ]
+        //protection_level.put("custom_filter", "CUSTOM");
 
         model.addAttribute("protection_level", protection_level);
 
