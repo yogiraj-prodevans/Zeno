@@ -138,7 +138,7 @@
             <div class="col-md-12">
                 <p><h1>With Surf Safe, you're in control</h1></p>
 
-                <p><h3>Your home is your safe space and you deserve to keep it that way. With our Advanced Surf Safe control you can decide what to let in and when. If there are specific websites you want to block, go ahead and add to your Custom setting. Schedule hourly, daily or date-wise, and we'll ensure your chosen categories and URLs remain blocked when you want them to be. Surf Safe, and ensure everyone on your network does too.</h3></p>
+            <p class="font-h3 text-justify">Your home is your safe space and you deserve to keep it that way. With our Advanced Surf Safe control you can decide what to let in and when. If there are specific websites you want to block, go ahead and add to your Custom setting. Schedule hourly, daily or date-wise, and we'll ensure your chosen categories and URLs remain blocked when you want them to be. Surf Safe, and ensure everyone on your network does too.</p>
                 <p><br></p>
 
                 <form:form role="form" action="control" method="post" modelAttribute="ParentalControlDetails" class="row" >
@@ -146,7 +146,7 @@
                         <h4 style="padding-top: 1%;">Protection Status</h4>
                     </div>
                     <div class="col-md-3 mb-pt-30">
-                        <h4 type="text" style="background-color:Blue; color:White; padding: 5px; padding-left: 15px;" name="current_protectionstatus" disabled value="" > ${ParentalControlDetails.getProtectionStatusName()}   </h4>     
+                        <h4 type="text" style="background-color:#ffb81c; color:White; padding: 5px; padding-left: 15px;" name="current_protectionstatus" disabled value="" > ${ParentalControlDetails.getProtectionStatusName()}   </h4>     
                     </div>
 
                     <div class="col-md-4">

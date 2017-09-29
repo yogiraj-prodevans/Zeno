@@ -34,10 +34,10 @@ public class ParentalControlDetails {
             return "ELEMENTRY";
         }
         else if(protection_status.equals("basic_filter_zeno")){
-            return "BASIC";
+            return "DEFAULT";
         }
        else if(protection_status.equals("advance_filter_zeno")){
-            return "ADVANCE";
+            return "ADVANCED";
         }
        else if(protection_status.equals("custom_filter")){
             return "CUSTOM";
