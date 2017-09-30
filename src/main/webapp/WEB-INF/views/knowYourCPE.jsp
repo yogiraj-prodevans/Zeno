@@ -72,18 +72,18 @@
     <h1 class="paddingLeftTop" >Know your One8 Cube</h1>
 </div>    
 
-  <div class="col-md-12 sRow pt-20" style="padding-left:8%">
+  <div class="col-md-12 sRow pt-20" style="padding-left:5%">
   <h1 class="paddingLeftTop"> The One8 Cube</h1>
   <div style="padding-left:2%">
 <ul>
-                    <p class="faqp paddingLeftTop pt-20"  ><li>The out-of-the-box internet experience that fits neatly in one</li></p>
-                    <p class="faqp paddingLeftTop pt-20"><li>All-in-one router-modem connects your wifi devices,including your TV</li></p>
+                     <p class="faqp paddingLeftTop pt-20"  ><li>Hotspot router that connects all your wifi devices</li></p>
+                    <p class="faqp"><li>2 USB ports: plug in hard drives,Keyboard and more</li></p>
+                     <p class="faqp"><li>HDMI port: plug in your TV and surf!</li></p>
+                     <p class="faqp"><li>Entertainment ON! Constantly curated,pre-loaded</li></p>
+                    <p class="faqp"><li>Apps like Youtube,TED,Gmail,Facebook and more</li></p>
+                                       
 
-                    <p class="faqp"><li>X USB ports: plug in hard drives and more</li></p>
-                    <p class="faqp"><li>Netflix,hoststar and more</li></p>
-
-                    <p class="faqp"><li>In-builit analytics engine that continuously optimises your speed </li></p>
-   </ul> </div></div>
+                     </ul> </div></div>
 <div class="container" align="center">
 	<div class="col-md-12 sRow pt-20" align="left">
 	<div class="row">
