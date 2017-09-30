@@ -158,7 +158,7 @@
 					</div>
 					<div class="col-md-5 col-xs-7" >
 						<a href="#changePassword" data-toggle="modal"  style="color:black;">
-							<h4 style="color:black;">Edit password &nbsp &nbsp <img alt="pencil" src="img/pencil.png" style="width:30px;height: 30px;margin-bottom: 10%;"></h4>
+							<h4 style="color:#0066cc;">Edit password &nbsp &nbsp <img alt="pencil" src="img/pencil.png" style="width:30px;height: 30px;margin-bottom: 10%;"></h4>
 						</a>
 					</div>
 				</div>
@@ -203,11 +203,11 @@
 <div id="changePassword" class="modal fade" style="margin-top:5%;">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header" style="color:white;background-color: #0066cc;padding-top: 3%;padding-bottom: 3%;">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color:#FFF">
                 	<img alt="" src="img/close.png" style="height: 25px;width: 25px;">
                 </button>
-                <h4 class="modal-title" style="color:white;background-color: #2980b9;padding-left: 5%;">Change Password</h4>
+                <h4 class="modal-title" style="padding-left: 5%;">Change Password</h4>
             </div>
 
             <div class="modal-body" style="margin-bottom:30%">
@@ -216,7 +216,7 @@
 					<form:form role="form" action="profile/change-pass" method="post" modelAttribute="change_pass">
 						<form:input type="hidden"  path="actid" readonly="true" />
 						<form:input path="password" type="password" style="margin-bottom:30px;" placeholder="Enter Password" required="true" value=""/>
-						<form:input path="confirm_password" type="password" style="margin-bottom:30px;" placeholder="Confirm Password" required="true" value=""/>
+						<form:input path="confirm_password" type="password" style="margin-bottom:23px;" placeholder="Confirm Password" required="true" value=""/>
 						<button type="submit" class="btn billButton pull-right" style="">UPDATE</button>
 					</form:form>
 					
