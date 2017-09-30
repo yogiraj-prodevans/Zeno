@@ -23,7 +23,7 @@
     position: fixed;
     top: 260px;
     cursor: pointer;
-    box-shadow: 0px 2px 5px #666;
+    box-shadow: 0px 2px 5px #c9c3c3;
 }
 
 #floating-button1
@@ -36,7 +36,7 @@
     position: fixed;
     top: 330px;
     cursor: pointer;
-    box-shadow: 0px 2px 5px #666;
+    box-shadow: 0px 2px 5px #c9c3c3;
 }
 .fv
 {

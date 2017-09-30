@@ -72,9 +72,9 @@
     <h1 class="paddingLeftTop" >Know your One8 Cube</h1>
 </div>    
 
-  <div class="col-md-12 sRow pt-20">
-  <h1 class="paddingLeftTop" > The One8 Cube</h1>
-  <div style="padding-left:2%;">
+  <div class="col-md-12 sRow pt-20" style="padding-left:8%">
+  <h1 class="paddingLeftTop"> The One8 Cube</h1>
+  <div style="padding-left:2%">
 <ul>
                     <p class="faqp paddingLeftTop pt-20"  ><li>The out-of-the-box internet experience that fits neatly in one</li></p>
                     <p class="faqp paddingLeftTop pt-20"><li>All-in-one router-modem connects your wifi devices,including your TV</li></p>

@@ -206,7 +206,7 @@ background-position:right center;
         <div class="row">
         	
             <div class="col-md-12">
-            	<form:textarea path="message" id="message" class="form-control" style="height:150px; width: 99%; border: 0.4px solid #bdc3c7; resize: none; color: black; border-radius: 0.4px; font-size: 19px;" placeholder=" Tell us more"></form:textarea>
+            	<form:textarea path="message" id="message" class="form-control" style="height:150px; width: 99%; border: 0.6px solid #d9dde0; resize: none; color: black; border-radius: 0.4px; font-size: 19px;" placeholder=" Tell us more"></form:textarea>
                 
             </div>
             <div class="col-md-12" style="margin-top:3% ;text-align: right;margin-left: -1%;">

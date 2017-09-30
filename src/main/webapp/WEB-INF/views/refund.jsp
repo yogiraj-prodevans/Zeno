@@ -42,8 +42,8 @@
 
 
 	<div class="container ">
-		<div class="pt-40">
-		<p>Once purchased, no refunds or cancellations will be accommodated. Any disputes with regard to payment/refund of transaction(s) due to technical reasons are subject to arbitration/resolution on a case to case basis.
+		<div class="pt-40" >
+		<p class="faqp1"> Once purchased, no refunds or cancellations will be accommodated. Any disputes with regard to payment/refund of transaction(s) due to technical reasons are subject to arbitration/resolution on a case to case basis.
 
 </p>
 			</div>

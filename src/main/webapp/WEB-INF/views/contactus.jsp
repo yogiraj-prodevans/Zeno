@@ -134,7 +134,7 @@
                         <div class="col-md-12 ">
 
                             <form:textarea path="message" id="message" 
-                                           style="height:150px; width: 99%; border: 0.4px solid #bdc3c7; resize: none; color: black; border-radius: 0.4px; font-size: 19px;"
+                                           style="height:150px; width: 99%; border: 0.6px solid #bdc3c7; resize: none; color: black; border-radius: 0.4px; font-size: 19px;"
                                            placeholder=" Message"></form:textarea>
                             </div>
                             <div class="col-md-12" style="margin-top:1.5%;margin-bottom:1.5%; text-align: right;margin-left: -1%;">
