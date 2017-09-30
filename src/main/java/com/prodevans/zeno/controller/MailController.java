@@ -165,7 +165,7 @@ public class MailController
 	public List<String> getComplaintList()
 	{
 		List<String> complaint=new ArrayList<String>();
-		complaint.add("Not able to pay online");
+		complaint.add("Online Payment Failure");
 		complaint.add("Activation / Deactivation of Services");
 		complaint.add("Billing Related");
 		complaint.add("One8 Website");
