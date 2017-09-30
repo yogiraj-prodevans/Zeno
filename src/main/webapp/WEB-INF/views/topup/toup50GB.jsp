@@ -286,19 +286,19 @@
 
             <input readonly="readonly" type="hidden" name="tid" id="tid" value=""/><!-- Transaction ID -->
             <input type="hidden" name="merchant_id" value="127191"/><!-- Merchant Id	: -->
-            <input type="hidden" name="order_id" value="1236556561"/><!-- Order Id	: -->
+            <input type="hidden" name="order_id" value="123655656"/><!-- Order Id	: -->
             <input type="hidden" name="amount" value="${topUp.getAmount() }"   />
             <input type="hidden" name="currency" value="INR"/><!-- Currency	: -->
-            <input type="hidden" name="redirect_url" value="http://52.172.215.71/zeno/ccvTopUpResponseHandler"/><!-- Redirect URL	: -->
-            <input type="hidden" name="cancel_url" value="http://52.172.215.71/zeno/ccvCancelResponse"/><!-- Cancel URL	: -->
+            <input type="hidden" name="redirect_url" value="http://www.oneeight.co.in/zeno/ccvTopUpResponseHandler"/><!-- Redirect URL	: -->
+            <input type="hidden" name="cancel_url" value="http://www.oneeight.co.in/zeno/ccvCancelResponse"/><!-- Cancel URL	: -->
             <input type="hidden" name="language" value="EN"/><!-- Language	: -->
             <input readonly="readonly" type="hidden" name="tid" id="tid" value=""/><!-- Transction ID -->
             <input type="hidden" name="merchant_id" value="127191"/><!-- Merchant ID -->
             <input type="hidden" name="order_id" value="123654789"/><!-- order id -->
             <input type="hidden" name="amount" value="${topUp.getAmount() }"/><!--Amount  -->
             <input type="hidden" name="currency" value="INR"/><!-- currency -->
-            <input type="hidden" name="redirect_url" value="http://52.172.215.71/zeno/ccvTopUpResponseHandler"/><!-- Redirect URL -->
-            <input type="hidden" name="cancel_url" value="http://52.172.215.71/zeno/ccvCancelResponse"/><!-- cancel url -->
+            <input type="hidden" name="redirect_url" value="http://www.oneeight.co.in/zeno/ccvTopUpResponseHandler"/><!-- Redirect URL -->
+            <input type="hidden" name="cancel_url" value="http://www.oneeight.co.in/zeno/ccvCancelResponse"/><!-- cancel url -->
             <input type="hidden" name="language" value="EN"/><!-- Language -->
 
             <input type="hidden" name="billing_name" value="${user_details.getFirst_name() }"/><!-- billing name -->
