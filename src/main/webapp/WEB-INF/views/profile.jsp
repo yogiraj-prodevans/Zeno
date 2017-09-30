@@ -46,9 +46,9 @@
 	padding-left:5%;
 	max-height:unset;
 	margin-top:10%;
-	-webkit-box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
-	-moz-box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
-	box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
+	-webkit-box-shadow: 2px 4px 8px 0px rgba(192,192,192,0.3);
+	-moz-box-shadow: 2px 4px 8px 0px rgba(192,192,192,0.3);
+	box-shadow: 2px 4px 8px 0px rgba(192,192,192,0.3);
 }
 .row
 {

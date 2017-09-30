@@ -32,9 +32,9 @@
                 min-height:330px;
                 border : none;
                 padding: unset;
-                -webkit-box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
-                -moz-box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
-                box-shadow: 2px 4px 8px 0px rgba(127,140,141,1);
+                -webkit-box-shadow: 2px 4px 8px 0px rgba(192,192,192,0.3);
+                -moz-box-shadow: 2px 4px 8px 0px rgba(192,192,192,0.3);
+                box-shadow: 2px 4px 8px 0px rgba(192,192,192,0.3);
             }
             .firstRow{
                 background-image: url('img/red_small.png');
