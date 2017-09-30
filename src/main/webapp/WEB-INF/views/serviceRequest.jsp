@@ -142,10 +142,10 @@ background-position:right center;
         <div class="row pb-20">
             <div class="col-md-6">
             
-            	<div class="col-md-5 col-xs-5 col-sm-4" style="padding-top: -5%;">
-            		<h4 style="padding-top: 5%;">When should we call you</h4>
+            	<div class="col-md-6 col-xs-6 col-sm-4" style="margin-left: -3%;">
+            		<h4 style="padding-top: 5% ;">When should we call you?</h4>
             	</div>
-            	<div class="col-md-7 col-xs-7 col-sm-8">
+            	<div class="col-md-6 col-xs-6 col-sm-8">
             		<form:select path="time_slot_to_call" multiple="false" items="${time_slot_to_call}" class="hoverColor">
                     </form:select>
             	</div>

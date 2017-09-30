@@ -28,11 +28,11 @@
 <!-- BEGIN FOOTER -->
 <div class="footer"  style="width:100%;  font-size:10px">
 
-    <div class="row" style="margin:unset;margin-left: 6%; margin-right: 4%;">
+    <div class="row" style="margin:unset;margin-left: 5%; margin-right: 4%;">
         <!-- BEGIN COPYRIGHT -->
 
-        <div class="col-md-4 col-xs-12 pdlFooter" style="color:black;"><div class="font-h5"> &copy; <script type="text/JavaScript">document.write(new Date().getFullYear());</script> ONE-EIGHT TECHNOLOGIES PRIVATE LTD</div></div> 
-        <div class="col-md-8 col-xs-12 footerPR" style="text-align: right;">
+        <div class="col-md-3 col-xs-12 pdlFooter" style="color:black; "><div class="font-h5"> &copy; <script type="text/JavaScript">document.write(new Date().getFullYear());</script> ONE-EIGHT TECHNOLOGIES PRIVATE LTD</div></div> 
+        <div class="col-md-9 col-xs-12 footerPR" style="text-align: right;">
             <div class="row">
                 <a href="${pageContext.request.contextPath }/help" class="font-h5">FAQ </a> <span style="padding: 5px;"></span>
                
