@@ -99,6 +99,7 @@
                     <p class="faqp">Can I carry forward my GB? </p>
                     <p class="faqp1">If you opt for a plan with a bigger unused GB, your unused GB from the current month will be automatically adjusted against the new plan. If you are moving to a smaller data package, then your used data will be calculated — if it is more than the limit on your new plan, the FUP will take effect immediately.  </p>
 				-->
+				
                     <p class="faqp">Can I upgrade my plan in the middle of a month? 
                     <p class="faqp1">While you can change plans at any time, the new plan will only take ef-fect at the beginning of the next billing cycle. </p>
 
