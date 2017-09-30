@@ -119,7 +119,7 @@
                     <h1 class="h1-font">Network </h1>
 
                     <p class="faqp">What is the thinking network? </p>
-                    <p class="faqp1">There is a reason we call our network the thinking network — our power-packed analytics engine that continuously gauges the perfect speed you need for the applications you use in real time. The fact is that not every user in your home requires the same speed all the time because not every user is using the same application at the same time. The One8 network detects usage at an individual level and allocates speed according-ly to individual users— lower for an email, higher for streaming a video or a video confer-ence. What that means is that no matter what you are doing online, you will be doing it lag-free. That’s the power of the thinking network. </p>
+                    <p class="faqp1">There is a reason we call our network the thinking network — our power-packed analytics engine that continuously gauges the perfect speed you need for the applications you use in real time. The fact is that not every user in your home requires the same speed all the time because not every user is using the same application at the same time. The One8 network detects usage at an individual level and allocates speed accordingly to individual users— lower for an email, higher for streaming a video or a video conference. What that means is that no matter what you are doing online, you will be doing it lag-free. That’s the power of the thinking network. </p>
 
                     <h1 class="h1-font">Complaints, Shifting and Deactivation </h1>
 
