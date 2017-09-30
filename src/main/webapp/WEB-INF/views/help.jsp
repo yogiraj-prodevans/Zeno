@@ -105,7 +105,7 @@
 
 
                     <p class="faqp">I have finished my data for the month. How do I top up? 
-                    <p class="faqp1">Get your Top Up on the go <a class="external" href="http://marcus.oneeight.co.in/zeno/topup"><b>here</b></a>. It’s easy, quick and takes effect instantly. </p>
+                    <p class="faqp1">Get your Top Up on the go <a class="external" href="${pageContext.request.contextPath }/topup"><b>here</b></a>. It’s easy, quick and takes effect instantly. </p>
 
 
                     <h1 class="h1-font">Billing </h1>
@@ -114,7 +114,7 @@
                     <p class="faqp1">All our plans are on a 30-day post usage, post paid cycle. This means that you will be billed every 30 days, starting on the 1st of every month. </p>
 
                     <p class="faqp">How do I pay my bill? Can I pay online and offline? </p>
-                    <p class="faqp1">Paying online is super simple. Click here and pay by card or net banking through a safe and secure payment gateway. To pay online, <a class="external" href="http://marcus.oneeight.co.in/zeno/payment"><b>click here</b></a>. </p>
+                    <p class="faqp1">Paying online is super simple. Click here and pay by card or net banking through a safe and secure payment gateway. To pay online, <a class="external" href="${pageContext.request.contextPath }/payment"><b>click here</b></a>. </p>
 
 
                     <h1 class="h1-font">Network </h1>
