@@ -327,7 +327,7 @@ h2, .font-h2 {
 
 h3, .font-h3 {
 	font-size: 24px;
-	line-height: 1.7;
+	line-height: 1.5;
 	letter-spacing: 0;
 	-webkit-margin-before: 0.25em;
 	-webkit-margin-start: 0px;
@@ -370,7 +370,7 @@ a {
 }
 
 .pb-40 {
-	padding-bottom: 40px;
+	padding-bottom: 14px;
 }
 
 .pb-50 {
