@@ -144,8 +144,8 @@ h1{
 		</div>
 		
 		<% String s=(String)session.getAttribute("brcdesc");%>
-		<%=s %>
-		<%
+		
+				<%
 			if((s.equals("Starter 40") || s.equals("Starter 60") || s.equals("Power 60") || s.equals("Power 90") ))  
 			{
 			%>
