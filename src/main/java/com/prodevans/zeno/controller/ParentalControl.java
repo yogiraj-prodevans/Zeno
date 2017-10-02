@@ -68,8 +68,7 @@ public class ParentalControl {
         //protection_level.put("elementary_filter_zeno", "ELEMENTRY");
         protection_level.put("basic_filter_zeno", "DEFAULT");
         protection_level.put("advance_filter_zeno", "ADVANCED");
-        //Next version [ v2.0 ]
-        //protection_level.put("custom_filter", "CUSTOM");
+       protection_level.put("custom_filter", "CUSTOM");
 
         model.addAttribute("protection_level", protection_level);
 
@@ -150,7 +149,7 @@ public class ParentalControl {
     }
 
     @RequestMapping(value = "/control-category", method = RequestMethod.GET)
-    public String categoryListFirst(Locale locale, Model model, HttpSession session) {
+    public String categoryListFirst(Locale locale, Model model, HttpSession session, @RequestParam(name="error",required = false)String error) {
 
         if (session.getAttribute("user") == null) {
             return "redirect:/logout";
@@ -158,9 +157,10 @@ public class ParentalControl {
             try {
                 //fetching the user details from the session.
                 SessionDetails user = (SessionDetails) session.getAttribute("user");
-                CategoryList list = categoryimpl.getCategoryList("basic_filter_zeno", user.getDomid().trim());
+                CategoryList list = categoryimpl.getCategoryList(user.getActid() + "_filter_object", user.getDomid().trim());
                 model.addAttribute("CAT", list);
                 model.addAttribute("uesr_name", user.getActname());
+                model.addAttribute("error", error);
                 //logger.info("List Blocked : " + list.getBlocked_catogery().toString());
 
             } catch (Exception ee) {
@@ -171,32 +171,47 @@ public class ParentalControl {
 
     }
 
-    @RequestMapping(value = "/control-category/{protection-status}", method = RequestMethod.GET)
-    public String categoryList(Locale locale, Model model, @PathVariable(name = "protection-status", required = false) String protection_status, HttpSession session) {
-        if (session.getAttribute("user") == null) {
-            return "redirect:/logout";
+//    @RequestMapping(value = "/control-category/{protection-status}", method = RequestMethod.GET)
+//    public String categoryList(Locale locale, Model model, @PathVariable(name = "protection-status", required = false) String protection_status, HttpSession session) {
+//        if (session.getAttribute("user") == null) {
+//            return "redirect:/logout";
+//        } else {
+//            try {
+//                //fetching the user details from the session.
+//                SessionDetails user = (SessionDetails) session.getAttribute("user");
+//
+//                CategoryList list = null;
+//                if (protection_status.equals("basic")) {
+//                    list = categoryimpl.getCategoryList("basic_filter_zeno", user.getDomid().trim());
+//                } else if (protection_status.equals("advance")) {
+//                    list = categoryimpl.getCategoryList("advance_filter_zeno", user.getDomid().trim());
+//                } else if (protection_status.equals("custom")) {
+//                    list = categoryimpl.getCategoryList(user.getActid() + "_filter_object", user.getDomid().trim());
+//                }
+//                model.addAttribute("uesr_name", user.getActname());
+//                model.addAttribute("CAT", list);
+//
+//            } catch (Exception ee) {
+//                logger.error("" + ee.getMessage());
+//            }
+//            return "control-category-list";
+//        }
+//    }
+
+    //control-category
+    @RequestMapping(value = "/control-category", method = RequestMethod.POST)
+    public String updateSategoryList(Locale locale, Model model, @ModelAttribute(name = "CAT")CategoryList list, HttpSession session,@RequestParam( name = "update_category") String select_update) {
+        //fetching the user details from the session.
+        SessionDetails user = (SessionDetails) session.getAttribute("user");
+
+        if (categoryimpl.updateCategoryList(list.getBlock_list_data(), list.getAllow_list_data(), user.getDomid(), user.getActid(), select_update)) {
+            model.addAttribute("error", "Updated succefuly");
         } else {
-            try {
-                //fetching the user details from the session.
-                SessionDetails user = (SessionDetails) session.getAttribute("user");
-
-                CategoryList list = null;
-                if (protection_status.equals("basic")) {
-                    list = categoryimpl.getCategoryList("basic_filter_zeno", user.getDomid().trim());
-                } else if (protection_status.equals("advance")) {
-                    list = categoryimpl.getCategoryList("advance_filter_zeno", user.getDomid().trim());
-                } else if (protection_status.equals("custom")) {
-                    list = categoryimpl.getCategoryList(user.getActid() + "_filter_object", user.getDomid().trim());
-                }
-                model.addAttribute("uesr_name", user.getActname());
-                model.addAttribute("CAT", list);
-
-            } catch (Exception ee) {
-                logger.error("" + ee.getMessage());
-            }
-            return "control-category-list";
+            model.addAttribute("error", "Updation failed");
         }
+        return "redirect:/control-category";
     }
+    
 
     /**
      * @param categoryimpl the categoryimpl to set

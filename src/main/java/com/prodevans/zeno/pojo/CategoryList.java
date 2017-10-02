@@ -10,8 +10,18 @@ import java.util.ArrayList;
  * @author rajanikant
  */
 public class CategoryList {
+
     private ArrayList<String> blocked_catogery;
     private ArrayList<String> allowded_catogery;
+    private String block_list_data;
+    private String allow_list_data;
+
+    public CategoryList() {
+        blocked_catogery = new ArrayList<>();
+        allowded_catogery = new ArrayList<>();
+        block_list_data = "";
+        allow_list_data = "";
+    }
 
     /**
      * @return the blocked_catogery
@@ -40,5 +50,33 @@ public class CategoryList {
     public void setAllowded_catogery(ArrayList<String> allowded_catogery) {
         this.allowded_catogery = allowded_catogery;
     }
-    
+
+    /**
+     * @return the block_list_data
+     */
+    public String getBlock_list_data() {
+        return block_list_data;
+    }
+
+    /**
+     * @param block_list_data the block_list_data to set
+     */
+    public void setBlock_list_data(String block_list_data) {
+        this.block_list_data = block_list_data;
+    }
+
+    /**
+     * @return the allow_list_data
+     */
+    public String getAllow_list_data() {
+        return allow_list_data;
+    }
+
+    /**
+     * @param allow_list_data the allow_list_data to set
+     */
+    public void setAllow_list_data(String allow_list_data) {
+        this.allow_list_data = allow_list_data;
+    }
+
 }
