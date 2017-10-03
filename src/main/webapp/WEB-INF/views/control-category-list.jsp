@@ -165,6 +165,9 @@
                 font-size: 1.2em;
 
             }
+            input[type="checkbox"] {
+                display: unset;
+            }
         </style>
     </head>
     <body class="corporate" style="font-family: Roboto;">
@@ -260,11 +263,14 @@
                             <div class="col-md-6">
                                 <div class="col-md-12 box-category-red-left">
                                     <h3>BLOCKED CATEGORIES</h3>
-                                    <ul  id="sortable1" class="connectedSortable">
-                                        <c:forEach items="${CAT.getBlocked_catogery()}" var="cat">
-                                            <li class="ui-state-default" id="<c:out value="${cat}"/>"> <c:out value="${cat}"/> </li>	
-                                            </c:forEach> 
-                                    </ul>
+                                    
+                                   
+
+                                    <c:forEach items="${CAT.getBlocked_catogery()}" var="cat">
+                                        <form:checkbox path="blocked_catogery" value="cat" id="${cat}" /> <label for="${cat}"> <c:out value="${cat}"/></label> 	
+                                    </c:forEach> 
+
+
 
 
                                 </div>
