@@ -1,4 +1,5 @@
 <%@page import="java.util.Date"%>
+<%@page import="java.time.LocalDateTime"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri = "http://www.springframework.org/tags/form" prefix = "form"%>
 <%@ page session="false" %>
@@ -175,12 +176,34 @@
             </div>            
             <!-- END STEPS -->
 
+		<%! 
+			String order_id="";
+			String year="";
+			String month="";
+			String date="";
+			String hr="";
+			String minute="";
+		%>
+		
+		<%
+		LocalDateTime localDate = LocalDateTime.now();
+		year=""+localDate.getYear();
+		year=year.substring(2,4);
+		month=""+localDate.getMonthValue();
+		date=""+localDate.getDayOfMonth();
+		hr=""+localDate.getHour();
+		minute=""+localDate.getMinute();
+		
+		order_id=request.getAttribute("act_id")+year+""+month+""+date+""+hr+""+minute;
+		//out.print("<h1>"+order_id+"</h1>");
+		%>
 
 
-            <form method="post" name="customerData" action="ccvTopUpRequestHandler">
+
+	<form method="post" name="customerData" action="ccvTopUpRequestHandler">
 
 
-                <input type="hidden" name="actno" value="${user_details.getActno() }">				
+            <input type="hidden" name="actno" value="${user_details.getActno() }">				
             <input type="hidden" name="trans_amount" value="${topUp.getAmount() }">
 
             <input type="hidden" name="planSize" value="${topUp.getPlanSize() }">

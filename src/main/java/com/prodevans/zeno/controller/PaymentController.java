@@ -102,6 +102,7 @@ public class PaymentController {
 		{
 			SessionDetails user = (SessionDetails) session.getAttribute("user");
 			model.addAttribute("user_details", user);
+			model.addAttribute("act_id",user.getActid());
 	
 			// for getting invoice details
 			InvoiceDetails invoiceDetails = invoiceDAOImpl.getInvoice(user.getActno());

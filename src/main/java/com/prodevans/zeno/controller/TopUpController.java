@@ -25,6 +25,7 @@ public class TopUpController
 		{
 			SessionDetails user = (SessionDetails) session.getAttribute("user");
 			model.addAttribute("user_details", user);
+			model.addAttribute("act_id",user.getActid());
 			
 			TopUp topUp=new TopUp();
 			

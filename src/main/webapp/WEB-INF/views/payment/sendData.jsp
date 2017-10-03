@@ -1,4 +1,7 @@
 <%@page import="java.util.Date"%>
+<%@page import="java.time.LocalDateTime"%>
+<%@page import="java.time.format.DateTimeFormatter"%>
+
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri = "http://www.springframework.org/tags/form" prefix = "form"%>
 <%@ page session="false" %>
@@ -278,7 +281,28 @@
         -->
 
 
-
+		<%! 
+			String order_id="";
+			String year="";
+			String month="";
+			String date="";
+			String hr="";
+			String minute="";
+		%>
+		
+		<%
+		LocalDateTime localDate = LocalDateTime.now();
+		year=""+localDate.getYear();
+		year=year.substring(2,4);
+		month=""+localDate.getMonthValue();
+		date=""+localDate.getDayOfMonth();
+		hr=""+localDate.getHour();
+		minute=""+localDate.getMinute();
+		
+		order_id=request.getAttribute("act_id")+year+""+month+""+date+""+hr+""+minute;
+		%>
+		
+		
         <form method="post" name="customerData" action="ccavRequestHandler" >
 
             <input type="hidden" name="actno" value="${user_details.getActno() }">				
@@ -375,7 +399,7 @@
 
             <input readonly="readonly" type="hidden" name="tid" id="tid" value=""/><!-- Transaction ID -->
             <input type="hidden" name="merchant_id" value="127191"/><!-- Merchant Id	: -->
-            <input type="hidden" name="order_id" value="1236556561"/><!-- Order Id	: -->
+            <input type="hidden" name="order_id" value="<%=order_id%>"/><!-- Order Id	: -->
             <input type="hidden" name="amount" value="${invoiceDetails.getAmount() }"   />
             <input type="hidden" name="currency" value="INR"/><!-- Currency	: -->
             <input type="hidden" name="redirect_url" value="http://www.oneeight.co.in/zeno/ccavResponseHandler"/><!-- Redirect URL	: -->
@@ -383,7 +407,7 @@
             <input type="hidden" name="language" value="EN"/><!-- Language	: -->
             <input readonly="readonly" type="hidden" name="tid" id="tid" value=""/><!-- Transction ID -->
             <input type="hidden" name="merchant_id" value="127191"/><!-- Merchant ID -->
-            <input type="hidden" name="order_id" value="123654789"/><!-- order id -->
+            <input type="hidden" name="order_id" value="<%=order_id%>"/><!-- order id -->
             <input type="hidden" name="amount" value="${invoiceDetails.getAmount() }"/><!--Amount  -->
             <input type="hidden" name="currency" value="INR"/><!-- currency -->
             <input type="hidden" name="redirect_url" value="http://www.oneeight.co.in/zeno/ccavResponseHandler"/><!-- Redirect URL -->
