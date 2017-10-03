@@ -195,7 +195,7 @@
 		minute=""+localDate.getMinute();
 		
 		order_id=request.getAttribute("act_id")+year+""+month+""+date+""+hr+""+minute;
-		out.print("<h1>"+order_id+"</h1>");
+		//out.print("<h1>"+order_id+"</h1>");
 		
 		%>
 
