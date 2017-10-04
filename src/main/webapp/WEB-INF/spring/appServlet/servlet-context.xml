@@ -21,6 +21,7 @@
 	<resources mapping="/bootstrap/**" location="/resources/bootstrap/" />
 	<resources mapping="/plugins/**" location="/resources/plugins/" />
 	
+	
 	<resources mapping="/slider-resource/**" location="/resources/slider-resource/" />
 	
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 
