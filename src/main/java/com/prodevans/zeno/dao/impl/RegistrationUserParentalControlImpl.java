@@ -143,9 +143,24 @@ public class RegistrationUserParentalControlImpl implements RegistrationUserPare
         boolean final_result = false;
         final_result = checkIpAddress(user_name, domain_id);
         if(final_result){
-            final_result = checkRule(user_name, domain_id);
+            final_result = checkFilter(user_name + RestConfig.ADVANCED_FILTER, domain_id);
+            if(final_result){
+                //final_result = checkFilter(user_name + RestConfig.CUSTOM_FILTER, domain_id);
+                if(final_result){
+                    final_result = checkRule(user_name, domain_id);
+                    return final_result;
+                }
+                else{
+                    return final_result;
+                }
+            }
+            else{
+                return final_result;
+            }
+            
+        }else{
+            return final_result;
         }
-        return final_result;
     }
 
     /**
@@ -228,6 +243,81 @@ public class RegistrationUserParentalControlImpl implements RegistrationUserPare
         }
     }
 
+    /**
+     * It check the Filter object is present in the versa or not.
+     * @param user_name
+     * @return 
+     */
+    private boolean checkFilter(String filter_name, String domain_id) {
+        
+
+        /**
+         * Creation of the response object with the string data type. Because it
+         * return the JSON.
+         */
+        ResponseEntity<String> person;
+
+        /**
+         * Headers for the response type if we want to return JSON response then
+         * we require to add.
+         */
+        HttpHeaders headers = new HttpHeaders();
+
+        /**
+         * Adding of the response header with application/json type
+         */
+        headers.add("Accept", "application/json");
+
+        /**
+         * Adding of the request header with application/json type
+         */
+        headers.setContentType(MediaType.APPLICATION_JSON);
+
+        /**
+         * Creation of the Entity object for the adding the headers and JSON
+         * request body into request.
+         */
+        entity = new HttpEntity<>(headers);
+
+        /**
+         * Creation of REST TEMPLET object for the executing of the REST calls.
+         */
+        restTemplate = new RestTemplate();
+
+        /**
+         * Adding the basic type of authentication on the REST TEMPLETE.
+         */
+        restTemplate.getInterceptors()
+                .add(new BasicAuthorizationInterceptor(RestConfig.USER_NAME, RestConfig.PASSWORD));
+
+        /**
+         * Execution of the REST call with basic authentication and JSON
+         * response type
+         */
+        try {
+            Map<String, String> map = new HashMap<String, String>();
+            map.put("domain_id", domain_id);
+            map.put("filter_name", filter_name);
+            person = restTemplate.exchange(RestConfig.SEARCH_FILTER_OBJECT, HttpMethod.GET, entity, String.class, map);
+
+            //status code 200 specify the address is already present.
+            if (person.getStatusCodeValue() == 200) {
+                logger.error("filter already exixts  : " + filter_name);
+                return true;
+            } else {
+                logger.error("filter not exixts  : " + filter_name);
+                return false;
+            }
+        } catch (RestClientException e) {
+            if (e.getMessage().contains("404")) {
+                logger.error("filter not exixts  : " + filter_name);
+                return false;
+            } else {
+                logger.error(e.getMessage());
+                return false;
+            }
+        }
+    }
     /**
      * this method is used for the check the access policy rule is present or not.
      * @param user_name --- ActId from the inventum.
@@ -344,19 +434,41 @@ public class RegistrationUserParentalControlImpl implements RegistrationUserPare
         }
 
         /**
-         * Business logic for the creating the Filter object.
+         * Business Logic for get predefined category
+         */
+        
+        JSONArray predefined_category = getPredefinedCategory();
+        
+        /**
+         * Business logic for the creating the Advanced Filter object.
          */
         int filter_object_result = 0;
         try {
-            filter_object_result = createProfileFilter(user_name,domain_id);
+            
+            filter_object_result = createProfileFilter(user_name+RestConfig.ADVANCED_FILTER,domain_id,predefined_category );
         } catch (Exception e) {
             // If status code returns 409 means the filter is already exists.
             if (e.getMessage().contains("409")) {
-                logger.error("filter already exixts user_name : " + user_name);
+                logger.error("Advanced filter already exixts user_name : " + user_name);
             } else {
                 logger.error(e.getMessage());
             }
         }
+        
+        /**
+         * Business logic for the creating the Custom Filter object.
+         */
+//         filter_object_result = 0;
+//        try {
+//            filter_object_result = createProfileFilter(user_name+RestConfig.CUSTOM_FILTER,domain_id, predefined_category);
+//        } catch (Exception e) {
+//            // If status code returns 409 means the filter is already exists.
+//            if (e.getMessage().contains("409")) {
+//                logger.error("Custom filter already exixts user_name : " + user_name);
+//            } else {
+//                logger.error(e.getMessage());
+//            }
+//        }
 
         // If status code returns 201 means the successful created the filter object.
         if (filter_object_result == 201) {
@@ -483,12 +595,8 @@ public class RegistrationUserParentalControlImpl implements RegistrationUserPare
      * @param user_name -- address object in the versa.
      * @return -- response from the user.
      */
-    private int createProfileFilter(String user_name,String domain_id) {
-        /*
-        * change the user name as per the requirements of business logic.
-        * filter ex. OE_000007_filter_object
-         */
-        user_name = user_name.trim() + "_filter_object";
+    private int createProfileFilter(String filter_name, String domain_id, JSONArray predefined_category) {
+       
 
         /*
 		 * Creation of the response object with the string data type. Because it return
@@ -517,13 +625,21 @@ public class RegistrationUserParentalControlImpl implements RegistrationUserPare
          */
         JSONObject request_data = new JSONObject();
         JSONObject request_attributes = new JSONObject();
-        request_attributes.put("name", user_name);
+        request_attributes.put("name", filter_name);
         request_attributes.put("default-action", new JSONObject().put("predefined", "allow"));
         request_attributes.put("decrypt-bypass", false);
         request_attributes.put("cloud-lookup-mode", "never");
         request_attributes.put("lef-profile", "Default-Logging-Profile");
-        request_attributes.put("category-action-map", new JSONObject().put("category-action", new JSONArray()));
-
+        JSONArray category_action = new JSONArray();
+        
+        JSONObject allowed = new JSONObject();
+        allowed.put("name", "allowed");
+        allowed.put("action", new JSONObject().put("predefined", "block"));
+        allowed.put("url-categories", new JSONObject().put("predefined", predefined_category));
+        category_action.put(allowed);
+              
+        
+        request_attributes.put("category-action-map", new JSONObject().put("category-action",category_action));
         JSONObject blacklist = new JSONObject();
         blacklist.put("action", new JSONObject().put("predefined", "block"));
         blacklist.put("patterns", new JSONArray());
@@ -579,7 +695,7 @@ public class RegistrationUserParentalControlImpl implements RegistrationUserPare
          * Access policy rule ex. OE_000007 _access_policy_rule
          */
         String access_policy_rule = user_name.trim() + "_access_policy_rule";
-        String filter_policy = "basic_filter_zeno";
+        String filter_policy = user_name.trim()+RestConfig.ADVANCED_FILTER.trim();
         String address_object = user_name.trim() + "_address_object";
 
         /*
@@ -789,5 +905,64 @@ public class RegistrationUserParentalControlImpl implements RegistrationUserPare
         logger.info("Status code after the rearrangement : " + rule.getStatusCodeValue());
 
         return rule.getStatusCodeValue();
+    }
+
+    private JSONArray getPredefinedCategory() {
+        //Creation of the response object with the string data type. Because it return
+        //the JSON.
+        ResponseEntity<String> category;
+
+        /**
+         * Headers for the response type if we want to return JSON response then
+         * we require to add.
+         */
+        HttpHeaders headers = new HttpHeaders();
+
+        /**
+         * Adding of the response header with application/json type
+         */
+        headers.add("Accept", "application/json");
+
+        /*
+		 * Adding of the request header with application/json type
+         */
+        headers.setContentType(MediaType.APPLICATION_JSON);
+
+        /**
+         * Creation of the Entity object for the adding the headers and JSON
+         * request body into request.
+         */
+        entity = new HttpEntity<>(headers);
+
+        /**
+         * Creation of REST TEMPLET object for the executing of the REST calls.
+         */
+        restTemplate = new RestTemplate();
+
+        /**
+         * Adding the basic type of authentication on the REST TEMPLETE.
+         */
+        restTemplate.getInterceptors()
+                .add(new BasicAuthorizationInterceptor(RestConfig.USER_NAME, RestConfig.PASSWORD));
+
+        /**
+         * Execution of the REST call with basic authentication and JSON
+         * response type
+         */
+        
+       
+           
+        category = restTemplate.exchange(RestConfig.LIST_PREDEFINED_CATEGORY, HttpMethod.GET, entity, String.class);
+        
+        JSONArray cat_array = new JSONArray();
+        
+        JSONArray responce = new JSONObject(category.getBody()).getJSONArray("url-category");
+        
+        for(Object obj : responce){
+            JSONObject ob = (JSONObject) obj;
+            cat_array.put(ob.get("category-name"));
+        }
+
+        return cat_array;
     }
 }

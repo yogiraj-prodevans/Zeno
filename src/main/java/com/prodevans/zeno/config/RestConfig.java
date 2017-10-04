@@ -32,6 +32,18 @@ public interface RestConfig {
      */
     String PASSWORD = "Oneeight@admin18";
 
+    
+    /**
+     * Advanced Filter
+     */
+    String ADVANCED_FILTER = "_advanced_filter";
+    
+    /**
+     * Custom Filter
+     */
+    String CUSTOM_FILTER = "_custom_filter";
+    
+    
     /**
      * API url for get the address object list.
      */
@@ -87,4 +99,17 @@ public interface RestConfig {
      */
     String EDIT_URL_CATEGORY_LIST = HOST + "/api/config/appliances/{domain_id}/orgs/org-services/OneEight/security/profiles/url-filtering/url-filtering-profile/{filter_name}/category-action-map/category-action/{map_name}";
 
+    /**
+     * API URL for search filter object.
+     */
+    String SEARCH_FILTER_OBJECT = HOST + "/api/config/devices/device/{domain_id}/config/orgs/org-services/OneEight/security/profiles/url-filtering/url-filtering-profile/{filter_name}";
+
+    /**
+     * API URL for get list of predefined category.
+     */
+    String LIST_PREDEFINED_CATEGORY = HOST + "/api/config/nms/provider/predefined/url-categories/url-category";
+
+    
+    
+    
 }

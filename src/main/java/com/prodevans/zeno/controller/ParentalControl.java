@@ -16,14 +16,11 @@ import com.prodevans.zeno.dao.impl.RegistrationUserParentalControlImpl;
 import com.prodevans.zeno.pojo.CategoryList;
 import com.prodevans.zeno.pojo.ParentalControlDetails;
 import com.prodevans.zeno.pojo.SessionDetails;
-import java.util.ArrayList;
 import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -66,9 +63,10 @@ public class ParentalControl {
         protection_level.put("", "");
         //Revoved 
         //protection_level.put("elementary_filter_zeno", "ELEMENTRY");
-        protection_level.put("basic_filter_zeno", "DEFAULT");
+        //Removed in version 1.2
+        //protection_level.put("basic_filter_zeno", "DEFAULT");
         protection_level.put("advance_filter_zeno", "ADVANCED");
-       protection_level.put("custom_filter", "CUSTOM");
+        protection_level.put("custom_filter", "CUSTOM");
 
         model.addAttribute("protection_level", protection_level);
 
