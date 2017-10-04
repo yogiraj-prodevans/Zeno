@@ -8,7 +8,7 @@
         <title>Parental Control</title>
         <%-- Including the css style sheets--%>
         <link
-            href=".${pageContext.request.contextPath }/bootstrap/css/bootstrap.min.css"
+            href="${pageContext.request.contextPath }/bootstrap/css/bootstrap.min.css"
             rel="stylesheet" media="screen">
         <link
             href="${pageContext.request.contextPath }/bootstrap/css/bootstrap-datetimepicker.min.css"
@@ -593,7 +593,7 @@
             <script type="text/javascript"
                     src="${pageContext.request.contextPath}/bootstrap/js/bootstrap-datetimepicker.js"
             charset="UTF-8"></script>
-            <%--  <script type="text/javascript" src="../js/locales/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>--%>
+         
             <script type="text/javascript">
                 $('.form_datetime').datetimepicker({
                     language: 'en',
