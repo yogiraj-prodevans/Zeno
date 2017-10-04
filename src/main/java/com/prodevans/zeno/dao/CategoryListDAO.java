@@ -13,4 +13,5 @@ import com.prodevans.zeno.pojo.CategoryList;
  */
 public interface CategoryListDAO {
     CategoryList getCategoryList(String protection_status, String domain_id);
+    boolean updateCategoryList(String block_category, String allow_category,String domain_id,String user_id,String select_update);
 }

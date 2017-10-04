@@ -82,4 +82,9 @@ public interface RestConfig {
      */
     String URL_CATEGORY_LIST_PROTECTION_LEVEL = HOST + "/api/config/appliances/{domain_id}/orgs/org-services/OneEight/security/profiles/url-filtering/url-filtering-profile/{protection_status}/category-action-map/category-action";
 
+    /**
+     * API URL for edit category list with specific filter.
+     */
+    String EDIT_URL_CATEGORY_LIST = HOST + "/api/config/appliances/{domain_id}/orgs/org-services/OneEight/security/profiles/url-filtering/url-filtering-profile/{filter_name}/category-action-map/category-action/{map_name}";
+
 }

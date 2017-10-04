@@ -7,10 +7,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Parental Control</title>
 <%-- Including the css style sheets--%>
-    <link href=".${pageContext.request.contextPath }/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="${pageContext.request.contextPath }/bootstrap/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+<link
+	href=".${pageContext.request.contextPath }/bootstrap/css/bootstrap.min.css"
+	rel="stylesheet" media="screen">
+<link
+	href="${pageContext.request.contextPath }/bootstrap/css/bootstrap-datetimepicker.min.css"
+	rel="stylesheet" media="screen">
 
-   <%--End of Including--%>
+<%--End of Including--%>
 
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -87,12 +91,6 @@ option:hover {
                 background-position:right center;
                 }
                 */
-
-/*  Added by ABhinish */
-select {
-	width: 100%;
-}
-
 .weekDays-selector input {
 	display: none !important;
 	width: 30px;
@@ -217,7 +215,9 @@ input[type="checkbox"]+label {
 	<div class="container">
 
 		<div class="col-md-12">
-			<p><<h1>With Surf Safe, you're in control</h1></p>
+			<p><
+			<h1>With Surf Safe, you're in control</h1>
+			</p>
 
 			<p>
 			<h3>Your home is your safe space and you deserve to keep it that
@@ -246,8 +246,7 @@ input[type="checkbox"]+label {
 
 				<div class="col-md-4">
 					<div class="col-md-2">
-						<a href="${pageContext.request.contextPath }/control-category"
-							></a>
+						<a href="${pageContext.request.contextPath }/control-category"></a>
 					</div>
 					<h4 style="padding-top: 1%;" class="mb-pt-1">Change your
 						protection status</h4>
@@ -263,44 +262,47 @@ input[type="checkbox"]+label {
 					<form:hidden path="user_name"></form:hidden>
 				</div>
 
-<!--  Schedule Status--START  -->
+				<!--  Schedule Status--START  -->
 
 
 
 
-			<div class="col-md-12">
-<hr></div>
+				<div class="col-md-12">
+					<hr>
+				</div>
 
-<div class="col-md-12">
+				<div class="col-md-12">
 					<!-- <div class="col-md-4"> -->
 					<div class="row">
 
-						<div class="col-md-12">
-							<hr>
-							<!-- this is the start -->
-						</div>
+						
 						<div class="col-md-12">
 							<br>
 						</div>
 						<div class="col-md-12">
-							<br><h4>Choose to Surf Safe and ENJOY !</h4>
+							<br>
+							<h4>Choose to Surf Safe and ENJOY !</h4>
 						</div>
 
-						<div class="col-md-12" >
-						<div class="col-md-3" style="padding-left: 0px">
-							<form action="#">
-								<h4>Schedule Status:</h4></form></div><div class="col-md-3">
+						<div class="col-md-12">
+							<div class="col-md-3" style="padding-left: 0px">
+								
+									<h4>Schedule Status:</h4>
+								
+							</div>
+							<div class="col-md-3">
 								<select name="status">
 									<option value="Enable">ENABLE</option>
 									<option value="Disable">DISABLE</option>
 
-								</select> </div>
-								
-								<!-- ======FORM START======= -->
-							
+								</select>
+							</div>
 
-<!--  Schedule Status--END  -->
-<!-- Time Based Control--START -->
+							<!-- ======FORM START======= -->
+
+
+							<!--  Schedule Status--END  -->
+							<!-- Time Based Control--START -->
 						</div>
 						<div class="col-md-12">
 							<hr>
@@ -309,55 +311,66 @@ input[type="checkbox"]+label {
 							<br>
 						</div>
 						<div class="col-md-12">
-							<br><h4>During a day, when do you want your Surf Safe controls
-							to be active? Choose a time slot</h4>
+							<br>
+							<h4>During a day, when do you want your Surf Safe controls
+								to be active? Choose a time slot</h4>
 						</div>
 						<form>
 							<div class="col-md-12">
 								<input type="radio" name="gender" value="Time Based Control"
 									checked>Time Based Control<br> <br>
-								
+
 							</div>
 							<!-- <div class="col-md-8"><br></div>
 							 -->
-							
+
 							<div class="col-md-12">
-							<div class="col-md-6">
+								<div class="col-md-6">
 
-								
-								 <div class="form-group">
-                                <label for="dtp_input3" class="col-md-3 control-label">Start Time </label>
-                                <div class="input-group date form_time col-md-9" data-date="" data-date-format="hh:ii" data-link-field="dtp_input3" data-link-format="hh:ii">
-                                    <input class="form-control" size="16" type="text" value="" readonly>
-                                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
-                                    <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
-                                </div>
-                                <input type="hidden" id="dtp_input3" value="" /><br/>
-                            </div>
-								
+
+									<div class="form-group">
+										<label for="dtp_input3" class="col-md-3 control-label">Start
+											Time </label>
+										<div class="input-group date form_time col-md-9" data-date=""
+											data-date-format="hh:ii" data-link-field="dtp_input3"
+											data-link-format="hh:ii">
+											<input class="form-control" size="16" type="text" value=""
+												readonly> <span class="input-group-addon"><span
+												class="glyphicon glyphicon-remove"></span></span> <span
+												class="input-group-addon"><span
+												class="glyphicon glyphicon-time"></span></span>
+										</div>
+										<input type="hidden" id="dtp_input3" value="" /><br />
+									</div>
+
+								</div>
+
+
+								<div class="col-md-6">
+
+									<div class="form-group">
+										<label for="dtp_input3" class="col-md-3 control-label">End
+											Time </label>
+										<div class="input-group date form_time col-md-9" data-date=""
+											data-date-format="hh:ii" data-link-field="dtp_input3"
+											data-link-format="hh:ii">
+											<input class="form-control" size="16" type="text" value=""
+												readonly> <span class="input-group-addon"><span
+												class="glyphicon glyphicon-remove"></span></span> <span
+												class="input-group-addon"><span
+												class="glyphicon glyphicon-time"></span></span>
+										</div>
+										<input type="hidden" id="dtp_input3" value="" /><br />
+									</div>
+
+
+								</div>
+
 							</div>
-							
 
-						<div class="col-md-6">
 
-								 <div class="form-group">
-                                <label for="dtp_input3" class="col-md-3 control-label">End Time </label>
-                                <div class="input-group date form_time col-md-9" data-date="" data-date-format="hh:ii" data-link-field="dtp_input3" data-link-format="hh:ii">
-                                    <input class="form-control" size="16" type="text" value="" readonly>
-                                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
-                                    <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
-                                </div>
-                                <input type="hidden" id="dtp_input3" value="" /><br/>
-                            </div>
-								
-
-							</div>
-							
-						</div>
-						
-						
-<!-- Time Based Control--END -->
-<!-- Day Based Control--START -->
+							<!-- Time Based Control--END -->
+							<!-- Day Based Control--START -->
 							<div class="col-md-12">
 								<hr>
 							</div>
@@ -365,43 +378,44 @@ input[type="checkbox"]+label {
 								<br>
 							</div>
 							<div class="col-md-12">
-								<br><h4>Should your Surf Safe controls be active only on
-								certain days? Choose days of the Week</h4>
+								<br>
+								<h4>Should your Surf Safe controls be active only on
+									certain days? Choose days of the Week</h4>
 							</div>
 
 
 							<div class="col-md-12">
 								<input type="radio" name="gender" value="Day Based Control">Day
 								Based Control<br> <br>
-								
+
 							</div>
 							<div class="col-md-12">
-							<div class="col-md-2"></div>
-									<div class="col-md-8">
-								<div class="weekDays-selector">
-									<input type="checkbox" id="weekday-mon" class="weekday" /> <label
-										for="weekday-mon">Mon</label> <input type="checkbox"
-										id="weekday-tue" class="weekday" /> <label for="weekday-tue">Tue</label>
-									<input type="checkbox" id="weekday-wed" class="weekday" /> <label
-										for="weekday-wed">Wed</label> <input type="checkbox"
-										id="weekday-thu" class="weekday" /> <label for="weekday-thu">Thus</label>
-									<input type="checkbox" id="weekday-fri" class="weekday" /> <label
-										for="weekday-fri">Fri</label> <input type="checkbox"
-										id="weekday-sat" class="weekday" /> <label for="weekday-sat">Sat</label>
-									<input type="checkbox" id="weekday-sun" class="weekday" /> <label
-										for="weekday-sun">Sun</label> 
-										</div>
-										
-										<!-- <input type="botton"
+								<div class="col-md-2"></div>
+								<div class="col-md-8">
+									<div class="weekDays-selector">
+										<input type="checkbox" id="weekday-mon" class="weekday" /> <label
+											for="weekday-mon">Mon</label> <input type="checkbox"
+											id="weekday-tue" class="weekday" /> <label for="weekday-tue">Tue</label>
+										<input type="checkbox" id="weekday-wed" class="weekday" /> <label
+											for="weekday-wed">Wed</label> <input type="checkbox"
+											id="weekday-thu" class="weekday" /> <label for="weekday-thu">Thus</label>
+										<input type="checkbox" id="weekday-fri" class="weekday" /> <label
+											for="weekday-fri">Fri</label> <input type="checkbox"
+											id="weekday-sat" class="weekday" /> <label for="weekday-sat">Sat</label>
+										<input type="checkbox" id="weekday-sun" class="weekday" /> <label
+											for="weekday-sun">Sun</label>
+									</div>
+
+									<!-- <input type="botton"
 										id="weekday-all" class="weekday" /> <label for="weekday-all"
 										style="background: #F44336;">This Week</label> -->
 								</div>
-								
-							<div class="col-md-2"></div>
+
+								<div class="col-md-2"></div>
 
 							</div>
-<!-- Day Based Control--END -->
-<!-- Date Based Control--START -->
+							<!-- Day Based Control--END -->
+							<!-- Date Based Control--START -->
 							<div class="col-md-12">
 								<hr>
 							</div>
@@ -409,45 +423,59 @@ input[type="checkbox"]+label {
 								<br>
 							</div>
 							<div class="col-md-12">
-								<br><h4>Want to activate Advance/Custom Surf Safe for a
-								specific period? Choose dates</h4>
+								<br>
+								<h4>Want to activate Advance/Custom Surf Safe for a
+									specific period? Choose dates</h4>
 							</div>
 
 							<div class="col-md-12">
 								<input type="radio" name="gender" value="Date Based Control">Date
-								Based Control<br><br>
-								
+								Based Control<br>
+								<br>
+
 							</div>
-							
+
 							<div class="col-md-12">
-							<div class="col-md-6">
-							 <div class="form-group">
-                                <label for="dtp_input1" class="col-md-4 control-label">Start Date and Time</label>
-                                <div class="input-group date form_datetime col-md-8 data-date="1979-09-16T05:25:07Z" data-date-format="dd MM yyyy - HH:ii" data-link-field="dtp_input1">
-                                    <input class="form-control" size="16" type="text" value="" readonly>
-                                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
-                                    <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
-                                </div>
-                                <input type="hidden" id="dtp_input1" value="" /><br/>
-                            </div>
-                            </div>
-                            <div class="col-md-6">
-                             <div class="form-group">
-                                <label for="dtp_input1" class="col-md-4 control-label">End Date and Time</label>
-                                <div class="input-group date form_datetime col-md-8" data-date="1979-09-16T05:25:07Z" data-date-format="dd MM yyyy - HH:ii" data-link-field="dtp_input1">
-                                    <input class="form-control" size="16" type="text" value="" readonly>
-                                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
-                                    <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
-                                </div>
-                                <input type="hidden" id="dtp_input1" value="" /><br/>
-                            </div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="dtp_input1" class="col-md-4 control-label">Start
+											Date and Time</label>
+										<div
+											class="input-group date form_datetime col-md-8 data-date="
+											1979-09-16T05:25:07Z" data-date-format="dd MM yyyy - HH:ii"
+											data-link-field="dtp_input1">
+											<input class="form-control" size="16" type="text" value=""
+												readonly> <span class="input-group-addon"><span
+												class="glyphicon glyphicon-remove"></span></span> <span
+												class="input-group-addon"><span
+												class="glyphicon glyphicon-th"></span></span>
+										</div>
+										<input type="hidden" id="dtp_input1" value="" /><br />
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="dtp_input1" class="col-md-4 control-label">End
+											Date and Time</label>
+										<div class="input-group date form_datetime col-md-8"
+											data-date="1979-09-16T05:25:07Z"
+											data-date-format="dd MM yyyy - HH:ii"
+											data-link-field="dtp_input1">
+											<input class="form-control" size="16" type="text" value=""
+												readonly> <span class="input-group-addon"><span
+												class="glyphicon glyphicon-remove"></span></span> <span
+												class="input-group-addon"><span
+												class="glyphicon glyphicon-th"></span></span>
+										</div>
+										<input type="hidden" id="dtp_input1" value="" /><br />
+									</div>
+								</div>
 							</div>
-							</div>
-							
-							
-							
-								
-							
+
+
+
+
+
 						</form>
 						<!-- ======FORM END======= -->
 					</div>
@@ -459,7 +487,7 @@ input[type="checkbox"]+label {
 
 
 
-<%-- 
+				<%-- 
 				<div class="col-md-12">
 				Test Area of the time and date picker
 
@@ -500,95 +528,105 @@ input[type="checkbox"]+label {
 
  --%>
 
-              <!--   </div> -->
+				<!--   </div> -->
 
-<!-- ======IMPLEMENT BUTTON--START======= -->
-
-		</form:form>
-		
-	
-	</div>
+				<!-- ======IMPLEMENT BUTTON--START======= -->
 
 
-	<div class="col-md-12" style="text-align: right; margin-top: 30px;">
-		<button id="ssendnow" class="btn billButton font-h2" type="submit">IMPLEMENT</button>
-	</div>
+			</form:form>
 
-<!-- ======IMPLEMENT BUTTON--END======= -->
 
-	
+		</div>
 
 
 
+		<div class="col-md-12" style="text-align: right; margin-top: 30px;">
+			<button id="ssendnow" class="btn billButton font-h2" type="submit">IMPLEMENT</button>
+		</div>
+
+		<!-- ======IMPLEMENT BUTTON--END======= -->
 
 
 
-	<h3 style="color: green; text-align: center;">
-		<b> <c:if test="${ not empty error}">${error}</c:if></b>
-	</h3>
-	<h3 style="color: red; text-align: center;">
-		<b> <c:if test="${ not empty message}">${message}</c:if></b>
-	</h3>
+		<!-- included pop up -->
+		<jsp:include page="component/pop-up.jsp"></jsp:include>
 
-	<div class="pt-30"></div>
+		<jsp:include page="component/footer.jsp"></jsp:include>
 
-	<!-- included pop up -->
-	<jsp:include page="component/pop-up.jsp"></jsp:include>
+		<!-- Load javascripts at bottom, this will reduce page load time -->
+		<jsp:include page="component/js.jsp"></jsp:include>
+		<!-- END BODY -->
+		<script>
+			$(document).ready(function() {
+				$('[data-toggle="tooltip"]').tooltip();
+				//    $('current_protectionstatus').title = "hi";
+			});
+		</script>
 
-	<jsp:include page="component/footer.jsp"></jsp:include>
+		<h3 style="color: green; text-align: center;">
+			<b> <c:if test="${ not empty error}">${error}</c:if></b>
+		</h3>
+		<h3 style="color: red; text-align: center;">
+			<b> <c:if test="${ not empty message}">${message}</c:if></b>
+		</h3>
+
+		<div class="pt-30"></div>
 
 
-	<!-- Load javascripts at bottom, this will reduce page load time -->
-	<jsp:include page="component/js.jsp"></jsp:include>
 
-			<!-- END BODY -->
-		
+
+
+		<!-- END BODY -->
+
 		<!-- Imports for Date and Time Pickers modules  -->
-		
 
 
-  <%------SCRIPT TESTING AREA--------%>
 
-    <script type="text/javascript" src="${pageContext.request.contextPath}/plugins/jquery.min.js" charset="UTF-8"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/bootstrap/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
-  <%--  <script type="text/javascript" src="../js/locales/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>--%>
-    <script type="text/javascript">
-        $('.form_datetime').datetimepicker({
-            language:  'en',
-            format: "dd MM yyyy - hh:ii",
-            use24hours: true,
-            weekStart: 1,
-            todayBtn:  1,
-            autoclose: 1,
-            todayHighlight: 1,
-            startView: 2,
-            forceParse: 0,
-            showMeridian: 0
-        });
-       /*  $('.form_date').datetimepicker({
-            language:  'en',
-            weekStart: 1,
-            todayBtn:  1,
-            autoclose: 1,
-            todayHighlight: 1,
-            startView: 2,
-            minView: 2,
-            forceParse: 0
-        }); */
-        $('.form_time').datetimepicker({
-            language:  'en',
-            weekStart: 1,
-            todayBtn:  1,
-            autoclose: 1,
-            todayHighlight: 1,
-            startView: 1,
-            minView: 0,
-            maxView: 1,
-            forceParse: 0
-        });
-    </script>
+		<%------SCRIPT  AREA--------%>
 
-
+		<script type="text/javascript"
+			src="${pageContext.request.contextPath}/plugins/jquery.min.js"
+			charset="UTF-8"></script>
+		<script type="text/javascript"
+			src="${pageContext.request.contextPath}/bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript"
+			src="${pageContext.request.contextPath}/bootstrap/js/bootstrap-datetimepicker.js"
+			charset="UTF-8"></script>
+		<%--  <script type="text/javascript" src="../js/locales/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>--%>
+		<script type="text/javascript">
+			$('.form_datetime').datetimepicker({
+				language : 'en',
+				format : "dd MM yyyy - hh:ii",
+				use24hours : true,
+				weekStart : 1,
+				todayBtn : 1,
+				autoclose : 1,
+				todayHighlight : 1,
+				startView : 2,
+				forceParse : 0,
+				showMeridian : 0
+			});
+			/*  $('.form_date').datetimepicker({
+			     language:  'en',
+			     weekStart: 1,
+			     todayBtn:  1,
+			     autoclose: 1,
+			     todayHighlight: 1,
+			     startView: 2,
+			     minView: 2,
+			     forceParse: 0
+			 }); */
+			$('.form_time').datetimepicker({
+				language : 'en',
+				weekStart : 1,
+				todayBtn : 1,
+				autoclose : 1,
+				todayHighlight : 1,
+				startView : 1,
+				minView : 0,
+				maxView : 1,
+				forceParse : 0
+			});
+		</script>
 </body>
 </html>
