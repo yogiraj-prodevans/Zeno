@@ -202,7 +202,7 @@
         </div>
 
         <div class="col-md-12 firstRow pt-20"
-             style="background-image: url('${pageContext.request.contextPath }/img/red_long.png');" style="clear: both">
+             style="background-image: url('/img/red_long.png');" style="clear: both">
             <div class="col-md-5" style="padding-left: 3.8%;">
                 <h1>Parental Control</h1>
             </div>
