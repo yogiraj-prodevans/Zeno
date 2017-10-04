@@ -259,7 +259,12 @@
                         <form:hidden path="request_data"></form:hidden>
                         <form:hidden path="user_name"></form:hidden>
                         </div>
-
+                         <!-- ======IMPLEMENT BUTTON--START======= -->
+                    <div class="col-md-12" style="text-align: right; margin-top: 30px;">
+                        <a  class="btn billButton font-h2" href="${pageContext.request.contextPath }/control/${ParentalControlDetails.getProtectionStatusName()}">MANAGE ${ParentalControlDetails.getProtectionStatusName()}</a>
+                        <button  class="btn billButton font-h2" type="submit">IMPLEMENT</button>
+                    </div>
+ </form:form>
                         <!--  Schedule Status--START  -->
 
 
@@ -531,7 +536,7 @@
                         <button id="ssendnow" class="btn billButton font-h2" type="submit">IMPLEMENT</button>
                     </div>
 
-                </form:form>
+               
 
 
             </div>
