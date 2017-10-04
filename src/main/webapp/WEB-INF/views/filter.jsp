@@ -39,25 +39,10 @@
             <style>
                 input[type="text"] {
                     width: 98% !important;
+                   
                 }
 
-                @media ( max-width : 950px) {
-                    .NameWidth {
-                        max-width: 98 !important;
-                    }
-                }
-
-                @media ( max-width : 750px) {
-                    .plForMobile {
-                        padding-left: 3% !important;
-                    }
-                }
-
-                @media ( max-width : 380px) {
-                    select {
-                        width: 98% !important;
-                    }
-                }
+               
 
                 select {
                     background-image: url(img/varrow2.png);
@@ -107,6 +92,7 @@
                     background: #FAFAFA;
                     padding:unset;
                 }
+                
             </style>
 
 
@@ -252,44 +238,41 @@
             </div>
             <div id="Custom" class="tab-pane fade">
                 <div class="col-md-12" style=" min-height: 350px; ">
+                    <form class="form-inline" >
+                        <div class="form-group col-md-5 col-md-offset-2" style="margin-top:10px">
+                            <label for="email" class="col-md-4">Email:</label>
+                            <div class="col-md-8">
+                                <input type="text" class="" style="width:100%" id="email" placeholder="Enter email" name="email">
+                            </div>
+                        </div>
+                       
+                        <button type="submit" class="btn billButton col-md-3 ">Submit</button>
+                    </form>
                     <form action="" method="get">
                         <table class="table" style="width: 100%; font-size: 24px; margin-top:	20px" >
                             <tr>
-
-                                <td> <input type="checkbox" name="category" value="status">Allowed category<br></td>
-                                <td> <input type="checkbox" name="category" value="status" checked> Allowed category<br></td>
-
-
-                            </tr><tr>
-
-                                <td> <input type="checkbox" name="category" value="status">Allowed category<br></td>
-                                <td> <input type="checkbox" name="category" value="status" checked> Allowed category<br></td>
+                                <td>1</td>
+                                <td> Allowed category<br></td>
+                                <td> <a href="" class="btn billButton">Delete</a></td>
 
 
                             </tr><tr>
-
-                                <td> <input type="checkbox" name="category" value="status">Allowed category<br></td>
-                                <td> <input type="checkbox" name="category" value="status" checked> Allowed category<br></td>
-
-
-                            </tr><tr>
-
-                                <td> <input type="checkbox" name="category" value="status">Allowed category<br></td>
-                                <td> <input type="checkbox" name="category" value="status" checked> Allowed category<br></td>
+ <td>2</td>
+                                <td> Allowed category<br></td>
+                                <td> <a href="" class="btn billButton">Delete</a></td>
 
 
                             </tr><tr>
+ <td>3</td>
+                                <td> Allowed category<br></td>
+                                <td> <a href="" class="btn billButton">Delete</a></td>
 
-                                <td> <input type="checkbox" name="category" value="status">Allowed category<br></td>
-                                <td> <input type="checkbox" name="category" value="status" checked> Allowed category<br></td>
 
-
-                            </tr>
+                           
 
 
                         </table>
                     </form>
-
                 </div>
             </div>
 
