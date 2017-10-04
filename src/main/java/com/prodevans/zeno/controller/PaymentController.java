@@ -145,8 +145,26 @@ public class PaymentController {
 	}
 
 	@RequestMapping(value = "/ccavRequestHandler", method = RequestMethod.POST)
-	public String ccavRequestHandler() {
-		return "payment/ccavRequestHandler";
+	public String ccavRequestHandler(ModelMap model, HttpSession session,HttpServletRequest request) 
+	{
+		double amount=Double.parseDouble(request.getParameter("trans_amount"));
+		System.out.println("Amount : "+amount);
+		if(amount>0)
+		{
+			return "payment/ccavRequestHandler";
+		}
+		
+		SessionDetails user = (SessionDetails) session.getAttribute("user");
+		model.addAttribute("user_details", user);
+		model.addAttribute("act_id",user.getActid());
+
+		// for getting invoice details
+		InvoiceDetails invoiceDetails = invoiceDAOImpl.getInvoice(user.getActno());
+		model.addAttribute("invoiceDetails", invoiceDetails);
+		
+		model.addAttribute("isValidAmount","Payable amount is zero..");
+		return "payment/sendData";
+			
 	}
 
 	@RequestMapping(value = "/ccvCancelResponse", method = RequestMethod.POST)

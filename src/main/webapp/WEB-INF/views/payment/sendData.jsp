@@ -151,8 +151,22 @@
                 window.onload = function () {
                     var d = new Date().getTime();
                     document.getElementById("tid").value = d;
+                    
+                    var amount=document.getElementById("amount").value;
+                   
+                    var x = Math.floor(amount);
+                    if(x <= 0.0 )
+                   	{
+                   		
+                   	}
                 };
             </script>
+
+			<script type="text/javascript">
+			
+			
+			
+			</script>
 
 
         </head>
@@ -168,6 +182,15 @@
             </div>
 
             <div class="col-md-8 col-sm-12 pt-20 pt-20M" style="background-color: #ecf0f1;min-height: 116px;">
+
+            	<div class="col-md-8 col-sm-12">
+					<c:if test="${ not empty isValidAmount}">
+						<h1 style="color: #F44336;" class="currentBillFontforiPhone5">
+	                    	Payable amount is &#8377; 0.0
+	                	</h1>
+					</c:if>
+            	</div>
+            
             </div>
 
             <!-- END STEPS -->
@@ -318,6 +341,7 @@
             <div class="col-md-4">
             </div> 
             <div class="col-md-7 col-xs-12">
+            
                 <div class="mainBlock31" style="color:black;">
 
                     <div class="col-md-5 col-xs-12">
@@ -400,7 +424,7 @@
             <input readonly="readonly" type="hidden" name="tid" id="tid" value=""/><!-- Transaction ID -->
             <input type="hidden" name="merchant_id" value="127191"/><!-- Merchant Id	: -->
             <input type="hidden" name="order_id" value="<%=order_id%>"/><!-- Order Id	: -->
-            <input type="hidden" name="amount" value="${invoiceDetails.getAmount() }"   />
+            <input type="hidden" name="amount" id="amount" value="${invoiceDetails.getAmount() }"   />
             <input type="hidden" name="currency" value="INR"/><!-- Currency	: -->
             <input type="hidden" name="redirect_url" value="http://www.oneeight.co.in/zeno/ccavResponseHandler"/><!-- Redirect URL	: -->
             <input type="hidden" name="cancel_url" value="http://www.oneeight.co.in/zeno/ccvCancelResponse"/><!-- Cancel URL	: -->
@@ -408,7 +432,7 @@
             <input readonly="readonly" type="hidden" name="tid" id="tid" value=""/><!-- Transction ID -->
             <input type="hidden" name="merchant_id" value="127191"/><!-- Merchant ID -->
             <input type="hidden" name="order_id" value="<%=order_id%>"/><!-- order id -->
-            <input type="hidden" name="amount" value="${invoiceDetails.getAmount() }"/><!--Amount  -->
+            <input type="hidden" name="amount" id="amount" value="${invoiceDetails.getAmount() }"/><!--Amount  -->
             <input type="hidden" name="currency" value="INR"/><!-- currency -->
             <input type="hidden" name="redirect_url" value="http://www.oneeight.co.in/zeno/ccavResponseHandler"/><!-- Redirect URL -->
             <input type="hidden" name="cancel_url" value="http://www.oneeight.co.in/zeno/ccvCancelResponse"/><!-- cancel url -->
