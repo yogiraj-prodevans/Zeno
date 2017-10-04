@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="zeno:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="zeno.war">
-      <element id="artifact" artifact-name="zeno:war exploded" />
-    </root>
-  </artifact>
-</component>
