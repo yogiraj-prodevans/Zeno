@@ -85,14 +85,19 @@
 
                 }
 
-                input[type="checkbox"] {
-                    display: unset;
-                }
+                    
                 .tab-content {
                     background: #FAFAFA;
                     padding:unset;
                 }
-                
+                .border{
+                    border-bottom: 1px solid #ddd;
+                    padding: 15px;
+                    font-size: 24px;
+                }
+                input[type="checkbox"] + label{
+                    padding-bottom: unset;
+                }
             </style>
 
 
@@ -151,53 +156,34 @@
 
         <div class="tab-content">
             <div id="Allowed" class="tab-pane fade in active">
-                <div class="col-md-12" style=" width:100%; min-height: 350px; ">
-                    <form action="" method="get">
-                        <table class="table" style="width: 100%; font-size: 24px; margin-top:	20px" >
-                            <tr>
-
-                                <td> <input type="checkbox" name="category" value="status">Allowed category<br></td>
-                                <td> <input type="checkbox" name="category" value="status" checked> Allowed category<br></td>
-
-
-                            </tr><tr>
-
-                                <td> <input type="checkbox" name="category" value="status">Allowed category<br></td>
-                                <td> <input type="checkbox" name="category" value="status" checked> Allowed category<br></td>
-
-
-                            </tr><tr>
-
-                                <td> <input type="checkbox" name="category" value="status">Allowed category<br></td>
-                                <td> <input type="checkbox" name="category" value="status" checked> Allowed category<br></td>
-
-
-                            </tr><tr>
-
-                                <td> <input type="checkbox" name="category" value="status">Allowed category<br></td>
-                                <td> <input type="checkbox" name="category" value="status" checked> Allowed category<br></td>
-
-
-                            </tr><tr>
-
-                                <td> <input type="checkbox" name="category" value="status">Allowed category<br></td>
-                                <td> <input type="checkbox" name="category" value="status" checked> Allowed category<br></td>
-
-
-                            </tr>
-
-
-                        </table>
-                    </form>
+                <div class="" style=" width:100%; min-height: 350px; ">
+                    <div class="col-md-4 col-sm-6 border text-justify"> 
+                        <input id="cat1" type="checkbox" name="category" value="status"><label for="cat1"> Allowed category</label>
+                    </div>
+                    <div class="col-md-4 col-sm-6 border text-justify"> 
+                        <input id="cat2" type="checkbox" name="category" value="status"><label for="cat2"> Allowed category</label>
+                    </div>
+                    <div class="col-md-4 col-sm-6 border text-justify"> 
+                        <input id="cat3" type="checkbox" name="category" value="status"><label for="cat3"> Allowed category</label>
+                    </div>
+                    <div class="col-md-4 col-sm-6 border text-justify"> 
+                        <input id="cat1" type="checkbox" name="category" value="status"><label for="cat1"> Allowed category</label>
+                    </div>
+                    <div class="col-md-4 col-sm-6 border text-justify"> 
+                        <input id="cat1" type="checkbox" name="category" value="status"><label for="cat1"> Allowed category</label>
+                    </div>
+                    <div class="col-md-4 col-sm-6 border text-justify"> 
+                        <input id="cat1" type="checkbox" name="category" value="status"><label for="cat1"> Allowed category</label>
+                    </div>
 
 
                 </div>
             </div>
             <div id="Blocked" class="tab-pane fade">
-                <div class="col-md-12" style=" min-height: 350px; ">
+                <div class="col-md-12" style=" min-height: 350px; border: 2px solid  #F44336;">
 
                     <form action="" method="get">
-                        <table class="table" style="width: 100%; font-size: 24px; margin-top:	20px" >
+                        <table class="table" style="width: 100%; font-size: 24px; margin-top:	20px; " >
                             <tr>
 
                                 <td> <input type="checkbox" name="category" value="status">Allowed category<br></td>
