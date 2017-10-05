@@ -98,6 +98,49 @@
                 input[type="checkbox"] + label{
                     padding-bottom: unset;
                 }
+                .ScrollStyle {
+
+                    overflow-y: scroll;
+                    max-height: 350px;
+                }
+                .category_box {
+
+                    min-height: 100px;
+                    padding-top: 20px;
+                    border: 2px solid #2980b9;
+                    margin-top: -1px;
+                    height: 350px;
+                    overflow-x: auto;
+                }
+                .custom_box {
+
+                    min-height: 100px;
+                    padding-top: 2.7%;
+                    border: 2px solid #2980b9;
+                    margin-top: -1px;
+                    margin-bottom: 20px;
+/*                    padding-top: 10px;*/
+                }
+                .btn{
+                    margin-top: 0px !important;
+                    margin-bottom: 1px;
+
+                }
+                .row{
+                    margin-right: unset;
+                    margin-left: unset;
+                }
+                .panel {
+                    border: 1px solid #F44336;
+                    border-radius: unset;
+                }
+                .panel-default > .panel-heading {
+                    color: white;
+                    background-color: #F44336;
+                    border-color: #F44336;
+                    border-radius: unset;
+                    font-size: 24px;
+                }
             </style>
 
 
@@ -154,63 +197,70 @@
 
         </ul>
 
-        <div class="tab-content">
-            <div id="Allowed" class="tab-pane fade in active">
-                <div class="" style=" width:100%; min-height: 350px; ">
+        <div class="tab-content " style="margin-top: -1px;">
+            <div id="Allowed" class="tab-pane fade in active row category_box">
+                
                     <c:forEach items="${CAT.getAllowded_catogery()}" var="cat">
                         <div class="col-md-4 col-sm-6 border text-justify">
                             <input type="checkbox" name="category_allow" id="${cat}"  value="${cat}"><label for="${cat}"> <c:out value="${cat}"/> </label>	
                         </div>
                     </c:forEach> 	
-                </div>
+               
             </div>
-            <div id="Blocked" class="tab-pane fade">
-                <div class="col-md-12" style=" min-height: 350px; border: 2px solid  #F44336;">
+            <div id="Blocked" class="tab-pane fade category_box row">
+                
                     <c:forEach items="${CAT.getBlocked_catogery()}" var="cat">
                         <div class="col-md-4 col-sm-6 border text-justify">
                             <input type="checkbox" name="category_block" id="${cat}"  value="${cat}"><label for="${cat}"> <c:out value="${cat}"/> </label>	
                         </div>
                     </c:forEach> 
-                </div>
+                
             </div>
             <div id="Custom" class="tab-pane fade">
-                <div class="col-md-12" style=" min-height: 350px; ">
+                <div class="row custom_box " style="" >
                     <form class="form-inline" >
-                        <div class="form-group col-md-5 col-md-offset-2" style="margin-top:10px">
-                            <label for="email" class="col-md-4">Email:</label>
-                            <div class="col-md-8">
-                                <input type="text" class="" style="width:100%" id="email" placeholder="Enter email" name="email">
+                        <div class="form-group col-md-6 col-md-offset-2" >
+                            <label for="url-block" class="col-md-2" title="Add the URL to be blocked" >URL:</label>
+                            <div class="col-md-10">
+                                <input type="text" class="" style="width:100%" id="url-block" placeholder="ex. www.facebook.com" name="url-block" >
                             </div>
                         </div>
-                       
-                        <button type="submit" class="btn billButton col-md-3 ">Submit</button>
+
+                        <button type="submit" class="btn billButton col-md-2 ">Submit</button>
                     </form>
-                    <form action="" method="get">
-                        <table class="table" style="width: 100%; font-size: 24px; margin-top:	20px" >
-                            <tr>
-                                <td>1</td>
-                                <td> Allowed category<br></td>
-                                <td> <a href="" class="btn billButton">Delete</a></td>
 
-
-                            </tr><tr>
- <td>2</td>
-                                <td> Allowed category<br></td>
-                                <td> <a href="" class="btn billButton">Delete</a></td>
-
-
-                            </tr><tr>
- <td>3</td>
-                                <td> Allowed category<br></td>
-                                <td> <a href="" class="btn billButton">Delete</a></td>
-
-
-                           
-
-
-                        </table>
-                    </form>
                 </div>
+                
+                <!--                <div class="col-md-12" style="background-color: #F44336; height: 50px; ">
+                                    <h3>Blocked URL's</h3>
+                                </div>-->
+                <div class="row">
+                    <div class="panel panel-default ">
+                        <div class="panel-heading">Blocked URL's</div>
+                        <div class="panel-body">
+                            <table class="table table-striped"  >
+                                 <tr>
+                                    <th class="col-md-2 text-justify">Sr.</th>
+                                    <th>Blocked URL's<br></th>
+                                    <th> Action</th>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-2 text-justify">1</td>
+                                    <td>Custom URL 1<br></td>
+                                    <td> <a href="" class="btn billButton">Delete</a></td>
+                                </tr><tr>
+                                    <td class="text-justify">2</td>
+                                    <td>Custom URL 2<br></td>
+                                    <td> <a href="" class="btn billButton">Delete</a></td>
+                                </tr><tr>
+                                    <td class="text-justify">3</td>
+                                    <td>Custom URL 3<br></td>
+                                    <td> <a href="" class="btn billButton">Delete</a></td>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+              
             </div>
 
         </div>

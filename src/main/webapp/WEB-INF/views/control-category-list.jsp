@@ -253,28 +253,20 @@
 
                         <form:form role="form" action="control-category" method="post" modelAttribute="CAT"  >
                             <div class="row">
-                                            <div class="col-md-4"style="padding-bottom: 10px">
-                                              Update : 
-                                            </div>
+                                <div class="col-md-4"style="padding-bottom: 10px">
+                                    Update : 
+                                </div>
                                 <input type="radio" name="update_category" id="update_block" value="update_block" /><label for="update_block"> Block category</label>
                                 <input type="radio" name="update_category" id="update_allow" value="update_allow" /><label for="update_allow"> Allow category</label>
-                                
-                                        </div>
+
+                            </div>
                             <div class="col-md-6">
                                 <div class="col-md-12 box-category-red-left">
                                     <h3>BLOCKED CATEGORIES</h3>
-                                    
-                                   
-
                                     <c:forEach items="${CAT.getBlocked_catogery()}" var="cat">
                                         <form:checkbox path="blocked_catogery" value="cat" id="${cat}" /> <label for="${cat}"> <c:out value="${cat}"/></label> 	
                                     </c:forEach> 
-
-
-
-
                                 </div>
-
                             </div>
 
 
