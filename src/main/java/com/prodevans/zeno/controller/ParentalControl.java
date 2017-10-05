@@ -1,5 +1,6 @@
 package com.prodevans.zeno.controller;
 
+import com.prodevans.zeno.config.RestConfig;
 import com.prodevans.zeno.dao.impl.CategoryListDAOImpl;
 import com.prodevans.zeno.dao.impl.ProtectionStatusImpl;
 import java.util.Locale;
@@ -58,17 +59,17 @@ public class ParentalControl {
     @RequestMapping(value = "/control", method = RequestMethod.GET)
     public String parentControl(Locale locale, Model model, HttpSession session, @RequestParam(name = "error", required = false) String error) {
 
-        ParentalControlDetails parentalControlDetails = new ParentalControlDetails();
-        Map<String, String> protection_level = new LinkedHashMap<String, String>();
-        protection_level.put("", "");
-        //Revoved 
-        //protection_level.put("elementary_filter_zeno", "ELEMENTRY");
-        //Removed in version 1.2
-        //protection_level.put("basic_filter_zeno", "DEFAULT");
-        protection_level.put("advance_filter_zeno", "ADVANCED");
-        protection_level.put("custom_filter", "CUSTOM");
-
-        model.addAttribute("protection_level", protection_level);
+//        ParentalControlDetails parentalControlDetails = new ParentalControlDetails();
+//        Map<String, String> protection_level = new LinkedHashMap<String, String>();
+//        protection_level.put("", "");
+//        //Revoved 
+//        //protection_level.put("elementary_filter_zeno", "ELEMENTRY");
+//        //Removed in version 1.2
+//        //protection_level.put("basic_filter_zeno", "DEFAULT");
+//        protection_level.put("advance_filter_zeno", "ADVANCED");
+//        protection_level.put("custom_filter", "CUSTOM");
+//
+//        model.addAttribute("protection_level", protection_level);
 
         model.addAttribute("error", error);
 
@@ -84,9 +85,12 @@ public class ParentalControl {
                 boolean check_ip_result = REGISTER_PROCESS.checkRegistration(user.getActid(), user.getDomid().trim());
                 if (check_ip_result) {
                     //Return the parental control status/Details.
-                    parentalControlDetails = PROTECTION_STATUS.getProtectionDetails(user.getActid(), user.getDomid().trim());
+                    //parentalControlDetails = PROTECTION_STATUS.getProtectionDetails(user.getActid(), user.getDomid().trim());
+                    CategoryList list = categoryimpl.getCategoryList(user.getActid() + RestConfig.ADVANCED_FILTER, user.getDomid().trim());
+                    model.addAttribute("CAT", list);
+
                     model.addAttribute("uesr_name", user.getActname());
-                    parentalControlDetails.setUser_name(user.getActid());
+                    //parentalControlDetails.setUser_name(user.getActid());
                     //Displaying the list of Adderss objects
                 } else {
                     // Checking of IP address is get found in the session or not
@@ -95,8 +99,11 @@ public class ParentalControl {
                             //Regestration process for the uesr.
                             REGISTER_PROCESS.registerUser(user.getActid(), ip_address, user.getDomid().trim());
                             //Return the parental control status/Details.
-                            parentalControlDetails = PROTECTION_STATUS.getProtectionDetails(user.getActid(), user.getDomid().trim());
-                            parentalControlDetails.setUser_name(user.getActid());
+                            CategoryList list = categoryimpl.getCategoryList(user.getActid() + RestConfig.ADVANCED_FILTER, user.getDomid().trim());
+                            model.addAttribute("CAT", list);
+
+                            //parentalControlDetails = PROTECTION_STATUS.getProtectionDetails(user.getActid(), user.getDomid().trim());
+                            //parentalControlDetails.setUser_name(user.getActid());
                             //Displaying the list of Adderss objects
                         } else {
                             model.addAttribute("message", "IP address is not found");
@@ -110,8 +117,8 @@ public class ParentalControl {
                 logger.error(e.getMessage());
             }
 
-            model.addAttribute("ParentalControlDetails", parentalControlDetails);
-            return "parental-control";
+            //model.addAttribute("ParentalControlDetails", parentalControlDetails);
+            return "filter";
         }
     }
 
@@ -155,7 +162,7 @@ public class ParentalControl {
             try {
                 //fetching the user details from the session.
                 SessionDetails user = (SessionDetails) session.getAttribute("user");
-                CategoryList list = categoryimpl.getCategoryList(user.getActid() + "_filter_object", user.getDomid().trim());
+                CategoryList list = categoryimpl.getCategoryList(user.getActid() + RestConfig.ADVANCED_FILTER, user.getDomid().trim());
                 model.addAttribute("CAT", list);
                 model.addAttribute("uesr_name", user.getActname());
                 model.addAttribute("error", error);

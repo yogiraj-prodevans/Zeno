@@ -100,7 +100,7 @@ public class CategoryListDAOImpl implements CategoryListDAO {
         JSONArray allow_rule = null;
         for (Object obj : category_action) {
             JSONObject jon = (JSONObject) obj;
-            if (jon.getString("name").equals("Allowded")) {
+            if (jon.getString("name").equals("allowed")) {
                 if(jon.has("url-categories"))
                 allow_rule = jon.getJSONObject("url-categories").getJSONArray("predefined");
             } else {
