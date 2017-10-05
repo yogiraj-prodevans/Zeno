@@ -10,19 +10,27 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.prodevans.zeno.dao.impl.RegistrationUserParentalControlImpl;
 import com.prodevans.zeno.pojo.CategoryList;
 import com.prodevans.zeno.pojo.ParentalControlDetails;
+import com.prodevans.zeno.pojo.SendMailDetails;
 import com.prodevans.zeno.pojo.SessionDetails;
+
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
+
+import org.apache.xmlrpc.XmlRpcException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class ParentalControl {
@@ -57,7 +65,7 @@ public class ParentalControl {
      * @return
      */
     @RequestMapping(value = "/control", method = RequestMethod.GET)
-    public String parentControl(Locale locale, Model model, HttpSession session, @RequestParam(name = "error", required = false) String error) {
+    public ModelAndView parentControl(Locale locale, Model model, HttpSession session, @RequestParam(name = "error", required = false) String error) {
 
 //        ParentalControlDetails parentalControlDetails = new ParentalControlDetails();
 //        Map<String, String> protection_level = new LinkedHashMap<String, String>();
@@ -72,9 +80,9 @@ public class ParentalControl {
 //        model.addAttribute("protection_level", protection_level);
 
         model.addAttribute("error", error);
-
+        CategoryList list = new CategoryList();
         if (session.getAttribute("user") == null) {
-            return "redirect:/logout";
+        	return  new ModelAndView("redirect:logout");
         } else {
             try {
                 //fetching the user details from the session.
@@ -86,7 +94,7 @@ public class ParentalControl {
                 if (check_ip_result) {
                     //Return the parental control status/Details.
                     //parentalControlDetails = PROTECTION_STATUS.getProtectionDetails(user.getActid(), user.getDomid().trim());
-                    CategoryList list = categoryimpl.getCategoryList(user.getActid() + RestConfig.ADVANCED_FILTER, user.getDomid().trim());
+                    list = categoryimpl.getCategoryList(user.getActid() + RestConfig.ADVANCED_FILTER, user.getDomid().trim());
                     model.addAttribute("CAT", list);
 
                     model.addAttribute("uesr_name", user.getActname());
@@ -99,7 +107,7 @@ public class ParentalControl {
                             //Regestration process for the uesr.
                             REGISTER_PROCESS.registerUser(user.getActid(), ip_address, user.getDomid().trim());
                             //Return the parental control status/Details.
-                            CategoryList list = categoryimpl.getCategoryList(user.getActid() + RestConfig.ADVANCED_FILTER, user.getDomid().trim());
+                            list = categoryimpl.getCategoryList(user.getActid() + RestConfig.ADVANCED_FILTER, user.getDomid().trim());
                             model.addAttribute("CAT", list);
 
                             //parentalControlDetails = PROTECTION_STATUS.getProtectionDetails(user.getActid(), user.getDomid().trim());
@@ -118,10 +126,64 @@ public class ParentalControl {
             }
 
             //model.addAttribute("ParentalControlDetails", parentalControlDetails);
-            return "filter";
+            //return "filter";
+            return  new ModelAndView("filter","CategoryListDetails",list);
         }
     }
+    
+    @RequestMapping(value = "/allow-categories", method = RequestMethod.POST)
+	public String allowcategories(ModelMap model, HttpSession session,@ModelAttribute(name="CategoryListDetails") CategoryList categoryList,@RequestParam (name="category_allowed")ArrayList<String> category_allowed) 
+	{
+    	for (String string : category_allowed) {
+    		System.out.println("Selected List : "+string);
+		}
+    	
+    	categoryList.getBlocked_catogery().addAll(category_allowed);
+    	categoryList.getAllowded_catogery().removeAll(category_allowed);
+    	
+    	System.out.println("Blocked List : "+categoryList.getBlocked_catogery());
+    	System.out.println("Allowed List : "+categoryList.getAllowded_catogery());
+    	
+    	//fetching the user details from the session.
+        SessionDetails user = (SessionDetails) session.getAttribute("user");
 
+        if (categoryimpl.updateCategoryList(categoryList.getBlocked_catogery(), categoryList.getAllowded_catogery(), user.getDomid(), user.getActid(), "update_block")) {
+            model.addAttribute("error", "Updated succefuly");
+        } else {
+            model.addAttribute("error", "Updation failed");
+        }
+    	
+    	return  "redirect:/control";
+	}
+
+    @RequestMapping(value = "/block-categories", method = RequestMethod.POST)
+	public String blockcategories(ModelMap model, HttpSession session,@ModelAttribute(name="CategoryListDetails") CategoryList categoryList,@RequestParam (name="category_allowed")String category_allowed[]) 
+	{
+    	for (String string : category_allowed) {
+    		System.out.println("Selected List : "+string);
+		}
+    	
+    	
+    	System.out.println("Allowed List : "+categoryList.getAllowded_catogery());
+    	return  "redirect:control";
+	}
+    
+   /* @ModelAttribute("requestList")
+	public List<String> getRequestList()
+	{
+		List<String> request=new ArrayList<String>();
+		request.add("New Connection");
+		request.add("Activation / Deactivation of Services");
+		request.add("Duplicate Bill");
+		request.add("Change of Location");
+		request.add("Restoration of Service");
+		request.add("Any Other");
+		
+		return request;
+	}
+    */
+    
+    
     /**
      * @param PROTECTION_STATUS the PROTECTION_STATUS to set
      */
@@ -204,7 +266,7 @@ public class ParentalControl {
 //    }
 
     //control-category
-    @RequestMapping(value = "/control-category", method = RequestMethod.POST)
+  /*  @RequestMapping(value = "/control-category", method = RequestMethod.POST)
     public String updateSategoryList(Locale locale, Model model, @ModelAttribute(name = "CAT")CategoryList list, HttpSession session,@RequestParam( name = "update_category") String select_update) {
         //fetching the user details from the session.
         SessionDetails user = (SessionDetails) session.getAttribute("user");
@@ -216,7 +278,7 @@ public class ParentalControl {
         }
         return "redirect:/control-category";
     }
-    
+*/    
     @RequestMapping(value = {"/control/ADVANCED","/control/CUSTOM"}, method = RequestMethod.GET)
     public String getAdvanceFilter(Locale locale, Model model,  HttpSession session) {
          

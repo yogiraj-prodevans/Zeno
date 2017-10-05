@@ -180,25 +180,25 @@ public class CategoryListDAOImpl implements CategoryListDAO {
     }
 
     @Override
-    public boolean updateCategoryList(String block_category, String allow_category, String domain_id, String user_id, String select_update) {
+    public boolean updateCategoryList(ArrayList<String> block_category, ArrayList<String> allow_category, String domain_id, String user_id, String select_update) {
         
         boolean result  = false ; 
         //Data formating for te user filter object.
-        String filter_object = user_id.trim()+"_filter_object";
+        String filter_object = user_id.trim()+RestConfig.ADVANCED_FILTER;
         //creating user category list.
-        String block_arr[] = block_category.split(",",-1);
+        //String block_arr[] = block_category.split(",",-1);
         JSONArray block_rules = null;
-        if(block_arr.length > 0 && !block_arr[0].isEmpty()){
-            block_rules = new JSONArray(block_arr);
+        if(block_category.size() > 0 ){
+            block_rules = new JSONArray(block_category);
         }
         else{
             block_rules = new JSONArray();
         }
-        String allow_arr[] = allow_category.split(",",-1);
+        //String allow_arr[] = allow_category.split(",",-1);
         
         JSONArray allow_rules = null;
-        if(allow_arr.length > 0 && !allow_arr[0].isEmpty()){
-            allow_rules = new JSONArray(allow_arr);
+        if(allow_category.size() > 0 ){
+            allow_rules = new JSONArray(allow_category);
         }else{
             allow_rules = new JSONArray();                      
         }
@@ -207,7 +207,7 @@ public class CategoryListDAOImpl implements CategoryListDAO {
         
         switch(select_update){
         case "update_block":
-            if(editCategory(allow_rules, "Allowded", domain_id, filter_object, "allow")){
+            if(editCategory(allow_rules, "allowed", domain_id, filter_object, "allow")){
                 logger.info("Allowded list updated successfually");
                 result = true;
 
@@ -216,7 +216,7 @@ public class CategoryListDAOImpl implements CategoryListDAO {
                 result = false;
             }
 
-            if(editCategory(block_rules, "Blocked", domain_id, filter_object, "block")){
+            if(editCategory(block_rules, "blocked", domain_id, filter_object, "block")){
                 logger.info("Blockd list updated successfually");
                 result = true;
             }else{
@@ -225,7 +225,7 @@ public class CategoryListDAOImpl implements CategoryListDAO {
             }
             break;
         case "update_allow":
-            if(editCategory(block_rules, "Blocked", domain_id, filter_object, "block")){
+            if(editCategory(block_rules, "blocked", domain_id, filter_object, "block")){
                 logger.info("Blockd list updated successfually");
                 result = true;
             }else{
@@ -233,7 +233,7 @@ public class CategoryListDAOImpl implements CategoryListDAO {
                 result = false ; 
             }
             
-             if(editCategory(allow_rules, "Allowded", domain_id, filter_object, "allow")){
+             if(editCategory(allow_rules, "allowed", domain_id, filter_object, "allow")){
                 logger.info("Allowded list updated successfually");
                 result = true;
 
