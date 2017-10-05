@@ -13,17 +13,51 @@ public class CategoryList {
 
     private ArrayList<String> blocked_catogery;
     private ArrayList<String> allowded_catogery;
+    
+    private ArrayList<String> selected_allowded_catogery;
+    private ArrayList<String> selected_blocked_catogery;
+    
     private String block_list_data;
     private String allow_list_data;
 
     public CategoryList() {
         blocked_catogery = new ArrayList<>();
         allowded_catogery = new ArrayList<>();
+        
+        selected_allowded_catogery=new ArrayList<>();
+        selected_blocked_catogery=new ArrayList<>();
+        
         block_list_data = "";
         allow_list_data = "";
     }
 
-    /**
+    
+    
+    public ArrayList<String> getSelected_allowded_catogery() {
+		return selected_allowded_catogery;
+	}
+
+
+
+	public void setSelected_allowded_catogery(ArrayList<String> selected_allowded_catogery) {
+		this.selected_allowded_catogery = selected_allowded_catogery;
+	}
+
+
+
+	public ArrayList<String> getSelected_blocked_catogery() {
+		return selected_blocked_catogery;
+	}
+
+
+
+	public void setSelected_blocked_catogery(ArrayList<String> selected_blocked_catogery) {
+		this.selected_blocked_catogery = selected_blocked_catogery;
+	}
+
+
+
+	/**
      * @return the blocked_catogery
      */
     public ArrayList<String> getBlocked_catogery() {

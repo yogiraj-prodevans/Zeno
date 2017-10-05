@@ -197,6 +197,7 @@
 
         </ul>
 
+<<<<<<< HEAD
         <div class="tab-content " style="margin-top: -1px;">
             <div id="Allowed" class="tab-pane fade in active row category_box">
                 
@@ -215,6 +216,37 @@
                         </div>
                     </c:forEach> 
                 
+=======
+        <div class="tab-content">
+            <div id="Allowed" class="tab-pane fade in active row category_box">
+                <div class="" style=" width:100%; min-height: 350px; ">
+                	<form:form action="allow-categories" modelAttribute="CategoryListDetails" method="post" >
+	                    <c:forEach items="${CAT.getAllowded_catogery()}" var="cat">
+	                        <div class="col-md-4 col-sm-6 border text-justify">
+	                            <input type="checkbox" name="category_allowed" id="${cat}"  value="${cat}"><label for="${cat}"> <c:out value="${cat}"/> </label>	
+	                        </div>
+                    	</c:forEach> 
+	                    	<form:hidden path="allowded_catogery" />
+	                    	<form:hidden path="blocked_catogery" />
+	                    <button id="block" class="btn billButton" type="submit">BLOCK</button>
+	               </form:form> 	
+                </div>
+            </div>
+            <div id="Blocked" class="tab-pane fade row category_box">
+                <div class="col-md-12" style=" min-height: 350px; border: 2px solid  #F44336;">
+                	<form:form action="block-categories" modelAttribute="CategoryListDetails" method="post" >
+	                    <c:forEach items="${CAT.getBlocked_catogery()}" var="cat">
+	                        <div class="col-md-4 col-sm-6 border text-justify">
+	                            <input type="checkbox" name="category_allowed" id="${cat}"  value="${cat}"><label for="${cat}"> <c:out value="${cat}"/> </label>	
+	                        </div>
+                    	</c:forEach> 
+	                    	<form:hidden path="allowded_catogery" />
+	                    	<form:hidden path="blocked_catogery" />
+	                    <button id="block" class="btn billButton" type="submit">BLOCK</button>
+	               </form:form> 	
+
+                </div>
+>>>>>>> 64303f34f25d86591cd865d481f5c814dff74a84
             </div>
             <div id="Custom" class="tab-pane fade">
                 <div class="row custom_box " style="" >
@@ -265,7 +297,10 @@
 
         </div>
     </div>
+<c:if test="${not empty error }">
+<c:out value="${error }"></c:out>
 
+</c:if>
 
 
     <!-- included pop up -->
