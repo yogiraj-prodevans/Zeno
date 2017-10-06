@@ -128,6 +128,7 @@ public class CategoryListDAOImpl implements CategoryListDAO {
         
         ArrayList<String> filter_pattern=getFilterPattern(protection_status, domain_id);
         list.setFilter_pattern(filter_pattern);
+        list.setRemove_filter_pattern(filter_pattern);
         logger.info("Filter Pattern : " + list.getFilter_pattern().toString());
         
         return list;
@@ -179,6 +180,7 @@ public class CategoryListDAOImpl implements CategoryListDAO {
         person = restTemplate.exchange(RestConfig.SEARCH_FILTER_OBJECT, HttpMethod.GET, entity, String.class, params);
 
         String getbody=person.getBody();
+        
         JSONObject result = new JSONObject(getbody).getJSONObject("url-filtering-profile");
         JSONArray pattern_array = null;
         if (result.has("blacklist") && result.getJSONObject("blacklist").has("patterns")) {
@@ -395,5 +397,134 @@ public class CategoryListDAOImpl implements CategoryListDAO {
         }
         return false;
     }
+    
+    
+    @Override
+    public boolean updateFilterPattern(ArrayList<String> filter_pattern_removed, String domain_id,String filter_name) 
+    {
+    	JSONObject filterObject = getFilter(domain_id, filter_name);
+    	
+    	filterObject.getJSONObject("url-filtering-profile").getJSONObject("blacklist").put("patterns", new JSONArray(filter_pattern_removed));
+  
+    	System.out.println("JSON Object : "+filterObject.toString());
+    	    	
+    	if(getUpdateFilterpattern(filterObject, domain_id, filter_name))
+    	{
+    		return true;
+    	}
+    	else
+    	{
+    		return false;
+    	}
+    	
+    }
+    
+    private boolean getUpdateFilterpattern(JSONObject filterObject,String domain_id, String filter_name)
+    {
+        ResponseEntity<String> person;
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Accept", "application/json");
+        headers.add("Content-Type", "application/json");
+       
+        /*
+		 * Creation of the Entity object for the adding the headers into request.
+         */
+        entity = new HttpEntity<>(filterObject.toString(),headers);
+
+        /*
+		 * Creation of REST TEMPLET object for the executing of the REST calls.
+         */
+        restTemplate = new RestTemplate();
+
+        /*
+		 * Adding the basic type of authentication on the REST TEMPLETE.
+         */
+        restTemplate.getInterceptors()
+                .add(new BasicAuthorizationInterceptor(RestConfig.USER_NAME, RestConfig.PASSWORD));
+
+        /*
+		 * Execution of the REST call with basic authentication and JSON response type
+         */
+        Map<String, String> params = new HashMap<String, String>();
+        params.put("domain_id", domain_id.trim());
+        params.put("filter_name", filter_name.trim());
+        try {
+            person = restTemplate.exchange(RestConfig.EDIT_PROFILE_FILTER, HttpMethod.PUT, entity, String.class, params);
+            if(person.getStatusCodeValue() == 204){
+                logger.info("Category list updated successfually");
+                return true;
+                
+                
+            }
+            else{
+                logger.info("Category list updated fail...");
+                return false;
+            }
+        } catch (Exception ee) {
+            if(ee.getMessage().contains("404")){
+                logger.error("Category list updated fail... with error");
+            }
+            else{
+                logger.error("error: "+ee.getMessage());
+            }
+            //logger.error("Error body "+person.getBody());
+            
+        }
+        return false;
+    }
+    
+    
+    private JSONObject getFilter(String domain_name, String filter_name)
+    {
+        /*
+		 * Creation of the response object with the string data type. Because it return
+		 * the JSON.
+         */
+        ResponseEntity<String> person;
+
+        /*
+		 * Headers for the response type if we want to return JSON response then we
+		 * require to add.
+         */
+        HttpHeaders headers = new HttpHeaders();
+
+        /*
+		 * Adding of the response header with application/json type
+         */
+        headers.add("Accept", "application/json");
+
+        /*
+		 * Creation of the Entity object for the adding the headers into request.
+         */
+        entity = new HttpEntity<>(headers);
+
+        /*
+		 * Creation of REST TEMPLET object for the executing of the REST calls.
+         */
+        restTemplate = new RestTemplate();
+
+        /*
+		 * Adding the basic type of authentication on the REST TEMPLETE.
+         */
+        restTemplate.getInterceptors()
+                .add(new BasicAuthorizationInterceptor(RestConfig.USER_NAME, RestConfig.PASSWORD));
+
+        /*
+		 * Execution of the REST call with basic authentication and JSON response type
+         */
+        Map<String, String> params = new HashMap<String, String>();
+        params.put("domain_id", domain_name);
+        params.put("filter_name", filter_name);
+
+        person = restTemplate.exchange(RestConfig.SEARCH_FILTER_OBJECT, HttpMethod.GET, entity, String.class, params);
+
+        String getbody=person.getBody();
+        
+        JSONObject filterObject = new JSONObject(getbody);
+        
+        return filterObject;
+    }
+    
+    
     
 }

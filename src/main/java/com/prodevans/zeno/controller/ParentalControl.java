@@ -190,7 +190,7 @@ public class ParentalControl {
 	}    
     
     @RequestMapping(value = "/delete-patterns", method = RequestMethod.POST)
-	public String deletepatterns(ModelMap model, HttpSession session,@ModelAttribute(name="CategoryListDetails") CategoryList categoryList,@RequestParam (name="filter_category")ArrayList<String> filter_category) 
+	public String deletepatterns(ModelMap model, HttpSession session,@ModelAttribute(name="CategoryListDetails") CategoryList categoryList,@RequestParam (name="filter_category")ArrayList<String> selected_filter_category) 
 	{
     	if (session.getAttribute("user") == null) 
     	{
@@ -198,18 +198,24 @@ public class ParentalControl {
         } 
     	else 
     	{
-    		for (String string : filter_category) 
+    		for (String string : selected_filter_category) 
     		{
     			System.out.println("Selected Filters : "+string);
 			}
     		
-    		categoryList.getFilter_pattern().removeAll(filter_category);
+    		categoryList.getRemove_filter_pattern().removeAll(selected_filter_category);    		
     		
-    		System.out.println("Removed Filter Pattern :"+categoryList.getFilter_pattern());
+    		
     		//fetching the user details from the session.
 	        SessionDetails user = (SessionDetails) session.getAttribute("user");
-	        
-	        return  "redirect:/control";
+	        if (categoryimpl.updateFilterPattern(categoryList.getRemove_filter_pattern(), user.getDomid(),user.getActid() + RestConfig.ADVANCED_FILTER)) 
+	        {
+	            model.addAttribute("error", "Updated succefuly");
+	        } else {
+	            model.addAttribute("error", "Updation failed");
+	        }
+	    	
+	    	return  "redirect:/control";
     	}
     	
 	}

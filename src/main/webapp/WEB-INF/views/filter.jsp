@@ -280,6 +280,8 @@
 		                            </div>
 		                        </c:forEach> 
 								<form:hidden path="filter_pattern" />
+								<form:hidden path="remove_filter_pattern" />
+								
                           	</div>
                          </div>
                          <div class="panel-footer text-right">

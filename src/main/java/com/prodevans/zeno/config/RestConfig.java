@@ -110,6 +110,10 @@ public interface RestConfig {
     String LIST_PREDEFINED_CATEGORY = HOST + "/api/config/nms/provider/predefined/url-categories/url-category";
 
     
-    
+    /**
+     * API URL for updating profile filter
+     */
+    String EDIT_PROFILE_FILTER = HOST + "/api/config/devices/device/{domain_id}/config/orgs/org-services/OneEight/security/profiles/url-filtering/url-filtering-profile/{filter_name}";
+
     
 }
