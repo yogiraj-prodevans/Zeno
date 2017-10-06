@@ -131,8 +131,13 @@
                     margin-left: unset;
                 }
                 .panel {
-                    border: 1px solid #F44336;
+                    border: 2px solid #F44336;
                     border-radius: unset;
+                    margin-bottom: unset;
+                }
+                .panel-default > .panel-body{
+                    height: 200px;
+                    overflow-x: auto;
                 }
                 .panel-default > .panel-heading {
                     color: white;
@@ -144,6 +149,11 @@
                 .panel-footer{
                     /*border: 2px solid #2980b9;*/
                     background: unset;
+                }
+                .panel-default > .panel-footer{
+                    /*background-color: #F44336;*/
+                    border-top:2px #F44336 solid;
+                    border-radius: unset;
                 }
                 .tab-content , .tab-pane{
                     background: unset;
@@ -242,13 +252,13 @@
                 <div class="row custom_box " style="" >
                     <form class="form-inline" >
                         <div class="form-group col-md-6 col-md-offset-2" >
-                            <label for="url-block" class="col-md-2" title="Add the URL to be blocked" >URL:</label>
+                            <label for="url-block" class="col-md-2 text-right" title="Add the URL to be blocked" >URL:</label>
                             <div class="col-md-10">
-                                <input type="text" class="" style="width:100%" id="url-block" placeholder="ex. www.facebook.com" name="url-block" >
+                                <input id="url-block" type="text" class="" style="width:100%" id="url-block" placeholder="ex. www.facebook.com" name="url-block" >
                             </div>
                         </div>
 
-                        <button type="submit" class="btn billButton col-md-2 ">Submit</button>
+                        <button type="submit" class="btn billButton col-md-2 ">SUBMIT</button>
                     </form>
 
                 </div>
@@ -260,27 +270,42 @@
                     <div class="panel panel-default ">
                         <div class="panel-heading">Blocked URL's</div>
                         <div class="panel-body">
-                            <table class="table table-striped"  >
-                                 <tr>
-                                    <th class="col-md-2 text-justify">Sr.</th>
-                                    <th>Blocked URL's<br></th>
-                                    <th> Action</th>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-2 text-justify">1</td>
-                                    <td>Custom URL 1<br></td>
-                                    <td> <a href="" class="btn billButton">Delete</a></td>
-                                </tr><tr>
-                                    <td class="text-justify">2</td>
-                                    <td>Custom URL 2<br></td>
-                                    <td> <a href="" class="btn billButton">Delete</a></td>
-                                </tr><tr>
-                                    <td class="text-justify">3</td>
-                                    <td>Custom URL 3<br></td>
-                                    <td> <a href="" class="btn billButton">Delete</a></td>
-                            </table>
+                            <div class="col-md-4 col-sm-6 border text-justify">
+                                <input type="checkbox" name="pattern_block" id="pt1"  value=""><label for="pt1"> *.facebook.* </label>	
+                            </div>
+                            <div class="col-md-4 col-sm-6 border text-justify">
+                                <input type="checkbox" name="pattern_block" id="pt1"  value=""><label for="pt1"> *.facebook.* </label>	
+                            </div>
+                            <div class="col-md-4 col-sm-6 border text-justify">
+                                <input type="checkbox" name="pattern_block" id="pt1"  value=""><label for="pt1"> *.facebook.* </label>	
+                            </div>
+                            <div class="col-md-4 col-sm-6 border text-justify">
+                                <input type="checkbox" name="pattern_block" id="pt1"  value=""><label for="pt1"> *.facebook.* </label>	
+                            </div>
+                            <div class="col-md-4 col-sm-6 border text-justify">
+                                <input type="checkbox" name="pattern_block" id="pt1"  value=""><label for="pt1"> *.facebook.* </label>	
+                            </div>
+                            <div class="col-md-4 col-sm-6 border text-justify">
+                                <input type="checkbox" name="pattern_block" id="pt1"  value=""><label for="pt1"> *.facebook.* </label>	
+                            </div>
+                            <div class="col-md-4 col-sm-6 border text-justify">
+                                <input type="checkbox" name="pattern_block" id="pt1"  value=""><label for="pt1"> *.facebook.* </label>	
+                            </div>
+                            <div class="col-md-4 col-sm-6 border text-justify">
+                                <input type="checkbox" name="pattern_block" id="pt1"  value=""><label for="pt1"> *.facebook.* </label>	
+                            </div>
+                            <div class="col-md-4 col-sm-6 border text-justify">
+                                <input type="checkbox" name="pattern_block" id="pt1"  value=""><label for="pt1"> *.facebook.* </label>	
+                            </div>
+                            <div class="col-md-4 col-sm-6 border text-justify">
+                                <input type="checkbox" name="pattern_block" id="pt1"  value=""><label for="pt1"> *.facebook.* </label>	
+                            </div>
+                          </div>
                         </div>
-                    </div>
+                        <div class="panel-footer text-right">
+                            <button id="block" class="btn billButton" type="submit">DELETE PATTERN</button>
+                        </div>
+                    
                 </div>
               
             </div>
