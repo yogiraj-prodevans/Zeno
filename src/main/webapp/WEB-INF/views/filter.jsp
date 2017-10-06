@@ -158,6 +158,9 @@
                 .tab-content , .tab-pane{
                     background: unset;
                 }
+                .nav-tabs.nav-justified > li > a {
+                    border-radius: unset;
+                }
             </style>
 
 
@@ -267,6 +270,7 @@
                                     <h3>Blocked URL's</h3>
                                 </div>-->
                 <div class="row">
+<<<<<<< HEAD
                     <div class="panel panel-default ">
                         <div class="panel-heading">Blocked URL's</div>
                         <div class="panel-body">
@@ -288,8 +292,24 @@
 			                </form:form> 	
                         
                           </div>
+=======
+                    <form:form action="#" modelAttribute="CategoryListDetails" method="post" >
+                        <div class="panel panel-default ">
+
+                            <div class="panel-heading">Blocked URL's</div>
+                            <div class="panel-body">
+                                <c:forEach items="${CAT.getFilter_pattern()}" var="cat">
+                                    <div class="col-md-4 col-sm-6 border text-justify">
+                                        <input type="checkbox" name="category_block" id="${cat}"  value="${cat}"><label for="${cat}"> <c:out value="${cat}"/> </label>	
+                                    </div>
+                                </c:forEach> 
+                            </div>
                         </div>
-                        
+                        <div class="panel-footer text-right">
+                            <button id="block" class="btn billButton" type="submit">DELETE PATTERN</button>
+>>>>>>> 74482c08aecfd34cca83789570a4e81523da8188
+                        </div>
+                    </form:form> 	
                     
                 </div>
               
