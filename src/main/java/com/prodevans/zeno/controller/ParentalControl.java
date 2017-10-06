@@ -190,7 +190,7 @@ public class ParentalControl {
 	}    
     
     @RequestMapping(value = "/delete-patterns", method = RequestMethod.POST)
-	public String deletepatterns(ModelMap model, HttpSession session,@ModelAttribute(name="CategoryListDetails") CategoryList categoryList,@RequestParam (name="category_block")ArrayList<String> category_allowed) 
+	public String deletepatterns(ModelMap model, HttpSession session,@ModelAttribute(name="CategoryListDetails") CategoryList categoryList,@RequestParam (name="filter_category")ArrayList<String> category_allowed) 
 	{
     	if (session.getAttribute("user") == null) 
     	{
