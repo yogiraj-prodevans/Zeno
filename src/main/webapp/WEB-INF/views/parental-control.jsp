@@ -231,40 +231,7 @@
                     <br>
                 </p>
 
-                <form:form role="form" action="control" method="post" modelAttribute="ParentalControlDetails" class="row">
-                    <div class="col-md-2">
-                        <h4 style="padding-top: 1%;">Protection Status</h4>
-                    </div>
-                    <div class="col-md-3 mb-pt-30">
-                        <h4 type="text"
-                            style="background-color: #ffb81c; color: White; padding: 5px; padding-left: 15px;"
-                            name="current_protectionstatus" disabled value="">
-                            ${ParentalControlDetails.getProtectionStatusName()}</h4>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="col-md-2">
-                            <a href="${pageContext.request.contextPath }/control-category"></a>
-                        </div>
-                        <h4 style="padding-top: 1%;" class="mb-pt-1">Change your
-                            protection status</h4>
-                    </div>
-
-                    <div class="col-md-3 mb-pt-25">
-                        <form:select path="protection_status" multiple="false">
-
-                            <form:options items="${protection_level}" />
-                        </form:select>
-
-                        <form:hidden path="request_data"></form:hidden>
-                        <form:hidden path="user_name"></form:hidden>
-                        </div>
-                         <!-- ======IMPLEMENT BUTTON--START======= -->
-                    <div class="col-md-12" style="text-align: right; margin-top: 30px;">
-                        <a  class="btn billButton font-h2" href="${pageContext.request.contextPath }/control/${ParentalControlDetails.getProtectionStatusName()}">MANAGE ${ParentalControlDetails.getProtectionStatusName()}</a>
-                        <button  class="btn billButton font-h2" type="submit">IMPLEMENT</button>
-                    </div>
- </form:form>
+               
                         <!--  Schedule Status--START  -->
 
 
@@ -597,7 +564,7 @@
             <script type="text/javascript">
                 $('.form_datetime').datetimepicker({
                     language: 'en',
-                    format: "dd MM yyyy - hh:ii",
+                    format: "dd/mm/yyyy@hh:ii",
                     use24hours: true,
                     weekStart: 1,
                     todayBtn: 1,
