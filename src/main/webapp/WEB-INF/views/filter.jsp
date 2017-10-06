@@ -227,7 +227,7 @@
                     <div class="category_box">
                         <c:forEach items="${CAT.getBlocked_catogery()}" var="cat">
                             <div class="col-md-4 col-sm-6 border text-justify">
-                                <input type="checkbox" name="category_allowed" id="${cat}"  value="${cat}"><label for="${cat}"> <c:out value="${cat}"/> </label>	
+                                <input type="checkbox" name="category_block" id="${cat}"  value="${cat}"><label for="${cat}"> <c:out value="${cat}"/> </label>	
                             </div>
                         </c:forEach> 
                     </div>

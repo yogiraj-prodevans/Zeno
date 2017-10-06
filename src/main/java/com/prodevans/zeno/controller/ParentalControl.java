@@ -134,55 +134,60 @@ public class ParentalControl {
     @RequestMapping(value = "/allow-categories", method = RequestMethod.POST)
 	public String allowcategories(ModelMap model, HttpSession session,@ModelAttribute(name="CategoryListDetails") CategoryList categoryList,@RequestParam (name="category_allowed")ArrayList<String> category_allowed) 
 	{
-    	for (String string : category_allowed) {
-    		System.out.println("Selected List : "+string);
-		}
+    	if (session.getAttribute("user") == null) 
+    	{
+    		return  "redirect:/logout";
+        } 
+    	else 
+    	{
     	
-    	categoryList.getBlocked_catogery().addAll(category_allowed);
-    	categoryList.getAllowded_catogery().removeAll(category_allowed);
-    	
-    	System.out.println("Blocked List : "+categoryList.getBlocked_catogery());
-    	System.out.println("Allowed List : "+categoryList.getAllowded_catogery());
-    	
-    	//fetching the user details from the session.
-        SessionDetails user = (SessionDetails) session.getAttribute("user");
-
-        if (categoryimpl.updateCategoryList(categoryList.getBlocked_catogery(), categoryList.getAllowded_catogery(), user.getDomid(), user.getActid(), "update_block")) {
-            model.addAttribute("error", "Updated succefuly");
-        } else {
-            model.addAttribute("error", "Updation failed");
-        }
-    	
-    	return  "redirect:/control";
+	    	categoryList.getBlocked_catogery().addAll(category_allowed);
+	    	categoryList.getAllowded_catogery().removeAll(category_allowed);
+	    	
+	    	System.out.println("Blocked List : "+categoryList.getBlocked_catogery());
+	    	System.out.println("Allowed List : "+categoryList.getAllowded_catogery());
+	    	
+	    	//fetching the user details from the session.
+	        SessionDetails user = (SessionDetails) session.getAttribute("user");
+	
+	        if (categoryimpl.updateCategoryList(categoryList.getBlocked_catogery(), categoryList.getAllowded_catogery(), user.getDomid(), user.getActid(), "update_block")) {
+	            model.addAttribute("error", "Updated succefuly");
+	        } else {
+	            model.addAttribute("error", "Updation failed");
+	        }
+	    	
+	    	return  "redirect:/control";
+    	}
 	}
 
     @RequestMapping(value = "/block-categories", method = RequestMethod.POST)
-	public String blockcategories(ModelMap model, HttpSession session,@ModelAttribute(name="CategoryListDetails") CategoryList categoryList,@RequestParam (name="category_allowed")String category_allowed[]) 
+	public String blockcategories(ModelMap model, HttpSession session,@ModelAttribute(name="CategoryListDetails") CategoryList categoryList,@RequestParam (name="category_block")ArrayList<String> category_allowed) 
 	{
-    	for (String string : category_allowed) {
-    		System.out.println("Selected List : "+string);
-		}
+    	if (session.getAttribute("user") == null) 
+    	{
+    		return  "redirect:/logout";
+        } 
+    	else 
+    	{
     	
-    	
-    	System.out.println("Allowed List : "+categoryList.getAllowded_catogery());
-    	return  "redirect:control";
-	}
-    
-   /* @ModelAttribute("requestList")
-	public List<String> getRequestList()
-	{
-		List<String> request=new ArrayList<String>();
-		request.add("New Connection");
-		request.add("Activation / Deactivation of Services");
-		request.add("Duplicate Bill");
-		request.add("Change of Location");
-		request.add("Restoration of Service");
-		request.add("Any Other");
-		
-		return request;
-	}
-    */
-    
+	    	categoryList.getBlocked_catogery().removeAll(category_allowed);
+	    	categoryList.getAllowded_catogery().addAll(category_allowed);
+	    	
+	    	System.out.println("Blocked List : "+categoryList.getBlocked_catogery());
+	    	System.out.println("Allowed List : "+categoryList.getAllowded_catogery());
+	    	
+	    	//fetching the user details from the session.
+	        SessionDetails user = (SessionDetails) session.getAttribute("user");
+	
+	        if (categoryimpl.updateCategoryList(categoryList.getBlocked_catogery(), categoryList.getAllowded_catogery(), user.getDomid(), user.getActid(), "update_allow")) {
+	            model.addAttribute("error", "Updated succefuly");
+	        } else {
+	            model.addAttribute("error", "Updation failed");
+	        }
+	    	
+	    	return  "redirect:/control";
+    	}
+	}    
     
     /**
      * @param PROTECTION_STATUS the PROTECTION_STATUS to set
