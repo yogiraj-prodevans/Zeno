@@ -29,7 +29,7 @@ input[type="text"]
 {
 	.NameWidth
 	{
-		max-width: 98 !important%;
+		max-width: 98 !important;
 	}
 }
 @media ( max-width : 750px) 
