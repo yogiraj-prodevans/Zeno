@@ -13,9 +13,11 @@ public class CategoryList {
 
     private ArrayList<String> blocked_catogery;
     private ArrayList<String> allowded_catogery;
+    private ArrayList<String> filter_pattern;
     
     private ArrayList<String> selected_allowded_catogery;
     private ArrayList<String> selected_blocked_catogery;
+    private ArrayList<String> selected_filter_pattern;
     
     private String block_list_data;
     private String allow_list_data;
@@ -23,9 +25,11 @@ public class CategoryList {
     public CategoryList() {
         blocked_catogery = new ArrayList<>();
         allowded_catogery = new ArrayList<>();
+        filter_pattern = new ArrayList<>();
         
         selected_allowded_catogery=new ArrayList<>();
         selected_blocked_catogery=new ArrayList<>();
+        selected_filter_pattern = new ArrayList<>();
         
         block_list_data = "";
         allow_list_data = "";
@@ -33,7 +37,31 @@ public class CategoryList {
 
     
     
-    public ArrayList<String> getSelected_allowded_catogery() {
+    public ArrayList<String> getFilter_pattern() {
+		return filter_pattern;
+	}
+
+
+
+	public void setFilter_pattern(ArrayList<String> filter_pattern) {
+		this.filter_pattern = filter_pattern;
+	}
+
+
+
+	public ArrayList<String> getSelected_filter_pattern() {
+		return selected_filter_pattern;
+	}
+
+
+
+	public void setSelected_filter_pattern(ArrayList<String> selected_filter_pattern) {
+		this.selected_filter_pattern = selected_filter_pattern;
+	}
+
+
+
+	public ArrayList<String> getSelected_allowded_catogery() {
 		return selected_allowded_catogery;
 	}
 

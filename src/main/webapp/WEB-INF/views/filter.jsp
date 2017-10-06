@@ -270,41 +270,24 @@
                     <div class="panel panel-default ">
                         <div class="panel-heading">Blocked URL's</div>
                         <div class="panel-body">
-                            <div class="col-md-4 col-sm-6 border text-justify">
-                                <input type="checkbox" name="pattern_block" id="pt1"  value=""><label for="pt1"> *.facebook.* </label>	
-                            </div>
-                            <div class="col-md-4 col-sm-6 border text-justify">
-                                <input type="checkbox" name="pattern_block" id="pt1"  value=""><label for="pt1"> *.facebook.* </label>	
-                            </div>
-                            <div class="col-md-4 col-sm-6 border text-justify">
-                                <input type="checkbox" name="pattern_block" id="pt1"  value=""><label for="pt1"> *.facebook.* </label>	
-                            </div>
-                            <div class="col-md-4 col-sm-6 border text-justify">
-                                <input type="checkbox" name="pattern_block" id="pt1"  value=""><label for="pt1"> *.facebook.* </label>	
-                            </div>
-                            <div class="col-md-4 col-sm-6 border text-justify">
-                                <input type="checkbox" name="pattern_block" id="pt1"  value=""><label for="pt1"> *.facebook.* </label>	
-                            </div>
-                            <div class="col-md-4 col-sm-6 border text-justify">
-                                <input type="checkbox" name="pattern_block" id="pt1"  value=""><label for="pt1"> *.facebook.* </label>	
-                            </div>
-                            <div class="col-md-4 col-sm-6 border text-justify">
-                                <input type="checkbox" name="pattern_block" id="pt1"  value=""><label for="pt1"> *.facebook.* </label>	
-                            </div>
-                            <div class="col-md-4 col-sm-6 border text-justify">
-                                <input type="checkbox" name="pattern_block" id="pt1"  value=""><label for="pt1"> *.facebook.* </label>	
-                            </div>
-                            <div class="col-md-4 col-sm-6 border text-justify">
-                                <input type="checkbox" name="pattern_block" id="pt1"  value=""><label for="pt1"> *.facebook.* </label>	
-                            </div>
-                            <div class="col-md-4 col-sm-6 border text-justify">
-                                <input type="checkbox" name="pattern_block" id="pt1"  value=""><label for="pt1"> *.facebook.* </label>	
-                            </div>
+                        
+                        	<form:form action="#" modelAttribute="CategoryListDetails" method="post" >
+			                    <div class="category_box">
+			                        <c:forEach items="${CAT.getFilter_pattern()}" var="cat">
+			                            <div class="col-md-4 col-sm-6 border text-justify">
+			                                <input type="checkbox" name="category_block" id="${cat}"  value="${cat}"><label for="${cat}"> <c:out value="${cat}"/> </label>	
+			                            </div>
+			                        </c:forEach> 
+			                    </div>
+
+			                    <div class="panel-footer text-right">
+		                            <button id="block" class="btn billButton" type="submit">DELETE PATTERN</button>
+		                        </div>
+			                </form:form> 	
+                        
                           </div>
                         </div>
-                        <div class="panel-footer text-right">
-                            <button id="block" class="btn billButton" type="submit">DELETE PATTERN</button>
-                        </div>
+                        
                     
                 </div>
               

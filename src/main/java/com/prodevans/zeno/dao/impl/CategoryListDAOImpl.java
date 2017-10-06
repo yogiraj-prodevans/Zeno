@@ -125,8 +125,74 @@ public class CategoryListDAOImpl implements CategoryListDAO {
         logger.info("Response body : \n" + responce_body);
         logger.info("List Allow : " + list.getAllowded_catogery().toString());
         logger.info("List Block : " + list.getBlocked_catogery().toString());
+        
+        ArrayList<String> filter_pattern=getFilterPattern(protection_status, domain_id);
+        list.setFilter_pattern(filter_pattern);
+        logger.info("Filter Pattern : " + list.getFilter_pattern().toString());
+        
         return list;
     }
+
+    private ArrayList<String> getFilterPattern(String filter_name, String domain_id)
+    {
+
+        /*
+		 * Creation of the response object with the string data type. Because it return
+		 * the JSON.
+         */
+        ResponseEntity<String> person;
+
+        /*
+		 * Headers for the response type if we want to return JSON response then we
+		 * require to add.
+         */
+        HttpHeaders headers = new HttpHeaders();
+
+        /*
+		 * Adding of the response header with application/json type
+         */
+        headers.add("Accept", "application/json");
+
+        /*
+		 * Creation of the Entity object for the adding the headers into request.
+         */
+        entity = new HttpEntity<>(headers);
+
+        /*
+		 * Creation of REST TEMPLET object for the executing of the REST calls.
+         */
+        restTemplate = new RestTemplate();
+
+        /*
+		 * Adding the basic type of authentication on the REST TEMPLETE.
+         */
+        restTemplate.getInterceptors()
+                .add(new BasicAuthorizationInterceptor(RestConfig.USER_NAME, RestConfig.PASSWORD));
+
+        /*
+		 * Execution of the REST call with basic authentication and JSON response type
+         */
+        Map<String, String> params = new HashMap<String, String>();
+        params.put("domain_id", domain_id);
+        params.put("filter_name", filter_name);
+
+        person = restTemplate.exchange(RestConfig.SEARCH_FILTER_OBJECT, HttpMethod.GET, entity, String.class, params);
+
+        String getbody=person.getBody();
+        JSONArray pattern_array= new JSONObject(getbody).getJSONObject("url-filtering-profile").getJSONObject("blacklist").getJSONArray("patterns");
+        
+        ArrayList<String> pattern_arraylist=new ArrayList<String>();
+        
+        for(Object a : pattern_array )
+        {
+        	pattern_arraylist.add(a.toString());
+        }
+        
+        
+        return pattern_arraylist;
+
+    }
+    
 
     private String getCategory(String protection_status, String domain_id) {
 
