@@ -172,10 +172,15 @@
             <div class="header-navigation pull-right font-transform-inherit" style="font-size: 12px">
                 <ul>
                     <li class="dropdown active"></li>
-                    <li class="dropdown active"></li>
-                    <li class="active"><a href="${pageContext.request.contextPath }/dashboard">MY ONE8</a></li>
-                    <li><a href="${pageContext.request.contextPath }/billingPayment">PAY YOUR BILL</a></li>
+                    <li class="active"><a
+                            href="${pageContext.request.contextPath }/dashboard">MY ONE8</a></li>
+                    <li><a
+                            href="${pageContext.request.contextPath }/billingPayment">MAKE
+                            PAYMENT</a></li>
+                            <li><a href="${pageContext.request.contextPath }/control">SURF
+                            SAFE</a></li>
                     <li><a href="${pageContext.request.contextPath }/service">SERVICE</a></li>
+
                     <li><a href="${pageContext.request.contextPath }/profile">PROFILE</a></li>
                     <li><a href="${pageContext.request.contextPath }/logout">LOGOUT</a></li>
                 </ul>
@@ -196,6 +201,7 @@
     </div>
 
     <div class="container" style="margin-bottom: 3%;">
+
         <div class="col-md-4">
             <div class="mainBlock4" style="background-color: #F44336; padding-top: 5%;">
                 <h3 class="pb-10">Your One8 account</h3>
@@ -206,7 +212,7 @@
                           style="margin-right: 10px;">Usage</span> <span
                           class="blackShadow font-h2">${SubscriptionDetails.getDataUsed()}GB
                     </span>
-                </div>
+               </div>
                 <div class="progress">
                     <div class="progressbarColor" style="width: ${SubscriptionDetails.getDataPercent()}%;"></div>
                 </div>

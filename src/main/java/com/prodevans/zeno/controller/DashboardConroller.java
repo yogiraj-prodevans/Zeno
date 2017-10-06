@@ -75,9 +75,16 @@ public class DashboardConroller {
 				model.addAttribute("SubscriptionDetails", details);
 				session.setAttribute("plan", details.getRatePlan());
 				session.setAttribute("FUP", details.getFUPLimit());
+
 				session.setAttribute("amount", rcdetails.getAmount());
 				session.setAttribute("brcdesc", rcdetails.getBrcdesc());
 				
+
+                               
+                                //set ip address to the user for the parental control.
+				session.setAttribute("user_ip_address", details.getIp_address());
+                                        
+
 				model.addAttribute("plan", details.getRatePlan());
 				model.addAttribute("FUP", details.getFUPLimit());
 				model.addAttribute("amount",rcdetails.getAmount());
@@ -105,14 +112,7 @@ public class DashboardConroller {
 		}
 	}
 
-	@RequestMapping(value = "/parental-control", method = RequestMethod.GET)
-	public String parentControl(Locale locale, Model model, HttpSession session) {
-		if (session.getAttribute("user") == null) {
-			return "redirect:/logout";
-		} else {
-			return "parental-control";
-		}
-	}
+	
 
 	@RequestMapping(value = "/knowYourCPE", method = RequestMethod.GET)
 	public String knowYourCPE(Locale locale, Model model, HttpSession session) {

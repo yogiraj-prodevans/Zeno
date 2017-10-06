@@ -107,8 +107,9 @@ background-position:right center;
 				<ul>
 					<li class="dropdown active"></li>
 					<li><a href="${pageContext.request.contextPath }/dashboard">MY ONE8</a></li>
-					<li><a
-						href="${pageContext.request.contextPath }/billingPayment">PAY YOUR BILL</a></li>
+					<li><a href="${pageContext.request.contextPath }/billingPayment">PAY YOUR BILL</a></li>
+                                                <li><a href="${pageContext.request.contextPath }/control">SURF
+                            SAFE</a></li>
 					<li class="active"><a href="${pageContext.request.contextPath }/service">SERVICE</a></li>
 
 					<li><a href="${pageContext.request.contextPath }/profile">PROFILE</a></li>

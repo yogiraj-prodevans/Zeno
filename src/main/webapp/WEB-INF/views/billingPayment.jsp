@@ -127,6 +127,8 @@
                             <li class="dropdown active"></li>
                             <li><a href="${pageContext.request.contextPath }/dashboard">MY ONE8</a></li>
                         <li class="active"><a href="${pageContext.request.contextPath }/billingPayment">PAY YOUR BILL </a></li>
+                        <li><a href="${pageContext.request.contextPath }/control">SURF
+                            SAFE</a></li>
                         <li><a href="${pageContext.request.contextPath }/service">SERVICE</a></li>
 
                         <li><a href="${pageContext.request.contextPath }/profile">PROFILE</a></li>
@@ -187,6 +189,7 @@
                         <h4 style="color: black;" class="pb-30">${SubscriptionDetails.getStartdt() }-${SubscriptionDetails.getExpirydt() }</h4>
                         <div  style="margin-bottom: 7px;">
                             <span class="blackShadow font-h4" style="color: black;margin-right: 10px;">Usage</span>
+
 
                             <span class="blackShadow font-h2" style="color: black;">
                                 ${SubscriptionDetails.getDataUsed() }GB</span>

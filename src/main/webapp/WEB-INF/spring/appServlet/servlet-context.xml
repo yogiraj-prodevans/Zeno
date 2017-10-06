@@ -21,8 +21,9 @@
 	<resources mapping="/bootstrap/**" location="/resources/bootstrap/" />
 	<resources mapping="/plugins/**" location="/resources/plugins/" />
 	
-	<resources mapping="/slider-resource/**" location="/resources/slider-resource/" />
 	
+	<resources mapping="/slider-resource/**" location="/resources/slider-resource/" />
+	<resources mapping="/jquery-ui/**" location="/resources/jquery-ui/" />
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 
 		in the /WEB-INF/views directory -->
 	<beans:bean

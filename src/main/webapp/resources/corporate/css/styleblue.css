@@ -252,7 +252,7 @@ textarea.form-control:focus {
 	font-size: 0;
 	line-height: 0;
 }
-*html .clearfix {
+*+html .clearfix {
 	zoom: 1;
 }
 *+html .clearfix {
@@ -2663,7 +2663,7 @@ Demo Utils
   color: #010745;
 }
 .sidebar-categories li a:before {
-    content: "ï?”";
+    content: "ï¿½?ï¿½";
     font-family: FontAwesome !important;
     font-size: 8px;
     padding-right: 10px;

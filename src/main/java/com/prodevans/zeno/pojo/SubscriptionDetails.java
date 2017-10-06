@@ -15,7 +15,8 @@ public class SubscriptionDetails {
 	private int subsno;
 	private long FUPLimit;
 	private long dataUsed;
-
+        private String ip_address;
+        
 	/**
 	 * @return the fUPLimit
 	 */
@@ -223,5 +224,19 @@ public class SubscriptionDetails {
 				+ ", expirydt=" + expirydt + ", svctype=" + svctype + ", subsno=" + subsno + ", FUPLimit=" + FUPLimit
 				+ ", dataUsed=" + dataUsed + ", percentdata=" + getDataPercent() + "]";
 	}
+
+    /**
+     * @return the ip_address
+     */
+    public String getIp_address() {
+        return ip_address;
+    }
+
+    /**
+     * @param ip_address the ip_address to set
+     */
+    public void setIp_address(String ip_address) {
+        this.ip_address = ip_address;
+    }
 
 }
