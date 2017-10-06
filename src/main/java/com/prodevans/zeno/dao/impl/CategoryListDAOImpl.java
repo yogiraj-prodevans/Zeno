@@ -179,8 +179,13 @@ public class CategoryListDAOImpl implements CategoryListDAO {
         person = restTemplate.exchange(RestConfig.SEARCH_FILTER_OBJECT, HttpMethod.GET, entity, String.class, params);
 
         String getbody=person.getBody();
-        JSONArray pattern_array= new JSONObject(getbody).getJSONObject("url-filtering-profile").getJSONObject("blacklist").getJSONArray("patterns");
-        
+        JSONObject result = new JSONObject(getbody).getJSONObject("url-filtering-profile");
+        JSONArray pattern_array = null;
+        if (result.has("blacklist") && result.getJSONObject("blacklist").has("patterns")) {
+            pattern_array = new JSONObject(getbody).getJSONObject("url-filtering-profile").getJSONObject("blacklist").getJSONArray("patterns");
+        } else {
+            pattern_array = new JSONArray();
+        }
         ArrayList<String> pattern_arraylist=new ArrayList<String>();
         
         for(Object a : pattern_array )
