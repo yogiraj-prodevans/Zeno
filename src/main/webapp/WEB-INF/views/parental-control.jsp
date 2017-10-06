@@ -564,7 +564,7 @@
             <script type="text/javascript">
                 $('.form_datetime').datetimepicker({
                     language: 'en',
-                    format: "dd MM yyyy - hh:ii",
+                    format: "dd/mm/yyyy@hh:ii",
                     use24hours: true,
                     weekStart: 1,
                     todayBtn: 1,
