@@ -189,6 +189,29 @@ public class ParentalControl {
     	}
 	}    
     
+    @RequestMapping(value = "/delete-patterns", method = RequestMethod.POST)
+	public String deletepatterns(ModelMap model, HttpSession session,@ModelAttribute(name="CategoryListDetails") CategoryList categoryList,@RequestParam (name="category_block")ArrayList<String> category_allowed) 
+	{
+    	if (session.getAttribute("user") == null) 
+    	{
+    		return  "redirect:/logout";
+        } 
+    	else 
+    	{
+    		categoryList.getFilter_pattern().removeAll(category_allowed);
+    		
+    		System.out.println("Removed Filter Pattern :"+categoryList.getFilter_pattern());
+    		//fetching the user details from the session.
+	        SessionDetails user = (SessionDetails) session.getAttribute("user");
+	        
+	        return  "redirect:/control";
+    	}
+    	
+	}
+    
+    
+    
+    
     /**
      * @param PROTECTION_STATUS the PROTECTION_STATUS to set
      */

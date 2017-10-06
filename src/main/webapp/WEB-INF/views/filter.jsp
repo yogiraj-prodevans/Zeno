@@ -271,7 +271,7 @@
                         <div class="panel-heading">Blocked URL's</div>
                         <div class="panel-body">
                         
-                        	<form:form action="#" modelAttribute="CategoryListDetails" method="post" >
+                        	<form:form action="delete-patterns" modelAttribute="CategoryListDetails" method="post" >
 			                    <div class="category_box">
 			                        <c:forEach items="${CAT.getFilter_pattern()}" var="cat">
 			                            <div class="col-md-4 col-sm-6 border text-justify">
@@ -279,7 +279,9 @@
 			                            </div>
 			                        </c:forEach> 
 			                    </div>
-
+								
+								<form:hidden path="filter_pattern" />
+								
 			                    <div class="panel-footer text-right">
 		                            <button id="block" class="btn billButton" type="submit">DELETE PATTERN</button>
 		                        </div>
