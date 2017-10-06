@@ -190,7 +190,7 @@ public class ParentalControl {
 	}    
     
     @RequestMapping(value = "/delete-patterns", method = RequestMethod.POST)
-	public String deletepatterns(ModelMap model, HttpSession session,@ModelAttribute(name="CategoryListDetails") CategoryList categoryList,@RequestParam (name="filter_category")ArrayList<String> category_allowed) 
+	public String deletepatterns(ModelMap model, HttpSession session,@ModelAttribute(name="CategoryListDetails") CategoryList categoryList,@RequestParam (name="filter_category")ArrayList<String> filter_category) 
 	{
     	if (session.getAttribute("user") == null) 
     	{
@@ -198,7 +198,12 @@ public class ParentalControl {
         } 
     	else 
     	{
-    		categoryList.getFilter_pattern().removeAll(category_allowed);
+    		for (String string : filter_category) 
+    		{
+    			System.out.println("Selected Filters : "+string);
+			}
+    		
+    		categoryList.getFilter_pattern().removeAll(filter_category);
     		
     		System.out.println("Removed Filter Pattern :"+categoryList.getFilter_pattern());
     		//fetching the user details from the session.

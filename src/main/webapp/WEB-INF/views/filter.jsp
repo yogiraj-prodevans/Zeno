@@ -274,13 +274,11 @@
 	                    <div class="panel panel-default ">
 	                        <div class="panel-heading">Blocked URL's</div>
 	                        <div class="panel-body">
-			                    <div class="category_box">
-			                        <c:forEach items="${CAT.getFilter_pattern()}" var="cat">
-			                            <div class="col-md-4 col-sm-6 border text-justify">
-			                                <input type="checkbox" name="filter_category" id="${cat}"  value="${cat}"><label for="${cat}"> <c:out value="${cat}"/> </label>	
-			                            </div>
-			                        </c:forEach> 
-			                    </div>
+		                        <c:forEach items="${CAT.getFilter_pattern()}" var="cat">
+		                            <div class="col-md-4 col-sm-6 border text-justify">
+		                                <input type="checkbox" name="filter_category" id="${cat}"  value="${cat}"><label for="${cat}"> <c:out value="${cat}"/> </label>	
+		                            </div>
+		                        </c:forEach> 
 								<form:hidden path="filter_pattern" />
                           	</div>
                          </div>
