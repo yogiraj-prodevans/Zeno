@@ -307,10 +307,10 @@ public class ParentalControl {
         return "redirect:/control-category";
     }
 */    
-    @RequestMapping(value = {"/control/ADVANCED","/control/CUSTOM"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/scheduling"}, method = RequestMethod.GET)
     public String getAdvanceFilter(Locale locale, Model model,  HttpSession session) {
          
-            return "filter";
+            return "parental-control";
     }
     
     /**
