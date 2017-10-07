@@ -252,49 +252,53 @@
             </div>
             <div id="Custom" class="tab-pane fade">
                 <div class="row custom_box " style="" >
-                    <form class="form-inline" >
+                    <form:form class="form-inline" action="update-patterns" modelAttribute="CategoryListDetails" method="post" >
                         <div class="form-group col-md-6 col-md-offset-2" >
                             <label for="url-block" class="col-md-2 text-right" title="Add the URL to be blocked" >URL:</label>
                             <div class="col-md-10">
-                                <input id="url-block" type="text" class="" style="width:100%" id="url-block" placeholder="ex. www.facebook.com" name="url-block" >
+                                <input id="url_pattern" type="text" class="" style="width:100%" name="url_pattern" placeholder="ex. www.facebook.com" pattern="[([^w]{3})]+([a-zA-Z]*)+[.]" required="required" >
                             </div>
                         </div>
-
+                        <form:hidden path="filter_pattern" />
+                        <form:hidden path="remove_filter_pattern" />
                         <button type="submit" class="btn billButton col-md-2 ">SUBMIT</button>
-                    </form>
+                    </form:form>
 
                 </div>
-                
+
                 <!--                <div class="col-md-12" style="background-color: #F44336; height: 50px; ">
                                     <h3>Blocked URL's</h3>
                                 </div>-->
                 <div class="row">
-					<form:form action="delete-patterns" modelAttribute="CategoryListDetails" method="post" >
-	                    <div class="panel panel-default ">
-	                        <div class="panel-heading">Blocked URL's</div>
-	                        <div class="panel-body">
-		                        <c:forEach items="${CAT.getFilter_pattern()}" var="cat">
-		                            <div class="col-md-4 col-sm-6 border text-justify">
-		                                <input type="checkbox" name="filter_category" id="${cat}"  value="${cat}"><label for="${cat}"> <c:out value="${cat}"/> </label>	
-		                            </div>
-		                        </c:forEach> 
-								<form:hidden path="filter_pattern" />
-                          	</div>
-                         </div>
-                         <div class="panel-footer text-right">
+                    <form:form action="delete-patterns" modelAttribute="CategoryListDetails" method="post" >
+                        <div class="panel panel-default ">
+                            <div class="panel-heading">Blocked URL's</div>
+                            <div class="panel-body">
+                                <c:forEach items="${CAT.getFilter_pattern()}" var="cat">
+                                    <div class="col-md-4 col-sm-6 border text-justify">
+                                        <input type="checkbox" name="filter_category" id="${cat}"  value="${cat}"><label for="${cat}"> <c:out value="${cat}"/> </label>	
+                                    </div>
+                                </c:forEach> 
+                                <form:hidden path="filter_pattern" />
+                                <form:hidden path="remove_filter_pattern" />
+
+                            </div>
+                        </div>
+                        <div class="panel-footer text-right">
                             <button id="block" class="btn billButton" type="submit">DELETE PATTERN</button>
-                         </div>
+                        </div>
                     </form:form>
                 </div>
               
             </div>
-
-        </div>
-    </div>
 <c:if test="${not empty error }">
-<c:out value="${error }"></c:out>
+    <h3 style="color: green"><c:out value="${error }"></c:out></h3>
 
 </c:if>
+        </div>
+        
+    </div>
+
 
 
     <!-- included pop up -->

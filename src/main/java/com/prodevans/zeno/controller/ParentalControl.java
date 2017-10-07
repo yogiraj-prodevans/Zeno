@@ -24,6 +24,8 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.apache.xmlrpc.XmlRpcException;
 import org.slf4j.Logger;
@@ -78,11 +80,10 @@ public class ParentalControl {
 //        protection_level.put("custom_filter", "CUSTOM");
 //
 //        model.addAttribute("protection_level", protection_level);
-
         model.addAttribute("error", error);
         CategoryList list = new CategoryList();
         if (session.getAttribute("user") == null) {
-        	return  new ModelAndView("redirect:logout");
+            return new ModelAndView("redirect:logout");
         } else {
             try {
                 //fetching the user details from the session.
@@ -127,96 +128,113 @@ public class ParentalControl {
 
             //model.addAttribute("ParentalControlDetails", parentalControlDetails);
             //return "filter";
-            return  new ModelAndView("filter","CategoryListDetails",list);
+            return new ModelAndView("filter", "CategoryListDetails", list);
         }
     }
-    
+
     @RequestMapping(value = "/allow-categories", method = RequestMethod.POST)
-	public String allowcategories(ModelMap model, HttpSession session,@ModelAttribute(name="CategoryListDetails") CategoryList categoryList,@RequestParam (name="category_allowed")ArrayList<String> category_allowed) 
-	{
-    	if (session.getAttribute("user") == null) 
-    	{
-    		return  "redirect:/logout";
-        } 
-    	else 
-    	{
-    	
-	    	categoryList.getBlocked_catogery().addAll(category_allowed);
-	    	categoryList.getAllowded_catogery().removeAll(category_allowed);
-	    	
-	    	System.out.println("Blocked List : "+categoryList.getBlocked_catogery());
-	    	System.out.println("Allowed List : "+categoryList.getAllowded_catogery());
-	    	
-	    	//fetching the user details from the session.
-	        SessionDetails user = (SessionDetails) session.getAttribute("user");
-	
-	        if (categoryimpl.updateCategoryList(categoryList.getBlocked_catogery(), categoryList.getAllowded_catogery(), user.getDomid(), user.getActid(), "update_block")) {
-	            model.addAttribute("error", "Updated succefuly");
-	        } else {
-	            model.addAttribute("error", "Updation failed");
-	        }
-	    	
-	    	return  "redirect:/control";
-    	}
-	}
+    public String allowcategories(ModelMap model, HttpSession session, @ModelAttribute(name = "CategoryListDetails") CategoryList categoryList, @RequestParam(name = "category_allowed") ArrayList<String> category_allowed) {
+        if (session.getAttribute("user") == null) {
+            return "redirect:/logout";
+        } else {
+
+            categoryList.getBlocked_catogery().addAll(category_allowed);
+            categoryList.getAllowded_catogery().removeAll(category_allowed);
+
+            System.out.println("Blocked List : " + categoryList.getBlocked_catogery());
+            System.out.println("Allowed List : " + categoryList.getAllowded_catogery());
+
+            //fetching the user details from the session.
+            SessionDetails user = (SessionDetails) session.getAttribute("user");
+
+            if (categoryimpl.updateCategoryList(categoryList.getBlocked_catogery(), categoryList.getAllowded_catogery(), user.getDomid(), user.getActid(), "update_block")) {
+                model.addAttribute("error", "URL category allowed successfually...");
+            } else {
+                model.addAttribute("error", "URL category allowing process failed!!!");
+            }
+
+            return "redirect:/control";
+        }
+    }
 
     @RequestMapping(value = "/block-categories", method = RequestMethod.POST)
-	public String blockcategories(ModelMap model, HttpSession session,@ModelAttribute(name="CategoryListDetails") CategoryList categoryList,@RequestParam (name="category_block")ArrayList<String> category_allowed) 
-	{
-    	if (session.getAttribute("user") == null) 
-    	{
-    		return  "redirect:/logout";
-        } 
-    	else 
-    	{
-    	
-	    	categoryList.getBlocked_catogery().removeAll(category_allowed);
-	    	categoryList.getAllowded_catogery().addAll(category_allowed);
-	    	
-	    	System.out.println("Blocked List : "+categoryList.getBlocked_catogery());
-	    	System.out.println("Allowed List : "+categoryList.getAllowded_catogery());
-	    	
-	    	//fetching the user details from the session.
-	        SessionDetails user = (SessionDetails) session.getAttribute("user");
-	
-	        if (categoryimpl.updateCategoryList(categoryList.getBlocked_catogery(), categoryList.getAllowded_catogery(), user.getDomid(), user.getActid(), "update_allow")) {
-	            model.addAttribute("error", "Updated succefuly");
-	        } else {
-	            model.addAttribute("error", "Updation failed");
-	        }
-	    	
-	    	return  "redirect:/control";
-    	}
-	}    
-    
+    public String blockcategories(ModelMap model, HttpSession session, @ModelAttribute(name = "CategoryListDetails") CategoryList categoryList, @RequestParam(name = "category_block") ArrayList<String> category_allowed) {
+        if (session.getAttribute("user") == null) {
+            return "redirect:/logout";
+        } else {
+
+            categoryList.getBlocked_catogery().removeAll(category_allowed);
+            categoryList.getAllowded_catogery().addAll(category_allowed);
+
+            System.out.println("Blocked List : " + categoryList.getBlocked_catogery());
+            System.out.println("Allowed List : " + categoryList.getAllowded_catogery());
+
+            //fetching the user details from the session.
+            SessionDetails user = (SessionDetails) session.getAttribute("user");
+
+            if (categoryimpl.updateCategoryList(categoryList.getBlocked_catogery(), categoryList.getAllowded_catogery(), user.getDomid(), user.getActid(), "update_allow")) {
+                model.addAttribute("error", "URL Category blocked successfually...");
+            } else {
+                model.addAttribute("error", "URL Category blocking process failed!!!");
+            }
+
+            return "redirect:/control";
+        }
+    }
+
     @RequestMapping(value = "/delete-patterns", method = RequestMethod.POST)
-	public String deletepatterns(ModelMap model, HttpSession session,@ModelAttribute(name="CategoryListDetails") CategoryList categoryList,@RequestParam (name="filter_category")ArrayList<String> filter_category) 
-	{
-    	if (session.getAttribute("user") == null) 
-    	{
-    		return  "redirect:/logout";
-        } 
-    	else 
-    	{
-    		for (String string : filter_category) 
-    		{
-    			System.out.println("Selected Filters : "+string);
-			}
-    		
-    		categoryList.getFilter_pattern().removeAll(filter_category);
-    		
-    		System.out.println("Removed Filter Pattern :"+categoryList.getFilter_pattern());
-    		//fetching the user details from the session.
-	        SessionDetails user = (SessionDetails) session.getAttribute("user");
-	        
-	        return  "redirect:/control";
-    	}
-    	
-	}
-    
-    
-    
-    
+    public String deletepatterns(ModelMap model, HttpSession session, @ModelAttribute(name = "CategoryListDetails") CategoryList categoryList, @RequestParam(name = "filter_category") ArrayList<String> selected_filter_category) {
+        if (session.getAttribute("user") == null) {
+            return "redirect:/logout";
+        } else {
+            for (String string : selected_filter_category) {
+                System.out.println("Selected Filters : " + string);
+            }
+
+            categoryList.getRemove_filter_pattern().removeAll(selected_filter_category);
+
+            //fetching the user details from the session.
+            SessionDetails user = (SessionDetails) session.getAttribute("user");
+            if (categoryimpl.updateFilterPattern(categoryList.getRemove_filter_pattern(), user.getDomid(), user.getActid() + RestConfig.ADVANCED_FILTER)) {
+                model.addAttribute("error", "Pattern deleted successfully...");
+            } else {
+                model.addAttribute("error", "Pattern deletion process failed!!!");
+            }
+
+            return "redirect:/control";
+        }
+
+    }
+
+    @RequestMapping(value = "/update-patterns", method = RequestMethod.POST)
+    public String updatePatterns(ModelMap model, HttpSession session, @ModelAttribute(name = "CategoryListDetails") CategoryList categoryList, @RequestParam(name = "url_pattern")String selected_filter_category) {
+        if (session.getAttribute("user") == null) {
+            return "redirect:/logout";
+        } else {
+
+            Pattern pattern = Pattern.compile("[([^w]{3})]+([a-zA-Z]*)+[.]");
+            Matcher matcher = pattern.matcher(selected_filter_category);
+            matcher.find();
+            try {
+                selected_filter_category = matcher.group().replaceAll("\\s+", "").substring(1, matcher.group().length() - 1);
+                categoryList.getRemove_filter_pattern().add(".*"+selected_filter_category+".*");
+
+                //fetching the user details from the session.
+                SessionDetails user = (SessionDetails) session.getAttribute("user");
+                if (categoryimpl.updateFilterPattern(categoryList.getRemove_filter_pattern(), user.getDomid(), user.getActid() + RestConfig.ADVANCED_FILTER)) {
+                    model.addAttribute("error", "Pattern updated successfully...");
+                } else {
+                    model.addAttribute("error", "Pattern updation process failed!!!");
+                }
+            } catch (Exception e) {
+                logger.error("Error : " + e.getMessage());
+                model.addAttribute("error", "Please check the URL!!!");
+            }
+
+            return "redirect:/control";
+        }
+
+    }
     /**
      * @param PROTECTION_STATUS the PROTECTION_STATUS to set
      */
@@ -249,7 +267,7 @@ public class ParentalControl {
     }
 
     @RequestMapping(value = "/control-category", method = RequestMethod.GET)
-    public String categoryListFirst(Locale locale, Model model, HttpSession session, @RequestParam(name="error",required = false)String error) {
+    public String categoryListFirst(Locale locale, Model model, HttpSession session, @RequestParam(name = "error", required = false) String error) {
 
         if (session.getAttribute("user") == null) {
             return "redirect:/logout";
@@ -297,9 +315,8 @@ public class ParentalControl {
 //            return "control-category-list";
 //        }
 //    }
-
     //control-category
-  /*  @RequestMapping(value = "/control-category", method = RequestMethod.POST)
+    /*  @RequestMapping(value = "/control-category", method = RequestMethod.POST)
     public String updateSategoryList(Locale locale, Model model, @ModelAttribute(name = "CAT")CategoryList list, HttpSession session,@RequestParam( name = "update_category") String select_update) {
         //fetching the user details from the session.
         SessionDetails user = (SessionDetails) session.getAttribute("user");
@@ -311,13 +328,13 @@ public class ParentalControl {
         }
         return "redirect:/control-category";
     }
-*/    
+     */
     @RequestMapping(value = {"/scheduling"}, method = RequestMethod.GET)
-    public String getAdvanceFilter(Locale locale, Model model,  HttpSession session) {
-         
-            return "parental-control";
+    public String getAdvanceFilter(Locale locale, Model model, HttpSession session) {
+
+        return "parental-control";
     }
-    
+
     /**
      * @param categoryimpl the categoryimpl to set
      */

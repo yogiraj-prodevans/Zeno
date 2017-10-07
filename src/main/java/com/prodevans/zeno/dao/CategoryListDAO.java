@@ -18,4 +18,7 @@ public interface CategoryListDAO {
   //  boolean updateCategoryList(String block_category, String allow_category,String domain_id,String user_id,String select_update);
 	boolean updateCategoryList(ArrayList<String> block_category, ArrayList<String> allow_category, String domain_id,
 			String user_id, String select_update);
+	
+	boolean updateFilterPattern(ArrayList<String> filter_pattern_remove, String domain_id,String select_update);
+	
 }
