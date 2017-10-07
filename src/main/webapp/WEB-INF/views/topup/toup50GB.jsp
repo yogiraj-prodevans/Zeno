@@ -142,7 +142,7 @@
                     .mainBlock31
                     {
                         width: 94% !important;
-                        height: 290px !important;
+                        height: 275px !important;
                         margin-top: 7% !important;
                         margin-bottom: 7% !important;
                     }
