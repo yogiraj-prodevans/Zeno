@@ -185,8 +185,7 @@
                             <li class="dropdown active"></li>
                             <li><a href="${pageContext.request.contextPath }/dashboard">HOME</a></li>
                         <li><a
-                                href="${pageContext.request.contextPath }/billingPayment">MAKE
-                                PAYMENT</a></li>
+                                href="${pageContext.request.contextPath }/billingPayment">PAY YOUR BILL</a></li>
                         <li class="active"><a
                                 href="${pageContext.request.contextPath }/control">SURF SAFE</a></li>
                         <li><a href="${pageContext.request.contextPath }/service">SERVICE
