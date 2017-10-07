@@ -17,17 +17,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.prodevans.zeno.dao.impl.RegistrationUserParentalControlImpl;
 import com.prodevans.zeno.pojo.CategoryList;
 import com.prodevans.zeno.pojo.ParentalControlDetails;
-import com.prodevans.zeno.pojo.SendMailDetails;
 import com.prodevans.zeno.pojo.SessionDetails;
 
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.xmlrpc.XmlRpcException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.ModelAttribute;
