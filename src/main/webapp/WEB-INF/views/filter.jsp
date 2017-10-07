@@ -222,7 +222,7 @@
                 <form:form action="allow-categories" modelAttribute="CategoryListDetails" method="post" >
                     <div class="category_box">
                     <c:forEach items="${CAT.getAllowded_catogery()}" var="cat" >
-                        <div class="col-md-4 col-sm-6 border text-justify">
+                        <div class="col-md-6 col-sm-6 border text-justify">
                             <input type="checkbox" name="category_allowed" id="${cat}"  value="${cat}"><label for="${cat}"> <c:out value="${cat}"/> </label>	
                         </div>
                     </c:forEach> 
@@ -238,7 +238,7 @@
                 <form:form action="block-categories" modelAttribute="CategoryListDetails" method="post" >
                     <div class="category_box">
                         <c:forEach items="${CAT.getBlocked_catogery()}" var="cat">
-                            <div class="col-md-4 col-sm-6 border text-justify">
+                            <div class="col-md-6 col-sm-6 border text-justify">
                                 <input type="checkbox" name="category_block" id="${cat}"  value="${cat}"><label for="${cat}"> <c:out value="${cat}"/> </label>	
                             </div>
                         </c:forEach> 
@@ -275,7 +275,7 @@
                             <div class="panel-heading">Blocked URL's</div>
                             <div class="panel-body">
                                 <c:forEach items="${CAT.getFilter_pattern()}" var="cat">
-                                    <div class="col-md-4 col-sm-6 border text-justify">
+                                    <div class="col-md-6 col-sm-6 border text-justify">
                                         <input type="checkbox" name="filter_category" id="${cat}"  value="${cat}"><label for="${cat}"> <c:out value="${cat}"/> </label>	
                                     </div>
                                 </c:forEach> 
