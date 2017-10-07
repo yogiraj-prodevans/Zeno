@@ -403,10 +403,14 @@ public class CategoryListDAOImpl implements CategoryListDAO {
     public boolean updateFilterPattern(ArrayList<String> filter_pattern_removed, String domain_id,String filter_name) 
     {
     	JSONObject filterObject = getFilter(domain_id, filter_name);
+    	JSONArray category_action = new JSONObject(getCategory(filter_name, domain_id)).getJSONArray("category-action");
+        
     	
-    	filterObject.getJSONObject("url-filtering-profile").getJSONObject("blacklist").put("patterns", new JSONArray(filter_pattern_removed));
+        filterObject.getJSONObject("url-filtering-profile").getJSONObject("blacklist").put("patterns", new JSONArray(filter_pattern_removed));
   
-    	System.out.println("JSON Object : "+filterObject.toString());
+        filterObject.getJSONObject("url-filtering-profile").getJSONObject("category-action-map").put("category-action", category_action);
+    	
+        System.out.println("JSON Object : "+filterObject.toString());
     	    	
     	if(getUpdateFilterpattern(filterObject, domain_id, filter_name))
     	{
