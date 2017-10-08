@@ -125,10 +125,10 @@
                     <h1 class="h1-font">Complaints, Shifting and Deactivation </h1>
 
                     <p class="faqp">What do I do if my connection/ One8 Cube isn’t working? </p> 
-                    <p class="faqp1">Simple. Just give us a call at 080-30323000 and we’ll get on the job ASAP. </p>  
+                    <p class="faqp1">Simple. Just give us a call at +91 90196 02602 and we’ll get on the job ASAP. </p>  
 
                     <p class="faqp">I am moving to a different neighbourhood. How do I shift my One8 connection? </p>
-                    <p class="faqp1">Raise a Service Request or call customer care at 080-30323000 for instant support. </p>
+                    <p class="faqp1">Raise a Service Request or call customer care at +91 90196 02602 for instant support. </p>
 
                     <p class="faqp">How do I terminate my One8 connection? </p>
                     <p class="faqp1">Click Service Request and opt for Termination. Our executives will contact you shortly. Service will be terminated subject to clearing of pending bills. </p>
@@ -137,7 +137,7 @@
                     <p class="faqp1">The One8 cube is configured to work exclusively with the One8 network to ensure security and quality of service. </p>
 
                     <p class="faqp">Are there any shifting/ deactivation charges? </p>
-                    <p class="faqp1">To know more about service fees, please call customer care at 080-30323000 for instant support. </p>
+                    <p class="faqp1">To know more about service fees, please call customer care at +91 90196 02602 for instant support. </p>
                 </div>
             </div>                
 
