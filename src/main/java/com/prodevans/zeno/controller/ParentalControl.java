@@ -191,9 +191,9 @@ public class ParentalControl {
             //fetching the user details from the session.
             SessionDetails user = (SessionDetails) session.getAttribute("user");
             if (categoryimpl.updateFilterPattern(categoryList.getRemove_filter_pattern(), user.getDomid(), user.getActid() + RestConfig.ADVANCED_FILTER)) {
-                model.addAttribute("error", "Pattern deleted successfully...");
+                model.addAttribute("error", "Website unblocked successfully...");
             } else {
-                model.addAttribute("error", "Pattern deletion process failed!!!");
+                model.addAttribute("error", "Website unblock process failed!!!");
             }
 
             return "redirect:/control";
@@ -217,9 +217,9 @@ public class ParentalControl {
                 //fetching the user details from the session.
                 SessionDetails user = (SessionDetails) session.getAttribute("user");
                 if (categoryimpl.updateFilterPattern(categoryList.getRemove_filter_pattern(), user.getDomid(), user.getActid() + RestConfig.ADVANCED_FILTER)) {
-                    model.addAttribute("error", "Pattern updated successfully...");
+                    model.addAttribute("error", "Website blocked successfully...");
                 } else {
-                    model.addAttribute("error", "Pattern updation process failed!!!");
+                    model.addAttribute("error", "Website block process failed!!!");
                 }
             } catch (Exception e) {
                 logger.error("Error : " + e.getMessage());

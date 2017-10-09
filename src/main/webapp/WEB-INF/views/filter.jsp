@@ -38,11 +38,13 @@
         <jsp:include page="component/css.jsp"></jsp:include>
             <style>
                 input[type="text"] {
-                    width: 98% !important;
-                   
+                    width: 100% !important;
+                    padding: 10px;
+                    height: 45px;
+                    border: 2px solid #bdc3c7;
                 }
 
-               
+
 
                 select {
                     background-image: url(img/varrow2.png);
@@ -72,26 +74,44 @@
                     background-color: grey;
                 }
 
-                .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus
-                {
-                    background: #2980b9;
-                    color: #fff;
-                    padding: 5px 15px 4px;
-                }
+                /*                .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus
+                                {
+                                    background: #2980b9;
+                                    color: #fff;
+                                    padding: 5px 15px 4px;
+                                }*/
 
                 table,th, td {
                     /*  border: 2px solid  black; */
                     align-content: center;
 
                 }
-
-                    
+                /** Tab content */
                 .tab-content {
                     background: #FAFAFA;
                     padding:unset;
                 }
+                .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus,
+                .nav-tabs > li > a:hover,.nav-tabs > li > a:focus{
+                    background: #f9faff00;
+                    color: #716868;
+                    padding: 5px 15px 4px;
+                    border-bottom: 7px red solid !important;
+
+                }
+
+                .nav-tabs > li > a{
+
+                    background: #f9faff00;
+                    color: #716868;
+                    padding: 5px 15px 4px;
+
+                }
+                .nav-tabs {
+                    margin-top: 40px;
+                }
                 .border{
-                    border-bottom: 1px solid #ddd;
+                    /*border-bottom: 1px solid #ddd;*/
                     padding: 15px;
                     font-size: 24px;
                 }
@@ -106,11 +126,11 @@
                 .category_box {
 
                     min-height: 100px;
-                    padding-top: 20px;
-                    border: 2px solid #2980b9;
+                    padding: 40px;
+                    border: 2px solid #bdc3c7;
                     margin-top: -1px;
                     height: 350px;
-                    overflow-x: auto;
+
                 }
                 .custom_box {
 
@@ -119,11 +139,16 @@
                     border: 2px solid #2980b9;
                     margin-top: -1px;
                     margin-bottom: 20px;
-/*                    padding-top: 10px;*/
+                    /*                    padding-top: 10px;*/
                 }
-                .btn{
-                    margin-top: 0px !important;
+                .btn {
+                    margin-top: 20px !important;
                     margin-bottom: 1px;
+                    font-size: 22px;
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    padding-top: unset;
+                    padding-bottom: unset;
 
                 }
                 .row{
@@ -149,11 +174,13 @@
                 .panel-footer{
                     /*border: 2px solid #2980b9;*/
                     background: unset;
+                    padding-right: unset;
                 }
                 .panel-default > .panel-footer{
                     /*background-color: #F44336;*/
                     border-top:2px #F44336 solid;
                     border-radius: unset;
+                    padding-right: unset;
                 }
                 .tab-content , .tab-pane{
                     background: unset;
@@ -161,12 +188,31 @@
                 .nav-tabs.nav-justified > li > a {
                     border-radius: unset;
                 }
-                
+
                 .largeFont
                 {
-                	font-size: 38px !important;
+                    font-size: 38px !important;
                 }
                 
+                .scroll {
+/*                    //width: 200px;*/
+                    height: 268px;
+                    background: red;
+                    overflow: scroll;
+                }
+                .scroll::-webkit-scrollbar {
+                    width: 12px;
+                }
+
+                .scroll::-webkit-scrollbar-track {
+                    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+                    border-radius: 10px;
+                }
+
+                .scroll::-webkit-scrollbar-thumb {
+                    border-radius: 10px;
+                    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+                }
             </style>
 
 
@@ -182,7 +228,7 @@
             <div class="header-navigation pull-right font-transform-inherit"
                  style="font-size: 12px">
                 <ul> 
-                
+
                     <li class="dropdown active"></li>
                     <li><a href="${pageContext.request.contextPath }/dashboard">MY ONE8</a></li>
                     <li><a
@@ -213,17 +259,17 @@
 
 
     <div class="container" > 
-		<h1 class="largeFont pb-10" style="margin-top: 12%;">With Surf Safe, you are in control</h1>
+        <h1 class="largeFont pb-10" style="margin-top: 12%;">With Surf Safe, you are in control</h1>
 
-		<h3>
-		Your home is your safe space and you deserve to keep it that way. With our Advanced Surf Safe control you can decide what to let in and when. If there are specific websites you want to block, go ahead and add to your Custom setting. Schedule hourly, daily or date-wise, and we'll ensure your chosen categories and URLs remain blocked when you want them to be. Surf Safe, and ensure everyone on your network does too.
-		</h3>
+        <h3>
+            Your home is your safe space and you deserve to keep it that way. With our Advanced Surf Safe control you can decide what to let in and when. If there are specific websites you want to block, go ahead and add to your Custom setting. Schedule hourly, daily or date-wise, and we'll ensure your chosen categories and URLs remain blocked when you want them to be. Surf Safe, and ensure everyone on your network does too.
+        </h3>
 
 
-        <ul class="nav nav-tabs nav-justified">
-            <li class="active"><a data-toggle="tab" href="#Allowed" style="font-size:24px;height: 50px" >Allowed</a></li>
-            <li ><a data-toggle="tab" href="#Blocked" style="font-size:24px; height: 50px " >Blocked</a></li>
-            <li><a data-toggle="tab" href="#Custom" style="font-size:24px; height: 50px ">Custom</a></li>
+        <ul class="nav nav-tabs nav-justified margin-top-20">
+            <li class="active"><a data-toggle="tab" href="#Allowed" style="font-size:24px;height: 50px" >ADVANCED</a></li>
+            <li ><a data-toggle="tab" href="#Blocked" style="font-size:24px; height: 50px " >BLOCKED</a></li>
+            <li><a data-toggle="tab" href="#Custom" style="font-size:24px; height: 50px ">CUSTOM</a></li>
 
         </ul>
 
@@ -232,59 +278,65 @@
             <div id="Allowed" class="tab-pane fade in active row ">
                 <form:form action="allow-categories" modelAttribute="CategoryListDetails" method="post" >
                     <div class="category_box">
-                    <c:forEach items="${CAT.getAllowded_catogery()}" var="cat" >
-                        <div class="col-md-6 col-sm-6 border text-justify">
-                            <input type="checkbox" name="category_allowed" id="${cat}"  value="${cat}"><label for="${cat}"> <c:out value="${cat}"/> </label>	
+                        <p class="font-h4">The category listed below are what have been defined by the TRAI, as are the sites that are blocked along with these categories. If you need to block any specific sites please use the Custom settings. </p>
+                        <div  style="height:200px ; overflow-x: auto;">   
+                            <c:forEach items="${CAT.getAllowded_catogery()}" var="cat" >
+                                <div class="col-md-6 col-sm-6 border text-justify">
+                                    <input type="checkbox" name="category_allowed" id="${cat}"  value="${cat}"><label for="${cat}"> <c:out value="${cat}"/> </label>	
+                                </div>
+                            </c:forEach> 
                         </div>
-                    </c:forEach> 
                     </div>
                     <form:hidden path="allowded_catogery" />
                     <form:hidden path="blocked_catogery" />
                     <div class="panel-footer text-right">
-                    <button id="block" class="btn billButton" type="submit">BLOCK</button>
+                        <button id="block" class="btn billButton font-h3" type="submit">BLOCK</button>
                     </div>
                 </form:form> 	
             </div>
             <div id="Blocked" class="tab-pane fade row ">
                 <form:form action="block-categories" modelAttribute="CategoryListDetails" method="post" >
                     <div class="category_box">
-                        <c:forEach items="${CAT.getBlocked_catogery()}" var="cat">
-                            <div class="col-md-6 col-sm-6 border text-justify">
-                                <input type="checkbox" name="category_block" id="${cat}"  value="${cat}"><label for="${cat}"> <c:out value="${cat}"/> </label>	
-                            </div>
-                        </c:forEach> 
+                        <p class="font-h4">The category listed below are what have been defined by the TRAI, as are the sites that are blocked along with these categories. If you need to block any specific sites please use the Custom settings. </p>
+
+                        <div style="height:200px ; overflow-x: auto;">   
+                            <c:forEach items="${CAT.getBlocked_catogery()}" var="cat">
+                                <div class="col-md-6 col-sm-6 border text-justify">
+                                    <input type="checkbox" name="category_block" id="${cat}"  value="${cat}"><label for="${cat}"> <c:out value="${cat}"/> </label>	
+                                </div>
+                            </c:forEach> 
+                        </div>
                     </div>
                     <form:hidden path="allowded_catogery" />
                     <form:hidden path="blocked_catogery" />
                     <div class="panel-footer text-right">
-                        <button id="block" class="btn billButton" type="submit">ALLOW</button>
+                        <button id="block" class="btn billButton" type="submit">UNBLOCK</button>
                     </div>
                 </form:form> 	
             </div>
-            <div id="Custom" class="tab-pane fade">
-                <div class="row custom_box " style="" >
-                    <form:form class="form-inline" action="update-patterns" modelAttribute="CategoryListDetails" method="post" >
-                        <div class="form-group col-md-6 col-md-offset-2" >
-                            <label for="url-block" class="col-md-2 text-right" title="Add the URL to be blocked" >URL:</label>
-                            <div class="col-md-10">
-                                <input id="url_pattern" type="text" class="" style="width:100%" name="url_pattern" placeholder="ex. www.facebook.com" pattern="[([^w]{3})]+([a-zA-Z]*)+[.]" required="required" >
-                            </div>
+            <div id="Custom" class="tab-pane fade ">
+                <div class="category_box ">
+                    <div style="height:268px ; overflow-x: auto;">   
+
+                        <div class="row  ">
+                            <form:form  action="update-patterns" modelAttribute="CategoryListDetails" method="post" >
+                                <div class=" row" >
+                                    <label for="url-block" class="col-md-4 text-justify font-h3" title="Add the URL to be blocked" >Block specific websites.</label>
+                                    <div class="col-md-8" style="padding: unset;">
+                                        <input id="url_pattern" type="text" class="" style="width:100%; font-size: 24px;" name="url_pattern" placeholder="ex. www.facebook.com" pattern="[([^w]{3})]+([a-zA-Z]*)+[.]" required="required" >
+                                    </div>
+                                </div>
+                                <form:hidden path="filter_pattern" />
+                                <form:hidden path="remove_filter_pattern" />
+                                <div class="row text-right " >
+                                    <button type="submit" class="btn billButton ">BLOCK</button>
+                                </div>
+                            </form:form>
+
                         </div>
-                        <form:hidden path="filter_pattern" />
-                        <form:hidden path="remove_filter_pattern" />
-                        <button type="submit" class="btn billButton col-md-2 ">SUBMIT</button>
-                    </form:form>
-
-                </div>
-
-                <!--                <div class="col-md-12" style="background-color: #F44336; height: 50px; ">
-                                    <h3>Blocked URL's</h3>
-                                </div>-->
-                <div class="row">
-                    <form:form action="delete-patterns" modelAttribute="CategoryListDetails" method="post" >
-                        <div class="panel panel-default ">
-                            <div class="panel-heading">Blocked URL's</div>
-                            <div class="panel-body">
+                        <div class="row">
+                            <form:form action="delete-patterns" modelAttribute="CategoryListDetails" method="post" >
+                                <p class="font-h4">To unblock any website, please check the box against the names listed below. </p>
                                 <c:forEach items="${CAT.getFilter_pattern()}" var="cat">
                                     <div class="col-md-6 col-sm-6 border text-justify">
                                         <input type="checkbox" name="filter_category" id="${cat}"  value="${cat}"><label for="${cat}"> <c:out value="${cat}"/> </label>	
@@ -293,21 +345,23 @@
                                 <form:hidden path="filter_pattern" />
                                 <form:hidden path="remove_filter_pattern" />
 
+
+
                             </div>
                         </div>
-                        <div class="panel-footer text-right">
-                            <button id="block" class="btn billButton" type="submit">DELETE PATTERN</button>
-                        </div>
-                    </form:form>
-                </div>
-              
+                    </div>
+                    <div class="panel-footer text-right">
+                        <button id="block" class="btn billButton" type="submit">UNBLOCK</button>
+                    </div>
+                </form:form>
             </div>
-<c:if test="${not empty error }">
-    <h3 style="color: green"><c:out value="${error }"></c:out></h3>
 
-</c:if>
+
         </div>
-        
+        <c:if test="${not empty error }">
+            <h3 style="color: green"><c:out value="${error }"></c:out></h3>
+
+        </c:if>
     </div>
 
 
