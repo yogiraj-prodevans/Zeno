@@ -161,6 +161,12 @@
                 .nav-tabs.nav-justified > li > a {
                     border-radius: unset;
                 }
+                
+                .largeFont
+                {
+                	font-size: 38px !important;
+                }
+                
             </style>
 
 
@@ -197,17 +203,22 @@
          style="background-image: url('${pageContext.request.contextPath }/img/red_long.png');" style="clear: both">
         <!--  <h1 class="paddingLeftTop" >Parental Control</h1> <h1 class="paddingRight" >Hi Vamsi </h1>  -->
         <div class="col-md-5" style="padding-left: 3.8%;">
-            <h1>Parental Control</h1>
+            <h1>Surf Safe</h1>
         </div>
         <div class="col-md-7">
             <h1 style="float: middle">Hi ${uesr_name}</h1>
         </div>
 
     </div>
-    <div class="col-md-12"><br></div>
 
 
-    <div class="container"> 
+    <div class="container" > 
+		<h1 class="largeFont pb-10" style="margin-top: 12%;">With Surf Safe, you are in control</h1>
+
+		<h3>
+		Your home is your safe space and you deserve to keep it that way. With our Advanced Surf Safe control you can decide what to let in and when. If there are specific websites you want to block, go ahead and add to your Custom setting. Schedule hourly, daily or date-wise, and we'll ensure your chosen categories and URLs remain blocked when you want them to be. Surf Safe, and ensure everyone on your network does too.
+		</h3>
+
 
         <ul class="nav nav-tabs nav-justified">
             <li class="active"><a data-toggle="tab" href="#Allowed" style="font-size:24px;height: 50px" >Allowed</a></li>
