@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html>
 <html>
@@ -91,15 +91,73 @@
                     background: #FAFAFA;
                     padding:unset;
                 }
-                .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus,
+/*                .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus,
                 .nav-tabs > li > a:hover,.nav-tabs > li > a:focus{
                     background: #f9faff00;
                     color: #716868;
                     padding: 5px 15px 4px;
                     border-bottom: 7px red solid !important;
 
+                }*/
+                /*icons and background sizes*/
+                .nav-tabs > li.active > a#advance-filter {
+                    color: #716868;
+                    padding: 5px 15px 4px 55px;
+                    border-bottom: 7px red solid !important;
+                    background-image: url('${pageContext.request.contextPath }/img/icons/Check_red.png') !important;
+                    background-size: contain !important;
+                    background-repeat: no-repeat !important;
+                    font-size: 30px;
                 }
-
+                
+                .nav-tabs > li > a#advance-filter {
+                    color: #716868;
+                    padding: 5px 15px 4px 55px;
+                    border-bottom: 7px #fff solid !important;
+                    background-image: url('${pageContext.request.contextPath }/img/icons/Check_grey.png') !important;
+                    background-size: contain !important;
+                    background-repeat: no-repeat !important;
+                    font-size: 30px;
+                }
+                .nav-tabs > li.active > a#block-filter {
+                    color: #716868;
+                    padding: 5px 15px 4px 55px;
+                    border-bottom: 7px red solid !important;
+                    background-image: url('${pageContext.request.contextPath }/img/icons/Blocked_red.png') !important;
+                    background-size: contain !important;
+                    background-repeat: no-repeat !important;
+                    font-size: 30px;
+                }
+                
+                .nav-tabs > li > a#block-filter {
+                    color: #716868;
+                    padding: 5px 15px 4px 55px;
+                    border-bottom: 7px #fff solid !important;
+                    background-image: url('${pageContext.request.contextPath }/img/icons/Blocked_grey.png') !important;
+                    background-size: contain !important;
+                    background-repeat: no-repeat !important;
+                    font-size: 30px;
+                }
+                
+                .nav-tabs > li.active > a#custom-filter {
+                    color: #716868;
+                    padding: 5px 15px 4px 55px;
+                    border-bottom: 7px red solid !important;
+                    background-image: url('${pageContext.request.contextPath }/img/icons/Custom_red.png') !important;
+                    background-size: contain !important;
+                    background-repeat: no-repeat !important;
+                    font-size: 30px;
+                }
+                
+                .nav-tabs > li > a#custom-filter {
+                    color: #716868;
+                    padding: 5px 15px 4px 55px;
+                    border-bottom: 7px #fff solid !important;
+                    background-image: url('${pageContext.request.contextPath }/img/icons/Custom_grey.png') !important;
+                    background-size: contain !important;
+                    background-repeat: no-repeat !important;
+                    font-size: 30px;
+                }
                 .nav-tabs > li > a{
                   
                     background: #FFF !important ;
@@ -109,6 +167,12 @@
                 }
                 .nav-tabs {
                     margin-top: 40px;
+                }
+                .nav>li {
+                    position: relative;
+                    display: block;
+                    margin-right: 70px;
+                    min-width: 250px;
                 }
                 .border{
                     /*border-bottom: 1px solid #ddd;*/
@@ -129,7 +193,7 @@
                     padding: 40px;
                     border: 2px solid #bdc3c7;
                     margin-top: -1px;
-                    height: 350px;
+                    min-height: 350px;
 
                 }
                 .custom_box {
@@ -266,10 +330,10 @@
         </h3>
 
 
-        <ul class="nav nav-tabs nav-justified margin-top-20">
-            <li class="active"><a data-toggle="tab" href="#Allowed" style="font-size:24px;height: 50px" >ADVANCED</a></li>
-            <li ><a data-toggle="tab" href="#Blocked" style="font-size:24px; height: 50px " >BLOCKED</a></li>
-            <li><a data-toggle="tab" href="#Custom" style="font-size:24px; height: 50px ">CUSTOM</a></li>
+        <ul class="nav nav-tabs  margin-top-20">
+            <li class="col-md-3 col-xs-3 active"><a id="advance-filter" data-toggle="tab" href="#Allowed">ADVANCED</a></li>
+            <li class="col-md-3 col-xs-3 "><a id="block-filter" data-toggle="tab" href="#Blocked"  >BLOCKED</a></li>
+            <li class="col-md-3 col-xs-3 "><a id="custom-filter" data-toggle="tab" href="#Custom" >CUSTOM</a></li>
 
         </ul>
 
