@@ -109,7 +109,7 @@ public class ScheduleDAOImpl implements ScheduleDAO
 		System.out.println("request Object : "+requestObject);
 		
 		
-		if(getAppliedTimeSchedule(requestObject,domain_id,name.trim()))
+		if(getAppliedSchedule(requestObject,domain_id,name.trim()))
 		{
 			return true;
 		}
@@ -119,7 +119,7 @@ public class ScheduleDAOImpl implements ScheduleDAO
 		}	
 	}
 	
-	private boolean getAppliedTimeSchedule(JSONObject requestObject,String doman_id,String schedule_name)
+	private boolean getAppliedSchedule(JSONObject requestObject,String doman_id,String schedule_name)
 	{
         ResponseEntity<String> person;
         HttpHeaders headers = new HttpHeaders();
