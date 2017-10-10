@@ -331,9 +331,9 @@
 
 
         <ul class="nav nav-tabs  margin-top-20">
-            <li class="col-md-3 col-xs-3 active"><a id="advance-filter" data-toggle="tab" href="#Allowed">ADVANCED</a></li>
-            <li class="col-md-3 col-xs-3 "><a id="block-filter" data-toggle="tab" href="#Blocked"  >BLOCKED</a></li>
-            <li class="col-md-3 col-xs-3 "><a id="custom-filter" data-toggle="tab" href="#Custom" >CUSTOM</a></li>
+            <li class=" active"><a id="advance-filter" data-toggle="tab" href="#Allowed">ADVANCED</a></li>
+            <li class=" "><a id="block-filter" data-toggle="tab" href="#Blocked"  >BLOCKED</a></li>
+            <li class=" "><a id="custom-filter" data-toggle="tab" href="#Custom" >CUSTOM</a></li>
 
         </ul>
 
