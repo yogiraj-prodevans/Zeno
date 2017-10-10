@@ -116,4 +116,14 @@ public interface RestConfig {
     String EDIT_PROFILE_FILTER = HOST + "/api/config/devices/device/{domain_id}/config/orgs/org-services/OneEight/security/profiles/url-filtering/url-filtering-profile/{filter_name}";
 
     
+    /**
+     * API URL for creating daily schedule
+     */
+    String CREATE_SCHEDULE = HOST + "/api/config/devices/device/{domain_id}/config/orgs/org-services/OneEight/objects/schedules/schedule/{schedule_name}";
+    
+    
+    
+    
+    
+    
 }

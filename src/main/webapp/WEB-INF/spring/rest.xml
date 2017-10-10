@@ -9,14 +9,16 @@
 	class="com.prodevans.zeno.dao.impl.RegistrationUserParentalControlImpl">
 	</bean>
         
-        <!-- bean created for the getting the protection status -->
-        <bean id="PROTECTION_STATUS"
-	class="com.prodevans.zeno.dao.impl.ProtectionStatusImpl">
+    <!-- bean created for the getting the protection status -->
+    <bean id="PROTECTION_STATUS" class="com.prodevans.zeno.dao.impl.ProtectionStatusImpl">
 	</bean>
         
-         <!-- bean created for the getting the category list -->
-        <bean id="categoryimpl"
-	class="com.prodevans.zeno.dao.impl.CategoryListDAOImpl">
+    <!-- bean created for the getting the category list -->
+    <bean id="categoryimpl" class="com.prodevans.zeno.dao.impl.CategoryListDAOImpl">
+	</bean>
+	
+	<!-- bean created for the getting the category list -->
+    <bean id="scheduleDAOImpl" class="com.prodevans.zeno.dao.impl.ScheduleDAOImpl">
 	</bean>
 	
 </beans>
