@@ -277,6 +277,17 @@
                     border-radius: 10px;
                     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
                 }
+                
+                @media (max-width: 730px)
+				{
+					.col-md-7, col-xs-7,.col-md-5, col-xs-5 
+					{
+						padding-right: unset;
+					}
+				}
+                
+                
+                
             </style>
 
 
@@ -312,10 +323,10 @@
     <div class="col-md-12 firstRow pt-20"
          style="background-image: url('${pageContext.request.contextPath }/img/red_long.png');" style="clear: both">
         <!--  <h1 class="paddingLeftTop" >Parental Control</h1> <h1 class="paddingRight" >Hi Vamsi </h1>  -->
-        <div class="col-md-5" style="padding-left: 3.8%;">
+        <div class="col-md-5 col-xs-5" style="padding-left: 3.8%;">
             <h1>Surf Safe</h1>
         </div>
-        <div class="col-md-7">
+        <div class="col-md-7 col-xs-7">
             <h1 style="float: middle">Hi ${uesr_name}</h1>
         </div>
 
