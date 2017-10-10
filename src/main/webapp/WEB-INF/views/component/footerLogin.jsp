@@ -2,7 +2,6 @@
 
 
 <style>
-
     .pdlFooter
     {
         padding-left: 0.1%;
@@ -38,15 +37,13 @@
             width: 86% !important;
         }
     }
-
-
 </style>
 
 
 <!-- BEGIN FOOTER -->
 <div class="footer" style="width:100%; font-family:Roboto; ">
-    <div class="container1">
-        <div class="row">
+    
+        <div class="row" style="margin:unset;margin-left: 5%; margin-right: 4%;">
             <!-- BEGIN COPYRIGHT -->
             <div style="padding-left:10px"></div>
             <div class="col-md-4 pdlFooter" style="color:black;"><h5> &copy; <script type="text/JavaScript">document.write(new Date().getFullYear());</script> ONE-EIGHT TECHNOLOGIES PRIVATE LTD  </h5></div> 
@@ -60,13 +57,9 @@
                 </div>
             </div>
 
-        </div>
+        
         <!-- END COPYRIGHT -->
     </div>
 </div>
 </div>
-<!-- END FOOTER -->  
-
-
-
-
+<!-- END FOOTER --> 
