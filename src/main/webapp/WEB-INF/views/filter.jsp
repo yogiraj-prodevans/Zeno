@@ -101,8 +101,8 @@
                 }
 
                 .nav-tabs > li > a{
-
-                    background: #f9faff00;
+                  
+                    background: #FFF !important ;
                     color: #716868;
                     padding: 5px 15px 4px;
 
