@@ -60,4 +60,36 @@ public class ScheduleController
         }
 	
     }
+    
+    @RequestMapping(value = "/days-schedule", method = RequestMethod.GET)
+    public String dayschedule(ModelMap model, HttpSession session) 
+    {
+        if (session.getAttribute("user") == null) 
+        {
+            return "redirect:/logout";
+        } 
+        else 
+        {
+        	
+        	//fetching the user details from the session.
+            SessionDetails user = (SessionDetails) session.getAttribute("user");
+            
+            if(scheduleDAOImpl.applyTimeSchedule(user.getDomid(),user.getActid()+"_SCHEDULE", "days", "09:00-18:00"))
+            {
+            	logger.info("Daily schedule applied successfully..");
+            	model.addAttribute("msg","Daily schedule applied successfully..");
+            	
+            }
+            else
+            {
+            	logger.info("Daily schedule was not applied..");
+            	model.addAttribute("msg","Daily schedule was not applied..");
+            }
+            
+        	return "parental-control";
+        }
+	
+    }
+    
+    
 }
