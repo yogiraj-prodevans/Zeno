@@ -70,20 +70,24 @@ public class ScheduleController
         } 
         else 
         {
+        	ArrayList<String> when=new ArrayList<String>();
+        	
+        	when.add("monday");
+        	when.add("tuesday");
         	
         	//fetching the user details from the session.
             SessionDetails user = (SessionDetails) session.getAttribute("user");
             
-            if(scheduleDAOImpl.applyTimeSchedule(user.getDomid(),user.getActid()+"_SCHEDULE", "days", "09:00-18:00"))
+            if(scheduleDAOImpl.applyDaysSchedule(user.getDomid(),user.getActid()+"_SCHEDULE", when, "09:00-18:00"))
             {
-            	logger.info("Daily schedule applied successfully..");
-            	model.addAttribute("msg","Daily schedule applied successfully..");
+            	logger.info("Days schedule applied successfully..");
+            	model.addAttribute("msg","Days schedule applied successfully..");
             	
             }
             else
             {
-            	logger.info("Daily schedule was not applied..");
-            	model.addAttribute("msg","Daily schedule was not applied..");
+            	logger.info("Days schedule was not applied..");
+            	model.addAttribute("msg","Days schedule was not applied..");
             }
             
         	return "parental-control";

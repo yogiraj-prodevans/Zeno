@@ -3,6 +3,7 @@ package com.prodevans.zeno.dao.impl;
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
 import java.security.cert.X509Certificate;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -101,11 +102,8 @@ public class ScheduleDAOImpl implements ScheduleDAO
 		requestInnerObject.put("recurring", jsonArray);
 		requestInnerObject.put("name", name);
 
-		
 		requestObject.put("schedule", requestInnerObject);
-		
-		System.out.println("Map values : "+values);
-		System.out.println("Inner request Object : "+requestInnerObject);
+
 		System.out.println("request Object : "+requestObject);
 		
 		
@@ -118,6 +116,51 @@ public class ScheduleDAOImpl implements ScheduleDAO
 			return false;
 		}	
 	}
+	
+	
+	@Override
+	public boolean applyDaysSchedule(String domain_id, String name, ArrayList<String> when, String time_of_day) 
+	{
+		JSONObject requestObject=new JSONObject();
+		JSONArray jsonArray=new JSONArray();
+		
+		for (String str : when) 
+		{
+			JSONObject innerJsonObject=new JSONObject();
+			innerJsonObject.put("when", str);
+			innerJsonObject.put("time-of-day", time_of_day);
+			jsonArray.put(innerJsonObject);
+		}
+		
+		JSONObject requestInnerObject=new JSONObject();
+		requestInnerObject.put("recurring", jsonArray);
+		requestInnerObject.put("name", name);
+
+		requestObject.put("schedule", requestInnerObject);
+
+		System.out.println("request Object : "+requestObject);
+		
+		
+		if(getAppliedSchedule(requestObject,domain_id,name.trim()))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}	
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	private boolean getAppliedSchedule(JSONObject requestObject,String doman_id,String schedule_name)
 	{
@@ -150,7 +193,7 @@ public class ScheduleDAOImpl implements ScheduleDAO
         params.put("schedule_name", schedule_name.trim());
         try {
             person = restTemplate.exchange(RestConfig.CREATE_SCHEDULE, HttpMethod.PUT, entity, String.class, params);
-            if(person.getStatusCodeValue() == 201){
+            if(person.getStatusCodeValue() == 201 | person.getStatusCodeValue() == 204){
                 logger.info("Daily Schedule Created");
                 return true;
             }
@@ -170,5 +213,6 @@ public class ScheduleDAOImpl implements ScheduleDAO
         }
         return false;
 	}
+
 	
 }
