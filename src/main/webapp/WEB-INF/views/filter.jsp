@@ -107,7 +107,7 @@
                     background-image: url('${pageContext.request.contextPath }/img/icons/Check_red.png') !important;
                     background-size: contain !important;
                     background-repeat: no-repeat !important;
-                    font-size: 30px;
+                    font-size: 28px;
                 }
                 
                 .nav-tabs > li > a#advance-filter {
@@ -117,7 +117,7 @@
                     background-image: url('${pageContext.request.contextPath }/img/icons/Check_grey.png') !important;
                     background-size: contain !important;
                     background-repeat: no-repeat !important;
-                    font-size: 30px;
+                    font-size: 28px;
                 }
                 .nav-tabs > li.active > a#block-filter {
                     color: #716868;
@@ -126,7 +126,7 @@
                     background-image: url('${pageContext.request.contextPath }/img/icons/Blocked_red.png') !important;
                     background-size: contain !important;
                     background-repeat: no-repeat !important;
-                    font-size: 30px;
+                    font-size: 28px;
                 }
                 
                 .nav-tabs > li > a#block-filter {
@@ -136,7 +136,7 @@
                     background-image: url('${pageContext.request.contextPath }/img/icons/Blocked_grey.png') !important;
                     background-size: contain !important;
                     background-repeat: no-repeat !important;
-                    font-size: 30px;
+                    font-size: 28px;
                 }
                 
                 .nav-tabs > li.active > a#custom-filter {
@@ -146,7 +146,7 @@
                     background-image: url('${pageContext.request.contextPath }/img/icons/Custom_red.png') !important;
                     background-size: contain !important;
                     background-repeat: no-repeat !important;
-                    font-size: 30px;
+                    font-size: 28px;
                 }
                 
                 .nav-tabs > li > a#custom-filter {
@@ -156,10 +156,11 @@
                     background-image: url('${pageContext.request.contextPath }/img/icons/Custom_grey.png') !important;
                     background-size: contain !important;
                     background-repeat: no-repeat !important;
-                    font-size: 30px;
+                    font-size: 28px;
                 }
                 .nav-tabs > li > a{
                   
+                    margin-top: 10px;
                     background: #FFF !important ;
                     color: #716868;
                     padding: 5px 15px 4px;
@@ -277,6 +278,17 @@
                     border-radius: 10px;
                     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
                 }
+                
+                @media (max-width: 730px)
+				{
+					.col-md-7, col-xs-7,.col-md-5, col-xs-5 
+					{
+						padding-right: unset;
+					}
+				}
+                
+                
+                
             </style>
 
 
@@ -284,7 +296,7 @@
         <!-- BEGIN HEADER -->
         <div class="header">
             <div class="row">
-                <a class="site-logo" href="#"> <img
+                <a class="site-logo" href="${pageContext.request.contextPath }/dashboard"> <img
                         src="${pageContext.request.contextPath }/corporate/img/logos/logo.png" alt="ONE8">
             </a> <a href="javascript:void(0);" class="mobi-toggler"><i
                     class="fa fa-bars"></i></a>
@@ -309,13 +321,13 @@
         </div>
     </div>
 
-    <div class="col-md-12 firstRow pt-20"
+    <div class="row firstRow pt-20"
          style="background-image: url('${pageContext.request.contextPath }/img/red_long.png');" style="clear: both">
         <!--  <h1 class="paddingLeftTop" >Parental Control</h1> <h1 class="paddingRight" >Hi Vamsi </h1>  -->
-        <div class="col-md-5" style="padding-left: 3.8%;">
+        <div class="col-md-5 col-sm-5" style="padding-left: 4.9%;">
             <h1>Surf Safe</h1>
         </div>
-        <div class="col-md-7">
+        <div class="col-md-7 col-sm-7" style="padding-left: 4.9%;margin-bottom: 20px;">
             <h1 style="float: middle">Hi ${uesr_name}</h1>
         </div>
 
@@ -323,11 +335,13 @@
 
 
     <div class="container" > 
-        <h1 class="largeFont pb-10" style="margin-top: 12%;">With Surf Safe, you are in control</h1>
+        <h1 class=" pb-10" style=" font-size: 28px;">With Surf Safe, you are in control</h1>
 
-        <h3>
-            Your home is your safe space and you deserve to keep it that way. With our Advanced Surf Safe control you can decide what to let in and when. If there are specific websites you want to block, go ahead and add to your Custom setting. Schedule hourly, daily or date-wise, and we'll ensure your chosen categories and URLs remain blocked when you want them to be. Surf Safe, and ensure everyone on your network does too.
-        </h3>
+        <h4>
+            Your home is your safe space and you deserve to keep it that way. With our Advanced Surf Safe control you can decide what to let in and when. If there are specific websites you want to block, go ahead and add to your Custom setting. 
+            <!-- this released in next version of parental control.
+            Schedule hourly, daily or date-wise, and we'll ensure your chosen categories and URLs remain blocked when you want them to be. Surf Safe, and ensure everyone on your network does too.-->
+        </h4>
 
 
         <ul class="nav nav-tabs  margin-top-20">
@@ -354,7 +368,7 @@
                     <form:hidden path="allowded_catogery" />
                     <form:hidden path="blocked_catogery" />
                     <div class="panel-footer text-right">
-                        <button id="block" class="btn billButton font-h3" type="submit">BLOCK</button>
+                        <button id="advacneBlock" class="btn billButton font-h3" type="submit">BLOCK</button>
                     </div>
                 </form:form> 	
             </div>
@@ -374,7 +388,7 @@
                     <form:hidden path="allowded_catogery" />
                     <form:hidden path="blocked_catogery" />
                     <div class="panel-footer text-right">
-                        <button id="block" class="btn billButton" type="submit">UNBLOCK</button>
+                        <button id="blockedUnblock" class="btn billButton" type="submit">UNBLOCK</button>
                     </div>
                 </form:form> 	
             </div>
@@ -393,7 +407,7 @@
                                 <form:hidden path="filter_pattern" />
                                 <form:hidden path="remove_filter_pattern" />
                                 <div class="row text-right " >
-                                    <button type="submit" class="btn billButton ">BLOCK</button>
+                                    <button id="customBlock" type="submit" class="btn billButton ">BLOCK</button>
                                 </div>
                             </form:form>
 
@@ -415,7 +429,7 @@
                         </div>
                     </div>
                     <div class="panel-footer text-right">
-                        <button id="block" class="btn billButton" type="submit">UNBLOCK</button>
+                        <button id="customUnblock" class="btn billButton" type="submit">UNBLOCK</button>
                     </div>
                 </form:form>
             </div>
