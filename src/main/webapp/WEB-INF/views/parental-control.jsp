@@ -93,60 +93,60 @@
                 
                                 }*/
                 /*icons and background sizes*/
-                .nav-tabs > li.active > a#advance-filter {
+                .nav-tabs > li.active > a#time-tab-name {
                     color: #716868;
                     padding: 5px 15px 4px 55px;
                     border-bottom: 7px red solid !important;
-                    background-image: url('${pageContext.request.contextPath }/img/icons/Check_red.png') !important;
+                    background-image: url('${pageContext.request.contextPath }/img/icons/Time_red.png') !important;
                 background-size: contain !important;
                 background-repeat: no-repeat !important;
                 font-size: 30px;
             }
 
-            .nav-tabs > li > a#advance-filter {
+            .nav-tabs > li > a#time-tab-name {
                 color: #716868;
                 padding: 5px 15px 4px 55px;
                 border-bottom: 7px #fff solid !important;
-                background-image: url('${pageContext.request.contextPath }/img/icons/Check_grey.png') !important;
+                background-image: url('${pageContext.request.contextPath }/img/icons/Time_grey.png') !important;
                 background-size: contain !important;
                 background-repeat: no-repeat !important;
                 font-size: 30px;
             }
-            .nav-tabs > li.active > a#block-filter {
+            .nav-tabs > li.active > a#day-tab-name {
                 color: #716868;
                 padding: 5px 15px 4px 55px;
                 border-bottom: 7px red solid !important;
-                background-image: url('${pageContext.request.contextPath }/img/icons/Blocked_red.png') !important;
+                background-image: url('${pageContext.request.contextPath }/img/icons/Day_red.png') !important;
                 background-size: contain !important;
                 background-repeat: no-repeat !important;
                 font-size: 30px;
             }
 
-            .nav-tabs > li > a#block-filter {
+            .nav-tabs > li > a#day-tab-name {
                 color: #716868;
                 padding: 5px 15px 4px 55px;
                 border-bottom: 7px #fff solid !important;
-                background-image: url('${pageContext.request.contextPath }/img/icons/Blocked_grey.png') !important;
+                background-image: url('${pageContext.request.contextPath }/img/icons/Day_grey.png') !important;
                 background-size: contain !important;
                 background-repeat: no-repeat !important;
                 font-size: 30px;
             }
 
-            .nav-tabs > li.active > a#custom-filter {
+            .nav-tabs > li.active > a#dates-tab-name {
                 color: #716868;
                 padding: 5px 15px 4px 55px;
                 border-bottom: 7px red solid !important;
-                background-image: url('${pageContext.request.contextPath }/img/icons/Custom_red.png') !important;
+                background-image: url('${pageContext.request.contextPath }/img/icons/Dates_red.png') !important;
                 background-size: contain !important;
                 background-repeat: no-repeat !important;
                 font-size: 30px;
             }
 
-            .nav-tabs > li > a#custom-filter {
+            .nav-tabs > li > a#dates-tab-name {
                 color: #716868;
                 padding: 5px 15px 4px 55px;
                 border-bottom: 7px #fff solid !important;
-                background-image: url('${pageContext.request.contextPath }/img/icons/Custom_grey.png') !important;
+                background-image: url('${pageContext.request.contextPath }/img/icons/Dates_grey.png') !important;
                 background-size: contain !important;
                 background-repeat: no-repeat !important;
                 font-size: 30px;
@@ -165,7 +165,7 @@
                 position: relative;
                 display: block;
                 margin-right: 70px;
-                min-width: 250px;
+                min-width: 200px;
             }
             .border{
                 /*border-bottom: 1px solid #ddd;*/
@@ -213,20 +213,26 @@
                 margin-left: unset;
             }
             .panel {
-                border: 2px solid #F44336;
-                border-radius: unset;
+
+                border-radius: unset !important;
                 margin-bottom: unset;
+                border : unset;
+                box-shadow: unset;
             }
-            .panel-default > .panel-body{
-                height: 200px;
+            .panel-body{
+                min-height: 200px;
                 overflow-x: auto;
+                padding: unset !important;
             }
-            .panel-default > .panel-heading {
-                color: white;
-                background-color: #F44336;
-                border-color: #F44336;
+            .panel-default > .panel-heading  {
+                color: black;
+                background-color: #e2e0e080;
+
                 border-radius: unset;
-                font-size: 24px;
+
+            }
+            .panel-default > .panel-heading > a{
+                font-size: 30px !important;
             }
             .panel-footer{
                 /*border: 2px solid #2980b9;*/
@@ -321,95 +327,81 @@
             </h3>
 
             <div class="panel-group">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" href="#collapse1">Collapsible panel</a>
-        </h4>
-      </div>
-      <div id="collapse1" class="panel-collapse collapse">
-        <div class="panel-body">
-            <ul class="nav nav-tabs  margin-top-20">
-                <li class=" active"><a id="advance-filter" data-toggle="tab" href="#Allowed">ADVANCED</a></li>
-                <li class=" "><a id="block-filter" data-toggle="tab" href="#Blocked"  >BLOCKED</a></li>
-                <li class=" "><a id="custom-filter" data-toggle="tab" href="#Custom" >CUSTOM</a></li>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            <a data-toggle="collapse" href="#collapse1" style="font-size: 24px;">SCHEDULE</a>
+                        </h2>
+                    </div>
+                    <div id="collapse1" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <ul class="nav nav-tabs  margin-top-20">
+                                <li class=" active"><a id="time-tab-name" data-toggle="tab" href="#time-tab">TIME</a></li>
+                                <li class=" "><a id="day-tab-name" data-toggle="tab" href="#date-tab"  >DAYS</a></li>
+                                <li class=" "><a id="dates-tab-name" data-toggle="tab" href="#dates-tab" >DATES</a></li>
 
-            </ul>
+                            </ul>
 
 
-            <div class="tab-content">
-                <div id="Allowed" class="tab-pane fade in active row ">
-                    <form:form action="allow-categories"  method="post" >
-                        <div class="category_box">
-                            <p class="font-h4">The category listed below are what have been defined by the TRAI, as are the sites that are blocked along with these categories. If you need to block any specific sites please use the Custom settings. </p>
+                            <div class="tab-content">
+                                <div id="time-tab" class="tab-pane fade in active row ">
+                                    <form:form action="allow-categories"  method="post" >
+                                        <div class="category_box">
+                                            <p class="font-h4">During a day, when do you want your Surf Safe controls to be active? Choose a time slot.</p>
 
-                        </div>
 
-                        <div class="panel-footer text-right">
-                            <button id="block" class="btn billButton font-h3" type="submit">BLOCK</button>
-                        </div>
-                    </form:form> 	
-                </div>
-                <div id="Blocked" class="tab-pane fade row ">
-                    <form:form action="block-categories"  method="post" >
-                        <div class="category_box">
-                            <p class="font-h4">The category listed below are what have been defined by the TRAI, as are the sites that are blocked along with these categories. If you need to block any specific sites please use the Custom settings. </p>
 
-                            <div style="height:200px ; overflow-x: auto;">   
+                                            <div class="panel-footer text-right">
+                                                <button id="block" class="btn billButton font-h3" type="submit">SUBMIT</button>
+                                            </div>
+                                        </div>
+                                    </form:form> 	
+                                </div>
+                                <div id="date-tab" class="tab-pane fade row ">
+                                    <form:form action="block-categories"  method="post" >
+                                        <div class="category_box">
+                                            <p class="font-h4">Should your Surf Safe controls be active only on certain days? Choose days of the week.</p>
 
-                            </div>
-                        </div>
+                                           
 
-                        <div class="panel-footer text-right">
-                            <button id="block" class="btn billButton" type="submit">UNBLOCK</button>
-                        </div>
-                    </form:form> 	
-                </div>
-                <div id="Custom" class="tab-pane fade ">
-                    <div class="category_box ">
-                        <div style="height:268px ; overflow-x: auto;">   
 
-                            <div class="row  ">
-                                <form:form  action="update-patterns"  method="post" >
-                                    <div class=" row" >
-                                        <label for="url-block" class="col-md-4 text-justify font-h3" title="Add the URL to be blocked" >Block specific websites.</label>
-                                        <div class="col-md-8" style="padding: unset;">
-                                            <input id="url_pattern" type="text" class="" style="width:100%; font-size: 24px;" name="url_pattern" placeholder="ex. www.facebook.com" pattern="[([^w]{3})]+([a-zA-Z]*)+[.]" required="required" >
+                                            <div class="panel-footer text-right">
+                                                <button id="block" class="btn billButton" type="submit">SUBMIT</button>
+                                            </div>
+                                        </div>
+                                    </form:form> 	
+                                </div>
+                                <div id="dates-tab" class="tab-pane fade ">
+                                    <div class="category_box ">
+                                        <div style="height:268px ; overflow-x: auto;">   
+
+
+                                            <div class="row">
+                                                <form:form action="delete-patterns"  method="post" >
+                                                    <p class="font-h4">Want to active Advance/Custom Surf Safe for a specific period? Choose Dates. </p>
+
+
+                                                    <div class="panel-footer text-right">
+                                                        <button id="block" class="btn billButton" type="submit">SUBMIT</button>
+                                                    </div>
+                                                </form:form>
+                                            </div>
                                         </div>
                                     </div>
 
-                                    <div class="row text-right " >
-                                        <button type="submit" class="btn billButton ">BLOCK</button>
-                                    </div>
-                                </form:form>
-
-                            </div>
-                            <div class="row">
-                                <form:form action="delete-patterns"  method="post" >
-                                    <p class="font-h4">To unblock any website, please check the box against the names listed below. </p>
-
-
-
 
                                 </div>
+
+
                             </div>
+                            <c:if test="${not empty error }">
+                                <h3 style="color: green"><c:out value="${error }"></c:out></h3>
+
+                            </c:if>
                         </div>
-                        <div class="panel-footer text-right">
-                            <button id="block" class="btn billButton" type="submit">UNBLOCK</button>
-                        </div>
-                    </form:form>
+                    </div>
                 </div>
-
-
             </div>
-            <c:if test="${not empty error }">
-                <h3 style="color: green"><c:out value="${error }"></c:out></h3>
-
-            </c:if>
-</div>
-      </div>
-    </div>
-  </div>
 
 
 
