@@ -152,7 +152,30 @@ public class ScheduleDAOImpl implements ScheduleDAO
 		
 	}
 	
-	
+
+	@Override
+	public boolean applyNonRecurringSchedule(String domain_id, String name, String when) 
+	{
+		JSONObject requestObject=new JSONObject();
+		JSONObject requestInnerObject=new JSONObject();
+		requestInnerObject.put("non-recurring", when);
+		requestInnerObject.put("name", name);
+
+		requestObject.put("schedule", requestInnerObject);
+
+		System.out.println("request Object : "+requestObject);
+		
+
+		if(getAppliedSchedule(requestObject,domain_id,name.trim()))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}	
+
+	}
 	
 	
 	
@@ -194,16 +217,16 @@ public class ScheduleDAOImpl implements ScheduleDAO
         try {
             person = restTemplate.exchange(RestConfig.CREATE_SCHEDULE, HttpMethod.PUT, entity, String.class, params);
             if(person.getStatusCodeValue() == 201 | person.getStatusCodeValue() == 204){
-                logger.info("Daily Schedule Created");
+                logger.info("Schedule Created");
                 return true;
             }
             else{
-                logger.info("Failed creating daily schedule");
+                logger.info("Failed creating schedule");
                 return false;
             }
         } catch (Exception ee) {
             if(ee.getMessage().contains("404")){
-                logger.error("Failed creating daily schedule... with error");
+                logger.error("Failed creating schedule... with error");
             }
             else{
                 logger.error("error: "+ee.getMessage());
@@ -213,6 +236,7 @@ public class ScheduleDAOImpl implements ScheduleDAO
         }
         return false;
 	}
+
 
 	
 }

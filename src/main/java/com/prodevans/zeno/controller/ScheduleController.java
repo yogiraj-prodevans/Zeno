@@ -96,4 +96,37 @@ public class ScheduleController
     }
     
     
+    @RequestMapping(value = "/non-recurring-schedule", method = RequestMethod.GET)
+    public String nonrecurringschedule(ModelMap model, HttpSession session) 
+    {
+        if (session.getAttribute("user") == null) 
+        {
+            return "redirect:/logout";
+        } 
+        else 
+        {
+        	
+        	String when="2017/09/21@07:30-2017/09/30@07:30";
+        	
+        	//fetching the user details from the session.
+            SessionDetails user = (SessionDetails) session.getAttribute("user");
+            
+            if(scheduleDAOImpl.applyNonRecurringSchedule(user.getDomid(),user.getActid()+"_SCHEDULE", when))
+            {
+            	logger.info("Non-Recurring schedule applied successfully..");
+            	model.addAttribute("msg","Non-Recurring schedule applied successfully..");
+            	
+            }
+            else
+            {
+            	logger.info("Non-Recurring schedule was not applied..");
+            	model.addAttribute("msg","Non-Recurring schedule was not applied..");
+            }
+            
+        	return "parental-control";
+        }
+	
+    }
+    
+    
 }
