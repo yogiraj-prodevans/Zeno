@@ -365,7 +365,7 @@
                     <form:hidden path="allowded_catogery" />
                     <form:hidden path="blocked_catogery" />
                     <div class="panel-footer text-right">
-                        <button id="block" class="btn billButton font-h3" type="submit">BLOCK</button>
+                        <button id="advacneBlock" class="btn billButton font-h3" type="submit">BLOCK</button>
                     </div>
                 </form:form> 	
             </div>
@@ -385,7 +385,7 @@
                     <form:hidden path="allowded_catogery" />
                     <form:hidden path="blocked_catogery" />
                     <div class="panel-footer text-right">
-                        <button id="block" class="btn billButton" type="submit">UNBLOCK</button>
+                        <button id="blockedUnblock" class="btn billButton" type="submit">UNBLOCK</button>
                     </div>
                 </form:form> 	
             </div>
@@ -404,7 +404,7 @@
                                 <form:hidden path="filter_pattern" />
                                 <form:hidden path="remove_filter_pattern" />
                                 <div class="row text-right " >
-                                    <button type="submit" class="btn billButton ">BLOCK</button>
+                                    <button id="customBlock" type="submit" class="btn billButton ">BLOCK</button>
                                 </div>
                             </form:form>
 
@@ -426,7 +426,7 @@
                         </div>
                     </div>
                     <div class="panel-footer text-right">
-                        <button id="block" class="btn billButton" type="submit">UNBLOCK</button>
+                        <button id="customUnblock" class="btn billButton" type="submit">UNBLOCK</button>
                     </div>
                 </form:form>
             </div>
