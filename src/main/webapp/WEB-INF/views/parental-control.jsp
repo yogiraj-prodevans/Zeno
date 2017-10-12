@@ -30,14 +30,26 @@
         <jsp:include page="component/css.jsp"></jsp:include>
 
             <style>
-                input[type="text"] {
+                input[type="text"], input[type="text"]:focus {
                     width: 100% !important;
                     padding: 10px;
                     height: 45px;
-                    border: 2px solid #bdc3c7;
+                    border: 1.5px solid #bdc3c7;
+                    background-color: unset !important;
+                    border-radius: unset;
+                    border-right: unset;
+                    box-shadow: unset;
                 }
 
-
+                label {
+                    display: inline-block;
+                    max-width: 100%;
+                    margin-bottom: 5px;
+                    font-weight: 300;
+                    height: 50px;
+                    padding-top: 10px;
+                    text-align: center;
+                }
 
                 select {
                     background-image: url(img/varrow2.png);
@@ -51,28 +63,14 @@
                     -webkit-appearance: none;
                     border-bottom: 2px solid red;
 
-                    /*    border: none;
-                                                font-size: 16px;
-                                                width:195px;
-                                                padding-bottom:5px;
-                                                outline: none;
-                                                border-bottom: 2px solid #F44336;
-                                                -webkit-appearance:none;
-                                                -moz-appearance: none;
-                                                    background-image:url(img/drop.jpg);    
-                    */
+                  
                 }
 
                 option:hover {
                     background-color: grey;
                 }
 
-                /*                .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus
-                                {
-                                    background: #2980b9;
-                                    color: #fff;
-                                    padding: 5px 15px 4px;
-                                }*/
+                
 
                 table,th, td {
                     /*  border: 2px solid  black; */
@@ -84,14 +82,7 @@
                     background: #FAFAFA;
                     padding:unset;
                 }
-                /*                .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus,
-                                .nav-tabs > li > a:hover,.nav-tabs > li > a:focus{
-                                    background: #f9faff00;
-                                    color: #716868;
-                                    padding: 5px 15px 4px;
-                                    border-bottom: 7px red solid !important;
-                
-                                }*/
+               
                 /*icons and background sizes*/
                 .nav-tabs > li.active > a#time-tab-name {
                     color: #716868;
@@ -124,7 +115,7 @@
 
             .nav-tabs > li > a#day-tab-name {
                 color: #716868;
-               padding: 5px 15px 15px 60px;
+                padding: 5px 15px 15px 60px;
                 border-bottom: 7px #fff solid !important;
                 background-image: url('${pageContext.request.contextPath }/img/icons/Day_grey.png') !important;
                 background-size: 50px !important;
@@ -134,7 +125,7 @@
 
             .nav-tabs > li.active > a#dates-tab-name {
                 color: #716868;
-               padding: 5px 15px 15px 60px;
+                padding: 5px 15px 15px 60px;
                 border-bottom: 7px red solid !important;
                 background-image: url('${pageContext.request.contextPath }/img/icons/Dates_red.png') !important;
                 background-size: 50px !important;
@@ -144,12 +135,36 @@
 
             .nav-tabs > li > a#dates-tab-name {
                 color: #716868;
-               padding: 5px 15px 15px 60px;
+                padding: 5px 15px 15px 60px;
                 border-bottom: 7px #fff solid !important;
                 background-image: url('${pageContext.request.contextPath }/img/icons/Dates_grey.png') !important;
                 background-size: 50px !important;
                 background-repeat: no-repeat !important;
                 font-size: 26px;
+            }
+
+
+            .time_image {
+                padding: 8px 20px;
+                background-image: url('/zeno/img/icons/Time_red.png') !important;
+                background-size: 33px !important;
+                background-repeat: no-repeat !important;
+            }
+            .date_image {
+                padding: 8px 20px;
+                background-image: url('/zeno/img/icons/Dates_red.png') !important;
+                background-size: 33px !important;
+                background-repeat: no-repeat !important;
+            }
+            .input-group-addon {
+                padding: unset !important;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 1;
+                color: #555;
+                text-align: center;
+                background-color: unset !important;
+                border-radius: unset !important;
             }
             .nav-tabs > li > a{
 
@@ -172,8 +187,34 @@
                 padding: 15px;
                 font-size: 24px;
             }
-            input[type="checkbox"] + label{
-                padding-bottom: unset;
+            input[type="checkbox"] + label::before {
+                content: '';
+                display: block;
+                width: 25px;
+                height: 25px;
+                border: 1.2px solid #010745;
+                position: absolute;
+                left: 0;
+                top: 0;
+                opacity: .6;
+                -webkit-transition: all .12s, border-color .08s;
+                transition: all .12s, border-color .08s;
+            }
+            input[type="checkbox"] + label {
+                display: block;
+                position: relative;
+                padding-left: 35px;
+                margin-bottom: 1px;
+                /* font: 12px/14px; */
+                color: #010745;
+                cursor: pointer;
+                /* -webkit-user-select: none; */
+                -moz-user-select: none;
+                /* -ms-user-select: none; */
+                /* padding-bottom: 20px; */
+                width: 100px;
+                padding-top: unset !important;
+                float: left;
             }
             .ScrollStyle {
 
@@ -321,7 +362,6 @@
 
         <div class="container ">
             <h1 class="largeFont pb-10" style="margin-top: 12%;">With Surf Safe, you are in control</h1>
-
             <h3>
                 Your home is your safe space and you deserve to keep it that way. With our Advanced Surf Safe control you can decide what to let in and when. If there are specific websites you want to block, go ahead and add to your Custom setting. Schedule hourly, daily or date-wise, and we'll ensure your chosen categories and URLs remain blocked when you want them to be. Surf Safe, and ensure everyone on your network does too.
             </h3>
@@ -348,25 +388,25 @@
                                     <form:form action="allow-categories"  method="post"  >
                                         <div class="category_box">
                                             <p class="font-h4">During a day, when do you want your Surf Safe controls to be active? Choose a time slot.</p>
-                                            <div class="form-group col-md-6">
-                                                <label for="time-ip-start" class="col-md-2 control-label">Time Picking</label>
-                                                <div class="input-group date form_time col-md-5" data-date="" data-date-format="hh:ii" data-link-field="time-ip-start" data-link-format="hh:ii">
-                                                    <input class="form-control" size="16" type="text" value="" readonly>
-                                                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
-                                                    <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
+                                            <div class="row" style="margin-top: 80px; ">
+                                                <div class="form-group col-md-6">
+                                                    <label for="time-ip-start" class="col-md-3 control-label"> Start Time</label>
+                                                    <div class="input-group date  col-md-7" data-date="" data-date-format="hh:ii" data-link-field="time-ip-start" data-link-format="hh:ii">
+                                                        <input class="form-control form_time" size="16" type="text" value="" >
+                                                        <span class="input-group-addon"><span class="time_image"></span></span>
+                                                    </div>
+                                                    <input type="hidden" id="time-ip-start" value="" /><br/>
                                                 </div>
-                                                <input type="hidden" id="time-ip-start" value="" /><br/>
-                                            </div>
-                                            <div class="form-group col-md-6">
-                                                <label for="time-ip-end" class="col-md-2 control-label">Time Picking</label>
-                                                <div class="input-group date form_time col-md-5" data-date="" data-date-format="hh:ii" data-link-field="time-ip-end" data-link-format="hh:ii">
-                                                    <input class="form-control" size="16" type="text" value="" readonly>
-                                                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
-                                                    <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
-                                                </div>
-                                                <input type="hidden" id="time-ip-end" value="" /><br/>
-                                            </div> 
+                                                <div class="form-group col-md-6">
+                                                    <label for="time-ip-end" class="col-md-3 control-label"> End Time</label>
+                                                    <div class="input-group date  col-md-7" data-date="" data-date-format="hh:ii" data-link-field="time-ip-end"  data-link-format="hh:ii" >
+                                                        <input class="form-control form_time" size="16" type="text"  value="" >
 
+                                                        <span class="input-group-addon"><span class="time_image"></span></span>
+                                                    </div>
+                                                    <input type="hidden" id="time-ip-end" value="" /><br/>
+                                                </div> 
+                                            </div>
                                             <div class="panel-footer text-right">
                                                 <button id="block" class="btn billButton font-h3" type="submit">SUBMIT</button>
                                             </div>
@@ -377,25 +417,46 @@
                                     <form:form action="block-categories"  method="post" >
                                         <div class="category_box">
                                             <p class="font-h4">Should your Surf Safe controls be active only on certain days? Choose days of the week.</p>
+                                           <div class="row">
                                             <div class="form-group col-md-6">
-                                                        <label for="day-time-start" class="col-md-2 control-label">Time Picking</label>
-                                                        <div class="input-group date form_time col-md-5" data-date="" data-date-format="hh:ii" data-link-field="day-time-start" data-link-format="hh:ii">
-                                                            <input class="form-control" size="16" type="text" value="" readonly>
-                                                            <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
-                                                            <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
-                                                        </div>
-                                                        <input type="hidden" id="day-time-start" value="" /><br/>
-                                                    </div>
-                                                    <div class="form-group col-md-6">
-                                                        <label for="day-time-end" class="col-md-2 control-label">Time Picking</label>
-                                                        <div class="input-group date form_time col-md-5" data-date="" data-date-format="hh:ii" data-link-field="day-time-end" data-link-format="hh:ii">
-                                                            <input class="form-control" size="16" type="text" value="" readonly>
-                                                            <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
-                                                            <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
-                                                        </div>
-                                                        <input type="hidden" id="day-time-end" value="" /><br/>
-                                                    </div>
+                                                <label for="day-time-start" class="col-md-3 control-label">Start Time</label>
+                                                <div class="input-group date  col-md-7" data-date="" data-date-format="hh:ii" data-link-field="day-time-start" data-link-format="hh:ii">
+                                                    <input class="form-control form_time" size="16" type="text" value="" readonly>
+                                                   
+                                                    <span class="input-group-addon"><span class="time_image"></span></span>
+                                                </div>
+                                                <input type="hidden" id="day-time-start" value="" /><br/>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="day-time-end" class="col-md-3 control-label">End Time</label>
+                                                <div class="input-group date  col-md-7" data-date="" data-date-format="hh:ii" data-link-field="day-time-end" data-link-format="hh:ii">
+                                                    <input class="form-control form_time" size="16" type="text" value="" readonly>
+                                                  
+                                                    <span class="input-group-addon"><span class="time_image"></span></span>
+                                                </div>
+                                                <input type="hidden" id="day-time-end" value="" /><br/>
+                                            </div>
+                                           </div>
+                                            <div class="col-md-10 col-md-offset-1" >
+                                               
+                                                    <input type="checkbox" class="" id="sun" value="sun"><label for="sun">SUN</label>
+                                                
+                                                 <input type="checkbox" class="col-md-2" id="mon" value="mon"><label for="mon">MON</label>
+                                               
+                                                  <input type="checkbox" class="col-md-2" id="tue" value="tue"><label for="tue">TUE</label> 
+                                                  
+                                                  <input type="checkbox" class="col-md-2" id="wed" value="wed"><label for="wed">WED</label>
+                                                  
+                                                  <input type="checkbox" class="col-md-2" id="thu" value="thu"><label for="thu">THU</label>
+                                                 
+                                                   <input type="checkbox" class="col-md-2" id="fri" value="fri"><label for="fri">FRI</label>
+                                                   
+                                                  <input type="checkbox" class="col-md-2" id="sat" value="sat"><label for="sat">SAT</label>
+                                                 
+                                                 
 
+                                                  
+                                            </div>
 
 
                                             <div class="panel-footer text-right">
@@ -409,47 +470,51 @@
                                         <div style="height:268px ; overflow-x: auto;">   
 
 
-                                            <div class="row">
+                                            <div class="row" >
                                                 <form:form action="delete-patterns"  method="post" >
                                                     <p class="font-h4">Want to active Advance/Custom Surf Safe for a specific period? Choose Dates. </p>
-                                                    <div class="form-group col-md-6">
-                                                        <label for="date-start" class="col-md-2 control-label">Date Picking</label>
-                                                        <div class="input-group date form_date col-md-5" data-date="" data-date-format="dd MM yyyy" data-link-field="date-start" data-link-format="yyyy-mm-dd">
-                                                            <input class="form-control" size="16" type="text" value="" readonly>
-                                                            <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
-                                                            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                                                    <div class="row">
+                                                        <div class="form-group col-md-6">
+                                                            <label for="date-time-start" class="col-md-3 control-label">Start Time</label>
+                                                            <div class="input-group date  col-md-7" data-date="" data-date-format="hh:ii" data-link-field="date-time-start" data-link-format="hh:ii">
+                                                                <input class="form-control form_time" size="16" type="text" value=""  readonly>
+
+                                                                <span class="input-group-addon"><span class="time_image"></span></span>
+                                                            </div>
+                                                            <input type="hidden" id="date-time-start" value="" /><br/>
                                                         </div>
-                                                        <input type="hidden" id="date-start" value="" /><br/>
+                                                        <div class="form-group col-md-6">
+                                                            <label for="date-time-end" class="col-md-3 control-label">End Time</label>
+                                                            <div class="input-group date  col-md-7" data-date="" data-date-format="hh:ii" data-link-field="date-time-end" data-link-format="hh:ii">
+                                                                <input class="form-control form_time" size="16" type="text" value=""   readonly>
+
+                                                                <span class="input-group-addon"><span class="time_image"></span></span>
+                                                            </div>
+                                                            <input type="hidden" id="date-time-end" value="" /><br/>
+                                                        </div>
                                                     </div>
-                                                    <div class="form-group col-md-6">
-                                                        <label for="date-end" class="col-md-2 control-label">Date Picking</label>
-                                                        <div class="input-group date form_date col-md-5" data-date="" data-date-format="dd MM yyyy" data-link-field="date-end" data-link-format="yyyy-mm-dd">
-                                                            <input class="form-control" size="16" type="text" value="" readonly>
-                                                            <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
-                                                            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                                                    <div class="row">
+                                                        <div class="form-group col-md-6">
+
+                                                            <div class="input-group date  col-md-10" data-date="" data-date-format="dd MM yyyy" data-link-field="date-start" data-link-format="yyyy-mm-dd">
+                                                                <input class="form-control form_date" size="16" type="text" value="" placeholder="Start date"  readonly>
+
+                                                                <span class="input-group-addon"><span class="date_image"></span></span>
+                                                            </div>
+                                                            <input type="hidden" id="date-start" value="" /><br/>
                                                         </div>
-                                                        <input type="hidden" id="date-end" value="" /><br/>
-                                                    </div>
-                                                    <div class="form-group col-md-6">
-                                                        <label for="date-time-start" class="col-md-2 control-label">Time Picking</label>
-                                                        <div class="input-group date form_time col-md-5" data-date="" data-date-format="hh:ii" data-link-field="date-time-start" data-link-format="hh:ii">
-                                                            <input class="form-control" size="16" type="text" value="" readonly>
-                                                            <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
-                                                            <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
+                                                        <div class="form-group col-md-6">
+
+                                                            <div class="input-group date  col-md-10" data-date="" data-date-format="dd MM yyyy" data-link-field="date-end" data-link-format="yyyy-mm-dd">
+                                                                <input class="form-control form_date" size="16" type="text" value="" placeholder="End date" readonly>
+
+                                                                <span class="input-group-addon"><span class="date_image"></span></span>
+                                                            </div>
+                                                            <input type="hidden" id="date-end" value="" /><br/>
                                                         </div>
-                                                        <input type="hidden" id="date-time-start" value="" /><br/>
-                                                    </div>
-                                                    <div class="form-group col-md-6">
-                                                        <label for="date-time-end" class="col-md-2 control-label">Time Picking</label>
-                                                        <div class="input-group date form_time col-md-5" data-date="" data-date-format="hh:ii" data-link-field="date-time-end" data-link-format="hh:ii">
-                                                            <input class="form-control" size="16" type="text" value="" readonly>
-                                                            <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
-                                                            <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
-                                                        </div>
-                                                        <input type="hidden" id="date-time-end" value="" /><br/>
                                                     </div>
                                                     <div class="panel-footer text-right">
-                                                        <button id="block" class="btn billButton" type="submit">SUBMIT</button>
+                                                        <button id="block" class="btn billButton" style="margin: unset !important" type="submit">SUBMIT</button>
                                                     </div>
                                                 </form:form>
                                             </div>
@@ -554,9 +619,9 @@
                 $('.form_time').datetimepicker({
                     //language:  'fr',
                     //startDate: new Date(),
-                    
+                    format: "hh:ii",
                     weekStart: 1,
-                    
+
                     autoclose: 1,
                     todayHighlight: 0,
                     startView: 1,
