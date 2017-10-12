@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.prodevans.zeno.dao.impl.RegistrationUserParentalControlImpl;
 import com.prodevans.zeno.pojo.CategoryList;
 import com.prodevans.zeno.pojo.ParentalControlDetails;
+import com.prodevans.zeno.pojo.ScheduleDetails;
 import com.prodevans.zeno.pojo.SessionDetails;
 
 import java.util.ArrayList;
@@ -105,7 +106,10 @@ public class ParentalControl {
                             //Return the parental control status/Details.
                             list = categoryimpl.getCategoryList(user.getActid() + RestConfig.ADVANCED_FILTER, user.getDomid().trim());
                             model.addAttribute("CAT", list);
-
+                            
+                            model.addAttribute("ScheduleDetails",new ScheduleDetails());
+                            
+                            
                             //parentalControlDetails = PROTECTION_STATUS.getProtectionDetails(user.getActid(), user.getDomid().trim());
                             //parentalControlDetails.setUser_name(user.getActid());
                             //Displaying the list of Adderss objects

@@ -385,14 +385,14 @@
 
                             <div class="tab-content">
                                 <div id="time-tab" class="tab-pane fade in active row ">
-                                    <form:form action="allow-categories"  method="post"  >
+                                    <form:form action="time-schedule" modelAttribute="ScheduleDetails"   method="post"  >
                                         <div class="category_box">
                                             <p class="font-h4">During a day, when do you want your Surf Safe controls to be active? Choose a time slot.</p>
                                             <div class="row" style="margin-top: 80px; ">
                                                 <div class="form-group col-md-6">
                                                     <label for="time-ip-start" class="col-md-3 control-label"> Start Time</label>
                                                     <div class="input-group date  col-md-7" data-date="" data-date-format="hh:ii" data-link-field="time-ip-start" data-link-format="hh:ii">
-                                                        <input class="form-control form_time" id="time-ip-start" size="16" type="text" value="" >
+                                                        <input name="time_start_time" class="form-control form_time" id="time-ip-start" size="16" type="text" value="" >
                                                         <span class="input-group-addon"><span class="time_image form_time "  data-link-field="time-ip-start" data-link-format="hh:ii" data-date-format="hh:ii" ></span></span>
                                                     </div>
                                                     
@@ -400,7 +400,7 @@
                                                 <div class="form-group col-md-6">
                                                     <label for="time-ip-end" class="col-md-3 control-label"> End Time</label>
                                                     <div class="input-group date  col-md-7"  data-date=""  >
-                                                        <input class="form-control form_time" id="time-ip-end" size="16" type="text"  value="" >
+                                                        <input name="time_end_time"  class="form-control form_time" id="time-ip-end" size="16" type="text"  value="" >
 
                                                         <span class="input-group-addon"><span class="time_image form_time" data-date-format="hh:ii" data-link-field="time-ip-end"  data-link-format="hh:ii"></span></span>
                                                     </div>
@@ -414,14 +414,14 @@
                                     </form:form> 	
                                 </div>
                                 <div id="date-tab" class="tab-pane fade row ">
-                                    <form:form action="block-categories"  method="post" >
+                                    <form:form action="days-schedule" modelAttribute="ScheduleDetails"  method="post" >
                                         <div class="category_box">
                                             <p class="font-h4">Should your Surf Safe controls be active only on certain days? Choose days of the week.</p>
                                             <div class="row" style="margin-top: 40px;">
                                             <div class="form-group col-md-6">
                                                 <label for="day-time-start" class="col-md-3 control-label">Start Time</label>
                                                 <div class="input-group date  col-md-7" data-date="" >
-                                                    <input class="form-control form_time"  id="day-time-start" size="16" type="text" value="" readonly>
+                                                    <input name="days_start_time" class="form-control form_time"  id="day-time-start" size="16" type="text" value="" readonly>
                                                    
                                                     <span class="input-group-addon"><span class="time_image form_time" data-date-format="hh:ii" data-link-field="day-time-start" data-link-format="hh:ii"></span></span>
                                                 </div>
@@ -430,7 +430,7 @@
                                             <div class="form-group col-md-6">
                                                 <label for="day-time-end" class="col-md-3 control-label">End Time</label>
                                                 <div class="input-group date  col-md-7" data-date="" >
-                                                    <input class="form-control form_time" id="day-time-end" size="16" type="text" value="" readonly>
+                                                    <input name="days_end_time" class="form-control form_time" id="day-time-end" size="16" type="text" value="" readonly>
                                                   
                                                     <span class="input-group-addon"><span class="time_image form_time" data-date-format="hh:ii" data-link-field="day-time-end" data-link-format="hh:ii"></span></span>
                                                 </div>
@@ -439,19 +439,19 @@
                                            </div>
                                             <div class="col-md-10 col-md-offset-1" >
                                                
-                                                    <input type="checkbox" class="" id="sun" value="sun"><label for="sun">SUN</label>
+                                                    <input type="checkbox" name="days_days_checkbox" class="" id="sun" value="sunday"><label for="sun">SUN</label>
                                                 
-                                                 <input type="checkbox" class="col-md-2" id="mon" value="mon"><label for="mon">MON</label>
+                                                 <input type="checkbox" name="days_days_checkbox" class="col-md-2" id="mon" value="monday"><label for="mon">MON</label>
                                                
-                                                  <input type="checkbox" class="col-md-2" id="tue" value="tue"><label for="tue">TUE</label> 
+                                                  <input type="checkbox" name="days_days_checkbox" class="col-md-2" id="tue" value="tuesday"><label for="tue">TUE</label> 
                                                   
-                                                  <input type="checkbox" class="col-md-2" id="wed" value="wed"><label for="wed">WED</label>
+                                                  <input type="checkbox" name="days_days_checkbox" class="col-md-2" id="wed" value="wednesday"><label for="wed">WED</label>
                                                   
-                                                  <input type="checkbox" class="col-md-2" id="thu" value="thu"><label for="thu">THU</label>
+                                                  <input type="checkbox" name="days_days_checkbox" class="col-md-2" id="thu" value="thursday"><label for="thu">THU</label>
                                                  
-                                                   <input type="checkbox" class="col-md-2" id="fri" value="fri"><label for="fri">FRI</label>
+                                                   <input type="checkbox" name="days_days_checkbox" class="col-md-2" id="fri" value="friday"><label for="fri">FRI</label>
                                                    
-                                                  <input type="checkbox" class="col-md-2" id="sat" value="sat"><label for="sat">SAT</label>
+                                                  <input type="checkbox" name="days_days_checkbox" class="col-md-2" id="sat" value="saturday"><label for="sat">SAT</label>
                                                  
                                                  
 
@@ -471,13 +471,13 @@
 
 
                                         <div class="row" style="margin-top: 20px;" >
-                                                <form:form action="delete-patterns"  method="post" >
+                                                <form:form action="non-recurring-schedule" modelAttribute="ScheduleDetails"  method="post" >
                                                     <p class="font-h4">Want to active Advance/Custom Surf Safe for a specific period? Choose Dates. </p>
                                                     <div class="row">
                                                         <div class="form-group col-md-6">
                                                             <label for="date-time-start" class="col-md-3 control-label">Start Time</label>
                                                             <div class="input-group date  col-md-7" data-date="" >
-                                                                <input class="form-control form_time" id="date-time-start" size="16" type="text" value=""  readonly>
+                                                                <input name="dates_start_time" class="form-control form_time" id="date-time-start" size="16" type="text" value=""  readonly>
 
                                                                 <span class="input-group-addon"><span class="time_image form_time" data-date-format="hh:ii" data-link-field="date-time-start" data-link-format="hh:ii"></span></span>
                                                             </div>
@@ -486,7 +486,7 @@
                                                         <div class="form-group col-md-6">
                                                             <label for="date-time-end" class="col-md-3 control-label">End Time</label>
                                                             <div class="input-group date  col-md-7" data-date="" >
-                                                                <input class="form-control form_time" id="date-time-end" size="16" type="text" value=""   readonly>
+                                                                <input  name="dates_end_time" class="form-control form_time" id="date-time-end" size="16" type="text" value=""   readonly>
 
                                                                 <span class="input-group-addon"><span class="time_image form_time" data-date-format="hh:ii" data-link-field="date-time-end" data-link-format="hh:ii"></span></span>
                                                             </div>
@@ -497,18 +497,18 @@
                                                         <div class="form-group col-md-6">
 
                                                             <div class="input-group date  col-md-10" data-date="" >
-                                                                <input class="form-control form_date" id="date-start" size="16" type="text" value="" placeholder="Start date"  readonly>
+                                                                <input name="dates_start_date"  class="form-control form_date" id="date-start" size="16" type="text" value="" placeholder="Start date"  readonly>
 
-                                                                <span class="input-group-addon"><span class="date_image form_date" data-date-format="dd MM yyyy" data-link-field="date-start" data-link-format="yyyy-mm-dd"></span></span>
+                                                                <span class="input-group-addon"><span class="date_image form_date" data-date-format="dd MM yyyy" data-link-field="date-start" data-link-format="yyyy/mm/dd"></span></span>
                                                             </div>
                                                           
                                                         </div>
                                                         <div class="form-group col-md-6">
 
                                                             <div class="input-group date  col-md-10" data-date="" >
-                                                                <input class="form-control form_date" id="date-end" size="16" type="text" value="" placeholder="End date" readonly>
+                                                                <input name="dates_end_date" class="form-control form_date" id="date-end" size="16" type="text" value="" placeholder="End date" readonly>
 
-                                                                <span class="input-group-addon"><span class="date_image form_date" data-date-format="dd MM yyyy" data-link-field="date-end" data-link-format="yyyy-mm-dd"></span></span>
+                                                                <span class="input-group-addon"><span class="date_image form_date" data-date-format="dd MM yyyy" data-link-field="date-end" data-link-format="yyyy/mm/dd"></span></span>
                                                             </div>
                                                             
                                                         </div>
@@ -607,6 +607,7 @@
                 });
                 $('.form_date').datetimepicker({
                     language: 'fr',
+                    format: "yyyy/mm/dd",
                     startDate: new Date(),
                     weekStart: 1,
                     todayBtn: 1,

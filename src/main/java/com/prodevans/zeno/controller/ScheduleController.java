@@ -32,8 +32,8 @@ public class ScheduleController
      */
     private static final Logger logger = LoggerFactory.getLogger(ScheduleController.class);
 	
-    @RequestMapping(value = "/time-schedule", method = RequestMethod.GET)
-    public String timeschedule(ModelMap model, HttpSession session, @ModelAttribute(name = "ScheduleDetails")ScheduleDetails scheduleDetails) 
+    @RequestMapping(value = "/time-schedule", method = RequestMethod.POST)
+    public String timeschedule(ModelMap model, HttpSession session, @RequestParam(name = "time_start_time", required = false) String start_time, @RequestParam(name = "time_end_time", required = false) String end_time) 
     {
         if (session.getAttribute("user") == null) 
         {
@@ -41,11 +41,13 @@ public class ScheduleController
         } 
         else 
         {
-        	
-        	//fetching the user details from the session.
             SessionDetails user = (SessionDetails) session.getAttribute("user");
+          
+            String time=start_time.trim()+"-"+end_time.trim();
             
-            if(scheduleDAOImpl.applyTimeSchedule(user.getDomid(),user.getActid()+"_SCHEDULE", "daily", "09:00-18:00"))
+            System.out.println("Time : "+time);
+            
+            if(scheduleDAOImpl.applyTimeSchedule(user.getDomid(),user.getActid()+"_SCHEDULE", "daily", time))
             {
             	logger.info("Daily schedule applied successfully..");
             	model.addAttribute("msg","Daily schedule applied successfully..");
@@ -57,13 +59,13 @@ public class ScheduleController
             	model.addAttribute("msg","Daily schedule was not applied..");
             }
             
-        	return "parental-control";
+        	return "redirect:control";
         }
 	
     }
     
-    @RequestMapping(value = "/days-schedule", method = RequestMethod.GET)
-    public String dayschedule(ModelMap model, HttpSession session, @ModelAttribute(name = "ScheduleDetails")ScheduleDetails scheduleDetails) 
+    @RequestMapping(value = "/days-schedule", method = RequestMethod.POST)
+    public String dayschedule(ModelMap model, HttpSession session, @RequestParam(name = "days_start_time", required = false) String start_time, @RequestParam(name = "days_end_time", required = false) String end_time,@RequestParam(name = "days_days_checkbox", required = false) ArrayList<String> days_days_checkbox) 
     {
         if (session.getAttribute("user") == null) 
         {
@@ -71,15 +73,17 @@ public class ScheduleController
         } 
         else 
         {
-        	ArrayList<String> when=new ArrayList<String>();
-        	
-        	when.add("monday");
-        	when.add("tuesday");
-        	
+            String time=start_time.trim()+"-"+end_time.trim();
+            System.out.print("Time : "+time);
+            
+            for (String string : days_days_checkbox) {
+				System.out.println("Days : "+string);
+			}
+            
         	//fetching the user details from the session.
             SessionDetails user = (SessionDetails) session.getAttribute("user");
             
-            if(scheduleDAOImpl.applyDaysSchedule(user.getDomid(),user.getActid()+"_SCHEDULE", when, "09:00-18:00"))
+            if(scheduleDAOImpl.applyDaysSchedule(user.getDomid(),user.getActid()+"_SCHEDULE", days_days_checkbox, time))
             {
             	logger.info("Days schedule applied successfully..");
             	model.addAttribute("msg","Days schedule applied successfully..");
@@ -91,14 +95,14 @@ public class ScheduleController
             	model.addAttribute("msg","Days schedule was not applied..");
             }
             
-        	return "parental-control";
+        	return "redirect:control";
         }
 	
     }
     
     
-    @RequestMapping(value = "/non-recurring-schedule", method = RequestMethod.GET)
-    public String nonrecurringschedule(ModelMap model, HttpSession session, @ModelAttribute(name = "ScheduleDetails")ScheduleDetails scheduleDetails) 
+    @RequestMapping(value = "/non-recurring-schedule", method = RequestMethod.POST)
+    public String nonrecurringschedule(ModelMap model, HttpSession session, @RequestParam(name = "dates_start_time", required = false) String start_time, @RequestParam(name = "dates_end_time", required = false) String end_time, @RequestParam(name = "dates_start_date", required = false) String dates_start_date, @RequestParam(name = "dates_end_date", required = false) String dates_end_date) 
     {
         if (session.getAttribute("user") == null) 
         {
@@ -106,9 +110,16 @@ public class ScheduleController
         } 
         else 
         {
+        	String time=start_time.trim()+"-"+end_time.trim();
+            System.out.print("Time : "+time);
         	
-        	String when="2017/09/21@07:30-2017/09/30@07:30";
-        	
+            System.out.print("dates_start_date : "+dates_start_date);
+            System.out.print("dates_end_date : "+dates_end_date);
+            
+            String when=dates_start_date+"@"+start_time+"-"+dates_end_date+"@"+end_time;
+
+            System.out.print("When : "+when);
+            
         	//fetching the user details from the session.
             SessionDetails user = (SessionDetails) session.getAttribute("user");
             
@@ -124,7 +135,7 @@ public class ScheduleController
             	model.addAttribute("msg","Non-Recurring schedule was not applied..");
             }
             
-        	return "parental-control";
+        	return "redirect:control";
         }
 	
     }

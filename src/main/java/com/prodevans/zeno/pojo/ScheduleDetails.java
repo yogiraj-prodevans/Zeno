@@ -1,5 +1,7 @@
 package com.prodevans.zeno.pojo;
 
+import java.util.ArrayList;
+
 public class ScheduleDetails 
 {
 
@@ -8,7 +10,7 @@ public class ScheduleDetails
 	
 	public String days_start_time;
 	public String days_end_time;
-	public String days_days_checkbox;
+	public ArrayList<String>  days_days_checkbox;
 	
 	public String dates_start_time;
 	public String dates_end_time;
@@ -17,6 +19,14 @@ public class ScheduleDetails
 	
 	
 	
+	
+	
+	public ArrayList<String> getDays_days_checkbox() {
+		return days_days_checkbox;
+	}
+	public void setDays_days_checkbox(ArrayList<String> days_days_checkbox) {
+		this.days_days_checkbox = days_days_checkbox;
+	}
 	public String getTime_start_time() {
 		return time_start_time;
 	}
@@ -41,12 +51,7 @@ public class ScheduleDetails
 	public void setDays_end_time(String days_end_time) {
 		this.days_end_time = days_end_time;
 	}
-	public String getDays_days_checkbox() {
-		return days_days_checkbox;
-	}
-	public void setDays_days_checkbox(String days_days_checkbox) {
-		this.days_days_checkbox = days_days_checkbox;
-	}
+
 	public String getDates_start_time() {
 		return dates_start_time;
 	}
