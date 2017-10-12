@@ -102,61 +102,61 @@
                 /*icons and background sizes*/
                 .nav-tabs > li.active > a#advance-filter {
                     color: #716868;
-                    padding: 5px 15px 4px 55px;
+                    padding: 5px 15px 15px 60px;
                     border-bottom: 7px red solid !important;
                     background-image: url('${pageContext.request.contextPath }/img/icons/Check_red.png') !important;
-                    background-size: contain !important;
+                    background-size: 50px !important;
                     background-repeat: no-repeat !important;
-                    font-size: 28px;
+                    font-size: 26px;
                 }
                 
                 .nav-tabs > li > a#advance-filter {
                     color: #716868;
-                    padding: 5px 15px 4px 55px;
+                    padding: 5px 15px 15px 60px;
                     border-bottom: 7px #fff solid !important;
                     background-image: url('${pageContext.request.contextPath }/img/icons/Check_grey.png') !important;
-                    background-size: contain !important;
+                    background-size: 50px !important;
                     background-repeat: no-repeat !important;
-                    font-size: 28px;
+                    font-size: 26px;
                 }
                 .nav-tabs > li.active > a#block-filter {
                     color: #716868;
-                    padding: 5px 15px 4px 55px;
+                    padding: 5px 15px 15px 60px;
                     border-bottom: 7px red solid !important;
                     background-image: url('${pageContext.request.contextPath }/img/icons/Blocked_red.png') !important;
-                    background-size: contain !important;
+                    background-size: 50px !important;
                     background-repeat: no-repeat !important;
-                    font-size: 28px;
+                    font-size: 26px;
                 }
                 
                 .nav-tabs > li > a#block-filter {
                     color: #716868;
-                    padding: 5px 15px 4px 55px;
+                    padding: 5px 15px 15px 60px;
                     border-bottom: 7px #fff solid !important;
                     background-image: url('${pageContext.request.contextPath }/img/icons/Blocked_grey.png') !important;
-                    background-size: contain !important;
+                    background-size: 50px !important;
                     background-repeat: no-repeat !important;
-                    font-size: 28px;
+                    font-size: 26px;
                 }
                 
                 .nav-tabs > li.active > a#custom-filter {
                     color: #716868;
-                    padding: 5px 15px 4px 55px;
+                    padding: 5px 15px 15px 60px;
                     border-bottom: 7px red solid !important;
                     background-image: url('${pageContext.request.contextPath }/img/icons/Custom_red.png') !important;
-                    background-size: contain !important;
+                    background-size: 50px !important;
                     background-repeat: no-repeat !important;
-                    font-size: 28px;
+                    font-size: 26px;
                 }
                 
                 .nav-tabs > li > a#custom-filter {
                     color: #716868;
-                    padding: 5px 15px 4px 55px;
+                    padding: 5px 15px 15px 60px;
                     border-bottom: 7px #fff solid !important;
                     background-image: url('${pageContext.request.contextPath }/img/icons/Custom_grey.png') !important;
-                    background-size: contain !important;
+                    background-size: 50px !important;
                     background-repeat: no-repeat !important;
-                    font-size: 28px;
+                    font-size: 26px;
                 }
                 .nav-tabs > li > a{
                   
