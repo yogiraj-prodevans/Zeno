@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.prodevans.zeno.dao.impl.ScheduleDAOImpl;
 import com.prodevans.zeno.pojo.CategoryList;
+import com.prodevans.zeno.pojo.ScheduleDetails;
 import com.prodevans.zeno.pojo.SessionDetails;
 
 @Controller
@@ -32,7 +33,7 @@ public class ScheduleController
     private static final Logger logger = LoggerFactory.getLogger(ScheduleController.class);
 	
     @RequestMapping(value = "/time-schedule", method = RequestMethod.GET)
-    public String timeschedule(ModelMap model, HttpSession session) 
+    public String timeschedule(ModelMap model, HttpSession session, @ModelAttribute(name = "ScheduleDetails")ScheduleDetails scheduleDetails) 
     {
         if (session.getAttribute("user") == null) 
         {
@@ -62,7 +63,7 @@ public class ScheduleController
     }
     
     @RequestMapping(value = "/days-schedule", method = RequestMethod.GET)
-    public String dayschedule(ModelMap model, HttpSession session) 
+    public String dayschedule(ModelMap model, HttpSession session, @ModelAttribute(name = "ScheduleDetails")ScheduleDetails scheduleDetails) 
     {
         if (session.getAttribute("user") == null) 
         {
@@ -97,7 +98,7 @@ public class ScheduleController
     
     
     @RequestMapping(value = "/non-recurring-schedule", method = RequestMethod.GET)
-    public String nonrecurringschedule(ModelMap model, HttpSession session) 
+    public String nonrecurringschedule(ModelMap model, HttpSession session, @ModelAttribute(name = "ScheduleDetails")ScheduleDetails scheduleDetails) 
     {
         if (session.getAttribute("user") == null) 
         {
