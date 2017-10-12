@@ -339,8 +339,8 @@
 
         <h4>
             Your home is your safe space and you deserve to keep it that way. With our Advanced Surf Safe control you can decide what to let in and when. If there are specific websites you want to block, go ahead and add to your Custom setting. 
-            <!-- this released in next version of parental control.
-            Schedule hourly, daily or date-wise, and we'll ensure your chosen categories and URLs remain blocked when you want them to be. Surf Safe, and ensure everyone on your network does too.-->
+          
+            Schedule hourly, daily or date-wise, and we'll ensure your chosen categories and URLs remain blocked when you want them to be. Surf Safe, and ensure everyone on your network does too.
         </h4>
 
 
@@ -436,6 +436,8 @@
 
 
         </div>
+        
+        <jsp:include page="parental-control.jsp"/>
         <c:if test="${not empty error }">
             <h3 style="color: green"><c:out value="${error }"></c:out></h3>
 

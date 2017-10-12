@@ -1,9 +1,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
-<!DOCTYPE html >
+<!--<!DOCTYPE html >
 <html>
-    <head>
+    <head>-->
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Parental Control</title>
         <%-- Including the css style sheets--%>
@@ -318,16 +318,16 @@
                 -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
             }
         </style>
-    </head>
-    <body class="corporate" style="font-family: Roboto;">
+<!--    </head>
+    <body class="corporate" style="font-family: Roboto;">-->
         <!-- BEGIN HEADER -->
-        <div class="header">
+<!--        <div class="header">
             <div class="row">
                 <a class="site-logo" href="#"> <img
                         src="corporate/img/logos/logo.png" alt="ONE8">
                 </a> <a href="javascript:void(0);" class="mobi-toggler"><i
                         class="fa fa-bars"></i></a>
-                <!-- BEGIN NAVIGATION -->
+                 BEGIN NAVIGATION 
                 <div class="header-navigation pull-right font-transform-inherit"
                      style="font-size: 12px">
                     <ul>
@@ -344,13 +344,13 @@
                         <li><a href="${pageContext.request.contextPath }/logout">LOGOUT</a></li>
                     </ul>
                 </div>
-                <!-- END NAVIGATION -->
+                 END NAVIGATION 
             </div>
         </div>
 
         <div class="col-md-12 firstRow pt-20"
              style="background-image: url('img/red_long.png');" style="clear: both">
-            <!--  <h1 class="paddingLeftTop" >Parental Control</h1> <h1 class="paddingRight" >Hi Vamsi </h1>  -->
+              <h1 class="paddingLeftTop" >Parental Control</h1> <h1 class="paddingRight" >Hi Vamsi </h1>  
             <div class="col-md-5" style="padding-left: 3.8%;">
                 <h1>Parental Control</h1>
             </div>
@@ -358,13 +358,13 @@
                 <h1 style="float: middle">Hi ${uesr_name}</h1>
             </div>
 
-        </div>
+        </div>-->
 
-        <div class="container ">
-            <h1 class="largeFont pb-10" style="margin-top: 12%;">With Surf Safe, you are in control</h1>
+        <div class=" ">
+<!--            <h1 class="largeFont pb-10" style="margin-top: 12%;">With Surf Safe, you are in control</h1>
             <h3>
                 Your home is your safe space and you deserve to keep it that way. With our Advanced Surf Safe control you can decide what to let in and when. If there are specific websites you want to block, go ahead and add to your Custom setting. Schedule hourly, daily or date-wise, and we'll ensure your chosen categories and URLs remain blocked when you want them to be. Surf Safe, and ensure everyone on your network does too.
-            </h3>
+            </h3>-->
 
             <div class="panel-group">
                 <div class="panel panel-default">
@@ -547,12 +547,12 @@
 
 
 
-        <!-- included pop up -->
-        <jsp:include page="component/pop-up.jsp"></jsp:include>
+<!--         included pop up 
+        <%--<jsp:include page="component/pop-up.jsp"></jsp:include>--%>
 
-        <jsp:include page="component/footer.jsp"></jsp:include>
+        <%--<jsp:include page="component/footer.jsp"></jsp:include>--%>
 
-            <!-- Load javascripts at bottom, this will reduce page load time -->
+             Load javascripts at bottom, this will reduce page load time -->
         <jsp:include page="component/js.jsp"></jsp:include>
             <!-- END BODY -->
             <script>
@@ -630,5 +630,5 @@
                     forceParse: 0
                 });
         </script>
-    </body>
-</html>
+<!--    </body>
+</html>-->
