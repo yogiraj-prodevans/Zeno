@@ -417,7 +417,7 @@
                                     <form:form action="block-categories"  method="post" >
                                         <div class="category_box">
                                             <p class="font-h4">Should your Surf Safe controls be active only on certain days? Choose days of the week.</p>
-                                           <div class="row">
+                                            <div class="row" style="margin-top: 40px;">
                                             <div class="form-group col-md-6">
                                                 <label for="day-time-start" class="col-md-3 control-label">Start Time</label>
                                                 <div class="input-group date  col-md-7" data-date="" data-date-format="hh:ii" data-link-field="day-time-start" data-link-format="hh:ii">
@@ -467,10 +467,10 @@
                                 </div>
                                 <div id="dates-tab" class="tab-pane fade ">
                                     <div class="category_box ">
-                                        <div style="height:268px ; overflow-x: auto;">   
+                                       
 
 
-                                            <div class="row" >
+                                        <div class="row" style="margin-top: 20px;" >
                                                 <form:form action="delete-patterns"  method="post" >
                                                     <p class="font-h4">Want to active Advance/Custom Surf Safe for a specific period? Choose Dates. </p>
                                                     <div class="row">
@@ -518,7 +518,7 @@
                                                     </div>
                                                 </form:form>
                                             </div>
-                                        </div>
+                                        
                                     </div>
 
 
