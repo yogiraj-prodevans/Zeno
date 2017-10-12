@@ -392,19 +392,19 @@
                                                 <div class="form-group col-md-6">
                                                     <label for="time-ip-start" class="col-md-3 control-label"> Start Time</label>
                                                     <div class="input-group date  col-md-7" data-date="" data-date-format="hh:ii" data-link-field="time-ip-start" data-link-format="hh:ii">
-                                                        <input class="form-control form_time" size="16" type="text" value="" >
-                                                        <span class="input-group-addon"><span class="time_image"></span></span>
+                                                        <input class="form-control form_time" id="time-ip-start" size="16" type="text" value="" >
+                                                        <span class="input-group-addon"><span class="time_image form_time "  data-link-field="time-ip-start" data-link-format="hh:ii" data-date-format="hh:ii" ></span></span>
                                                     </div>
-                                                    <input type="hidden" id="time-ip-start" value="" /><br/>
+                                                    
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label for="time-ip-end" class="col-md-3 control-label"> End Time</label>
-                                                    <div class="input-group date  col-md-7" data-date="" data-date-format="hh:ii" data-link-field="time-ip-end"  data-link-format="hh:ii" >
-                                                        <input class="form-control form_time" size="16" type="text"  value="" >
+                                                    <div class="input-group date  col-md-7"  data-date=""  >
+                                                        <input class="form-control form_time" id="time-ip-end" size="16" type="text"  value="" >
 
-                                                        <span class="input-group-addon"><span class="time_image"></span></span>
+                                                        <span class="input-group-addon"><span class="time_image form_time" data-date-format="hh:ii" data-link-field="time-ip-end"  data-link-format="hh:ii"></span></span>
                                                     </div>
-                                                    <input type="hidden" id="time-ip-end" value="" /><br/>
+                                                    
                                                 </div> 
                                             </div>
                                             <div class="panel-footer text-right">
@@ -420,21 +420,21 @@
                                             <div class="row" style="margin-top: 40px;">
                                             <div class="form-group col-md-6">
                                                 <label for="day-time-start" class="col-md-3 control-label">Start Time</label>
-                                                <div class="input-group date  col-md-7" data-date="" data-date-format="hh:ii" data-link-field="day-time-start" data-link-format="hh:ii">
-                                                    <input class="form-control form_time" size="16" type="text" value="" readonly>
+                                                <div class="input-group date  col-md-7" data-date="" >
+                                                    <input class="form-control form_time"  id="day-time-start" size="16" type="text" value="" readonly>
                                                    
-                                                    <span class="input-group-addon"><span class="time_image"></span></span>
+                                                    <span class="input-group-addon"><span class="time_image form_time" data-date-format="hh:ii" data-link-field="day-time-start" data-link-format="hh:ii"></span></span>
                                                 </div>
-                                                <input type="hidden" id="day-time-start" value="" /><br/>
+                                               
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="day-time-end" class="col-md-3 control-label">End Time</label>
-                                                <div class="input-group date  col-md-7" data-date="" data-date-format="hh:ii" data-link-field="day-time-end" data-link-format="hh:ii">
-                                                    <input class="form-control form_time" size="16" type="text" value="" readonly>
+                                                <div class="input-group date  col-md-7" data-date="" >
+                                                    <input class="form-control form_time" id="day-time-end" size="16" type="text" value="" readonly>
                                                   
-                                                    <span class="input-group-addon"><span class="time_image"></span></span>
+                                                    <span class="input-group-addon"><span class="time_image form_time" data-date-format="hh:ii" data-link-field="day-time-end" data-link-format="hh:ii"></span></span>
                                                 </div>
-                                                <input type="hidden" id="day-time-end" value="" /><br/>
+                                              
                                             </div>
                                            </div>
                                             <div class="col-md-10 col-md-offset-1" >
@@ -476,41 +476,41 @@
                                                     <div class="row">
                                                         <div class="form-group col-md-6">
                                                             <label for="date-time-start" class="col-md-3 control-label">Start Time</label>
-                                                            <div class="input-group date  col-md-7" data-date="" data-date-format="hh:ii" data-link-field="date-time-start" data-link-format="hh:ii">
-                                                                <input class="form-control form_time" size="16" type="text" value=""  readonly>
+                                                            <div class="input-group date  col-md-7" data-date="" >
+                                                                <input class="form-control form_time" id="date-time-start" size="16" type="text" value=""  readonly>
 
-                                                                <span class="input-group-addon"><span class="time_image"></span></span>
+                                                                <span class="input-group-addon"><span class="time_image form_time" data-date-format="hh:ii" data-link-field="date-time-start" data-link-format="hh:ii"></span></span>
                                                             </div>
-                                                            <input type="hidden" id="date-time-start" value="" /><br/>
+                                                           
                                                         </div>
                                                         <div class="form-group col-md-6">
                                                             <label for="date-time-end" class="col-md-3 control-label">End Time</label>
-                                                            <div class="input-group date  col-md-7" data-date="" data-date-format="hh:ii" data-link-field="date-time-end" data-link-format="hh:ii">
-                                                                <input class="form-control form_time" size="16" type="text" value=""   readonly>
+                                                            <div class="input-group date  col-md-7" data-date="" >
+                                                                <input class="form-control form_time" id="date-time-end" size="16" type="text" value=""   readonly>
 
-                                                                <span class="input-group-addon"><span class="time_image"></span></span>
+                                                                <span class="input-group-addon"><span class="time_image form_time" data-date-format="hh:ii" data-link-field="date-time-end" data-link-format="hh:ii"></span></span>
                                                             </div>
-                                                            <input type="hidden" id="date-time-end" value="" /><br/>
+                                                          
                                                         </div>
                                                     </div>
                                                     <div class="row">
                                                         <div class="form-group col-md-6">
 
-                                                            <div class="input-group date  col-md-10" data-date="" data-date-format="dd MM yyyy" data-link-field="date-start" data-link-format="yyyy-mm-dd">
-                                                                <input class="form-control form_date" size="16" type="text" value="" placeholder="Start date"  readonly>
+                                                            <div class="input-group date  col-md-10" data-date="" >
+                                                                <input class="form-control form_date" id="date-start" size="16" type="text" value="" placeholder="Start date"  readonly>
 
-                                                                <span class="input-group-addon"><span class="date_image"></span></span>
+                                                                <span class="input-group-addon"><span class="date_image form_date" data-date-format="dd MM yyyy" data-link-field="date-start" data-link-format="yyyy-mm-dd"></span></span>
                                                             </div>
-                                                            <input type="hidden" id="date-start" value="" /><br/>
+                                                          
                                                         </div>
                                                         <div class="form-group col-md-6">
 
-                                                            <div class="input-group date  col-md-10" data-date="" data-date-format="dd MM yyyy" data-link-field="date-end" data-link-format="yyyy-mm-dd">
-                                                                <input class="form-control form_date" size="16" type="text" value="" placeholder="End date" readonly>
+                                                            <div class="input-group date  col-md-10" data-date="" >
+                                                                <input class="form-control form_date" id="date-end" size="16" type="text" value="" placeholder="End date" readonly>
 
-                                                                <span class="input-group-addon"><span class="date_image"></span></span>
+                                                                <span class="input-group-addon"><span class="date_image form_date" data-date-format="dd MM yyyy" data-link-field="date-end" data-link-format="yyyy-mm-dd"></span></span>
                                                             </div>
-                                                            <input type="hidden" id="date-end" value="" /><br/>
+                                                            
                                                         </div>
                                                     </div>
                                                     <div class="panel-footer text-right">
