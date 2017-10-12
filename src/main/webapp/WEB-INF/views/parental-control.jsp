@@ -95,61 +95,61 @@
                 /*icons and background sizes*/
                 .nav-tabs > li.active > a#time-tab-name {
                     color: #716868;
-                    padding: 5px 15px 4px 55px;
+                    padding: 5px 15px 15px 60px;
                     border-bottom: 7px red solid !important;
                     background-image: url('${pageContext.request.contextPath }/img/icons/Time_red.png') !important;
-                background-size: contain !important;
+                background-size: 50px !important;
                 background-repeat: no-repeat !important;
-                font-size: 30px;
+                font-size: 26px;
             }
 
             .nav-tabs > li > a#time-tab-name {
                 color: #716868;
-                padding: 5px 15px 4px 55px;
+                padding: 5px 15px 15px 60px;
                 border-bottom: 7px #fff solid !important;
                 background-image: url('${pageContext.request.contextPath }/img/icons/Time_grey.png') !important;
-                background-size: contain !important;
+                background-size: 50px !important;
                 background-repeat: no-repeat !important;
-                font-size: 30px;
+                font-size: 26px;
             }
             .nav-tabs > li.active > a#day-tab-name {
                 color: #716868;
-                padding: 5px 15px 4px 55px;
+                padding: 5px 15px 15px 60px;
                 border-bottom: 7px red solid !important;
                 background-image: url('${pageContext.request.contextPath }/img/icons/Day_red.png') !important;
-                background-size: contain !important;
+                background-size: 50px !important;
                 background-repeat: no-repeat !important;
-                font-size: 30px;
+                font-size: 26px;
             }
 
             .nav-tabs > li > a#day-tab-name {
                 color: #716868;
-                padding: 5px 15px 4px 55px;
+               padding: 5px 15px 15px 60px;
                 border-bottom: 7px #fff solid !important;
                 background-image: url('${pageContext.request.contextPath }/img/icons/Day_grey.png') !important;
-                background-size: contain !important;
+                background-size: 50px !important;
                 background-repeat: no-repeat !important;
-                font-size: 30px;
+                font-size: 26px;
             }
 
             .nav-tabs > li.active > a#dates-tab-name {
                 color: #716868;
-                padding: 5px 15px 4px 55px;
+               padding: 5px 15px 15px 60px;
                 border-bottom: 7px red solid !important;
                 background-image: url('${pageContext.request.contextPath }/img/icons/Dates_red.png') !important;
-                background-size: contain !important;
+                background-size: 50px !important;
                 background-repeat: no-repeat !important;
-                font-size: 30px;
+                font-size: 26px;
             }
 
             .nav-tabs > li > a#dates-tab-name {
                 color: #716868;
-                padding: 5px 15px 4px 55px;
+               padding: 5px 15px 15px 60px;
                 border-bottom: 7px #fff solid !important;
                 background-image: url('${pageContext.request.contextPath }/img/icons/Dates_grey.png') !important;
-                background-size: contain !important;
+                background-size: 50px !important;
                 background-repeat: no-repeat !important;
-                font-size: 30px;
+                font-size: 26px;
             }
             .nav-tabs > li > a{
 
@@ -542,6 +542,7 @@
                 });
                 $('.form_date').datetimepicker({
                     language: 'fr',
+                    startDate: new Date(),
                     weekStart: 1,
                     todayBtn: 1,
                     autoclose: 1,
@@ -552,10 +553,12 @@
                 });
                 $('.form_time').datetimepicker({
                     //language:  'fr',
+                    //startDate: new Date(),
+                    
                     weekStart: 1,
-                    todayBtn: 1,
+                    
                     autoclose: 1,
-                    todayHighlight: 1,
+                    todayHighlight: 0,
                     startView: 1,
                     minView: 0,
                     maxView: 1,
