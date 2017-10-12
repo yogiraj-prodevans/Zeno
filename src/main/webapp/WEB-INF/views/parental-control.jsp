@@ -34,7 +34,7 @@
                     width: 100% !important;
                     padding: 10px;
                     height: 45px;
-                    border: 1.5px solid #bdc3c7;
+                    border: 1px solid #bdc3c7;
                     background-color: unset !important;
                     border-radius: unset;
                     border-right: unset;
