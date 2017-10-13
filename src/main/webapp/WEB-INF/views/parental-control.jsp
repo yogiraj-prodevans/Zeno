@@ -200,7 +200,7 @@
                 -webkit-transition: all .12s, border-color .08s;
                 transition: all .12s, border-color .08s;
             }
-            input[type="checkbox"] + label {
+            #day_selector >  input[type="checkbox"] + label {
                 display: block;
                 position: relative;
                 padding-left: 35px;
@@ -225,7 +225,7 @@
 
                 min-height: 100px;
                 padding: 40px;
-                border: 2px solid #bdc3c7;
+                border: 1px solid #bdc3c7;
                 margin-top: -1px;
                 min-height: 350px;
 
@@ -360,7 +360,7 @@
 
         </div>-->
 
-        <div class=" ">
+<div class=" " style="margin-top: 20px;">
 <!--            <h1 class="largeFont pb-10" style="margin-top: 12%;">With Surf Safe, you are in control</h1>
             <h3>
                 Your home is your safe space and you deserve to keep it that way. With our Advanced Surf Safe control you can decide what to let in and when. If there are specific websites you want to block, go ahead and add to your Custom setting. Schedule hourly, daily or date-wise, and we'll ensure your chosen categories and URLs remain blocked when you want them to be. Surf Safe, and ensure everyone on your network does too.
@@ -369,13 +369,13 @@
             <div class="panel-group">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h2 class="panel-title">
+                        <div class="panel-title" id="collapser">
                             <a data-toggle="collapse" href="#collapse1" style="font-size: 24px;">SCHEDULE</a>
-                        </h2>
+                        </div>
                     </div>
-                    <div id="collapse1" class="panel-collapse collapse">
+                    <div id="collapse1" class="panel-collapse collapsing ">
                         <div class="panel-body">
-                            <ul class="nav nav-tabs  margin-top-20">
+                            <ul class="nav nav-tabs  margin-top-10">
                                 <li class=" active"><a id="time-tab-name" data-toggle="tab" href="#time-tab">TIME</a></li>
                                 <li class=" "><a id="day-tab-name" data-toggle="tab" href="#date-tab"  >DAYS</a></li>
                                 <li class=" "><a id="dates-tab-name" data-toggle="tab" href="#dates-tab" >DATES</a></li>
@@ -437,7 +437,7 @@
                                               
                                             </div>
                                            </div>
-                                            <div class="col-md-10 col-md-offset-1" >
+                                            <div id="day_selector" class="col-md-10 col-md-offset-1 margin-top-10" >
                                                
                                                     <input type="checkbox" name="days_days_checkbox" class="" id="sun" value="sunday"><label for="sun">SUN</label>
                                                 
@@ -459,7 +459,7 @@
                                             </div>
 
 
-                                            <div class="panel-footer text-right">
+                                            <div class="col-md-12 text-right">
                                                 <button id="block" class="btn billButton" type="submit">SUBMIT</button>
                                             </div>
                                         </div>
@@ -468,11 +468,11 @@
                                 <div id="dates-tab" class="tab-pane fade ">
                                     <div class="category_box ">
                                        
-
+<p class="font-h4">Want to active Advance/Custom Surf Safe for a specific period? Choose Dates. </p>
+                                                    
 
                                         <div class="row" style="margin-top: 20px;" >
                                                 <form:form action="non-recurring-schedule" modelAttribute="ScheduleDetails"  method="post" >
-                                                    <p class="font-h4">Want to active Advance/Custom Surf Safe for a specific period? Choose Dates. </p>
                                                     <div class="row">
                                                         <div class="form-group col-md-6">
                                                             <label for="date-time-start" class="col-md-3 control-label">Start Time</label>
@@ -513,8 +513,8 @@
                                                             
                                                         </div>
                                                     </div>
-                                                    <div class="panel-footer text-right">
-                                                        <button id="block" class="btn billButton" style="margin: unset !important" type="submit">SUBMIT</button>
+                                                    <div class="col-md-12 text-right margin-top-10">
+                                                        <button id="block" class="btn billButton"  type="submit">SUBMIT</button>
                                                     </div>
                                                 </form:form>
                                             </div>
@@ -621,6 +621,12 @@
                     maxView: 1,
                     forceParse: 0
                 });
+                $(document).ready(function(){
+  
+                $("#collapser").click(function(){
+                    $("#collapse1").toggle();
+                });
+            });
         </script>
 <!--    </body>
 </html>-->
