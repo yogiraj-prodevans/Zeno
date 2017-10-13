@@ -152,8 +152,14 @@
             }
             .date_image {
                 padding: 8px 20px;
-                background-image: url('/zeno/img/icons/Dates_red.png') !important;
+                background-image: url('/zeno/img/icons/Calendar_blue.png') !important;
                 background-size: 33px !important;
+                background-repeat: no-repeat !important;
+            }
+            .plus_image{
+                padding: 18px 18px;
+                background-image: url('/zeno/img/icons/plus_blue.png') !important;
+                background-size: 28px !important;
                 background-repeat: no-repeat !important;
             }
             .input-group-addon {
@@ -370,7 +376,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <div class="panel-title" id="collapser">
-                            <a data-toggle="collapse" href="#collapse1" style="font-size: 24px;">SCHEDULE</a>
+                            <a data-toggle="collapse" href="#collapse1" style="font-size: 24px;">SCHEDULE</a> <span class="plus_image" style="float: right; " data-toggle="collapse" href="#collapse1"></span>
                         </div>
                     </div>
                     <div id="collapse1" class="panel-collapse collapsing ">
