@@ -107,6 +107,19 @@
 
                 }
 
+				@media ( max-width :1366px) and (min-width:1278px) 
+                {
+                	.pb-30
+                    {
+                        padding-bottom: 12px !important;
+                    }
+                    .pb1024
+                    {
+                    	padding-bottom: 14px !important;
+                    }
+                
+                }
+
             </style>
 
         </head>
