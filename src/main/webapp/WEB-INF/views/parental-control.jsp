@@ -394,7 +394,7 @@
                                     <form:form action="time-schedule" modelAttribute="ScheduleDetails"   method="post"  >
                                         <div class="category_box">
                                             <p class="font-h4">During a day, when do you want your Surf Safe controls to be active? Choose a time slot.</p>
-                                            <div class="row" style="margin-top: 80px; ">
+                                            <div class="row" style="margin-top: 8%; ">
                                                 <div class="form-group col-md-6">
                                                     <label for="time-ip-start" class="col-md-3 control-label"> Start Time</label>
                                                     <div class="input-group date  col-md-7" data-date="" data-date-format="hh:ii" data-link-field="time-ip-start" data-link-format="hh:ii">

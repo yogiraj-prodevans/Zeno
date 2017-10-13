@@ -297,6 +297,14 @@
                 {
                     padding-right: unset;
                 }
+                .category_box
+                {
+                	padding: 15px !important;
+                }
+                .border
+                {
+                	padding: 0px !important;
+                }
             }
 
 
