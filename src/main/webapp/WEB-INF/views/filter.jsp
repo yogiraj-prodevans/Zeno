@@ -442,6 +442,10 @@
             <h3 style="color: green"><c:out value="${error }"></c:out></h3>
 
         </c:if>
+         <c:if test="${not empty msg }">
+            <h3 style="color: green"><c:out value="${msg }"></c:out></h3>
+
+        </c:if>
     </div>
 
 

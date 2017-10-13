@@ -526,10 +526,7 @@
 
 
                             </div>
-                            <c:if test="${not empty error }">
-                                <h3 style="color: green"><c:out value="${error }"></c:out></h3>
-
-                            </c:if>
+                           
                         </div>
                     </div>
                 </div>
@@ -554,21 +551,15 @@
 
              Load javascripts at bottom, this will reduce page load time -->
         <jsp:include page="component/js.jsp"></jsp:include>
-            <!-- END BODY -->
+<!--             END BODY 
             <script>
                 $(document).ready(function () {
                     $('[data-toggle="tooltip"]').tooltip();
                     //    $('current_protectionstatus').title = "hi";
                 });
-            </script>
+            </script>-->
 
-            <h3 style="color: green; text-align: center;">
-                <b> <c:if test="${ not empty error}">${error}</c:if></b>
-            </h3>
-            <h3 style="color: red; text-align: center;">
-                <b> <c:if test="${ not empty message}">${message}</c:if></b>
-            </h3>
-
+            
             <div class="pt-30"></div>
 
 
