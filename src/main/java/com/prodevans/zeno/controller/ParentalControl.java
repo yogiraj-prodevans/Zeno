@@ -75,7 +75,8 @@ public class ParentalControl {
 //        protection_level.put("custom_filter", "CUSTOM");
 //
 //        model.addAttribute("protection_level", protection_level);
-        model.addAttribute("error", error);
+        model.addAttribute("error", session.getAttribute("error") == null ? "" : session.getAttribute("error").toString());
+        session.removeAttribute("error");
         CategoryList list = new CategoryList();
         if (session.getAttribute("user") == null) {
             return new ModelAndView("redirect:logout");
@@ -133,7 +134,7 @@ public class ParentalControl {
             return "redirect:/logout";
         } else {
             if(category_allowed == null){
-                model.addAttribute("error", "Please select URL category for blocking process!!!");
+                session.setAttribute("error", "Please select URL category for blocking process!!!");
                 return "redirect:/control";
             }
             categoryList.getBlocked_catogery().addAll(category_allowed);
@@ -146,9 +147,10 @@ public class ParentalControl {
             SessionDetails user = (SessionDetails) session.getAttribute("user");
 
             if (categoryimpl.updateCategoryList(categoryList.getBlocked_catogery(), categoryList.getAllowded_catogery(), user.getDomid(), user.getActid(), "update_block")) {
-                model.addAttribute("error", "URL category blocked successfully...");
+                session.setAttribute("error", "URL category blocked successfully...");
             } else {
-                model.addAttribute("error", "URL category blocking process failed!!!");
+                session.setAttribute("error", "URL category blocking process failed!!!");
+               
             }
 
             return "redirect:/control";
@@ -161,7 +163,7 @@ public class ParentalControl {
             return "redirect:/logout";
         } else {
             if (category_allowed == null) {
-                model.addAttribute("error", "Please select URL category for allowing process!!!");
+                session.setAttribute("error", "Please select URL category for allowing process!!!");
                 return "redirect:/control";
             }
             categoryList.getBlocked_catogery().removeAll(category_allowed);
@@ -174,9 +176,9 @@ public class ParentalControl {
             SessionDetails user = (SessionDetails) session.getAttribute("user");
 
             if (categoryimpl.updateCategoryList(categoryList.getBlocked_catogery(), categoryList.getAllowded_catogery(), user.getDomid(), user.getActid(), "update_allow")) {
-                model.addAttribute("error", "URL Category allowed successfully...");
+                session.setAttribute("error", "URL Category allowed successfully...");
             } else {
-                model.addAttribute("error", "URL Category allowing process failed!!!");
+                session.setAttribute("error", "URL Category allowing process failed!!!");
             }
 
             return "redirect:/control";
@@ -185,11 +187,12 @@ public class ParentalControl {
 
     @RequestMapping(value = "/delete-patterns", method = RequestMethod.POST)
     public String deletepatterns(ModelMap model, HttpSession session, @ModelAttribute(name = "CategoryListDetails") CategoryList categoryList, @RequestParam(name = "filter_category", required = false) ArrayList<String> selected_filter_category) {
+        
         if (session.getAttribute("user") == null) {
             return "redirect:/logout";
         } else {
             if(selected_filter_category == null){
-                model.addAttribute("error", "Please select Websites for unblock process!!!");
+                session.setAttribute("error", "Please select Websites for unblock process!!!");
                 return "redirect:/control";
             }
             categoryList.getRemove_filter_pattern().removeAll(selected_filter_category);
@@ -197,9 +200,9 @@ public class ParentalControl {
             //fetching the user details from the session.
             SessionDetails user = (SessionDetails) session.getAttribute("user");
             if (categoryimpl.updateFilterPattern(categoryList.getRemove_filter_pattern(), user.getDomid(), user.getActid() + RestConfig.ADVANCED_FILTER)) {
-                model.addAttribute("error", "Website unblocked successfully...");
+                session.setAttribute("error", "Website unblocked successfully...");
             } else {
-                model.addAttribute("error", "Website unblock process failed!!!");
+                session.setAttribute("error", "Website unblock process failed!!!");
             }
 
             return "redirect:/control";
@@ -223,13 +226,13 @@ public class ParentalControl {
                 //fetching the user details from the session.
                 SessionDetails user = (SessionDetails) session.getAttribute("user");
                 if (categoryimpl.updateFilterPattern(categoryList.getRemove_filter_pattern(), user.getDomid(), user.getActid() + RestConfig.ADVANCED_FILTER)) {
-                    model.addAttribute("error", "Website blocked successfully...");
+                    session.setAttribute("error", "Website blocked successfully...");
                 } else {
-                    model.addAttribute("error", "Website block process failed!!!");
+                    session.setAttribute("error", "Website block process failed!!!");
                 }
             } catch (Exception e) {
                 logger.error("Error : " + e.getMessage());
-                model.addAttribute("error", "Please check the URL!!!");
+                session.setAttribute("error", "Please check the URL!!!");
             }
 
             return "redirect:/control";
@@ -253,15 +256,15 @@ public class ParentalControl {
         if (!controlDetails.getRequest_data().isEmpty() && !controlDetails.getProtection_status().isEmpty()) {
             boolean result = PROTECTION_STATUS.protectionStatusUpdate(controlDetails, user.getDomid().trim());
             if (result) {
-                model.addAttribute("error", "Protection status has been updated");
+                session.setAttribute("error", "Protection status has been updated");
                 logger.info("Protection status has been updated ");
             } else {
-                model.addAttribute("error", "Protection status not updated");
+                session.setAttribute("error", "Protection status not updated");
                 logger.info("Protection status not updated ");
 
             }
         } else {
-            model.addAttribute("error", "IP address is not registared or protection status is not selected.");
+            session.setAttribute("error", "IP address is not registared or protection status is not selected.");
         }
 
         return "redirect:/control";
@@ -279,7 +282,7 @@ public class ParentalControl {
                 CategoryList list = categoryimpl.getCategoryList(user.getActid() + RestConfig.ADVANCED_FILTER, user.getDomid().trim());
                 model.addAttribute("CAT", list);
                 model.addAttribute("uesr_name", user.getActname());
-                model.addAttribute("error", error);
+                session.setAttribute("error", error);
                 //logger.info("List Blocked : " + list.getBlocked_catogery().toString());
 
             } catch (Exception ee) {
