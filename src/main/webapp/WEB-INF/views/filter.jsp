@@ -7,6 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -437,7 +438,7 @@
                                 <p class="font-h4">To unblock any website, please check the box against the names listed below. </p>
                                 <c:forEach items="${CAT.getFilter_pattern()}" var="cat">
                                     <div class="col-md-6 col-sm-6 border text-justify">
-                                        <input type="checkbox" name="filter_category" id="${cat}"  value="${cat}"><label for="${cat}"> <c:out value="${cat}"/> </label>	
+                                        <input type="checkbox" name="filter_category" id="${cat}"  value="${cat}"><label for="${cat}"> www.<c:out value="${fn:substring(cat, 2, fn:length(cat)-2)}"/>.com </label>	
                                     </div>
                                 </c:forEach> 
                                 <form:hidden path="filter_pattern" />
