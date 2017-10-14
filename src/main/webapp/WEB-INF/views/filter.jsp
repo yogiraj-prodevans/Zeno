@@ -280,7 +280,14 @@
                     border-radius: 10px;
                     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
                 }
-                
+                #myAlert{
+                    color: #db3236;
+                    position: fixed;
+                    bottom: 30px;
+                    left: 30px;
+                    background-color: #fff;
+                    border: 1px #db3236 solid;
+                }
                 @media (max-width: 730px)
 				{
 					.col-md-7, col-xs-7,.col-md-5, col-xs-5 
@@ -439,8 +446,13 @@
 
         </div>
         <c:if test="${not empty error }">
-            <h3 style="color: green"><c:out value="${error }"></c:out></h3>
-            <c:set var="error" value="" />
+            <div id="myAlert" class="alert alert-danger">
+                <a href="#" class="close">&times;</a>
+                <c:out value="${error }"></c:out>
+            </div>
+            
+            <!--<h3 style="color: green"></h3>-->
+            <%--<c:set var="error" value="" />--%>
 
         </c:if>
     </div>
@@ -454,7 +466,16 @@
 
         <!-- Load javascripts at bottom, this will reduce page load time -->
     <jsp:include page="component/js.jsp"></jsp:include>
-
+     <script type="text/javascript"
+                    src="${pageContext.request.contextPath}/plugins/jquery.min.js"
+            charset="UTF-8"></script>
+        <script type="text/javascript">
+        $(document).ready(function(){
+                $(".close").click(function(){
+                        $("#myAlert").slideUp();
+                });
+        });  
+        </script>
 
 
 </body>
