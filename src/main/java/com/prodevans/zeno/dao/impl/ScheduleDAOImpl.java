@@ -220,8 +220,17 @@ public class ScheduleDAOImpl implements ScheduleDAO
             if(person.getStatusCodeValue() == 201 | person.getStatusCodeValue() == 204)
             {
                 logger.info("Schedule Created");
-                updateAccessPolicyRule(doman_id, access_policy_rule, schedule_name);
-                return true;
+                
+                if(updateAccessPolicyRule(doman_id, access_policy_rule, schedule_name))
+                {
+                	return true;
+                }
+                else
+                {
+                	logger.info("There is some problem in applying access policy rules..");
+                	return false;
+                }
+                
             }
             else{
                 logger.info("Failed creating schedule");
