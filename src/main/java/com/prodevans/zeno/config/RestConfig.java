@@ -122,8 +122,16 @@ public interface RestConfig {
     String CREATE_SCHEDULE = HOST + "/api/config/devices/device/{domain_id}/config/orgs/org-services/OneEight/objects/schedules/schedule/{schedule_name}";
     
     
+    /**
+     * API URL for searching access policy rule
+     */
+    String SEARCH_ACCESS_POLICY_RULE = HOST + "/api/config/devices/device/{domain_id}/config/orgs/org-services/OneEight/security/access-policies/access-policy-group/Default-Policy/rules/access-policy/{policy_rule_name}";
+
     
-    
+    /**
+     * API URL for updating access policy rule
+     */
+    String UPDATE_ACCESS_POLICY_RULE = HOST + "/api/config/devices/device/{domain_id}/config/orgs/org-services/OneEight/security/access-policies/access-policy-group/Default-Policy/rules/access-policy/{policy_user}";
     
     
 }

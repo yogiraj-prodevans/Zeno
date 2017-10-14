@@ -47,7 +47,7 @@ public class ScheduleController
             
             System.out.println("Time : "+time);
             
-            if(scheduleDAOImpl.applyTimeSchedule(user.getDomid(),user.getActid()+"_SCHEDULE", "daily", time))
+            if(scheduleDAOImpl.applyTimeSchedule(user.getDomid(),user.getActid()+"_SCHEDULE", "daily", time, user.getActid()+"_access_policy_rule"))
             {
             	logger.info("Daily schedule applied successfully..");
             	model.addAttribute("msg","Daily schedule applied successfully..");
@@ -83,7 +83,7 @@ public class ScheduleController
         	//fetching the user details from the session.
             SessionDetails user = (SessionDetails) session.getAttribute("user");
             
-            if(scheduleDAOImpl.applyDaysSchedule(user.getDomid(),user.getActid()+"_SCHEDULE", days_days_checkbox, time))
+            if(scheduleDAOImpl.applyDaysSchedule(user.getDomid(),user.getActid()+"_SCHEDULE", days_days_checkbox, time, user.getActid()+"_access_policy_rule"))
             {
             	logger.info("Days schedule applied successfully..");
             	model.addAttribute("msg","Days schedule applied successfully..");
@@ -123,7 +123,7 @@ public class ScheduleController
         	//fetching the user details from the session.
             SessionDetails user = (SessionDetails) session.getAttribute("user");
             
-            if(scheduleDAOImpl.applyNonRecurringSchedule(user.getDomid(),user.getActid()+"_SCHEDULE", when))
+            if(scheduleDAOImpl.applyNonRecurringSchedule(user.getDomid(),user.getActid()+"_SCHEDULE", when, user.getActid()+"_access_policy_rule"))
             {
             	logger.info("Non-Recurring schedule applied successfully..");
             	model.addAttribute("msg","Non-Recurring schedule applied successfully..");

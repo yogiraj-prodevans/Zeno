@@ -25,6 +25,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.http.client.support.BasicAuthorizationInterceptor;
 import org.springframework.web.client.RestTemplate;
 
+import com.google.gson.JsonObject;
 import com.prodevans.zeno.config.RestConfig;
 import com.prodevans.zeno.dao.ScheduleDAO;
 
@@ -88,7 +89,7 @@ public class ScheduleDAOImpl implements ScheduleDAO
 	
 	
 	@Override
-	public boolean applyTimeSchedule(String domain_id,String name, String when, String time_of_day) 
+	public boolean applyTimeSchedule(String domain_id,String name, String when, String time_of_day, String access_policy_rule) 
 	{
 		
 		JSONObject requestObject=new JSONObject();
@@ -107,7 +108,7 @@ public class ScheduleDAOImpl implements ScheduleDAO
 		System.out.println("request Object : "+requestObject);
 		
 		
-		if(getAppliedSchedule(requestObject,domain_id,name.trim()))
+		if(getAppliedSchedule(requestObject,domain_id,name.trim(), access_policy_rule.trim() ))
 		{
 			return true;
 		}
@@ -119,7 +120,7 @@ public class ScheduleDAOImpl implements ScheduleDAO
 	
 	
 	@Override
-	public boolean applyDaysSchedule(String domain_id, String name, ArrayList<String> when, String time_of_day) 
+	public boolean applyDaysSchedule(String domain_id, String name, ArrayList<String> when, String time_of_day, String access_policy_rule) 
 	{
 		JSONObject requestObject=new JSONObject();
 		JSONArray jsonArray=new JSONArray();
@@ -141,7 +142,7 @@ public class ScheduleDAOImpl implements ScheduleDAO
 		System.out.println("request Object : "+requestObject);
 		
 		
-		if(getAppliedSchedule(requestObject,domain_id,name.trim()))
+		if(getAppliedSchedule(requestObject,domain_id,name.trim(), access_policy_rule.trim()  ))
 		{
 			return true;
 		}
@@ -154,7 +155,7 @@ public class ScheduleDAOImpl implements ScheduleDAO
 	
 
 	@Override
-	public boolean applyNonRecurringSchedule(String domain_id, String name, String when) 
+	public boolean applyNonRecurringSchedule(String domain_id, String name, String when, String access_policy_rule) 
 	{
 		JSONObject requestObject=new JSONObject();
 		JSONObject requestInnerObject=new JSONObject();
@@ -166,7 +167,7 @@ public class ScheduleDAOImpl implements ScheduleDAO
 		System.out.println("request Object : "+requestObject);
 		
 
-		if(getAppliedSchedule(requestObject,domain_id,name.trim()))
+		if(getAppliedSchedule(requestObject,domain_id,name.trim(), access_policy_rule.trim()  ))
 		{
 			return true;
 		}
@@ -185,7 +186,7 @@ public class ScheduleDAOImpl implements ScheduleDAO
 	
 	
 	
-	private boolean getAppliedSchedule(JSONObject requestObject,String doman_id,String schedule_name)
+	private boolean getAppliedSchedule(JSONObject requestObject,String doman_id,String schedule_name, String access_policy_rule)
 	{
         ResponseEntity<String> person;
         HttpHeaders headers = new HttpHeaders();
@@ -216,8 +217,10 @@ public class ScheduleDAOImpl implements ScheduleDAO
         params.put("schedule_name", schedule_name.trim());
         try {
             person = restTemplate.exchange(RestConfig.CREATE_SCHEDULE, HttpMethod.PUT, entity, String.class, params);
-            if(person.getStatusCodeValue() == 201 | person.getStatusCodeValue() == 204){
+            if(person.getStatusCodeValue() == 201 | person.getStatusCodeValue() == 204)
+            {
                 logger.info("Schedule Created");
+                updateAccessPolicyRule(doman_id, access_policy_rule, schedule_name);
                 return true;
             }
             else{
@@ -238,5 +241,95 @@ public class ScheduleDAOImpl implements ScheduleDAO
 	}
 
 
+	private boolean updateAccessPolicyRule(String domain_id, String access_policy_rule, String schedule_name)
+	{
+		
+		JSONObject AccessPolicyObject =getAccessPolicyObject(domain_id,access_policy_rule);
+		
+		
+		AccessPolicyObject.getJSONObject("access-policy").getJSONObject("match").put("schedule", schedule_name);
+		
+		AccessPolicyObject.getJSONObject("access-policy").getJSONObject("match").getJSONObject("source").put("zone", new JSONObject()).put("site-id", new JSONArray());
+		
+		
+		AccessPolicyObject.getJSONObject("access-policy").getJSONObject("match").getJSONObject("destination").put("zone", new JSONObject()).put("site-id", new JSONArray()).put("address", new JSONObject());
+		
+		AccessPolicyObject.getJSONObject("access-policy").getJSONObject("match").put("application",new JSONObject()).put("ttl",new JSONObject());
+		
+		logger.info("Updated Access Policy Object: "+AccessPolicyObject);
+		
+		
+        ResponseEntity<String> person;
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Accept", "application/json");
+        headers.add("Content-Type", "application/json");
+       
+        entity = new HttpEntity<>(AccessPolicyObject.toString().trim(),headers);
+
+        restTemplate = new RestTemplate();
+        restTemplate.getInterceptors().add(new BasicAuthorizationInterceptor(RestConfig.USER_NAME, RestConfig.PASSWORD));
+        Map<String, String> params = new HashMap<String, String>();
+        params.put("domain_id", domain_id.trim());
+        params.put("policy_user", access_policy_rule);
+        
+        try {
+            person = restTemplate.exchange(RestConfig.UPDATE_ACCESS_POLICY_RULE, HttpMethod.PUT, entity, String.class, params);
+            if(person.getStatusCodeValue() == 201 | person.getStatusCodeValue() == 204)
+            {
+                logger.info("Access policy rule updated");
+                return true;
+            }
+            else{
+                logger.info("Failed updating access policy rule");
+                return false;
+            }
+        } catch (Exception ee) {
+            if(ee.getMessage().contains("404")){
+                logger.error("Failed updating access policy rule... with error");
+            }
+            else{
+                logger.error("error: "+ee.getMessage());
+            }
+            //logger.error("Error body "+person.getBody());
+            
+        }
+        
+        return false;
+		
+		
+	}
+	
+	private JSONObject getAccessPolicyObject(String domain_id, String access_policy_rule)
+	{
+        ResponseEntity<String> person;
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Accept", "application/json");
+        entity = new HttpEntity<>(headers);
+        restTemplate = new RestTemplate();
+        restTemplate.getInterceptors().add(new BasicAuthorizationInterceptor(RestConfig.USER_NAME, RestConfig.PASSWORD));
+        Map<String, String> params = new HashMap<String, String>();
+        params.put("domain_id", domain_id);
+        params.put("policy_rule_name", access_policy_rule);
+        
+        person = restTemplate.exchange(RestConfig.SEARCH_ACCESS_POLICY_RULE, HttpMethod.GET, entity, String.class, params);
+
+        String getbody=person.getBody();
+        JSONObject result1=null;
+        JSONObject result = new JSONObject(getbody);
+        
+        if(result.has("access-policy"))
+        {
+        	return result;
+        }
+        else
+        {
+        	result1 = new JSONObject();
+        }
+        
+        return result1;
+        
+	}
+	
+	
 	
 }
