@@ -146,9 +146,9 @@ public class ParentalControl {
             SessionDetails user = (SessionDetails) session.getAttribute("user");
 
             if (categoryimpl.updateCategoryList(categoryList.getBlocked_catogery(), categoryList.getAllowded_catogery(), user.getDomid(), user.getActid(), "update_block")) {
-                model.addAttribute("error", "URL category allowed successfually...");
+                model.addAttribute("error", "URL category blocked successfully...");
             } else {
-                model.addAttribute("error", "URL category allowing process failed!!!");
+                model.addAttribute("error", "URL category blocking process failed!!!");
             }
 
             return "redirect:/control";
@@ -174,9 +174,9 @@ public class ParentalControl {
             SessionDetails user = (SessionDetails) session.getAttribute("user");
 
             if (categoryimpl.updateCategoryList(categoryList.getBlocked_catogery(), categoryList.getAllowded_catogery(), user.getDomid(), user.getActid(), "update_allow")) {
-                model.addAttribute("error", "URL Category blocked successfually...");
+                model.addAttribute("error", "URL Category allowed successfully...");
             } else {
-                model.addAttribute("error", "URL Category blocking process failed!!!");
+                model.addAttribute("error", "URL Category allowing process failed!!!");
             }
 
             return "redirect:/control";
@@ -189,7 +189,7 @@ public class ParentalControl {
             return "redirect:/logout";
         } else {
             if(selected_filter_category == null){
-                model.addAttribute("error", "Please select Websites for allowing process!!!");
+                model.addAttribute("error", "Please select Websites for unblock process!!!");
                 return "redirect:/control";
             }
             categoryList.getRemove_filter_pattern().removeAll(selected_filter_category);
