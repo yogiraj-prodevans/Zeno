@@ -376,7 +376,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <div class="panel-title" id="collapser">
-                            <a data-toggle="collapse" href="#collapse1" style="font-size: 24px;">SCHEDULE</a> <span class="plus_image" style="float: right; " data-toggle="collapse" href="#collapse1"></span>
+                            <a id="schedule" data-toggle="collapse" href="#collapse1" style="font-size: 24px;">SCHEDULE</a> <span class="plus_image" style="float: right; " data-toggle="collapse" href="#collapse1"></span>
                         </div>
                     </div>
                     <div id="collapse1" class="panel-collapse collapsing ">
