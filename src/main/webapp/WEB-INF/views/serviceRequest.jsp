@@ -88,6 +88,17 @@ background-position:right center;
 }
 */
 
+
+#myAlert
+{
+    color: #db3236;
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    background-color: #fff;
+    border: 1px #db3236 solid;
+}
+
 </style>
 
 </head>
@@ -217,8 +228,16 @@ background-position:right center;
     
 </form:form>    
   </div> 
-<h3 style="color:green; text-align: center;"><b>
-<c:if test="${ not empty msg}">${msg}</c:if></b></h3>
+ <c:if test="${not empty msg }">
+            <div id="myAlert" class="alert alert-danger">
+                <a href="#" class="close">&times;</a>
+                <c:out value="${msg }"></c:out>
+            </div>
+            
+			   <!--  <h3 style="color:green; text-align: center;"><b>
+			<c:if test="${ not empty msg}">${msg}</c:if></b></h3>--> 
+
+      </c:if>
 
 
 	<!-- included pop up -->
@@ -230,5 +249,17 @@ background-position:right center;
 	<!-- Load javascripts at bottom, this will reduce page load time -->
 	<jsp:include page="component/js.jsp"></jsp:include>
 	<!-- END BODY -->
+	
+	<script type="text/javascript"
+                    src="${pageContext.request.contextPath}/plugins/jquery.min.js"
+            charset="UTF-8"></script>
+        <script type="text/javascript">
+        $(document).ready(function(){
+                $(".close").click(function(){
+                        $("#myAlert").slideUp();
+                });
+        });  
+        </script>
+        
 </body>
 </html>
