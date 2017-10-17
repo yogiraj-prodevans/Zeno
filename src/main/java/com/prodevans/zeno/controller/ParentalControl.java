@@ -63,24 +63,15 @@ public class ParentalControl {
      * @return
      */
     @RequestMapping(value = "/control", method = RequestMethod.GET)
-    public ModelAndView parentControl(Locale locale, Model model, HttpSession session, @RequestParam(name = "error", required = false) String error,  @RequestParam(name = "msg", required = false) String msg) {
+    public ModelAndView parentControl(Locale locale, Model model, HttpSession session) {
 
-//        ParentalControlDetails parentalControlDetails = new ParentalControlDetails();
-//        Map<String, String> protection_level = new LinkedHashMap<String, String>();
-//        protection_level.put("", "");
-//        //Revoved 
-//        //protection_level.put("elementary_filter_zeno", "ELEMENTRY");
-//        //Removed in version 1.2
-//        //protection_level.put("basic_filter_zeno", "DEFAULT");
-//        protection_level.put("advance_filter_zeno", "ADVANCED");
-//        protection_level.put("custom_filter", "CUSTOM");
-//
-//        model.addAttribute("protection_level", protection_level);
+        //Error messages from the Advance filtering...
         model.addAttribute("error", session.getAttribute("error") == null ? "" : session.getAttribute("error").toString());
         session.removeAttribute("error");
 
-        model.addAttribute("msg", msg);
-
+        //Error messages form the scheduling
+        model.addAttribute("msg", session.getAttribute("msg") == null ? "" : session.getAttribute("msg").toString());
+        session.removeAttribute("msg");
         CategoryList list = new CategoryList();
         if (session.getAttribute("user") == null) {
             return new ModelAndView("redirect:logout");
@@ -140,7 +131,7 @@ public class ParentalControl {
             return "redirect:/logout";
         } else {
 
-            if(category_allowed == null){
+            if (category_allowed == null) {
                 session.setAttribute("error", "Please select URL category for blocking process!!!");
                 return "redirect:/control";
             }
@@ -157,7 +148,7 @@ public class ParentalControl {
                 session.setAttribute("error", "URL category blocked successfully...");
             } else {
                 session.setAttribute("error", "URL category blocking process failed!!!");
-               
+
             }
 
             return "redirect:/control";
@@ -194,12 +185,12 @@ public class ParentalControl {
 
     @RequestMapping(value = "/delete-patterns", method = RequestMethod.POST)
     public String deletepatterns(ModelMap model, HttpSession session, @ModelAttribute(name = "CategoryListDetails") CategoryList categoryList, @RequestParam(name = "filter_category", required = false) ArrayList<String> selected_filter_category) {
-        
+
         if (session.getAttribute("user") == null) {
             return "redirect:/logout";
         } else {
 
-            if(selected_filter_category == null){
+            if (selected_filter_category == null) {
                 session.setAttribute("error", "Please select Websites for unblock process!!!");
 
                 return "redirect:/control";
