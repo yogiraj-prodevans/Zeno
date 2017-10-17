@@ -8,7 +8,9 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
+
 <%@ page session="true"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -39,11 +41,11 @@
         <!--  include the all css components -->
         <jsp:include page="component/css.jsp"></jsp:include>
             <style>
-                input[type="text"] {
+                input[type="text"]#url_pattern {
                     width: 100% !important;
                     padding: 10px;
                     height: 45px;
-                    border: 2px solid #bdc3c7;
+                    border: 1px solid #bdc3c7;
                 }
 
 
@@ -93,188 +95,223 @@
                     background: #FAFAFA;
                     padding:unset;
                 }
-/*                .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus,
-                .nav-tabs > li > a:hover,.nav-tabs > li > a:focus{
-                    background: #f9faff00;
-                    color: #716868;
-                    padding: 5px 15px 4px;
-                    border-bottom: 7px red solid !important;
-
-                }*/
+                /*                .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus,
+                                .nav-tabs > li > a:hover,.nav-tabs > li > a:focus{
+                                    background: #f9faff00;
+                                    color: #716868;
+                                    padding: 5px 15px 4px;
+                                    border-bottom: 7px red solid !important;
+                
+                                }*/
                 /*icons and background sizes*/
                 .nav-tabs > li.active > a#advance-filter {
                     color: #716868;
                     padding: 5px 15px 15px 60px;
                     border-bottom: 7px red solid !important;
                     background-image: url('${pageContext.request.contextPath }/img/icons/Check_red.png') !important;
-                    background-size: 50px !important;
-                    background-repeat: no-repeat !important;
-                    font-size: 26px;
-                }
-                
-                .nav-tabs > li > a#advance-filter {
-                    color: #716868;
-                    padding: 5px 15px 15px 60px;
-                    border-bottom: 7px #fff solid !important;
-                    background-image: url('${pageContext.request.contextPath }/img/icons/Check_grey.png') !important;
-                    background-size: 50px !important;
-                    background-repeat: no-repeat !important;
-                    font-size: 26px;
-                }
-                .nav-tabs > li.active > a#block-filter {
-                    color: #716868;
-                    padding: 5px 15px 15px 60px;
-                    border-bottom: 7px red solid !important;
-                    background-image: url('${pageContext.request.contextPath }/img/icons/Blocked_red.png') !important;
-                    background-size: 50px !important;
-                    background-repeat: no-repeat !important;
-                    font-size: 26px;
-                }
-                
-                .nav-tabs > li > a#block-filter {
-                    color: #716868;
-                    padding: 5px 15px 15px 60px;
-                    border-bottom: 7px #fff solid !important;
-                    background-image: url('${pageContext.request.contextPath }/img/icons/Blocked_grey.png') !important;
-                    background-size: 50px !important;
-                    background-repeat: no-repeat !important;
-                    font-size: 26px;
-                }
-                
-                .nav-tabs > li.active > a#custom-filter {
-                    color: #716868;
-                    padding: 5px 15px 15px 60px;
-                    border-bottom: 7px red solid !important;
-                    background-image: url('${pageContext.request.contextPath }/img/icons/Custom_red.png') !important;
-                    background-size: 50px !important;
-                    background-repeat: no-repeat !important;
-                    font-size: 26px;
-                }
-                
-                .nav-tabs > li > a#custom-filter {
-                    color: #716868;
-                    padding: 5px 15px 15px 60px;
-                    border-bottom: 7px #fff solid !important;
-                    background-image: url('${pageContext.request.contextPath }/img/icons/Custom_grey.png') !important;
-                    background-size: 50px !important;
-                    background-repeat: no-repeat !important;
-                    font-size: 26px;
-                }
-                .nav-tabs > li > a{
-                  
-                    margin-top: 10px;
-                    background: #FFF !important ;
-                    color: #716868;
-                    padding: 5px 15px 4px;
+                background-size: 50px !important;
+                background-repeat: no-repeat !important;
+                font-size: 26px;
+            }
 
-                }
-                .nav-tabs {
-                    margin-top: 40px;
-                }
-                .nav>li {
-                    position: relative;
-                    display: block;
-                    margin-right: 70px;
-                    min-width: 250px;
-                }
-                .border{
-                    /*border-bottom: 1px solid #ddd;*/
-                    padding: 15px;
-                    font-size: 24px;
-                }
-                input[type="checkbox"] + label{
-                    padding-bottom: unset;
-                }
-                .ScrollStyle {
+            .nav-tabs > li > a#advance-filter {
+                color: #716868;
+                padding: 5px 15px 15px 60px;
+                border-bottom: 7px #fff solid !important;
+                background-image: url('${pageContext.request.contextPath }/img/icons/Check_grey.png') !important;
+                background-size: 50px !important;
+                background-repeat: no-repeat !important;
+                font-size: 26px;
+            }
+            .nav-tabs > li.active > a#block-filter {
+                color: #716868;
+                padding: 5px 15px 15px 60px;
+                border-bottom: 7px red solid !important;
+                background-image: url('${pageContext.request.contextPath }/img/icons/Blocked_red.png') !important;
+                background-size: 50px !important;
+                background-repeat: no-repeat !important;
+                font-size: 26px;
+            }
 
-                    overflow-y: scroll;
-                    max-height: 350px;
-                }
-                .category_box {
+            .nav-tabs > li > a#block-filter {
+                color: #716868;
+                padding: 5px 15px 15px 60px;
+                border-bottom: 7px #fff solid !important;
+                background-image: url('${pageContext.request.contextPath }/img/icons/Blocked_grey.png') !important;
+                background-size: 50px !important;
+                background-repeat: no-repeat !important;
+                font-size: 26px;
+            }
 
-                    min-height: 100px;
-                    padding: 40px;
-                    border: 2px solid #bdc3c7;
-                    margin-top: -1px;
-                    min-height: 350px;
+            .nav-tabs > li.active > a#custom-filter {
+                color: #716868;
+                padding: 5px 15px 15px 60px;
+                border-bottom: 7px red solid !important;
+                background-image: url('${pageContext.request.contextPath }/img/icons/Custom_red.png') !important;
+                background-size: 50px !important;
+                background-repeat: no-repeat !important;
+                font-size: 26px;
+            }
 
-                }
-                .custom_box {
+            .nav-tabs > li > a#custom-filter {
+                color: #716868;
+                padding: 5px 15px 15px 60px;
+                border-bottom: 7px #fff solid !important;
+                background-image: url('${pageContext.request.contextPath }/img/icons/Custom_grey.png') !important;
+                background-size: 50px !important;
+                background-repeat: no-repeat !important;
+                font-size: 26px;
+            }
+            .nav-tabs > li > a{
 
-                    min-height: 100px;
-                    padding-top: 2.7%;
-                    border: 2px solid #2980b9;
-                    margin-top: -1px;
-                    margin-bottom: 20px;
-                    /*                    padding-top: 10px;*/
-                }
-                .btn {
-                    margin-top: 20px !important;
-                    margin-bottom: 1px;
-                    font-size: 22px;
-                    padding-left: 20px;
-                    padding-right: 20px;
-                    padding-top: unset;
-                    padding-bottom: unset;
+                margin-top: 10px;
+                background: #FFF !important ;
+                color: #716868;
+                padding: 5px 15px 4px;
 
-                }
-                .row{
-                    margin-right: unset;
-                    margin-left: unset;
-                }
-                .panel {
-                    border: 2px solid #F44336;
-                    border-radius: unset;
-                    margin-bottom: unset;
-                }
-                .panel-default > .panel-body{
-                    height: 200px;
-                    overflow-x: auto;
-                }
-                .panel-default > .panel-heading {
-                    color: white;
-                    background-color: #F44336;
-                    border-color: #F44336;
-                    border-radius: unset;
-                    font-size: 24px;
-                }
-                .panel-footer{
-                    /*border: 2px solid #2980b9;*/
-                    background: unset;
-                    padding-right: unset;
-                }
-                .panel-default > .panel-footer{
-                    /*background-color: #F44336;*/
-                    border-top:2px #F44336 solid;
-                    border-radius: unset;
-                    padding-right: unset;
-                }
-                .tab-content , .tab-pane{
-                    background: unset;
-                }
-                .nav-tabs.nav-justified > li > a {
-                    border-radius: unset;
-                }
+            }
+            .nav-tabs {
+                margin-top: 40px;
+            }
+            .nav>li {
+                position: relative;
+                display: block;
+                margin-right: 70px;
+                min-width: 250px;
+            }
+            .border{
+                /*border-bottom: 1px solid #ddd;*/
+                padding: 15px;
+                font-size: 24px;
+            }
+            input[type="checkbox"] + label {
+                display: block;
+                position: relative;
+                padding-left: 35px;
+                margin-bottom: 1px;
+                font: 12px/14px;
+                color: #010745;
+                cursor: pointer;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                padding-bottom: 20px;
+                text-align: left;
+                padding-top: unset;
+            }
+            .ScrollStyle {
 
-                .largeFont
+                overflow-y: scroll;
+                max-height: 350px;
+            }
+            .category_box {
+
+                min-height: 100px;
+                padding: 40px;
+                border: 1px solid #bdc3c7;
+                margin-top: -1px;
+                min-height: 350px;
+
+            }
+            .custom_box {
+
+                min-height: 100px;
+                padding-top: 2.7%;
+                border: 2px solid #2980b9;
+                margin-top: -1px;
+                margin-bottom: 20px;
+                /*                    padding-top: 10px;*/
+            }
+            .btn {
+                margin-top: 20px !important;
+                margin-bottom: 1px;
+                font-size: 22px;
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-top: unset;
+                padding-bottom: unset;
+
+            }
+            .row{
+                margin-right: unset;
+                margin-left: unset;
+            }
+            .panel {
+                border: 2px solid #F44336;
+                border-radius: unset;
+                margin-bottom: unset;
+            }
+            .panel-default > .panel-body{
+                height: 200px;
+                overflow-x: auto;
+            }
+            .panel-default > .panel-heading {
+                color: white;
+                background-color: #F44336;
+                border-color: #F44336;
+                border-radius: unset;
+                font-size: 24px;
+            }
+            .panel-footer{
+                /*border: 2px solid #2980b9;*/
+                background: unset;
+                padding-right: unset;
+            }
+            .panel-default > .panel-footer{
+                /*background-color: #F44336;*/
+                border-top:2px #F44336 solid;
+                border-radius: unset;
+                padding-right: unset;
+            }
+            .tab-content , .tab-pane{
+                background: unset;
+            }
+            .nav-tabs.nav-justified > li > a {
+                border-radius: unset;
+            }
+
+            .largeFont
+            {
+                font-size: 38px !important;
+            }
+
+            .scroll {
+                /*                    //width: 200px;*/
+                height: 268px;
+                background: red;
+                overflow: scroll;
+            }
+            .scroll::-webkit-scrollbar {
+                width: 12px;
+            }
+
+            .scroll::-webkit-scrollbar-track {
+                -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+                border-radius: 10px;
+            }
+
+            .scroll::-webkit-scrollbar-thumb {
+                border-radius: 10px;
+                -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+            }
+
+            @media (max-width: 730px)
+            {
+                .col-md-7, col-xs-7,.col-md-5, col-xs-5 
                 {
-                    font-size: 38px !important;
+                    padding-right: unset;
                 }
-                
-                .scroll {
-/*                    //width: 200px;*/
-                    height: 268px;
-                    background: red;
-                    overflow: scroll;
+                .category_box
+                {
+                	padding: 15px !important;
                 }
-                .scroll::-webkit-scrollbar {
-                    width: 12px;
+                .border
+                {
+                	padding: 0px !important;
                 }
+            }
 
-                .scroll::-webkit-scrollbar-track {
-                    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
-                    border-radius: 10px;
-                }
+
 
                 .scroll::-webkit-scrollbar-thumb {
                     border-radius: 10px;
@@ -301,12 +338,13 @@
             </style>
 
 
-        </head>
-        <!-- BEGIN HEADER -->
-        <div class="header">
-            <div class="row">
-                <a class="site-logo" href="${pageContext.request.contextPath }/dashboard"> <img
-                        src="${pageContext.request.contextPath }/corporate/img/logos/logo.png" alt="ONE8">
+
+    </head>
+    <!-- BEGIN HEADER -->
+    <div class="header">
+        <div class="row">
+            <a class="site-logo" href="${pageContext.request.contextPath }/dashboard"> <img
+                    src="${pageContext.request.contextPath }/corporate/img/logos/logo.png" alt="ONE8">
             </a> <a href="javascript:void(0);" class="mobi-toggler"><i
                     class="fa fa-bars"></i></a>
             <!-- BEGIN NAVIGATION -->
@@ -348,8 +386,8 @@
 
         <h4>
             Your home is your safe space and you deserve to keep it that way. With our Advanced Surf Safe control you can decide what to let in and when. If there are specific websites you want to block, go ahead and add to your Custom setting. 
-            <!-- this released in next version of parental control.
-            Schedule hourly, daily or date-wise, and we'll ensure your chosen categories and URLs remain blocked when you want them to be. Surf Safe, and ensure everyone on your network does too.-->
+
+            Schedule hourly, daily or date-wise, and we'll ensure your chosen categories and URLs remain blocked when you want them to be. Surf Safe, and ensure everyone on your network does too.
         </h4>
 
 
@@ -426,7 +464,9 @@
                                 <p class="font-h4">To unblock any website, please check the box against the names listed below. </p>
                                 <c:forEach items="${CAT.getFilter_pattern()}" var="cat">
                                     <div class="col-md-6 col-sm-6 border text-justify">
-                                        <input type="checkbox" name="filter_category" id="${cat}"  value="${cat}"><label for="${cat}">www.<c:out value="${fn:substring(cat, 2, fn:length(cat)-2)}"/>.com </label>	
+
+                                        <input type="checkbox" name="filter_category" id="${cat}"  value="${cat}"><label for="${cat}"> www.<c:out value="${fn:substring(cat, 2, fn:length(cat)-2)}"/>.com </label>	
+
                                     </div>
                                 </c:forEach> 
                                 <form:hidden path="filter_pattern" />
@@ -445,6 +485,8 @@
 
 
         </div>
+
+        <jsp:include page="parental-control.jsp"/>
         <c:if test="${not empty error }">
             <div id="myAlert" class="alert alert-danger">
                 <a href="#" class="close">&times;</a>
@@ -453,6 +495,10 @@
             
             <!--<h3 style="color: green"></h3>-->
             <%--<c:set var="error" value="" />--%>
+
+        </c:if>
+        <c:if test="${not empty msg }">
+            <h3 style="color: green"><c:out value="${msg }"></c:out></h3>
 
         </c:if>
     </div>

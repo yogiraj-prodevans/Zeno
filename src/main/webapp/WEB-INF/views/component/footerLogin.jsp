@@ -26,11 +26,11 @@
     {
         .pdlFooter
         {
-            padding-left: 6.3%;		
+            padding-left: 1.3%;		
         }
         .pdRFooter
         {
-            padding-right: 4.7%;
+            padding-right: 1.5%;
         }
         .loginBoxSqr
         {

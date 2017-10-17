@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.prodevans.zeno.dao.impl.RegistrationUserParentalControlImpl;
 import com.prodevans.zeno.pojo.CategoryList;
 import com.prodevans.zeno.pojo.ParentalControlDetails;
+import com.prodevans.zeno.pojo.ScheduleDetails;
 import com.prodevans.zeno.pojo.SessionDetails;
 
 import java.util.ArrayList;
@@ -62,7 +63,7 @@ public class ParentalControl {
      * @return
      */
     @RequestMapping(value = "/control", method = RequestMethod.GET)
-    public ModelAndView parentControl(Locale locale, Model model, HttpSession session, @RequestParam(name = "error", required = false) String error) {
+    public ModelAndView parentControl(Locale locale, Model model, HttpSession session, @RequestParam(name = "error", required = false) String error,  @RequestParam(name = "msg", required = false) String msg) {
 
 //        ParentalControlDetails parentalControlDetails = new ParentalControlDetails();
 //        Map<String, String> protection_level = new LinkedHashMap<String, String>();
@@ -77,6 +78,9 @@ public class ParentalControl {
 //        model.addAttribute("protection_level", protection_level);
         model.addAttribute("error", session.getAttribute("error") == null ? "" : session.getAttribute("error").toString());
         session.removeAttribute("error");
+
+        model.addAttribute("msg", msg);
+
         CategoryList list = new CategoryList();
         if (session.getAttribute("user") == null) {
             return new ModelAndView("redirect:logout");
@@ -107,6 +111,8 @@ public class ParentalControl {
                             list = categoryimpl.getCategoryList(user.getActid() + RestConfig.ADVANCED_FILTER, user.getDomid().trim());
                             model.addAttribute("CAT", list);
 
+                            model.addAttribute("ScheduleDetails", new ScheduleDetails());
+
                             //parentalControlDetails = PROTECTION_STATUS.getProtectionDetails(user.getActid(), user.getDomid().trim());
                             //parentalControlDetails.setUser_name(user.getActid());
                             //Displaying the list of Adderss objects
@@ -133,6 +139,7 @@ public class ParentalControl {
         if (session.getAttribute("user") == null) {
             return "redirect:/logout";
         } else {
+
             if(category_allowed == null){
                 session.setAttribute("error", "Please select URL category for blocking process!!!");
                 return "redirect:/control";
@@ -191,8 +198,10 @@ public class ParentalControl {
         if (session.getAttribute("user") == null) {
             return "redirect:/logout";
         } else {
+
             if(selected_filter_category == null){
                 session.setAttribute("error", "Please select Websites for unblock process!!!");
+
                 return "redirect:/control";
             }
             categoryList.getRemove_filter_pattern().removeAll(selected_filter_category);
@@ -211,7 +220,7 @@ public class ParentalControl {
     }
 
     @RequestMapping(value = "/update-patterns", method = RequestMethod.POST)
-    public String updatePatterns(ModelMap model, HttpSession session, @ModelAttribute(name = "CategoryListDetails") CategoryList categoryList, @RequestParam(name = "url_pattern", required = false)String selected_filter_category) {
+    public String updatePatterns(ModelMap model, HttpSession session, @ModelAttribute(name = "CategoryListDetails") CategoryList categoryList, @RequestParam(name = "url_pattern", required = false) String selected_filter_category) {
         if (session.getAttribute("user") == null) {
             return "redirect:/logout";
         } else {
@@ -221,7 +230,7 @@ public class ParentalControl {
             matcher.find();
             try {
                 selected_filter_category = matcher.group().replaceAll("\\s+", "").substring(1, matcher.group().length() - 1);
-                categoryList.getRemove_filter_pattern().add(".*"+selected_filter_category+".*");
+                categoryList.getRemove_filter_pattern().add(".*" + selected_filter_category + ".*");
 
                 //fetching the user details from the session.
                 SessionDetails user = (SessionDetails) session.getAttribute("user");
@@ -239,6 +248,7 @@ public class ParentalControl {
         }
 
     }
+
     /**
      * @param PROTECTION_STATUS the PROTECTION_STATUS to set
      */
