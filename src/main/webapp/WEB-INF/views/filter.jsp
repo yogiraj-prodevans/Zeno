@@ -514,9 +514,7 @@
 
         <!-- Load javascripts at bottom, this will reduce page load time -->
     <jsp:include page="component/js.jsp"></jsp:include>
-        <script type="text/javascript"
-                src="${pageContext.request.contextPath}/plugins/jquery.min.js"
-    charset="UTF-8"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/plugins/jquery.min.js" charset="UTF-8"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             $(".close").click(function () {
