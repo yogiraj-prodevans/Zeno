@@ -109,9 +109,9 @@
                     padding: 5px 15px 15px 60px;
                     border-bottom: 7px red solid !important;
                     background-image: url('${pageContext.request.contextPath }/img/icons/Check_red.png') !important;
-                background-size: 50px !important;
+                background-size: 43px !important;
                 background-repeat: no-repeat !important;
-                font-size: 26px;
+                font-size: 24px;
             }
 
             .nav-tabs > li > a#advance-filter {
@@ -119,18 +119,18 @@
                 padding: 5px 15px 15px 60px;
                 border-bottom: 7px #fff solid !important;
                 background-image: url('${pageContext.request.contextPath }/img/icons/Check_grey.png') !important;
-                background-size: 50px !important;
+                background-size: 43px !important;
                 background-repeat: no-repeat !important;
-                font-size: 26px;
+                font-size: 24px;
             }
             .nav-tabs > li.active > a#block-filter {
                 color: #716868;
                 padding: 5px 15px 15px 60px;
                 border-bottom: 7px red solid !important;
                 background-image: url('${pageContext.request.contextPath }/img/icons/Blocked_red.png') !important;
-                background-size: 50px !important;
+                background-size: 43px !important;
                 background-repeat: no-repeat !important;
-                font-size: 26px;
+                font-size: 24px;
             }
 
             .nav-tabs > li > a#block-filter {
@@ -138,9 +138,9 @@
                 padding: 5px 15px 15px 60px;
                 border-bottom: 7px #fff solid !important;
                 background-image: url('${pageContext.request.contextPath }/img/icons/Blocked_grey.png') !important;
-                background-size: 50px !important;
+                background-size: 43px !important;
                 background-repeat: no-repeat !important;
-                font-size: 26px;
+                font-size: 24px;
             }
 
             .nav-tabs > li.active > a#custom-filter {
@@ -148,9 +148,9 @@
                 padding: 5px 15px 15px 60px;
                 border-bottom: 7px red solid !important;
                 background-image: url('${pageContext.request.contextPath }/img/icons/Custom_red.png') !important;
-                background-size: 50px !important;
+                background-size: 43px !important;
                 background-repeat: no-repeat !important;
-                font-size: 26px;
+                font-size: 24px;
             }
 
             .nav-tabs > li > a#custom-filter {
@@ -158,9 +158,9 @@
                 padding: 5px 15px 15px 60px;
                 border-bottom: 7px #fff solid !important;
                 background-image: url('${pageContext.request.contextPath }/img/icons/Custom_grey.png') !important;
-                background-size: 50px !important;
+                background-size: 43px !important;
                 background-repeat: no-repeat !important;
-                font-size: 26px;
+                font-size: 24px;
             }
             .nav-tabs > li > a{
 
@@ -181,7 +181,7 @@
             }
             .border{
                 /*border-bottom: 1px solid #ddd;*/
-                padding: 15px;
+                padding: unset ! important;
                 font-size: 24px;
             }
             input[type="checkbox"] + label {
@@ -385,9 +385,7 @@
         <h1 class=" pb-10" style=" font-size: 28px;">With Surf Safe, you are in control</h1>
 
         <h4>
-            Your home is your safe space and you deserve to keep it that way. With our Advanced Surf Safe control you can decide what to let in and when. If there are specific websites you want to block, go ahead and add to your Custom setting. 
-
-            Schedule hourly, daily or date-wise, and we'll ensure your chosen categories and URLs remain blocked when you want them to be. Surf Safe, and ensure everyone on your network does too.
+            Your home is your safe space and you deserve to keep it that way. With our Advanced Surf Safe controls you can decide what content categories to keep out of your network. If there are specific websites you want to block, go ahead and add to your Custom setting. Surf Safe, and ensure every-one on your network does too!
         </h4>
 
 
@@ -403,8 +401,9 @@
             <div id="Allowed" class="tab-pane fade in active row ">
                 <form:form action="allow-categories" modelAttribute="CategoryListDetails" method="post" >
                     <div class="category_box">
-                        <p class="font-h4">The category listed below are what have been defined by the TRAI, as are the sites that are blocked along with these categories. If you need to block any specific sites please use the Custom settings. </p>
-                        <div  style="height:200px ; overflow-x: auto;">   
+                        
+                        <div  style="height:250px ; overflow-x: auto;">   
+                            <p class="font-h4" style="padding-bottom: 15px;">Choose content categories that you don’t want to view on your network and hit BLOCK to keep related websites out.</p>
                             <c:forEach items="${CAT.getAllowded_catogery()}" var="cat" >
                                 <div class="col-md-6 col-sm-6 border text-justify">
                                     <input type="checkbox" name="category_allowed" id="${cat}"  value="${cat}"><label for="${cat}"> <c:out value="${cat}"/> </label>	
@@ -422,9 +421,10 @@
             <div id="Blocked" class="tab-pane fade row ">
                 <form:form action="block-categories" modelAttribute="CategoryListDetails" method="post" >
                     <div class="category_box">
-                        <p class="font-h4">The category listed below are what have been defined by the TRAI, as are the sites that are blocked along with these categories. If you need to block any specific sites please use the Custom settings. </p>
+                       
 
-                        <div style="height:200px ; overflow-x: auto;">   
+                        <div style="height:250px ; overflow-x: auto;"> 
+                             <p class="font-h4" style="padding-bottom: 15px;">View and edit your list of blocked categories. To allow a category from this list, check the box next to it and hit UNBLOCK </p>
                             <c:forEach items="${CAT.getBlocked_catogery()}" var="cat">
                                 <div class="col-md-6 col-sm-6 border text-justify">
                                     <input type="checkbox" name="category_block" id="${cat}"  value="${cat}"><label for="${cat}"> <c:out value="${cat}"/> </label>	
@@ -461,7 +461,7 @@
                         </div>
                         <div class="row">
                             <form:form action="delete-patterns" modelAttribute="CategoryListDetails" method="post" >
-                                <p class="font-h4">To unblock any website, please check the box against the names listed below. </p>
+                                <p class="font-h4">Key in specific URLs you want to block to curate your network. </p>
                                 <c:forEach items="${CAT.getFilter_pattern()}" var="cat">
                                     <div class="col-md-6 col-sm-6 border text-justify">
 
