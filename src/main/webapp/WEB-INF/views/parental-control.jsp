@@ -89,9 +89,9 @@
                     padding: 5px 15px 15px 60px;
                     border-bottom: 7px red solid !important;
                     background-image: url('${pageContext.request.contextPath }/img/icons/Time_red.png') !important;
-                background-size: 50px !important;
+                background-size: 43px !important;
                 background-repeat: no-repeat !important;
-                font-size: 26px;
+                font-size: 20px;
             }
 
             .nav-tabs > li > a#time-tab-name {
@@ -99,18 +99,18 @@
                 padding: 5px 15px 15px 60px;
                 border-bottom: 7px #fff solid !important;
                 background-image: url('${pageContext.request.contextPath }/img/icons/Time_grey.png') !important;
-                background-size: 50px !important;
+                background-size: 43px !important;
                 background-repeat: no-repeat !important;
-                font-size: 26px;
+                font-size: 20px;
             }
             .nav-tabs > li.active > a#day-tab-name {
                 color: #716868;
                 padding: 5px 15px 15px 60px;
                 border-bottom: 7px red solid !important;
                 background-image: url('${pageContext.request.contextPath }/img/icons/Day_red.png') !important;
-                background-size: 50px !important;
+                background-size: 43px !important;
                 background-repeat: no-repeat !important;
-                font-size: 26px;
+                font-size: 20px;
             }
 
             .nav-tabs > li > a#day-tab-name {
@@ -118,9 +118,9 @@
                 padding: 5px 15px 15px 60px;
                 border-bottom: 7px #fff solid !important;
                 background-image: url('${pageContext.request.contextPath }/img/icons/Day_grey.png') !important;
-                background-size: 50px !important;
+                background-size: 43px !important;
                 background-repeat: no-repeat !important;
-                font-size: 26px;
+                font-size: 20px;
             }
 
             .nav-tabs > li.active > a#dates-tab-name {
@@ -128,9 +128,9 @@
                 padding: 5px 15px 15px 60px;
                 border-bottom: 7px red solid !important;
                 background-image: url('${pageContext.request.contextPath }/img/icons/Dates_red.png') !important;
-                background-size: 50px !important;
+                background-size: 43px !important;
                 background-repeat: no-repeat !important;
-                font-size: 26px;
+                font-size: 20px;
             }
 
             .nav-tabs > li > a#dates-tab-name {
@@ -138,15 +138,15 @@
                 padding: 5px 15px 15px 60px;
                 border-bottom: 7px #fff solid !important;
                 background-image: url('${pageContext.request.contextPath }/img/icons/Dates_grey.png') !important;
-                background-size: 50px !important;
+                background-size: 43px !important;
                 background-repeat: no-repeat !important;
-                font-size: 26px;
+                font-size: 20px;
             }
 
 
             .time_image {
                 padding: 8px 20px;
-                background-image: url('/zeno/img/icons/Time_red.png') !important;
+                background-image: url('/zeno/img/icons/Time_blue.png') !important;
                 background-size: 33px !important;
                 background-repeat: no-repeat !important;
             }
@@ -382,7 +382,7 @@
                     <div id="collapse1" class="panel-collapse collapsing ">
                         <div class="panel-body">
                             <ul class="nav nav-tabs  margin-top-10">
-                                <li class=" active"><a id="time-tab-name" data-toggle="tab" href="#time-tab">TIME</a></li>
+                                <li class=" active"><a id="time-tab-name" data-toggle="tab" href="#time-tab">HOURS</a></li>
                                 <li class=" "><a id="day-tab-name" data-toggle="tab" href="#date-tab"  >DAYS</a></li>
                                 <li class=" "><a id="dates-tab-name" data-toggle="tab" href="#dates-tab" >DATES</a></li>
 
@@ -501,8 +501,8 @@
                                                     </div>
                                                     <div class="row">
                                                         <div class="form-group col-md-6">
-
-                                                            <div class="input-group date  col-md-10" data-date="" >
+                                                               <label for="date-time-end" class="col-md-3 control-label">Start Date</label>
+                                                            <div class="input-group date  col-md-7" data-date="" >
                                                                 <input name="dates_start_date"  class="form-control form_date" id="date-start" size="16" type="text" value="" placeholder="Start date"  readonly>
 
                                                                 <span class="input-group-addon"><span class="date_image form_date" data-date-format="dd MM yyyy" data-link-field="date-start" data-link-format="yyyy/mm/dd"></span></span>
@@ -510,8 +510,8 @@
                                                           
                                                         </div>
                                                         <div class="form-group col-md-6">
-
-                                                            <div class="input-group date  col-md-10" data-date="" >
+                                                               <label for="date-time-end" class="col-md-3 control-label">End Date</label>
+                                                            <div class="input-group date  col-md-7" data-date="" >
                                                                 <input name="dates_end_date" class="form-control form_date" id="date-end" size="16" type="text" value="" placeholder="End date" readonly>
 
                                                                 <span class="input-group-addon"><span class="date_image form_date" data-date-format="dd MM yyyy" data-link-field="date-end" data-link-format="yyyy/mm/dd"></span></span>

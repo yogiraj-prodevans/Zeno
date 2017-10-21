@@ -111,7 +111,7 @@
                     background-image: url('${pageContext.request.contextPath }/img/icons/Check_red.png') !important;
                 background-size: 43px !important;
                 background-repeat: no-repeat !important;
-                font-size: 24px;
+                font-size: 20px;
             }
 
             .nav-tabs > li > a#advance-filter {
@@ -121,7 +121,7 @@
                 background-image: url('${pageContext.request.contextPath }/img/icons/Check_grey.png') !important;
                 background-size: 43px !important;
                 background-repeat: no-repeat !important;
-                font-size: 24px;
+                font-size: 20px;
             }
             .nav-tabs > li.active > a#block-filter {
                 color: #716868;
@@ -130,7 +130,7 @@
                 background-image: url('${pageContext.request.contextPath }/img/icons/Blocked_red.png') !important;
                 background-size: 43px !important;
                 background-repeat: no-repeat !important;
-                font-size: 24px;
+                font-size: 20px;
             }
 
             .nav-tabs > li > a#block-filter {
@@ -140,7 +140,7 @@
                 background-image: url('${pageContext.request.contextPath }/img/icons/Blocked_grey.png') !important;
                 background-size: 43px !important;
                 background-repeat: no-repeat !important;
-                font-size: 24px;
+                font-size: 20px;
             }
 
             .nav-tabs > li.active > a#custom-filter {
@@ -150,7 +150,7 @@
                 background-image: url('${pageContext.request.contextPath }/img/icons/Custom_red.png') !important;
                 background-size: 43px !important;
                 background-repeat: no-repeat !important;
-                font-size: 24px;
+                font-size: 20px;
             }
 
             .nav-tabs > li > a#custom-filter {
@@ -160,7 +160,7 @@
                 background-image: url('${pageContext.request.contextPath }/img/icons/Custom_grey.png') !important;
                 background-size: 43px !important;
                 background-repeat: no-repeat !important;
-                font-size: 24px;
+                font-size: 20px;
             }
             .nav-tabs > li > a{
 
@@ -182,7 +182,7 @@
             .border{
                 /*border-bottom: 1px solid #ddd;*/
                 padding: unset ! important;
-                font-size: 24px;
+                font-size: 17px ! important;
             }
             input[type="checkbox"] + label {
                 display: block;
@@ -448,7 +448,7 @@
                                 <div class=" row" >
                                     <label for="url-block" class="col-md-4 text-justify font-h3" title="Add the URL to be blocked" >Block specific websites.</label>
                                     <div class="col-md-8" style="padding: unset;">
-                                        <input id="url_pattern" type="text" class="" style="width:100%; font-size: 24px;" name="url_pattern" placeholder="ex. www.facebook.com" pattern="[([^w]{3})]+([a-zA-Z]*)+[.]" required="required" >
+                                        <input id="url_pattern" type="text" class="" style="width:100%; margin-top: 6px; font-size: 24px;" name="url_pattern" placeholder="www.facebook.com" pattern="[([^w]{3})]+([a-zA-Z]*)+[.]" required="required" >
                                     </div>
                                 </div>
                                 <form:hidden path="filter_pattern" />
