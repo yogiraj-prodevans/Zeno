@@ -40,11 +40,11 @@ public class ScheduleController {
 
             if (scheduleDAOImpl.applyTimeSchedule(user.getDomid(), user.getActid() + "_SCHEDULE", "daily", time, user.getActid() + "_access_policy_rule")) {
                 logger.info("Daily schedule applied successfully..");
-                session.setAttribute("msg", "Daily schedule applied successfully..");
+                session.setAttribute("msg", "Schedule applied successfully.");
 
             } else {
                 logger.info("Daily schedule was not applied..");
-                session.setAttribute("msg", "Daily schedule was not applied..");
+                session.setAttribute("msg", "Oops! Scheduling failed. Please try again.");
             }
 
             return "redirect:control";
@@ -69,11 +69,11 @@ public class ScheduleController {
 
             if (scheduleDAOImpl.applyDaysSchedule(user.getDomid(), user.getActid() + "_SCHEDULE", days_days_checkbox, time, user.getActid() + "_access_policy_rule")) {
                 logger.info("Days schedule applied successfully..");
-                session.setAttribute("msg", "Days schedule applied successfully..");
+                session.setAttribute("msg", "Schedule applied successfully.");
 
             } else {
                 logger.info("Days schedule was not applied..");
-                session.setAttribute("msg", "Days schedule was not applied..");
+                session.setAttribute("msg", "Oops! Scheduling failed. Please try again.");
             }
 
             return "redirect:control";
@@ -101,11 +101,11 @@ public class ScheduleController {
 
             if (scheduleDAOImpl.applyNonRecurringSchedule(user.getDomid(), user.getActid() + "_SCHEDULE", when, user.getActid() + "_access_policy_rule")) {
                 logger.info("Non-Recurring schedule applied successfully..");
-                session.setAttribute("msg", "Non-Recurring schedule applied successfully..");
+                session.setAttribute("msg", "Schedule applied successfully.");
 
             } else {
                 logger.info("Non-Recurring schedule was not applied..");
-                session.setAttribute("msg", "Non-Recurring schedule was not applied..");
+                session.setAttribute("msg", "Oops! Scheduling failed. Please try again.");
             }
 
             return "redirect:control";

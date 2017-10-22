@@ -413,8 +413,21 @@
                                                     
                                                 </div> 
                                             </div>
-                                            <div class="panel-footer text-right">
+                                            <div class="panel-footer">
+                                            
+                                            	<div class="col-md-6"></div>
+						                    	<div class="col-md-4 text-right">
+						                    	<c:if test="${not empty msg }">
+						                    		<h4 style="color:red;margin-top: 5%;">
+								                    	<span class="glyphicon glyphicon-alert"></span>
+								                    	<c:out value="${msg }"></c:out>
+								                    </h4>
+							                    </c:if>
+							                    </div>
+						                    	<div class="col-md-2 text-right">
+                                            
                                                 <button id="block" class="btn billButton font-h3" type="submit">SUBMIT</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </form:form> 	
@@ -465,8 +478,23 @@
                                             </div>
 
 
-                                            <div class="col-md-12 text-right">
+                                            <div class="col-md-12">
+                                            
+                                            	<div class="col-md-6"></div>
+						                    	<div class="col-md-4 text-right">
+						                    	<c:if test="${not empty msg }">
+						                    		<h4 style="color:red;margin-top: 5%;">
+								                    	<span class="glyphicon glyphicon-alert"></span>
+								                    	<c:out value="${msg }"></c:out>
+								                    </h4>
+							                    </c:if>
+							                    </div>
+						                    	<div class="col-md-2 text-right">
+                                            
+                                            
                                                 <button id="block" class="btn billButton" type="submit">SUBMIT</button>
+                                                
+                                                </div>
                                             </div>
                                         </div>
                                     </form:form> 	
@@ -519,8 +547,23 @@
                                                             
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-12 text-right margin-top-10">
+                                                    <div class="col-md-12 margin-top-10">
+                                                    
+                                                    	<div class="col-md-6"></div>
+								                    	<div class="col-md-4 text-right">
+								                    	<c:if test="${not empty msg }">
+								                    		<h4 style="color:red;margin-top: 5%;">
+										                    	<span class="glyphicon glyphicon-alert"></span>
+										                    	<c:out value="${msg }"></c:out>
+										                    </h4>
+									                    </c:if>
+									                    </div>
+								                    	<div class="col-md-2 text-right">
+                                                    
+                                                    
                                                         <button id="block" class="btn billButton"  type="submit">SUBMIT</button>
+                                                        
+                                                        </div>
                                                     </div>
                                                 </form:form>
                                             </div>

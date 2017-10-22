@@ -132,7 +132,7 @@ public class ParentalControl {
         } else {
 
             if (category_allowed == null) {
-                session.setAttribute("error", "Please select URL category for blocking process!!!");
+                session.setAttribute("error", "Select Category and hit BLOCK.");
                 return "redirect:/control";
             }
             categoryList.getBlocked_catogery().addAll(category_allowed);
@@ -145,9 +145,9 @@ public class ParentalControl {
             SessionDetails user = (SessionDetails) session.getAttribute("user");
 
             if (categoryimpl.updateCategoryList(categoryList.getBlocked_catogery(), categoryList.getAllowded_catogery(), user.getDomid(), user.getActid(), "update_block")) {
-                session.setAttribute("error", "URL category blocked successfully...");
+                session.setAttribute("error", "Done! The chosen Category is now blocked.");
             } else {
-                session.setAttribute("error", "URL category blocking process failed!!!");
+                session.setAttribute("error", "Oops! Category blocking failed. Please try again.");
 
             }
 
@@ -161,7 +161,7 @@ public class ParentalControl {
             return "redirect:/logout";
         } else {
             if (category_allowed == null) {
-                session.setAttribute("error", "Please select URL category for allowing process!!!");
+                session.setAttribute("error", "Select Category to UNBLOCK.");
                 return "redirect:/control";
             }
             categoryList.getBlocked_catogery().removeAll(category_allowed);
@@ -174,9 +174,9 @@ public class ParentalControl {
             SessionDetails user = (SessionDetails) session.getAttribute("user");
 
             if (categoryimpl.updateCategoryList(categoryList.getBlocked_catogery(), categoryList.getAllowded_catogery(), user.getDomid(), user.getActid(), "update_allow")) {
-                session.setAttribute("error", "URL Category allowed successfully...");
+                session.setAttribute("error", "Done! Category successfully unblocked.");
             } else {
-                session.setAttribute("error", "URL Category allowing process failed!!!");
+                session.setAttribute("error", "Oops! Category unblocking failed. Please try again. ");
             }
 
             return "redirect:/control";
@@ -191,7 +191,7 @@ public class ParentalControl {
         } else {
 
             if (selected_filter_category == null) {
-                session.setAttribute("error", "Please select Websites for unblock process!!!");
+                session.setAttribute("error", "Select the URL you want to unblock.");
 
                 return "redirect:/control";
             }
@@ -200,9 +200,9 @@ public class ParentalControl {
             //fetching the user details from the session.
             SessionDetails user = (SessionDetails) session.getAttribute("user");
             if (categoryimpl.updateFilterPattern(categoryList.getRemove_filter_pattern(), user.getDomid(), user.getActid() + RestConfig.ADVANCED_FILTER)) {
-                session.setAttribute("error", "Website unblocked successfully...");
+                session.setAttribute("error", "Done! URL successfully unblocked.");
             } else {
-                session.setAttribute("error", "Website unblock process failed!!!");
+                session.setAttribute("error", "Oops! URL unblocking failed. Please try again.");
             }
 
             return "redirect:/control";
@@ -226,13 +226,13 @@ public class ParentalControl {
                 //fetching the user details from the session.
                 SessionDetails user = (SessionDetails) session.getAttribute("user");
                 if (categoryimpl.updateFilterPattern(categoryList.getRemove_filter_pattern(), user.getDomid(), user.getActid() + RestConfig.ADVANCED_FILTER)) {
-                    session.setAttribute("error", "Website blocked successfully...");
+                    session.setAttribute("uodateURLError", "Done! The chosen URL is now blocked.");
                 } else {
-                    session.setAttribute("error", "Website block process failed!!!");
+                    session.setAttribute("uodateURLError", "Oops! URL blocking failed. Please try again.");
                 }
             } catch (Exception e) {
                 logger.error("Error : " + e.getMessage());
-                session.setAttribute("error", "Please check the URL!!!");
+                session.setAttribute("uodateURLError", "Type out the URL to block a website.");
             }
 
             return "redirect:/control";

@@ -334,6 +334,16 @@
             }
 
 
+			.col-md-2
+			{
+				width: 12.666667% !important;
+				padding-right: unset !important;
+				padding-left: unset !important;
+			}
+			.col-md-4
+			{
+				width: 37.333333% !important;
+			}
 
         </style>
 
@@ -413,8 +423,21 @@
                     </div>
                     <form:hidden path="allowded_catogery" />
                     <form:hidden path="blocked_catogery" />
-                    <div class="panel-footer text-right">
+                    
+                    <div class="panel-footer">
+                    
+                    	<div class="col-md-6"></div>
+                    	<div class="col-md-4 text-right">
+                    	<c:if test="${not empty error }">
+                    		<h4 style="color:red;margin-top: 5%;">
+		                    	<span class="glyphicon glyphicon-alert"></span>
+		                    	<c:out value="${error }"></c:out>
+		                    </h4>
+	                    </c:if>
+	                    </div>
+                    	<div class="col-md-2 text-right">
                         <button id="advacneBlock" class="btn billButton font-h3" type="submit">BLOCK</button>
+                        </div>
                     </div>
                 </form:form> 	
             </div>
@@ -434,8 +457,20 @@
                     </div>
                     <form:hidden path="allowded_catogery" />
                     <form:hidden path="blocked_catogery" />
-                    <div class="panel-footer text-right">
+                    <div class="panel-footer ">
+                    
+                    	<div class="col-md-6"></div>
+                    	<div class="col-md-4 text-right">
+                    	<c:if test="${not empty error }">
+                    		<h4 style="color:red;margin-top: 5%;">
+		                    	<span class="glyphicon glyphicon-alert"></span>
+		                    	<c:out value="${error }"></c:out>
+		                    </h4>
+	                    </c:if>
+	                    </div>
+                    	<div class="col-md-2 text-right">
                         <button id="blockedUnblock" class="btn billButton" type="submit">UNBLOCK</button>
+                        </div>
                     </div>
                 </form:form> 	
             </div>
@@ -446,15 +481,28 @@
                         <div class="row  ">
                             <form:form  action="update-patterns" modelAttribute="CategoryListDetails" method="post" >
                                 <div class=" row" >
-                                    <label for="url-block" class="col-md-4 text-justify font-h3" title="Add the URL to be blocked" >Block specific websites.</label>
-                                    <div class="col-md-8" style="padding: unset;">
+                                    <label for="url-block" class="col-md-5 text-justify font-h3" title="Add the URL to be blocked" >Block specific websites.</label>
+                                    <div class="col-md-7" style="padding: unset;">
                                         <input id="url_pattern" type="text" class="" style="width:100%; margin-top: 6px; font-size: 24px;" name="url_pattern" placeholder="www.facebook.com" pattern="[([^w]{3})]+([a-zA-Z]*)+[.]" required="required" >
                                     </div>
                                 </div>
                                 <form:hidden path="filter_pattern" />
                                 <form:hidden path="remove_filter_pattern" />
-                                <div class="row text-right " >
+                                <div class="row " >
+                                
+                                	<div class="col-md-6"></div>
+			                    	<div class="col-md-4 text-right">
+			                    	<c:if test="${not empty uodateURLError }">
+			                    		<h4 style="color:red;margin-top: 5%;">
+					                    	<span class="glyphicon glyphicon-alert"></span>
+					                    	<c:out value="${uodateURLError }"></c:out>
+					                    	<c:set var="uodateURLError" value="" />
+					                    </h4>
+				                    </c:if>
+				                    </div>
+			                    	<div class="col-md-2 text-right">
                                     <button id="customBlock" type="submit" class="btn billButton ">BLOCK</button>
+                                    </div>
                                 </div>
                             </form:form>
 
@@ -477,8 +525,20 @@
                             </div>
                         </div>
                     </div>
-                    <div class="panel-footer text-right">
+                    <div class="panel-footer">
+                    	
+                    	<div class="col-md-6"></div>
+                    	<div class="col-md-4 text-right">
+                    	<c:if test="${not empty error }">
+                    		<h4 style="color:red;margin-top: 5%;">
+		                    	<span class="glyphicon glyphicon-alert"></span>
+		                    	<c:out value="${error }"></c:out>
+		                    </h4>
+	                    </c:if>
+	                    </div>
+                    	<div class="col-md-2 text-right">
                         <button id="customUnblock" class="btn billButton" type="submit">UNBLOCK</button>
+                        </div>
                     </div>
                 </form:form>
             </div>
@@ -487,6 +547,8 @@
         </div>
 
         <jsp:include page="parental-control.jsp"/>
+        
+        <!--  
         <c:if test="${not empty error }">
             <div id="myAlert" class="alert alert-danger">
                 <a href="#" class="close">&times;</a>
@@ -495,7 +557,7 @@
 
                 <!--<h3 style="color: green"></h3>-->
             <%--<c:set var="error" value="" />--%>
-
+		<!-- 
         </c:if>
         <c:if test="${not empty msg }">
             <div id="myAlert" class="alert alert-danger">
@@ -503,6 +565,8 @@
                 <c:out value="${msg }"></c:out>
                 </div>
         </c:if>
+        -->
+        
     </div>
 
 
