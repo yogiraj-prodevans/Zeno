@@ -334,16 +334,16 @@
             }
 
 
-			.col-md-2
-			{
-				width: 12.666667% !important;
-				padding-right: unset !important;
-				padding-left: unset !important;
-			}
-			.col-md-4
-			{
-				width: 37.333333% !important;
-			}
+            .col-md-2
+            {
+                width: 12.666667% !important;
+                padding-right: unset !important;
+                padding-left: unset !important;
+            }
+            .col-md-4
+            {
+                width: 37.333333% !important;
+            }
 
         </style>
 
@@ -411,7 +411,7 @@
             <div id="Allowed" class="tab-pane fade in active row ">
                 <form:form action="allow-categories" modelAttribute="CategoryListDetails" method="post" >
                     <div class="category_box">
-                        
+
                         <div  style="height:250px ; overflow-x: auto;">   
                             <p class="font-h4" style="padding-bottom: 15px;">Choose content categories that you don’t want to view on your network and hit BLOCK to keep related websites out.</p>
                             <c:forEach items="${CAT.getAllowded_catogery()}" var="cat" >
@@ -423,20 +423,20 @@
                     </div>
                     <form:hidden path="allowded_catogery" />
                     <form:hidden path="blocked_catogery" />
-                    
+
                     <div class="panel-footer">
-                    
-                    	<div class="col-md-6"></div>
-                    	<div class="col-md-4 text-right">
-                    	<c:if test="${not empty error }">
-                    		<h4 style="color:red;margin-top: 5%;">
-		                    	<span class="glyphicon glyphicon-alert"></span>
-		                    	<c:out value="${error }"></c:out>
-		                    </h4>
-	                    </c:if>
-	                    </div>
-                    	<div class="col-md-2 text-right">
-                        <button id="advacneBlock" class="btn billButton font-h3" type="submit">BLOCK</button>
+
+                        <div class="col-md-6"></div>
+                        <div class="col-md-4 text-right">
+                            <c:if test="${not empty error }">
+                                <h4 style="color:red;margin-top: 5%;">
+                                    <span class="glyphicon glyphicon-alert"></span>
+                                    <c:out value="${error }"></c:out>
+                                    </h4>
+                            </c:if>
+                        </div>
+                        <div class="col-md-2 text-right">
+                            <button id="advacneBlock" class="btn billButton font-h3" type="submit">BLOCK</button>
                         </div>
                     </div>
                 </form:form> 	
@@ -444,10 +444,10 @@
             <div id="Blocked" class="tab-pane fade row ">
                 <form:form action="block-categories" modelAttribute="CategoryListDetails" method="post" >
                     <div class="category_box">
-                       
+
 
                         <div style="height:250px ; overflow-x: auto;"> 
-                             <p class="font-h4" style="padding-bottom: 15px;">View and edit your list of blocked categories. To allow a category from this list, check the box next to it and hit UNBLOCK </p>
+                            <p class="font-h4" style="padding-bottom: 15px;">View and edit your list of blocked categories. To allow a category from this list, check the box next to it and hit UNBLOCK </p>
                             <c:forEach items="${CAT.getBlocked_catogery()}" var="cat">
                                 <div class="col-md-6 col-sm-6 border text-justify">
                                     <input type="checkbox" name="category_block" id="${cat}"  value="${cat}"><label for="${cat}"> <c:out value="${cat}"/> </label>	
@@ -458,23 +458,23 @@
                     <form:hidden path="allowded_catogery" />
                     <form:hidden path="blocked_catogery" />
                     <div class="panel-footer ">
-                    
-                    	<div class="col-md-6"></div>
-                    	<div class="col-md-4 text-right">
-                    	<c:if test="${not empty error }">
-                    		<h4 style="color:red;margin-top: 5%;">
-		                    	<span class="glyphicon glyphicon-alert"></span>
-		                    	<c:out value="${error }"></c:out>
-		                    </h4>
-	                    </c:if>
-	                    </div>
-                    	<div class="col-md-2 text-right">
-                        <button id="blockedUnblock" class="btn billButton" type="submit">UNBLOCK</button>
+
+                        <div class="col-md-6"></div>
+                        <div class="col-md-4 text-right">
+                            <c:if test="${not empty error }">
+                                <h4 style="color:red;margin-top: 5%;">
+                                    <span class="glyphicon glyphicon-alert"></span>
+                                    <c:out value="${error }"></c:out>
+                                    </h4>
+                            </c:if>
+                        </div>
+                        <div class="col-md-2 text-right">
+                            <button id="blockedUnblock" class="btn billButton" type="submit">UNBLOCK</button>
                         </div>
                     </div>
                 </form:form> 	
             </div>
-            <div id="Custom" class="tab-pane fade ">
+            <div id="Custom" class="tab-pane fade row">
                 <div class="category_box ">
                     <div style="height:268px ; overflow-x: auto;">   
 
@@ -489,26 +489,27 @@
                                 <form:hidden path="filter_pattern" />
                                 <form:hidden path="remove_filter_pattern" />
                                 <div class="row " >
-                                
-                                	<div class="col-md-6"></div>
-			                    	<div class="col-md-4 text-right">
-			                    	<c:if test="${not empty uodateURLError }">
-			                    		<h4 style="color:red;margin-top: 5%;">
-					                    	<span class="glyphicon glyphicon-alert"></span>
-					                    	<c:out value="${uodateURLError }"></c:out>
-					                    	<c:set var="uodateURLError" value="" />
-					                    </h4>
-				                    </c:if>
-				                    </div>
-			                    	<div class="col-md-2 text-right">
-                                    <button id="customBlock" type="submit" class="btn billButton ">BLOCK</button>
+
+                                    <div class="col-md-6"></div>
+                                    <div class="col-md-4 text-right">
+                                        <c:if test="${not empty uodateURLError }">
+                                            <h4 style="color:red;margin-top: 5%;">
+                                                <span class="glyphicon glyphicon-alert"></span>
+                                                <c:out value="${uodateURLError }"></c:out>
+                                                <c:set var="uodateURLError" value="" />
+                                            </h4>
+                                        </c:if>
+                                    </div>
+                                    <div class="col-md-2 text-right">
+                                        <button id="customBlock" type="submit" class="btn billButton ">BLOCK</button>
                                     </div>
                                 </div>
                             </form:form>
 
                         </div>
+                          <form:form action="delete-patterns" modelAttribute="CategoryListDetails" method="post" >
+                          
                         <div class="row">
-                            <form:form action="delete-patterns" modelAttribute="CategoryListDetails" method="post" >
                                 <p class="font-h4">Key in specific URLs you want to block to curate your network. </p>
                                 <c:forEach items="${CAT.getFilter_pattern()}" var="cat">
                                     <div class="col-md-6 col-sm-6 border text-justify">
@@ -519,54 +520,52 @@
                                 </c:forEach> 
                                 <form:hidden path="filter_pattern" />
                                 <form:hidden path="remove_filter_pattern" />
-
-
-
                             </div>
+                    </div>
+                    </div>
+                    <div class="panel-footer ">
+
+                        <div class="col-md-6"></div>
+                        <div class="col-md-4 text-right">
+                            <c:if test="${not empty error }">
+                                <h4 style="color:red;margin-top: 5%;">
+                                    <span class="glyphicon glyphicon-alert"></span>
+                                    <c:out value="${error }"></c:out>
+                                    </h4>
+                            </c:if>
+                        </div>
+                        <div class="col-md-2 text-right">
+                            <button id="customUnblock" class="btn billButton" type="submit">UNBLOCK</button>
                         </div>
                     </div>
-                    <div class="panel-footer">
-                    	
-                    	<div class="col-md-6"></div>
-                    	<div class="col-md-4 text-right">
-                    	<c:if test="${not empty error }">
-                    		<h4 style="color:red;margin-top: 5%;">
-		                    	<span class="glyphicon glyphicon-alert"></span>
-		                    	<c:out value="${error }"></c:out>
-		                    </h4>
-	                    </c:if>
-	                    </div>
-                    	<div class="col-md-2 text-right">
-                        <button id="customUnblock" class="btn billButton" type="submit">UNBLOCK</button>
-                        </div>
-                    </div>
-                </form:form>
+                          </form:form>
+              
             </div>
 
 
         </div>
 
         <jsp:include page="parental-control.jsp"/>
-        
+
         <!--  
         <c:if test="${not empty error }">
             <div id="myAlert" class="alert alert-danger">
                 <a href="#" class="close">&times;</a>
-                <c:out value="${error }"></c:out>
-                </div>
+            <c:out value="${error }"></c:out>
+            </div>
 
                 <!--<h3 style="color: green"></h3>-->
             <%--<c:set var="error" value="" />--%>
-		<!-- 
+            <!-- 
         </c:if>
         <c:if test="${not empty msg }">
             <div id="myAlert" class="alert alert-danger">
                 <a href="#" class="close">&times;</a>
-                <c:out value="${msg }"></c:out>
-                </div>
+            <c:out value="${msg }"></c:out>
+            </div>
         </c:if>
         -->
-        
+
     </div>
 
 
