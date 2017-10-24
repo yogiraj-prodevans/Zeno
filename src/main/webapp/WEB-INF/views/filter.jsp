@@ -481,8 +481,8 @@
                         <div class="row  ">
                             <form:form  action="update-patterns" modelAttribute="CategoryListDetails" method="post" >
                                 <div class=" row" >
-                                    <label for="url-block" class="col-md-5 text-justify font-h3" style="margin-right: -108px "title="Add the URL to be blocked" >Block specific websites.</label>
-                                    <div class="col-md-7" style="padding: unset;">
+                                    <label for="url-block" class="col-md-5 text-justify font-h3" style="margin-right: -87px "title="Add the URL to be blocked" >Block specific websites.</label>
+                                    <div class="col-md-8" style="padding: unset;">
                                         <input id="url_pattern" type="text" class="" style="width:100%; margin-top: 6px; font-size: 24px;" name="url_pattern" placeholder="www." pattern="[([^w]{3})]+([a-zA-Z]*)+[.]" required="required" >
                                     </div>
                                 </div>
@@ -507,9 +507,9 @@
                             </form:form>
 
                         </div>
-                          <form:form action="delete-patterns" modelAttribute="CategoryListDetails" method="post" >
-                          
-                        <div class="row">
+                        <form:form action="delete-patterns" modelAttribute="CategoryListDetails" method="post" >
+
+                            <div class="row">
                                 <p class="font-h4">Key in specific URLs you want to block to curate your network. </p>
                                 <c:forEach items="${CAT.getFilter_pattern()}" var="cat">
                                     <div class="col-md-6 col-sm-6 border text-justify">
@@ -521,7 +521,7 @@
                                 <form:hidden path="filter_pattern" />
                                 <form:hidden path="remove_filter_pattern" />
                             </div>
-                    </div>
+                        </div>
                     </div>
                     <div class="panel-footer ">
 
@@ -538,8 +538,8 @@
                             <button id="customUnblock" class="btn billButton" type="submit">UNBLOCK</button>
                         </div>
                     </div>
-                          </form:form>
-              
+                </form:form>
+
             </div>
 
 
@@ -580,8 +580,20 @@
     <script type="text/javascript" src="${pageContext.request.contextPath}/plugins/jquery.min.js" charset="UTF-8"></script>
     <script type="text/javascript">
         $(document).ready(function () {
+            var schedule_counter = 0;
             $(".close").click(function () {
                 $("#myAlert").slideUp();
+            });
+            $("#collapser").click(function () {
+                if (schedule_counter == 0) {
+                    $("#schedule_images").removeClass("plus_image");
+                    $("#schedule_images").addClass("time_image");
+                    schedule_counter =1;
+                } else {
+                    $("#schedule_images").removeClass("time_image");
+                    $("#schedule_images").addClass("plus_image");
+                    schedule_counter =0;
+                }
             });
         });
     </script>
