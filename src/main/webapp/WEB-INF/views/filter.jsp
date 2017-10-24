@@ -428,10 +428,10 @@
 
                         <div class="col-md-6"></div>
                         <div class="col-md-4 text-right">
-                            <c:if test="${not empty error }">
+                            <c:if test="${not empty advanced_error }">
                                 <h4 style="color:red;margin-top: 5%;">
                                     <span class="glyphicon glyphicon-alert"></span>
-                                    <c:out value="${error }"></c:out>
+                                    <c:out value="${advanced_error }"></c:out>
                                     </h4>
                             </c:if>
                         </div>
@@ -461,10 +461,10 @@
 
                         <div class="col-md-6"></div>
                         <div class="col-md-4 text-right">
-                            <c:if test="${not empty error }">
+                            <c:if test="${not empty blocked_error }">
                                 <h4 style="color:red;margin-top: 5%;">
                                     <span class="glyphicon glyphicon-alert"></span>
-                                    <c:out value="${error }"></c:out>
+                                    <c:out value="${blocked_error }"></c:out>
                                     </h4>
                             </c:if>
                         </div>
@@ -492,10 +492,10 @@
 
                                     <div class="col-md-6"></div>
                                     <div class="col-md-4 text-right">
-                                        <c:if test="${not empty uodateURLError }">
+                                        <c:if test="${not empty update_url_error }">
                                             <h4 style="color:red;margin-top: 5%;">
                                                 <span class="glyphicon glyphicon-alert"></span>
-                                                <c:out value="${uodateURLError }"></c:out>
+                                                <c:out value="${update_url_error }"></c:out>
                                                 <c:set var="uodateURLError" value="" />
                                             </h4>
                                         </c:if>
@@ -527,10 +527,10 @@
 
                         <div class="col-md-6"></div>
                         <div class="col-md-4 text-right">
-                            <c:if test="${not empty error }">
+                            <c:if test="${not empty custom_error }">
                                 <h4 style="color:red;margin-top: 5%;">
                                     <span class="glyphicon glyphicon-alert"></span>
-                                    <c:out value="${error }"></c:out>
+                                    <c:out value="${custom_error }"></c:out>
                                     </h4>
                             </c:if>
                         </div>
@@ -584,15 +584,22 @@
             $(".close").click(function () {
                 $("#myAlert").slideUp();
             });
-            $("#collapser").click(function () {
-                if (schedule_counter == 0) {
-                    $("#schedule_images").removeClass("plus_image");
-                    $("#schedule_images").addClass("time_image");
-                    schedule_counter =1;
-                } else {
-                    $("#schedule_images").removeClass("time_image");
+            $("#schedule_images").click(function () {
+                if(schedule_counter == 0){
+                     $("#schedule_images").removeClass("minus_image");
                     $("#schedule_images").addClass("plus_image");
-                    schedule_counter =0;
+                     schedule_counter =2;
+                }
+                else if (schedule_counter == 1) {
+                    $("#schedule_images").removeClass("minus_image");
+                    $("#schedule_images").addClass("plus_image");
+                     $("#collapse1").toggle();
+                    schedule_counter =2;
+                } else {
+                    $("#schedule_images").removeClass("plus_image");
+                    $("#schedule_images").addClass("minus_image");
+                     $("#collapse1").toggle();
+                    schedule_counter =1;
                 }
             });
         });
