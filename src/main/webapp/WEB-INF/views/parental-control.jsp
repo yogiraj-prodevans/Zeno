@@ -531,7 +531,7 @@
                                                         <div class="form-group col-md-6">
                                                                <label for="date-time-end" class="col-md-3 control-label">Start Date</label>
                                                             <div class="input-group date  col-md-7" data-date="" >
-                                                                <input name="dates_start_date"  class="form-control form_date" id="date-start" size="16" type="text" value="" placeholder="Start date"  readonly>
+                                                                <input name="dates_start_date"  class="form-control form_date" id="date-start" size="16" type="text" value="" readonly>
 
                                                                 <span class="input-group-addon"><span class="date_image form_date" data-date-format="dd MM yyyy" data-link-field="date-start" data-link-format="yyyy/mm/dd"></span></span>
                                                             </div>
@@ -540,7 +540,7 @@
                                                         <div class="form-group col-md-6">
                                                                <label for="date-time-end" class="col-md-3 control-label">End Date</label>
                                                             <div class="input-group date  col-md-7" data-date="" >
-                                                                <input name="dates_end_date" class="form-control form_date" id="date-end" size="16" type="text" value="" placeholder="End date" readonly>
+                                                                <input name="dates_end_date" class="form-control form_date" id="date-end" size="16" type="text" value="" readonly>
 
                                                                 <span class="input-group-addon"><span class="date_image form_date" data-date-format="dd MM yyyy" data-link-field="date-end" data-link-format="yyyy/mm/dd"></span></span>
                                                             </div>

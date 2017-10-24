@@ -481,9 +481,9 @@
                         <div class="row  ">
                             <form:form  action="update-patterns" modelAttribute="CategoryListDetails" method="post" >
                                 <div class=" row" >
-                                    <label for="url-block" class="col-md-5 text-justify font-h3" title="Add the URL to be blocked" >Block specific websites.</label>
+                                    <label for="url-block" class="col-md-5 text-justify font-h3" style="margin-right: -108px "title="Add the URL to be blocked" >Block specific websites.</label>
                                     <div class="col-md-7" style="padding: unset;">
-                                        <input id="url_pattern" type="text" class="" style="width:100%; margin-top: 6px; font-size: 24px;" name="url_pattern" placeholder="www.facebook.com" pattern="[([^w]{3})]+([a-zA-Z]*)+[.]" required="required" >
+                                        <input id="url_pattern" type="text" class="" style="width:100%; margin-top: 6px; font-size: 24px;" name="url_pattern" placeholder="www." pattern="[([^w]{3})]+([a-zA-Z]*)+[.]" required="required" >
                                     </div>
                                 </div>
                                 <form:hidden path="filter_pattern" />
