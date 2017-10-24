@@ -586,18 +586,18 @@
             });
             $("#schedule_images").click(function () {
                 if(schedule_counter == 0){
-                     $("#schedule_images").removeClass("minus_image");
-                    $("#schedule_images").addClass("plus_image");
+                     $("#schedule_images").removeClass("plus_image");
+                    $("#schedule_images").addClass("minus_image");
                      schedule_counter =2;
                 }
                 else if (schedule_counter == 1) {
-                    $("#schedule_images").removeClass("minus_image");
-                    $("#schedule_images").addClass("plus_image");
+                    $("#schedule_images").removeClass("plus_image");
+                    $("#schedule_images").addClass("minus_image");
                      $("#collapse1").toggle();
                     schedule_counter =2;
                 } else {
-                    $("#schedule_images").removeClass("plus_image");
-                    $("#schedule_images").addClass("minus_image");
+                    $("#schedule_images").removeClass("minus_image");
+                    $("#schedule_images").addClass("plus_image");
                      $("#collapse1").toggle();
                     schedule_counter =1;
                 }
