@@ -514,7 +514,7 @@
                                 <c:forEach items="${CAT.getFilter_pattern()}" var="cat">
                                     <div class="col-md-6 col-sm-6 border text-justify">
 
-                                        <input type="checkbox" name="filter_category" id="${cat}"  value="${cat}"><label for="${cat}"><c:out value="${fn:substring(cat, 2, fn:length(cat)-2)}"/>.com </label>	
+                                        <input type="checkbox" name="filter_category" id="${cat}"  value="${cat}"><label for="${cat}"><c:out value="${fn:substring(cat, 2, fn:length(cat)-2)}"/> </label>	
 
                                     </div>
                                 </c:forEach> 
