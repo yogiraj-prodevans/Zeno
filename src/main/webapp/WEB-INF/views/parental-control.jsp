@@ -158,14 +158,14 @@
     }
     .plus_image{
         padding: 18px 18px;
-        background-image: url('/zeno/img/icons/plus_blue.png') !important;
+        background-image: url('/zeno/img/icons/Plus_blue_1.png') !important;
         background-size: 28px !important;
         background-repeat: no-repeat !important;
         cursor: pointer;
     }
     .minus_image{
         padding: 18px 18px;
-        background-image: url('/zeno/img/icons/minus.png') !important;
+        background-image: url('/zeno/img/icons/Minus_Blue.png') !important;
         background-size: 28px !important;
         background-repeat: no-repeat !important;
         cursor: pointer;
