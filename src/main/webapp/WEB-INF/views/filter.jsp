@@ -476,7 +476,7 @@
             </div>
             <div id="Custom" class="tab-pane fade row">
                 <div class="category_box ">
-                    <div style="height:268px ; overflow-x: auto;">   
+                     
 
                         <div class="row  ">
                             <form:form  action="update-patterns" modelAttribute="CategoryListDetails" method="post" >
@@ -507,10 +507,11 @@
                             </form:form>
 
                         </div>
+                    <div style="height:200px ; overflow-x: auto;">  
                         <form:form action="delete-patterns" modelAttribute="CategoryListDetails" method="post" >
 
                             <div class="row">
-                                <p class="font-h4">Key in specific URLs you want to block to curate your network. </p>
+                                <p class="font-h4 " style="padding-bottom: 15px">Key in specific URLs you want to block to curate your network.  </p>
                                 <c:forEach items="${CAT.getFilter_pattern()}" var="cat">
                                     <div class="col-md-6 col-sm-6 border text-justify">
 
