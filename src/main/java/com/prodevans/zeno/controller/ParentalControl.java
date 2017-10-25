@@ -68,6 +68,9 @@ public class ParentalControl {
         //Error messages from the Advance filtering...
         model.addAttribute("error", session.getAttribute("error") == null ? "" : session.getAttribute("error").toString());
         session.removeAttribute("error");
+        
+        model.addAttribute("uodateURLError", session.getAttribute("uodateURLError") == null ? "" : session.getAttribute("uodateURLError").toString());
+        session.removeAttribute("uodateURLError");
 
         //Error messages form the scheduling
         model.addAttribute("msg", session.getAttribute("msg") == null ? "" : session.getAttribute("msg").toString());
