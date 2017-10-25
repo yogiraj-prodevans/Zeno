@@ -387,18 +387,43 @@
                     <span id="schedule" style="font-size: 24px;">SCHEDULE</span> <span id="schedule_images" class="plus_image" style="float: right; " data-toggle="collapse" href="#collapse1"></span>
                 </div>
             </div>
-            <div id="collapse1" class="panel-collapse collapsing ">
+            <div id="collapse1" class="panel-collapse collapse in " aria-expanded="true" <c:choose><c:when test="${not empty day_msg || not empty date_msg || not empty time_msg}">style="display: block;"</c:when><c:otherwise>style="display: none;"</c:otherwise> </c:choose>  >
                 <div class="panel-body">
                     <ul class="nav nav-tabs  margin-top-10">
-                        <li class=" active"><a id="time-tab-name" data-toggle="tab" href="#time-tab">HOURS</a></li>
+                        <c:choose>
+                            <c:when test="${not empty time_msg }">
+                                <li class=" active"><a id="time-tab-name" data-toggle="tab" href="#time-tab">HOURS</a></li>
+                        <li class=" "><a id="day-tab-name" data-toggle="tab" href="#date-tab"  >DAYS</a></li>
+                        <li class=" "><a id="dates-tab-name" data-toggle="tab" href="#dates-tab" >DATES</a></li>
+                    
+                            
+                            </c:when>
+                            <c:when test="${not empty day_msg }">
+                                <li class=" "><a id="time-tab-name" data-toggle="tab" href="#time-tab">HOURS</a></li>
+                        <li class="active "><a id="day-tab-name" data-toggle="tab" href="#date-tab"  >DAYS</a></li>
+                        <li class=" "><a id="dates-tab-name" data-toggle="tab" href="#dates-tab" >DATES</a></li>
+
+                            </c:when>
+                            <c:when test="${not empty date_msg }">
+                                <li class=" "><a id="time-tab-name" data-toggle="tab" href="#time-tab">HOURS</a></li>
+                        <li class=" "><a id="day-tab-name" data-toggle="tab" href="#date-tab"  >DAYS</a></li>
+                        <li class="active "><a id="dates-tab-name" data-toggle="tab" href="#dates-tab" >DATES</a></li>
+
+                            </c:when>
+                            <c:otherwise >
+                                <li class=" active"><a id="time-tab-name" data-toggle="tab" href="#time-tab">HOURS</a></li>
                         <li class=" "><a id="day-tab-name" data-toggle="tab" href="#date-tab"  >DAYS</a></li>
                         <li class=" "><a id="dates-tab-name" data-toggle="tab" href="#dates-tab" >DATES</a></li>
 
+                            </c:otherwise>
+                        </c:choose>
+                        
+                        
                     </ul>
 
 
                     <div class="tab-content">
-                        <div id="time-tab" class="tab-pane fade in active row ">
+                        <div id="time-tab" class="tab-pane fade <c:if test="${ empty day_msg && empty date_msg }"> in active</c:if> row ">
                             <form:form action="time-schedule" modelAttribute="ScheduleDetails"   method="post"  >
                                 <div class="category_box">
                                     <p class="font-h4">During a day, when do you want your Surf Safe controls to be active? Choose a time slot.</p>
@@ -440,7 +465,7 @@
                                 </div>
                             </form:form> 	
                         </div>
-                        <div id="date-tab" class="tab-pane fade row ">
+                        <div id="date-tab" class="tab-pane fade row <c:if test="${not empty day_msg }"> in active</c:if> ">
                             <form:form action="days-schedule" modelAttribute="ScheduleDetails"  method="post" >
                                 <div class="category_box">
                                     <p class="font-h4">Should your Surf Safe controls be active only on certain days? Choose days of the week.</p>
@@ -507,7 +532,7 @@
                                 </div>
                             </form:form> 	
                         </div>
-                        <div id="dates-tab" class="tab-pane fade ">
+                        <div id="dates-tab" class="tab-pane fade <c:if test="${not empty date_msg }"> in active</c:if> ">
                             <div class="category_box ">
 
                                 <p class="font-h4">Want to active Advance/Custom Surf Safe for a specific period? Choose Dates. </p>

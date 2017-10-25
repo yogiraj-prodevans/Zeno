@@ -400,15 +400,40 @@
 
 
         <ul class="nav nav-tabs  margin-top-20">
-            <li class=" active"><a id="advance-filter" data-toggle="tab" href="#Allowed">ADVANCED</a></li>
-            <li class=" "><a id="block-filter" data-toggle="tab" href="#Blocked"  >BLOCKED</a></li>
-            <li class=" "><a id="custom-filter" data-toggle="tab" href="#Custom" >CUSTOM</a></li>
+            <c:choose>
+                <c:when test="${not empty advanced_error }">
+                    <li class=" active"><a id="advance-filter" data-toggle="tab" href="#Allowed">ADVANCED</a></li>
+                    <li class=" "><a id="block-filter" data-toggle="tab" href="#Blocked"  >BLOCKED</a></li>
+                    <li class=" "><a id="custom-filter" data-toggle="tab" href="#Custom" >CUSTOM</a></li>
+                    <c:set var="default" value="active"></c:set>
+                    </c:when>
+                    <c:when test="${not empty blocked_error }">
+                    <li class=" "><a id="advance-filter" data-toggle="tab" href="#Allowed">ADVANCED</a></li>
+                    <li class=" active"><a id="block-filter" data-toggle="tab" href="#Blocked"  >BLOCKED</a></li>
+                    <li class=" "><a id="custom-filter" data-toggle="tab" href="#Custom" >CUSTOM</a></li>
+                       
+                    </c:when>
+                    <c:when test="${not empty update_url_error ||  not empty custom_error }">
+                    <li class=" "><a id="advance-filter" data-toggle="tab" href="#Allowed">ADVANCED</a></li>
+                    <li class=" "><a id="block-filter" data-toggle="tab" href="#Blocked"  >BLOCKED</a></li>
+                    <li class="active "><a id="custom-filter" data-toggle="tab" href="#Custom" >CUSTOM</a></li>
+                       
+                    </c:when>
+                    <c:otherwise>
+                    <li class=" active"><a id="advance-filter" data-toggle="tab" href="#Allowed">ADVANCED</a></li>
+                    <li class=" "><a id="block-filter" data-toggle="tab" href="#Blocked"  >BLOCKED</a></li>
+                    <li class=" "><a id="custom-filter" data-toggle="tab" href="#Custom" >CUSTOM</a></li>
+                        <c:set var="default"  value="active"></c:set>
+                    </c:otherwise>
+                </c:choose>
+
+
 
         </ul>
 
 
         <div class="tab-content">
-            <div id="Allowed" class="tab-pane fade in active row ">
+            <div id="Allowed" class="tab-pane fade  <c:if test="${ empty blocked_error && empty update_url_error && empty custom_error  }"> in active </c:if> row ">
                 <form:form action="allow-categories" modelAttribute="CategoryListDetails" method="post" >
                     <div class="category_box">
 
@@ -441,7 +466,7 @@
                     </div>
                 </form:form> 	
             </div>
-            <div id="Blocked" class="tab-pane fade row ">
+            <div id="Blocked" class="tab-pane fade row <c:if test="${not empty blocked_error }"> in active</c:if>">
                 <form:form action="block-categories" modelAttribute="CategoryListDetails" method="post" >
                     <div class="category_box">
 
@@ -474,39 +499,39 @@
                     </div>
                 </form:form> 	
             </div>
-            <div id="Custom" class="tab-pane fade row">
-                <div class="category_box ">
-                     
+            <div id="Custom" class="tab-pane fade row <c:if test="${not empty update_url_error || not empty custom_error }"> in active</c:if>">
+                    <div class="category_box ">
+
 
                         <div class="row  ">
-                            <form:form  action="update-patterns" modelAttribute="CategoryListDetails" method="post" >
-                                <div class=" row" >
-                                    <label for="url-block" class="col-md-5 text-justify font-h3" style="margin-right: -87px "title="Add the URL to be blocked" >Block specific websites.</label>
-                                    <div class="col-md-8" style="padding: unset;">
-                                        <input id="url_pattern" type="text" class="" style="width:100%; margin-top: 6px; font-size: 24px;" name="url_pattern" placeholder="www." pattern="[([^w]{3})]+([a-zA-Z]*)+[.]" required="required" >
-                                    </div>
+                        <form:form  action="update-patterns" modelAttribute="CategoryListDetails" method="post" >
+                            <div class=" row" >
+                                <label for="url-block" class="col-md-5 text-justify font-h3" style="margin-right: -87px "title="Add the URL to be blocked" >Block specific websites.</label>
+                                <div class="col-md-8" style="padding: unset;">
+                                    <input id="url_pattern" type="text" class="" style="width:100%; margin-top: 6px; font-size: 24px;" name="url_pattern" placeholder="www." pattern="[([^w]{3})]+([a-zA-Z]*)+[.]" required="required" >
                                 </div>
-                                <form:hidden path="filter_pattern" />
-                                <form:hidden path="remove_filter_pattern" />
-                                <div class="row " >
+                            </div>
+                            <form:hidden path="filter_pattern" />
+                            <form:hidden path="remove_filter_pattern" />
+                            <div class="row " >
 
-                                    <div class="col-md-6"></div>
-                                    <div class="col-md-4 text-right">
-                                        <c:if test="${not empty update_url_error }">
-                                            <h4 style="color:red;margin-top: 5%;">
-                                                <span class="glyphicon glyphicon-alert"></span>
-                                                <c:out value="${update_url_error }"></c:out>
-                                                <c:set var="uodateURLError" value="" />
-                                            </h4>
-                                        </c:if>
-                                    </div>
-                                    <div class="col-md-2 text-right">
-                                        <button id="customBlock" type="submit" class="btn billButton ">BLOCK</button>
-                                    </div>
+                                <div class="col-md-6"></div>
+                                <div class="col-md-4 text-right">
+                                    <c:if test="${not empty update_url_error }">
+                                        <h4 style="color:red;margin-top: 5%;">
+                                            <span class="glyphicon glyphicon-alert"></span>
+                                            <c:out value="${update_url_error }"></c:out>
+                                            <c:set var="uodateURLError" value="" />
+                                        </h4>
+                                    </c:if>
                                 </div>
-                            </form:form>
+                                <div class="col-md-2 text-right">
+                                    <button id="customBlock" type="submit" class="btn billButton ">BLOCK</button>
+                                </div>
+                            </div>
+                        </form:form>
 
-                        </div>
+                    </div>
                     <div style="height:200px ; overflow-x: auto;">  
                         <form:form action="delete-patterns" modelAttribute="CategoryListDetails" method="post" >
 
@@ -581,26 +606,38 @@
     <script type="text/javascript" src="${pageContext.request.contextPath}/plugins/jquery.min.js" charset="UTF-8"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-            var schedule_counter = 0;
+            var schedule_counter = 1;
+            <c:if test="${not empty day_msg || not empty date_msg || not empty time_msg}">
+                  if (schedule_counter == 1) {
+                    $("#schedule_images").removeClass("plus_image");
+                    $("#schedule_images").addClass("minus_image");
+//                    $('html, body').stop().animate({
+//                    scrollTop: $("#div1").offset().top
+//                }, 2000);
+                    location.href = "#schedule_images";
+                    schedule_counter = 2;
+                }  
+    
+            </c:if>
+            
             $(".close").click(function () {
                 $("#myAlert").slideUp();
             });
             $("#schedule_images").click(function () {
-                if(schedule_counter == 0){
-                     $("#schedule_images").removeClass("plus_image");
-                    $("#schedule_images").addClass("minus_image");
-                     schedule_counter =2;
-                }
-                else if (schedule_counter == 1) {
+                if (schedule_counter == 0) {
                     $("#schedule_images").removeClass("plus_image");
                     $("#schedule_images").addClass("minus_image");
-                     $("#collapse1").toggle();
-                    schedule_counter =2;
+                    schedule_counter = 2;
+                } else if (schedule_counter == 1) {
+                    $("#schedule_images").removeClass("plus_image");
+                    $("#schedule_images").addClass("minus_image");
+                    $("#collapse1").toggle();
+                    schedule_counter = 2;
                 } else {
                     $("#schedule_images").removeClass("minus_image");
                     $("#schedule_images").addClass("plus_image");
-                     $("#collapse1").toggle();
-                    schedule_counter =1;
+                    $("#collapse1").toggle();
+                    schedule_counter = 1;
                 }
             });
         });
