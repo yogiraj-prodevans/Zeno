@@ -246,12 +246,26 @@ public class ParentalControl {
         if (session.getAttribute("user") == null) {
             return "redirect:/logout";
         } else {
+            Pattern pattern = null;
 
-            Pattern pattern = Pattern.compile("[([^w]{3})]+([a-zA-Z]*)+[.]");
-            Matcher matcher = pattern.matcher(selected_filter_category);
-            matcher.find();
+			if (Pattern.compile("[w]{3}[.][a-zA-Z]+[.][a-zA-Z]+[.][a-zA-Z]+").matcher(selected_filter_category).find()) {
+				pattern = Pattern.compile("[w]{3}[.][a-zA-Z]+[.][a-zA-Z]+[.][a-zA-Z]+");
+			} else if (Pattern.compile("[w]{3}[.][a-zA-Z]+[.][a-zA-Z]+").matcher(selected_filter_category).find()) {
+				pattern = Pattern.compile("[w]{3}[.][a-zA-Z]+[.][a-zA-Z]+");
+			} else if (Pattern.compile("[h][t]{2}[p][s]{0,1}[:][/]{2}[a-zA-Z]+[.][a-zA-Z]+[.][a-zA-Z]+").matcher(selected_filter_category)
+					.find()) {
+				pattern = Pattern.compile("[h][t]{2}[p][s]{0,1}[:][/]{2}[a-zA-Z]+[.][a-zA-Z]+[.][a-zA-Z]+");
+			} else if (Pattern.compile("[h][t]{2}[p][s]{0,1}[:][/]{2}[a-zA-Z]+[.][a-zA-Z]+").matcher(selected_filter_category).find()) {
+				pattern = Pattern.compile("[h][t]{2}[p][s]{0,1}[:][/]{2}[a-zA-Z]+[.][a-zA-Z]+");
+			}
+
+            
+           
+           
             try {
-                selected_filter_category = matcher.group().replaceAll("\\s+", "").substring(1, matcher.group().length() - 1);
+                 Matcher matcher = pattern.matcher(selected_filter_category);
+            matcher.find();
+                selected_filter_category = matcher.group().replaceAll("\\s+", "").substring(0, matcher.group().length());
                 categoryList.getRemove_filter_pattern().add(".*" + selected_filter_category + ".*");
 
                 //fetching the user details from the session.
