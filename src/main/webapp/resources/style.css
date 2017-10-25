@@ -172,6 +172,9 @@
 	margin-right: 3%;
 }
 
+.nav-tabs {
+    border-color: #FFF; 
+}
 .billPaymentImage {
 	background-image: url('img/blue_small.png');
 	background-repeat: no-repeat;

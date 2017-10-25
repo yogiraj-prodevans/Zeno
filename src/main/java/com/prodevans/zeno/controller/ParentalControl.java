@@ -75,6 +75,37 @@ public class ParentalControl {
         //Error messages form the scheduling
         model.addAttribute("msg", session.getAttribute("msg") == null ? "" : session.getAttribute("msg").toString());
         session.removeAttribute("msg");
+        
+        
+        //Error messages form the Advanced Tab
+        model.addAttribute("advanced_error", session.getAttribute("advanced_error") == null ? "" : session.getAttribute("advanced_error").toString());
+        session.removeAttribute("advanced_error");
+        
+         //Error messages form the Blocked Tab
+        model.addAttribute("blocked_error", session.getAttribute("blocked_error") == null ? "" : session.getAttribute("blocked_error").toString());
+        session.removeAttribute("blocked_error");
+        
+        //Error messages form the Custom Tab unblock website
+        model.addAttribute("custom_error", session.getAttribute("custom_error") == null ? "" : session.getAttribute("custom_error").toString());
+        session.removeAttribute("custom_error");
+        
+        //Error messages form the Custom Tab block website
+        model.addAttribute("update_url_error", session.getAttribute("update_url_error") == null ? "" : session.getAttribute("update_url_error").toString());
+        session.removeAttribute("update_url_error");
+        
+         //Error messages form the Time Scheduling
+        model.addAttribute("time_msg", session.getAttribute("time_msg") == null ? "" : session.getAttribute("time_msg").toString());
+        session.removeAttribute("time_msg");
+        
+         //Error messages form the Day Scheduling
+        model.addAttribute("day_msg", session.getAttribute("day_msg") == null ? "" : session.getAttribute("day_msg").toString());
+        session.removeAttribute("day_msg");
+        
+         //Error messages form the Date Scheduling
+        model.addAttribute("date_msg", session.getAttribute("date_msg") == null ? "" : session.getAttribute("date_msg").toString());
+        session.removeAttribute("date_msg");
+        
+        
         CategoryList list = new CategoryList();
         if (session.getAttribute("user") == null) {
             return new ModelAndView("redirect:logout");
@@ -135,7 +166,7 @@ public class ParentalControl {
         } else {
 
             if (category_allowed == null) {
-                session.setAttribute("error", "Select Category and hit BLOCK.");
+                session.setAttribute("advanced_error", "Select Category and hit BLOCK.");
                 return "redirect:/control";
             }
             categoryList.getBlocked_catogery().addAll(category_allowed);
@@ -148,9 +179,9 @@ public class ParentalControl {
             SessionDetails user = (SessionDetails) session.getAttribute("user");
 
             if (categoryimpl.updateCategoryList(categoryList.getBlocked_catogery(), categoryList.getAllowded_catogery(), user.getDomid(), user.getActid(), "update_block")) {
-                session.setAttribute("error", "Done! The chosen Category is now blocked.");
+                session.setAttribute("advanced_error", "Done! The chosen Category is now blocked.");
             } else {
-                session.setAttribute("error", "Oops! Category blocking failed. Please try again.");
+                session.setAttribute("advanced_error", "Oops! Category blocking failed. Please try again.");
 
             }
 
@@ -164,7 +195,7 @@ public class ParentalControl {
             return "redirect:/logout";
         } else {
             if (category_allowed == null) {
-                session.setAttribute("error", "Select Category to UNBLOCK.");
+                session.setAttribute("blocked_error", "Select Category to UNBLOCK.");
                 return "redirect:/control";
             }
             categoryList.getBlocked_catogery().removeAll(category_allowed);
@@ -177,9 +208,9 @@ public class ParentalControl {
             SessionDetails user = (SessionDetails) session.getAttribute("user");
 
             if (categoryimpl.updateCategoryList(categoryList.getBlocked_catogery(), categoryList.getAllowded_catogery(), user.getDomid(), user.getActid(), "update_allow")) {
-                session.setAttribute("error", "Done! Category successfully unblocked.");
+                session.setAttribute("blocked_error", "Done! Category successfully unblocked.");
             } else {
-                session.setAttribute("error", "Oops! Category unblocking failed. Please try again. ");
+                session.setAttribute("blocked_error", "Oops! Category unblocking failed. Please try again. ");
             }
 
             return "redirect:/control";
@@ -194,7 +225,7 @@ public class ParentalControl {
         } else {
 
             if (selected_filter_category == null) {
-                session.setAttribute("error", "Select the URL you want to unblock.");
+                session.setAttribute("custom_error", "Select the URL you want to unblock.");
 
                 return "redirect:/control";
             }
@@ -203,9 +234,9 @@ public class ParentalControl {
             //fetching the user details from the session.
             SessionDetails user = (SessionDetails) session.getAttribute("user");
             if (categoryimpl.updateFilterPattern(categoryList.getRemove_filter_pattern(), user.getDomid(), user.getActid() + RestConfig.ADVANCED_FILTER)) {
-                session.setAttribute("error", "Done! URL successfully unblocked.");
+                session.setAttribute("custom_error", "Done! URL successfully unblocked.");
             } else {
-                session.setAttribute("error", "Oops! URL unblocking failed. Please try again.");
+                session.setAttribute("custom_error", "Oops! URL unblocking failed. Please try again.");
             }
 
             return "redirect:/control";
@@ -229,13 +260,13 @@ public class ParentalControl {
                 //fetching the user details from the session.
                 SessionDetails user = (SessionDetails) session.getAttribute("user");
                 if (categoryimpl.updateFilterPattern(categoryList.getRemove_filter_pattern(), user.getDomid(), user.getActid() + RestConfig.ADVANCED_FILTER)) {
-                    session.setAttribute("uodateURLError", "Done! The chosen URL is now blocked.");
+                    session.setAttribute("update_url_error", "Done! The chosen URL is now blocked.");
                 } else {
-                    session.setAttribute("uodateURLError", "Oops! URL blocking failed. Please try again.");
+                    session.setAttribute("update_url_error", "Oops! URL blocking failed. Please try again.");
                 }
             } catch (Exception e) {
                 logger.error("Error : " + e.getMessage());
-                session.setAttribute("uodateURLError", "Type out the URL to block a website.");
+                session.setAttribute("update_url_error", "Type out the URL to block a website.");
             }
 
             return "redirect:/control";
