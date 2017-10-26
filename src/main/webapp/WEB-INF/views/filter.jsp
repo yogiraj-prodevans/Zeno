@@ -41,7 +41,7 @@
         <!--  include the all css components -->
         <jsp:include page="component/css.jsp"></jsp:include>
             <style>
-                input[type="url"]#url_pattern {
+                input[type="text"]#url_pattern {
                     width: 100% !important;
                     padding: 10px;
                     height: 45px;
@@ -508,7 +508,7 @@
                             <div class=" row" >
                                 <label for="url-block" class="col-md-5 text-justify font-h3" style="margin-right: -87px "title="Add the URL to be blocked" >Block specific websites.</label>
                                 <div class="col-md-8" style="padding: unset;">
-                                    <input id="url_pattern" type="url" class="" style="width:100%; margin-top: 6px; font-size: 24px;" name="url_pattern" placeholder="www.example.com" pattern="[([^w]{3})]+([a-zA-Z]*)+[.]" required="required" >
+                                    <input id="url_pattern" type="text" class="" style="width:100%; margin-top: 6px; font-size: 24px;" name="url_pattern" placeholder="www.example.com" pattern="[([^w]{3})]+([a-zA-Z]*)+[.]" required="required" >
                                 </div>
                             </div>
                             <form:hidden path="filter_pattern" />
