@@ -251,15 +251,17 @@ public class ParentalControl {
         } else {
             Pattern pattern = null;
 
-			if (Pattern.compile("[w]{3}[.][a-zA-Z]+[.][a-zA-Z]+[.][a-zA-Z]+").matcher(selected_filter_category).find()) {
-				pattern = Pattern.compile("[w]{3}[.][a-zA-Z]+[.][a-zA-Z]+[.][a-zA-Z]+");
-			} else if (Pattern.compile("[w]{3}[.][a-zA-Z]+[.][a-zA-Z]+").matcher(selected_filter_category).find()) {
-				pattern = Pattern.compile("[w]{3}[.][a-zA-Z]+[.][a-zA-Z]+");
-			} else if (Pattern.compile("[h][t]{2}[p][s]{0,1}[:][/]{2}[a-zA-Z]+[.][a-zA-Z]+[.][a-zA-Z]+").matcher(selected_filter_category)
+			if (Pattern.compile("[w]{3}[.][\\w]+[.][a-zA-Z]+[.][a-zA-Z]+").matcher(selected_filter_category).find()) {
+				pattern = Pattern.compile("[w]{3}[.][\\w]+[.][a-zA-Z]+[.][a-zA-Z]+");
+			} else if (Pattern.compile("[w]{3}[.][\\w]+[.][a-zA-Z]+").matcher(selected_filter_category).find()) {
+				pattern = Pattern.compile("[w]{3}[.][\\w]+[.][a-zA-Z]+");
+			} else if (Pattern.compile("[h][t]{2}[p][s]{0,1}[:][/]{2}[\\w]+[.][a-zA-Z]+[.][a-zA-Z]+").matcher(selected_filter_category)
 					.find()) {
-				pattern = Pattern.compile("[h][t]{2}[p][s]{0,1}[:][/]{2}[a-zA-Z]+[.][a-zA-Z]+[.][a-zA-Z]+");
-			} else if (Pattern.compile("[h][t]{2}[p][s]{0,1}[:][/]{2}[a-zA-Z]+[.][a-zA-Z]+").matcher(selected_filter_category).find()) {
-				pattern = Pattern.compile("[h][t]{2}[p][s]{0,1}[:][/]{2}[a-zA-Z]+[.][a-zA-Z]+");
+				pattern = Pattern.compile("[\\w]+[.][a-zA-Z]+[.][a-zA-Z]+");
+			} else if (Pattern.compile("[h][t]{2}[p][s]{0,1}[:][/]{2}[\\w]+[.][a-zA-Z]+").matcher(selected_filter_category).find()) {
+				pattern = Pattern.compile("[\\w]+[.][a-zA-Z]+");
+			}else if (Pattern.compile("[h][t]{2}[p][s]{0,1}[:][/]{2}[\\d]{1,3}[\\W][\\d]{1,3}[\\W][\\d]{1,3}[\\W][\\d]{1,3}[/]{0,1}[a-zA-Z]*").matcher(selected_filter_category).find()) {
+				pattern = Pattern.compile("[\\d]{1,3}[\\W][\\d]{1,3}[\\W][\\d]{1,3}[\\W][\\d]{1,3}");
 			}
 
             
