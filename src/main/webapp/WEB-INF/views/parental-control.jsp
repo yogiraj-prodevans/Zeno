@@ -459,7 +459,7 @@
                                         </div>
                                         <div class="col-md-2 text-right">
 
-                                            <button id="block" class="btn billButton font-h3" type="submit">SUBMIT</button>
+                                            <button id="time_block" class="btn billButton font-h3" type="submit">SUBMIT</button>
                                         </div>
                                     </div>
                                 </div>
@@ -525,7 +525,7 @@
                                         <div class="col-md-2 text-right">
 
 
-                                            <button id="block" class="btn billButton" type="submit">SUBMIT</button>
+                                            <button id="days_block" class="btn billButton" type="submit">SUBMIT</button>
 
                                         </div>
                                     </div>
@@ -594,7 +594,7 @@
                                             <div class="col-md-2 text-right">
 
 
-                                                <button id="block" class="btn billButton"  type="submit">SUBMIT</button>
+                                                <button id="dates_block" class="btn billButton"  type="submit">SUBMIT</button>
 
                                             </div>
                                         </div>
