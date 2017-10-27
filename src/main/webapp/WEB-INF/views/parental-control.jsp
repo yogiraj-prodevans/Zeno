@@ -1,9 +1,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
-<!--<!DOCTYPE html >
+<!DOCTYPE html >
 <html>
-    <head>-->
+    <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Parental Control</title>
 <%-- Including the css style sheets--%>
@@ -332,8 +332,8 @@
         -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
     }
 </style>
-<!--    </head>
-    <body class="corporate" style="font-family: Roboto;">-->
+</head>
+    <body class="corporate" style="font-family: Roboto;">
 <!-- BEGIN HEADER -->
 <!--        <div class="header">
             <div class="row">
@@ -431,7 +431,7 @@
                                         <div class="form-group col-md-6">
                                             <label for="time-ip-start" class="col-md-3 control-label"> Start Time</label>
                                             <div class="input-group date  col-md-7" data-date="" data-date-format="hh:ii" data-link-field="time-ip-start" data-link-format="hh:ii">
-                                                <input name="time_start_time" class="form-control form_time" id="time-ip-start" size="16" type="text" value="" >
+                                                <input name="time_start_time" class="form-control form_time" id="time-ip-start" size="16" type="text" value="" required="required" >
                                                 <span class="input-group-addon"><span class="time_image form_time "  data-link-field="time-ip-start" data-link-format="hh:ii" data-date-format="hh:ii" ></span></span>
                                             </div>
 
@@ -439,7 +439,7 @@
                                         <div class="form-group col-md-6">
                                             <label for="time-ip-end" class="col-md-3 control-label"> End Time</label>
                                             <div class="input-group date  col-md-7"  data-date=""  >
-                                                <input name="time_end_time"  class="form-control form_time" id="time-ip-end" size="16" type="text"  value="" >
+                                                <input name="time_end_time"  class="form-control form_time" id="time-ip-end" size="16" type="text"  value="" required="required" >
 
                                                 <span class="input-group-addon"><span class="time_image form_time" data-date-format="hh:ii" data-link-field="time-ip-end"  data-link-format="hh:ii"></span></span>
                                             </div>
@@ -473,7 +473,7 @@
                                         <div class="form-group col-md-6">
                                             <label for="day-time-start" class="col-md-3 control-label">Start Time</label>
                                             <div class="input-group date  col-md-7" data-date="" >
-                                                <input name="days_start_time" class="form-control form_time"  id="day-time-start" size="16" type="text" value="" readonly>
+                                                <input name="days_start_time" class="form-control form_time"  id="day-time-start" size="16" type="text" value="" required="required" >
 
                                                 <span class="input-group-addon"><span class="time_image form_time" data-date-format="hh:ii" data-link-field="day-time-start" data-link-format="hh:ii"></span></span>
                                             </div>
@@ -482,7 +482,7 @@
                                         <div class="form-group col-md-6">
                                             <label for="day-time-end" class="col-md-3 control-label">End Time</label>
                                             <div class="input-group date  col-md-7" data-date="" >
-                                                <input name="days_end_time" class="form-control form_time" id="day-time-end" size="16" type="text" value="" readonly>
+                                                <input name="days_end_time" class="form-control form_time" id="day-time-end" size="16" type="text" value="" required="required" >
 
                                                 <span class="input-group-addon"><span class="time_image form_time" data-date-format="hh:ii" data-link-field="day-time-end" data-link-format="hh:ii"></span></span>
                                             </div>
@@ -544,7 +544,7 @@
                                             <div class="form-group col-md-6">
                                                 <label for="date-time-start" class="col-md-3 control-label">Start Time</label>
                                                 <div class="input-group date  col-md-7" data-date="" >
-                                                    <input name="dates_start_time" class="form-control form_time" id="date-time-start" size="16" type="text" value=""  readonly>
+                                                    <input name="dates_start_time" class="form-control form_time" id="date-time-start" size="16" type="text" value=""  required="required" >
 
                                                     <span class="input-group-addon"><span class="time_image form_time" data-date-format="hh:ii" data-link-field="date-time-start" data-link-format="hh:ii"></span></span>
                                                 </div>
@@ -553,7 +553,7 @@
                                             <div class="form-group col-md-6">
                                                 <label for="date-time-end" class="col-md-3 control-label">End Time</label>
                                                 <div class="input-group date  col-md-7" data-date="" >
-                                                    <input  name="dates_end_time" class="form-control form_time" id="date-time-end" size="16" type="text" value=""   readonly>
+                                                    <input  name="dates_end_time" class="form-control form_time" id="date-time-end" size="16" type="text" value=""   required="required" >
 
                                                     <span class="input-group-addon"><span class="time_image form_time" data-date-format="hh:ii" data-link-field="date-time-end" data-link-format="hh:ii"></span></span>
                                                 </div>
@@ -564,7 +564,7 @@
                                             <div class="form-group col-md-6">
                                                 <label for="date-time-end" class="col-md-3 control-label">Start Date</label>
                                                 <div class="input-group date  col-md-7" data-date="" >
-                                                    <input name="dates_start_date"  class="form-control form_date" id="date-start" size="16" type="text" value="" readonly>
+                                                    <input name="dates_start_date"  class="form-control form_date" id="date-start" size="16" type="text" value="" required="required" >
 
                                                     <span class="input-group-addon"><span class="date_image form_date" data-date-format="dd MM yyyy" data-link-field="date-start" data-link-format="yyyy/mm/dd"></span></span>
                                                 </div>
@@ -573,7 +573,7 @@
                                             <div class="form-group col-md-6">
                                                 <label for="date-time-end" class="col-md-3 control-label">End Date</label>
                                                 <div class="input-group date  col-md-7" data-date="" >
-                                                    <input name="dates_end_date" class="form-control form_date" id="date-end" size="16" type="text" value="" readonly>
+                                                    <input name="dates_end_date" class="form-control form_date" id="date-end" size="16" type="text" value="" required="required" >
 
                                                     <span class="input-group-addon"><span class="date_image form_date" data-date-format="dd MM yyyy" data-link-field="date-end" data-link-format="yyyy/mm/dd"></span></span>
                                                 </div>
@@ -710,5 +710,5 @@ charset="UTF-8"></script>
 //                });
     });
 </script>
-<!--    </body>
-</html>-->
+ </body>
+</html>

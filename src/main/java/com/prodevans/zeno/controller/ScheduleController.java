@@ -60,6 +60,13 @@ public class ScheduleController {
             String time = start_time.trim() + "-" + end_time.trim();
             System.out.print("Time : " + time);
 
+            if(days_days_checkbox == null)
+            {
+            	logger.info("User has not selected days..");
+                session.setAttribute("day_msg", "Oops! You have not selected days.");
+                return "redirect:control";
+            }
+            
             for (String string : days_days_checkbox) {
                 System.out.println("Days : " + string);
             }
