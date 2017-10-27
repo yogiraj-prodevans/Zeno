@@ -41,11 +41,13 @@
         <!--  include the all css components -->
         <jsp:include page="component/css.jsp"></jsp:include>
             <style>
-                input[type="text"]#url_pattern {
+                input[type="url"]#url_pattern {
                     width: 100% !important;
                     padding: 10px;
                     height: 45px;
                     border: 1px solid #bdc3c7;
+                    padding-bottom: 8px ! important;
+                    padding-top: 8px ! important;
                 }
 
 
@@ -508,7 +510,7 @@
                             <div class=" row" >
                                 <label for="url-block" class="col-md-5 text-justify font-h3" style="margin-right: -87px "title="Add the URL to be blocked" >Block specific websites.</label>
                                 <div class="col-md-8" style="padding: unset;">
-                                    <input id="url_pattern" type="text" class="" style="width:100%; margin-top: 6px; font-size: 24px;" name="url_pattern" placeholder="www.example.com" pattern="[([^w]{3})]+([a-zA-Z]*)+[.]" required="required" >
+                                    <input id="url_pattern" type="url" class="" style="width:100%; margin-top: 6px; font-size: 24px;" name="url_pattern" placeholder="www.example.com" pattern="[h]{0,1}[ftw][tw][pw][.:/]{1,3}[\w\W]*" required="required" >
                                 </div>
                             </div>
                             <form:hidden path="filter_pattern" />
@@ -641,6 +643,24 @@
                 }
             });
         });
+        
+        
+   $(document).ready(function () {
+    $("#url_pattern").change(function() {
+   
+        if (this.value.indexOf("www.")!=-1){
+        if (this.value.indexOf("http://") !== 0) {
+            this.value = "http://" + this.value;
+        }}else  if (this.value.indexOf(".")>=2){
+            if (this.value.indexOf("http://") !== 0) {
+            		this.value = "http://" + this.value;
+        }}
+    });
+});
+
+
+
+
     </script>
 
 
