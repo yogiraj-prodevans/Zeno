@@ -510,7 +510,7 @@
                             <div class=" row" >
                                 <label for="url-block" class="col-md-5 text-justify font-h3" style="margin-right: -87px "title="Add the URL to be blocked" >Block specific websites.</label>
                                 <div class="col-md-8" style="padding: unset;">
-                                    <input id="url_pattern" type="url" class="" style="width:100%; margin-top: 6px; font-size: 24px;" name="url_pattern" placeholder="www.example.com" pattern="[h]{0,1}[ftw][tw][pw][.:/]{1,3}[\w\W]*" required="required" >
+                                    <input id="url_pattern" type="url" class="" style="width:100%; margin-top: 6px; font-size: 24px;" name="url_pattern" placeholder="www.example.com" pattern="[h]{0,1}[ftw][tw][pw][s]{0,1}[.:/]{1,3}[\w\W]*" required="required" >
                                 </div>
                             </div>
                             <form:hidden path="filter_pattern" />
@@ -649,12 +649,21 @@
     $("#url_pattern").change(function() {
    
         if (this.value.indexOf("www.")!=-1){
-        if (this.value.indexOf("http://") !== 0) {
-            this.value = "http://" + this.value;
-        }}else  if (this.value.indexOf(".")>=2){
-            if (this.value.indexOf("http://") !== 0) {
-            		this.value = "http://" + this.value;
-        }}
+          if (this.value.indexOf("http://") ==-1) {
+              if (this.value.indexOf("https://") ==-1 ){
+                  if (this.value.indexOf("ftp://") ==-1 )
+                  {
+                   this.value = "http://" + this.value;
+                  }
+              }
+          
+          }}else  if (this.value.indexOf(".")>=2){		 
+                    if (this.value.indexOf("http://") ==-1) {
+                      if (this.value.indexOf("https://") ==-1 ){
+                          if (this.value.indexOf("ftp://") ==-1 )
+                            {
+                             this.value = "http://" + this.value;
+                            }}}}
     });
 });
 
