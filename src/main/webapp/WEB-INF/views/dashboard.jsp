@@ -161,6 +161,58 @@
                 chart.draw(data, options);
             }
     </script>
+    
+    <script type="text/javascript">
+    
+    	/*
+	    function addVoteUpClass() 
+	    {
+	    	jQuery(".sampleClass").css({"width":"80%", "height":"89%", "top":"40px", "color":"red"});
+	    		   
+	    }
+    	*/
+    	/*
+	    var succeed = false;
+
+	    $.ajax({
+	    async: false,
+	    url: "getStatus",
+	    success: function() {
+	         succeed = true;
+	    }});
+	    
+	    alert(succeed);
+	    */
+	    
+	   
+	    
+	    $(document).ready(function(){
+	    	
+		    	var	jsonData = $.ajax({
+		            url: "getStatus",
+		            dataType: "json",
+		            async: false		            
+		        });		
+		    	
+		    	if(jsonData)
+	    		{
+	    			alert("true");
+	    		}
+		    	else
+	    		{
+		    		alert("false");
+	    		}
+
+	    	});
+    	
+	    
+	    
+    </script>
+    
+    
+    
+    
+    
 </head>
 <body class="corporate" style="font-family: Roboto;">
     <!-- BEGIN HEADER -->
@@ -194,6 +246,10 @@
         <div class="col-md-8 col-sm-12 pt-20 pt-20M" style="background-color: #ecf0f1;min-height: 116px;">
             <div class="col-md-12">
                 <h1 style="color: black;" class="currentBillFontforiPhone5">Welcome ${user_details.getFirst_name() }, to your One8 page</h1>
+                
+                <p class="sampleClass">Parental Control</p>
+                
+                
             </div>
         </div>
     </div>
