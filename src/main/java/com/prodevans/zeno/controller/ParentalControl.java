@@ -116,7 +116,7 @@ public class ParentalControl {
                 String ip_address = (String) session.getAttribute("user_ip_address");
                 logger.error("ip address : " + ip_address);
 
-                boolean check_ip_result = REGISTER_PROCESS.checkRegistration(user.getActid(), user.getDomid().trim());
+                boolean check_ip_result = REGISTER_PROCESS.checkRegistration(user.getActid(), user.getDomid().trim(), ip_address);
                 if (check_ip_result) {
                     //Return the parental control status/Details.
                     //parentalControlDetails = PROTECTION_STATUS.getProtectionDetails(user.getActid(), user.getDomid().trim());
