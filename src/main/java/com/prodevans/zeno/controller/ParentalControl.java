@@ -252,9 +252,9 @@ public class ParentalControl {
             Pattern pattern = null;
 
 			if (Pattern.compile("[w]{3}[.][\\w]+[.][a-zA-Z]+[.][a-zA-Z]+").matcher(selected_filter_category).find()) {
-				pattern = Pattern.compile("[w]{3}[.][\\w]+[.][a-zA-Z]+[.][a-zA-Z]+");
+				pattern = Pattern.compile("[.][\\w]+[.][a-zA-Z]+[.][a-zA-Z]+");
 			} else if (Pattern.compile("[w]{3}[.][\\w]+[.][a-zA-Z]+").matcher(selected_filter_category).find()) {
-				pattern = Pattern.compile("[w]{3}[.][\\w]+[.][a-zA-Z]+");
+				pattern = Pattern.compile("[.][\\w]+[.][a-zA-Z]+");
 			} else if (Pattern.compile("[h][t]{2}[p][s]{0,1}[:][/]{2}[\\w]+[.][a-zA-Z]+[.][a-zA-Z]+").matcher(selected_filter_category)
 					.find()) {
 				pattern = Pattern.compile("[\\w]+[.][a-zA-Z]+[.][a-zA-Z]+");
@@ -270,9 +270,15 @@ public class ParentalControl {
             try {
                  Matcher matcher = pattern.matcher(selected_filter_category);
             matcher.find();
-                selected_filter_category = matcher.group().replaceAll("\\s+", "").substring(0, matcher.group().length());
-                categoryList.getRemove_filter_pattern().add(".*" + selected_filter_category + ".*");
-
+            selected_filter_category = matcher.group().replaceAll("\\s+", "").substring(0, matcher.group().length());
+               
+            System.out.println("output1:--"+selected_filter_category);
+                if(selected_filter_category.charAt(0)=='.')
+			selected_filter_category=selected_filter_category.substring(1);
+           
+                    System.out.println("output2:--"+selected_filter_category);
+           
+                 categoryList.getRemove_filter_pattern().add(".*" + selected_filter_category + ".*");    
                 //fetching the user details from the session.
                 SessionDetails user = (SessionDetails) session.getAttribute("user");
                 if (categoryimpl.updateFilterPattern(categoryList.getRemove_filter_pattern(), user.getDomid(), user.getActid() + RestConfig.ADVANCED_FILTER)) {

@@ -644,30 +644,30 @@
             });
         });
         
-        
+//    Start--    AutoComplete Function for URL box
    $(document).ready(function () {
     $("#url_pattern").change(function() {
    
-        if (this.value.indexOf("www.")!=-1){
-          if (this.value.indexOf("http://") ==-1) {
-              if (this.value.indexOf("https://") ==-1 ){
-                  if (this.value.indexOf("ftp://") ==-1 )
+        if (this.value.indexOf("www.")!==-1){
+          if (this.value.indexOf("http://") ===-1) {
+              if (this.value.indexOf("https://") ===-1 ){
+                  if (this.value.indexOf("ftp://") ===-1 )
                   {
                    this.value = "http://" + this.value;
                   }
               }
           
           }}else  if (this.value.indexOf(".")>=2){		 
-                    if (this.value.indexOf("http://") ==-1) {
-                      if (this.value.indexOf("https://") ==-1 ){
-                          if (this.value.indexOf("ftp://") ==-1 )
+                    if (this.value.indexOf("http://") ===-1) {
+                      if (this.value.indexOf("https://") ===-1 ){
+                          if (this.value.indexOf("ftp://") ===-1 )
                             {
                              this.value = "http://" + this.value;
                             }}}}
     });
 });
 
-
+//     End--   AutoComplete Function for URL box
 
 
     </script>
