@@ -111,6 +111,19 @@
                     min-height: 330px !important;
                 }
             }
+            
+            
+            #floating-light
+			{
+			    width: 55px;
+			    height: 55px;
+			    position: fixed;
+			    top: 75px;
+			    right : 6%;
+			    cursor: pointer;
+			}
+            
+            
 
         </style>
 
@@ -198,7 +211,12 @@
 		    	
 		    	if(response === "true")
 	    		{
+		    		document.getElementById("theImage").style.visibility = "visible";
 		    		jQuery(".sampleClass").css({"color":"red"});
+	    		}
+		    	else
+	    		{
+		    		document.getElementById("theImage").style.visibility = "hidden";
 	    		}
 
 	    	});
@@ -245,7 +263,10 @@
             <div class="col-md-12">
                 <h1 style="color: black;" class="currentBillFontforiPhone5">Welcome ${user_details.getFirst_name() }, to your One8 page</h1>
                 
-                <p class="sampleClass">Parental Control</p>
+                
+                	
+                
+                <!--  <p class="sampleClass">Parental Control</p> -->
                 
                 
             </div>
@@ -278,6 +299,16 @@
             </div>
         </div>
     </div>
+    
+    
+    <a href="${pageContext.request.contextPath }/control">
+		<div id="floating-light"> 		
+	    	<img id="theImage" alt="" src="img/light4.gif">
+	    </div>
+	</a>
+    
+    
+    
     <!-- included pop up -->
     <jsp:include page="component/pop-up.jsp"></jsp:include>
     <jsp:include page="component/footer.jsp"></jsp:include>
