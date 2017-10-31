@@ -190,17 +190,15 @@
 	    	
 		    	var	jsonData = $.ajax({
 		            url: "getStatus",
-		            dataType: "json",
+		            dataType: "text",
 		            async: false		            
 		        });		
+		    
+		    	var response = jsonData["responseText"];
 		    	
-		    	if(jsonData)
+		    	if(response === "true")
 	    		{
-	    			alert("true");
-	    		}
-		    	else
-	    		{
-		    		alert("false");
+		    		jQuery(".sampleClass").css({"color":"red"});
 	    		}
 
 	    	});

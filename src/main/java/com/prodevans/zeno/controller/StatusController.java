@@ -2,6 +2,7 @@ package com.prodevans.zeno.controller;
 
 import javax.servlet.http.HttpSession;
 
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,8 +25,11 @@ public class StatusController
 	
 	@RequestMapping(value = "/getStatus", method = RequestMethod.GET)
 	@ResponseBody
-	public boolean getStatus(HttpSession session) 
+	public String getStatus(HttpSession session) 
 	{
+		JSONObject returnJson = new JSONObject();
+		returnJson.put("ParentalStatus", true);
+		
 		CategoryList list = new CategoryList();
 		
         SessionDetails user = (SessionDetails) session.getAttribute("user");
@@ -37,12 +41,13 @@ public class StatusController
         if(list.getBlocked_catogery().isEmpty() && list.getFilter_pattern().isEmpty() )
         {
         	System.out.println("Returing value : "+false);
-        	return false;
+        	returnJson.put("ParentalStatus", false);
+        	return "false";
         }
         else
         {
         	System.out.println("Returing value : "+true);
-        	return true;
+        	return "true";
         }
         
 	}
