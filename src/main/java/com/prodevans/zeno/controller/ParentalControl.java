@@ -116,37 +116,44 @@ public class ParentalControl {
                 String ip_address = (String) session.getAttribute("user_ip_address");
                 logger.error("ip address : " + ip_address);
 
-                boolean check_ip_result = REGISTER_PROCESS.checkRegistration(user.getActid(), user.getDomid().trim(), ip_address);
-                if (check_ip_result) {
-                    //Return the parental control status/Details.
-                    //parentalControlDetails = PROTECTION_STATUS.getProtectionDetails(user.getActid(), user.getDomid().trim());
-                    list = categoryimpl.getCategoryList(user.getActid() + RestConfig.ADVANCED_FILTER, user.getDomid().trim());
-                    model.addAttribute("CAT", list);
-
-                    model.addAttribute("uesr_name", user.getActname());
-                    //parentalControlDetails.setUser_name(user.getActid());
-                    //Displaying the list of Adderss objects
-                } else {
-                    // Checking of IP address is get found in the session or not
-                    if (!check_ip_result) {
-                        if (!ip_address.isEmpty()) {
-                            //Regestration process for the uesr.
-                            REGISTER_PROCESS.registerUser(user.getActid(), ip_address, user.getDomid().trim());
-                            //Return the parental control status/Details.
-                            list = categoryimpl.getCategoryList(user.getActid() + RestConfig.ADVANCED_FILTER, user.getDomid().trim());
-                            model.addAttribute("CAT", list);
-
-                            model.addAttribute("ScheduleDetails", new ScheduleDetails());
-
-                            //parentalControlDetails = PROTECTION_STATUS.getProtectionDetails(user.getActid(), user.getDomid().trim());
-                            //parentalControlDetails.setUser_name(user.getActid());
-                            //Displaying the list of Adderss objects
-                        } else {
-                            model.addAttribute("message", "IP address is not found");
-                            logger.error("IP address is not found ");
-                        }
-                    }
-                    // model.addAttribute("message", "user "+user.getActname()+" is succesfually registered in prental control");
+                if(  !ip_address.isEmpty() || ip_address != null)
+                {
+                
+	                
+	                boolean check_ip_result = REGISTER_PROCESS.checkRegistration(user.getActid(), user.getDomid().trim(), ip_address);
+	                if (check_ip_result) {
+	                    //Return the parental control status/Details.
+	                    //parentalControlDetails = PROTECTION_STATUS.getProtectionDetails(user.getActid(), user.getDomid().trim());
+	                    list = categoryimpl.getCategoryList(user.getActid() + RestConfig.ADVANCED_FILTER, user.getDomid().trim());
+	                    model.addAttribute("CAT", list);
+	
+	                    model.addAttribute("uesr_name", user.getActname());
+	                    //parentalControlDetails.setUser_name(user.getActid());
+	                    //Displaying the list of Adderss objects
+	                } else {
+	                    // Checking of IP address is get found in the session or not
+	                    if (!check_ip_result) {
+	                        if (!ip_address.isEmpty()) {
+	                            //Regestration process for the uesr.
+	                            REGISTER_PROCESS.registerUser(user.getActid(), ip_address, user.getDomid().trim());
+	                            //Return the parental control status/Details.
+	                            list = categoryimpl.getCategoryList(user.getActid() + RestConfig.ADVANCED_FILTER, user.getDomid().trim());
+	                            model.addAttribute("CAT", list);
+	
+	                            model.addAttribute("ScheduleDetails", new ScheduleDetails());
+	
+	                            //parentalControlDetails = PROTECTION_STATUS.getProtectionDetails(user.getActid(), user.getDomid().trim());
+	                            //parentalControlDetails.setUser_name(user.getActid());
+	                            //Displaying the list of Adderss objects
+	                        } else {
+	                            model.addAttribute("message", "IP address is not found");
+	                            logger.error("IP address is not found ");
+	                        }
+	                    }
+	                    // model.addAttribute("message", "user "+user.getActname()+" is succesfually registered in prental control");
+	                    
+	                }
+	                
                 }
 
             } catch (Exception e) {

@@ -310,12 +310,12 @@ public class RegistrationUserParentalControlImpl implements RegistrationUserPare
                 logger.error("Ip Address Updated successfully... " );
                 return true;
             } else {
-                logger.error("filter not exixts  : " );
+                logger.error("Something went wrong while updating IP Address to Versa.." );
                 return false;
             }
         } catch (RestClientException e) {
             if (e.getMessage().contains("404")) {
-                logger.error("filter not exixts  : " );
+                logger.error("Something went wrong while updating IP Address to Versa.. with Exception" );
                 return false;
             } else {
                 logger.error(e.getMessage());
