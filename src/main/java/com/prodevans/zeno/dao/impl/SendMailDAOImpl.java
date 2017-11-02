@@ -82,7 +82,9 @@ public class SendMailDAOImpl implements SendMailDAO
 			complaintData=complaintData+""+data+"\n";
 		}
 		
-		mailContent="Name : "+serviceRequest.getName()+" \nMobile No. : "+serviceRequest.getMobile()+" \nTime Slot to call : "+serviceRequest.getTime_slot_to_call().toString()+" \nRequest : "+requestData+" \nComplaint : "+complaintData;
+		mailContent="Name : "+serviceRequest.getName()+" \nMobile No. : "+serviceRequest.getMobile()+" \nTime Slot to call : "+serviceRequest.getTime_slot_to_call().toString()+" \nRequest : "+requestData+" \nComplaint : "+complaintData+" \nTell Us More : "+serviceRequest.getMessage();
+	
+		System.out.println("Content : "+mailContent);
 		
 		Vector params = new Vector();
 		params.add(mailContent);
