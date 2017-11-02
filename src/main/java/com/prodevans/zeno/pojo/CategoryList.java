@@ -20,6 +20,8 @@ public class CategoryList {
     private ArrayList<String> selected_blocked_catogery;
     private ArrayList<String> selected_filter_pattern;
     
+    private ArrayList<String> all_blocked_list;
+    
     private String block_list_data;
     private String allow_list_data;
 
@@ -34,6 +36,8 @@ public class CategoryList {
         selected_filter_pattern = new ArrayList<>();
         
         
+        all_blocked_list = new ArrayList<>();
+        
         block_list_data = "";
         allow_list_data = "";
     }
@@ -42,7 +46,29 @@ public class CategoryList {
     
     
     
-    public ArrayList<String> getRemove_filter_pattern() {
+    
+    
+    public ArrayList<String> getAll_blocked_list() {
+		return all_blocked_list;
+	}
+
+
+
+
+
+
+
+	public void setAll_blocked_list(ArrayList<String> all_blocked_list) {
+		this.all_blocked_list = all_blocked_list;
+	}
+
+
+
+
+
+
+
+	public ArrayList<String> getRemove_filter_pattern() {
 		return remove_filter_pattern;
 	}
 

@@ -486,8 +486,8 @@
                     <form:hidden path="blocked_catogery" />
                     <div class="panel-footer ">
 
-                        <div class="col-md-6"></div>
-                        <div class="col-md-4 text-right">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-5 text-right">
                             <c:if test="${not empty blocked_error }">
                                 <h4 style="color:red;margin-top: 5%;">
                                     <span class="glyphicon glyphicon-alert"></span>
@@ -498,8 +498,21 @@
                         <div class="col-md-2 text-right">
                             <button id="blockedUnblock" class="btn billButton" type="submit">UNBLOCK</button>
                         </div>
+                        
+                        </form:form> 	
+                        
+                        
+                        <div class="col-md-2 text-right">
+                        	<form:form action="block-all-categories" modelAttribute="CategoryListDetails" method="post" >
+                        		
+                        		<form:hidden path="all_blocked_list" />
+                            	<button id="blockedUnblock" class="btn billButton" type="submit">UNBLOCK ALL</button>
+                            </form:form>
+                        </div>
+                        
+                        
                     </div>
-                </form:form> 	
+                
             </div>
             <div id="Custom" class="tab-pane fade row <c:if test="${not empty update_url_error || not empty custom_error }"> in active</c:if>">
                     <div class="category_box ">
