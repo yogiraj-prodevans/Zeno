@@ -73,7 +73,7 @@ public class UserInfoDAOImpl implements UserLoginDAO {
 				}
 				else
 				{
-					userSessionDetails.setResultMessage("Your Account ID is incorrect");
+					userSessionDetails.setResultMessage("Your One8 ID is incorrect");
 				}
 				
 				userSessionDetails.setResult(false);
@@ -83,7 +83,7 @@ public class UserInfoDAOImpl implements UserLoginDAO {
 		}
 		catch(Exception e)
 		{
-			userSessionDetails.setResultMessage("Your Account ID is incorrect");
+			userSessionDetails.setResultMessage("Your One8 ID is incorrect");
 			return userSessionDetails;
 		}
 			

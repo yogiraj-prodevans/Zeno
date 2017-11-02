@@ -188,21 +188,30 @@ body {
 													class="font-h4"> Remember me </label>
 											</div>-->
 										</div>
-										<div class="row" style="text-align: right;">
+										<div class="row" >
 										
-										
+											<div class="col-md-9 col-xs-12">
 												<c:if test="${ not empty error}">
 													
-													<span  class="glyphicon glyphicon-alert" style="color: red;" >
+													<span  class="glyphicon glyphicon-alert" style="color: red;margin-top: 6.5%;" >
 														<span style="color: red;font-family: Roboto;">
 															${error}
 														</span>
 													</span>
 												</c:if>
+											
+											</div>
+											<div class="col-md-3 col-xs-12" style="text-align: right;">
+											
+												<button type="submit" id="submitButton" class="btn billButton font-h3 ">
+													LOGIN
+												</button>
+											
+											</div>
 										
-											<!-- added ID for button for testing -->
-											<button type="submit" id="submitButton"
-												class="btn billButton font-h3 ">LOGIN</button>
+												
+										
+											
 
 										</div>
 
