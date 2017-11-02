@@ -189,13 +189,24 @@ body {
 											</div>-->
 										</div>
 										<div class="row" style="text-align: right;">
+										
+										
+												<c:if test="${ not empty error}">
+													
+													<span  class="glyphicon glyphicon-alert" style="color: red;" >
+														<span style="color: red;font-family: Roboto;">
+															${error}
+														</span>
+													</span>
+												</c:if>
+										
 											<!-- added ID for button for testing -->
 											<button type="submit" id="submitButton"
 												class="btn billButton font-h3 ">LOGIN</button>
 
 										</div>
 
-										<c:if test="${ not empty error}">${error}</c:if>
+										
 									</form:form>
 								</div>
 							</div>

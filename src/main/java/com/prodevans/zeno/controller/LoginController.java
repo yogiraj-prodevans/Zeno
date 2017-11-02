@@ -39,12 +39,15 @@ public class LoginController {
 	public String getDashboard(HttpSession session, SessionStatus status,
 			@RequestParam("customer_id") String customer_id, @RequestParam(name = "password") String password,
 			 ModelMap model,
-			HttpServletResponse responce) {
+			HttpServletResponse responce) 
+	{
 		// status.setComplete();
-		try {
+		try 
+		{
 			SessionDetails userSessionDetails = LoginImpl.loginCheck(customer_id, password);
 			System.out.println(userSessionDetails.getFirst_name());
-			if (userSessionDetails.getResult()) {
+			if (userSessionDetails.getResult()) 
+			{
 				session.setAttribute("user", userSessionDetails);
 				/*Code for the cookies
 				 * 
@@ -55,13 +58,18 @@ public class LoginController {
 				System.out.println("displaying pending amount : " + userSessionDetails.getPendingAmount());
 				return "redirect:dashboard";
 			}
-		} catch (Exception ee) {
+			else
+			{
+				model.addAttribute("error", userSessionDetails.getResultMessage());
+				return "redirect:/login";
+			}
+		} 
+		catch (Exception ee) 
+		{
 			ee.printStackTrace();
 		}
 
-		model.addAttribute("error", "login fail");
 		return "redirect:/login";
-
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
