@@ -35,17 +35,18 @@
 }
 #floating-button3
 {
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
+    width: 60px;
+    height: 60px;
     
-    background-image: url('/zeno/img/icons/Sheild.png');
+    color:black;
+    background-image: url('/zeno/img/icons/shield-icon.png');
+    background-size: 60px;
     background-repeat: no-repeat;
     background-position: right top;
     position: fixed;
     top: 190px;
     cursor: pointer;
-    box-shadow: 0px 2px 5px #c9c3c3;
+   
 }
 .fv
 {
@@ -200,8 +201,8 @@
 <a href="${pageContext.request.contextPath }/control">
     <div id="container-floating">
         <div id="floating-button3" data-toggle="tooltip" class="floatingRight">
-            <h6 class="fv pt-18">SURF</h6>
-            <h6 class="fv">SAFE</h6>  
+            <h6 class="fv pt-18" style="text-shadow: 1px 1px black; " >SURF</h6>
+            <h6 class="fv" style="text-shadow: 1px 1px black;" >SAFE</h6>  
         </div>
     </div>
 </a>
