@@ -114,8 +114,7 @@ public class ParentalControl {
                 //fetching the user details from the session.
                 SessionDetails user = (SessionDetails) session.getAttribute("user");
                 String ip_address = (String) session.getAttribute("user_ip_address");
-                logger.error("ip address : " + ip_address);
-
+                model.addAttribute("uesr_name", user.getActname());
 
                 if(  !ip_address.isEmpty() || ip_address != null)
                 {
@@ -128,7 +127,7 @@ public class ParentalControl {
 	                    list = categoryimpl.getCategoryList(user.getActid() + RestConfig.ADVANCED_FILTER, user.getDomid().trim());
 	                    model.addAttribute("CAT", list);
 	
-	                    model.addAttribute("uesr_name", user.getActname());
+	                    
 	                    //parentalControlDetails.setUser_name(user.getActid());
 	                    //Displaying the list of Adderss objects
 	                } else {
