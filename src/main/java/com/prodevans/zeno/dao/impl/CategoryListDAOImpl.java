@@ -131,7 +131,10 @@ public class CategoryListDAOImpl implements CategoryListDAO {
         list.setRemove_filter_pattern(filter_pattern);
         logger.info("Filter Pattern : " + list.getFilter_pattern().toString());
         
+        
         list.setAll_blocked_list(list.getBlocked_catogery());
+        list.setAll_allowed_list(list.getAllowded_catogery());
+        
         
         return list;
     }

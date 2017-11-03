@@ -123,10 +123,7 @@ public class ParentalControl {
                     list = categoryimpl.getCategoryList(user.getActid() + RestConfig.ADVANCED_FILTER, user.getDomid().trim());
                     model.addAttribute("CAT", list);
                     
-                    for (String s : list.getAllowded_catogery())
-                    {
-						System.out.println("Allowed : "+s);
-					}
+                  
 
                     model.addAttribute("uesr_name", user.getActname());
                     //parentalControlDetails.setUser_name(user.getActid());
@@ -210,17 +207,23 @@ public class ParentalControl {
             //fetching the user details from the session.
             SessionDetails user = (SessionDetails) session.getAttribute("user");
             
-            if(UnblockingCategories(categoryList,user, category_allowed))
+            categoryList.getBlocked_catogery().removeAll(category_allowed);
+            categoryList.getAllowded_catogery().addAll(category_allowed);
+
+            System.out.println("Blocked List : " + categoryList.getBlocked_catogery());
+            System.out.println("Allowed List : " + categoryList.getAllowded_catogery());
+
+            
+
+            if (categoryimpl.updateCategoryList(categoryList.getBlocked_catogery(), categoryList.getAllowded_catogery(), user.getDomid(), user.getActid(), "update_allow")) 
             {
             	session.setAttribute("blocked_error", "Done! Category successfully unblocked.");
             	return "redirect:/control";
-            }
-            else
+            } else 
             {
             	session.setAttribute("blocked_error", "Oops! Category unblocking failed. Please try again. ");
             	return "redirect:/control";
             }
-            
             
         }
     }
@@ -237,6 +240,20 @@ public class ParentalControl {
         	//fetching the user details from the session.
             SessionDetails user = (SessionDetails) session.getAttribute("user");
             
+            for (String s : categoryList.getAll_allowed_list())
+            {
+            	System.out.println("List all all allowed category : "+s);
+			}
+            
+            
+            categoryList.getAll_allowed_list().addAll(categoryList.getAll_blocked_list());
+            categoryList.getAll_blocked_list().removeAll(categoryList.getAll_blocked_list());
+            
+
+            System.out.println("Blocked List : " + categoryList.getAll_blocked_list());
+            System.out.println("Allowed List : " + categoryList.getAllow_list_data());
+            
+            /*
             if(UnblockingCategories(categoryList,user, categoryList.getAll_blocked_list()))
             {
             	session.setAttribute("blocked_error", "Done! Category successfully unblocked.");
@@ -247,7 +264,8 @@ public class ParentalControl {
             	session.setAttribute("blocked_error", "Oops! Category unblocking failed. Please try again. ");
             	return "redirect:/control";
             }
-            
+            */
+            return "redirect:/control";
         }
     }
        
