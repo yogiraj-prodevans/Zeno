@@ -153,7 +153,7 @@ body {
 								</h2>
 							</div>
 						</div>
-						<div class="col-md-4 col-sm-4  pt-40 pb-20">
+                                            <div class="col-md-4 col-sm-4  pb-20" style="padding-top: 4.8%;">
 							<div class="form-info loginBoxSqr">
 								<h3 style="font-size: 24px; color:white;">Login</h3>
 								<div class="content-form-page">
@@ -179,20 +179,43 @@ body {
 													Password</a>
 												 -->	
 											</div>
-											<div class="col-md-12">
+                                                                                        <div class="col-md-12 pb-20" >
+                                                                                
+                                                                                </div>
+<!--											<div class="col-md-12">
 												<input id="remember" type="checkbox" name="remember"
 													value="remember"> &nbsp; <label for="remember"
 													class="font-h4"> Remember me </label>
+											</div>-->
+										</div>
+										<div class="row" >
+										
+											<div class="col-md-9 col-xs-12">
+												<c:if test="${ not empty error}">
+													
+													<span  class="glyphicon glyphicon-alert" style="color: red;margin-top: 6.5%;" >
+														<span style="color: red;font-family: Roboto;font-size: 15px;">
+															${error}
+														</span>
+													</span>
+												</c:if>
+											
 											</div>
-										</div>
-										<div class="row" style="text-align: right;">
-											<!-- added ID for button for testing -->
-											<button type="submit" id="submitButton"
-												class="btn billButton font-h3 ">LOGIN</button>
+											<div class="col-md-3 col-xs-12" style="text-align: right;">
+											
+												<button type="submit" id="submitButton" class="btn billButton font-h3 ">
+													LOGIN
+												</button>
+											
+											</div>
+										
+												
+										
+											
 
 										</div>
 
-										<c:if test="${ not empty error}">${error}</c:if>
+										
 									</form:form>
 								</div>
 							</div>

@@ -31,39 +31,62 @@ public class UserInfoDAOImpl implements UserLoginDAO {
 		Vector params = new Vector();
 		params.add(customer_id);
 
-		HashMap<String, Object> result = (HashMap<String, Object>) rpcClient
-				.execute(unifyHandler + ".getAccountDetails", params);
+		
 
-		if (result.get("password").toString().equals(password) && result.get("actid").toString().equals(customer_id)) {
-			Vector params1 = new Vector();
-			params1.add(Integer.parseInt(result.get("actno").toString()));
-			Object o = rpcClient.execute(unifyHandler + ".getTotalPendingInvoiceValue", params1);
-			double pendingAmount = (Double) o;
-
-			userSessionDetails.setActid(result.get("actid").toString());
-			userSessionDetails.setActno(Integer.parseInt(result.get("actno").toString()));
-			userSessionDetails.setActname(result.get("fname").toString());
-			userSessionDetails.setDomid(result.get("domid").toString());
-			userSessionDetails.setDomno(Integer.parseInt(result.get("domno").toString()));
-			userSessionDetails.setEmail(result.get("email").toString());
-			userSessionDetails.setMobileno(result.get("mobileno").toString());
-			userSessionDetails.setPassword(result.get("password").toString());
-			userSessionDetails.setFirst_name(result.get("fname").toString());
-
-			userSessionDetails.setLast_name(result.get("lname").toString());
-			userSessionDetails.setAddress(result.get("address").toString());
-			userSessionDetails.setPin(result.get("pin").toString());
-			userSessionDetails.setCityname(result.get("cityname").toString());
-			userSessionDetails.setCountryname(result.get("countryname").toString());
-
-			userSessionDetails.setPendingAmount(pendingAmount);
-
-			userSessionDetails.setResult(true);
-			return userSessionDetails;
-		} else {
-			userSessionDetails.setResult(false);
+		try
+		{
+			HashMap<String, Object> result = (HashMap<String, Object>) rpcClient
+					.execute(unifyHandler + ".getAccountDetails", params);
+			
+			if (result.get("password").toString().equals(password) && result.get("actid").toString().equals(customer_id)) {
+				Vector params1 = new Vector();
+				params1.add(Integer.parseInt(result.get("actno").toString()));
+				Object o = rpcClient.execute(unifyHandler + ".getTotalPendingInvoiceValue", params1);
+				double pendingAmount = (Double) o;
+	
+				userSessionDetails.setActid(result.get("actid").toString());
+				userSessionDetails.setActno(Integer.parseInt(result.get("actno").toString()));
+				userSessionDetails.setActname(result.get("fname").toString());
+				userSessionDetails.setDomid(result.get("domid").toString());
+				userSessionDetails.setDomno(Integer.parseInt(result.get("domno").toString()));
+				userSessionDetails.setEmail(result.get("email").toString());
+				userSessionDetails.setMobileno(result.get("mobileno").toString());
+				userSessionDetails.setPassword(result.get("password").toString());
+				userSessionDetails.setFirst_name(result.get("fname").toString());
+	
+				userSessionDetails.setLast_name(result.get("lname").toString());
+				userSessionDetails.setAddress(result.get("address").toString());
+				userSessionDetails.setPin(result.get("pin").toString());
+				userSessionDetails.setCityname(result.get("cityname").toString());
+				userSessionDetails.setCountryname(result.get("countryname").toString());
+	
+				userSessionDetails.setPendingAmount(pendingAmount);
+	
+				userSessionDetails.setResult(true);
+				return userSessionDetails;
+			} 
+			else 
+			{
+				if(result.get("actid").toString().equals(customer_id))
+				{
+					userSessionDetails.setResultMessage("Your password is incorrect");
+				}
+				else
+				{
+					userSessionDetails.setResultMessage("Your One8 ID is incorrect");
+				}
+				
+				userSessionDetails.setResult(false);
+				return userSessionDetails;
+			}
+			
+		}
+		catch(Exception e)
+		{
+			userSessionDetails.setResultMessage("Your One8 ID is incorrect");
 			return userSessionDetails;
 		}
+			
 	}
 
 	@Override
