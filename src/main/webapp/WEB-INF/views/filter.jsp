@@ -500,23 +500,17 @@
                             </c:if>
                         </div>
                         <div class="col-md-2 text-right">
-                            <button id="blockedUnblock" class="btn billButton" type="submit">UNBLOCK</button>
+                            <button id="blockedUnblock" class="btn billButton" type="submit" formaction="block-categories" >UNBLOCK</button>
                         </div>
-                        
-                        </form:form> 	
-                        
-                        
-                        <div class="col-md-2 text-right">
-                        	<form:form action="block-all-categories" modelAttribute="CategoryListDetails" method="post" >
-                        		
-                        		<form:hidden path="all_allowed_list" />
-                        		<form:hidden path="all_blocked_list" />
-                            	<button id="blockedUnblock" class="btn billButton" type="submit">UNBLOCK ALL</button>
-                            </form:form>
+                         
+                        <div class="col-md-2 text-right">	
+                           <button id="blockedALLUnblock" class="btn billButton" type="submit" formaction="block-all-categories">UNBLOCK ALL</button>
                         </div>
                         
                         
                     </div>
+                    
+                 </form:form>
                 
             </div>
             <div id="Custom" class="tab-pane fade row <c:if test="${not empty update_url_error || not empty custom_error }"> in active</c:if>">
@@ -573,7 +567,7 @@
                     </div>
                     <div class="panel-footer ">
 
-                        <div class="col-md-6"></div>
+                        <div class="col-md-4"></div>
                         <div class="col-md-4 text-right">
                             <c:if test="${not empty custom_error }">
                                 <h4 style="color:red;margin-top: 5%;">
@@ -585,7 +579,10 @@
                             </c:if>
                         </div>
                         <div class="col-md-2 text-right">
-                            <button id="customUnblock" class="btn billButton" type="submit">UNBLOCK</button>
+                            <button id="customUnblock" class="btn billButton" type="submit" formaction="delete-patterns" >UNBLOCK</button>
+                        </div>
+                        <div class="col-md-2 text-right">
+                            <button id="customUnblock" class="btn billButton" type="submit" formaction="delete-all-patterns" >UNBLOCK ALL</button>
                         </div>
                     </div>
                 </form:form>

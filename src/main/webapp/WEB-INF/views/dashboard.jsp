@@ -212,11 +212,13 @@
 		    	if(response === "true")
 	    		{
 		    		document.getElementById("theImage").style.visibility = "visible";
+		    		document.getElementById("floating-button3").style.visibility = "visible";
 		    		jQuery(".sampleClass").css({"color":"red"});
 	    		}
 		    	else
 	    		{
 		    		document.getElementById("theImage").style.visibility = "hidden";
+		    		document.getElementById("floating-button3").style.visibility = "hidden";
 	    		}
 
 	    	});
