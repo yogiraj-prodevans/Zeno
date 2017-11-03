@@ -18,6 +18,8 @@
               rel="stylesheet">
 
         <jsp:include page="component/css.jsp"></jsp:include>
+        
+        <jsp:include page="component/parental_check_js.jsp"></jsp:include>
 
 
             <style type="text/css">

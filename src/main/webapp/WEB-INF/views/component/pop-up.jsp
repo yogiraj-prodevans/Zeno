@@ -10,6 +10,18 @@
 {
 	padding-top: 18px;
 }
+
+#floating-light
+{
+    width: 55px;
+    height: 55px;
+    position: fixed;
+    top: 75px;
+    right : 6%;
+    cursor: pointer;
+}
+			
+			
 /*Floating button*/
 #floating-button
 {
@@ -225,6 +237,10 @@
 </a>
 
 
-
+<a href="${pageContext.request.contextPath }/control">
+		<div id="floating-light"> 		
+	    	<img id="theImage" alt="" src="img/light4.gif">
+	    </div>
+	</a>
 
 

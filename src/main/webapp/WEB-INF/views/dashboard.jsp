@@ -11,6 +11,8 @@
     <meta content="ONE8 User Portal Keywords" name="keywords">
     <!--  include the all css components -->
     <jsp:include page="component/css.jsp"></jsp:include>
+    
+    <jsp:include page="component/parental_check_js.jsp"></jsp:include>
 
         <style>
             canvas {
@@ -113,18 +115,6 @@
             }
             
             
-            #floating-light
-			{
-			    width: 55px;
-			    height: 55px;
-			    position: fixed;
-			    top: 75px;
-			    right : 6%;
-			    cursor: pointer;
-			}
-            
-            
-
         </style>
 
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -173,58 +163,6 @@
                 var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
                 chart.draw(data, options);
             }
-    </script>
-    
-    <script type="text/javascript">
-    
-    	/*
-	    function addVoteUpClass() 
-	    {
-	    	jQuery(".sampleClass").css({"width":"80%", "height":"89%", "top":"40px", "color":"red"});
-	    		   
-	    }
-    	*/
-    	/*
-	    var succeed = false;
-
-	    $.ajax({
-	    async: false,
-	    url: "getStatus",
-	    success: function() {
-	         succeed = true;
-	    }});
-	    
-	    alert(succeed);
-	    */
-	    
-	   
-	    
-	    $(document).ready(function(){
-	    	
-		    	var	jsonData = $.ajax({
-		            url: "getStatus",
-		            dataType: "text",
-		            async: false		            
-		        });		
-		    
-		    	var response = jsonData["responseText"];
-		    	
-		    	if(response === "true")
-	    		{
-		    		document.getElementById("theImage").style.visibility = "visible";
-		    		document.getElementById("floating-button3").style.visibility = "visible";
-		    		jQuery(".sampleClass").css({"color":"red"});
-	    		}
-		    	else
-	    		{
-		    		document.getElementById("theImage").style.visibility = "hidden";
-		    		document.getElementById("floating-button3").style.visibility = "hidden";
-	    		}
-
-	    	});
-    	
-	    
-	    
     </script>
     
     
@@ -302,12 +240,6 @@
         </div>
     </div>
     
-    
-    <a href="${pageContext.request.contextPath }/control">
-		<div id="floating-light"> 		
-	    	<img id="theImage" alt="" src="img/light4.gif">
-	    </div>
-	</a>
     
     
     

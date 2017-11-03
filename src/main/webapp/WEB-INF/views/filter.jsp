@@ -40,6 +40,10 @@
 
         <!--  include the all css components -->
         <jsp:include page="component/css.jsp"></jsp:include>
+        
+        <jsp:include page="component/parental_check_js.jsp"></jsp:include>
+        
+        
             <style>
                 input[type="url"]#url_pattern {
                     width: 100% !important;
