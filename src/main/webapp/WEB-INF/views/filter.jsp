@@ -500,23 +500,17 @@
                             </c:if>
                         </div>
                         <div class="col-md-2 text-right">
-                            <button id="blockedUnblock" class="btn billButton" type="submit">UNBLOCK</button>
+                            <button id="blockedUnblock" class="btn billButton" type="submit" formaction="block-categories" >UNBLOCK</button>
                         </div>
-                        
-                        </form:form> 	
-                        
-                        
-                        <div class="col-md-2 text-right">
-                        	<form:form action="block-all-categories" modelAttribute="CategoryListDetails" method="post" >
-                        		
-                        		<form:hidden path="all_blocked_list" />
-                        		<form:hidden path="all_allowed_list" />
-                            	<button id="blockedALLUnblock" class="btn billButton" type="submit">UNBLOCK ALL</button>
-                            </form:form>
+                         
+                        <div class="col-md-2 text-right">	
+                           <button id="blockedALLUnblock" class="btn billButton" type="submit" formaction="block-all-categories">UNBLOCK ALL</button>
                         </div>
                         
                         
                     </div>
+                    
+                 </form:form>
                 
             </div>
             <div id="Custom" class="tab-pane fade row <c:if test="${not empty update_url_error || not empty custom_error }"> in active</c:if>">

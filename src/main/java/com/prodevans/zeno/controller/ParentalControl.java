@@ -197,14 +197,15 @@ public class ParentalControl {
     }
 
     @RequestMapping(value = "/block-categories", method = RequestMethod.POST)
-    public String blockcategories(ModelMap model, HttpSession session, @ModelAttribute(name = "CategoryListDetails") CategoryList categoryList, @RequestParam(name = "category_block", required = false) ArrayList<String> category_allowed) {
+    public String blockcategories(ModelMap model, HttpSession session, @ModelAttribute(name = "CategoryListDetails") CategoryList categoryList, @RequestParam(name = "category_block", required = false) ArrayList<String> category_allowed) 
+    {
         if (session.getAttribute("user") == null) {
             return "redirect:/logout";
-        } else {
-        	
-        	System.out.println("All List : "+categoryList.getBlocked_catogery());
-        	
-            if (category_allowed == null) {
+        } else 
+        {
+
+            if (category_allowed == null) 
+            {
                 session.setAttribute("blocked_error", "Select Category to UNBLOCK.");
                 return "redirect:/control";
             }
@@ -212,19 +213,12 @@ public class ParentalControl {
             //fetching the user details from the session.
             SessionDetails user = (SessionDetails) session.getAttribute("user");
             
-            categoryList.getBlocked_catogery().removeAll(category_allowed);
-            categoryList.getAllowded_catogery().addAll(category_allowed);
-
-            System.out.println("Blocked List : " + categoryList.getBlocked_catogery());
-            System.out.println("Allowed List : " + categoryList.getAllowded_catogery());
-
-            
-
-            if (categoryimpl.updateCategoryList(categoryList.getBlocked_catogery(), categoryList.getAllowded_catogery(), user.getDomid(), user.getActid(), "update_allow")) 
+            if(performUnblockingCategories(user, categoryList, category_allowed))
             {
             	session.setAttribute("blocked_error", "Done! Category successfully unblocked.");
             	return "redirect:/control";
-            } else 
+            }
+            else
             {
             	session.setAttribute("blocked_error", "Oops! Category unblocking failed. Please try again. ");
             	return "redirect:/control";
@@ -233,6 +227,25 @@ public class ParentalControl {
         }
     }
 
+    private boolean performUnblockingCategories(SessionDetails user, CategoryList categoryList, ArrayList<String> category_allowed )
+    {
+    	categoryList.getBlocked_catogery().removeAll(category_allowed);
+        categoryList.getAllowded_catogery().addAll(category_allowed);
+
+        System.out.println("Blocked List : " + categoryList.getBlocked_catogery());
+        System.out.println("Allowed List : " + categoryList.getAllowded_catogery());
+
+        if (categoryimpl.updateCategoryList(categoryList.getBlocked_catogery(), categoryList.getAllowded_catogery(), user.getDomid(), user.getActid(), "update_allow")) 
+        {
+        	return true;	
+        } 
+        else 
+        {
+        	return false;
+        }
+    	
+    }   
+    
     
     @RequestMapping(value = "/block-all-categories", method = RequestMethod.POST)
     public String blockallcategories(ModelMap model, HttpSession session, @ModelAttribute(name = "CategoryListDetails") CategoryList categoryList) 
@@ -244,19 +257,11 @@ public class ParentalControl {
         {
         	//fetching the user details from the session.
             SessionDetails user = (SessionDetails) session.getAttribute("user");
-            
 
-            System.out.println("List all allowed category : "+categoryList.getAll_allowed_list().toString());
-            System.out.println("List all blocked category : "+categoryList.getAll_blocked_list().toString());
-            
-            categoryList.getAll_allowed_list().addAll(categoryList.getAll_blocked_list());
-            categoryList.getAll_blocked_list().removeAll(categoryList.getAll_blocked_list());
-            
-            System.out.println("Updated allowed category : "+categoryList.getAll_allowed_list().toString());
-            System.out.println("Updated blocked category : "+categoryList.getAll_blocked_list().toString());
-            
-            
-            if (categoryimpl.updateCategoryList(categoryList.getAll_blocked_list(), categoryList.getAll_allowed_list(), user.getDomid(), user.getActid(), "update_allow")) 
+            categoryList.getAllowded_catogery().addAll(categoryList.getBlocked_catogery());
+            categoryList.getBlocked_catogery().removeAll(categoryList.getBlocked_catogery());
+
+            if (categoryimpl.updateCategoryList(categoryList.getBlocked_catogery() , categoryList.getAllowded_catogery(), user.getDomid(), user.getActid(), "update_allow")) 
             {
             	session.setAttribute("blocked_error", "Done! Category successfully unblocked.");
             	return "redirect:/control";
@@ -265,10 +270,11 @@ public class ParentalControl {
             	session.setAttribute("blocked_error", "Oops! Category unblocking failed. Please try again. ");
             	return "redirect:/control";
             }
-            
+
         }
     }
        
+    
     
     @RequestMapping(value = "/delete-patterns", method = RequestMethod.POST)
     public String deletepatterns(ModelMap model, HttpSession session, @ModelAttribute(name = "CategoryListDetails") CategoryList categoryList, @RequestParam(name = "filter_category", required = false) ArrayList<String> selected_filter_category) {
