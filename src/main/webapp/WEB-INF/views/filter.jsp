@@ -509,9 +509,9 @@
                         <div class="col-md-2 text-right">
                         	<form:form action="block-all-categories" modelAttribute="CategoryListDetails" method="post" >
                         		
-                        		<form:hidden path="all_allowed_list" />
                         		<form:hidden path="all_blocked_list" />
-                            	<button id="blockedUnblock" class="btn billButton" type="submit">UNBLOCK ALL</button>
+                        		<form:hidden path="all_allowed_list" />
+                            	<button id="blockedALLUnblock" class="btn billButton" type="submit">UNBLOCK ALL</button>
                             </form:form>
                         </div>
                         

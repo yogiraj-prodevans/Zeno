@@ -245,64 +245,30 @@ public class ParentalControl {
         	//fetching the user details from the session.
             SessionDetails user = (SessionDetails) session.getAttribute("user");
             
-            for (String s : categoryList.getAll_allowed_list())
-            {
-            	System.out.println("List all all allowed category : "+s);
-			}
-            
-            for (String s : categoryList.getAll_blocked_list())
-            {
-            	System.out.println("List all blocked category : "+s);
-			}
-            
+
+            System.out.println("List all allowed category : "+categoryList.getAll_allowed_list().toString());
+            System.out.println("List all blocked category : "+categoryList.getAll_blocked_list().toString());
             
             categoryList.getAll_allowed_list().addAll(categoryList.getAll_blocked_list());
+            categoryList.getAll_blocked_list().removeAll(categoryList.getAll_blocked_list());
             
-            //categoryList.getAll_blocked_list().removeAll(categoryList.getAll_blocked_list());
+            System.out.println("Updated allowed category : "+categoryList.getAll_allowed_list().toString());
+            System.out.println("Updated blocked category : "+categoryList.getAll_blocked_list().toString());
             
-
-            //System.out.println("Blocked List : " + categoryList.getAll_blocked_list());
-            System.out.println("Allowed List : " + categoryList.getAllow_list_data());
             
-            /*
-            if(UnblockingCategories(categoryList,user, categoryList.getAll_blocked_list()))
+            if (categoryimpl.updateCategoryList(categoryList.getAll_blocked_list(), categoryList.getAll_allowed_list(), user.getDomid(), user.getActid(), "update_allow")) 
             {
             	session.setAttribute("blocked_error", "Done! Category successfully unblocked.");
             	return "redirect:/control";
-            }
-            else
+            } else 
             {
             	session.setAttribute("blocked_error", "Oops! Category unblocking failed. Please try again. ");
             	return "redirect:/control";
             }
-            */
-            return "redirect:/control";
+            
         }
     }
        
-    private boolean UnblockingCategories(CategoryList categoryList,SessionDetails user, ArrayList<String> category_list)
-    {
-    	
-    	categoryList.getBlocked_catogery().removeAll(category_list);
-        categoryList.getAllowded_catogery().addAll(category_list);
-
-        System.out.println("Blocked List : " + categoryList.getBlocked_catogery());
-        System.out.println("Allowed List : " + categoryList.getAllowded_catogery());
-
-        
-
-        if (categoryimpl.updateCategoryList(categoryList.getBlocked_catogery(), categoryList.getAllowded_catogery(), user.getDomid(), user.getActid(), "update_allow")) 
-        {
-        	return true;
-        } else 
-        {
-        	return false;
-        }
-    	
-    }
-    
-    
-    
     
     @RequestMapping(value = "/delete-patterns", method = RequestMethod.POST)
     public String deletepatterns(ModelMap model, HttpSession session, @ModelAttribute(name = "CategoryListDetails") CategoryList categoryList, @RequestParam(name = "filter_category", required = false) ArrayList<String> selected_filter_category) {
