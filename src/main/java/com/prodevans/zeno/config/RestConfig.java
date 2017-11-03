@@ -132,6 +132,13 @@ public interface RestConfig {
      * API URL for updating access policy rule
      */
     String UPDATE_ACCESS_POLICY_RULE = HOST + "/api/config/devices/device/{domain_id}/config/orgs/org-services/OneEight/security/access-policies/access-policy-group/Default-Policy/rules/access-policy/{policy_user}";
+
+    
+    
+    /**
+     * API URL for updating IP Address
+     */
+    String UPDATE_IP_ADDRESS = HOST + "/api/config/devices/device/{domain_id}/config/orgs/org-services/OneEight/objects/addresses/address/{address_object_name}";
     
     
 }

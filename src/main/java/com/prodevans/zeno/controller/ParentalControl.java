@@ -114,41 +114,46 @@ public class ParentalControl {
                 //fetching the user details from the session.
                 SessionDetails user = (SessionDetails) session.getAttribute("user");
                 String ip_address = (String) session.getAttribute("user_ip_address");
-                logger.error("ip address : " + ip_address);
+                model.addAttribute("uesr_name", user.getActname());
 
-                boolean check_ip_result = REGISTER_PROCESS.checkRegistration(user.getActid(), user.getDomid().trim());
-                if (check_ip_result) {
-                    //Return the parental control status/Details.
-                    //parentalControlDetails = PROTECTION_STATUS.getProtectionDetails(user.getActid(), user.getDomid().trim());
-                    list = categoryimpl.getCategoryList(user.getActid() + RestConfig.ADVANCED_FILTER, user.getDomid().trim());
-                    model.addAttribute("CAT", list);
-                    
-                  
+                if(  !ip_address.isEmpty() || ip_address != null)
+                {
+                
+	                
+	                boolean check_ip_result = REGISTER_PROCESS.checkRegistration(user.getActid(), user.getDomid().trim(), ip_address);
+	                if (check_ip_result) {
+	                    //Return the parental control status/Details.
+	                    //parentalControlDetails = PROTECTION_STATUS.getProtectionDetails(user.getActid(), user.getDomid().trim());
+	                    list = categoryimpl.getCategoryList(user.getActid() + RestConfig.ADVANCED_FILTER, user.getDomid().trim());
+	                    model.addAttribute("CAT", list);
+	
+	                    
+	                    //parentalControlDetails.setUser_name(user.getActid());
+	                    //Displaying the list of Adderss objects
+	                } else {
+	                    // Checking of IP address is get found in the session or not
+	                    if (!check_ip_result) {
+	                        if (!ip_address.isEmpty()) {
+	                            //Regestration process for the uesr.
+	                            REGISTER_PROCESS.registerUser(user.getActid(), ip_address, user.getDomid().trim());
+	                            //Return the parental control status/Details.
+	                            list = categoryimpl.getCategoryList(user.getActid() + RestConfig.ADVANCED_FILTER, user.getDomid().trim());
+	                            model.addAttribute("CAT", list);
+	
+	                            model.addAttribute("ScheduleDetails", new ScheduleDetails());
+	
+	                            //parentalControlDetails = PROTECTION_STATUS.getProtectionDetails(user.getActid(), user.getDomid().trim());
+	                            //parentalControlDetails.setUser_name(user.getActid());
+	                            //Displaying the list of Adderss objects
+	                        } else {
+	                            model.addAttribute("message", "IP address is not found");
+	                            logger.error("IP address is not found ");
+	                        }
+	                    }
+	                    // model.addAttribute("message", "user "+user.getActname()+" is succesfually registered in prental control");
+	                    
+	                }
 
-                    model.addAttribute("uesr_name", user.getActname());
-                    //parentalControlDetails.setUser_name(user.getActid());
-                    //Displaying the list of Adderss objects
-                } else {
-                    // Checking of IP address is get found in the session or not
-                    if (!check_ip_result) {
-                        if (!ip_address.isEmpty()) {
-                            //Regestration process for the uesr.
-                            REGISTER_PROCESS.registerUser(user.getActid(), ip_address, user.getDomid().trim());
-                            //Return the parental control status/Details.
-                            list = categoryimpl.getCategoryList(user.getActid() + RestConfig.ADVANCED_FILTER, user.getDomid().trim());
-                            model.addAttribute("CAT", list);
-
-                            model.addAttribute("ScheduleDetails", new ScheduleDetails());
-
-                            //parentalControlDetails = PROTECTION_STATUS.getProtectionDetails(user.getActid(), user.getDomid().trim());
-                            //parentalControlDetails.setUser_name(user.getActid());
-                            //Displaying the list of Adderss objects
-                        } else {
-                            model.addAttribute("message", "IP address is not found");
-                            logger.error("IP address is not found ");
-                        }
-                    }
-                    // model.addAttribute("message", "user "+user.getActname()+" is succesfually registered in prental control");
                 }
 
             } catch (Exception e) {
@@ -334,9 +339,9 @@ public class ParentalControl {
             Pattern pattern = null;
 
 			if (Pattern.compile("[w]{3}[.][\\w]+[.][a-zA-Z]+[.][a-zA-Z]+").matcher(selected_filter_category).find()) {
-				pattern = Pattern.compile("[w]{3}[.][\\w]+[.][a-zA-Z]+[.][a-zA-Z]+");
+				pattern = Pattern.compile("[.][\\w]+[.][a-zA-Z]+[.][a-zA-Z]+");
 			} else if (Pattern.compile("[w]{3}[.][\\w]+[.][a-zA-Z]+").matcher(selected_filter_category).find()) {
-				pattern = Pattern.compile("[w]{3}[.][\\w]+[.][a-zA-Z]+");
+				pattern = Pattern.compile("[.][\\w]+[.][a-zA-Z]+");
 			} else if (Pattern.compile("[h][t]{2}[p][s]{0,1}[:][/]{2}[\\w]+[.][a-zA-Z]+[.][a-zA-Z]+").matcher(selected_filter_category)
 					.find()) {
 				pattern = Pattern.compile("[\\w]+[.][a-zA-Z]+[.][a-zA-Z]+");
@@ -352,9 +357,15 @@ public class ParentalControl {
             try {
                  Matcher matcher = pattern.matcher(selected_filter_category);
             matcher.find();
-                selected_filter_category = matcher.group().replaceAll("\\s+", "").substring(0, matcher.group().length());
-                categoryList.getRemove_filter_pattern().add(".*" + selected_filter_category + ".*");
-
+            selected_filter_category = matcher.group().replaceAll("\\s+", "").substring(0, matcher.group().length());
+               
+            System.out.println("output1:--"+selected_filter_category);
+                if(selected_filter_category.charAt(0)=='.')
+			selected_filter_category=selected_filter_category.substring(1);
+           
+                    System.out.println("output2:--"+selected_filter_category);
+           
+                 categoryList.getRemove_filter_pattern().add(".*" + selected_filter_category + ".*");    
                 //fetching the user details from the session.
                 SessionDetails user = (SessionDetails) session.getAttribute("user");
                 if (categoryimpl.updateFilterPattern(categoryList.getRemove_filter_pattern(), user.getDomid(), user.getActid() + RestConfig.ADVANCED_FILTER)) {

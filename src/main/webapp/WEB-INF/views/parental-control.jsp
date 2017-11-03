@@ -1,6 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 <!DOCTYPE html >
 <html>
     <head>
@@ -451,7 +451,9 @@
                                                 <div class="col-md-4 text-right">
                                                     <c:if test="${not empty time_msg }">
                                                         <h4 style="color:red;margin-top: 5%;">
-                                                            <span class="glyphicon glyphicon-alert"></span>
+                                                           <c:if test="${fn:contains(time_msg, 'Oops!')}">
+                                    <span class="glyphicon glyphicon-alert"></span>
+                                    </c:if>
                                                             <c:out value="${time_msg }"></c:out>
                                                             </h4>
                                                     </c:if>
@@ -513,7 +515,9 @@
                                                 <div class="col-md-4 text-right">
                                                     <c:if test="${not empty day_msg }">
                                                         <h4 style="color:red;margin-top: 5%;">
-                                                            <span class="glyphicon glyphicon-alert"></span>
+                                                            <c:if test="${fn:contains(day_msg, 'Oops!')}">
+                                    <span class="glyphicon glyphicon-alert"></span>
+                                    </c:if>
                                                             <c:out value="${day_msg }"></c:out>
                                                             </h4>
                                                     </c:if>
@@ -582,7 +586,9 @@
                                                     <div class="col-md-4 text-right">
                                                         <c:if test="${not empty date_msg }">
                                                             <h4 style="color:red;margin-top: 5%;">
-                                                                <span class="glyphicon glyphicon-alert"></span>
+                                                                <c:if test="${fn:contains(date_msg, 'Oops!')}">
+                                    <span class="glyphicon glyphicon-alert"></span>
+                                    </c:if>
                                                                 <c:out value="${date_msg }"></c:out>
                                                                 </h4>
                                                         </c:if>
