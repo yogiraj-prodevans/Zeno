@@ -567,7 +567,7 @@
                     </div>
                     <div class="panel-footer ">
 
-                        <div class="col-md-6"></div>
+                        <div class="col-md-4"></div>
                         <div class="col-md-4 text-right">
                             <c:if test="${not empty custom_error }">
                                 <h4 style="color:red;margin-top: 5%;">
@@ -579,7 +579,10 @@
                             </c:if>
                         </div>
                         <div class="col-md-2 text-right">
-                            <button id="customUnblock" class="btn billButton" type="submit">UNBLOCK</button>
+                            <button id="customUnblock" class="btn billButton" type="submit" formaction="delete-patterns" >UNBLOCK</button>
+                        </div>
+                        <div class="col-md-2 text-right">
+                            <button id="customUnblock" class="btn billButton" type="submit" formaction="delete-all-patterns" >UNBLOCK ALL</button>
                         </div>
                     </div>
                 </form:form>

@@ -277,7 +277,8 @@ public class ParentalControl {
     
     
     @RequestMapping(value = "/delete-patterns", method = RequestMethod.POST)
-    public String deletepatterns(ModelMap model, HttpSession session, @ModelAttribute(name = "CategoryListDetails") CategoryList categoryList, @RequestParam(name = "filter_category", required = false) ArrayList<String> selected_filter_category) {
+    public String deletepatterns(ModelMap model, HttpSession session, @ModelAttribute(name = "CategoryListDetails") CategoryList categoryList, @RequestParam(name = "filter_category", required = false) ArrayList<String> selected_filter_category) 
+    {
 
         if (session.getAttribute("user") == null) {
             return "redirect:/logout";
@@ -288,6 +289,9 @@ public class ParentalControl {
 
                 return "redirect:/control";
             }
+            
+            System.out.println("URL List : "+categoryList.getRemove_filter_pattern().toString());
+            
             categoryList.getRemove_filter_pattern().removeAll(selected_filter_category);
 
             //fetching the user details from the session.
@@ -302,6 +306,27 @@ public class ParentalControl {
         }
 
     }
+    
+    @RequestMapping(value = "/delete-all-patterns", method = RequestMethod.POST)
+    public String deleteallpatterns(ModelMap model, HttpSession session, @ModelAttribute(name = "CategoryListDetails") CategoryList categoryList)
+    {
+    	categoryList.getRemove_filter_pattern().clear();
+
+        //fetching the user details from the session.
+        SessionDetails user = (SessionDetails) session.getAttribute("user");
+        if (categoryimpl.updateFilterPattern(categoryList.getRemove_filter_pattern(), user.getDomid(), user.getActid() + RestConfig.ADVANCED_FILTER)) {
+            session.setAttribute("custom_error", "Done! URL successfully unblocked.");
+        } else {
+            session.setAttribute("custom_error", "Oops! URL unblocking failed. Please try again.");
+        }
+
+        return "redirect:/control"; 
+    }
+    
+    
+    
+    
+    
 
     @RequestMapping(value = "/update-patterns", method = RequestMethod.POST)
     public String updatePatterns(ModelMap model, HttpSession session, @ModelAttribute(name = "CategoryListDetails") CategoryList categoryList, @RequestParam(name = "url_pattern", required = false) String selected_filter_category) {
