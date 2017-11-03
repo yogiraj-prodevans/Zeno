@@ -1,6 +1,7 @@
 package com.prodevans.zeno.dao.impl;
 
 import com.fasterxml.jackson.core.format.InputAccessor;
+import com.google.gson.JsonObject;
 import com.prodevans.zeno.config.RestConfig;
 import com.prodevans.zeno.dao.RegistrationUserParentalControlDAO;
 import java.security.KeyManagementException;
@@ -17,6 +18,8 @@ import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpEntity;
@@ -139,9 +142,9 @@ public class RegistrationUserParentalControlImpl implements RegistrationUserPare
      * @return --- true when present or false.
      */
     @Override
-    public boolean checkRegistration(String user_name, String domain_id) {
+    public boolean checkRegistration(String user_name, String domain_id, String ip_address_inventum) {
         boolean final_result = false;
-        final_result = checkIpAddress(user_name, domain_id);
+        final_result = checkIpAddress(user_name, domain_id, ip_address_inventum);
         if(final_result){
             final_result = checkFilter(user_name + RestConfig.ADVANCED_FILTER, domain_id);
             if(final_result){
@@ -168,7 +171,7 @@ public class RegistrationUserParentalControlImpl implements RegistrationUserPare
      * @param user_name
      * @return 
      */
-    private boolean checkIpAddress(String user_name, String domain_id) {
+    private boolean checkIpAddress(String user_name, String domain_id, String ip_address_inventum) {
         /**
          * change the user name as per the requirements of business logic. user
          * name ex. OE_000007_address_object
@@ -225,9 +228,39 @@ public class RegistrationUserParentalControlImpl implements RegistrationUserPare
             person = restTemplate.exchange(RestConfig.SEARCH_ADDRESS_OBJECT, HttpMethod.GET, entity, String.class, map);
 
             //status code 200 specify the address is already present.
-            if (person.getStatusCodeValue() == 200) {
-                logger.error("filter already exixts user_name : " + user_name);
-                return true;
+            if (person.getStatusCodeValue() == 200) 
+            {
+            	//Cross check versa ip address and inventum ip address
+            	
+            	JSONObject js = new JSONObject(person.getBody());
+            	            	
+            	String ip_address_versa = js.getJSONObject("address").getString("ipv4-prefix");
+            	String ip_address_versa_without_inet = ip_address_versa.substring(0, ip_address_versa.indexOf('/'));
+            	String inetAddress = ip_address_versa.substring(ip_address_versa.indexOf('/')+1 , ip_address_versa.length());
+            	
+            	System.out.println("Versa IP Address : "+ip_address_versa);
+            	System.out.println("IP without inetAddress : "+ip_address_versa_without_inet);
+            	System.out.println("inetAddress : "+inetAddress);
+            	
+            	System.out.println("Inventum IP Address : "+ip_address_inventum);
+            	System.out.println("Ip Address to be updated : "+ip_address_inventum+"/"+inetAddress);
+            	
+            	String IP_ADDRESS_TO_BE_UPDATED = ip_address_inventum+"/"+inetAddress;
+            	
+            	if( ip_address_versa_without_inet.equals(ip_address_inventum) )
+            	{
+            		logger.error("Versa IP and Inventum Ip are same : ");
+            	}
+            	else
+            	{
+            		logger.error("Versa IP Address gonna update : ");
+            		if(updateVersaIPAdreess(domain_id,user_name,IP_ADDRESS_TO_BE_UPDATED))
+            		{
+            			
+            		}
+            	}
+            	return true;
+            	
             } else {
                 logger.error("filter not exixts user_name : " + user_name);
                 return false;
@@ -242,6 +275,58 @@ public class RegistrationUserParentalControlImpl implements RegistrationUserPare
             }
         }
     }
+    
+    
+    private boolean updateVersaIPAdreess(String domain_id, String user_name,String IP_ADDRESS_TO_BE_UPDATED)
+    {
+    	JSONObject InnerRequestObject=new JSONObject();
+    	JSONObject requestObject=new JSONObject();
+    	
+    	InnerRequestObject.put("name", user_name);
+    	InnerRequestObject.put("ipv4-prefix", IP_ADDRESS_TO_BE_UPDATED);
+    	
+    	requestObject.put("address", InnerRequestObject);
+    	
+    	
+    	
+        ResponseEntity<String> person;
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Accept", "application/json");
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        
+        entity = new HttpEntity<>(requestObject.toString().trim(),headers);
+        
+        restTemplate = new RestTemplate();
+        restTemplate.getInterceptors()
+                .add(new BasicAuthorizationInterceptor(RestConfig.USER_NAME, RestConfig.PASSWORD));
+        try {
+            Map<String, String> map = new HashMap<String, String>();
+            map.put("domain_id", domain_id);
+            map.put("address_object_name", user_name);
+            person = restTemplate.exchange(RestConfig.UPDATE_IP_ADDRESS, HttpMethod.PUT, entity, String.class, map);
+
+            //status code 200 specify the address is already present.
+            if (person.getStatusCodeValue() == 201 | person.getStatusCodeValue() == 204) {
+                logger.error("Ip Address Updated successfully... " );
+                return true;
+            } else {
+                logger.error("Something went wrong while updating IP Address to Versa.." );
+                return false;
+            }
+        } catch (RestClientException e) {
+            if (e.getMessage().contains("404")) {
+                logger.error("Something went wrong while updating IP Address to Versa.. with Exception" );
+                return false;
+            } else {
+                logger.error(e.getMessage());
+                return false;
+            }
+        }
+    	
+    }
+    
+    
+    
 
     /**
      * It check the Filter object is present in the versa or not.

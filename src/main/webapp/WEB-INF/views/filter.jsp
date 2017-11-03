@@ -457,7 +457,9 @@
                         <div class="col-md-4 text-right">
                             <c:if test="${not empty advanced_error }">
                                 <h4 style="color:red;margin-top: 5%;">
+                                    <c:if test="${fn:contains(advanced_error, 'Oops!')}">
                                     <span class="glyphicon glyphicon-alert"></span>
+                                    </c:if>
                                     <c:out value="${advanced_error }"></c:out>
                                     </h4>
                             </c:if>
@@ -490,7 +492,9 @@
                         <div class="col-md-5 text-right">
                             <c:if test="${not empty blocked_error }">
                                 <h4 style="color:red;margin-top: 5%;">
+                                    <c:if test="${fn:contains(blocked_error, 'Oops!')}">
                                     <span class="glyphicon glyphicon-alert"></span>
+                                    </c:if>
                                     <c:out value="${blocked_error }"></c:out>
                                     </h4>
                             </c:if>
@@ -505,8 +509,8 @@
                         <div class="col-md-2 text-right">
                         	<form:form action="block-all-categories" modelAttribute="CategoryListDetails" method="post" >
                         		
-                        		<form:hidden path="all_blocked_list" />
                         		<form:hidden path="all_allowed_list" />
+                        		<form:hidden path="all_blocked_list" />
                             	<button id="blockedUnblock" class="btn billButton" type="submit">UNBLOCK ALL</button>
                             </form:form>
                         </div>
@@ -535,7 +539,9 @@
                                 <div class="col-md-4 text-right">
                                     <c:if test="${not empty update_url_error }">
                                         <h4 style="color:red;margin-top: 5%;">
-                                            <span class="glyphicon glyphicon-alert"></span>
+                                            <c:if test="${fn:contains(update_url_error, 'Oops!')}">
+                                    <span class="glyphicon glyphicon-alert"></span>
+                                    </c:if>
                                             <c:out value="${update_url_error }"></c:out>
                                             <c:set var="uodateURLError" value="" />
                                         </h4>
@@ -571,7 +577,9 @@
                         <div class="col-md-4 text-right">
                             <c:if test="${not empty custom_error }">
                                 <h4 style="color:red;margin-top: 5%;">
+                                    <c:if test="${fn:contains(custom_error, 'Oops!')}">
                                     <span class="glyphicon glyphicon-alert"></span>
+                                    </c:if>
                                     <c:out value="${custom_error }"></c:out>
                                     </h4>
                             </c:if>
@@ -658,30 +666,30 @@
             });
         });
         
-        
+//    Start--    AutoComplete Function for URL box
    $(document).ready(function () {
     $("#url_pattern").change(function() {
    
-        if (this.value.indexOf("www.")!=-1){
-          if (this.value.indexOf("http://") ==-1) {
-              if (this.value.indexOf("https://") ==-1 ){
-                  if (this.value.indexOf("ftp://") ==-1 )
+        if (this.value.indexOf("www.")!==-1){
+          if (this.value.indexOf("http://") ===-1) {
+              if (this.value.indexOf("https://") ===-1 ){
+                  if (this.value.indexOf("ftp://") ===-1 )
                   {
                    this.value = "http://" + this.value;
                   }
               }
           
           }}else  if (this.value.indexOf(".")>=2){		 
-                    if (this.value.indexOf("http://") ==-1) {
-                      if (this.value.indexOf("https://") ==-1 ){
-                          if (this.value.indexOf("ftp://") ==-1 )
+                    if (this.value.indexOf("http://") ===-1) {
+                      if (this.value.indexOf("https://") ===-1 ){
+                          if (this.value.indexOf("ftp://") ===-1 )
                             {
                              this.value = "http://" + this.value;
                             }}}}
     });
 });
 
-
+//     End--   AutoComplete Function for URL box
 
 
     </script>
