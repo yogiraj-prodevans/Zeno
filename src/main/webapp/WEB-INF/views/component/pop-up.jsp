@@ -33,6 +33,17 @@
     cursor: pointer;
     box-shadow: 0px 2px 5px #c9c3c3;
 }
+#floating-button3
+{
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: #00C853;
+    position: fixed;
+    top: 190px;
+    cursor: pointer;
+    box-shadow: 0px 2px 5px #c9c3c3;
+}
 .fv
 {
 	color:white;
@@ -71,6 +82,11 @@
 		top:210px !important;
 		right: 2% !important;
 	}
+        #floating-button3
+	{
+		top:110px !important;
+		right: 2% !important;
+	}
 }
 @media (max-width : 730px) 
 {
@@ -88,6 +104,11 @@
 	    height: 45px;
 	}
 	#floating-button1
+	{
+	    width: 45px;
+	    height: 45px;
+	}
+        #floating-button3
 	{
 	    width: 45px;
 	    height: 45px;
@@ -119,6 +140,12 @@
 	    height: 45px;
 	    top: 310px;
 	}
+        #floating-button3
+	{
+	    width: 45px;
+	    height: 45px;
+	    top: 190px;
+	}
 	.pt-18
 	{
 		padding-top: 12px;
@@ -146,6 +173,12 @@
 	    height: 55px;
 	    top: 330px;
 	}
+        #floating-button3
+	{
+	    width: 55px;
+	    height: 55px;
+	    top: 190px;
+	}
 	.pt-18
 	{
 		padding-top: 16px;
@@ -161,6 +194,15 @@
 }
 </style>
 
+<a href="${pageContext.request.contextPath }/control">
+    <div id="container-floating">
+        <div id="floating-button3" data-toggle="tooltip" class="floatingRight">
+            <h6 class="fv pt-18">SURF</h6>
+            <h6 class="fv">SAFE</h6>  
+        </div>
+    </div>
+</a>
+    
 <a href="${pageContext.request.contextPath }/topup">
 	<div id="container-floating"> 		
     	<div id="floating-button" data-toggle="tooltip" class="floatingRight">
@@ -178,6 +220,8 @@
         </div>
     </div>
 </a>
+
+
 
 
 
