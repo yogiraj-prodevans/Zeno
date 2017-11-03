@@ -38,7 +38,10 @@
     width: 55px;
     height: 55px;
     border-radius: 50%;
-    background: #00C853;
+    
+    background-image: url('/zeno/img/icons/Sheild.png');
+    background-repeat: no-repeat;
+    background-position: right top;
     position: fixed;
     top: 190px;
     cursor: pointer;
