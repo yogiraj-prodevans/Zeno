@@ -263,7 +263,7 @@ public class ParentalControl {
 
             if (categoryimpl.updateCategoryList(categoryList.getBlocked_catogery() , categoryList.getAllowded_catogery(), user.getDomid(), user.getActid(), "update_allow")) 
             {
-            	session.setAttribute("blocked_error", "Done! Category successfully unblocked.");
+            	session.setAttribute("blocked_error", "Done! Categories successfully unblocked.");
             	return "redirect:/control";
             } else 
             {
@@ -315,7 +315,7 @@ public class ParentalControl {
         //fetching the user details from the session.
         SessionDetails user = (SessionDetails) session.getAttribute("user");
         if (categoryimpl.updateFilterPattern(categoryList.getRemove_filter_pattern(), user.getDomid(), user.getActid() + RestConfig.ADVANCED_FILTER)) {
-            session.setAttribute("custom_error", "Done! URL successfully unblocked.");
+            session.setAttribute("custom_error", "Done! URL's successfully unblocked.");
         } else {
             session.setAttribute("custom_error", "Oops! URL unblocking failed. Please try again.");
         }
