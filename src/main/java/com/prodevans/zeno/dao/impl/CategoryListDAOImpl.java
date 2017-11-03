@@ -134,7 +134,8 @@ public class CategoryListDAOImpl implements CategoryListDAO {
         
         list.setAll_blocked_list(list.getBlocked_catogery());
         list.setAll_allowed_list(list.getAllowded_catogery());
-        
+        logger.info("List All Allow : " + list.getAll_allowed_list().toString());
+        logger.info("List All Block : " + list.getAll_blocked_list().toString());
         
         return list;
     }

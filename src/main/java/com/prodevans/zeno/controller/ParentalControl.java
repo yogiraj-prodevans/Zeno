@@ -245,12 +245,18 @@ public class ParentalControl {
             	System.out.println("List all all allowed category : "+s);
 			}
             
+            for (String s : categoryList.getAll_blocked_list())
+            {
+            	System.out.println("List all blocked category : "+s);
+			}
+            
             
             categoryList.getAll_allowed_list().addAll(categoryList.getAll_blocked_list());
-            categoryList.getAll_blocked_list().removeAll(categoryList.getAll_blocked_list());
+            
+            //categoryList.getAll_blocked_list().removeAll(categoryList.getAll_blocked_list());
             
 
-            System.out.println("Blocked List : " + categoryList.getAll_blocked_list());
+            //System.out.println("Blocked List : " + categoryList.getAll_blocked_list());
             System.out.println("Allowed List : " + categoryList.getAllow_list_data());
             
             /*
