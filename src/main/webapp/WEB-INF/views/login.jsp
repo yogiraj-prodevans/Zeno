@@ -194,7 +194,7 @@ body {
 												<c:if test="${ not empty error}">
 													
 													<span  class="glyphicon glyphicon-alert" style="color: red;margin-top: 6.5%;" >
-														<span style="color: red;font-family: Roboto;">
+														<span style="color: red;font-family: Roboto;font-size: 15px;">
 															${error}
 														</span>
 													</span>
