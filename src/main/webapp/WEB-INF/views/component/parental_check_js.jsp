@@ -41,14 +41,16 @@
 		    	
 		    	if(response === "true")
 	    		{
-		    		document.getElementById("theImage").style.visibility = "visible";
-		    		document.getElementById("floating-button3").style.visibility = "visible";
-		    		jQuery(".sampleClass").css({"color":"red"});
+		    		
+		    		document.getElementById("parental_control_on").style.visibility = "visible";
+		    		document.getElementById("parental_control_off").style.visibility = "hidden";
+		    		
 	    		}
 		    	else
 	    		{
-		    		document.getElementById("theImage").style.visibility = "hidden";
-		    		document.getElementById("floating-button3").style.visibility = "hidden";
+		    		
+		    		document.getElementById("parental_control_off").style.visibility = "visible";
+		    		document.getElementById("parental_control_on").style.visibility = "hidden";
 	    		}
 
 	    	});
