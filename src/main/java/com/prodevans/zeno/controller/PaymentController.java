@@ -147,9 +147,8 @@ public class PaymentController {
 	@RequestMapping(value = "/ccavRequestHandler", method = RequestMethod.POST)
 	public String ccavRequestHandler(ModelMap model, HttpSession session,HttpServletRequest request) 
 	{
-		return "payment/ccavRequestHandler";
-		/*
-		 * remove comment for amount validation
+		//return "payment/ccavRequestHandler";
+		
 		double amount=Double.parseDouble(request.getParameter("trans_amount"));
 		System.out.println("Amount : "+amount);
 		if(amount>0)
@@ -167,7 +166,7 @@ public class PaymentController {
 		
 		model.addAttribute("isValidAmount","Payable amount is zero..");
 		return "payment/sendData";
-		*/
+		
 		
 	}
 
