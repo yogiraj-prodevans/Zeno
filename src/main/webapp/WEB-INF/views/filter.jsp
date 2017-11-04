@@ -338,13 +338,13 @@
 
             .col-md-2
             {
-                width: 12.666667% !important;
+                /*width: 12.666667% !important;*/
                 padding-right: unset !important;
                 padding-left: unset !important;
             }
             .col-md-4
             {
-                width: 37.333333% !important;
+                /*width: 37.333333% !important;*/
             }
 
         </style>
@@ -456,7 +456,7 @@
                         <div class="col-md-6"></div>
                         <div class="col-md-4 text-right">
                             <c:if test="${not empty advanced_error }">
-                                <h4 style="color:red;margin-top: 5%;">
+                                <h4 style="color:red;margin-top: 3%;">
                                     <c:if test="${fn:contains(advanced_error, 'Oops!')}">
                                     <span class="glyphicon glyphicon-alert"></span>
                                     </c:if>
@@ -491,7 +491,7 @@
                         <div class="col-md-6"></div>
                         <div class="col-md-4 text-right">
                             <c:if test="${not empty blocked_error }">
-                                <h4 style="color:red;margin-top: 5%;">
+                                <h4 style="color:red;margin-top: 3%;">
                                     <c:if test="${fn:contains(blocked_error, 'Oops!')}">
                                     <span class="glyphicon glyphicon-alert"></span>
                                     </c:if>
@@ -512,7 +512,7 @@
                         <div class="row  ">
                         <form:form  action="update-patterns" modelAttribute="CategoryListDetails" method="post" >
                             <div class=" row" >
-                                <label for="url-block" class="col-md-5 text-justify font-h3" style="margin-right: -87px "title="Add the URL to be blocked" >Block specific websites.</label>
+                                <label for="url-block" class="col-md-4 text-justify font-h3" title="Add the URL to be blocked" >Block specific websites.</label>
                                 <div class="col-md-8" style="padding: unset;">
                                     <input id="url_pattern" type="url" class="" style="width:100%; margin-top: 6px; font-size: 24px;" name="url_pattern" placeholder="www.example.com" pattern="[h]{0,1}[ftw][tw][pw][s]{0,1}[.:/]{1,3}[\w\W]*" required="required" >
                                 </div>
@@ -524,7 +524,7 @@
                                 <div class="col-md-6"></div>
                                 <div class="col-md-4 text-right">
                                     <c:if test="${not empty update_url_error }">
-                                        <h4 style="color:red;margin-top: 5%;">
+                                        <h4 style="color:red;margin-top: 3%;">
                                             <c:if test="${fn:contains(update_url_error, 'Oops!')}">
                                     <span class="glyphicon glyphicon-alert"></span>
                                     </c:if>
@@ -562,7 +562,7 @@
                         <div class="col-md-6"></div>
                         <div class="col-md-4 text-right">
                             <c:if test="${not empty custom_error }">
-                                <h4 style="color:red;margin-top: 5%;">
+                                <h4 style="color:red;margin-top: 3%;">
                                     <c:if test="${fn:contains(custom_error, 'Oops!')}">
                                     <span class="glyphicon glyphicon-alert"></span>
                                     </c:if>
