@@ -116,8 +116,9 @@
 	}
         #floating-light
 	{
-	    width: 45px;
-	    height: 45px;
+	    width: 50px;
+	    height: 50px;
+            background-size: 50px;
 	}
 	.pt-18
 	{
@@ -148,8 +149,9 @@
 	}
         #floating-light
 	{
-	    width: 45px;
-	    height: 45px;
+	    width: 50px;
+	    height: 50px;
+            background-size: 50px;
 	    top: 190px;
 	}
 	.pt-18
@@ -181,8 +183,9 @@
 	}
         #floating-light
 	{
-	    width: 55px;
-	    height: 55px;
+	    width: 60px;
+	    height: 60px;
+            background-size: 60px;
 	    top: 190px;
 	}
 	.pt-18
@@ -198,13 +201,21 @@
 		right: 2.4% !important;
 	}
 }
+.floating-light-font
+{
+    font-size: 10px !important;
+    line-height: 0px !important;
+    text-shadow: 1px 1px black;
+    font-style: oblique;
+    align-content: center;
+}
 </style>
 
 <a href="${pageContext.request.contextPath }/control">
     <div id="container-floating">
         <div id="floating-light" data-toggle="tooltip" class="floatingRight">
-            <h6 class="fv pt-18" style="text-shadow: 1px 1px black; " >SURF</h6>
-            <h6 class="fv" style="text-shadow: 1px 1px black;" >SAFE</h6>  
+            <h6 class="fv pt-18 floating-light-font"  >SURF</h6>
+            <h6 class="fv floating-light-font" >SAFE</h6>  
         </div>
     </div>
 </a>
