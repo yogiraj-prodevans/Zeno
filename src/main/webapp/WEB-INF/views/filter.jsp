@@ -224,7 +224,7 @@
                 margin-bottom: 20px;
                 /*                    padding-top: 10px;*/
             }
-            .btn {
+/*            .btn {
                 margin-top: 20px !important;
                 margin-bottom: 1px;
                 font-size: 22px;
@@ -233,7 +233,7 @@
                 padding-top: unset;
                 padding-bottom: unset;
 
-            }
+            }*/
             .row{
                 margin-right: unset;
                 margin-left: unset;
