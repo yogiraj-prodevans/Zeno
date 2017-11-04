@@ -10,18 +10,7 @@
 {
 	padding-top: 18px;
 }
-
-#floating-light
-{
-    width: 55px;
-    height: 55px;
-    position: fixed;
-    top: 75px;
-    right : 6%;
-    cursor: pointer;
-}
-			
-			
+						
 /*Floating button*/
 #floating-button
 {
@@ -45,7 +34,7 @@
     cursor: pointer;
     box-shadow: 0px 2px 5px #c9c3c3;
 }
-#floating-button3
+#floating-light
 {
     width: 60px;
     height: 60px;
@@ -98,7 +87,8 @@
 		top:210px !important;
 		right: 2% !important;
 	}
-        #floating-button3
+/*        Indicator-Light*/
+        #floating-light
 	{
 		top:110px !important;
 		right: 2% !important;
@@ -124,7 +114,7 @@
 	    width: 45px;
 	    height: 45px;
 	}
-        #floating-button3
+        #floating-light
 	{
 	    width: 45px;
 	    height: 45px;
@@ -156,7 +146,7 @@
 	    height: 45px;
 	    top: 310px;
 	}
-        #floating-button3
+        #floating-light
 	{
 	    width: 45px;
 	    height: 45px;
@@ -189,7 +179,7 @@
 	    height: 55px;
 	    top: 330px;
 	}
-        #floating-button3
+        #floating-light
 	{
 	    width: 55px;
 	    height: 55px;
@@ -212,7 +202,7 @@
 
 <a href="${pageContext.request.contextPath }/control">
     <div id="container-floating">
-        <div id="floating-button3" data-toggle="tooltip" class="floatingRight">
+        <div id="floating-light" data-toggle="tooltip" class="floatingRight">
             <h6 class="fv pt-18" style="text-shadow: 1px 1px black; " >SURF</h6>
             <h6 class="fv" style="text-shadow: 1px 1px black;" >SAFE</h6>  
         </div>
@@ -238,10 +228,6 @@
 </a>
 
 
-<a href="${pageContext.request.contextPath }/control">
-		<div id="floating-light"> 		
-	    	<img id="theImage" alt="" src="img/light4.gif">
-	    </div>
-	</a>
+
 
 
