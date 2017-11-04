@@ -34,7 +34,8 @@
     cursor: pointer;
     box-shadow: 0px 2px 5px #c9c3c3;
 }
-#floating-light
+
+#parental_control_off
 {
     width: 60px;
     height: 60px;
@@ -49,6 +50,25 @@
     cursor: pointer;
    
 }
+
+#parental_control_on
+{
+    width: 60px;
+    height: 60px;
+    
+    color:black;
+    background-image: url('/zeno/img/icons/shield-icon_green.png');
+    background-size: 60px;
+    background-repeat: no-repeat;
+    background-position: right top;
+    position: fixed;
+    top: 190px;
+    cursor: pointer;
+   
+}
+
+
+
 .fv
 {
 	color:white;
@@ -202,12 +222,22 @@
 
 <a href="${pageContext.request.contextPath }/control">
     <div id="container-floating">
-        <div id="floating-light" data-toggle="tooltip" class="floatingRight">
+        <div id="parental_control_off" data-toggle="tooltip" class="floatingRight">
             <h6 class="fv pt-18" style="text-shadow: 1px 1px black; " >SURF</h6>
             <h6 class="fv" style="text-shadow: 1px 1px black;" >SAFE</h6>  
         </div>
     </div>
 </a>
+
+<a href="${pageContext.request.contextPath }/control">
+    <div id="container-floating">
+        <div id="parental_control_on" data-toggle="tooltip" class="floatingRight">
+            <h6 class="fv pt-18" style="text-shadow: 1px 1px black; " >SURF</h6>
+            <h6 class="fv" style="text-shadow: 1px 1px black;" >SAFE</h6>  
+        </div>
+    </div>
+</a>
+
     
 <a href="${pageContext.request.contextPath }/topup">
 	<div id="container-floating"> 		

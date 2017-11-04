@@ -42,13 +42,15 @@
 		    	if(response === "true")
 	    		{
 		    		
-		    		document.getElementById("floating-light").style.visibility = "visible";
+		    		document.getElementById("parental_control_on").style.visibility = "visible";
+		    		document.getElementById("parental_control_off").style.visibility = "hidden";
 		    		
 	    		}
 		    	else
 	    		{
 		    		
-		    		document.getElementById("floating-light").style.visibility = "hidden";
+		    		document.getElementById("parental_control_off").style.visibility = "visible";
+		    		document.getElementById("parental_control_on").style.visibility = "hidden";
 	    		}
 
 	    	});
