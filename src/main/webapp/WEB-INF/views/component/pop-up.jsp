@@ -48,7 +48,7 @@
     position: fixed;
     top: 190px;
     cursor: pointer;
-    right: 2.35% !important;
+/*    right: 2.35% !important;*/
 }
 
 #parental_control_on
@@ -56,7 +56,7 @@
     width: 60px;
     height: 60px;
     
-    color:black;
+    
     background-image: url('/zeno/img/icons/shield-icon_green.png');
     background-size: 60px;
     background-repeat: no-repeat;
@@ -64,7 +64,7 @@
     position: fixed;
     top: 190px;
     cursor: pointer;
-    right: 2.35% !important;
+/*    right: 2.35% !important;*/
 }
 
 
@@ -248,10 +248,9 @@
 }
 .floating-light-font
 {
+    color: black;
     font-size: 10px !important;
     line-height: 0px !important;
-    text-shadow: 1px 1px black;
-    font-style: oblique;
     align-content: center;
 }
 </style>
@@ -261,8 +260,8 @@
 <a href="${pageContext.request.contextPath }/control">
     <div id="container-floating">
         <div id="parental_control_on" data-toggle="tooltip" class="floatingRight">
-            <h6 class="fv pt-18 floating-light-font" style="text-shadow: 1px 1px black; " >SURF</h6>
-            <h6 class="fv floating-light-font" style="text-shadow: 1px 1px black;" >SAFE</h6>  
+            <h6 class="fv pt-18 floating-light-font"  >SURF</h6>
+            <h6 class="fv floating-light-font"  >SAFE</h6>  
         </div>
     </div>
 </a>
@@ -270,8 +269,8 @@
  <a href="${pageContext.request.contextPath }/control">
     <div id="container-floating">
         <div id="parental_control_off" data-toggle="tooltip" class="floatingRight">
-            <h6 class="fv pt-18 floating-light-font" style="text-shadow: 1px 1px black; " >SURF</h6>
-            <h6 class="fv floating-light-font" style="text-shadow: 1px 1px black;" >SAFE</h6>  
+            <h6 class="fv pt-18 floating-light-font"  " >SURF</h6>
+            <h6 class="fv floating-light-font"  >SAFE</h6>  
         </div>
     </div>
 </a>
