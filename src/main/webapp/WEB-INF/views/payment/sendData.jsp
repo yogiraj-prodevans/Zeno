@@ -186,7 +186,7 @@
             	<div class="col-md-8 col-sm-12">
 					<c:if test="${ not empty isValidAmount}">
 						<h1 style="color: #F44336;" class="currentBillFontforiPhone5">
-	                    	<!--  Payable amount is &#8377; 0.0 -->
+	                    	  Payable amount is &#8377; 0.0 
 	                	</h1>
 					</c:if>
             	</div>

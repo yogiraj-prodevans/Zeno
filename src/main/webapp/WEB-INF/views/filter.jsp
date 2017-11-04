@@ -228,7 +228,7 @@
                 margin-bottom: 20px;
                 /*                    padding-top: 10px;*/
             }
-            .btn {
+/*            .btn {
                 margin-top: 20px !important;
                 margin-bottom: 1px;
                 font-size: 22px;
@@ -237,7 +237,7 @@
                 padding-top: unset;
                 padding-bottom: unset;
 
-            }
+            }*/
             .row{
                 margin-right: unset;
                 margin-left: unset;
@@ -342,13 +342,14 @@
 
             .col-md-2
             {
-                width: 12.666667% !important;
+                /*width: 12.666667% !important;*/
                 padding-right: unset !important;
                 padding-left: unset !important;
             }
-            .col-md-4
-            {
-                width: 37.333333% !important;
+            .col-md-4 {
+                padding-left: unset;
+                padding-right: unset;
+                width: 33.33333333% !important;
             }
 
         </style>
@@ -477,8 +478,6 @@
             <div id="Blocked" class="tab-pane fade row <c:if test="${not empty blocked_error }"> in active</c:if>">
                 <form:form action="block-categories" modelAttribute="CategoryListDetails" method="post" >
                     <div class="category_box">
-
-
                         <div style="height:250px ; overflow-x: auto;"> 
                             <p class="font-h4" style="padding-bottom: 15px;">View and edit your list of blocked categories. To allow a category from this list, check the box next to it and hit UNBLOCK </p>
                             <c:forEach items="${CAT.getBlocked_catogery()}" var="cat">
@@ -490,32 +489,24 @@
                     </div>
                     <form:hidden path="allowded_catogery" />
                     <form:hidden path="blocked_catogery" />
-                    <div class="panel-footer ">
-
-                        <div class="col-md-3"></div>
-                        <div class="col-md-5 text-right">
+                    <div class="row text-right">
+                        <!--<div class="col-md-3"></div>-->
+                        <div class="col-md-8 text-right">
                             <c:if test="${not empty blocked_error }">
-                                <h4 style="color:red;margin-top: 5%;">
+                                <p style="color:red;margin-top: 4%; " >
                                     <c:if test="${fn:contains(blocked_error, 'Oops!')}">
-                                    <span class="glyphicon glyphicon-alert"></span>
+                                        <span class="glyphicon glyphicon-alert"></span>
                                     </c:if>
                                     <c:out value="${blocked_error }"></c:out>
-                                    </h4>
+                                </p>
                             </c:if>
                         </div>
-                        <div class="col-md-2 text-right">
-                            <button id="blockedUnblock" class="btn billButton" type="submit" formaction="block-categories" >UNBLOCK</button>
+                        <div class="col-md-4" >
+                        <button id="blockedUnblock" class="btn billButton" type="submit" formaction="block-categories" >UNBLOCK</button>
+                        <button id="blockedALLUnblock" class="btn billButton" type="submit" formaction="block-all-categories">UNBLOCK ALL</button>
                         </div>
-                         
-                        <div class="col-md-2 text-right">	
-                           <button id="blockedALLUnblock" class="btn billButton" type="submit" formaction="block-all-categories">UNBLOCK ALL</button>
-                        </div>
-                        
-                        
                     </div>
-                    
                  </form:form>
-                
             </div>
             <div id="Custom" class="tab-pane fade row <c:if test="${not empty update_url_error || not empty custom_error }"> in active</c:if>">
                     <div class="category_box ">
@@ -524,7 +515,7 @@
                         <div class="row  ">
                         <form:form  action="update-patterns" modelAttribute="CategoryListDetails" method="post" >
                             <div class=" row" >
-                                <label for="url-block" class="col-md-5 text-justify font-h3" style="margin-right: -87px "title="Add the URL to be blocked" >Block specific websites.</label>
+                                <label for="url-block" class="col-md-4 text-justify font-h3" title="Add the URL to be blocked" >Block specific websites.</label>
                                 <div class="col-md-8" style="padding: unset;">
                                     <input id="url_pattern" type="url" class="" style="width:100%; margin-top: 6px; font-size: 24px;" name="url_pattern" placeholder="www.example.com" pattern="[h]{0,1}[ftw][tw][pw][s]{0,1}[.:/]{1,3}[\w\W]*" required="required" >
                                 </div>
@@ -569,24 +560,22 @@
                             </div>
                         </div>
                     </div>
-                    <div class="panel-footer ">
-
-                        <div class="col-md-4"></div>
-                        <div class="col-md-4 text-right">
+                    
+                            <div class="row text-right">
+                        <!--<div class="col-md-3"></div>-->
+                        <div class="col-md-8 text-right">
                             <c:if test="${not empty custom_error }">
-                                <h4 style="color:red;margin-top: 5%;">
+                                <p style="color:red;margin-top: 4%; " >
                                     <c:if test="${fn:contains(custom_error, 'Oops!')}">
-                                    <span class="glyphicon glyphicon-alert"></span>
+                                        <span class="glyphicon glyphicon-alert"></span>
                                     </c:if>
                                     <c:out value="${custom_error }"></c:out>
-                                    </h4>
+                                </p>
                             </c:if>
                         </div>
-                        <div class="col-md-2 text-right">
-                            <button id="customUnblock" class="btn billButton" type="submit" formaction="delete-patterns" >UNBLOCK</button>
-                        </div>
-                        <div class="col-md-2 text-right">
-                            <button id="customUnblock" class="btn billButton" type="submit" formaction="delete-all-patterns" >UNBLOCK ALL</button>
+                        <div class="col-md-4" >
+                        <button id="blockedUnblock" class="btn billButton" type="submit" formaction="delete-patterns" >UNBLOCK</button>
+                        <button id="blockedALLUnblock" class="btn billButton" type="submit" formaction="delete-all-patterns">UNBLOCK ALL</button>
                         </div>
                     </div>
                 </form:form>
