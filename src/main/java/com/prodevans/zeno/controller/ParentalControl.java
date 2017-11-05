@@ -258,6 +258,13 @@ public class ParentalControl {
         	//fetching the user details from the session.
             SessionDetails user = (SessionDetails) session.getAttribute("user");
 
+            if(categoryList.getBlocked_catogery().isEmpty())
+            {
+            	session.setAttribute("blocked_error", "Oops! Category unblocking failed. There are no any Categories to Unblock.");
+            	return "redirect:/control";
+            }
+            
+            
             categoryList.getAllowded_catogery().addAll(categoryList.getBlocked_catogery());
             categoryList.getBlocked_catogery().removeAll(categoryList.getBlocked_catogery());
 
@@ -314,6 +321,14 @@ public class ParentalControl {
 
         //fetching the user details from the session.
         SessionDetails user = (SessionDetails) session.getAttribute("user");
+        
+        if(categoryList.getRemove_filter_pattern().isEmpty())
+        {
+        	session.setAttribute("custom_error", "Oops! URL unblocking failed. There are no any URL's to Unblock.");
+        	return "redirect:/control";
+        }
+        
+        
         if (categoryimpl.updateFilterPattern(categoryList.getRemove_filter_pattern(), user.getDomid(), user.getActid() + RestConfig.ADVANCED_FILTER)) {
             session.setAttribute("custom_error", "Done! URL's successfully unblocked.");
         } else {
