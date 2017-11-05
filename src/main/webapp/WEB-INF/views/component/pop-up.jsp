@@ -259,7 +259,7 @@
 
 <a href="${pageContext.request.contextPath }/control">
     <div id="container-floating">
-        <div id="parental_control_on" data-toggle="tooltip" class="floatingRight">
+        <div id="parental_control_on" data-toggle="tooltip" class="floatingRight" title="SURF SAFE: ON">
             <h6 class="fv pt-18 floating-light-font"  >SURF</h6>
             <h6 class="fv floating-light-font"  >SAFE</h6>  
         </div>
@@ -268,7 +268,7 @@
     
  <a href="${pageContext.request.contextPath }/control">
     <div id="container-floating">
-        <div id="parental_control_off" data-toggle="tooltip" class="floatingRight">
+        <div id="parental_control_off" data-toggle="tooltip" class="floatingRight" title="SURF SAFE: OFF">
             <h6 class="fv pt-18 floating-light-font"  " >SURF</h6>
             <h6 class="fv floating-light-font"  >SAFE</h6>  
         </div>

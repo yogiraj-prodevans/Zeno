@@ -351,6 +351,12 @@
                 padding-right: unset;
                 width: 33.33333333% !important;
             }
+            
+            .ss-status-led{
+            height: 10px;
+            width: 10px; 
+            float:start ;width:10px;height:10px;
+            }
 
         </style>
 
@@ -374,7 +380,7 @@
                     <li><a
                             href="${pageContext.request.contextPath }/billingPayment">PAY YOUR BILL</a></li>
                     <li class="active"><a
-                            href="${pageContext.request.contextPath }/control">SURF SAFE</a></li>
+                            href="${pageContext.request.contextPath }/control">SURF SAFE <img class="ss-status-led" id="parental-led"  alt="Status" title="SURF SAFE Status" ></a></li>
                     <li><a href="${pageContext.request.contextPath }/service">SERVICE</a></li>
 
                     <li><a href="${pageContext.request.contextPath }/profile">PROFILE</a></li>

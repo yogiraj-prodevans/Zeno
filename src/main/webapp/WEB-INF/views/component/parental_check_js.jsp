@@ -44,6 +44,10 @@
 		    		
 		    		document.getElementById("parental_control_on").style.visibility = "visible";
 		    		document.getElementById("parental_control_off").style.visibility = "hidden";
+//                                document.getElementById("parental-led-on").style.visibility = "visible";
+//		    		document.getElementById("parental-led-off").style.visibility = "hidden";
+                                document.getElementById("parental-led").src="/zeno/img/icons/led-green.png";
+                                document.getElementById("parental-led").title="SURF SAFE: ON";
 		    		
 	    		}
 		    	else
@@ -51,6 +55,10 @@
 		    		
 		    		document.getElementById("parental_control_off").style.visibility = "visible";
 		    		document.getElementById("parental_control_on").style.visibility = "hidden";
+//                                document.getElementById("parental-led-off").style.visibility = "visible";
+//		    		document.getElementById("parental-led-on").style.visibility = "hidden";
+                                document.getElementById("parental-led").src="/zeno/img/icons/led-red.png";
+                                document.getElementById("parental-led").title="SURF SAFE: OFF";
 	    		}
 
 	    	});
