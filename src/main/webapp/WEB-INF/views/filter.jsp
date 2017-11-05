@@ -106,11 +106,12 @@
                 
                                 }*/
                 /*icons and background sizes*/
-                .nav-tabs > li.active > a#advance-filter {
-                    color: #716868;
-                    padding: 5px 15px 15px 60px;
-                    border-bottom: 7px red solid !important;
-                    background-image: url('${pageContext.request.contextPath }/img/icons/Check_red.png') !important;
+                
+            nav-tabs > li.active > a#advance-filter {
+                color: #716868;
+                padding: 5px 15px 15px 60px;
+                border-bottom: 7px red solid !important;
+                background-image: url('${pageContext.request.contextPath }/img/icons/Check_red.png') !important;
                 background-size: 43px !important;
                 background-repeat: no-repeat !important;
                 font-size: 20px;
@@ -137,7 +138,7 @@
 
             .nav-tabs > li > a#block-filter {
                 color: #716868;
-                /*padding: 5px 15px 15px 60px;*/
+                padding: 5px 15px 15px 60px;
                 border-bottom: 7px #fff solid !important;
                 background-image: url('${pageContext.request.contextPath }/img/icons/Blocked_grey.png') !important;
                 background-size: 43px !important;
@@ -182,6 +183,9 @@
                 min-width: 250px;
                 
             }
+            
+             
+
             .border{
                 /*border-bottom: 1px solid #ddd;*/
                 padding: unset ! important;
@@ -297,6 +301,11 @@
                 border-radius: 10px;
                 -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
             }
+            .category_list
+            {
+                height:250px ; 
+                overflow-x: auto;
+            }
             
 /*        Tablet*/
             @media (max-width: 730px) and (min-width:501px)
@@ -304,7 +313,7 @@
                 .col-md-7, col-xs-7,.col-md-5, col-xs-5 
                 {
                     padding-right: unset;
-           
+                }
                 .category_box
                 {
                     padding: 15px !important;
@@ -337,12 +346,20 @@
                     min-width: 115px;
                        
                 }
+                .category_list{
+                height:300px ; 
+                overflow-x: auto;
+                }
+                
+                
+                
 
                 .nav > li {
-                    /* position: relative; */
-                    /* display: block; */
-                    margin-right: 10px !important;
-                    min-width: 115px !important;
+                    position: relative; 
+                    display: block; 
+                    margin-right: 5px !important;
+                    min-width: 100px !important;
+                   
                 }
                 .nav-tabs > li.active > a#advance-filter {
                     color: #716868;
@@ -351,8 +368,9 @@
                     background-image: url('${pageContext.request.contextPath }/img/icons/Check_red.png') !important;
                     background-size: 30px !important;
                     background-repeat: no-repeat !important;
-                    font-size: 15px;     
-                    width: 115px;
+                     padding-bottom: 20px;
+                    font-size: 12px !important;    
+                    width: 100px;
                 }
 
                 .nav-tabs > li > a#advance-filter {
@@ -362,8 +380,9 @@
                     background-image: url('${pageContext.request.contextPath }/img/icons/Check_grey.png') !important;
                     background-size: 30px !important;
                     background-repeat: no-repeat !important;
-                    font-size: 15px;  
-                    width: 115px;
+                    padding-bottom: 20px;
+                    font-size: 12px !important;
+                    width: 100px;
                 }
                 .nav-tabs > li.active > a#block-filter {
                     color: #716868;
@@ -372,8 +391,9 @@
                     background-image: url('${pageContext.request.contextPath }/img/icons/Blocked_red.png') !important;
                     background-size: 30px !important;
                     background-repeat: no-repeat !important;
-                    font-size: 15px;
-                    width: 115px;
+                     padding-bottom: 20px;
+                    font-size: 12px !important;
+                    width: 100px;
                 }
 
                 .nav-tabs > li > a#block-filter {
@@ -383,8 +403,9 @@
                     background-image: url('${pageContext.request.contextPath }/img/icons/Blocked_grey.png') !important;
                     background-size: 30px !important;
                     background-repeat: no-repeat !important;
-                    font-size: 15px;
-                    width: 115px;
+                    padding-bottom: 20px;
+                    font-size: 12px !important;
+                    width: 100px;
                 }
 
                 .nav-tabs > li.active > a#custom-filter {
@@ -394,8 +415,9 @@
                     background-image: url('${pageContext.request.contextPath }/img/icons/Custom_red.png') !important;
                     background-size: 30px !important;
                     background-repeat: no-repeat !important;
-                    font-size: 15px;  
-                    width: 115px;
+                    padding-bottom: 20px;
+                    font-size: 12px !important;
+                    width: 100px;
                 }
 
 
@@ -406,10 +428,11 @@
                     background-image: url('${pageContext.request.contextPath }/img/icons/Custom_grey.png') !important;
                     background-size: 30px !important;
                     background-repeat: no-repeat !important;
-                    font-size: 15px; 
-                    width: 115px;
+                    padding-bottom: 20px;
+                    font-size: 12px !important; 
+                    width: 100px;
                 }
-              
+               
 
 
             }
@@ -557,7 +580,7 @@
                 <form:form action="allow-categories" modelAttribute="CategoryListDetails" method="post" >
                     <div class="category_box">
 
-                        <div  style="height:250px ; overflow-x: auto;">   
+                        <div  class="category_list">   
                             <p class="font-h4" style="padding-bottom: 15px;">Choose content categories that you don’t want to view on your network and hit BLOCK to keep related websites out.</p>
                             <c:forEach items="${CAT.getAllowded_catogery()}" var="cat" >
                                 <div class="col-md-6 col-sm-6 border text-justify">
@@ -583,7 +606,7 @@
                             </c:if>
                         </div>
                         <div class="col-md-2 text-right">
-                            <button id="advacneBlock" class="btn billButton font-h3" type="submit">BLOCK</button>
+                            <button id="advacneBlock" class="btn billButton font-h3 " type="submit">BLOCK</button>
                         </div>
                     </div>
                 </form:form> 	
@@ -593,7 +616,7 @@
                     <div class="category_box">
 
 
-                        <div style="height:250px ; overflow-x: auto;"> 
+                        <div class="category_list"> 
                             <p class="font-h4" style="padding-bottom: 15px;">View and edit your list of blocked categories. To allow a category from this list, check the box next to it and hit UNBLOCK </p>
                             <c:forEach items="${CAT.getBlocked_catogery()}" var="cat">
                                 <div class="col-md-6 col-sm-6 border text-justify">

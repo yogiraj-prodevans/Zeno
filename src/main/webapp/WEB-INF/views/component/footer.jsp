@@ -10,6 +10,10 @@
     {
         padding-right: 0.1%;
     }
+    .row
+    {
+            text-align: center;
+    }
     @media ( max-width :1366px ) and (min-width:1024px)
     {
         .pdlFooter
@@ -21,6 +25,9 @@
             padding-right: 1.2%;
         }
     }
+    @media ( max-width :1366px ) and (min-width:1024px){
+        
+    }
 
 
 </style>
@@ -28,12 +35,12 @@
 <!-- BEGIN FOOTER -->
 <div class="footer"  style="width:100%;  font-size:10px">
 
-    <div class="row" style="margin:unset;margin-left: 5%; margin-right: 4%;">
+    <div class="row mobile_row" style="margin:unset;margin-left: 5%; margin-right: 4%;">
         <!-- BEGIN COPYRIGHT -->
 
         <div class="col-md-3 col-xs-12 pdlFooter" style="color:black; "><div class="font-h5"> &copy; <script type="text/JavaScript">document.write(new Date().getFullYear());</script> ONE-EIGHT TECHNOLOGIES PRIVATE LTD</div></div> 
         <div class="col-md-9 col-xs-12 footerPR" style="text-align: right;">
-            <div class="row">
+            <div class="row ">
                 <a href="${pageContext.request.contextPath }/help" class="font-h5">FAQ </a> <span style="padding: 5px;"></span>
                
                 <a href="${pageContext.request.contextPath }/terms" class="font-h5">TERMS AND CONDITIONS </a> <span style="padding: 5px;"></span>
