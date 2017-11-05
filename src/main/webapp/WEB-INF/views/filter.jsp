@@ -137,7 +137,7 @@
 
             .nav-tabs > li > a#block-filter {
                 color: #716868;
-                padding: 5px 15px 15px 60px;
+                /*padding: 5px 15px 15px 60px;*/
                 border-bottom: 7px #fff solid !important;
                 background-image: url('${pageContext.request.contextPath }/img/icons/Blocked_grey.png') !important;
                 background-size: 43px !important;
@@ -180,6 +180,7 @@
                 display: block;
                 margin-right: 70px;
                 min-width: 250px;
+                
             }
             .border{
                 /*border-bottom: 1px solid #ddd;*/
@@ -296,13 +297,14 @@
                 border-radius: 10px;
                 -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
             }
-
-            @media (max-width: 730px)
+            
+/*        Tablet*/
+            @media (max-width: 730px) and (min-width:501px)
             {
                 .col-md-7, col-xs-7,.col-md-5, col-xs-5 
                 {
                     padding-right: unset;
-                }
+           
                 .category_box
                 {
                     padding: 15px !important;
@@ -310,6 +312,114 @@
                 .border
                 {
                     padding: 0px !important;
+                }
+                .Surf_Safe
+                {
+                    font-size: 27px ! important; 
+                }
+            }
+/*            Mobile*/
+            @media (max-width: 500px) and (min-width: 240px)
+            {
+               .Surf_Safe
+                {
+                    font-size: 27px;
+                }
+                .user_name{
+                    margin-left: 52%;
+                     font-size: 25px;
+                }
+                .mobile_tab
+                {
+                    font-size: 15px;
+                    padding-left: 33px;
+                    border-bottom: 5px;
+                    min-width: 115px;
+                       
+                }
+
+                .nav > li {
+                    /* position: relative; */
+                    /* display: block; */
+                    margin-right: 10px !important;
+                    min-width: 115px !important;
+                }
+                .nav-tabs > li.active > a#advance-filter {
+                    color: #716868;
+                    padding: 5px 15px 15px 33px;
+                    border-bottom: 5px red solid !important;
+                    background-image: url('${pageContext.request.contextPath }/img/icons/Check_red.png') !important;
+                    background-size: 30px !important;
+                    background-repeat: no-repeat !important;
+                    font-size: 15px;     
+                    width: 115px;
+                }
+
+                .nav-tabs > li > a#advance-filter {
+                    color: #716868;
+                    padding: 5px 15px 15px 33px;
+                    border-bottom: 5px #fff solid !important;
+                    background-image: url('${pageContext.request.contextPath }/img/icons/Check_grey.png') !important;
+                    background-size: 30px !important;
+                    background-repeat: no-repeat !important;
+                    font-size: 15px;  
+                    width: 115px;
+                }
+                .nav-tabs > li.active > a#block-filter {
+                    color: #716868;
+                    padding: 5px 15px 15px 33px;
+                    border-bottom: 5px red solid !important;
+                    background-image: url('${pageContext.request.contextPath }/img/icons/Blocked_red.png') !important;
+                    background-size: 30px !important;
+                    background-repeat: no-repeat !important;
+                    font-size: 15px;
+                    width: 115px;
+                }
+
+                .nav-tabs > li > a#block-filter {
+                    color: #716868;
+                    padding: 5px 15px 15px 33px;
+                    border-bottom: 5px #fff solid !important;
+                    background-image: url('${pageContext.request.contextPath }/img/icons/Blocked_grey.png') !important;
+                    background-size: 30px !important;
+                    background-repeat: no-repeat !important;
+                    font-size: 15px;
+                    width: 115px;
+                }
+
+                .nav-tabs > li.active > a#custom-filter {
+                    color: #716868;
+                    padding: 5px 15px 15px 33px;
+                    border-bottom: 5px red solid !important;
+                    background-image: url('${pageContext.request.contextPath }/img/icons/Custom_red.png') !important;
+                    background-size: 30px !important;
+                    background-repeat: no-repeat !important;
+                    font-size: 15px;  
+                    width: 115px;
+                }
+
+
+                .nav-tabs > li > a#custom-filter {
+                    color: #716868;
+                    padding: 5px 15px 15px 33px;
+                    border-bottom: 5px #fff solid !important;
+                    background-image: url('${pageContext.request.contextPath }/img/icons/Custom_grey.png') !important;
+                    background-size: 30px !important;
+                    background-repeat: no-repeat !important;
+                    font-size: 15px; 
+                    width: 115px;
+                }
+              
+
+
+            }
+            
+/*            Laptop size*/
+            @media ( max-width :1921px) and (min-width:1340px) 
+            {
+                .Surf_Safe
+                {
+                    font-size: 36px;
                 }
             }
 
@@ -327,7 +437,7 @@
                 background-color: #fff;
                 border: 1px #db3236 solid;
             }
-            @media (max-width: 730px)
+            @media (max-width: 730px) 
             {
                 .col-md-7, col-xs-7,.col-md-5, col-xs-5 
                 {
@@ -346,7 +456,14 @@
             {
                 /*width: 37.333333% !important;*/
             }
-
+            @media ( max-width :1366px ) and (min-width:1024px)
+            {
+                .Surf_Safe
+                {
+                    font-size: 36px ! important;
+                }
+                
+            }
         </style>
 
 
@@ -365,7 +482,7 @@
                 <ul> 
 
                     <li class="dropdown active"></li>
-                    <li><a href="${pageContext.request.contextPath }/dashboard">MY ONE8</a></li>
+                    <li ><a href="${pageContext.request.contextPath }/dashboard">MY ONE8</a></li>
                     <li><a
                             href="${pageContext.request.contextPath }/billingPayment">PAY YOUR BILL</a></li>
                     <li class="active"><a
@@ -383,13 +500,14 @@
     <div class="row firstRow pt-20"
          style="background-image: url('${pageContext.request.contextPath }/img/red_long.png');" style="clear: both">
         <!--  <h1 class="paddingLeftTop" >Parental Control</h1> <h1 class="paddingRight" >Hi Vamsi </h1>  -->
-        <div class="col-md-5 col-sm-5" style="padding-left: 4.9%;">
-            <h1>Surf Safe</h1>
+        <div class="col-md-12 col-lg-12 col-sm-12">
+        <div class="col-md-6 col-sm-6" style="padding-left: 4.9%;">
+            <h1 class="Surf_Safe"style="float: left" >Surf Safe</h1>
         </div>
-        <div class="col-md-7 col-sm-7" style="padding-left: 4.9%;margin-bottom: 20px;">
-            <h1 style="float: middle">Hi ${uesr_name}</h1>
+        <div class="col-md-6 col-sm-6" style="padding-left: 4.9%;margin-bottom: 20px;">
+            <h1 class="user_name"style="float: start; font-size:27px;"> Hi ${uesr_name}</h1>
         </div>
-
+    </div>
     </div>
 
 
@@ -401,10 +519,10 @@
         </h4>
 
 
-        <ul class="nav nav-tabs  margin-top-20">
+        <ul class="nav nav-tabs  margin-top-20 ">
             <c:choose>
                 <c:when test="${not empty advanced_error }">
-                    <li class=" active"><a id="advance-filter" data-toggle="tab" href="#Allowed">ADVANCED</a></li>
+                    <li class=" active "><a id="advance-filter" data-toggle="tab" href="#Allowed">ADVANCED</a></li>
                     <li class=" "><a id="block-filter" data-toggle="tab" href="#Blocked"  >BLOCKED</a></li>
                     <li class=" "><a id="custom-filter" data-toggle="tab" href="#Custom" >CUSTOM</a></li>
                     <c:set var="default" value="active"></c:set>

@@ -330,6 +330,90 @@
                 border-radius: 10px;
                 -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
             }
+            @media (max-width: 500px) and (min-width:240px)
+            {
+               
+               
+/*                .nav>li {
+                position: relative;
+                display: inline-table;
+                margin-right: 10px ! important; 
+                width:109px ! important;
+            }*/
+                .nav > li {
+                    /* position: relative; */
+                    /* display: block; */
+                    margin-right: 5px !important;
+                    min-width: 100px !important;
+                }
+                
+                .nav-tabs > li.active > a#time-tab-name {
+                    color: #716868;
+                    padding: 5px 15px 15px 33px;
+                    border-bottom: 5px red solid !important;
+                    background-image: url('${pageContext.request.contextPath }/img/icons/Time_red.png') !important;
+               background-size: 30px !important;
+                background-repeat: no-repeat !important;
+              font-size: 15px;
+              width: 100px;
+            }
+
+            .nav-tabs > li > a#time-tab-name {
+                color: #716868;
+                padding: 5px 15px 15px 33px;
+                border-bottom: 5px #fff solid !important;
+                background-image: url('${pageContext.request.contextPath }/img/icons/Time_grey.png') !important;
+               background-size: 30px !important;
+                background-repeat: no-repeat !important;
+              font-size: 15px;
+              width: 100px;
+            }
+            .nav-tabs > li.active > a#day-tab-name {
+                color: #716868;
+                padding: 5px 15px 15px 33px;
+                border-bottom: 5px red solid !important;
+                background-image: url('${pageContext.request.contextPath }/img/icons/Day_red.png') !important;
+               background-size: 30px !important;
+                background-repeat: no-repeat !important;
+              font-size: 15px;
+              width: 100px;
+            }
+
+            .nav-tabs > li > a#day-tab-name {
+                color: #716868;
+                padding: 5px 15px 15px 33px;
+                border-bottom: 5px #fff solid !important;
+                background-image: url('${pageContext.request.contextPath }/img/icons/Day_grey.png') !important;
+               background-size: 30px !important;
+                background-repeat: no-repeat !important;
+              font-size: 15px;
+              width: 100px;
+            }
+
+            .nav-tabs > li.active > a#dates-tab-name {
+                color: #716868;
+                padding: 5px 15px 15px 33px;
+                border-bottom: 5px red solid !important;
+                background-image: url('${pageContext.request.contextPath }/img/icons/Dates_red.png') !important;
+               background-size: 30px !important;
+                background-repeat: no-repeat !important;
+              font-size: 15px;
+              width: 100px;
+            }
+
+            .nav-tabs > li > a#dates-tab-name {
+                color: #716868;
+                padding: 5px 15px 15px 33px;
+                border-bottom: 5px #fff solid !important;
+                background-image: url('${pageContext.request.contextPath }/img/icons/Dates_grey.png') !important;
+               background-size: 30px !important;
+                background-repeat: no-repeat !important;
+              font-size: 15px;
+              width: 100px;
+            }
+
+
+            }
         </style>
     </head>
     <body class="corporate" style="font-family: Roboto;">
