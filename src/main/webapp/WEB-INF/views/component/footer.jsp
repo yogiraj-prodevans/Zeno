@@ -10,10 +10,7 @@
     {
         padding-right: 0.1%;
     }
-    .row
-    {
-            text-align: center;
-    }
+   
     @media ( max-width :1366px ) and (min-width:1024px)
     {
         .pdlFooter
@@ -25,8 +22,12 @@
             padding-right: 1.2%;
         }
     }
-    @media ( max-width :1366px ) and (min-width:1024px){
+    @media ( max-width :500px ) and (min-width:240px){
         
+         .row
+    {
+            text-align: center;
+    }
     }
 
 

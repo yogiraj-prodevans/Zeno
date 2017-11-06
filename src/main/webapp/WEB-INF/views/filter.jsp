@@ -107,7 +107,7 @@
                                 }*/
                 /*icons and background sizes*/
                 
-            nav-tabs > li.active > a#advance-filter {
+            .nav-tabs > li.active > a#advance-filter {
                 color: #716868;
                 padding: 5px 15px 15px 60px;
                 border-bottom: 7px red solid !important;
@@ -351,7 +351,9 @@
                 overflow-x: auto;
                 }
                 
-                
+                .botton_aling{
+                margin-right: 13px;
+                }
                 
 
                 .nav > li {
@@ -606,7 +608,7 @@
                             </c:if>
                         </div>
                         <div class="col-md-2 text-right">
-                            <button id="advacneBlock" class="btn billButton font-h3 " type="submit">BLOCK</button>
+                            <button id="advacneBlock" class="btn billButton font-h3" type="submit">BLOCK</button>
                         </div>
                     </div>
                 </form:form> 	
