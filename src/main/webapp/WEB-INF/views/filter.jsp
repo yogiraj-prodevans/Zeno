@@ -438,6 +438,10 @@
                     font-size: 70% !important;    
                     width: 90%;
                 }
+                .row > .font-h3 {
+                    font-size: 130%;
+                    
+                }
                
 
 
