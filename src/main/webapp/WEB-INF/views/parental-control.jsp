@@ -237,7 +237,7 @@
             .panel-group  .category_box {
 
                 min-height: 100px;
-                padding: 40px;
+                padding: 6.5%;
                 border: 1px solid #bdc3c7;
                 margin-top: -1px;
                 min-height: 350px;
@@ -337,7 +337,7 @@
                  margin-right: -11px;
                 }
                 
-                .botton_aling{
+                .text-right > .botton_aling{
                 margin-right: 13px;
                 }
                 .nav-tabs > li.active > a#time-tab-name {
@@ -347,8 +347,8 @@
                     background-image: url('${pageContext.request.contextPath }/img/icons/Time_red.png') !important;
                     background-size: 30px !important;
                     background-repeat: no-repeat !important;
-                    font-size: 15px;
-                    width: 100px;
+                    font-size: 80% !important;    
+                    width: 90%;
                 }
 
                 .nav-tabs > li > a#time-tab-name {
@@ -358,8 +358,8 @@
                     background-image: url('${pageContext.request.contextPath }/img/icons/Time_grey.png') !important;
                     background-size: 30px !important;
                     background-repeat: no-repeat !important;
-                    font-size: 15px;
-                    width: 100px;
+                    font-size: 80% !important;     
+                    width: 90%;
                 }
                 .nav-tabs > li.active > a#day-tab-name {
                     color: #716868;
@@ -368,8 +368,8 @@
                     background-image: url('${pageContext.request.contextPath }/img/icons/Day_red.png') !important;
                     background-size: 30px !important;
                     background-repeat: no-repeat !important;
-                    font-size: 15px;
-                    width: 100px;
+                    font-size: 80% !important;   
+                    width: 90%;
                 }
 
                 .nav-tabs > li > a#day-tab-name {
@@ -379,8 +379,8 @@
                     background-image: url('${pageContext.request.contextPath }/img/icons/Day_grey.png') !important;
                     background-size: 30px !important;
                     background-repeat: no-repeat !important;
-                    font-size: 15px;
-                    width: 100px;
+                    font-size: 80% !important;   
+                    width: 90%;
                 }
 
                 .nav-tabs > li.active > a#dates-tab-name {
@@ -390,8 +390,8 @@
                     background-image: url('${pageContext.request.contextPath }/img/icons/Dates_red.png') !important;
                     background-size: 30px !important;
                     background-repeat: no-repeat !important;
-                    font-size: 15px;
-                    width: 100px;
+                   font-size: 80% !important;   
+                    width: 90%;
                 }
 
                 .nav-tabs > li > a#dates-tab-name {
@@ -401,9 +401,14 @@
                     background-image: url('${pageContext.request.contextPath }/img/icons/Dates_grey.png') !important;
                     background-size: 30px !important;
                     background-repeat: no-repeat !important;
-                    font-size: 15px;
-                    width: 100px;
+                    font-size: 80% !important;    
+                    width: 90%;
                 }
+                .control-label{
+                margin-bottom: -13px;
+                padding-left: unset;
+                }
+              
 
 
                

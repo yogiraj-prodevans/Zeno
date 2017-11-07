@@ -29,6 +29,10 @@
     {
             text-align: center;
     }
+    .footerPR > .row
+    {
+            text-align: center;
+    }
     }
 
 
