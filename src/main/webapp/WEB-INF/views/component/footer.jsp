@@ -24,7 +24,7 @@
     }
     @media ( max-width :500px ) and (min-width:240px){
         
-         .row
+         .footer > .row
     {
             text-align: center;
     }
