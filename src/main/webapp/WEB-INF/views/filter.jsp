@@ -214,10 +214,10 @@
             .category_box {
 
                 min-height: 100px;
-                padding: 40px;
+                padding: 3.5% ;
                 border: 1px solid #bdc3c7;
                 margin-top: -1px;
-                min-height: 350px;
+               height: 350px;
 
             }
             .custom_box {
@@ -303,7 +303,7 @@
             }
             .category_list
             {
-                height:250px ; 
+                height:270px ; 
                 overflow-x: auto;
             }
             
@@ -347,10 +347,13 @@
                        
                 }
                 .category_list{
-                height:300px ; 
+                height: 300px; ; 
                 overflow-x: auto;
                 }
-                
+                .category_box{
+                    padding: 6.5%;
+                    
+                }
                 .botton_aling{
                 margin-right: 13px;
                 }
@@ -580,9 +583,9 @@
         <div class="tab-content">
             <div id="Allowed" class="tab-pane fade  <c:if test="${ empty blocked_error && empty update_url_error && empty custom_error  }"> in active </c:if> row ">
                 <form:form action="allow-categories" modelAttribute="CategoryListDetails" method="post" >
-                    <div class="category_box">
+                    <div class=" category_box">
 
-                        <div  class="category_list">   
+                        <div  class="row category_list">   
                             <p class="font-h4" style="padding-bottom: 15px;">Choose content categories that you don’t want to view on your network and hit BLOCK to keep related websites out.</p>
                             <c:forEach items="${CAT.getAllowded_catogery()}" var="cat" >
                                 <div class="col-md-6 col-sm-6 border text-justify">

@@ -234,7 +234,7 @@
                 overflow-y: scroll;
                 max-height: 350px;
             }
-            .category_box {
+            .panel-group  .category_box {
 
                 min-height: 100px;
                 padding: 40px;
