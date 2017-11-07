@@ -317,7 +317,7 @@ public class ParentalControl {
     @RequestMapping(value = "/delete-all-patterns", method = RequestMethod.POST)
     public String deleteallpatterns(ModelMap model, HttpSession session, @ModelAttribute(name = "CategoryListDetails") CategoryList categoryList)
     {
-    	categoryList.getRemove_filter_pattern().clear();
+    	
 
         //fetching the user details from the session.
         SessionDetails user = (SessionDetails) session.getAttribute("user");
@@ -328,6 +328,7 @@ public class ParentalControl {
         	return "redirect:/control";
         }
         
+        categoryList.getRemove_filter_pattern().clear();
         
         if (categoryimpl.updateFilterPattern(categoryList.getRemove_filter_pattern(), user.getDomid(), user.getActid() + RestConfig.ADVANCED_FILTER)) {
             session.setAttribute("custom_error", "Done! URL's successfully unblocked.");
