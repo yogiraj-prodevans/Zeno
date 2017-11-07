@@ -217,7 +217,7 @@
                 padding: 3.5% ;
                 border: 1px solid #bdc3c7;
                 margin-top: -1px;
-               height: 350px;
+               min-height: 380.8px;
 
             }
             .custom_box {
@@ -303,7 +303,7 @@
             }
             .category_list
             {
-                height:270px ; 
+                height:300px ; 
                 overflow-x: auto;
             }
             
@@ -332,11 +332,11 @@
             {
                .Surf_Safe
                 {
-                    font-size: 27px;
+                    font-size: 150%;
                 }
                 .user_name{
                     margin-left: 52%;
-                     font-size: 25px;
+                     font-size: 130% !important;
                 }
                 .mobile_tab
                 {
@@ -347,11 +347,12 @@
                        
                 }
                 .category_list{
-                height: 300px; ; 
+                height: 400px; ; 
                 overflow-x: auto;
                 }
                 .category_box{
                     padding: 6.5%;
+                    min-height: 415.2px;
                     
                 }
                 .botton_aling{
@@ -362,8 +363,8 @@
                 .nav > li {
                     position: relative; 
                     display: block; 
-                    margin-right: 5px !important;
-                    min-width: 100px !important;
+                    margin-right: unset !important;
+                    min-width: 30% !important;
                    
                 }
                 .nav-tabs > li.active > a#advance-filter {
@@ -374,8 +375,8 @@
                     background-size: 30px !important;
                     background-repeat: no-repeat !important;
                      padding-bottom: 20px;
-                    font-size: 12px !important;    
-                    width: 100px;
+                    font-size: 70% !important;    
+                    width: 90%;
                 }
 
                 .nav-tabs > li > a#advance-filter {
@@ -386,8 +387,8 @@
                     background-size: 30px !important;
                     background-repeat: no-repeat !important;
                     padding-bottom: 20px;
-                    font-size: 12px !important;
-                    width: 100px;
+                    font-size: 70% !important;    
+                    width: 90%;
                 }
                 .nav-tabs > li.active > a#block-filter {
                     color: #716868;
@@ -397,8 +398,8 @@
                     background-size: 30px !important;
                     background-repeat: no-repeat !important;
                      padding-bottom: 20px;
-                    font-size: 12px !important;
-                    width: 100px;
+                    font-size: 70% !important;    
+                    width: 90%;
                 }
 
                 .nav-tabs > li > a#block-filter {
@@ -409,8 +410,8 @@
                     background-size: 30px !important;
                     background-repeat: no-repeat !important;
                     padding-bottom: 20px;
-                    font-size: 12px !important;
-                    width: 100px;
+                   font-size: 70% !important;    
+                    width: 90%;
                 }
 
                 .nav-tabs > li.active > a#custom-filter {
@@ -421,8 +422,8 @@
                     background-size: 30px !important;
                     background-repeat: no-repeat !important;
                     padding-bottom: 20px;
-                    font-size: 12px !important;
-                    width: 100px;
+                   font-size: 70% !important;    
+                    width: 90%;
                 }
 
 
@@ -434,8 +435,8 @@
                     background-size: 30px !important;
                     background-repeat: no-repeat !important;
                     padding-bottom: 20px;
-                    font-size: 12px !important; 
-                    width: 100px;
+                    font-size: 70% !important;    
+                    width: 90%;
                 }
                
 
