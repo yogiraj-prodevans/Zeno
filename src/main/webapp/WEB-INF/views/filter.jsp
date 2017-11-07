@@ -380,7 +380,7 @@
                     <li><a
                             href="${pageContext.request.contextPath }/billingPayment">PAY YOUR BILL</a></li>
                     <li class="active"><a
-                            href="${pageContext.request.contextPath }/control">SURF SAFE <img class="ss-status-led" id="parental-led"  alt="Status" title="SURF SAFE Status" ></a></li>
+                            href="${pageContext.request.contextPath }/control">SURF SAFE <img class="ss-status-led" id="parental-led"  title="SURF SAFE Status" ></a></li>
                     <li><a href="${pageContext.request.contextPath }/service">SERVICE</a></li>
 
                     <li><a href="${pageContext.request.contextPath }/profile">PROFILE</a></li>
